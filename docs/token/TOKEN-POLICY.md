@@ -2,44 +2,6 @@
 
 **Document type**: Token policy  
 **Doc ID**: TOKEN-POLICY  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/token/TOKEN-POLICY.md`)
-
-> Scope: Purpose, allowed uses, and constraints for the DCHUB token, consistent with the Master Reference disclaimers.
-
----
-
-## 1. Purpose and nature of DCHUB
-
-_Summarize what DCHUB is and is not (utility, non-equity, infrastructure token)._
-
----
-
-## 2. Utility and use cases
-
-_Describe protocol-level uses (gas, staking, governance, recognition economics, etc.)._
-
----
-
-## 3. Supply and monetary policy
-
-_Outline high-level supply philosophy; detailed numbers live in the genesis/emissions docs._
-
----
-
-## 4. Governance over token parameters
-
-_Define who can change token-related parameters and under what process._
-
----
-
-## 5. Disclaimers and legal boundaries
-
-_Reiterate non-offer, non-investment, and non-equity positioning consistent with legal counsel._
-# DCHUB Token – Policy
-
-**Document type**: Token policy  
-**Doc ID**: TOKEN-POLICY  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/token/TOKEN-POLICY.md`)
 
@@ -51,18 +13,18 @@ _Reiterate non-offer, non-investment, and non-equity positioning consistent with
 
 DCHUB is the native token of the dCorps Hub. It is intended to serve as:
 
-- the **gas token** for transactions on the Hub;
-- the **staking token** providing economic security for consensus;
-- a **governance token** for on-chain decision-making;
-- the **economic root** for recognition and anchoring relationships with sub chains.
+- the gas token for transactions on the Hub;
+- the staking token providing economic security for consensus;
+- a governance token for on-chain decision-making;
+- the economic root for recognition and anchoring relationships with sub chains.
 
-DCHUB is **not**:
+DCHUB is not:
 
 - equity or shares in any corporation or nonprofit;
 - a right to dividends, profits, or residual assets;
 - a guarantee of price appreciation or investment performance.
 
-Any sale, distribution, or other transfer of DCHUB that might have legal implications MUST be handled under separate, dedicated documentation and terms.
+Any sale, distribution, or other transfer of DCHUB that might have legal implications is handled under separate, dedicated documentation and terms.
 
 ---
 
@@ -75,9 +37,9 @@ DCHUB’s intended uses include:
 - delegating to validators to share in staking rewards and support network security;
 - bonding or depositing for sub chain recognition or module-related economics where specified.
 
-Governance MAY introduce additional protocol-level uses consistent with this policy, but SHOULD avoid overloading DCHUB with functions that create confusion about its nature.
+Governance may introduce additional protocol-level uses consistent with this policy, but should avoid overloading DCHUB with functions that create confusion about its nature.
 
-Applications and services MAY accept DCHUB for their own purposes, but such uses are outside the scope of this policy and are the responsibility of those applications.
+Applications and services may accept DCHUB for their own purposes, but such uses are outside the scope of this policy and are the responsibility of those applications.
 
 ---
 
@@ -87,7 +49,7 @@ This policy provides high-level guidance; detailed figures and schedules are def
 
 Principles:
 
-- target a **sustainable security budget** for staking and network operations;
+- target a sustainable security budget for staking and network operations;
 - avoid unnecessary inflation once the network reaches maturity;
 - maintain flexibility to adjust parameters through governance as conditions change.
 
@@ -97,7 +59,7 @@ Potential supply components include:
 - protocol-level emissions (if any) for staking rewards;
 - allocations for ecosystem growth, research, and foundation operations.
 
-Any changes to monetary policy MUST be:
+Any changes to monetary policy are:
 
 - debated transparently;
 - enacted via on-chain governance;
@@ -114,13 +76,13 @@ On-chain governance may control:
 - parameters governing recognition deposits and fees;
 - distribution mechanisms for community or ecosystem allocations.
 
-High-impact changes (e.g. major shifts in inflation or supply) SHOULD:
+High-impact changes (e.g. major shifts in inflation or supply) should:
 
 - have stronger approval thresholds and longer voting periods;
 - be accompanied by analysis, scenarios, and stress tests;
 - be recorded in `DECISION_LOG.md` with clear rationale.
 
-Governance may **not** retroactively change the terms of any legal agreements or contracts under which DCHUB has already been sold or granted; those remain governed by their own documentation.
+Governance may not retroactively change the terms of any legal agreements or contracts under which DCHUB has already been sold or granted; those remain governed by their own documentation.
 
 ---
 
@@ -137,3 +99,4 @@ Participants are responsible for:
 - understanding and complying with laws in relevant jurisdictions;
 - obtaining professional advice where appropriate;
 - making their own risk assessments when acquiring, holding, or using DCHUB.
+

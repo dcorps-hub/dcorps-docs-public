@@ -2,50 +2,6 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-PARAMS  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-PARAMS.md`)
-
-> Scope: Parameter catalog and economic rules for the Hub and Hub-aligned sub chains.
-
----
-
-## 1. Introduction
-
-_Explain the role of parameters and economic settings, and how they relate to core protocol behavior._
-
----
-
-## 2. Parameter catalog
-
-_List protocol parameters (name, type, units, default value, allowed range, governance control, etc.)._
-
----
-
-## 3. Fees and rewards
-
-_Describe fee models, reward distribution, and any formulas or schedules used by the protocol._
-
----
-
-## 4. Staking and slashing economics
-
-_Specify staking rules, slashing conditions, and economic rationale at a high level._
-
----
-
-## 5. Sub chain recognition economics
-
-_Describe deposits, bonds, recognition tiers, and economic incentives for Hub-aligned sub chains._
-
----
-
-## 6. Governance over parameters
-
-_Define how parameters can be changed, by whom, and under which constraints._
-# dCorps Hub – Protocol Parameters and Economics
-
-**Document type**: Normative spec  
-**Doc ID**: SPEC-PARAMS  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-PARAMS.md`)
 
@@ -80,7 +36,7 @@ Parameters are grouped into logical domains. Each parameter has:
 - **Valid range** – inclusive range or discrete set of allowed values;
 - **Governance control** – proposal type and approval thresholds required to modify it.
 
-### 2.1 Fee parameters (illustrative catalog)
+### 2.1 Fee parameters
 
 Examples of fee-related parameters include:
 
@@ -255,3 +211,4 @@ All parameter changes MUST be:
 - cross-referenced in the Master Reference and changelog where they affect protocol behavior.
 
 This spec, together with `SPEC-CORE.md`, SHOULD be kept up to date as parameters evolve, to avoid drift between documentation and actual behavior.
+

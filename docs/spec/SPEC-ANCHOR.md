@@ -2,44 +2,6 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-ANCHOR  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-ANCHOR.md`)
-
-> Scope: How recognized sub chains anchor commitments back to the Hub and how the Hub interprets them.
-
----
-
-## 1. Introduction
-
-_Describe the purpose of anchoring and its role in security and observability._
-
----
-
-## 2. Anchor data model
-
-_Define the structure of anchor commitments, including identifiers, heights, hashes, and metadata._
-
----
-
-## 3. Anchoring process and frequency
-
-_Specify how often anchors must be submitted, who submits them, and timing/liveness requirements._
-
----
-
-## 4. Verification and failure handling
-
-_Describe how the Hub verifies anchors, what happens on failure, and how inconsistencies are handled._
-
----
-
-## 5. Recognition tiers and behavior
-
-_Explain how anchoring behavior ties into recognition tiers and what happens when standards are not met._
-# dCorps – Sub Chain Anchoring Standard
-
-**Document type**: Normative spec  
-**Doc ID**: SPEC-ANCHOR  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-ANCHOR.md`)
 
@@ -86,7 +48,7 @@ Anchors MUST be immutable once accepted. Any correction or re-anchoring MUST be 
 The exact structure of the commitment hash and metadata MAY vary by sub chain, but MUST be:
 
 - well-documented;
-- stable across versions or clearly versioned;
+- clearly versioned where formats can evolve;
 - sufficient to allow independent verification by indexers and auditors.
 
 ---
@@ -181,3 +143,4 @@ Governance MUST define:
 - any automatic or semi-automatic triggers for downgrades (e.g. extended liveness failures or proven misbehavior).
 
 Indexers and explorers SHOULD surface recognition tiers prominently when presenting sub chain data and cross-Hub views, so that users can make informed decisions.
+

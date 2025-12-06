@@ -2,44 +2,6 @@
 
 **Document type**: Security analysis  
 **Doc ID**: THREAT-MODEL  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/security/THREAT-MODEL.md`)
-
-> Scope: Systematic analysis of threats, assets, and mitigations for the Hub, modules, and recognized sub chains.
-
----
-
-## 1. Scope and methodology
-
-_Define what is in scope and which threat-modeling framework or approach is used._
-
----
-
-## 2. Assets and trust boundaries
-
-_Identify key assets and major trust boundaries in the system._
-
----
-
-## 3. Attacker profiles
-
-_Describe plausible attacker types and capabilities._
-
----
-
-## 4. Threats and attack scenarios
-
-_Outline major threats and example attack scenarios._
-
----
-
-## 5. Mitigations and residual risk
-
-_Summarize key mitigations, remaining risks, and assumptions._
-# dCorps – Threat Model
-
-**Document type**: Security analysis  
-**Doc ID**: THREAT-MODEL  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/security/THREAT-MODEL.md`)
 
@@ -57,7 +19,7 @@ This threat model focuses on:
 
 External applications, custodians, and user devices are in scope only to the extent that they interact with the Hub and can affect its security or trust assumptions.
 
-A lightweight methodology is used:
+The approach is to:
 
 - identify critical assets and trust boundaries;
 - define plausible attacker profiles;
@@ -65,7 +27,7 @@ A lightweight methodology is used:
 - document existing and planned mitigations;
 - record residual risks and assumptions.
 
-This document is a living artifact and SHOULD be updated as the system evolves.
+This document is a living artifact and is updated as the system evolves.
 
 ---
 
@@ -90,7 +52,7 @@ Important trust boundaries:
 - between on-chain governance and off-chain execution (e.g. foundation actions);
 - between users and external applications that interface with the Hub.
 
-Each boundary may introduce different threat vectors, such as dependency on external validators, API gateways, or legal entities.
+Each boundary introduces potential threat vectors, such as dependency on external validators, API gateways, or legal entities.
 
 ---
 
@@ -98,16 +60,11 @@ Each boundary may introduce different threat vectors, such as dependency on exte
 
 Representative attacker types include:
 
-- **Economically motivated attackers**
-  - seek to steal funds, manipulate markets, or extract MEV beyond acceptable limits.
-- **Protocol adversaries**
-  - attempt to disrupt consensus, censor transactions, or corrupt the entity registry.
-- **Insiders and colluding parties**
-  - compromised or malicious validators, developers, or key holders.
-- **Regulatory or legal actors**
-  - may impose constraints that indirectly affect security or availability.
-- **Opportunistic attackers**
-  - exploit unpatched bugs, misconfigurations, or poorly secured infrastructure.
+- economically motivated attackers – seek to steal funds, manipulate markets, or extract MEV beyond acceptable limits;
+- protocol adversaries – attempt to disrupt consensus, censor transactions, or corrupt the entity registry;
+- insiders and colluding parties – compromised or malicious validators, developers, or key holders;
+- regulatory or legal actors – may impose constraints that indirectly affect security or availability;
+- opportunistic attackers – exploit unpatched bugs, misconfigurations, or poorly secured infrastructure.
 
 These profiles help prioritize mitigations and understand potential impacts.
 
@@ -134,7 +91,7 @@ Examples of threat categories and scenarios:
   - treasury mismanagement or theft due to poor controls;
   - malicious proposals that appear benign on the surface.
 
-Each scenario SHOULD be documented with:
+Each scenario is documented with:
 
 - preconditions and attack path;
 - potential impact;
@@ -160,8 +117,9 @@ Mitigations span multiple layers:
   - robust key and infrastructure management;
   - coordinated incident response and communication.
 
-Residual risks SHOULD be clearly documented along with:
+Residual risks are clearly documented along with:
 
 - assumptions that may change over time;
 - areas where further research or tooling is needed;
 - recommendations for ecosystem participants to reduce their own exposure.
+

@@ -2,44 +2,6 @@
 
 **Document type**: Policy  
 **Doc ID**: SECURITY-POLICY  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/security/SECURITY-POLICY.md`)
-
-> Scope: Security principles, responsibilities, and baseline controls for the dCorps protocol and foundation.
-
----
-
-## 1. Security principles
-
-_State high-level security principles and goals._
-
----
-
-## 2. Roles and responsibilities
-
-_Describe who is responsible for what across core devs, validators, foundation, and contributors._
-
----
-
-## 3. Secure development lifecycle
-
-_Outline expectations for design review, testing, code review, and dependency management._
-
----
-
-## 4. Key and secret management
-
-_Define expectations for handling validators’ keys, foundation keys, and other sensitive material._
-
----
-
-## 5. Infrastructure and operations
-
-_Describe baseline infra security requirements, monitoring, and backups._
-# dCorps – Security Policy
-
-**Document type**: Policy  
-**Doc ID**: SECURITY-POLICY  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/security/SECURITY-POLICY.md`)
 
@@ -51,11 +13,11 @@ _Describe baseline infra security requirements, monitoring, and backups._
 
 dCorps adopts the following principles:
 
-- **Defense in depth** – combine multiple layers of protection across code, infrastructure, process, and governance.
-- **Least privilege** – grant only the access and capabilities required for each role, module, or system.
-- **Secure by default** – prefer safe defaults even if they are less convenient.
-- **Transparency** – favor open discussion of risks and mitigations, consistent with responsible disclosure.
-- **Continuous improvement** – treat security as an ongoing process, not a one-time project.
+- defense in depth – combine multiple layers of protection across code, infrastructure, process, and governance;
+- least privilege – grant only the access and capabilities required for each role, module, or system;
+- secure by default – prefer safe defaults even if they are less convenient;
+- transparency – favor open discussion of risks and mitigations, consistent with responsible disclosure;
+- continuous improvement – treat security as an ongoing process, not a one-time project.
 
 Security considerations span:
 
@@ -86,13 +48,13 @@ Security is a shared responsibility:
   - follow best practices when integrating with dCorps;
   - avoid misrepresenting security guarantees of their own products.
 
-Responsibilities SHOULD be further detailed in operational runbooks and agreements where applicable.
+Responsibilities are further detailed in the Threat Model, Audit Plan, and operational runbooks.
 
 ---
 
 ## 3. Secure development lifecycle
 
-Core protocol and critical tooling SHOULD follow a secure development lifecycle (SDLC) that includes:
+Core protocol and critical tooling follow a secure development lifecycle (SDLC) that includes:
 
 - security-conscious design reviews for new features and changes;
 - static and dynamic analysis where appropriate;
@@ -100,11 +62,11 @@ Core protocol and critical tooling SHOULD follow a secure development lifecycle 
 - structured testing at unit, integration, and system levels;
 - periodic security training for contributors.
 
-Changes that significantly affect security MUST:
+Changes that significantly affect security are:
 
-- be documented in design notes or proposals;
-- undergo targeted review and, where applicable, external audits;
-- be accompanied by updates to the Threat Model and related documents.
+- documented in design notes or proposals;
+- subjected to targeted review and, where applicable, external audits;
+- accompanied by updates to the Threat Model and related documents.
 
 ---
 
@@ -122,29 +84,30 @@ Validator key management expectations are further described in `POL-VALIDATORS.m
 
 ### 4.2 Foundation and treasury keys
 
-The foundation MUST:
+The foundation:
 
-- use multisignature or equivalent mechanisms for treasury and high-value accounts;
-- define clear signer roles and rotation schedules;
-- keep detailed internal records of key custody and access.
+- uses multisignature or equivalent mechanisms for treasury and high-value accounts;
+- defines clear signer roles and rotation schedules;
+- keeps detailed internal records of key custody and access.
 
-Private keys MUST never be stored in plaintext in code repositories, chat logs, or documentation.
+Private keys are never stored in plaintext in code repositories, chat logs, or documentation.
 
 ---
 
 ## 5. Infrastructure and operations
 
-Core infrastructure (e.g. reference nodes, build and release systems, critical services) SHOULD:
+Core infrastructure (e.g. reference nodes, build and release systems, critical services):
 
-- use hardened configurations and up-to-date operating systems;
-- isolate environments by function (e.g. build, test, production);
-- restrict access via least privilege and strong authentication;
-- be monitored for anomalies and suspicious activity.
+- uses hardened configurations and up-to-date operating systems;
+- isolates environments by function (e.g. build, test, production);
+- restricts access via least privilege and strong authentication;
+- is monitored for anomalies and suspicious activity.
 
-Operational guidance SHOULD cover:
+Operational guidance covers:
 
 - safe software release processes (signing, reproducible builds where feasible);
 - secure use of third-party dependencies and services;
 - backups and disaster recovery plans for critical systems.
 
 Validators and ecosystem participants are encouraged to adopt similar best practices, adapted to their own risk profiles.
+

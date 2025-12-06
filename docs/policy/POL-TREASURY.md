@@ -2,44 +2,6 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-TREASURY  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/policy/POL-TREASURY.md`)
-
-> Scope: Management of protocol and foundation treasury assets.
-
----
-
-## 1. Objectives and mandate
-
-_State the purpose of the treasury and constraints on its use._
-
----
-
-## 2. Asset universe and risk limits
-
-_Define which assets are allowed, diversification rules, and risk constraints._
-
----
-
-## 3. Allocation and spending
-
-_Describe how funds are allocated, approved, and disbursed._
-
----
-
-## 4. Controls and signers
-
-_Outline roles, multisig structures, and operational controls._
-
----
-
-## 5. Reporting and transparency
-
-_Specify reporting cadence, required disclosures, and audit expectations._
-# dCorps – Treasury Policy
-
-**Document type**: Policy  
-**Doc ID**: POL-TREASURY  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-TREASURY.md`)
 
@@ -55,7 +17,7 @@ The dCorps and foundation treasuries exist to:
 - provide buffers for adverse events and long-term sustainability;
 - support public goods that strengthen the dCorps ecosystem.
 
-Treasury operations MUST:
+Treasury operations:
 
 - prioritize safety and continuity over speculative returns;
 - avoid conflicts of interest and self-dealing;
@@ -67,24 +29,24 @@ Treasury operations MUST:
 
 ### 2.1 Allowed assets
 
-Treasury assets MAY include:
+Treasury assets may include:
 
 - DCHUB tokens (native token);
 - widely used, reputable stablecoins;
 - major cryptoassets relevant to the ecosystem;
 - fiat balances held in compliant, regulated institutions where necessary.
 
-Exotic or illiquid assets SHOULD be avoided unless specifically justified and approved by governance.
+Exotic or illiquid assets are generally avoided unless specifically justified and approved by governance.
 
 ### 2.2 Risk limits
 
-Risk management SHOULD include:
+Risk management includes:
 
 - diversification limits by asset and counterparty;
 - maximum exposure to any single stablecoin issuer or bank;
-- explicit guidelines for duration and liquidity risk (e.g. limits on long lockups).
+- guidelines for duration and liquidity risk (e.g. limits on long lockups).
 
-Governance SHOULD review and update risk limits periodically, especially after major market events.
+Governance reviews and updates risk limits periodically, especially after major market events.
 
 ---
 
@@ -92,44 +54,44 @@ Governance SHOULD review and update risk limits periodically, especially after m
 
 ### 3.1 Strategic allocation
 
-Treasury allocation decisions SHOULD consider:
+Treasury allocation decisions consider:
 
 - runway and expected future cash flows;
 - near-term funding needs for development and security;
 - diversification away from single points of failure.
 
-Long-term strategic allocations SHOULD be guided by a multi-year plan reviewed at least annually.
+Long-term strategic allocations are guided by a multi-year plan reviewed at least annually.
 
 ### 3.2 Spending approvals
 
-Spending from treasury MAY be authorized via:
+Spending from treasury may be authorized via:
 
 - on-chain governance proposals (e.g. community grants, large strategic expenditures);
 - foundation board approval processes for operational expenses, as defined in `POL-FOUNDATION.md`.
 
-All significant disbursements SHOULD:
+All significant disbursements:
 
-- be tagged and reported using dCorps data standards;
+- are tagged and reported using dCorps data standards;
 - include clear descriptions of purpose and expected outcomes;
-- be traceable from treasury wallets to recipients.
+- are traceable from treasury wallets to recipients.
 
 ---
 
 ## 4. Controls and signers
 
-Treasury custody MUST use robust controls such as:
+Treasury custody uses robust controls such as:
 
 - multisignature wallets or hardware-backed key management;
 - separation of duties between proposers, approvers, and signers;
 - documented procedures for key rotation and incident response.
 
-Signers SHOULD:
+Signers:
 
-- be selected based on trust, competence, and diversity;
-- be subject to clear accountability, including removal for cause;
+- are selected based on trust, competence, and diversity;
+- are subject to clear accountability, including removal for cause;
 - disclose relevant conflicts of interest related to treasury decisions.
 
-For on-chain-controlled treasuries, smart-contract-level controls MAY complement or replace manual signer structures, provided they are auditable and well-documented.
+For on-chain-controlled treasuries, smart-contract-level controls may complement or replace manual signer structures, provided they are auditable and well-documented.
 
 ---
 
@@ -137,10 +99,11 @@ For on-chain-controlled treasuries, smart-contract-level controls MAY complement
 
 Treasury transparency is essential to trust. At minimum:
 
-- up-to-date treasury balances and key wallet addresses SHOULD be publicly documented;
-- periodic reports (e.g. quarterly) SHOULD summarize:
+- up-to-date treasury balances and key wallet addresses are publicly documented;
+- periodic reports (e.g. quarterly) summarize:
   - starting balances and inflows;
   - outflows by category (development, grants, operations, reserves);
   - material changes in strategy or risk.
 
-Where possible, reporting SHOULD be derived directly from tagged on-chain activity, using the same data standards available to all other entities operating on dCorps.
+Where possible, reporting is derived directly from tagged on-chain activity, using the same data standards available to all other entities operating on dCorps.
+

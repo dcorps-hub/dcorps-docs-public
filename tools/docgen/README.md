@@ -6,39 +6,6 @@
 
 ## 1. Overview
 
-_Provide a high-level description of the docgen pipeline and goals._
-
----
-
-## 2. Inputs and outputs
-
-_List which internal files are treated as sources and what public artifacts they generate._
-
----
-
-## 3. Tag and marker conventions
-
-_Document any markers (e.g. `[RISK-NOTE]`, `[INTENT-PLANNED]`) that scripts use to include/exclude content._
-
----
-
-## 4. Running the tooling
-
-_Describe how to run the docgen scripts locally (commands, prerequisites)._
-
----
-
-## 5. Contribution guidelines
-
-_Outline expectations for contributors adding new docs or modifying the pipeline._
-# Docgen Tooling
-
-> Purpose: Describe how internal docs are transformed into public-facing docs and other derived artifacts.
-
----
-
-## 1. Overview
-
 The `docgen` tooling exists to:
 
 - generate public-safe documentation from internal sources;
@@ -63,26 +30,26 @@ Typical outputs:
 - public specs (`docs/public/spec/*_PUBLIC.md`);
 - optionally, HTML, JSON, or other formats for websites and tooling.
 
-All outputs SHOULD be clearly traceable back to specific versions of source files.
+All outputs should be clearly traceable back to specific versions of source files.
 
 ---
 
 ## 3. Tag and marker conventions
 
-To safely generate public docs from internal sources, the tooling MAY rely on markers such as:
+To safely generate public docs from internal sources, the tooling may rely on markers such as:
 
 - `[RISK-NOTE]` – internal-only risk annotations;
 - `[INTENT-PLANNED]` – planned but not yet implemented behavior;
 - `[OPEN-QUESTION]` – unresolved design questions;
 - `[INTERNAL-ONLY] ... [/INTERNAL-ONLY]` – explicit blocks to be excluded from public outputs.
 
-Docgen scripts SHOULD:
+Docgen scripts:
 
 - strip or transform internal-only markers for public artifacts;
 - optionally include simplified or redacted versions of some content;
 - fail fast or warn loudly if markers are malformed or inconsistent.
 
-The exact marker syntax and behavior MUST be documented here once finalized.
+The exact marker syntax and behavior is documented here once finalized.
 
 ---
 
@@ -100,7 +67,7 @@ To use docgen locally (once implemented):
 3. inspect the generated files under `docs/public/` and other targets;
 4. include updated outputs in commits where appropriate.
 
-Actual command names and options SHOULD be documented here once the scripts exist.
+Actual command names and options are documented here once the scripts exist.
 
 ---
 
@@ -117,3 +84,4 @@ When editing the docgen tooling itself:
 - maintain tests or sample runs where feasible;
 - document breaking changes to marker behavior or output formats;
 - coordinate with maintainers of downstream websites and docs that depend on generated outputs.
+

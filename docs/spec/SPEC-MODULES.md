@@ -2,50 +2,6 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-MODULES  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-MODULES.md`)
-
-> Scope: Standard for protocol modules (jurisdiction modules, sector frameworks, attestation modules, etc.) that extend the Hub.
-
----
-
-## 1. Introduction
-
-_Summarize the role of modules, why they exist, and how they interact with the Hub._
-
----
-
-## 2. Module lifecycle
-
-_Define how modules are proposed, registered, activated, upgraded, and deprecated._
-
----
-
-## 3. Required interfaces
-
-_Specify the mandatory interfaces a module must implement (messages, queries, hooks, etc.)._
-
----
-
-## 4. Permission and capability model
-
-_Describe what modules are allowed to do, what they cannot do, and how capabilities are granted or revoked._
-
----
-
-## 5. Registry and discovery
-
-_Explain how modules are listed, discovered, and described in a registry, including metadata requirements._
-
----
-
-## 6. Security and compatibility requirements
-
-_Outline security expectations, compatibility requirements, and how module risk is evaluated._
-# dCorps – Module Protocol Standard
-
-**Document type**: Normative spec  
-**Doc ID**: SPEC-MODULES  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-MODULES.md`)
 
@@ -205,3 +161,4 @@ Modules MUST be designed and reviewed with the following in mind:
 5. **Auditability** – module state and key decisions SHOULD be observable and auditable via indexers.
 
 Governance SHOULD require audits or equivalent review for modules with high-impact capabilities, and SHOULD maintain a public record of those reviews in the security documentation (`AUDIT-PLAN.md`, `BUG-BOUNTY.md`).
+

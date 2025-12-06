@@ -2,72 +2,6 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CORE  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-CORE.md`)
-
-> Scope: Core behavior of the dCorps Hub chain as a registry and coordination layer for entities, roles, and baseline governance.
-
----
-
-## 1. Introduction
-
-### 1.1 Purpose
-
-_Describe what the core spec covers and how it relates to the Master Reference and other specs._
-
-### 1.2 Audience
-
-_Implementation teams, integrators, auditors, and protocol reviewers._
-
-### 1.3 Normative references
-
-_List related specs (Master Reference, module standard, anchoring standard, data standard, etc.)._
-
----
-
-## 2. Terminology and notation
-
-_Define key terms and notation used in this spec (entities, Hub corporations, Hub nonprofits, wallets, roles, modules, recognition, etc.)._
-
----
-
-## 3. High-level architecture
-
-_Outline the conceptual architecture of the Hub: registry, entity models, wallets, roles, governance primitives, and how modules/sub chains connect conceptually._
-
----
-
-## 4. State and data model
-
-_Define the on-chain state objects and their relationships (entities, wallets, roles, policies, module attachments, etc.)._
-
----
-
-## 5. Messages and transactions
-
-_Specify the main transaction/message types, required fields, validation rules, and error conditions._
-
----
-
-## 6. Invariants and constraints
-
-_Describe invariants the implementation must enforce (e.g. uniqueness, consistency across modules, recognition rules)._
-
----
-
-## 7. Governance hooks
-
-_Describe where and how governance can change parameters, upgrade logic, or manage modules at the core protocol level._
-
----
-
-## 8. Conformance
-
-_Define what it means for an implementation or deployment to conform to this spec._
-# dCorps Hub Protocol – Core Specification
-
-**Document type**: Normative spec  
-**Doc ID**: SPEC-CORE  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-CORE.md`)
 
@@ -157,7 +91,7 @@ At a high level, the Hub is a specialized Cosmos-based chain with the following 
    - Maintain a registry of protocol modules and recognized sub chains.
    - Provide anchoring and recognition primitives, not business logic for each domain.
 
-The Hub **does not**:
+The Hub does not:
 
 - custody funds on behalf of users beyond the default behavior of accounts on a proof-of-stake chain;
 - replace legal recognition or filings, which remain the responsibility of off-chain jurisdictions and processes;
@@ -190,7 +124,7 @@ For each entity, the Hub MUST support a set of `RoleBinding` records that:
 
 - associate a **role type** (e.g. director, trustee, officer, signer) with:
   - one or more on-chain addresses; and
-  - optional off-chain identifiers (for display and audit purposes).
+  - optional off-chain identifiers (for display and audit purposes);
 - define **powers** or capabilities (e.g. can propose governance, can sign specific transaction types, can approve allocations).
 
 Role types and power mappings SHOULD be standardized in `SPEC-DATA.md`, and extended where needed by modules.
@@ -330,7 +264,7 @@ The Hub’s core state (entities, roles, parameters, module registry, sub chain 
 
 - define who can propose changes;
 - define which proposals require which thresholds and quorums;
-- enforce **timelocks** or delay windows for sensitive actions where specified by policy.
+- enforce timelocks or delay windows for sensitive actions where specified by policy.
 
 At minimum:
 
@@ -356,3 +290,4 @@ An implementation is considered **conformant** with SPEC-CORE if:
 4. It documents any deliberate deviations or extensions and the rationale for them.
 
 Integrators SHOULD treat this spec as the authoritative description of expected Hub behavior and SHOULD report observed deviations via the project’s issue tracker and governance channels.
+

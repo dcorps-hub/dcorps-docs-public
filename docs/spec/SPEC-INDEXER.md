@@ -2,44 +2,6 @@
 
 **Document type**: Reference spec  
 **Doc ID**: SPEC-INDEXER  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-INDEXER.md`)
-
-> Scope: Expected behavior of a reference indexer and explorer for the Hub, modules, and recognized sub chains.
-
----
-
-## 1. Introduction
-
-_Explain the role of the indexer, what data it consumes, and who uses its outputs._
-
----
-
-## 2. Data sources and ingestion
-
-_Describe on-chain and off-chain data sources, connection patterns, and ingestion strategies._
-
----
-
-## 3. Indexing model and schemas
-
-_Outline how core entities, wallets, events, and modules are indexed and represented in storage._
-
----
-
-## 4. Query and API surface
-
-_Define the main query patterns and API endpoints/views expected from the indexer._
-
----
-
-## 5. Consistency and reliability
-
-_Describe consistency guarantees, backfilling, re-org handling (if applicable), and monitoring._
-# dCorps – Reference Indexer Specification
-
-**Document type**: Reference spec  
-**Doc ID**: SPEC-INDEXER  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-INDEXER.md`)
 
@@ -137,3 +99,4 @@ Public-facing explorers SHOULD:
 - display data freshness in the UI;
 - indicate when data is delayed or incomplete;
 - provide links to raw transaction and block data where possible, enabling verification.
+

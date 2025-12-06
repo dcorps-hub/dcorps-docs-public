@@ -2,50 +2,6 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-GOV  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/policy/POL-GOV.md`)
-
-> Scope: Governance structures and processes for the dCorps protocol and related artifacts.
-
----
-
-## 1. Mission and principles
-
-_Describe the core governance mission, values, and constraints._
-
----
-
-## 2. Governance bodies
-
-_Define on-chain and off-chain governance bodies, their roles, and mandates._
-
----
-
-## 3. Proposal types and lifecycle
-
-_Describe proposal categories, eligibility, submission, review, voting, and execution._
-
----
-
-## 4. Voting and decision rules
-
-_Specify thresholds, quorums, veto powers (if any), and special procedures._
-
----
-
-## 5. Upgrades and emergency procedures
-
-_Outline how protocol upgrades and emergency interventions are proposed and enacted._
-
----
-
-## 6. Transparency and accountability
-
-_Describe reporting, disclosures, and mechanisms for community oversight._
-# dCorps – Governance Charter
-
-**Document type**: Policy  
-**Doc ID**: POL-GOV  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-GOV.md`)
 
@@ -57,17 +13,17 @@ _Describe reporting, disclosures, and mechanisms for community oversight._
 
 The governance mission is to:
 
-- keep the dCorps Hub **minimal, neutral, and infrastructure-focused**;
+- keep the dCorps Hub minimal, neutral, and infrastructure-focused;
 - protect the integrity of the entity registry and data standards;
 - evolve the protocol cautiously as ecosystem needs change;
 - ensure transparency and accountability for major decisions.
 
 Key principles:
 
-- **Safety over speed** – changes that affect security, monetary policy, or recognition MUST move slowly and predictably.
+- **Safety over speed** – changes that affect security, monetary policy, or recognition move slowly and predictably.
 - **Neutrality** – the Hub does not favor specific jurisdictions, entities, or applications beyond transparent, policy-based distinctions.
-- **Transparency** – major decisions and their rationales MUST be documented and discoverable.
-- **Subsidiarity** – where possible, decisions SHOULD be pushed to entities, modules, and sub chains rather than centralized at the Hub.
+- **Transparency** – major decisions and their rationales are documented and discoverable.
+- **Subsidiarity** – where possible, decisions are pushed to entities, modules, and sub chains rather than centralized at the Hub.
 
 ---
 
@@ -112,7 +68,7 @@ Core proposal categories include:
 For each proposal:
 
 1. **Pre-proposal discussion**
-   - Proponents SHOULD socialize the idea, gather feedback, and document alternatives.
+   - Proponents socialize the idea, gather feedback, and document alternatives.
 2. **Submission**
    - A proposal is submitted on-chain with required metadata, references, and a minimum deposit.
 3. **Deposit period**
@@ -124,7 +80,7 @@ For each proposal:
 6. **Execution**
    - Approved proposals are executed, either automatically (parameter changes) or via coordinated upgrades and processes.
 
-All major proposals SHOULD be summarized in `DECISION_LOG.md` once resolved.
+All major proposals should be summarized in `DECISION_LOG.md` once resolved.
 
 ---
 
@@ -136,14 +92,14 @@ Key rules (subject to `SPEC-PARAMS.md`):
 
 - **Quorum** – minimum percentage of voting power that must participate for a proposal to be valid.
 - **Threshold** – minimum fraction of non-abstaining votes that must be Yes.
-- **Veto threshold** – minimum fraction of No-with-veto votes that triggers rejection regardless of other votes.
+- **Veto threshold** – fraction of No-with-veto votes that triggers rejection regardless of other votes.
 
-Governance SHOULD:
+Governance should:
 
 - apply stricter thresholds and longer voting periods for high-impact proposals (e.g. slashing changes, recognition withdrawal);
 - use shorter periods for low-risk items (e.g. non-breaking documentation updates) where supported by parameters.
 
-Delegation mechanisms SHOULD make it easy for token holders to delegate voting power while retaining ultimate control.
+Delegation mechanisms should make it easy for token holders to delegate voting power while retaining ultimate control.
 
 ---
 
@@ -159,25 +115,25 @@ Planned upgrades include changes to:
 
 For planned upgrades:
 
-- proposals MUST include upgrade plans, testing summaries, and rollback strategies;
-- validators and node operators MUST be given sufficient lead time to prepare;
-- the foundation SHOULD coordinate communication and support.
+- proposals include upgrade plans, testing summaries, and rollback strategies;
+- validators and node operators are given sufficient lead time to prepare;
+- the foundation coordinates communication and support.
 
 ### 5.2 Emergency actions
 
-In rare cases (e.g. severe vulnerabilities, catastrophic chain failures), faster action MAY be necessary. Emergency measures can include:
+In rare cases (e.g. severe vulnerabilities, catastrophic chain failures), faster action may be necessary. Emergency measures can include:
 
 - halting or rate-limiting certain message types;
 - temporarily raising fees or slashing parameters to mitigate attacks;
 - coordinated off-chain actions by validators.
 
-Emergency use MUST be:
+Emergency use is:
 
 - narrowly scoped and time-limited;
 - transparently documented after the fact, including rationale and alternatives considered;
 - followed by a formal governance review to ratify or unwind actions.
 
-The default assumption is that emergency powers are used **very rarely** and only to protect the integrity of the system.
+The default assumption is that emergency powers are used very rarely and only to protect the integrity of the system.
 
 ---
 
@@ -185,11 +141,12 @@ The default assumption is that emergency powers are used **very rarely** and onl
 
 To maintain trust:
 
-- all proposals, votes, and outcomes MUST be recorded on-chain and easily accessible via explorers and APIs;
-- major decisions SHOULD be summarized in `DECISION_LOG.md` with context and rationale;
-- the foundation and core teams SHOULD publish periodic governance reports, including:
+- all proposals, votes, and outcomes are recorded on-chain and easily accessible via explorers and APIs;
+- major decisions are summarized in `DECISION_LOG.md` with context and rationale;
+- the foundation and core teams publish periodic governance reports, including:
   - proposals made and their outcomes;
   - upgrades executed;
   - parameter changes and their expected impact.
 
-Conflicts of interest SHOULD be disclosed by proponents and major voters where relevant, especially for treasury allocations or changes that materially benefit specific parties.
+Conflicts of interest should be disclosed by proponents and major voters where relevant, especially for treasury allocations or changes that materially benefit specific parties.
+

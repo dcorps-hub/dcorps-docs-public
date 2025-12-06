@@ -2,44 +2,6 @@
 
 **Document type**: Public-facing spec  
 **Doc ID**: SPEC-CORE-PUBLIC  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/public/spec/SPEC-CORE_PUBLIC.md`)
-
-> Scope: Public subset of `docs/spec/SPEC-CORE.md` for integrators and external reviewers.
-
----
-
-## 1. Introduction
-
-_Summarize the goal of the public spec and its relationship to the internal normative spec._
-
----
-
-## 2. Key concepts and terminology
-
-_Define essential concepts that external integrators must understand._
-
----
-
-## 3. Core behavior (public view)
-
-_Describe stable, externally visible behavior of the Hub without internal-only details._
-
----
-
-## 4. Integration considerations
-
-_Outline what external systems and applications need to know to integrate safely._
-
----
-
-## 5. Versioning and compatibility
-
-_Explain how changes to this public spec are communicated and versioned._
-# dCorps Hub Protocol – Core Specification (Public View)
-
-**Document type**: Public-facing spec  
-**Doc ID**: SPEC-CORE-PUBLIC  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/public/spec/SPEC-CORE_PUBLIC.md`)
 
@@ -93,7 +55,7 @@ From an integrator’s perspective:
 - tagged flows can be consumed and aggregated into reports;
 - module and sub chain registries can be consulted to understand which components are active and at what risk tiers.
 
-Integrators SHOULD treat the published data standards and APIs as the authoritative guide for consuming this information.
+Integrators should treat the published data standards and APIs as the authoritative guide for consuming this information.
 
 ---
 
@@ -105,7 +67,7 @@ When integrating with the dCorps Hub:
 - rely on the published data schemas for interpreting tags and categories;
 - handle governance-driven changes, such as parameter updates or module upgrades, gracefully (e.g. by monitoring events and registries).
 
-Applications that surface dCorps data to end users SHOULD:
+Applications that surface dCorps data to end users should:
 
 - clearly distinguish facts (on-chain amounts, timestamps) from interpretations (e.g. “program spend”);
 - surface recognition tiers and risk labels for modules and sub chains;
@@ -117,12 +79,13 @@ Applications that surface dCorps data to end users SHOULD:
 
 The public core spec:
 
-- will be versioned alongside protocol releases;
-- will clearly document breaking and non-breaking changes;
-- will maintain backward compatibility wherever feasible for external integrators.
+- is versioned alongside protocol releases;
+- documents breaking and non-breaking changes;
+- maintains backward compatibility wherever feasible for external integrators.
 
-Integrators SHOULD:
+Integrators should:
 
 - monitor official channels for spec and protocol updates;
 - test integrations against staging or testnet environments when major changes are announced;
 - plan for periodic review of their assumptions about data formats and governance behaviors.
+

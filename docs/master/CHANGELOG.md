@@ -25,8 +25,8 @@ Suggested entry format:
 
 ## 2. Unreleased changes
 
-_TODO: Log changes that are approved but not yet part of a tagged release._
+Use this section to log changes that have been approved and merged to the Master Reference but are not yet part of a tagged release.
 
 ## 3. Release history
 
-_TODO: Add the first tagged release entry here once `DCHUB_MASTER.md` is versioned beyond v0.1._
+Add entries here once `DCHUB_MASTER.md` is versioned beyond v0.1, following the suggested format above.

@@ -2,44 +2,6 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-FOUNDATION  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/policy/POL-FOUNDATION.md`)
-
-> Scope: Governance, mission, and operating principles of the dCorps Foundation.
-
----
-
-## 1. Mission and scope
-
-_Describe the foundation’s mission and what it is responsible for._
-
----
-
-## 2. Board and committees
-
-_Define the board structure, committees (if any), and their responsibilities._
-
----
-
-## 3. Conflicts of interest and ethics
-
-_Outline conflict-of-interest rules, related-party restrictions, and ethical standards._
-
----
-
-## 4. Relationship to on-chain governance
-
-_Explain how the foundation relates to and respects on-chain governance decisions._
-
----
-
-## 5. Transparency, reporting, and audits
-
-_Describe reporting cadence, disclosures, and audit requirements._
-# dCorps Foundation – Governance Policy
-
-**Document type**: Policy  
-**Doc ID**: POL-FOUNDATION  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-FOUNDATION.md`)
 
@@ -56,7 +18,7 @@ The dCorps Foundation exists to:
 - engage with regulators, jurisdictions, and partners on behalf of the ecosystem;
 - act as a bridge between on-chain governance and off-chain legal and financial realities.
 
-The foundation does **not** control the protocol unilaterally; it operates within the bounds of on-chain governance decisions and legal obligations.
+The foundation does not control the protocol unilaterally; it operates within the bounds of on-chain governance decisions and legal obligations.
 
 ---
 
@@ -68,13 +30,13 @@ The foundation is overseen by a board of directors or trustees that:
 - approves budgets and major commitments;
 - appoints and supervises executive leadership.
 
-The board MAY establish committees (e.g. audit, grants, security) with:
+The board may establish committees (e.g. audit, grants, security) with:
 
 - clear charters and scopes;
 - defined membership and reporting lines;
 - no authority beyond that delegated by the board.
 
-Board composition SHOULD:
+Board composition should:
 
 - include a mix of technical, legal, and ecosystem expertise;
 - reflect diversity of perspectives and geographies where feasible;
@@ -84,13 +46,13 @@ Board composition SHOULD:
 
 ## 3. Conflicts of interest and ethics
 
-Board members, executives, and key staff MUST:
+Board members, executives, and key staff:
 
 - disclose material conflicts of interest (e.g. large holdings, roles in partner organizations);
 - recuse themselves from decisions where conflicts are significant;
 - avoid using insider information for personal gain.
 
-The foundation SHOULD maintain:
+The foundation maintains:
 
 - a written code of ethics;
 - procedures for handling complaints or alleged misconduct;
@@ -108,9 +70,9 @@ The foundation:
 
 In cases where legal obligations prevent the foundation from executing a governance decision as written:
 
-- it SHOULD communicate constraints clearly and promptly;
-- it SHOULD propose alternative implementations or mitigations;
-- it MUST document the divergence and rationale.
+- it communicates constraints clearly and promptly;
+- it proposes alternative implementations or mitigations where possible;
+- it documents the divergence and rationale.
 
 The long-term objective is to reduce reliance on any single legal entity, including the foundation, as decentralized governance and tooling mature.
 
@@ -118,13 +80,14 @@ The long-term objective is to reduce reliance on any single legal entity, includ
 
 ## 5. Transparency, reporting, and audits
 
-The foundation SHOULD:
+The foundation:
 
-- publish annual reports summarizing activities, finances, and major decisions;
-- provide regular updates on grants, partnerships, and research initiatives;
-- undergo independent financial audits as required by applicable law and best practices.
+- publishes annual reports summarizing activities, finances, and major decisions;
+- provides regular updates on grants, partnerships, and research initiatives;
+- undergoes independent financial audits as required by applicable law and best practices.
 
-Where possible, the foundation SHOULD:
+Where possible, the foundation:
 
-- use the dCorps Hub itself for its own governance evidence and financial flows;
-- tag and report its on-chain activity using standard schemas, serving as a reference implementation for others.
+- uses the dCorps Hub itself for its own governance evidence and financial flows;
+- tags and reports its on-chain activity using standard schemas, serving as a reference implementation for others.
+

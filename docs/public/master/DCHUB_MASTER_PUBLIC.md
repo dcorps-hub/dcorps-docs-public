@@ -2,50 +2,6 @@
 
 **Document type**: Public-facing reference  
 **Doc ID**: DCHUB-MASTER-PUBLIC  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/public/master/DCHUB_MASTER_PUBLIC.md`)
-
-> Scope: Public subset of `docs/master/DCHUB_MASTER.md`, stripped of internal notes, open questions, and non-public details.
-
----
-
-## 1. Purpose and audience
-
-_Summarize what this public view is for and who should read it._
-
----
-
-## 2. High-level overview
-
-_Provide a high-level description of the dCorps Hub consistent with the internal Master Reference but safe for public use._
-
----
-
-## 3. Core concepts
-
-_Introduce key concepts (entities, modules, sub chains, DCHUB token) at a high level._
-
----
-
-## 4. Protocol architecture (public view)
-
-_Describe the architecture at a level suitable for external readers and integrators._
-
----
-
-## 5. Governance and security (public view)
-
-_Summarize governance and security posture without exposing internal processes that must remain confidential._
-
----
-
-## 6. Disclaimers
-
-_Reiterate non-offer, non-investment, and other disclaimers in a form suitable for public docs._
-# dCorps Hub Master Reference – Public View
-
-**Document type**: Public-facing reference  
-**Doc ID**: DCHUB-MASTER-PUBLIC  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/public/master/DCHUB_MASTER_PUBLIC.md`)
 
@@ -67,18 +23,18 @@ It is written for:
 - builders and integrators of applications and tools;
 - regulators, policymakers, and researchers seeking to understand the protocol at a high level.
 
-This document does **not** contain internal design notes, risk annotations, or detailed economics. It is not a legal, tax, or investment document.
+This document does not contain internal design notes, risk annotations, or detailed economics. It is not a legal, tax, or investment document.
 
 ---
 
 ## 2. High-level overview
 
-dCorps is a Web3-native base layer for **corporations** and **nonprofit organizations**. It provides:
+dCorps is a Web3-native base layer for corporations and nonprofit organizations. It provides:
 
-- a dedicated **Hub blockchain** that acts as a global registry and coordination layer for entities;
-- standardized **on-chain models** for governance, roles, and wallets;
-- a common **tagging and reporting framework** for on-chain flows, enabling transparent cash-based operating views;
-- interfaces for **protocol modules** and **recognized sub chains** that extend functionality without fragmenting core identity and data.
+- a dedicated Hub blockchain that acts as a global registry and coordination layer for entities;
+- standardized on-chain models for governance, roles, and wallets;
+- a common tagging and reporting framework for on-chain flows, enabling transparent cash-based operating views;
+- interfaces for protocol modules and recognized sub chains that extend functionality without fragmenting core identity and data.
 
 In early phases, the Hub focuses on:
 
@@ -109,7 +65,7 @@ Key concepts include:
   - Separate blockchains that anchor state back to the Hub under shared standards.
   - Use the Hub as a coordination and evidence root.
 
-Together, these pieces aim to make serious entities more **transparent, programmable, and verifiable** without replacing legal systems.
+Together, these pieces aim to make serious entities more transparent, programmable, and verifiable without replacing legal systems.
 
 ---
 
@@ -144,7 +100,7 @@ Security posture:
 
 - defense in depth across protocol, infrastructure, and process;
 - rigorous audits and a bug bounty program for critical components;
--, over time, a transparent track record of incident handling and continuous improvements.
+- over time, a transparent track record of incident handling and continuous improvements.
 
 External participants (validators, developers, entities) remain responsible for their own security practices and risk management.
 
@@ -161,3 +117,4 @@ Nothing in this document:
 This document is a technical and conceptual description of the dCorps protocol as currently envisioned. Details may change with engineering work, legal advice, market conditions, and community input.
 
 Participants are responsible for obtaining their own professional advice and complying with applicable laws in all relevant jurisdictions.
+

@@ -2,50 +2,6 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-DATA  
-**Status**: Draft  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-DATA.md`)
-
-> Scope: Data models, schemas, chart of accounts, and tagging standards used across the Hub and modules.
-
----
-
-## 1. Introduction
-
-_Summarize the role of data standards in making entities, wallets, and flows comparable and analyzable._
-
----
-
-## 2. Entity models
-
-_Define schemas for corporations, nonprofits, and related entity types._
-
----
-
-## 3. Wallet and account structure
-
-_Describe wallet types, relationships, and how they map to accounting constructs._
-
----
-
-## 4. Transaction and event schemas
-
-_Specify schemas for core events and tagged accounting flows._
-
----
-
-## 5. Chart of accounts and tagging
-
-_Define categories, tags, and any controlled vocabularies._
-
----
-
-## 6. Versioning and migration
-
-_Explain how schema versions are managed and how migrations are handled._
-# dCorps – Data Standards and Schemas
-
-**Document type**: Normative spec  
-**Doc ID**: SPEC-DATA  
 **Status**: Draft v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-DATA.md`)
 
@@ -55,7 +11,7 @@ _Explain how schema versions are managed and how migrations are handled._
 
 ## 1. Introduction
 
-dCorps is intended to be a **shared language** for entities, donors, auditors, and applications. That language is implemented as:
+dCorps is intended to be a shared language for entities, donors, auditors, and applications. That language is implemented as:
 
 - standardized entity and wallet models;
 - consistent tagging and chart-of-accounts structures;
@@ -223,3 +179,4 @@ Migrations MUST be:
 - testable and reversible where feasible;
 - accompanied by monitoring and validation checks;
 - communicated clearly to affected entities and operators.
+
