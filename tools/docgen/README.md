@@ -23,6 +23,7 @@ Typical inputs:
 - `docs/master/DCHUB_MASTER.md` and related master files;
 - specification files under `docs/spec/`;
 - policy, token, and security documents where relevant.
+- restricted material under `docs/restricted/` (excluded from public outputs).
 
 Typical outputs:
 
@@ -58,6 +59,8 @@ Marker syntax and behavior should be documented here alongside any implemented s
 Docgen scripts are not implemented in this repo yet. For now, public-facing files under `docs/public/` are maintained manually.
 
 If/when docgen is implemented, document the exact commands and options here (including any scripts added under `tools/docgen/`), and describe the expected outputs under `docs/public/`.
+
+Public outputs MUST exclude `docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 ---
 

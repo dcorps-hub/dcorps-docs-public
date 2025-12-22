@@ -30,7 +30,7 @@
 
 - Read `docs/public/technical/TECHNICAL_OVERVIEW.md`.
 - Then use `docs/public/technical/INTEGRATION_GUIDE.md`.
-- For normative behavior and schemas, use the specs under `docs/spec/`.
+- For normative behavior and schemas, use the specs under `docs/spec/` (these are intended to be public, and are included in this repo’s public-by-default posture).
 
 **If you are a validator**
 
@@ -77,6 +77,8 @@ Normative specs (developer and auditor oriented):
 - `docs/spec/SPEC-PARAMS.md`
 - `docs/spec/SPEC-INDEXER.md`
 - `docs/spec/SPEC-CONFORMANCE-TESTS.md`
+
+Publication note: documentation is public by default; only safety-sensitive operational material is intended to be kept out of public distribution under `docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 ---
 

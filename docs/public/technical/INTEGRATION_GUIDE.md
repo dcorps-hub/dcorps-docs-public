@@ -13,6 +13,8 @@
 
 This guide is descriptive. Normative behavior, schemas, and compatibility rules are defined in `docs/spec/`. Nothing here is investment, legal, tax, or accounting advice.
 
+Note: In this repo, `docs/spec/` is part of the public documentation set. Only safety-sensitive operational material is intended to be kept out of public distribution under `docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
+
 ---
 
 ## 1. Choose your integration surface

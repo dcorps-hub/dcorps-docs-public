@@ -15,7 +15,7 @@ This repo exists to:
 - Hold the **Master Reference** for the dCorps Hub.
 - Hold **normative specs** for protocol behavior, parameters, modules, and data.
 - Hold **governance, treasury, token, and security policies**.
-- Maintain **public facing docs** that are safe to share externally under `docs/public/`.
+- Publish documentation **public by default**, with safety-sensitive exceptions under `docs/restricted/` (see `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 Anything that defines how the protocol works, how entities behave, or how we describe dCorps externally should live here first, then be surfaced outward through controlled exports (manual for now; see `tools/docgen/README.md`).
 
@@ -72,3 +72,24 @@ tools/
   docgen/
     README.md                  Doc generation notes
 ```
+
+---
+
+## 3. GitHub visibility and publishing policy
+
+This repo is designed for **transparency by default**: most documents are intended to be safe for public reading and reuse.
+
+What must be private (or excluded from public distribution):
+
+- Any document that would materially increase attack success if published (detailed operational runbooks, attacker-enabling exploit paths, internal infrastructure specifics, embargoed security findings).
+- Any secrets (private keys, mnemonics, credentials, `.env` contents). Do not store live secrets in Git.
+
+How we organize this:
+
+- Public-by-default docs live throughout `docs/` (including `docs/spec/`, `docs/policy/`, `docs/security/`, and `docs/token/`).
+- Safety-sensitive operational material belongs under `docs/restricted/` and must be excluded from the public website and public exports.
+
+If repository visibility changes:
+
+- If the repository is made public, review `docs/restricted/` first and remove or redact anything that creates undue safety risk.
+- Use the policy as the source of truth: `docs/policy/POL-DOCS-PUBLICATION.md`.
