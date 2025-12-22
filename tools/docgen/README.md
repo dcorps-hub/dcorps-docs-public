@@ -36,26 +36,28 @@ All outputs should be clearly traceable back to specific versions of source file
 
 ## 3. Tag and marker conventions
 
-To safely generate public docs from internal sources, the tooling may rely on markers such as:
+When docgen tooling is introduced, it may rely on markers such as:
 
 - `[RISK-NOTE]` – internal-only risk annotations;
 - `[INTENT-PLANNED]` – planned but not yet implemented behavior;
 - `[OPEN-QUESTION]` – unresolved design questions;
 - `[INTERNAL-ONLY] ... [/INTERNAL-ONLY]` – explicit blocks to be excluded from public outputs.
 
-Docgen scripts:
+Planned behavior for docgen scripts:
 
 - strip or transform internal-only markers for public artifacts;
 - optionally include simplified or redacted versions of some content;
 - fail fast or warn loudly if markers are malformed or inconsistent.
 
-The exact marker syntax and behavior is documented here once finalized.
+Marker syntax and behavior should be documented here alongside any implemented scripts.
 
 ---
 
 ## 4. Running the tooling
 
-To use docgen locally (once implemented):
+Docgen scripts are not implemented in this repo yet. For now, public-facing files under `docs/public/` are maintained manually.
+
+If/when docgen is implemented, a local workflow would look like:
 
 1. ensure required dependencies are installed (e.g. a scripting language, Markdown parser);
 2. run the main docgen command from the repository root, for example:
@@ -67,7 +69,7 @@ To use docgen locally (once implemented):
 3. inspect the generated files under `docs/public/` and other targets;
 4. include updated outputs in commits where appropriate.
 
-Actual command names and options are documented here once the scripts exist.
+If scripts are added, document the exact commands and options here.
 
 ---
 
@@ -84,4 +86,3 @@ When editing the docgen tooling itself:
 - maintain tests or sample runs where feasible;
 - document breaking changes to marker behavior or output formats;
 - coordinate with maintainers of downstream websites and docs that depend on generated outputs.
-

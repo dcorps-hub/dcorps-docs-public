@@ -2,7 +2,7 @@
 
 **Document type**: Security policy  
 **Doc ID**: BUG-BOUNTY  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/security/BUG-BOUNTY.md`)
 
 > Scope: Rules and process for reporting vulnerabilities and receiving rewards. Actual reward amounts and legal terms are defined in separate, finalized program documents.
@@ -93,4 +93,3 @@ The program intends to provide safe harbor for good-faith security research with
 - working collaboratively with researchers to fix issues before public disclosure.
 
 Final, legally binding safe harbor language is published in the live bounty terms. Researchers are encouraged to review those terms carefully before beginning testing.
-

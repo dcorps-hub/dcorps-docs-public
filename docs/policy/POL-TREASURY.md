@@ -2,7 +2,7 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-TREASURY  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-TREASURY.md`)
 
 > Scope: Management of protocol and foundation treasury assets, including objectives, controls, and transparency expectations.
@@ -21,7 +21,7 @@ Treasury operations:
 
 - prioritize safety and continuity over speculative returns;
 - avoid conflicts of interest and self-dealing;
-- align with the non-profit mission of the foundation where applicable.
+- align with the nonprofit mission of the foundation where applicable.
 
 ---
 
@@ -106,4 +106,3 @@ Treasury transparency is essential to trust. At minimum:
   - material changes in strategy or risk.
 
 Where possible, reporting is derived directly from tagged on-chain activity, using the same data standards available to all other entities operating on dCorps.
-

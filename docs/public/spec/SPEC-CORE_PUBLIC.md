@@ -2,7 +2,7 @@
 
 **Document type**: Public-facing spec  
 **Doc ID**: SPEC-CORE-PUBLIC  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/public/spec/SPEC-CORE_PUBLIC.md`)
 
 > Scope: Public subset of `docs/spec/SPEC-CORE.md` for integrators and external reviewers. This document focuses on externally visible behavior and concepts.
@@ -41,7 +41,7 @@ These concepts are stable entry points; details such as exact message names or e
 
 ## 3. Core behavior (public view)
 
-At a high level, the Hub:
+High-level summary of the Hub:
 
 - allows entities to be registered with minimal required metadata and canonical wallets;
 - records updates to entity metadata, roles, and wallet bindings;
@@ -88,4 +88,3 @@ Integrators should:
 - monitor official channels for spec and protocol updates;
 - test integrations against staging or testnet environments when major changes are announced;
 - plan for periodic review of their assumptions about data formats and governance behaviors.
-

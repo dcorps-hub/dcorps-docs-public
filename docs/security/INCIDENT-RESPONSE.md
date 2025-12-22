@@ -2,7 +2,7 @@
 
 **Document type**: Security playbook  
 **Doc ID**: INCIDENT-RESPONSE  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/security/INCIDENT-RESPONSE.md`)
 
 > Scope: Process and roles for detecting, triaging, and responding to security incidents affecting the dCorps Hub, modules, and related infrastructure.
@@ -87,4 +87,3 @@ After an incident is resolved:
 - a postmortem is conducted, focusing on root causes and lessons learned;
 - follow-up actions are tracked (e.g. additional audits, process improvements);
 - relevant documentation (Threat Model, Security Policy, etc.) is updated.
-

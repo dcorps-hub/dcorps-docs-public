@@ -2,7 +2,7 @@
 
 **Document type**: Policy  
 **Doc ID**: SECURITY-POLICY  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/security/SECURITY-POLICY.md`)
 
 > Scope: Security principles, responsibilities, and baseline controls for the dCorps protocol and foundation. This policy is complementary to the Threat Model, Audit Plan, Bug Bounty, and Incident Response documents.
@@ -110,4 +110,3 @@ Operational guidance covers:
 - backups and disaster recovery plans for critical systems.
 
 Validators and ecosystem participants are encouraged to adopt similar best practices, adapted to their own risk profiles.
-

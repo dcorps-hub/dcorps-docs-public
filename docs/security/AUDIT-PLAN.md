@@ -2,7 +2,7 @@
 
 **Document type**: Security process  
 **Doc ID**: AUDIT-PLAN  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/security/AUDIT-PLAN.md`)
 
 > Scope: Planning and execution framework for security and code audits across the dCorps protocol, modules, and critical tooling.
@@ -97,4 +97,3 @@ Where legally and practically feasible:
 - timelines for future audits are communicated.
 
 Confidentiality constraints (e.g. on specific exploit paths) may require partial or delayed disclosure, but the default posture is transparency balanced with responsible disclosure practices.
-

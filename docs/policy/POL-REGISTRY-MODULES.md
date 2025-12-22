@@ -2,7 +2,7 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-REGISTRY-MODULES  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-REGISTRY-MODULES.md`)
 
 > Scope: Rules for listing, maintaining, and delisting modules and applications in official dCorps registries.
@@ -101,4 +101,3 @@ For apps and tools:
 - registry maintainers may delist quickly in response to credible security issues or abuse, with public post-hoc explanations when appropriate.
 
 Delisting does not retroactively validate or invalidate past use; users remain responsible for their own decisions. The objective is to provide timely, transparent signals about ongoing risk.
-

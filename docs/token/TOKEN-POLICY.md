@@ -2,7 +2,7 @@
 
 **Document type**: Token policy  
 **Doc ID**: TOKEN-POLICY  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/token/TOKEN-POLICY.md`)
 
 > Scope: Purpose, allowed uses, and constraints for the DCHUB token, consistent with the Master Reference disclaimers. This document is not an offer or solicitation of any kind.
@@ -45,25 +45,18 @@ Applications and services may accept DCHUB for their own purposes, but such uses
 
 ## 3. Supply and monetary policy
 
-This policy provides high-level guidance; detailed figures and schedules are defined in `TOKEN-GENESIS-PLAN.md` and `TOKEN-EMISSIONS-NOTES.md`.
+This policy provides high-level guidance; detailed figures and schedules are defined in:
 
-Principles:
+- `docs/token/TOKEN-GENESIS-PLAN.md` (supply and allocations at genesis), and
+- `docs/token/TOKEN-EMISSIONS-NOTES.md` (how tokens enter circulation over time).
 
-- target a sustainable security budget for staking and network operations;
-- avoid unnecessary inflation once the network reaches maturity;
-- maintain flexibility to adjust parameters through governance as conditions change.
+v1 supply stance (as described in `docs/master/DCHUB_MASTER.md`, section 10):
 
-Potential supply components include:
+- DCHUB has a fixed hard-cap total supply minted at genesis.
+- There is no discretionary inflation path intended to create additional DCHUB beyond what was created at genesis.
+- “Emissions” refers to tokens entering circulation from predefined allocations (for example the staking and validator rewards pool), not supply creation beyond the fixed cap.
 
-- an initial genesis allocation;
-- protocol-level emissions (if any) for staking rewards;
-- allocations for ecosystem growth, research, and foundation operations.
-
-Any changes to monetary policy are:
-
-- debated transparently;
-- enacted via on-chain governance;
-- documented in the Master Reference and changelog.
+Any changes to supply-related mechanics (for example release caps or rewards distribution parameters) should be debated transparently, enacted via on-chain governance, and documented in the Master Reference and related policy artifacts.
 
 ---
 
@@ -71,12 +64,13 @@ Any changes to monetary policy are:
 
 On-chain governance may control:
 
-- inflation rates and emission curves where applicable;
+- the rewards pool distribution schedule and related parameters, within predefined bounds;
+- community program release caps and related guardrails;
 - minimum and maximum staking reward rates;
 - parameters governing recognition deposits and fees;
 - distribution mechanisms for community or ecosystem allocations.
 
-High-impact changes (e.g. major shifts in inflation or supply) should:
+High-impact changes (e.g. major shifts in emissions schedules, release caps, or supply availability) should:
 
 - have stronger approval thresholds and longer voting periods;
 - be accompanied by analysis, scenarios, and stress tests;
@@ -99,4 +93,3 @@ Participants are responsible for:
 - understanding and complying with laws in relevant jurisdictions;
 - obtaining professional advice where appropriate;
 - making their own risk assessments when acquiring, holding, or using DCHUB.
-

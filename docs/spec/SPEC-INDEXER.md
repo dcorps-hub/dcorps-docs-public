@@ -2,7 +2,7 @@
 
 **Document type**: Reference spec  
 **Doc ID**: SPEC-INDEXER  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-INDEXER.md`)
 
 > Scope: Expected behavior of a reference indexer and explorer for the Hub, modules, and recognized sub chains. This is non-normative for the chain, but normative for reference tooling.
@@ -99,4 +99,3 @@ Public-facing explorers SHOULD:
 - display data freshness in the UI;
 - indicate when data is delayed or incomplete;
 - provide links to raw transaction and block data where possible, enabling verification.
-

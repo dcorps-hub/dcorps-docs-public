@@ -1,9 +1,8 @@
 # dcorps-docs
 
-Master documentation and specifications for the dCorps Hub protocol, entity models, and governance. This repo is the internal source of truth that all public docs, specs, and reference tooling are generated from.
+Master documentation and specifications for the dCorps Hub protocol, including the Master Reference (whitepaper), protocol specifications, policies, security documents, and token documentation.
 
-> Status: early internal working repo  
-> Confidentiality: internal only, not for public redistribution
+> Status: publication-ready documentation set
 
 ---
 

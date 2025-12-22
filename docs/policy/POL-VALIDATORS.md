@@ -2,7 +2,7 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-VALIDATORS  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-VALIDATORS.md`)
 
 > Scope: Expectations, responsibilities, and consequences for validators participating in the dCorps Hub.
@@ -85,11 +85,10 @@ Validators are encouraged to:
 
 - publish basic profiles (infrastructure, policies, fees, contact details);
 - disclose commission rates and any major changes clearly;
-- document their security posture at a high level (without exposing sensitive details).
+- provide a high-level summary of their security posture (without exposing sensitive details).
 
 Community members, explorers, and indexers may:
 
 - monitor validator performance and behavior;
 - surface metrics and flags (e.g. frequent downtime, governance participation);
 - provide reputational signals while remaining clear that delegators make their own decisions.
-

@@ -1,4 +1,4 @@
-# dCorps Hub *Whitepaper*
+# dCorps Hub Whitepaper (Public)
 
 #### Digitally native base layer for corporations and nonprofits, born and operated on-chain
 
@@ -6,7 +6,8 @@
 
 **Document ID**: DCHUB-WP-2025-12-21
 **Version**: v1.3.1
-**Status**: very final master (minor numbering and copy polish)
+**Edition**: Public
+**Status**: Final v1.3.1 (public)
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
  [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)

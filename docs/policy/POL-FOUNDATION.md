@@ -2,7 +2,7 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-FOUNDATION  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-FOUNDATION.md`)
 
 > Scope: Governance, mission, and operating principles of the dCorps Foundation as a nonprofit steward of the protocol.
@@ -90,4 +90,3 @@ Where possible, the foundation:
 
 - uses the dCorps Hub itself for its own governance evidence and financial flows;
 - tags and reports its on-chain activity using standard schemas, serving as a reference implementation for others.
-

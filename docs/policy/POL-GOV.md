@@ -2,7 +2,7 @@
 
 **Document type**: Policy  
 **Doc ID**: POL-GOV  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/policy/POL-GOV.md`)
 
 > Scope: Governance structures and processes for the dCorps protocol and related artifacts. This charter describes how decisions are proposed, evaluated, and adopted at the protocol level.
@@ -20,7 +20,7 @@ The governance mission is to:
 
 Key principles:
 
-- **Safety over speed** – changes that affect security, monetary policy, or recognition move slowly and predictably.
+- **Safety over speed** – changes that affect security, token supply and emissions mechanics, or recognition move slowly and predictably.
 - **Neutrality** – the Hub does not favor specific jurisdictions, entities, or applications beyond transparent, policy-based distinctions.
 - **Transparency** – major decisions and their rationales are documented and discoverable.
 - **Subsidiarity** – where possible, decisions are pushed to entities, modules, and sub chains rather than centralized at the Hub.
@@ -101,6 +101,26 @@ Governance should:
 
 Delegation mechanisms should make it easy for token holders to delegate voting power while retaining ultimate control.
 
+### 4.1 Protected Changes (higher thresholds)
+
+Some proposal classes are designated as **Protected Changes** and are intended to require higher approval thresholds and additional safety mechanisms.
+
+Examples include:
+
+- re-enabling emergency powers after a sunset period;
+- material changes to shared security assumptions for recognized sub chains;
+- changes to hard limits that protect non-custodial boundaries and censorship-resistance commitments.
+
+Baseline requirement for a Protected Change (see `docs/master/DCHUB_MASTER.md`, section 13.3.5):
+
+- **Quorum**: 25% of voting power participating
+- **Passing threshold**: 67% Yes of participating voting power
+
+In addition, Protected Changes are expected to include:
+
+- **Stake age requirement (anti-raid)**: only bonded stake older than a parameterized minimum age is counted toward quorum and voting power for Protected Changes.
+- **Execution timelock**: after a Protected Change passes, execution occurs only after a parameterized delay unless a narrowly defined emergency path applies.
+
 ---
 
 ## 5. Upgrades and emergency procedures
@@ -149,4 +169,3 @@ To maintain trust:
   - parameter changes and their expected impact.
 
 Conflicts of interest should be disclosed by proponents and major voters where relevant, especially for treasury allocations or changes that materially benefit specific parties.
-

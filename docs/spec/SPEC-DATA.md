@@ -2,7 +2,7 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-DATA  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-DATA.md`)
 
 > Scope: Data models, schemas, chart of accounts, and tagging standards used across the Hub and modules.
@@ -45,7 +45,7 @@ Each entity record SHOULD include:
 - `display_name`;
 - `lifecycle_status` (e.g. draft, active, suspended, dissolved);
 - `created_at` (time/height);
-- optional `jurisdiction_code` and external identifiers where a jurisdiction module binds them.
+- optional `jurisdiction_code` and external identifiers where a jurisdiction adapter module binds them.
 
 ### 2.2 Extensions
 
@@ -179,4 +179,3 @@ Migrations MUST be:
 - testable and reversible where feasible;
 - accompanied by monitoring and validation checks;
 - communicated clearly to affected entities and operators.
-

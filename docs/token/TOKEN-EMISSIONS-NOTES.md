@@ -1,82 +1,102 @@
-# DCHUB Token – Emissions Notes
+# DCHUB Token – Emissions and Rewards
 
-**Document type**: Working notes  
+**Document type**: Token reference  
 **Doc ID**: TOKEN-EMISSIONS-NOTES  
-**Status**: Draft (internal working)  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/token/TOKEN-EMISSIONS-NOTES.md`)
 
-> Scope: Working notes, scenarios, and rationale for emissions and long-term token flows. This document is exploratory and non-normative.
+> Scope: How DCHUB enters circulation over time under the fixed-supply model described in `docs/master/DCHUB_MASTER.md` (section 10). This document describes protocol mechanics, not market outcomes.
 
 ---
 
-## 1. Modeling assumptions
+## 1. Definitions
 
-Key assumptions to be explicitly tracked here include:
+This document uses the same vocabulary as the Master Reference:
 
-- anticipated number of validators and target decentralization;
-- desired real yield for stakers versus alternative opportunities;
-- expected usage growth and fee revenues over time;
-- tolerance for dilution of long-term holders.
-
-Assumptions should be versioned and dated so that changes in context are clear.
+- **Minted supply**: DCHUB that exists on-chain, including tokens held in vesting contracts, module accounts, and distribution pools.
+- **Circulating supply**: DCHUB that is transferable by its holder without time locks or vesting restrictions and without a governance-controlled release step.
+- **Emissions**: tokens entering circulation from predefined allocations (for example the staking and validator rewards pool), not supply creation beyond the fixed cap.
 
 ---
 
-## 2. Emission models considered
+## 2. v1 supply stance (no discretionary inflation)
 
-Potential models to analyze may include:
+In v1, the design intention is:
 
-- fixed supply, fee-only rewards – zero protocol inflation; rewards funded solely from fees;
-- decaying inflation – higher emissions early that decay toward zero over time;
-- targeted inflation – adaptive inflation that targets a desired staking participation rate;
-- hybrid models – combining initial higher emissions with long-term caps.
+- total DCHUB supply is hard-capped and fully minted at genesis; and
+- there is no discretionary inflation path intended to create additional DCHUB beyond what was created at genesis.
 
-For each model, notes cover:
+“Emissions” refers to circulation over time from:
 
-- impacts on security and staking participation;
-- implications for long-term holders;
-- sensitivity to fee growth and market conditions.
+- rewards distribution,
+- governed releases from program pools, and
+- vesting unlocks from time-locked allocations.
 
 ---
 
-## 3. Selected model (if any)
+## 3. How DCHUB enters circulation
 
-Once a model is tentatively selected:
+In practice, DCHUB enters circulating supply through a small number of explicit mechanisms:
 
-- document its key parameters and rationale;
-- link to quantitative analyses, spreadsheets, or simulations;
-- list open questions that must be resolved before finalization.
+1. **Staking and validator rewards pool distribution**  
+   Rewards paid out from the rewards pool become circulating when distributed to validators and delegators.
+2. **Community and ecosystem program releases**  
+   Tokens leave governance-controlled custody through explicit grants, programs, or distributions, subject to release caps.
+3. **Insider vesting unlocks**  
+   Founder, team, and investor tokens enter circulation as they vest and become transferable.
+4. **Liquidity bootstrap deployment (if any)**  
+   A limited portion of supply may be deployed for operational liquidity at or shortly after TGE (subject to policy and disclosures).
 
-Selection recorded here does not constitute formal adoption; that requires a governance process and updates to `TOKEN-POLICY.md` and the Master Reference.
-
----
-
-## 4. Scenario notes
-
-This section is for ad hoc notes from scenario analysis, such as:
-
-- high-fee vs low-fee environment impacts;
-- validator concentration risks under different reward structures;
-- behavior under extreme conditions (e.g. sudden drop in token price).
-
-Authors should:
-
-- include dates and brief descriptions of methods used;
-- reference any external models or tools.
+All of these mechanisms are intended to be visible as on-chain state, contract schedules, and/or explicit governance actions.
 
 ---
 
-## 5. Open questions
+## 4. Staking and validator rewards schedule (genesis default)
 
-Open questions related to emissions are mirrored in `TBD_REGISTER.md` with:
+The Master Reference defines an illustrative genesis default schedule for the staking and validator rewards pool that sums to the pool cap of 180,000,000 DCHUB (see `docs/master/DCHUB_MASTER.md`, section 10.4A.5).
 
-- clear IDs;
-- proposed owners;
-- links back to relevant sections in this document.
+Illustrative schedule (per year after TGE):
 
-Examples include:
+- Year 1: 40,000,000
+- Year 2: 35,000,000
+- Year 3: 30,000,000
+- Year 4: 25,000,000
+- Year 5: 20,000,000
+- Year 6: 15,000,000
+- Year 7: 10,000,000
+- Year 8: 5,000,000
 
-- long-term target for staked percentage of circulating supply;
-- acceptable range for annualized inflation in steady state;
-- conditions under which emissions should be adjusted by governance.
+Total: 180,000,000
 
+As the rewards pool becomes materially depleted, the design intention is that validator incentives shift primarily to fee-based rewards (see `docs/master/DCHUB_MASTER.md`, section 10.6).
+
+---
+
+## 5. Community release caps (initial guardrails)
+
+To reduce sudden changes in circulating supply, the Master Reference describes explicit release caps for community program releases (see `docs/master/DCHUB_MASTER.md`, section 10.4A.6).
+
+Design intention for v1:
+
+- Maximum release into circulating supply: 50,000,000 DCHUB per year (measured over a rolling four-quarter window).
+- Maximum release in any single quarter: 20,000,000 DCHUB.
+
+These caps apply to tokens leaving governance-controlled community custody into transferable user addresses. Internal movements within governance-controlled custody do not count as “release”.
+
+---
+
+## 6. Governance controls and change safety
+
+Governance can adjust distribution parameters within predefined bounds and under the process described in the Governance Charter (`docs/policy/POL-GOV.md`).
+
+Changes that materially increase near-term emissions or raise release caps should be treated as high-impact changes and require stronger approval thresholds and longer lead times, consistent with the Master Reference’s “Protected Change” concept.
+
+---
+
+## 7. Transparency expectations
+
+To keep supply mechanics legible and auditable:
+
+- reference explorers and dashboards should publish minted supply and circulating supply explicitly as separate numbers;
+- vesting/lockup contracts and their unlock schedules should be easily inspectable; and
+- rewards distributions and governance-controlled releases should be traceable from source module accounts to recipient addresses.

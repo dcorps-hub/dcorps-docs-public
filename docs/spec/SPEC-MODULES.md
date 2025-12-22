@@ -2,10 +2,10 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-MODULES  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-MODULES.md`)
 
-> Scope: Standard for protocol modules (jurisdiction modules, sector frameworks, attestation modules, etc.) that extend the Hub without compromising its core invariants.
+> Scope: Standard for protocol modules (jurisdiction adapter modules, sector frameworks, attestation modules, etc.) that extend the Hub without compromising its core invariants.
 
 ---
 
@@ -13,7 +13,7 @@
 
 Modules are the primary mechanism for extending the dCorps Hub with:
 
-- jurisdiction-specific logic (e.g. entity recognition, filings);
+- jurisdiction adapter logic (e.g. entity recognition, filings);
 - sector frameworks (e.g. nonprofit program taxonomies, ESG labeling);
 - attestations and reputation systems;
 - advanced workflows that should not live in the Hub’s minimal core.
@@ -161,4 +161,3 @@ Modules MUST be designed and reviewed with the following in mind:
 5. **Auditability** – module state and key decisions SHOULD be observable and auditable via indexers.
 
 Governance SHOULD require audits or equivalent review for modules with high-impact capabilities, and SHOULD maintain a public record of those reviews in the security documentation (`AUDIT-PLAN.md`, `BUG-BOUNTY.md`).
-

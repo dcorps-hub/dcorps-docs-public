@@ -2,7 +2,7 @@
 
 **Document type**: Security analysis  
 **Doc ID**: THREAT-MODEL  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/security/THREAT-MODEL.md`)
 
 > Scope: Systematic analysis of threats, assets, and mitigations for the Hub, modules, and recognized sub chains. This document informs design, audits, and incident response.
@@ -15,7 +15,7 @@ This threat model focuses on:
 
 - the dCorps Hub chain and its core modules;
 - the protocol module layer and sub chain anchoring;
-- governance and treasury at a high level.
+- high-level governance and treasury.
 
 External applications, custodians, and user devices are in scope only to the extent that they interact with the Hub and can affect its security or trust assumptions.
 
@@ -122,4 +122,3 @@ Residual risks are clearly documented along with:
 - assumptions that may change over time;
 - areas where further research or tooling is needed;
 - recommendations for ecosystem participants to reduce their own exposure.
-

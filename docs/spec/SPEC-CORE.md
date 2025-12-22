@@ -2,7 +2,7 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CORE  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-CORE.md`)
 
 > Scope: Core behavior of the dCorps Hub chain as a registry and coordination layer for entities, roles, wallets, and baseline governance. This document is normative where explicitly stated.
@@ -32,7 +32,7 @@ This core specification defines:
 - the baseline transaction and governance flows needed to register and operate entities;
 - invariants and constraints that all conforming implementations must preserve.
 
-The goal is to keep the Hub itself **minimal, conservative, and neutral**, while allowing rich behavior to live in protocol modules, jurisdiction modules, sub chains, and off-chain applications.
+The goal is to keep the Hub itself **minimal, conservative, and neutral**, while allowing rich behavior to live in protocol modules, jurisdiction adapter modules, sub chains, and off-chain applications.
 
 ### 1.2 Audience
 
@@ -65,7 +65,7 @@ For the purposes of this spec:
 - **Hub nonprofit** – an entity modeled as a nonprofit/NGO on the Hub, with board-driven governance and allocation rules.
 - **Canonical wallet** – a designated on-chain address (or address set) associated with an entity for specific purposes (e.g. merchant wallet, donation wallet, treasury wallet).
 - **Tagged event** – an on-chain event or transaction output annotated with categories and tags per `SPEC-DATA.md`, enabling cash-based operating reporting.
-- **Module** – a protocol module that extends Hub functionality under `SPEC-MODULES.md` (e.g. jurisdiction module, sector framework, attestation module).
+- **Module** – a protocol module that extends Hub functionality under `SPEC-MODULES.md` (e.g. jurisdiction adapter module, sector framework, attestation module).
 - **Recognized sub chain** – a separate blockchain that implements recognition and anchoring rules under `SPEC-ANCHOR.md` and is registered on the Hub.
 - **Recognition tier** – a label describing the level and type of recognition granted to a sub chain by the Hub (e.g. experimental, standard, restricted).
 - **Governance** – the combination of on-chain voting, parameter changes, and upgrade mechanisms that affect the Hub protocol.
@@ -76,7 +76,7 @@ Terms such as **MUST**, **MUST NOT**, **SHOULD**, and **MAY** are to be interpre
 
 ## 3. High-level architecture
 
-At a high level, the Hub is a specialized Cosmos-based chain with the following major responsibilities:
+The Hub is a specialized Cosmos-based chain with the following high-level responsibilities:
 
 1. **Entity registry**
    - Assign globally unique identifiers for entities.
@@ -237,7 +237,7 @@ Governance proposal types SHOULD include:
 The Hub MUST provide hooks for modules to:
 
 - receive notifications about relevant events (e.g. entity creation, tag emission, governance outcomes);
-- veto or modify effects where explicitly allowed by module capabilities (e.g. jurisdiction module enforcing sanctions list checks).
+- veto or modify effects where explicitly allowed by module capabilities (e.g. jurisdiction adapter module enforcing sanctions list checks).
 
 The exact hook interface is defined in `SPEC-MODULES.md`.
 
@@ -290,4 +290,3 @@ An implementation is considered **conformant** with SPEC-CORE if:
 4. It documents any deliberate deviations or extensions and the rationale for them.
 
 Integrators SHOULD treat this spec as the authoritative description of expected Hub behavior and SHOULD report observed deviations via the project’s issue tracker and governance channels.
-

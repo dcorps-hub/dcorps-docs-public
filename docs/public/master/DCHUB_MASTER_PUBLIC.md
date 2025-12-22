@@ -2,10 +2,11 @@
 
 **Document type**: Public-facing reference  
 **Doc ID**: DCHUB-MASTER-PUBLIC  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/public/master/DCHUB_MASTER_PUBLIC.md`)
 
 > Scope: Public subset of `docs/master/DCHUB_MASTER.md`, stripped of internal notes, open questions, and non-public details. This document is descriptive and informational only.
+> Full public whitepaper (long version): `docs/public/master/DCHUB_WHITEPAPER_PUBLIC.md`
 
 ---
 
@@ -21,7 +22,7 @@ It is written for:
 
 - founders and operators of corporations and nonprofits;
 - builders and integrators of applications and tools;
-- regulators, policymakers, and researchers seeking to understand the protocol at a high level.
+- regulators, policymakers, and researchers seeking a high-level understanding of the protocol.
 
 This document does not contain internal design notes, risk annotations, or detailed economics. It is not a legal, tax, or investment document.
 
@@ -29,7 +30,7 @@ This document does not contain internal design notes, risk annotations, or detai
 
 ## 2. High-level overview
 
-dCorps is a Web3-native base layer for corporations and nonprofit organizations. It provides:
+dCorps is a digitally native base layer for corporations and nonprofit organizations. It provides:
 
 - a dedicated Hub blockchain that acts as a global registry and coordination layer for entities;
 - standardized on-chain models for governance, roles, and wallets;
@@ -60,7 +61,7 @@ Key concepts include:
   - On-chain transactions annotated with categories and tags.
   - Enable standardized reporting for income, spending, and allocations.
 - **Modules**
-  - Pluggable components that add domain-specific logic (e.g. jurisdiction modules, sector frameworks, attestations).
+  - Pluggable components that add domain-specific logic (e.g. jurisdiction adapter modules, sector frameworks, attestations).
 - **Recognized sub chains**
   - Separate blockchains that anchor state back to the Hub under shared standards.
   - Use the Hub as a coordination and evidence root.
@@ -117,4 +118,3 @@ Nothing in this document:
 This document is a technical and conceptual description of the dCorps protocol as currently envisioned. Details may change with engineering work, legal advice, market conditions, and community input.
 
 Participants are responsible for obtaining their own professional advice and complying with applicable laws in all relevant jurisdictions.
-

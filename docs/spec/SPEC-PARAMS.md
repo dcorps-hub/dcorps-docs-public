@@ -2,7 +2,7 @@
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-PARAMS  
-**Status**: Draft v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs (`docs/spec/SPEC-PARAMS.md`)
 
 > Scope: Parameter catalog and economic rules for the Hub and Hub-aligned sub chains. This spec defines how parameters are modeled and governed, not their final numeric values.
@@ -104,7 +104,7 @@ Implementations MAY support fee grants or sponsored transactions as described in
 
 Validator and delegator rewards come from:
 
-- protocol-level inflation (if any, per section 4);
+- the staking and validator rewards pool distribution (where a finite rewards pool is used and pre-funded at genesis); and
 - a portion of transaction fees.
 
 The reward distribution mechanism MUST:
@@ -127,7 +127,7 @@ Staking MUST be designed so that:
 - the cost of attacking the network is high relative to potential benefit;
 - small validators can participate meaningfully, subject to `max_validators`.
 
-Inflation parameters (if used) SHOULD be tuned to achieve a target **staking participation rate** (e.g. percentage of circulating DCHUB that is staked), with inflation gradually adjusting around that target.
+Reward pool distribution parameters and fee parameters SHOULD be tuned to support a target **staking participation rate** (e.g. percentage of circulating DCHUB that is staked), while avoiding sudden changes that destabilize validator economics.
 
 ### 4.2 Slashing
 
@@ -211,4 +211,3 @@ All parameter changes MUST be:
 - cross-referenced in the Master Reference and changelog where they affect protocol behavior.
 
 This spec, together with `SPEC-CORE.md`, SHOULD be kept up to date as parameters evolve, to avoid drift between documentation and actual behavior.
-
