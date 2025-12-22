@@ -47,6 +47,7 @@ docs/
     POL-REGISTRY-MODULES.md  Registry and Module Policy
     POL-VALIDATORS.md        Validator Charter
     POL-FOUNDATION.md        Foundation Charter
+    POL-DOCS-PUBLICATION.md  Documentation Publication Policy
   token/
     TOKEN-POLICY.md
     TOKEN-GENESIS-PLAN.md
@@ -57,6 +58,8 @@ docs/
     AUDIT-PLAN.md
     BUG-BOUNTY.md
     INCIDENT-RESPONSE.md
+  restricted/
+    README.md                Safety-sensitive material (excluded from public website/exports)
   public/
     INDEX.md                   Public doc map (start here)
     whitepaper/                Public whitepaper suite (exec → long)
@@ -65,6 +68,7 @@ docs/
     legal/                     Public disclaimers and risk disclosure
     master/
       DCHUB_MASTER_PUBLIC.md   Short public overview
+      DCHUB_WHITEPAPER_PUBLIC.md Public-facing master/whitepaper view
     spec/
       SPEC-CORE_PUBLIC.md      Public spec views
       ...

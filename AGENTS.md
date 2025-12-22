@@ -20,3 +20,8 @@ When the user asks to improve or rewrite text for a page or document in this rep
 - Avoid hypey marketing language; focus on clarity, credibility, and usefulness.
 - Keep terminology consistent with the rest of the project (“dCorps”, product names, etc.).
 - If something is ambiguous or underspecified, prefer neutral phrasing rather than guessing.
+
+## Documentation publication policy (repo conventions)
+- Documentation is intended to be public by default; safety-sensitive operational material belongs under `docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
+- Do not add or store live secrets in Git (keys, mnemonics, credentials, `.env` contents).
+- Public documents must not link to `docs/restricted/`.
