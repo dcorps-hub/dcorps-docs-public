@@ -57,19 +57,7 @@ Marker syntax and behavior should be documented here alongside any implemented s
 
 Docgen scripts are not implemented in this repo yet. For now, public-facing files under `docs/public/` are maintained manually.
 
-If/when docgen is implemented, a local workflow would look like:
-
-1. ensure required dependencies are installed (e.g. a scripting language, Markdown parser);
-2. run the main docgen command from the repository root, for example:
-
-   ```bash
-   ./tools/docgen/strip_internal.sh
-   ```
-
-3. inspect the generated files under `docs/public/` and other targets;
-4. include updated outputs in commits where appropriate.
-
-If scripts are added, document the exact commands and options here.
+If/when docgen is implemented, document the exact commands and options here (including any scripts added under `tools/docgen/`), and describe the expected outputs under `docs/public/`.
 
 ---
 

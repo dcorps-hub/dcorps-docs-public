@@ -6,6 +6,7 @@
 **Source repo**: dcorps-docs (`docs/public/spec/SPEC-CORE_PUBLIC.md`)
 
 > Scope: Public subset of `docs/spec/SPEC-CORE.md` for integrators and external reviewers. This document focuses on externally visible behavior and concepts.
+> Public index (recommended starting point): `docs/public/INDEX.md`
 
 ---
 
@@ -15,7 +16,7 @@ This public spec summarizes the core behavior of the dCorps Hub in a way that is
 
 - stable enough for integrators and tools to rely on;
 - high-level enough to avoid exposing internal implementation details;
-- aligned with the full internal spec and Master Reference.
+- aligned with the full specification and Master Reference.
 
 It is intended for:
 

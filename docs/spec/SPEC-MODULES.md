@@ -25,6 +25,8 @@ This spec defines:
 - how permissions and capabilities are modeled;
 - how modules interact with governance and other modules.
 
+Attestation-style modules that publish issuer-signed attestations SHOULD follow `docs/spec/SPEC-ATTESTATIONS.md` for record format, lifecycle, dispute/correction signaling, and reference interface presentation.
+
 The design goal is to allow rapid innovation at the module layer while keeping the Hub stable, neutral, and conservative.
 
 ---

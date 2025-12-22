@@ -6,7 +6,15 @@
 **Source repo**: dcorps-docs (`docs/public/master/DCHUB_MASTER_PUBLIC.md`)
 
 > Scope: Public subset of `docs/master/DCHUB_MASTER.md`, stripped of internal notes, open questions, and non-public details. This document is descriptive and informational only.
-> Full public whitepaper (long version): `docs/public/master/DCHUB_WHITEPAPER_PUBLIC.md`
+
+Quick links:
+
+- Public index (start here): `docs/public/INDEX.md`
+- Executive summary: `docs/public/whitepaper/EXECUTIVE_SUMMARY.md`
+- Litepaper: `docs/public/whitepaper/LITEPAPER.md`
+- Official whitepaper (mid-length): `docs/public/whitepaper/WHITEPAPER.md`
+- Long version: `docs/public/whitepaper/WHITEPAPER_LONG.md`
+- Nonprofit note: `docs/public/whitepaper/NONPROFIT_NOTE.md`
 
 ---
 
