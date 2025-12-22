@@ -62,16 +62,28 @@ docs/
     README.md                Safety-sensitive material (excluded from public website/exports)
   public/
     INDEX.md                   Public doc map (start here)
-    whitepaper/                Public whitepaper suite (exec → long)
-    investor/                  Investor and tokenomics summaries (informational)
-    technical/                 Public technical overview and integration guide
-    legal/                     Public disclaimers and risk disclosure
+    investor/
+      INVESTOR_BRIEF.md
+      TOKENOMICS_SUMMARY.md
+    legal/
+      DISCLAIMERS.md
+      RISK_DISCLOSURE.md
     master/
       DCHUB_MASTER_PUBLIC.md   Short public overview
       DCHUB_WHITEPAPER_PUBLIC.md Public-facing master/whitepaper view
     spec/
-      SPEC-CORE_PUBLIC.md      Public spec views
-      ...
+      SPEC-CORE_PUBLIC.md      Public spec view (core)
+    technical/
+      INTEGRATION_GUIDE.md
+      TECHNICAL_OVERVIEW.md
+    whitepaper/
+      EXECUTIVE_SUMMARY.md
+      FAQ.md
+      GLOSSARY.md
+      LITEPAPER.md
+      NONPROFIT_NOTE.md
+      WHITEPAPER.md
+      WHITEPAPER_LONG.md
 tools/
   docgen/
     README.md                  Doc generation notes
