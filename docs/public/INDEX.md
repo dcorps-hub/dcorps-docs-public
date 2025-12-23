@@ -55,6 +55,7 @@ Full documentation map: `docs/INDEX.md`.
 
 - `docs/public/master/DCHUB_MASTER_PUBLIC.md` (short overview)
 - `docs/public/whitepaper/EXECUTIVE_SUMMARY.md` (1–2 pages)
+- `docs/public/whitepaper/WHITEPAPER_PLAIN_LANGUAGE.md` (plain-language public whitepaper, full coverage)
 - `docs/public/whitepaper/LITEPAPER.md` (short narrative + architecture)
 - `docs/public/whitepaper/WHITEPAPER.md` (official, mid-length)
 - `docs/public/whitepaper/WHITEPAPER_LONG.md` (long version)

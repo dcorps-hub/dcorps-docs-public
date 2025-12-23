@@ -35,7 +35,7 @@ Key deliverables:
 
 - Hub chain source code and build instructions.
 - Protocol specs and module standards (`docs/spec/*`).
-- Public testnet with published chain ID, genesis file, and validator onboarding steps.
+- Public testnet with published chain ID, genesis file, and validator onboarding steps (testnet).
 - Reproducible tooling for nodes, indexers, and reporting views.
 - Public example entity package on testnet (corporation + nonprofit) with tagged events, anchors, and derived reports.
 - Audit scope and reports for core modules and reference tooling.

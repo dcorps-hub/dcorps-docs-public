@@ -21,6 +21,10 @@
 
 1. Website alignment tasks
    - WEB-001, WEB-002, WEB-003, WEB-004
+2. Website content finalization batches
+   - WEB-006, WEB-007, WEB-008, WEB-009, WEB-010, WEB-011, WEB-012, WEB-013, WEB-014, WEB-015, WEB-016
+3. Website whitepaper and tokenomics pass
+   - WEB-019, WEB-020
 
 Gate: static site ready and aligned for public launch.
 
@@ -31,20 +35,24 @@ Gate: static site ready and aligned for public launch.
 1. Program setup and sequencing
    - PROG-002, PROG-003, PROG-004
 2. Chain repo and baseline decisions
-   - PROT-001, PROT-002
+   - PROT-001, PROT-002, PROT-012
 3. DevOps architecture and tooling
-   - DEVOPS-002, DEVOPS-006, DEVOPS-007
+   - DEVOPS-002, DEVOPS-006, DEVOPS-007, DEVOPS-011
 4. Security baseline
    - SEC-002, SEC-003
 5. Protocol core implementation (kernel)
    - PROT-003, PROT-004, PROT-005, PROT-006, PROT-007, PROT-008
-6. Data ingestion baseline
+6. Audit scope and reports
+   - SEC-006
+7. Data ingestion baseline
    - DATA-001, DATA-002
-7. Devnet and public testnet
-   - DEVOPS-003, DEVOPS-004
-8. Token and treasury documentation
+8. Devnet and public testnet
+   - DEVOPS-003, DEVOPS-004, DEVOPS-010
+9. Reproducible tooling and example entity package
+   - DATA-009, DATA-010
+10. Token and treasury documentation
    - TOK-002, TOK-003
-9. Legal and people foundations
+11. Legal and people foundations
    - LEGAL-001, LEGAL-002, LEGAL-003
    - PEOPLE-001, PEOPLE-002, PEOPLE-003
 
@@ -56,7 +64,7 @@ Gate: confirm Phase 0 exit criteria in `docs/roadmap/PHASES.md`.
 
 1. Genesis and mainnet environment
    - TOK-004
-   - DEVOPS-005, DEVOPS-010
+   - DEVOPS-005
 2. Core query surfaces and explorer endpoints
    - DATA-003, DATA-004, DATA-005, DATA-008
 3. Public explorer UI (read-only)
@@ -65,6 +73,8 @@ Gate: confirm Phase 0 exit criteria in `docs/roadmap/PHASES.md`.
    - GOV-002, GOV-003, GOV-004
 5. Website operations alignment
    - WEB-005
+6. Documentation hub UX and embedding
+   - WEB-017, WEB-018
 
 Gate: confirm Phase 1 exit criteria in `docs/roadmap/PHASES.md`.
 
@@ -74,13 +84,15 @@ Gate: confirm Phase 1 exit criteria in `docs/roadmap/PHASES.md`.
 
 1. Interface and conformance hardening
    - PROT-010, PROT-011
-2. Public API documentation
-   - DATA-006
-3. Security and incident readiness
-   - SEC-004, SEC-005
-4. Backup and snapshot strategy
+2. Versioned APIs and SDKs
+   - DATA-006, DATA-011
+3. Protocol UX primitives
+   - PROT-013
+4. Security and incident readiness
+   - SEC-004, SEC-005, SEC-007
+5. Backup and snapshot strategy
    - DEVOPS-008
-5. Accessibility and UX guidelines
+6. Accessibility and UX guidelines
    - FE-009
 
 Gate: confirm Phase 2 exit criteria in `docs/roadmap/PHASES.md`.
@@ -90,13 +102,13 @@ Gate: confirm Phase 2 exit criteria in `docs/roadmap/PHASES.md`.
 ## Phase 3 - Ecosystem bootstrapping and stablecoin rails
 
 1. Module and app registry foundations
-   - MOD-001, MOD-005, GOV-005
+   - MOD-001, MOD-005, MOD-006, GOV-005
 2. IBC operations and relayer monitoring
    - DEVOPS-009
 3. Registry and console UX foundations
    - FE-004, FE-005, FE-006, FE-007, FE-008
-4. Export formats for reporting
-   - DATA-007
+4. Indexer redundancy and export formats
+   - DATA-012, DATA-007
 5. Ecosystem onboarding
    - ECO-001
 
@@ -107,7 +119,7 @@ Gate: confirm Phase 3 exit criteria in `docs/roadmap/PHASES.md`.
 ## Phase 4 - Adapter layer and institutional legibility
 
 1. Attestation and jurisdiction frameworks
-   - PROT-009, MOD-002, MOD-003, MOD-004
+   - PROT-009, MOD-002, MOD-003, MOD-004, MOD-007
 2. Ecosystem programs and research
    - ECO-002, RES-001, RES-002
 
