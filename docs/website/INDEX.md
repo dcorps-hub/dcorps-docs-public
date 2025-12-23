@@ -16,6 +16,7 @@
 - Master copy reference: `../dcorps-site/text.md`
 - Navigation notes and colors: `../dcorps-site/NOTES.md`
 - Website task list: `docs/ops/TODO.md`
+- Frontend strategy and roadmap: `docs/frontend/INDEX.md`
 
 ---
 

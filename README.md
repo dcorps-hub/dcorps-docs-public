@@ -32,6 +32,16 @@ docs/
   INDEX.md                   Master documentation index (start here)
   CONTEXT.md                 One-page context summary
   REPOS.md                   Repository map
+  agents/
+    INDEX.md                 Agent playbooks index
+    PROTOCOL_AGENT.md        Protocol and chain agent playbook
+    DATA_AGENT.md            Data and indexer agent playbook
+    DEVOPS_AGENT.md          DevOps agent playbook
+    FRONTEND_AGENT.md        Frontend and product agent playbook
+    POLICY_LEGAL_AGENT.md    Policy and legal agent playbook
+    WEBSITE_AGENT.md         Website and content agent playbook
+    SECURITY_AGENT.md        Security agent playbook
+    OPS_PM_AGENT.md          Ops and PM agent playbook
   master/
     DCHUB_MASTER.md          Master Reference (long whitepaper, source)
     CHANGELOG.md             Master Reference changelog
@@ -68,14 +78,31 @@ docs/
     INDEX.md                 Engineering entry point
     COSMOS_BASE.md           Base protocol notes (Cosmos, token, stablecoins)
     PROTOCOL_INTERFACES.md   Interface surface map
+  devops/
+    INDEX.md                 DevOps entry point
+    ENVIRONMENTS.md          Dev, staging, and prod definitions
+    COSMOS_ENVIRONMENT.md    Cosmos environment setup notes
+    CI_CD.md                 CI/CD and release flow
+    RELEASE_PROCESS.md       Release and environment promotion process
+    OBSERVABILITY.md         Metrics, logs, and alerts
+    SECURITY.md              DevOps security posture
+    RUNBOOKS.md              Runbook index
   interop/
     INDEX.md                 Interop entry point
     IBC.md                   IBC and interchain notes
   roadmap/
     INDEX.md                 Roadmap and phases
+    PHASES.md                Phase goals and exit criteria
   ops/
     INDEX.md                 Operations index
     TODO.md                  Canonical task list
+    PHASED_PLAN.md           Sequential execution plan
+  frontend/
+    INDEX.md                 Frontend entry point
+    STACK.md                 Current and future stack notes
+    ROADMAP.md               Frontend roadmap
+    TASKS.md                 Frontend task list
+    DECISIONS.md             Frontend decision log
   people/
     INDEX.md                 People and organizations index
     TEAM.md                  Team and advisors

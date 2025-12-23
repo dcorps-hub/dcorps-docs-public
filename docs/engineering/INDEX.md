@@ -17,6 +17,7 @@
 - Cosmos base and protocol stack: `docs/engineering/COSMOS_BASE.md`
 - Protocol interface map: `docs/engineering/PROTOCOL_INTERFACES.md`
 - Interop and IBC: `docs/interop/IBC.md`
+- DevOps index: `docs/devops/INDEX.md`
 
 ---
 

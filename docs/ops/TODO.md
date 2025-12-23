@@ -1,87 +1,180 @@
-# dCorps Tasks and TODO
+# dCorps Project Backlog
 
-**Document type**: Operations list  
-**Doc ID**: OPS-TODO  
+**Document type**: Operations backlog  
+**Doc ID**: OPS-BACKLOG  
 **Status**: Living  
 **Source repo**: dcorps-docs (`docs/ops/TODO.md`)
 
-> Scope: Canonical task list for docs, comms, and planning. Derived from `../dcorps-site/to-do-list.md` and moved here for centralized tracking.
+> Scope: Canonical, detailed task list for the dCorps project. This replaces scattered TODOs in other repos.
+
+Sequential ordering by phase is in `docs/ops/PHASED_PLAN.md`.
 
 ---
 
-## Website tasks
+## How to use this backlog
 
-1. Add the publish date and latest update date under each page title.
-2. Complete the Website Master Text MD file.
-3. Add text in Roadmap mentioning it is high level.
+- Each task has an ID, status, priority, phase, owner, and dependencies.
+- Update status as work progresses.
+- Use phases from `docs/roadmap/PHASES.md`.
+- Keep only one source of truth for task status.
 
----
+Status values:
 
-## Brain tasks
+- not-started
+- in-progress
+- blocked
+- done
 
-1. Determine the team needed.
-2. Determine the advisors needed.
-3. Decide whether a corporate website version is needed (for example, dCorps.com for entrepreneurs and nonprofits).
-4. Decide primary URL strategy (dCorps.network, dCorps.com, dCorps.dev, etc) and how Explore/App map.
+Priority values:
 
----
-
-## Social media
-
-1. Create the master strategy.
-2. Create tools for management with AI and terminal CLI access.
+- P0 (critical)
+- P1 (important)
+- P2 (nice to have)
 
 ---
 
-## Documents to produce
+## Program and planning
 
-### Key principles to capture
+- [x] PROG-001 | status: done | priority: P0 | phase: 0 | owner: docs | deps: - | Create master index and context docs.
+- [ ] PROG-002 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Define update cadence for roadmap and backlog.
+- [ ] PROG-003 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Define success metrics for each phase.
+- [ ] PROG-004 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Update status section in `docs/roadmap/INDEX.md` with current phase.
 
-- General/DevCo ownership; DevCo 100 percent founder owned at start.
-- General/Founder split; 15 percent founder allocation with internal 10+5 division.
-- General/No founder dilution; Founder tokens never used for advisors or contributors.
-- General/No DevCo equity sold; No equity investors until later optional stage.
+---
 
-### Seed and round structure
+## Protocol and chain implementation
 
-- Funding/Seed round; Done before foundation, rights to future DCHUB.
-- Funding/Seed proceeds; All Seed USDC stays in DevCo.
-- Funding/Seed token source; From investor allocation or sale bucket, never founder stack.
-- Funding/Round A; Run by foundation once mainnet live.
-- Funding/Public sale; Tokens from investor or sale pool only.
+- [ ] PROT-001 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: - | Create chain code repository and link in `docs/REPOS.md`.
+- [ ] PROT-002 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-001 | Define chain ID, denom, bech32 prefix, and initial parameters.
+- [ ] PROT-003 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-001 | Implement entity registry state and lifecycle per `docs/spec/SPEC-CORE.md`.
+- [ ] PROT-004 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-001 | Implement role bindings and governance actions per `docs/spec/SPEC-CORE.md`.
+- [ ] PROT-005 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-001 | Implement canonical wallets and tagged events per `docs/spec/SPEC-DATA.md`.
+- [ ] PROT-006 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-001 | Implement module registry and attachment flow per `docs/spec/SPEC-MODULES.md`.
+- [ ] PROT-007 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-001 | Implement sub chain registry and anchoring per `docs/spec/SPEC-ANCHOR.md`.
+- [ ] PROT-008 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: PROT-001 | Implement parameter management per `docs/spec/SPEC-PARAMS.md`.
+- [ ] PROT-009 | status: not-started | priority: P1 | phase: 4 | owner: TBD | deps: PROT-001 | Define attestation module interface per `docs/spec/SPEC-ATTESTATIONS.md`.
+- [ ] PROT-010 | status: not-started | priority: P1 | phase: 2 | owner: TBD | deps: PROT-003 | Publish protobuf, gRPC, and REST interface docs.
+- [ ] PROT-011 | status: not-started | priority: P1 | phase: 2 | owner: TBD | deps: PROT-003 | Build conformance test harness per `docs/spec/SPEC-CONFORMANCE-TESTS.md`.
 
-### Token and team allocations
+---
 
-- Tokenomics/Founder allocation; Public category stays 15 percent.
-- Tokenomics/Contributor pool; Advisors and early contributors paid from team 15 percent pool.
-- Tokenomics/Internal split; DevCo receives part of founder allocation formally documented.
-- Tokenomics/Vesting rules; Final rules written in Governance Charter and Token Policy.
+## Data, indexer, and explorer
 
-### Legal and governance
+- [ ] DATA-001 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-003 | Define indexer schema per `docs/spec/SPEC-INDEXER.md`.
+- [ ] DATA-002 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: DATA-001 | Implement block, tx, and event ingestion.
+- [ ] DATA-003 | status: not-started | priority: P0 | phase: 1 | owner: TBD | deps: DATA-002 | Implement entity registry queries and filters.
+- [ ] DATA-004 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: DATA-002 | Implement module and sub chain registry queries.
+- [ ] DATA-005 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: DATA-002 | Implement reporting views (cash-based, nonprofit allocation).
+- [ ] DATA-006 | status: not-started | priority: P1 | phase: 2 | owner: TBD | deps: DATA-003 | Publish public API documentation.
+- [ ] DATA-007 | status: not-started | priority: P2 | phase: 3 | owner: TBD | deps: DATA-006 | Provide export formats (CSV/JSON) for reporting.
+- [ ] DATA-008 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: DATA-003 | Provide explorer-ready endpoints.
 
-- Legal/Seed contracts; SAFT or warrant issued by DevCo.
-- Legal/DevCo funding to foundation; Via service contract or formal loan.
-- Legal/Advisory contracts; DevCo signs early, foundation assumes obligations later.
-- Legal/No equity link; Foundation does not own DevCo equity.
-- Governance/Founder voting; Unvested voting or hybrid defined in Governance Charter.
-- Governance/Treasury voting; Treasury and foundation tokens non voting or restricted.
+---
 
-### DevCo and foundation relationship
+## Modules and standards
 
-- Structure/Preferred provider; DevCo early preferred development provider under contract.
-- Structure/Not monopoly; Foundation free to add more providers later.
-- Structure/Service contracts; DevCo paid through contracts, not hard coded in protocol.
-- Structure/Long term path; Clear route to decentralization over time.
+- [ ] MOD-001 | status: not-started | priority: P1 | phase: 3 | owner: TBD | deps: PROT-006 | Define module registry listing requirements.
+- [ ] MOD-002 | status: not-started | priority: P1 | phase: 4 | owner: TBD | deps: MOD-001 | Draft jurisdiction module pilot criteria.
+- [ ] MOD-003 | status: not-started | priority: P2 | phase: 4 | owner: TBD | deps: MOD-001 | Define sector framework reporting expectations.
+- [ ] MOD-004 | status: not-started | priority: P2 | phase: 4 | owner: TBD | deps: PROT-009 | Define attestation issuer registry governance.
+- [ ] MOD-005 | status: not-started | priority: P2 | phase: 3 | owner: TBD | deps: MOD-001 | Define app registry listing workflow and signals.
 
-### Whitepaper and public docs
+---
 
-- Whitepaper/Pointer; Add one line pointing to Token Policy and Governance Charter.
-- Tokenomics/High level; Public charts show single 15 percent founder category.
-- Public/Seed vs A; Clear diagram showing Seed to DevCo, A to foundation.
-- Public/No DevCo equity; Clarify DevCo equity not part of token sales.
+## Token and economics
 
-### Persona docs and communication
+- [x] TOK-001 | status: done | priority: P0 | phase: 0 | owner: docs | deps: - | Publish token policy and genesis plan.
+- [ ] TOK-002 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: TOK-001 | Draft vesting schedules document.
+- [ ] TOK-003 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: TOK-001 | Define treasury fee flow accounting and reporting.
+- [ ] TOK-004 | status: not-started | priority: P0 | phase: 1 | owner: TBD | deps: PROT-002 | Build genesis allocation file and verification steps.
+- [ ] TOK-005 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: TOK-004 | Define validator reward emission schedule and reporting.
+- [ ] TOK-006 | status: not-started | priority: P2 | phase: 1 | owner: TBD | deps: TOK-001 | Publish public tokenomics chart assets.
 
-- Persona/Entrepreneur brief; Note DevCo runs as a dCorps Hub corporation itself.
-- Persona/NGO brief; Foundation uses dCorps NGO module.
-- Persona/Developer brief; DevCo initial provider, others welcome later.
+---
+
+## Governance and policy
+
+- [x] GOV-001 | status: done | priority: P0 | phase: 0 | owner: docs | deps: - | Publish governance and foundation policies.
+- [ ] GOV-002 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: GOV-001 | Define protocol council scope and membership process.
+- [ ] GOV-003 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: GOV-001 | Document emergency powers sunset and override rules.
+- [ ] GOV-004 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: GOV-001 | Document validator charter enforcement approach.
+- [ ] GOV-005 | status: not-started | priority: P2 | phase: 3 | owner: TBD | deps: MOD-001 | Define module registry governance workflow.
+
+---
+
+## Security
+
+- [x] SEC-001 | status: done | priority: P0 | phase: 0 | owner: docs | deps: - | Publish security policy, threat model, and audit plan.
+- [ ] SEC-002 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: SEC-001 | Define security monitoring baseline and alert thresholds.
+- [ ] SEC-003 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: SEC-001 | Define bug bounty scope and submission workflow.
+- [ ] SEC-004 | status: not-started | priority: P1 | phase: 2 | owner: TBD | deps: SEC-001 | Draft incident response runbook details (public + restricted).
+- [ ] SEC-005 | status: not-started | priority: P1 | phase: 2 | owner: TBD | deps: SEC-001 | Define key management policy (public-safe summary).
+
+---
+
+## DevOps and infrastructure
+
+- [x] DEVOPS-001 | status: done | priority: P0 | phase: 0 | owner: docs | deps: - | Publish DevOps documentation structure.
+- [ ] DEVOPS-002 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-001 | Define dev, staging, and prod environment architecture.
+- [ ] DEVOPS-003 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: PROT-002 | Stand up devnet environment.
+- [ ] DEVOPS-004 | status: not-started | priority: P0 | phase: 0 | owner: TBD | deps: DEVOPS-003 | Stand up public testnet environment.
+- [ ] DEVOPS-005 | status: not-started | priority: P0 | phase: 1 | owner: TBD | deps: DEVOPS-004 | Stand up mainnet environment.
+- [ ] DEVOPS-006 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: PROT-001 | Define CI/CD pipeline for chain builds and releases.
+- [ ] DEVOPS-007 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: DEVOPS-002 | Define observability stack and alerting.
+- [ ] DEVOPS-008 | status: not-started | priority: P1 | phase: 2 | owner: TBD | deps: DEVOPS-003 | Define backup and snapshot strategy.
+- [ ] DEVOPS-009 | status: not-started | priority: P1 | phase: 3 | owner: TBD | deps: PROT-007 | Define IBC relayer operations and monitoring.
+- [ ] DEVOPS-010 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: DEVOPS-004 | Publish validator onboarding documentation.
+
+---
+
+## Frontend and product surfaces
+
+- [ ] FE-001 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Define information architecture across site, docs, and apps.
+- [ ] FE-002 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: DATA-003 | Define explorer UI requirements and data endpoints.
+- [ ] FE-003 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: DATA-008 | Build read-only explorer UI.
+- [ ] FE-004 | status: not-started | priority: P2 | phase: 3 | owner: TBD | deps: DATA-003 | Build registry UI and search.
+- [ ] FE-005 | status: not-started | priority: P0 | phase: 3 | owner: TBD | deps: PROT-004 | Define wallet connection and signing UX flows.
+- [ ] FE-006 | status: not-started | priority: P0 | phase: 3 | owner: TBD | deps: FE-005 | Build entity management console (official app).
+- [ ] FE-007 | status: not-started | priority: P1 | phase: 3 | owner: TBD | deps: FE-006 | Implement governance UI flows.
+- [ ] FE-008 | status: not-started | priority: P1 | phase: 3 | owner: TBD | deps: DATA-005 | Implement reporting dashboards.
+- [ ] FE-009 | status: not-started | priority: P2 | phase: 2 | owner: TBD | deps: FE-001 | Define accessibility and UX guidelines.
+
+---
+
+## Website and content
+
+- [ ] WEB-001 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Add publish and update dates under each site page title.
+- [ ] WEB-002 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Complete the website master text file (`../dcorps-site/text.md`).
+- [ ] WEB-003 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Add a high-level disclaimer to the roadmap page.
+- [ ] WEB-004 | status: not-started | priority: P2 | phase: 0 | owner: TBD | deps: - | Link site content to public docs and specs where relevant.
+- [ ] WEB-005 | status: not-started | priority: P2 | phase: 1 | owner: TBD | deps: - | Define copy update process to keep site aligned with `docs/master/DCHUB_MASTER.md`.
+
+---
+
+## People and hiring
+
+- [ ] PEOPLE-001 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Define core team roles needed for Phase 0 and Phase 1.
+- [ ] PEOPLE-002 | status: not-started | priority: P2 | phase: 0 | owner: TBD | deps: - | Define advisor roles needed for Phase 1 and Phase 2.
+- [ ] PEOPLE-003 | status: not-started | priority: P2 | phase: 0 | owner: TBD | deps: PEOPLE-001 | Draft job descriptions for priority roles.
+
+---
+
+## Legal and entity structure
+
+- [ ] LEGAL-001 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Document the BVI to Switzerland structural path (summary).
+- [ ] LEGAL-002 | status: not-started | priority: P1 | phase: 0 | owner: TBD | deps: - | Document DevCo and Foundation relationship agreements.
+- [ ] LEGAL-003 | status: not-started | priority: P2 | phase: 0 | owner: TBD | deps: - | Draft website terms, privacy, and cookies pages for legal review.
+
+---
+
+## Ecosystem and partnerships
+
+- [ ] ECO-001 | status: not-started | priority: P2 | phase: 3 | owner: TBD | deps: - | Define integrator onboarding and support process.
+- [ ] ECO-002 | status: not-started | priority: P2 | phase: 4 | owner: TBD | deps: - | Define grants or ecosystem program workflow (if foundation is active).
+
+---
+
+## Research and labs
+
+- [ ] RES-001 | status: not-started | priority: P2 | phase: 4 | owner: TBD | deps: - | Define research priorities for jurisdiction modules and sector frameworks.
+- [ ] RES-002 | status: not-started | priority: P2 | phase: 4 | owner: TBD | deps: RES-001 | Create a research project template and review criteria.

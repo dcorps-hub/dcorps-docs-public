@@ -19,7 +19,9 @@
 
 ## Task tracking
 
-- Primary task list: `docs/ops/TODO.md`
+- Primary backlog and task tracker: `docs/ops/TODO.md`
+- Sequential execution plan: `docs/ops/PHASED_PLAN.md`
+- Frontend task overview: `docs/frontend/TASKS.md`
 - Do not keep parallel task lists outside this repo once items are moved here.
 
 ---
@@ -28,3 +30,9 @@
 
 - Publication policy: `docs/policy/POL-DOCS-PUBLICATION.md`
 - Governance charter: `docs/policy/POL-GOV.md`
+
+---
+
+## DevOps coordination
+
+- DevOps index: `docs/devops/INDEX.md`

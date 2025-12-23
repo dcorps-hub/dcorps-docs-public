@@ -9,30 +9,44 @@
 
 ---
 
-## Delivery phases (public roadmap)
+## Execution phases (source-of-truth roadmap)
 
-**Phase 0: Design and private prototyping**
-- Finalize architecture and core models.
-- Build internal prototypes and test basic flows.
+These phases follow the Master Reference (section 16). Phase 0 is pre-mainnet readiness. Phases 1 to 5 start at mainnet launch.
 
-**Phase 1: Public testnet and mainnet v1**
-- Launch public testnet and invite early builders and entities.
-- Launch mainnet with a limited but independent validator set.
-- Support Hub corporations and Hub nonprofits, plus basic explorers and tools.
+**Phase 0: Pre-mainnet readiness**
+- Publish specs, code, and verifiable testnet artifacts.
+- Provide reproducible tooling and example entity package.
 
-**Phase 2: Smart jurisdictions and first sub chains**
-- Work with early jurisdiction partners on pilot modules.
-- Launch first public sub chain corporations.
-- Expand ecosystem applications and documentation.
-- Formalize the foundation structure.
+**Phase 1: Mainnet launch (Kernel v1)**
+- Launch stable Hub with core entity models and registries.
+- Provide reference explorer and indexer.
 
-**Phase 3: Scale and fee based sustainability**
-- Grow to larger numbers of entities and modules.
-- Increase protocol fee revenue and reduce reliance on emissions.
-- Deepen governance and incident response processes.
-- Expand the app and module registry and sector frameworks.
+**Phase 2: Operational completeness and standards hardening**
+- Conformance tests, stable APIs/SDKs, monitoring, and incident processes.
 
-Dates and details evolve based on progress, legal context, and resources.
+**Phase 3: Ecosystem bootstrapping and stablecoin rails**
+- IBC stablecoin connectivity, registry systems, and reference UIs.
+
+**Phase 4: Adapter layer and institutional legibility**
+- Jurisdiction adapters, attestation modules, and institutional overlays.
+
+**Phase 5: Fully operational maturity**
+- Decentralized operations, multiple independent tooling stacks, and sustainable governance.
+
+See detailed goals and exit criteria in `docs/roadmap/PHASES.md`.
+
+---
+
+## Public roadmap (website summary)
+
+The website uses a simplified public view:
+
+- Phase 0: Design and private prototyping
+- Phase 1: Public testnet and mainnet v1
+- Phase 2: Smart jurisdictions and first sub chains
+- Phase 3: Scale and fee based sustainability
+
+See `../dcorps-site/content/information/roadmap.md`.
 
 ---
 
@@ -61,6 +75,7 @@ From `../dcorps-site/content/learn/vision.md`:
 - Public roadmap page: `../dcorps-site/content/information/roadmap.md`
 - Vision path: `../dcorps-site/content/learn/vision.md`
 - Open questions: `docs/master/TBD_REGISTER.md`
+- Phase exit criteria: `docs/roadmap/PHASES.md`
 
 ---
 

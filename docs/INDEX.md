@@ -12,12 +12,17 @@
 ## Quick entry points
 
 - Public overview: `docs/public/INDEX.md`
+- Context snapshot: `docs/CONTEXT.md`
 - Master reference: `docs/master/DCHUB_MASTER.md`
+- Repo map: `docs/REPOS.md`
 - Normative specs: `docs/spec/INDEX.md`
 - Technical build notes: `docs/engineering/INDEX.md`
 - Interop and IBC: `docs/interop/INDEX.md`
+- DevOps: `docs/devops/INDEX.md`
 - Roadmap and phases: `docs/roadmap/INDEX.md`
 - Operations and tasks: `docs/ops/INDEX.md`
+- Agent playbooks: `docs/agents/INDEX.md`
+- Frontend: `docs/frontend/INDEX.md`
 - People and orgs: `docs/people/INDEX.md`
 - Legal: `docs/legal/INDEX.md`
 - Website: `docs/website/INDEX.md`
@@ -45,7 +50,10 @@
 - Security: `docs/security/SECURITY-POLICY.md`, `docs/security/THREAT-MODEL.md`
 - Engineering: `docs/engineering/INDEX.md`
 - Interop: `docs/interop/INDEX.md`
+- DevOps: `docs/devops/INDEX.md`
 - Roadmap and ops: `docs/roadmap/INDEX.md`, `docs/ops/TODO.md`
+- Agents: `docs/agents/INDEX.md`
+- Frontend: `docs/frontend/INDEX.md`
 - People and orgs: `docs/people/INDEX.md`
 - Legal: `docs/legal/INDEX.md`
 - Website: `docs/website/INDEX.md`
