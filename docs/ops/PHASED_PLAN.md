@@ -25,6 +25,8 @@
    - WEB-006, WEB-007, WEB-008, WEB-009, WEB-010, WEB-011, WEB-012, WEB-013, WEB-014, WEB-015, WEB-016
 3. Website whitepaper and tokenomics pass
    - WEB-019, WEB-020
+4. Documentation center (new subdomain)
+   - WEB-017, WEB-018, WEB-021, WEB-022, WEB-023, WEB-024, WEB-025
 
 Gate: static site ready and aligned for public launch.
 
@@ -73,8 +75,8 @@ Gate: confirm Phase 0 exit criteria in `docs/roadmap/PHASES.md`.
    - GOV-002, GOV-003, GOV-004
 5. Website operations alignment
    - WEB-005
-6. Documentation hub UX and embedding
-   - WEB-017, WEB-018
+6. Docs center automation and deployment
+   - WEB-026, WEB-027
 
 Gate: confirm Phase 1 exit criteria in `docs/roadmap/PHASES.md`.
 
