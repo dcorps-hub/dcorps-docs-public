@@ -1,9 +1,12 @@
 # dcorps-docs
 
-Master documentation and specifications for the dCorps Hub protocol, entity models, and governance. This repo is the internal source of truth that all public docs, specs, and reference tooling are generated from.
+Master documentation and specifications for the dCorps Hub protocol, including the Master Reference (whitepaper), protocol specifications, policies, security documents, and token documentation.
 
-> Status: early internal working repo  
-> Confidentiality: internal only, not for public redistribution
+> Status: publication-ready documentation set
+
+Start here (master index): `docs/INDEX.md`
+Start here (public docs): `docs/public/INDEX.md`
+Developer entry point (normative specs): `docs/spec/INDEX.md`
 
 ---
 
@@ -14,29 +17,45 @@ This repo exists to:
 - Hold the **Master Reference** for the dCorps Hub.
 - Hold **normative specs** for protocol behavior, parameters, modules, and data.
 - Hold **governance, treasury, token, and security policies**.
-- Generate **public facing docs** that are safe to embed in the main website and other repos.
+- Publish documentation **public by default**, with safety-sensitive exceptions under `docs/restricted/` (see `docs/policy/POL-DOCS-PUBLICATION.md`).
 
-Anything that defines how the protocol works, how entities behave, or how we describe dCorps externally should live here first, then be surfaced outward through automation and controlled exports.
+Anything that defines how the protocol works, how entities behave, or how we describe dCorps externally should live here first, then be surfaced outward through controlled exports (manual for now; see `tools/docgen/README.md`).
 
 ---
 
 ## 2. Repository structure
 
-Planned layout aligned with the Master Reference:
+High-level layout:
 
 ```text
 docs/
+  INDEX.md                   Master documentation index (start here)
+  CONTEXT.md                 One-page context summary
+  REPOS.md                   Repository map
+  agents/
+    INDEX.md                 Agent playbooks index
+    PROTOCOL_AGENT.md        Protocol and chain agent playbook
+    DATA_AGENT.md            Data and indexer agent playbook
+    DEVOPS_AGENT.md          DevOps agent playbook
+    FRONTEND_AGENT.md        Frontend and product agent playbook
+    POLICY_LEGAL_AGENT.md    Policy and legal agent playbook
+    WEBSITE_AGENT.md         Website and content agent playbook
+    SECURITY_AGENT.md        Security agent playbook
+    OPS_PM_AGENT.md          Ops and PM agent playbook
   master/
-    DCHUB_MASTER.md          Master Reference (internal)
+    DCHUB_MASTER.md          Master Reference (long whitepaper, source)
     CHANGELOG.md             Master Reference changelog
     TBD_REGISTER.md          Appendix A, open decisions
     DECISION_LOG.md          Appendix B, decisions taken
   spec/
+    INDEX.md                 Spec index (normative)
     SPEC-CORE.md             Protocol Specification
     SPEC-PARAMS.md           Protocol Parameters and Economics
     SPEC-MODULES.md          Module Protocol Standard
+    SPEC-ATTESTATIONS.md     Attestation Module Standard
     SPEC-ANCHOR.md           Sub chain Anchoring Standard
     SPEC-INDEXER.md          Reference Indexer Specification
+    SPEC-CONFORMANCE-TESTS.md Compatibility and Conformance Tests
     SPEC-DATA.md             Data Standards, schemas, chart of accounts, tags
   policy/
     POL-GOV.md               Governance Charter
@@ -44,6 +63,7 @@ docs/
     POL-REGISTRY-MODULES.md  Registry and Module Policy
     POL-VALIDATORS.md        Validator Charter
     POL-FOUNDATION.md        Foundation Charter
+    POL-DOCS-PUBLICATION.md  Documentation Publication Policy
   token/
     TOKEN-POLICY.md
     TOKEN-GENESIS-PLAN.md
@@ -54,17 +74,92 @@ docs/
     AUDIT-PLAN.md
     BUG-BOUNTY.md
     INCIDENT-RESPONSE.md
+  engineering/
+    INDEX.md                 Engineering entry point
+    COSMOS_BASE.md           Base protocol notes (Cosmos, token, stablecoins)
+    PROTOCOL_INTERFACES.md   Interface surface map
+  devops/
+    INDEX.md                 DevOps entry point
+    ENVIRONMENTS.md          Dev, staging, and prod definitions
+    COSMOS_ENVIRONMENT.md    Cosmos environment setup notes
+    CI_CD.md                 CI/CD and release flow
+    RELEASE_PROCESS.md       Release and environment promotion process
+    OBSERVABILITY.md         Metrics, logs, and alerts
+    SECURITY.md              DevOps security posture
+    RUNBOOKS.md              Runbook index
+  interop/
+    INDEX.md                 Interop entry point
+    IBC.md                   IBC and interchain notes
+  roadmap/
+    INDEX.md                 Roadmap and phases
+    PHASES.md                Phase goals and exit criteria
+  ops/
+    INDEX.md                 Operations index
+    TODO.md                  Canonical task list
+    PHASED_PLAN.md           Sequential execution plan
+  frontend/
+    INDEX.md                 Frontend entry point
+    STACK.md                 Current and future stack notes
+    ROADMAP.md               Frontend roadmap
+    TASKS.md                 Frontend task list
+    DECISIONS.md             Frontend decision log
+  people/
+    INDEX.md                 People and organizations index
+    TEAM.md                  Team and advisors
+    OPEN_ROLES.md            Open roles and hiring template
+  legal/
+    INDEX.md                 Legal and compliance index
+  website/
+    INDEX.md                 Website documentation index
+    SITEMAP.md               Website sitemap and content sources
+  restricted/
+    README.md                Safety-sensitive material (excluded from public website/exports)
   public/
+    INDEX.md                   Public doc map (start here)
+    investor/
+      INVESTOR_BRIEF.md
+      TOKENOMICS_SUMMARY.md
+    legal/
+      DISCLAIMERS.md
+      RISK_DISCLOSURE.md
     master/
-      DCHUB_MASTER_PUBLIC.md   Public version of Master Reference
+      DCHUB_MASTER_PUBLIC.md   Short public overview
+      DCHUB_WHITEPAPER_PUBLIC.md Public-facing master/whitepaper view
     spec/
-      SPEC-CORE_PUBLIC.md      Public spec views
-      ...
+      SPEC-CORE_PUBLIC.md      Public spec view (core)
+    technical/
+      INTEGRATION_GUIDE.md
+      TECHNICAL_OVERVIEW.md
+    whitepaper/
+      EXECUTIVE_SUMMARY.md
+      FAQ.md
+      GLOSSARY.md
+      LITEPAPER.md
+      NONPROFIT_NOTE.md
+      WHITEPAPER.md
+      WHITEPAPER_LONG.md
 tools/
   docgen/
     README.md                  Doc generation notes
-    strip_internal.*           Internal to public converter scripts
-.github/
-  workflows/
-    docs-ci.yml
-    publish-public-docs.yml
+```
+
+---
+
+## 3. GitHub visibility and publishing policy
+
+This repo is designed for **transparency by default**: most documents are intended to be safe for public reading and reuse.
+
+What must be private (or excluded from public distribution):
+
+- Any document that would materially increase attack success if published (detailed operational runbooks, attacker-enabling exploit paths, internal infrastructure specifics, embargoed security findings).
+- Any secrets (private keys, mnemonics, credentials, `.env` contents). Do not store live secrets in Git.
+
+How we organize this:
+
+- Public-by-default docs live throughout `docs/` (including `docs/spec/`, `docs/policy/`, `docs/security/`, and `docs/token/`).
+- Safety-sensitive operational material belongs under `docs/restricted/` and must be excluded from the public website and public exports.
+
+If repository visibility changes:
+
+- If the repository is made public, review `docs/restricted/` first and remove or redact anything that creates undue safety risk.
+- Use the policy as the source of truth: `docs/policy/POL-DOCS-PUBLICATION.md`.

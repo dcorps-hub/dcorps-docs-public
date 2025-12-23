@@ -1,0 +1,6270 @@
+# dCorps Hub Whitepaper (Public)
+
+#### Digitally native base layer for corporations and nonprofits, born and operated on-chain
+
+**Long Version**
+
+**Document ID**: DCHUB-WP-2025-12-21
+**Version**: v1.3.1
+**Edition**: Public
+**Status**: Final v1.3.1 (public)
+**Release date**: December 21, 2025
+**Author**: Nicolas Turcotte, Founder
+ [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+
+**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).
+
+**Editing note (linear read)**: This copy consolidates repeated definitions and uses short reminders plus section pointers, so it reads cleanly from page 1 to the end.
+
+---
+
+## Disclaimer
+
+Nothing in this document is:
+
+* An offer to sell, or a solicitation of an offer to buy, any token, share, or security.
+* Investment, legal, tax, or accounting advice.
+* A promise of listing, price performance, or financial return for any asset.
+
+This whitepaper describes a technical and economic design for the dCorps protocol as currently envisioned. Many details will change with engineering work, legal advice, market conditions, and community input. Any token sale, equity financing, or legal agreement will be governed by its own dedicated documentation and terms, not by this whitepaper.
+
+Participants are responsible for obtaining their own professional advice and for complying with applicable laws in all relevant jurisdictions.
+
+------
+
+### 0.0 Reader map and core flows (fast path)
+
+If you are reading this for a specific reason:
+
+- **Founders and operators (private corporation)**
+   Read section 0, section 7.1, section 8.3, section 9, and section 9.5B.
+- **Nonprofit leaders and donors**
+   Read section 0, section 7.3, section 8.5A, section 9.5, and section 12.6.
+- **Validators and stakers**
+   Read section 6.5, section 10, and section 13.
+- **Institutions, policymakers, and legal professionals**
+   Read section 0.3B, section 4.4A, section 4.6A, section 14.3, and section 17.
+
+#### Document stack and what is normative
+
+This master whitepaper explains the intent, scope, boundaries, and design rationale of dCorps. It is not the protocol specification.
+
+For interoperability and correctness, the dCorps document stack is intended to be:
+
+- **This whitepaper (design intent)**: why dCorps exists, what v1 ships, and the boundary between the kernel and optional adapters.
+- **Protocol Specification (normative)**: message types, state machines, event schemas, invariants, and consensus critical rules.
+- **Governance Charter (normative for process)**: proposal types, thresholds, councils, upgrade process, emergency controls, and their sunset conditions.
+- **Token Policy (normative for operations)**: vesting, lockups, transfer constraints, custody rules, treasury policy, and release caps.
+- **Reference specifications (normative for interoperability)**:
+  - Module Protocol Standard (`docs/spec/SPEC-MODULES.md`) and compatibility requirements,
+  - Reference Indexer Specification (`docs/spec/SPEC-INDEXER.md`) and export formats,
+  - Reference explorer behavior for entity pages and reporting views (see `docs/spec/SPEC-INDEXER.md`),
+  - Compatibility Test Suite (`docs/spec/SPEC-CONFORMANCE-TESTS.md`) for schema and module conformance.
+
+If there is a conflict between this whitepaper and the Protocol Specification or Governance Charter, the Protocol Specification and the Governance Charter are intended to take precedence.
+
+#### Digital-native first principles (kernel and adapters)
+
+dCorps treats the Hub as a minimal, stable base layer for digital organizations. Everything that varies by jurisdiction, institution, or sector lives in optional modules that sit on top.
+
+- **Kernel (required)**: canonical entity identity and discovery, ownership and authority, governance actions, treasury primitives and standardized accounting events, and document anchoring.
+- **Adapters and modules (optional)**: jurisdiction recognition workflows, institutional reporting views, sector and impact frameworks, and attestations derived from kernel state.
+- **Boundary (strict)**: entities must be able to operate without adapters; adapters may publish derived interpretations, but they must not redefine kernel semantics or rewrite history.
+
+v1 mainnet focuses on one strong public container on the Hub. Aligned security sub chains and private execution environments are future extensions.
+
+For the formal kernel invariants used to evaluate new features and modules, see section 4.0.
+
+#### Architecture at a glance (conceptual)
+
+```text
+External applications (UIs, markets, payroll, donation portals, dashboards)
+        |
+        v
+Optional adapters and modules (jurisdiction recognition, sector frameworks, attestations)
+        |
+        v
+dCorps Hub kernel (entity registry, ownership and roles, governance, wallet and accounting primitives, anchoring)
+        |
+        v
+DCHUB staking and consensus (security, gas, protocol governance)
+```
+
+Future extensions (not required for v1): additional execution environments may anchor summarized state to the Hub, but the Hub remains the canonical source of truth.
+
+#### Core v1 flows (three common paths)
+
+**1. Register an entity (Hub corporation or Hub nonprofit)**
+
+1. Submit an entity registration transaction and pay the registration fee (USDC service fee plus gas in DCHUB or via fee grants).
+2. Bind initial roles and wallets (board seats for nonprofits, governance roles for corporations).
+3. Anchor baseline governing documents and policies by hash.
+
+**2. Operate day to day in stablecoins**
+
+1. Receive inflows to canonical wallets (merchant or donation wallets).
+2. Execute payouts from canonical wallets using tagged accounting events.
+3. Produce period reporting views from tagged flows (cash-based operating reporting for corporations; category level allocation reporting for nonprofits).
+
+**3. Optionally attach adapters and derived modules (not required for core operation)**
+
+1. Attach optional protocol modules that read Hub state (jurisdiction recognition, sector frameworks, attestations) via governance.
+2. Publish derived reports and signals (recognition status, eligibility, impact metrics) without changing the kernel.
+3. Integrate external services and counterparties that choose to rely on the entity standard.
+
+---
+
+## 0. Executive summary
+
+### 0.1 Overview
+
+dCorps is a digitally native base layer for **corporations** and **nonprofit organizations**.
+
+It provides a shared standard where organizations can be created, owned, governed, and operated entirely on-chain. The Hub is the kernel: it defines canonical identity, ownership and authority, governance actions, treasury control, accounting events, and an auditable history.
+
+**v1 in one sentence (minimum lovable product)**
+
+In v1, an entity can register, set roles and wallets, run stablecoin operations through tagged accounting events, and generate reproducible monthly operating and allocation views, with optional evidence anchoring.
+
+It provides:
+
+- A **Cosmos-based Hub chain** that acts as the canonical entity registry and execution environment for the dCorps kernel.
+- Standardized **on-chain entity containers** for:
+  - **Hub corporations** (private ownership units, role and approval governance, structured accounting).
+  - **Hub nonprofits** (board-governed, donation and program flows, allocation rules, and transparency).
+- A common **wallet and accounting event model** that makes inflows, outflows, approvals, and governance verifiable over time.
+- Open **interfaces and data standards** so independent applications and service providers can build interoperable tooling (dashboards, payroll, donation portals, reporting, and markets).
+
+**Adapters and external integration**
+
+- Jurisdictions, institutional processes, and sector frameworks integrate via optional modules that read Hub state and publish derived interpretations.
+- These adapters are not required for a dCorps entity to exist or operate. They exist to reduce friction when an entity chooses to interact with external systems.
+
+**v1 focus**
+
+- One strong public container on the Hub for corporations and nonprofits, designed to be sufficient for long-lived operation.
+- Advanced execution environments and public-market style instruments are future extensions and are explicitly not required for v1 adoption.
+
+dCorps is **infrastructure**, not a bank, broker, exchange, or custodial service. It does not provide legal, tax, or regulatory guarantees. It provides a programmable, auditable entity standard that others can rely on.
+
+A nonprofit **dCorps foundation** is intended to steward public goods over time. Its mission focuses on keeping the Hub minimal and neutral, maintaining reference standards and conformance test suites, and supporting an open ecosystem of applications and modules.
+
+---
+
+### 0.1.1 In practice, what dCorps gives entities
+
+In practice, dCorps is an **entity operating ledger** for stablecoin native organizations. It is optimized for entities that can keep core operations in crypto and stablecoins, without relying on bank rails as a dependency.
+
+Here, **cash-based operating reporting** means period summaries derived from tagged inflow and outflow events, excluding accrual accounting treatments.
+
+dCorps is explicitly optimized for entities that can route meaningful parts of their operations through the protocol, but it does not attempt to be a bank integration layer in v1.
+
+Concretely, dCorps gives entities:
+
+- A **standard entity container** with canonical identity, roles, and wallets, so any builder can serve any entity without bespoke formats.
+- A way to express **ownership and governance as verifiable state** (units, boards and roles, proposals, approvals, and executed resolutions), rather than only narrative policies, PDFs, and private spreadsheets.
+- A **digital-native operating posture** where counterparties can rely on on-chain authority and approvals as the default, even when no legal adapter is attached.
+- **Treasury and accounting primitives** (tagged flows, budget categories, standardized reporting views) that make operations auditable and comparable over time.
+- **Optional adapters** for external contexts (jurisdiction recognition, institutional reporting, sector frameworks) that can be attached without changing the entity’s kernel history or semantics.
+- A neutral substrate for service providers and applications (dashboards, payroll, donation portals, analytics), built on shared interfaces and standards.
+
+The protocol defines on-chain facts and a verifiable timeline. Where an entity chooses to interact with external legal or institutional processes, those processes exist outside the kernel and reference on-chain state through anchors and adapter modules.
+
+### 0.1.1A Why now and the v1 wedge (first users, first workflow, measurable outcome)
+
+dCorps is designed for an era where stablecoins and wallets are already usable as day to day operating accounts for global teams, while entity identity, approvals, and reporting remain fragmented across private tools and jurisdiction specific systems.
+
+**Why now**
+
+- Stablecoin rails and cross-chain connectivity make it practical for serious entities to route a large share of revenue, payroll, grants, and vendor payments through on-chain wallets.
+- Remote first teams and cross border collaborators increasingly need shared, verifiable approval trails that do not depend on a single country, bank, or SaaS vendor.
+- Donors, counterparties, and institutions increasingly demand verifiable evidence, not only PDFs, for governance decisions and financial allocation claims.
+
+**The v1 wedge**
+
+- **First entities we win**
+  - stablecoin native startups and small teams that can route most material inflows and outflows through USDC wallets, and want a clean cash-based operating view without spreadsheet reconciliation overhead.
+  - nonprofits and NGOs that want donation and allocation transparency plus board-governed controls, without needing a custom platform.
+- **First killer workflow**
+  1. Register an entity, bind canonical wallets and roles, and anchor baseline governing documents by hash.
+  2. Route operational inflows and outflows through canonical wallets and emit tagged accounting events through typed workflows where possible.
+  3. Generate a period cash-based operating report (corporations) or allocation report (nonprofits) directly from the tagged ledger, with clear coverage metrics and evidence anchors for material items.
+- **Measurable outcome**
+  - An independent party can verify, using only public chain data and anchored evidence, that:
+    - who had authority to act for an entity at a given time is discoverable from the role and governance record,
+    - a material payment was approved under the entity’s policy and linked to a resolution and document anchor, and
+    - a monthly cash-based operating view or nonprofit allocation view can be reproduced from the same underlying ledger inputs.
+
+
+**Illustrative v1 traction benchmark (non-binding)**
+
+To make adoption measurable without relying on narratives, v1 traction is tracked using public, reproducible metrics:
+
+- **Active reporting entities**: count of active entities that produce a reproducible period report object for at least two consecutive reporting periods.
+- **Coverage targets (illustrative)**:
+  - Inflow coverage ratio: at least 0.90
+  - Outflow coverage ratio: at least 0.90
+  - Evidence coverage ratio: at least 0.60 for transactions above a defined materiality threshold (default planning threshold: 1,000 USDC, configurable by entity policy)
+- **Integrity target (illustrative)**: uncategorized outflows are explicitly surfaced and are expected to be low (for example under 1 percent of total outflows for mature entities), with clear UI warnings when higher.
+
+These are planning benchmarks intended to keep the system honest and measurable. They are not guarantees.
+
+**Coverage and assurance vocabulary (used throughout this paper)**
+
+- **Inflow coverage**: the percent of total inflows that arrive through canonical on-chain wallets for the entity.
+- **Outflow coverage**: the percent of total outflows that occur through canonical on-chain wallets for the entity.
+- **Evidence coverage**: the percent of material transactions that include anchored evidence (invoices, receipts, agreements, or other supporting artifacts).
+- **Attestation level**: none, self-attested, or third-party attested, as signaled through attestation modules.
+
+This wedge is intentionally narrow. It proves that the Hub can be a neutral entity registry plus a standardized operating ledger for stablecoin native organizations. Jurisdiction adapters, sub chains, and advanced privacy are later layers built on this foundation, not prerequisites for v1 usefulness.
+
+### 0.1.1B Economic mechanics map (who pays, who benefits, what settles where)
+
+This map describes protocol mechanics, not equity, profit participation, or any promise of returns.
+
+In the dCorps Hub design:
+
+- **Execution** is priced in DCHUB (gas). Interfaces may sponsor or abstract gas for end users, but the underlying execution market settles in DCHUB.
+- **Protocol services** may charge stablecoin fees (for example USDC) for services like registry renewals, premium namespaces, and certain optional module participation.
+- **Security commitment signals** (for example sub chain bonds and security rent) are expressed in DCHUB to align long-lived security to the Hub token and validator set.
+
+| Actor | What they typically pay | What they receive and why they participate | Primary settlement asset |
+| --- | --- | --- | --- |
+| Entities and users | DCHUB gas (often sponsored by apps), USDC protocol service fees (registration, renewals, premium names, optional module participation), optional DCHUB bonds (sub chain tiers) | predictable execution, registry listing and discovery, optional module services, and a verifiable record of authority and flows | Gas: DCHUB; service fees: USDC; bonds: DCHUB |
+| Validators and delegators | stake DCHUB, run validator infrastructure, accept slashing risk | gas fees, staking rewards from the rewards pool in early years, and (where applicable) security rent from recognized sub chains | DCHUB |
+| Protocol Treasury | spends under on-chain policy (grants, audits, security operations, and limited liquidity support where permitted) | receives a defined share of protocol service fees; may receive DCHUB via protocol mechanics (for example slashing) | USDC and DCHUB |
+| dCorps foundation | funds ecosystem work and public goods under foundation policy | receives a defined share of protocol service fees once established; may administer defined ecosystem programs under strict reporting | USDC and DCHUB |
+| Jurisdiction adapters (optional) | maintain recognition modules and related processes | may receive a defined share of adapter participation fees and publish derived recognition signals | typically USDC |
+| Builders and service providers | no protocol-level obligation | benefit from a shared standard and can build products (dashboards, payroll, donor portals) that users choose to pay for | off-protocol |
+
+This structure is designed so that no single company has to subsidize the network indefinitely to keep it alive, and so that the Hub can remain neutral and usable even as applications compete at the edges.
+
+### 0.1.2 v1 scope box (ships on mainnet, explicitly out of scope)
+
+dCorps is a long-term multi layer vision. Mainnet v1 is intentionally narrow: ship a stable Hub kernel that can host complete corporations and nonprofits on a shared public chain.
+
+**In scope for v1 mainnet**
+
+- Hub chain, DCHUB gas and staking, and basic on-chain protocol governance.
+- Entity registry, entity IDs, entity metadata, and lifecycle status.
+- Hub corporation module (v1 cap table and governance):
+  - Ten thousand unit template
+  - Unit issuance, transfers, restrictions, and corporate actions at the Hub entity level
+  - Standard pools and claims patterns for finer-grained ownership when needed
+- Hub nonprofit module:
+  - Board governance
+  - Donation and program wallet structure
+  - Allocation rules and category level transparency
+- Roles, governance primitives, and document anchoring:
+  - Proposals, votes, and executed resolutions
+  - Hash anchoring of minutes, agreements, audits, and policy documents
+- Wallet and accounting primitives:
+  - Canonical wallet types
+  - Tagged accounting events
+  - Reproducible cash-based operating reporting views
+- Reference tooling and standards:
+  - Explorer and indexer
+  - Entity schemas and APIs
+  - Conformance test suite for applications and modules (minimum compatibility signals)
+
+**Explicitly out of scope for v1**
+
+- Any requirement to attach a jurisdiction, legal wrapper, or compliance process.
+- Operating or providing:
+  - a bank integration layer
+  - fiat rails, on-chain fiat payments, or custody of fiat
+  - broker or dealer services, exchanges, matching engines, or fundraising platforms
+- Automatic legal personhood or guaranteed compliance in any jurisdiction without off-chain legal processes.
+- Public market features as a core protocol promise:
+  - dShares issuance, primary offerings, or secondary trading infrastructure
+  - any guarantee of listing or liquidity
+- Advanced execution environments as part of the default path:
+  - public or private sub chains
+  - rollups or private ledgers
+  - promotion or migration requirements to remain functional
+- Mandatory protocol level KYC, KYB, AML, sanctions screening (these live in applications, service providers, and optional adapters).
+- Full privacy execution as a default baseline (privacy is supported as optional evolutions and selective disclosure patterns).
+
+Everything out of scope for v1 may arrive later as optional modules, applications, and upgrades once the Hub kernel is mature and operationally proven.
+
+---
+
+## 0.2 Mission
+
+The mission of dCorps is:
+
+> Give anyone on earth the ability to create and run a serious, transparent digitally native corporation or nonprofit in a recognized digital ecosystem, whether or not it is attached to a jurisdiction, and to optionally attach legal recognition where and when it is needed.
+
+The core promises are:
+
+- **Access**
+   Founders and nonprofit leaders should be able to form and operate serious structures without needing to be in a small set of favored jurisdictions.
+- **Transparency**
+   Governance, cap tables, and financial flows should be anchored in verifiable state, not just in private spreadsheets or PDFs.
+- **Programmability**
+   Common organizational processes such as vesting, donations, board approvals, and allocation rules should be expressible as code, not only as narrative policies.
+- **Digital-only by default, optional external interoperability**
+   Entities should be able to start simple and remain complete inside the on-chain economy. If they later choose to interact with legacy jurisdictions or institutions, they can attach optional adapters and evidence patterns without rebuilding their infrastructure.
+
+---
+
+### 0.3 Digital-native kernel, optional adapters for jurisdictions and institutions
+
+dCorps is a **digital-native entity base layer**. It reuses proven organizational abstractions (ownership, units, boards and roles, accounting, approvals) but replaces external enforcement with deterministic execution and auditable state.
+
+That means:
+
+* The **Layer 1 Hub kernel** focuses on:
+
+  * Entity registration and identity.
+  * Ownership and authority (units, roles, approvals).
+  * Governance actions and document anchors.
+  * Wallet structure and standardized accounting events.
+  * DCHUB staking, gas, and protocol governance.
+* **Adapters and frameworks** are optional modules that sit on top of the kernel, not hard coded into the base protocol:
+
+  * Jurisdiction adapters interpret on-chain truth for specific legal and institutional contexts.
+  * Sector and impact frameworks compute domain specific metrics from Hub state.
+  * Attestation and reputation modules publish derived signals about entities, roles, and activity.
+* **Applications** are completely separate from the Hub:
+
+  * Payroll tooling, donation portals, fundraising platforms, analytics, and dashboards operate as independent applications.
+  * They talk to the Hub through wallets, APIs, and SDKs.
+  * They can be built by any developer and surfaced in an open app and module registry.
+
+The **dCorps foundation** is expected to steward public goods, including reference standards, conformance tests, and optional adapter specifications that evolve as institutions, markets, and law evolve. The foundation does not make external systems a dependency of the kernel.
+
+The base layer has one job: **be a neutral, robust, auditable organization kernel**. Everything else is optional and replaceable.
+
+Applications provide user experience on top of the Hub and its adapters, but they do not become part of consensus.
+
+------
+
+### 0.3A Digitally native entities and scope
+
+dCorps is a digitally native entity base layer, meaning entities are represented as persistent on-chain objects with explicit roles, wallets, governance, and accounting primitives.
+
+The Hub is designed to be the canonical operational ledger for on-chain entity activity:
+
+- Entity identity and registry state
+- Cap tables (Hub units) and board structures
+- Governance proposals, votes, and resolutions
+- Structured wallet flows and tagged accounting events
+- Anchors for off-chain documents and optional anchored-environment summaries (future extension)
+
+dCorps is not a legal wrapper service and does not replace legal responsibility. Legal status, filings, and enforcement remain off-chain and are achieved through optional integrations such as jurisdiction adapter modules plus matching legal processes and documents. The protocol can help express and automate reporting logic and fee obligations, but it does not guarantee compliance, and it does not replace legal, tax, or accounting advice.
+
+dCorps is designed for organizations that operate entirely inside the on-chain economy. The strongest transparency and automation guarantees come from routing operations through canonical on-chain wallets and standardized workflows. Entities may still anchor hashes of off-chain documents (contracts, invoices, policy texts, audits, and similar artifacts) when they want additional evidence or dispute clarity, but the protocol does not assume or require any bank rails, fiat ledgers, or state registries as inputs.
+
+------
+
+### 0.3B What a Hub entity is as a digital organization
+
+A dCorps Hub entity is a digitally native organizational object with canonical identity, ownership or board authority, governance history, and standardized wallet and accounting structures recorded on the Hub.
+
+A Hub entity is complete with or without any jurisdiction adapter. Adapters exist only to map on-chain truth into external processes when an entity chooses to interact with them.
+
+A Hub entity can be understood as:
+
+- An on-chain registry entry plus on-chain state machines (ownership or board structure, role and wallet structure, governance events, accounting primitives), and
+- Optional off-chain agreements and practices that participants may choose to maintain, which can reference the on-chain state as the canonical source of authority.
+
+dCorps does not grant legal personhood by itself. Where legal personhood is desired, it is achieved through an external process that references Hub identifiers, governance records, and ownership or board state.
+
+Operating without legal recognition may limit enforceability against legacy counterparties in some contexts. This is a choice, not an incomplete state.
+
+At the same time, purely Hub-native entities can still be highly meaningful inside the on-chain economy, to customers, suppliers, contributors, and other entities that choose to rely on on-chain authority.
+
+
+#### 0.3B.1 Default v1 operating pattern (no jurisdiction adapter)
+
+In v1, many teams can operate purely Hub-native. If a team also wants an off-chain agreement layer that references on-chain authority, a common pattern is:
+
+1. Register a Hub corporation or Hub nonprofit on-chain.
+   - For corporations, the default ownership model is 10,000 base units, and it can be expanded in v1 when higher precision is needed (see section 7.1.1).
+2. Optionally adopt governing documents off-chain that reference:
+   - The entity ID,
+   - The role and voting rules used on-chain,
+   - The cap table or board state as the canonical source of record for defined decisions, and
+   - The document anchoring scheme used for minutes, resolutions, and material contracts.
+3. Operate day to day treasury activity through the standardized on-chain wallet structure as much as practical.
+4. Use anchored documents and attestations only where needed for external counterparties, audits, or dispute resolution.
+
+Reference templates and checklists for this pattern may be published or recommended through the app and module registry, but these templates (whether provided by dCorps, third parties, or law firms) are not part of the protocol and are not legal advice.
+
+#### 0.3B.1A Legal binding and enforceability kit (reference standard)
+
+This section defines a repeatable documentation and evidence pattern for entities that want off-chain counterparties, auditors, and service providers to treat the Hub record as the canonical source of truth for authority, approvals, and governance history.
+
+This is a reference standard for interoperability and operational clarity. It does not create legal personhood and does not guarantee enforceability in any jurisdiction.
+
+**Entity Governance Binding Document (reference artifact)**
+
+Entities that want a high clarity posture in a jurisdictionless phase are expected to adopt an off-chain governing document that, at minimum, references:
+
+- The Hub `entity_id` (and chain ID or other canonical chain identifier used at the time of signing).
+- The entity type (Hub corporation or Hub nonprofit) and the version of the governance template or module family used.
+- The role binding method used for authority (wallet-based roles, DID-based roles, or hybrid), and how role reassignment and key rotation are recognized.
+- The voting and approval rules that have binding effect for defined decision classes, including:
+  - Which decisions must be approved by board votes versus unit holder votes (or both),
+  - Quorum and threshold rules,
+  - How abstentions and vacancies are treated.
+- The list of decision classes for which the Hub record is treated as canonical evidence of approval, including, at minimum, the following when used:
+  - Material contract approval,
+  - Treasury policy and limits,
+  - Unit issuance, cancellations, and major transfers (for corporations),
+  - Allocation rule changes (for nonprofits),
+  - Attachment or detachment of protocol modules,
+  - Anchored environment recognition related actions (future extension) where applicable.
+- The document anchoring scheme, including:
+  - What must be anchored (minutes, resolutions, material contracts, audits, and other defined documents),
+  - How anchors are referenced (hash, timestamp, on-chain event pointer),
+  - How superseded documents and corrections are handled.
+
+**Authority evidence package for counterparties (recommended)**
+
+For any material off-chain agreement, the entity is expected to produce a compact evidence package that a counterparty can verify without trust in a private inbox or a single individual. A standard package includes:
+
+- `entity_id`, entity name, and current registry status.
+- The role wallet or DID asserted to have signing authority, and the current on-chain role binding record for that role.
+- A governance resolution that:
+  - Approves the agreement (or the signing of a defined agreement class),
+  - Identifies the signer role and any limits (amount caps, term limits, scope limits),
+  - Anchors the final agreement hash, or anchors a definitive agreement reference ID that maps to an anchored file.
+- A document anchor for the final, executed agreement, including its hash and minimal metadata.
+- If the agreement was approved through delegation or an internal policy, the evidence package includes the policy anchor and the policy effective date.
+
+This package is designed so that a counterparty can confirm, using public state, that the correct approvals exist and that the signed document matches the anchored commitment.
+
+**Disputes, corrections, and signer authority conflicts (reference pattern)**
+
+Because the Hub is not a court, disputes are handled by contracts and institutions outside protocol consensus. A standard posture is that:
+
+- The entity’s governing documents define how disputes about authority and approvals are resolved and what evidence is admissible.
+- Corrections are handled by anchoring superseding documents and publishing explicit correction resolutions, rather than attempting to erase history.
+- If a signer’s authority is later disputed, the evidence timeline remains visible, including:
+  - role binding changes,
+  - resolutions and their vote records,
+  - anchored documents and their supersession chain.
+
+The protocol does not mandate a particular dispute venue. The goal is that whichever venue applies has a clear, verifiable evidence trail.
+
+**Personal liability and limited liability boundary (operational safety checklist)**
+
+In a jurisdictionless phase, limited liability should not be assumed. A safety checklist for serious teams includes:
+
+- Use explicit signer roles and anchored approvals for material obligations so counterparties can verify authority.
+- Keep a clear boundary between entity wallets and personal wallets, and avoid commingling.
+- For high stakes off-chain obligations, use an attached jurisdiction adapter module or an explicit off-chain legal wrapper that references the Hub record, so that signers are not relying on informal assumptions about liability.
+
+dCorps can standardize evidence and authority records. It does not replace legal structure.
+
+#### 0.3B.2 Optional attachment for external recognition
+
+An entity may choose to attach a jurisdiction adapter when it wants to interact with external systems that require local recognition (certain contracts, employment, procurement, or other institutional workflows). The adapter is an overlay: it reads Hub state and publishes a recognition status or proof pointers, while the actual legal steps happen off-chain.
+
+Recognition status can be recorded on-chain as derived state so counterparties and applications can rely on a consistent view. The adapter does not change the kernel, it bridges kernel facts to off-chain legal assertions.
+
+#### 0.3B.3 Digitally native operation (jurisdictionless by default)
+
+dCorps is designed so that entities can be legitimate and useful even without any jurisdiction adapter attached, as long as their relevant counterparties agree to rely on the Hub record.
+
+Common patterns include:
+
+- digitally native service businesses and digital collectives that transact primarily in stablecoins and onboard customers globally.
+- Protocol teams and DEX operators that want structured governance, role-based authority, and transparent operational flows, without immediately committing to a jurisdiction regime.
+- On-chain ventures whose contracts, treasury policies, and counterparties are primarily on-chain, so enforceability is achieved through:
+  - smart contract execution,
+  - platform rules and account controls,
+  - arbitration or dispute processes referenced by anchored documents, and
+  - counterparties choosing to rely on the entity’s on-chain authorization rules.
+
+This does not replace law. It is a practical digitally native organizational posture that can be upgraded later into legal recognition through jurisdiction adapters and matching off-chain processes when and where that becomes desirable.
+
+Optional note: when an entity chooses to interact with legacy legal or institutional contexts, it may need external recognition and off-chain enforcement. That is why jurisdiction adapters exist as optional overlays. They are not required for digital-only operation on-chain.
+
+---
+
+### 0.4 Who dCorps is for
+
+dCorps is designed for:
+
+* **Founders and small teams**
+
+  * Want a serious, transparent corporation that can operate globally in USDC.
+  * Need clear ownership, governance, and accounting from day one.
+  * May later need legal recognition or public style financing, but do not want to choose everything on day one.
+* **Nonprofit founders and NGOs**
+
+  * Want full transparency on donations and program spending.
+  * Need verifiable board based governance and allocation rules.
+  * Want to receive donations and grants in stablecoins, with clear reporting.
+* **Protocols and DAOs maturing into entities**
+
+  * Started life as informal DAOs.
+  * Now need predictable governance, HR, legal contracts, and sustainable funding structures.
+* **Jurisdictions and institutions**
+
+  * Want digital friendly regimes for corporations and NGOs.
+  * Prefer programmable, auditable bases rather than purely paper based systems.
+* **Builders, auditors, and service providers**
+
+  * Want a stable base layer to build accounting tools, dashboards, donation platforms, compliance tools, and analytics.
+  * Prefer open standards rather than each client or jurisdiction inventing its own format.
+
+dCorps is **not** for:
+
+* Projects that want opaque structures, cosmetic governance, and minimal transparency.
+* nonprofits that are unwilling to expose financial flows on-chain at least at an aggregated category level.
+* Actors looking for the chain to replace legal responsibility or to provide guaranteed investment returns.
+
+In short: dCorps is **infrastructure**, not a bank, not a broker, not an exchange, and not a compliance shortcut. Entities and participants remain responsible for law, regulation, and business risk.
+
+------
+
+### 0.5 Skeptic FAQ (quick answers)
+
+**Is dCorps trying to replace law or act as a legal wrapper service?**
+
+No. The Hub is a registry and evidence layer for digitally native entities. Legal personhood, limited liability, filings, and enforcement remain off-chain and are achieved through optional jurisdiction adapter modules plus matching legal documents and processes (see section 0.3B and section 14.3).
+
+**Is a Hub entity a legal corporation or charity by default?**
+
+Not by default. A Hub entity is an on-chain organizational object with roles, governance, wallets, and history. It becomes legally recognized only when local law and off-chain processes bind recognition to on-chain identifiers and module state (see section 0.3B and section 14.3).
+
+**Why a dedicated Hub chain and DCHUB instead of only contracts on an existing chain?**
+
+Because dCorps needs a stable, neutral home for entity IDs, governance evidence trails, anchoring standards, and a consistent security and coordination root for Hub aligned sub chains. These are long-lived primitives that benefit from conservative upgrades and a dedicated economic security model (see section 5.6 and section 6.5).
+
+**Can entities lie with tags and reporting?**
+
+Amounts, timestamps, and transfers for on-chain funds are verifiable. Category tags are interpretations and can be misused. dCorps mitigates this by encouraging typed workflows that emit deterministic categories, evidence anchoring for material transactions, counterparty receipts, and optional third-party attestations and reconciliation signals (see section 9.5A and section 9.5B).
+
+**Is dCorps a bank, broker, exchange, or fundraising platform?**
+
+No. The protocol does not custody funds, run markets, intermediate capital, or perform KYC at the base layer. Regulated activity lives in external applications, custodians, and service providers that carry their own responsibilities (see section 4.6 and section 4.6A).
+
+**What happens if USDC is frozen or disrupted?**
+
+Stablecoin issuer actions and rail risk are external to the Hub and cannot be overridden by validators or governance. dCorps treats this as a treasury and continuity planning issue, surfaced through asset registry risk labeling, treasury segmentation, diversification, and explicit operating continuity policies (see section 9.1B and section 15.8.1).
+
+**How do you reduce governance capture risk?**
+
+dCorps uses long vesting, non voting treasury and foundation defaults, protected changes with higher thresholds, stake age requirements, and execution timelocks for sensitive actions. These guardrails are designed to make hostile changes slower and more visible (see section 10.3A and section 13.3.5).
+
+---
+
+## 1. Purpose, scope, and digital-native philosophy
+
+### 1.1 What this whitepaper is
+
+This whitepaper is:
+
+- A **technical and economic design** for the dCorps base layer.
+- A description of:
+  - The Hub chain and entity models.
+  - Token and fee mechanics.
+  - Governance and security structures.
+  - The roles of the development corporation and future foundation.
+- A statement of **design intentions and principles**, not a binding specification.
+
+In this document, “must” and “required” describe compatibility requirements for implementations, modules, applications, reference interfaces, and sub chains that claim compatibility with the dCorps standards described here. They do not describe legal, regulatory, or market guarantees. The normative rules, message families, state machines, schemas, and conformance tests are defined in the **Protocol Specification** and the **Module Protocol Standard**.
+
+It is meant to be read together with:
+
+- A Protocol Parameters document.
+- Developer documentation and module specifications.
+- Governance and Treasury policy documents.
+
+Those will provide more precise numbers and APIs.
+
+---
+
+### 1.2 What this whitepaper is not
+
+This whitepaper is not:
+
+* A prospectus, offering memorandum, or fundraising document.
+* A legal opinion or classification of DCHUB or any other token under any particular law.
+* A full technical specification; important implementation details will live in separate documents and repositories.
+
+Any token sale, equity financing, or legal recognition program will be described in its own documents and will comply with local rules where it takes place.
+
+---
+
+### 1.3 Intended audience
+
+The intended readers are:
+
+* **Founders and nonprofit leaders** evaluating dCorps for their own entities.
+* **Developers and infrastructure providers** who want to build on dCorps.
+* **Validators and stakers** assessing the security and economics of the network.
+* **Institutions, policymakers, and legal professionals** who need to understand what dCorps does and does not do.
+* **Researchers and observers** interested in on-chain based entity infrastructure.
+
+The language aims to be precise enough for serious readers, without assuming specialist background in cryptography or specific jurisdictions.
+
+---
+
+### 1.4 Digitally native by default philosophy
+
+The design of dCorps follows a digital-native philosophy:
+
+- **Neutral protocol, not a product bundle**
+   The Hub is not a commercial incorporation service. It is neutral infrastructure that anyone can build on, including competing incorporation services, jurisdictions, and applications.
+- **Self custody and sovereignty by default**
+   Entities and users keep control of their wallets, keys, and governance processes, except where they choose to use custodial or managed services.
+- **Transparency as verifiable state**
+   Ownership, governance, and material financial flows are represented as on-chain state, or anchored through hashes and proofs. Reports and dashboards are views over this state, not alternative sources of truth.
+- **Clear separation between core, protocol modules, and applications**
+   The Hub focuses on entity registration, entity structure, governance events, and accounting primitives. Jurisdiction rules and sector standards live in protocol modules. User experience, KYC, traditional integrations, and markets live in external applications.
+- **Compliance aware, not compliance enforcing**
+   The protocol does not claim to encode the law for every jurisdiction. Instead it provides primitives and interfaces so that legal and regulatory rules can be integrated through optional modules and off-chain processes, where those actors accept responsibility.
+
+The aim is to combine the programmability and auditability of on-chain infrastructure with the durability and seriousness required by real corporations and nonprofits.
+
+#### Universal base layer, consistent protocol behavior
+
+dCorps does not tune its core entity model for specific countries, sectors, or organization sizes. The Hub aims to expose consistent primitives for identity, roles, wallets, governance, and accounting.
+
+At the same time, legal status and legal effects are not universal. Legal recognition, filings, reporting obligations, and enforcement still depend on jurisdiction, contracts, and institutions. dCorps addresses this by keeping jurisdiction specific differences in **jurisdiction adapter protocol modules** and matching off-chain processes, rather than hard coding them into the core chain.
+
+---
+
+### 1.5 How to read this document
+
+This whitepaper is intentionally long and complete. It is the canonical reference for how dCorps is intended to work at the protocol and ecosystem level.
+
+Other documents are, or will be, shorter slices of the same design, for example:
+
+- A **litepaper** (`docs/public/whitepaper/LITEPAPER.md`) or **investor brief** (`docs/public/investor/INVESTOR_BRIEF.md`) that focuses on vision, architecture, token model, and adoption path.
+- A **nonprofit note** (`docs/public/whitepaper/NONPROFIT_NOTE.md`) that focuses on nonprofit modules, donor transparency, and jurisdiction adapter patterns for charities.
+- Public technical docs (`docs/public/technical/TECHNICAL_OVERVIEW.md`, `docs/public/technical/INTEGRATION_GUIDE.md`) and normative specs (`docs/spec/`) that focus on APIs, schemas, and implementation details.
+
+Those documents do not replace this whitepaper. They present the same structure from different angles. Where there is any doubt, this long form whitepaper is the starting point, and more precise parameter values or legal details live in the separate reference and policy documents listed in section 1.1.
+
+------
+
+### 1.6 Terminology and conventions
+
+This whitepaper uses the following conventions to keep wording and technical meaning consistent:
+
+**Entity and system terms**
+
+- **Hub**: The dCorps Hub chain, the canonical registry and coordination layer.
+- **Hub entity**: An entity that operates directly on the Hub (Hub corporation or Hub nonprofit).
+- **Sub chain**: A Cosmos-based chain registered with the Hub and anchored to it under dCorps standards.
+- **Protocol module**: On-chain logic that attaches to, reads, and writes Hub entity state (for example jurisdiction adapter modules and sector frameworks).
+- **Application**: Off-chain software (UI, API services, dashboards, platforms) that interacts with the Hub and sub chains via wallets, SDKs, and APIs, but does not become part of consensus.
+
+**Writing conventions**
+
+- “On-chain” and “off-chain” are written with a hyphen.
+- “nonprofit” is written as one word.
+- “sub chain” is written as two words. Use “Sub chain” (capital S) only in headings and when referring to the defined term.
+- “Must” and “required” indicate compatibility requirements for implementations, modules, applications, reference interfaces, or sub chains that claim conformance; they are not guarantees about off-chain outcomes.
+- “Expected”, “intended”, and “design intention” describe goals, not guarantees.
+
+**Money and denominations**
+
+- USDC is used as the baseline unit of account for examples and default reporting.
+- Cosmos chains often represent token amounts in atomic units. When `uusdc` is used in examples, it means micro USDC (1 USDC = 1,000,000 `uusdc`), unless explicitly stated otherwise.
+- When USDC is held or transferred on the Hub, it is typically represented as an IBC denom whose base asset is Noble’s `uusdc`. Examples may use `uusdc` for readability.
+
+------
+
+### 1.7 Key assumptions and dependencies
+
+This whitepaper assumes:
+
+- Cosmos and IBC remain viable open standards for cross-chain communication and stablecoin routing.
+- USDC on Noble (and other approved stablecoins in the future) remains available as an operating currency, with issuer controls and rail risk treated as external constraints (see section 9.1B).
+- One or more independent indexers and explorers exist and remain available, because most users experience the protocol through indexed views rather than raw node queries.
+- Entities that want strong transparency route the large majority of their material activity through canonical on-chain wallets and standardized workflows. If an entity uses multiple chains or external systems, it may publish optional completeness commitments and attestations, but the Hub kernel does not depend on fiat rails.
+- Recognized sub chains can meet anchoring and security alignment standards and can be objectively downgraded when they do not (see section 6.5B and section 6.5B.5).
+- Jurisdiction adapters are optional and may be delayed, limited, or unavailable for long periods; legal recognition remains jurisdiction dependent and off-chain (see section 0.3B and section 14.3).
+- Privacy-preserving execution and zero knowledge reporting are optional evolutions; v1 does not assume they are universally available or easy to deploy (see section 8.5).
+
+If these assumptions do not hold, adoption paths and module timelines may change, but the Hub’s core goal remains the same: a minimal, auditable entity registry and operating substrate.
+
+---
+
+## 2. Vision, problem, and context
+
+### 2.1 Core mission
+
+The core mission of dCorps is to democratize:
+
+* Serious corporation creation and operation, and
+* High trust nonprofit operation and donor reporting
+
+for people in all countries, not only in a small set of financial centers.
+
+In concrete terms:
+
+* A founder in Lagos, Dhaka, or Medellín should be able to run a USDC based, transparent entity with credible governance and accounting, without needing to relocate or rely on opaque intermediaries.
+* A small NGO doing critical work in a fragile state should be able to prove allocation and governance quality with the same level of cryptographic assurance as a large foundation in a major capital.
+
+---
+
+### 2.2 Problems with current corporate and NGO systems
+
+Current systems have deep structural limits.
+
+**Geography and jurisdiction bias**
+
+* Founders in good jurisdictions can incorporate quickly, open bank accounts, and access international payment rails.
+* Founders in fragile or excluded jurisdictions face:
+
+  * Unreliable registries.
+  * High banking risk or rejection.
+  * Low trust from foreign counterparties.
+
+Two teams of equal skill and seriousness often face entirely different futures because of their passports, not their work.
+
+**Fragmentation and manual reconciliation**
+
+* Legal status lives in registries and paper bound law.
+* Money lives in bank accounts and payment networks.
+* Governance lives in minutes, email threads, and third-party portals.
+* Accounting lives in private ledgers and spreadsheets.
+
+Keeping these in sync is manual and error prone. Cap tables drift from reality. NGO reports lag reality by months or years.
+
+**Gated access to capital and grants**
+
+* Public markets and major private capital are effectively reserved for a tiny percentage of corporations that can afford heavy regulatory and advisory costs.
+* Large, brand name NGOs dominate institutional funding. Smaller organizations with real impact cannot prove it in a way that large donors trust.
+
+**Transparency that is narrative, not cryptography**
+
+* Transparency usually means self-reported PDFs, selectively compiled.
+* Underlying records can often be changed without global visibility.
+* Donors and investors see stories, not ledgers.
+
+At the same time, many crypto native organizations are:
+
+* Programmable and transparent in treasury movements, but
+* Informal, hard to map to law, and limited in back office functions.
+
+There is a missing layer between traditional systems and raw DAOs.
+
+---
+
+### 2.3 Why on-chain infrastructure is an appropriate base
+
+On-chain infrastructure, used carefully, solves some core issues:
+
+* A **shared ledger** across borders offers a common source of truth.
+* Smart contracts allow core processes such as vesting, board decisions, and allocation rules to be executed and audited by code.
+* Wallets and stablecoins allow entities to transact globally without relying on a particular national banking system.
+
+However, generic smart contract platforms and DAO frameworks alone are not enough. They often lack:
+
+* Clear mapping between wallets and legally meaningful roles such as director or board member.
+* Well defined cap tables and corporate actions.
+* NGO specific requirements such as allocation rules and board oversight.
+* Stable, neutral base layer governance suitable for institutions and conservative counterparties.
+
+dCorps uses on-chain infrastructure not as a speculation machine, but as a **programmable entity operating system**.
+
+---
+
+### 2.4 What a digitally native entity stack looks like
+
+A modern entity stack built on on-chain infrastructure should be:
+
+* **Neutral and global**
+  It should not belong to a single country or corporate service provider. Jurisdictions can plug in through protocol modules, not through exclusive control.
+* **Transparent but privacy aware**
+  Key structures and flows should be observable and auditable. Sensitive data such as individual salaries, HR records, and beneficiary identities must be protected through controlled zones and off-chain storage.
+* **Programmable and composable**
+  Core patterns such as cap tables, payroll, donation flows, and allocation rules should be reusable, auditable modules, not bespoke scripts and spreadsheets.
+* **Sovereign entities, not anonymous contracts**
+  Entities should have names, identities, and roles that map to the real world, even when they operate globally.
+* **Compliance aware**
+  Laws differ by jurisdiction and evolve. The stack needs clear places where legal and regulatory logic can be attached, updated, and versioned without rewriting the base.
+
+dCorps is designed as such a stack. It keeps entity models at the center and treats finance, governance, jurisdiction logic, and sector standards as composable layers around them, implemented as protocol modules and applications.
+
+---
+
+### 2.5 Who dCorps is for and not for
+
+**For**
+
+* Serious founders who want long term entities, not short term token games.
+* NGOs and impact organizations that want donors to see how funds are used.
+* Protocol teams that want to graduate from pure DAOs to structured, accountable organizations.
+* Institutions, policymakers, and jurisdictions that want to work with transparent on-chain entities, using adapters instead of bespoke reporting.
+* Builders of accounting, payroll, compliance, and donation tools who want a stable base to integrate with many entities.
+
+**Not for**
+
+* Projects that want to hide ownership, governance, or financial flows.
+* Entities that want token price as the main narrative, without clear business or impact logic.
+* Actors hoping that, because it is on-chain, they no longer have to comply with local laws.
+* nonprofits unwilling to show donors how funds are allocated in practice.
+
+---
+
+### 2.6 Example use cases
+
+Short vignettes help illustrate how dCorps works in practice.
+
+#### Remote-first startup
+
+Three founders in three countries want to launch a software product and sell subscriptions globally.
+
+On dCorps they:
+
+- Register a **Hub corporation** and allocate the ten thousand internal units among founders, early contributors, and a contributor pool.
+- Receive income into a **merchant wallet** in USDC.
+- Pay contractors, infrastructure costs, and distributions from treasury and operating wallets using tagged accounting events.
+- At month end, generate a **cash-based operating statement** suitable for stakeholder transparency, distinct from GAAP or IFRS reporting.
+- If they later need to sign contracts with legacy counterparties, they can attach an optional **jurisdiction or institutional adapter** that references on-chain governance and ownership, without changing the kernel.
+
+#### Radically transparent nonprofit
+
+A small NGO works on education in a low income region. It is trusted locally but struggles to convince international donors.
+
+On dCorps it:
+
+- Registers as a **Hub nonprofit** with a board represented by DIDs and role wallets.
+- Receives donations into a **donation wallet** in USDC, including checkout donations from partner corporations.
+- Defines program wallets and **allocation rules as code**, including minimum percentages for direct program spending versus overhead, and restricted fund constraints when needed.
+- Allows donors to see, in near real time, how funds move from donation to program costs, and how board decisions are taken.
+- Optionally attaches a **jurisdiction adapter** for local charity recognition or tax receipt workflows, while keeping the Hub as the canonical ledger of truth.
+
+This does not replace field level due diligence, but it makes governance and allocation visible in a way traditional tools do not.
+
+#### Joint venture SPV for a specific project
+
+Two corporations want to co-fund and operate a specific project without merging their main entities.
+
+On dCorps they:
+
+- Register a dedicated **Hub corporation** as a joint venture or SPV, owned by the parent entities, with its own units and wallets.
+- Allocate units to the parent entities according to their agreement, and optionally allocate a contributor pool for project work.
+- Route project revenues and costs through dedicated wallets, tagged separately from each parent entity’s own operations.
+- Use on-chain approvals and reporting views to give both parents and external financiers a clear picture of the project’s performance.
+
+The JV behaves like any other Hub corporation from the protocol’s perspective, while remaining ring-fenced from each parent’s main operations.
+
+#### Digital-friendly jurisdiction as an adapter
+
+A jurisdiction wants to offer a digital corporation or nonprofit recognition regime without building a chain from scratch.
+
+Instead of changing the kernel, it can:
+
+- Publish an adapter specification that maps dCorps entity state and proofs into a local recognition process.
+- Offer optional services (templates, filings, reporting, tax receipt workflows) that reference anchored evidence and executed resolutions.
+- Collect fees through the adapter workflow only when an entity opts in.
+
+In this model, dCorps remains the kernel, and jurisdictions integrate as optional plugins.
+
+---
+
+### 2.7 Concrete operating examples with numbers
+
+The following examples are simplified cash flow and tagged ledger views to make the reporting model concrete. They are not intended to represent GAAP, IFRS, or any local statutory reporting standard.
+
+They illustrate:
+
+- canonical wallets,
+- tagged accounting events,
+- optional evidence anchors,
+- and the reproducible period views described later in section 9.5B (corporations) and section 9.5C (nonprofits).
+
+#### 2.7.1 Hub corporation, monthly operations example (end-to-end)
+
+A Hub corporation routes all material revenue and operating payouts through its dCorps wallets.
+
+**Month inputs (merchant wallet inflows)**
+
+- Subscription revenue (invoicing module, typed workflow): 50,000 USDC
+
+**Month outputs (operating outflows)**
+
+- Salaries (payroll batch, typed workflow): 30,000 USDC
+- Contractors (tagged outflows): 5,000 USDC
+- Cloud and infrastructure (tagged outflows): 4,000 USDC
+- Other operating expenses (tagged outflows): 2,000 USDC
+- Jurisdiction compliance fees (optional adapter, typed workflow): 500 USDC
+- One uncategorized outflow (missing required category tag, surfaced in coverage): 500 USDC
+
+**Treasury sweep (internal transfer, not an expense)**
+
+- Transfer to treasury wallet for reserves: 8,000 USDC
+
+**End of month balances (illustrative)**
+
+- Merchant wallet remaining: 0 USDC
+- Treasury wallet: 8,000 USDC
+
+**Coverage and integrity signals (illustrative)**
+
+- Inflow coverage: 1.00 (all inflows arrived through canonical wallets)
+- Outflow coverage: 1.00 (all outflows occurred through canonical wallets)
+- Evidence coverage: 0.70 (illustrative, based on anchors attached to material items)
+- Uncategorized outflows: 500 USDC (explicitly shown and expected to converge toward zero with improved tagging discipline)
+
+**Tagged accounting events (simplified excerpt)**
+
+| Event | Direction | Wallet type | Amount | Category tag | Source type | Evidence anchor |
+| --- | --- | --- | ---:| --- | --- | --- |
+| Subscription revenue | inflow | merchant | 50,000 | `subscription_revenue` | typed_workflow | invoice batch anchor (optional) |
+| Payroll batch | outflow | merchant | 30,000 | `salaries_wages` | typed_workflow | payroll report anchor |
+| Contractor payout | outflow | merchant | 5,000 | `contractors_freelancers` | entity_tagged | invoice anchor |
+| Cloud bill | outflow | merchant | 4,000 | `cloud_infrastructure` | entity_tagged | statement anchor (optional) |
+| Other opex | outflow | merchant | 2,000 | `other_expenses` | entity_tagged | receipt anchors (optional) |
+| Compliance fee | outflow | merchant | 500 | `jurisdiction_compliance_fees` | typed_workflow | policy or invoice anchor (optional) |
+| Missing category example | outflow | merchant | 500 | (missing) | entity_tagged | none |
+| Treasury sweep | internal | merchant -> treasury | 8,000 | `internal_transfer` | typed_workflow | none |
+
+**Derived cash-based operating view (category totals excerpt)**
+
+```json
+{
+  "report_type": "cash_based_operating_statement",
+  "base_denom": "uusdc",
+  "income": [
+    { "category": "subscription_revenue", "amount": "50000000000", "source_type": "typed_workflow" }
+  ],
+  "expenses": [
+    { "category": "salaries_wages", "amount": "30000000000", "source_type": "typed_workflow" },
+    { "category": "contractors_freelancers", "amount": "5000000000", "source_type": "entity_tagged" },
+    { "category": "cloud_infrastructure", "amount": "4000000000", "source_type": "entity_tagged" },
+    { "category": "other_expenses", "amount": "2000000000", "source_type": "entity_tagged" },
+    { "category": "jurisdiction_compliance_fees", "amount": "500000000", "source_type": "typed_workflow" }
+  ],
+  "coverage": {
+    "total_inflows": "50000000000",
+    "total_outflows": "42000000000",
+    "uncategorized_outflows": "500000000"
+  },
+  "net_operating_result": "8000000000"
+}
+```
+
+This view is reproducible from the underlying accounting events and explicitly surfaces missing tags.
+
+#### 2.7.2 Hub nonprofit, monthly allocation example (end-to-end)
+
+A Hub nonprofit receives donations into its donation wallet and distributes funds across program and support categories with board visibility and enforcement.
+
+**Month inputs (donation wallet inflows)**
+
+- Donations received (donation module, typed workflow): 100,000 USDC
+
+**Month allocations (donation wallet outflows)**
+
+- Program A direct costs (program category, typed workflow): 58,000 USDC
+- Program B direct costs (program category, typed workflow): 17,000 USDC
+- General and administrative overhead (support category): 15,000 USDC
+- Fundraising costs (support category): 5,000 USDC
+
+**Treasury retention (internal transfer, not an expense)**
+
+- Retained for next month buffer (donation wallet -> treasury wallet): 5,000 USDC
+
+**Allocation ratios (illustrative, based on distributed funds)**
+
+- Total distributed this month: 95,000 USDC
+- Program spending: 75,000 USDC (79 percent)
+- Overhead: 15,000 USDC (16 percent)
+- Fundraising: 5,000 USDC (5 percent)
+
+**Coverage and integrity signals (illustrative)**
+
+- Inflow coverage: 1.00
+- Outflow coverage: 1.00
+- Evidence coverage: 0.65 (illustrative, based on anchors attached to material items)
+- Restricted funds coverage (optional): surfaced when restricted tags and consent rules are used
+
+**Tagged accounting events (simplified excerpt)**
+
+| Event | Direction | Wallet type | Amount | Category tag | Source type | Evidence anchor |
+| --- | --- | --- | ---:| --- | --- | --- |
+| Donation inflow | inflow | donation | 100,000 | `donation_unrestricted` | typed_workflow | none (optional donor receipt anchor) |
+| Program A spending | outflow | donation | 58,000 | `program_a_direct` | typed_workflow | invoice and receipt anchors (recommended for material items) |
+| Program B spending | outflow | donation | 17,000 | `program_b_direct` | typed_workflow | invoice and receipt anchors |
+| Overhead spending | outflow | donation | 15,000 | `general_admin` | entity_tagged | receipt anchors (optional) |
+| Fundraising spending | outflow | donation | 5,000 | `fundraising` | entity_tagged | receipt anchors (optional) |
+| Treasury retention | internal | donation -> treasury | 5,000 | `internal_transfer` | typed_workflow | none |
+
+**Derived nonprofit allocation view (category totals excerpt)**
+
+```json
+{
+  "report_type": "nonprofit_allocation_statement",
+  "base_denom": "uusdc",
+  "donations_in": "100000000000",
+  "distributed_out": "95000000000",
+  "retained": "5000000000",
+  "by_category": [
+    { "category": "program_a_direct", "amount": "58000000000" },
+    { "category": "program_b_direct", "amount": "17000000000" },
+    { "category": "general_admin", "amount": "15000000000" },
+    { "category": "fundraising", "amount": "5000000000" }
+  ],
+  "ratios": {
+    "program_spending_ratio": "0.7895",
+    "overhead_ratio": "0.1579",
+    "fundraising_ratio": "0.0526"
+  }
+}
+```
+
+Allocation rules can enforce constraints such as minimum program ratios, maximum overhead, board compensation limits, or restricted fund logic. The point is that the allocation view flows directly from the ledger and associated governance events, not from unverifiable PDFs.
+
+
+## 3. Market landscape and competition
+
+### 3.1 Market map
+
+The landscape dCorps lives in can be simplified into layers:
+
+1. **Traditional legal and registry layer**
+
+   * Corporation and NGO registries.
+   * Corporate law and charity law.
+2. **Financial rails**
+
+   * Banks, payment processors, card networks.
+   * Local and cross border payment systems.
+3. **Back office software and services**
+
+   * Accounting, payroll, HR, cap table management, board portals.
+   * Corporate secretarial services and law firms.
+4. **on-chain infrastructure**
+
+   * Smart contract platforms and app chains.
+   * DAO frameworks and treasury tools.
+   * Digital identity and DID systems.
+
+Most serious entities today live at layers 1 to 3. On-chain systems often operate separately, focusing on DeFi and speculative tokens.
+
+dCorps sits between these worlds as an **on-chain layer for real entities**. It is not a replacement for law or for all software, it is a shared base that both traditional and on-chain systems can plug into.
+
+---
+
+### 3.2 Traditional competition
+
+Traditional competition comes from:
+
+* **Corporation and NGO registries**
+
+  * Government or court operated systems holding official records.
+  * Often paper based, slow, and not machine readable.
+* **Offshore incorporation and trust providers**
+
+  * Offer fast corporation setup and management for a global client base.
+  * Increasingly advertise digital corporations with online dashboards.
+  * Still rely on private registries, banks, and bespoke software stacks.
+* **Law firms and corporate service providers**
+
+  * Maintain cap tables, board records, and compliance filings as services.
+  * Integrate with bank and software systems on a case by case basis.
+* **NGO and charity SaaS**
+
+  * Donation platforms, CRM tools, basic reporting and transparency dashboards.
+  * Usually closed, not interoperable between organizations or donors.
+
+These actors provide important services and will continue to do so. What they do **not** provide is:
+
+* A neutral, open, programmable entity layer shared across many jurisdictions and providers.
+* A single common data model of entities that tools, donors, regulators, and DeFi protocols can use without custom integration each time.
+
+Some offshore providers are experimenting with digital shares and online cap table management. They do not expose those structures as public, composable state.
+
+---
+
+### 3.3 On-chain competition
+
+On-chain competition and adjacent projects include:
+
+* **DAO and governance platforms**
+
+  * Aragon, Safe based stacks, Tally, Snapshot, Juicebox, and others.
+  * Focus on token voting, multisig treasuries, proposal front ends, and governance automation.
+* **Legal wrapper projects for DAOs**
+
+  * Connect DAOs to LLCs, foundations, or similar structures in specific jurisdictions via standardized templates.
+  * Often treat the DAO itself as off-chain from a registry point of view.
+* **On-chain identity and registry systems**
+
+  * DID frameworks and verifiable credential ecosystems.
+  * Name registries and specialized chains experimenting with legal entities.
+
+These tools are valuable and dCorps expects to integrate with them. However, they typically do not:
+
+* Provide a single, opinionated model for the full lifecycle of a corporation or NGO, including cap table, board, accounting, and operational flows.
+* Act as a common base for multiple jurisdictions and sectors.
+* Offer clear, entity centric data standards that institutions and accountants can read without learning a new DAO dialect.
+
+dCorps is not a replacement for DAO tooling. It is a structured environment that DAOs and protocols can plug into when they want to operate as long term entities.
+
+---
+
+### 3.4 Adjacent and complementary projects
+
+Many projects are natural partners rather than direct competitors:
+
+* **Stablecoin providers**
+
+  * USDC issuers and other reputable stablecoins.
+  * Provide the monetary unit that entities use on dCorps.
+* **DeFi protocols and lending markets**
+
+  * Can use dCorps entity data to inform collateral parameters and product design.
+* **Oracles and data providers**
+
+  * Can ingest entity state and financial flows from dCorps and provide analytics, ratings, or risk signals.
+* **Identity providers and KYC/KYB services**
+
+  * Can issue credentials, verify directors and key stakeholders, and integrate with DID-based identity on dCorps.
+
+dCorps is designed so that these actors can integrate through standard interfaces rather than bespoke per entity contracts.
+
+---
+
+### 3.5 Differentiation and positioning
+
+dCorps differentiates itself by:
+
+* Treating **entities as first class objects**, not just tokens or accounts.
+* Providing a **global, neutral base layer** focused specifically on corporations and NGOs.
+* Defining a **minimal standard data and governance model** that others can build on.
+* Keeping **jurisdictions and sector rules as protocol modules**, not core assumptions.
+* Staying **non custodial** and **not a market operator**:
+
+  * dCorps does not hold user funds as its core business.
+  * It does not run exchanges, brokerages, or crowdfunding platforms.
+  * It does not act as an asset manager or investment adviser.
+
+In practice, using dCorps should feel more like using a shared registry and accounting substrate that many tools and jurisdictions can plug into, not like signing up to a single platform that owns everything.
+
+---
+
+## 4. Design principles and boundaries
+
+### 4.0 Kernel invariants and the adapter boundary
+
+Section 0.3 introduces the kernel and adapter model. This section makes that boundary explicit as invariants that any protocol change or module must respect. If a feature violates them, it is not part of the kernel.
+
+**Kernel invariants**
+
+1. **Canonical identity and discovery live on the Hub registry.**
+2. **Canonical ownership and authority live on the Hub.** Units, roles, approvals, and executed resolutions are the source of truth.
+3. **Canonical treasury and accounting events are recorded on the Hub** using standardized event types and schemas.
+4. **Every entity can operate without any adapter** and without touching fiat rails as a protocol dependency.
+5. **Adapters may read kernel state and publish derived interpretations**, but they must not mutate kernel semantics or rewrite history.
+6. **External recognition is derived and context-specific.** It can be attached when needed, but it is never required for correctness.
+7. **Tooling must be interoperable.** Applications and modules integrate once through stable, versioned schemas and interfaces.
+8. **Minimalism is a security feature.** The Hub evolves slowly, and extensions remain modular and replaceable.
+
+These invariants are used as a design test for any proposed module, feature, or roadmap item.
+
+### 4.1 Neutral and non custodial
+
+dCorps is neutral infrastructure:
+
+* Any entity that meets basic technical requirements can register without needing a special relationship with the core team or foundation.
+* Multiple jurisdictions, service providers, and tools can compete and cooperate on top of the same base.
+
+The protocol is non custodial:
+
+* Entities keep control over their wallets and keys.
+* The development corporation and foundation do not hold user assets as their core business.
+* Custodial services may exist around the protocol as separate, regulated entities with their own responsibilities.
+
+---
+
+
+### 4.1A Digital-only boundary
+
+dCorps is built for organizations that primarily operate in crypto and on-chain systems.
+
+- The protocol is optimized for stablecoin native operations, DeFi-native treasury flows, and on-chain governance and accounting events.
+- It does not aim to replicate banking, fiat payment rails, or state-based corporate registries inside the protocol.
+- Interaction with the fiat economy is treated as an external edge, handled by optional applications, adapters, or regulated partners when an entity chooses to do so.
+
+This boundary is intentional. dCorps is meant to enable a digital economy that can function without relying on fiat rails as a prerequisite.
+
+### 4.2 Separation of base layer and higher layers
+
+The design draws a clear line between:
+
+* **Base layer responsibilities**:
+
+  * Entity registry and identifiers.
+  * Entity types and internal models.
+  * Cap tables, board structures, and governance events.
+  * Wallet structures and accounting primitives.
+  * Anchoring of documents and sub chain summaries.
+  * DCHUB token, staking, and protocol governance.
+* **Protocol module responsibilities**:
+
+  * jurisdiction adapter modules that encode local law and recognition logic.
+  * Sector frameworks that define domain specific metrics and standards.
+  * Other rule sets that read and interpret entity state, for example allocation frameworks and eligibility rules.
+* **External application responsibilities**:
+
+  * User interfaces and integrations.
+  * KYC and verification flows where needed.
+  * Markets, issuance flows, and donation portals.
+
+Keeping these separate allows:
+
+* Jurisdictions to adopt dCorps in different ways, without changing the Hub.
+* Builders to innovate in protocol modules and application layers without touching consensus.
+* The base layer to remain simple, conservative, and auditable.
+
+The **dCorps foundation** focuses most of its work on protocol modules and ecosystem development, while helping keep the core Hub minimal and stable.
+
+---
+
+### 4.3 Transparency and verifiable state
+
+Transparency is not marketing language, it is a property of the system:
+
+- Ownership, governance, and key financial flows are recorded as state transitions, not only as documents.
+- nonprofits have clear, on-chain donation and program spending categories.
+- Corporations have on-chain **cash-based operating reporting** derived from tagged transaction flows.
+
+At the same time, dCorps:
+
+- Uses off-chain anchoring and selective disclosure patterns for sensitive data.
+- Enables privacy-preserving approaches such as private zones, encrypted payloads, and zero knowledge proofs for selected use cases.
+
+The aim is not full radical transparency of every detail, but verifiable transparency of what matters for trust.
+
+In practice, chain integrity is only half the problem. Data integrity, meaning correct classification, correct links to evidence, and honest completeness, is harder.
+
+dCorps addresses this by prioritizing typed workflows, evidence anchoring, and explicit coverage and assurance signals that make it clear what is verifiable and what is asserted (see section 9.5A).
+
+---
+
+### 4.4 Compliance aware, not compliance enforcing
+
+dCorps is built to be **compliance aware**:
+
+* jurisdiction adapter modules express rules about which types of entities are recognized, what fees apply, and what reporting is expected.
+* Sector frameworks can require certain metrics or proof patterns.
+
+The protocol does not claim that:
+
+* Entity structures are automatically compliant anywhere.
+* Tokens are automatically non securities or non regulated instruments.
+* Using dCorps removes the need for legal advice.
+
+Compliance remains the responsibility of entities and their partners. dCorps gives them better tools; it does not grant legal immunity.
+
+------
+
+### 4.4A Sanctions, AML, and KYC boundary
+
+dCorps is neutral infrastructure and does not perform KYC, KYB, AML monitoring, sanctions screening, or customer due diligence at the base protocol level.
+
+- **Who is responsible**
+  - Entities, application operators, issuance platforms, custodians, exchanges, payment providers, and jurisdiction adapter module operators are responsible for implementing and complying with any KYC, KYB, AML, sanctions, travel rule, reporting, licensing, and consumer protection obligations that apply to their activities and jurisdictions.
+  - Protocol modules may require credentials or attestations as inputs, but the issuance of those credentials and the legal responsibility for their correctness sits with the issuer and the relying party, not the Hub.
+- **Stablecoin issuer enforcement and external controls**
+  - Many stablecoins and bridges include administrative controls such as blacklisting and freezes. These controls are external to dCorps and may be exercised under issuer policy or legal process.
+  - dCorps validators, governance, and reference interfaces cannot unfreeze a stablecoin balance and cannot override issuer enforcement.
+- **No evasion stance**
+  - dCorps is not designed, marketed, or positioned as a tool for evading sanctions, AML obligations, or lawful enforcement.
+  - Entities and users remain responsible for lawful use, and applications that facilitate prohibited activity may be blocked or restricted by external venues, issuers, or service providers regardless of protocol neutrality.
+- **Practical limits**
+  - While the Hub avoids protocol level censorship features by design, validators and infrastructure operators may face external legal or operational constraints. This can affect transaction inclusion and network access in practice.
+
+These boundaries are part of keeping the Hub minimal, neutral, and non intermediation focused, while enabling compliant actors to build responsible applications and modules on top.
+
+---
+
+### 4.5 No hidden super admin keys
+
+Critical protocol components are designed to avoid hidden, unilateral control by any one actor.
+
+- There are no secret keys or privileged backdoors that can silently:
+  - Move entity funds,
+  - Reassign ownership,
+  - Bypass entity approvals, or
+  - Rewrite historical state.
+- If an emergency or upgrade role exists in early phases, it must be:
+  - Explicitly defined in governance documents (scope, limits, and triggers),
+  - Publicly disclosed (addresses, signers, and policy),
+  - Executed transparently on-chain, and
+  - Time bounded, with a clear path to reduction or removal as the network matures.
+- Emergency and upgrade mechanisms must be constrained so they cannot be used as a substitute for entity governance (for example, they must not be able to arbitrarily alter cap tables, governance outcomes, or role assignments outside of defined upgrade paths).
+
+This is essential for institutions, entities, and serious users to trust that the base layer behaves predictably over time.
+
+---
+
+### 4.6 What dCorps does and does not do
+
+In summary:
+
+* **dCorps does**:
+
+  * Provide a neutral Layer 1 for entity structure and operations.
+  * Standardize core models and interfaces.
+  * Support optional protocol modules for jurisdictions and sectors.
+  * Expose state in a way that auditors, donors, investors, and institutions can analyze.
+* **dCorps does not**:
+  * Act as a bank, deposit taker, or payment institution.
+  * Operate as an exchange, broker, dealer, or asset manager.
+  * Guarantee that any entity or token is compliant with any law.
+  * Promise returns or financial outcomes.
+
+This boundary is fundamental.
+
+### 4.6A Regulated activity boundary map (reference)
+
+This section provides a mechanical map of where regulated or high responsibility activity can and cannot live in the dCorps stack. It is not legal advice and does not classify any activity under any specific law.
+
+**Base protocol (Hub)**
+
+The Hub provides:
+
+- Entity registry and structural state
+- Governance records and document anchors
+- Wallet structure and accounting primitives
+- Anchoring of sub chain summaries
+- DCHUB staking and protocol governance
+
+The Hub does not provide:
+
+- Custody of user funds
+- Fiat account access, payment services, or money transmission
+- Brokerage, dealing, exchange, matching engines, or market making
+- Underwriting, offering distribution, or investor solicitation
+- Protocol level KYC, KYB, AML, sanctions screening, or travel rule compliance
+
+**Protocol modules**
+
+Protocol modules can provide:
+
+- Jurisdiction recognition logic, fee collection logic, and reporting interfaces
+- Sector frameworks, eligibility rules, and metric outputs
+- Optional attestation and reputation systems with transparent schemas and dispute signaling
+
+Protocol modules must not be assumed to provide:
+
+- Licensing, legal guarantees, or universal compliance outcomes
+- Custodial control of user assets as a condition for using the Hub
+
+Any module operator that performs off-chain regulated functions does so outside protocol consensus, under its own legal obligations.
+
+**External applications and service providers**
+
+External applications and service providers are where regulated activity may occur, including:
+
+- Custodial wallets and managed key services
+- Fiat onramps and offramps, bank integrations, and payment processing
+- KYC, KYB, AML, sanctions screening, monitoring, and reporting
+- Issuance platforms for units or dShares, including marketing, distribution, and investor onboarding
+- Exchanges, brokers, matching engines, and secondary market venues
+- Accounting, payroll, and compliance services that touch private or regulated data
+
+dCorps can be used by compliant actors, but it does not make an actor compliant. If an application operator, module operator, or service provider performs regulated activity, compliance and licensing are their responsibility, and the responsibility of the entity using them.
+
+**Registry listing is discovery, not authorization**
+
+- Listing in the app and module registry is not a license, a jurisdiction approval, or a legal endorsement.
+- Official status signals protocol compatibility and governance approval for module standards. It does not certify legal compliance of any off-chain business activity.
+- Users and entities remain responsible for due diligence, risk assessment, and legal compliance for the apps, modules, and providers they choose.
+
+---
+
+## 5. High-level architecture
+
+### 5.1 Layer overview
+
+Building on the kernel invariants in section 4.0, the ecosystem can be understood as four main conceptual layers:
+
+1. **dCorps Hub chain (kernel)**
+
+   * A Cosmos-based chain that:
+
+     * Hosts the global entity registry and canonical discovery.
+     * Stores entity structural state, governance actions, and lifecycle events.
+     * Stores standardized wallet primitives, accounting events, and document anchors.
+     * Runs DCHUB as gas, staking, and protocol governance token.
+     * Enforces the kernel invariants described in section 4.0.
+
+2. **Hub entities (default container)**
+
+   * Corporations and nonprofits that live entirely on the Hub:
+
+     * **Hub corporations** with an internal unit-based cap table and role-based governance.
+     * **Hub nonprofits** with board based governance and transparent donation and program flows.
+
+3. **Optional adapters and modules (derived state)**
+
+   * Modules that read Hub state and publish derived interpretations or signals:
+
+     * Jurisdiction recognition adapters and legal wrapper workflows (optional).
+     * Institutional reporting and compliance tooling (optional).
+     * Sector and impact frameworks that compute metrics from standardized flows.
+     * Attestation and reputation modules.
+
+4. **External applications and service providers**
+
+   * Independent tooling built by the ecosystem:
+
+     * Explorers and dashboards.
+     * Accounting tools, payroll tooling, donor portals, and procurement tooling.
+     * Integrations with markets and protocols that choose to rely on dCorps entity semantics.
+
+The Hub is intentionally conservative and narrow. It defines stable semantics for entities. Adapters and applications provide innovation and context-specific integration without pulling external systems into the kernel.
+
+Future extensions may introduce additional execution environments for extreme scale or specialized privacy, but they are not required for the v1 adoption path.
+
+---
+
+### 5.2 Base versus external responsibilities
+
+The architecture separates base protocol responsibilities from optional adapters and applications. This separation is what keeps the kernel neutral and stable.
+
+The Hub is responsible for:
+
+* Assigning entity IDs and maintaining the canonical entity registry.
+* Hosting Hub corporation and Hub nonprofit modules as the default entity containers.
+* Recording governance actions, document anchors, and lifecycle events as verifiable state.
+* Providing the wallet and accounting primitives that all entities share.
+* Running DCHUB staking, consensus, and protocol governance.
+
+Optional protocol modules on top of the Hub are responsible for (adapters, derived state):
+
+* Jurisdiction and institutional adapters that interpret on-chain truth for external contexts (optional).
+* Sector metrics and eligibility criteria as sector frameworks (optional).
+* Attestation, reputation, and monitoring modules (optional).
+
+External applications are responsible for:
+
+* User interfaces and experience.
+* Integration into existing workflows such as accounting systems, HR systems, procurement, and donor portals.
+* Off-chain services that accept responsibility for local compliance, filings, or reporting when an entity opts in.
+
+Future extensions (not required for v1) may include optional anchored execution environments. If introduced, they would be responsible for their own throughput and custom logic while anchoring standardized summaries back to the Hub.
+
+---
+
+### 5.3 Data flows and anchoring
+
+Data flows through the system in consistent patterns:
+
+* **Entity creation and updates**
+
+  * Registered on the Hub as transactions.
+  * Entity metadata, roles, and attachments are updated through Hub governance modules.
+* **Operations**
+
+  * Daily operations for Hub entities occur directly on the Hub.
+  * For sub chain corporations, operations occur on the sub chain and are summarized to the Hub in periodic anchors.
+* **Anchoring**
+
+  * Sub chains periodically publish Merkle roots or similar commitments representing:
+
+    * Cap tables and dShare supply snapshots.
+    * Key financial aggregates for reporting periods.
+    * Governance checkpoints such as board elections or major resolutions.
+* **Documents and off-chain data**
+
+  * Contracts, minutes, audits, and reports live off-chain.
+  * Hashes of these documents and minimal metadata are anchored on-chain.
+
+Protocol modules may:
+
+* Read these anchors and interpret them for jurisdiction logic, sector metrics, or eligibility rules.
+* Write additional state such as recognition status, allocation scores, or compliance signals.
+
+Anchoring creates a verifiable timeline without overloading the Hub with all raw data.
+
+---
+
+### 5.4 Example lifecycle: corporation
+
+A typical corporation lifecycle on dCorps is not linear. The Hub container is complete by default. Entities branch into optional adapters only when needed.
+
+1. **Formation (Hub corporation)**
+
+   * Registers as a Hub corporation on the Hub.
+   * Issues an initial unit distribution, assigns initial roles, and anchors baseline governance documents and policies.
+
+2. **Operate on the Hub (default path)**
+
+   * Runs treasury operations in stablecoins using canonical wallets and tagged accounting events.
+   * Executes approvals, payroll, vendor payments, and governance decisions as on-chain state transitions.
+   * Produces reproducible cash-based operating views from the same underlying ledger events.
+
+3. **Optional branches (adapters, when needed)**
+
+   * **External recognition adapter**: attaches a jurisdiction or institutional adapter for a specific context (contracts, regulated counterparties), without changing the entity’s kernel history.
+   * **Sector frameworks**: publishes domain metrics and eligibility signals derived from standardized flows.
+   * **Institutional reporting**: produces reports that external parties can verify against anchored evidence.
+
+4. **Long-lived evolution on the Hub**
+
+   * Restructures governance and cap table through standard corporate actions.
+   * Uses pools, vesting, and claims patterns for finer-grained ownership and incentives without changing the base unit template.
+   * Participates in group structures and multi-entity ownership graphs while remaining fully on the Hub.
+
+5. **Future advanced execution modes (rare, post v1)**
+
+   * Only if extreme scale or specialized privacy is required, the entity may use an additional execution environment that anchors summarized state back to the Hub. This does not redefine kernel semantics and is not required for adoption.
+
+At no point is a corporation required to attach a jurisdiction adapter or migrate away from the Hub to remain functional.
+### 5.5 Example lifecycle: nonprofit and umbrella sponsorship
+
+A nonprofit in dCorps is a digital-native impact organization. Its mission, governance, and financial flows can be fully expressed and executed on the Hub. Legal charity status is an optional overlay, not the definition.
+
+1. **Formation (Hub nonprofit)**
+
+   * Registers as a Hub nonprofit with a board and governance rules.
+   * Anchors baseline bylaws, policies, and program structure.
+
+2. **Operate on the Hub (default path)**
+
+   * Receives donations into canonical donation wallets.
+   * Sets up program wallets, restricted fund rules, and allocation policies.
+   * Uses dashboards to show donors and supporters how funds are allocated, with category level transparency reproducible from ledger events.
+
+3. **Umbrella sponsorship (optional pattern)**
+
+   * A larger nonprofit can sponsor smaller initiatives:
+
+     * The sponsor is itself a Hub nonprofit with established governance and reporting posture.
+     * Sponsored initiatives can operate as dedicated programs and wallets with separate reporting views.
+     * Sponsorship is a service relationship, not a change in kernel semantics.
+
+4. **Optional external overlays (adapters, when needed)**
+
+   * A jurisdiction or institutional adapter can be attached for contexts that require external recognition (local charity registration, tax receipt workflows, regulated procurement).
+   * Donor identity, attestations, and selective disclosure can be provided by applications and modules without becoming protocol requirements.
+
+5. **Future advanced execution modes (rare, post v1)**
+
+   * If specialized privacy or extreme volume is required, an additional execution environment may be used and anchored back to the Hub. This is not required for the v1 adoption path.
+
+This path supports a long tail of nonprofits while keeping the Hub as the canonical, verifiable source of truth for governance and flows.
+
+------
+
+
+------
+
+### 5.6 Why a dedicated Hub chain and token, not only contracts
+
+It is natural to ask why dCorps needs its own Hub chain and a native token, instead of being only a smart contract suite on an existing chain.
+
+dCorps runs a dedicated Hub chain on Cosmos and a native token, DCHUB, because the product is a **shared organizational standard**, not a single application. Standards require stable semantics, predictable costs, canonical discovery, and long-term governance alignment.
+
+Key reasons:
+
+- **Entities are first class objects, not bespoke contract dialects**
+
+  On general purpose chains, an organization is usually a contract or a set of contracts, and every team implements the model differently. That produces incompatible corporate dialects. The Hub treats entities as first class objects with standardized identity, ownership, authority, governance actions, and accounting events.
+
+- **Standardization is the deliverable**
+
+  If the goal is infrastructure for everyone, the main deliverable is shared schemas, indexing, discovery, comparable reporting, and composable permissions. A dedicated Hub makes the entity model canonical by default and enables an ecosystem of interoperable tools.
+
+- **Predictable execution environment for organizational workflows**
+
+  Organizational operations are routine and frequent (approvals, payments, reporting, role changes). A dedicated Hub can tune fees, throughput targets, and performance for these workflows, rather than inheriting unpredictable congestion and fee spikes from a host chain.
+
+- **Governance and long-term stability aligned to organizational infrastructure**
+
+  A standard cannot be hostage to external protocol politics. Running a dedicated chain allows dCorps governance and security posture to be aligned with kernel invariants and long-term stability goals.
+
+- **Interoperability as a feature**
+
+  As a Cosmos Hub-style chain, dCorps can connect via IBC to stablecoin zones, markets, and specialized chains, without making any single bridge a hard dependency of kernel truth.
+
+- **Why DCHUB exists**
+
+  dCorps is shared infrastructure, not a single product. The Hub is a neutral registry, a shared execution environment, and a standard that many independent actors rely on, which requires its own security, coordination, and governance layer rather than being embedded inside one DAO, one SaaS, or one app.
+
+  In practice, shared systems that aim for credible neutrality tend to converge on one of three funding and sovereignty paths: (1) a sponsor pays indefinitely, which risks capture over time, (2) the system fully inherits another network’s economics and governance, which constrains sovereignty and couples the standard to external politics, or (3) the system operates a native token that prices execution and secures consensus. dCorps chooses the third path.
+
+  DCHUB is not equity, profit participation, or entity ownership. It is the mechanism for spam resistance, execution pricing (gas), validator incentives (staking and slashing), and protocol governance weighting. Interfaces may sponsor gas or charge stablecoin service fees for usability, but the underlying execution market and security budget settle in DCHUB.
+
+Future advanced execution environments (additional chains, rollups, specialized privacy modes) may be explored later, but they are not required to justify the Hub. The Hub exists to make the entity standard canonical, stable, and neutral over decades.
+
+---
+
+## 6. The dCorps Hub chain
+
+### 6.1 Role of the Hub
+
+The Hub is the coordination heart of the ecosystem and the canonical home of the kernel.
+
+* It is the **canonical record** of:
+
+  * Which entities exist.
+  * Their type, status, and lifecycle events.
+  * Their kernel state roots (ownership, authority, governance record).
+  * Which optional adapters and modules are attached.
+* It provides a secure environment for:
+
+  * Hub corporations and nonprofits that live entirely on the Hub.
+  * Protocol level governance and upgrades.
+  * Document anchoring and standardized accounting event history.
+
+The Hub is intentionally conservative. Applications and adapters evolve faster, but the kernel must remain stable and predictable.
+
+---
+
+### 6.2 Entity registry
+
+The entity registry on the Hub:
+
+- Assigns each entity:
+  - A unique ID.
+  - A human readable name, subject to uniqueness and naming rules.
+  - A type (Hub corporation, Hub nonprofit, public sub chain corporation, private sub chain corporation). (Additional types are reserved for future extensions.)
+  - Sector tags.
+  - Disclosure mode and reporting preferences.
+  - Protocol module attachments (which modules are attached, and their attachment status).
+  - Sub chain identifiers if any.
+  - Anchored environment identifiers (future extension) if any.
+- Emits events for:
+  - Creation and termination.
+  - Changes of control or key roles.
+  - Attachments and detachments from protocol modules.
+
+The registry is intentionally minimal and neutral. It records the existence and structural identity of entities plus their attachment graph. It is designed for protocol level neutrality and censorship resistance goals:
+
+- The registry module does not include admin deletion, blacklists, or other controls intended to remove entities or filter registry content.
+- Entities cannot be deleted from the Hub and historical state cannot be rewritten.
+- Detaching from a protocol module is always possible according to the entity’s governance rules and any module defined exit rules.
+- Detaching ends the active relationship going forward, but it does not erase prior history.
+
+This does not guarantee that every transaction will be included under all real world conditions. Block inclusion depends on validator behavior and network conditions, and validators may face external legal or operational pressure. dCorps is designed without protocol level censorship features and with an intent toward neutrality, while recognizing these practical limits.
+
+#### 6.2.1 Status meanings and renewal logic (registry standard)
+
+Status is a classification used for discovery, safety, and ecosystem hygiene. It is not a claim of legal standing, and it is not a claim that an entity is legitimate or illegitimate.
+
+- **active**
+  - The entity has a current registry listing, meaning it is within its renewal window and has satisfied any required registry renewal fees and rules.
+  - Reference explorers may include it in default “active entities” views and indexes.
+  - Active status is required for defined registry privileges, such as name lease continuity and participation in default discovery and reference payment routing (where used).
+- **inactive**
+  - The entity record still exists and remains queryable, but the entity has not been actively renewed within the defined renewal window (after any grace period).
+  - This state exists to keep the registry clean and to avoid presenting stale entities as currently operating.
+  - Inactive status does not imply dissolution, fraud, or invalidity; it is a registry liveness and renewal signal.
+  - An inactive entity can become active again by completing renewal according to registry rules.
+- **dissolved**
+  - The entity has explicitly ended operations through an on-chain governance action, a jurisdiction adapter action, or another defined termination path.
+  - Dissolved does not erase history.
+- **retired**
+  - A terminal registry classification used when an entity is intentionally decommissioned from active use without implying legal dissolution (for example, a migrated structure that is kept only for historical continuity).
+  - Retired does not erase history.
+
+**What renews**
+
+Renewal applies to the entity’s public registry listing and related registry privileges, not to the existence of the entity record itself. Examples of renewable items include:
+
+- Registry listing lease (participation in “active” classification and default discovery).
+- Name lease (continued exclusive claim on the human readable name, if names are leased rather than permanently reserved).
+- Optional registry services (for example, premium namespaces or enhanced indexing categories, if adopted).
+- Optional module participation requirements, where a module itself requires periodic renewal to remain attached (module local rule, not a Hub deletion rule).
+
+The entity object, event history, governance history, and prior attachments remain permanently on-chain regardless of renewal status.
+
+#### 6.2.1A Anti-spam, name squatting, and abuse handling (registry standard)
+
+A public registry attracts spam, squatting, and impersonation attempts. The Hub addresses this with economic friction and clear interface conventions, while keeping the kernel neutral.
+
+**Economic spam resistance (protocol level)**
+
+- **Entity registration and renewal fees** create a recurring cost to keep a listing active. This keeps the default discovery set clean without requiring admin deletion.
+- **Name leases** (recommended) treat human readable names and premium namespaces as renewable leases rather than permanent property. This reduces permanent squatting and makes abandoned names recoverable over time.
+- **Premium name pricing** (where used) can be parameterized to increase costs for scarce names (for example very short names, high-demand namespaces, or reserved words), with transparent on-chain rules.
+
+**Expiration and cooldown (recommended)**
+
+- Names and registry listings can include a defined **grace period** after expiry.
+- After grace, a name can enter a **cooldown window** before it becomes available again, reducing opportunistic front-running and giving the prior holder time to recover.
+
+**Neutrality and what the kernel does not do**
+
+- The registry module does not include admin deletion or an on-chain blacklist. Records remain queryable and history is not rewritten.
+- The protocol does not attempt to adjudicate trademarks or identity disputes at the kernel layer.
+
+**How ecosystems handle abuse without changing the kernel**
+
+- Reference explorers and wallets are expected to implement clear UI warnings for inactive entities and to support additional labeling signals (for example “verified,” “contested,” or “impersonation risk”) based on optional attestation or reputation modules.
+- Sector frameworks, jurisdiction adapters, and third-party attesters can publish signed lists and interpretations. These are opt-in overlays that help users avoid abuse while preserving kernel neutrality.
+
+#### 6.2.2 Payment safety and registry privileges for inactive entities (reference standard)
+
+To reduce the risk of funds being sent to stale or abandoned operations, the registry exposes the entity’s status and standard wallet identifiers (merchant, donation, treasury, program wallets) intended for use by explorers, invoicing tools, and payment interfaces.
+
+Design intentions:
+
+- When an entity is **inactive**, reference interfaces must clearly label it as inactive and should block “one click” sends by default unless the sender explicitly acknowledges the risk.
+- Ecosystem payment and invoicing flows should resolve destinations using the entity ID plus wallet type, not by caching addresses indefinitely, so that senders are nudged toward current canonical wallets and current status.
+
+**Registry privileges tied to active status (recommended)**
+
+Active status is used to gate defined registry privileges that are meaningful even if the protocol cannot globally prevent direct transfers to an address:
+
+- Default discovery and listing in reference explorers (active by default, inactive behind warnings or filters).
+- Continued name lease, where naming is lease based.
+- Resolution of canonical payment endpoints (entity ID plus wallet type) in reference tooling. When inactive, resolution surfaces an explicit inactive status signal and requires an override path in the UI.
+- Optional participation in certain registry services (premium namespaces, enhanced indexing categories), where offered.
+
+**Canonical payment routing (optional, recommended for safety critical flows)**
+
+For applications that want stronger safety guarantees, the ecosystem can use a standard payment routing pattern:
+
+- A sender submits a payment using a typed “pay entity” message that specifies:
+  - `entity_id`
+  - `wallet_type`
+  - amount and denom
+- The payment flow checks the entity’s current status at execution time and can:
+  - forward to the current canonical wallet address only if the entity is active, or
+  - reject (or route to an explicitly defined escrow pattern) if the entity is inactive.
+
+This pattern is enforceable only for senders that choose to use it. Direct, raw transfers to an address remain possible at the base token level and cannot be universally blocked on a Cosmos style chain. For that reason, reference interfaces must treat canonical payment routing and raw transfers differently, and must label when a payment was routed using an active status check versus sent directly to a raw address.
+
+The Hub registry does not include a built in reputation system and does not maintain a global “risk flag” bulletin board. Any assurance, scoring, or reputation logic exists only through optional protocol modules that read Hub state and publish their own outputs.
+
+This registry is the main integration point for explorers, analytics, jurisdictions, and external applications.
+
+------
+
+### 6.2A Attestation issuer registry and interface weighting
+
+Attestations and reputation are not part of the Hub core registry. They are implemented as optional protocol modules that can be attached to, or used alongside, Hub entities by choice.
+
+This section defines a reference standard for attestation style modules and for how explorers and dashboards should present their outputs.
+
+#### 6.2A.1 Attestation record format (module standard)
+
+An attestation is an issuer signed statement published by an attestation module. Attestation modules must use structured, machine readable records and must not rely on free text accusations.
+
+A compliant attestation record includes, at minimum:
+
+- Issuer identity (DID and signing address).
+- Issuer scope (jurisdiction authority, auditor, sector framework operator, oversight body, analytics provider, and similar scopes).
+- Subject entity ID (and optional sub chain ID if relevant).
+- Attestation type (enumerated), for example:
+  - Recognition active
+  - Recognition withdrawn
+  - Audit or review anchor published
+  - Reporting completeness signal
+  - Policy compliance signal
+- Reason codes (enumerated), sufficient to interpret the attestation without narrative text.
+- Evidence anchors (hashes of documents, reports, or module outputs).
+- Validity window:
+  - Issued at
+  - Effective at
+  - Optional expiry
+- Lifecycle status (enumerated):
+  - active
+  - expired
+  - superseded
+  - disputed
+  - withdrawn
+
+Attestation types, reason codes, and evidence anchor schemas are versioned, published, and upgradeable through governance of the module, not by informal UI conventions.
+
+#### 6.2A.2 Issuer classes (module local, optional)
+
+Attestation modules may maintain an issuer registry to make trust assumptions explicit. Issuer registries are module local, not universal, and different modules may use different issuer sets.
+
+- **Registered issuer**
+   An issuer added to a module’s issuer registry through the module’s governance process, with:
+  - DID and signing addresses
+  - declared scope
+  - public issuer metadata (including contact channels)
+  - published correction process
+  - optional bond requirements
+- **Unregistered issuer**
+   Any other issuer. Unregistered attestations may still be recorded by the module, but they do not receive default weighting in reference interfaces that follow the module’s weighting standard.
+
+#### 6.2A.3 Issuer registry governance (module local)
+
+Issuer registry changes are executed through transparent governance.
+
+Adding or removing a registered issuer requires an on-chain proposal that includes:
+
+- Issuer identity and scope
+- rationale and supporting evidence
+- any required bond amount and conditions
+- conflict and affiliation disclosures
+
+Registered issuer status can be suspended or revoked for objective reasons such as:
+
+- proven fraud or misrepresentation
+- repeated publication of materially false attestations without timely correction
+- failure to follow the issuer’s published correction process
+- cryptographic key compromise without appropriate rotation
+
+Issuer registry governance does not adjudicate truth. It defines which issuers a specific module treats as default weighted inputs.
+
+#### 6.2A.4 Dispute and correction signaling (module standard)
+
+Attestation modules must support a symmetric dispute and correction pattern:
+
+- Entities can publish a signed dispute record that references a specific attestation and anchors response evidence.
+- Issuers can withdraw, correct, or supersede attestations with new signed statements.
+- Disputed status is a first class lifecycle state, not a UI convention.
+
+The Hub does not adjudicate disputes. Dispute resolution occurs through:
+
+- the issuer’s correction process,
+- module governance (for module level integrity issues), and
+- off-chain legal processes where jurisdictions or contracts apply.
+
+#### 6.2A.5 Interface weighting standard (reference explorers)
+
+Reference explorers and dashboards that choose to display attestation module outputs must:
+
+- Allow users to select which attestation modules are shown, and support “no module selected” as a valid default state.
+- Display issuer identity, issuer scope, registry status (registered or unregistered), attestation type, reason codes, evidence anchors, and validity window.
+- Label disputed, expired, and superseded attestations prominently.
+- Treat detachment from an attestation or reputation module as a neutral structural fact, not as deletion of history.
+
+No reference interface is consensus. Any interface can be forked or replaced, and any operator can publish an alternative weighting policy. The protocol remains neutral and censorship resistant regardless of interface decisions.
+
+------
+
+### 6.2B Spam resistance and deposits for attestations
+
+To keep attestation modules usable and resistant to spam, attestation modules are expected to implement spam resistance rules.
+
+#### 6.2B.1 Publishing limits
+
+- Each issuer may be subject to rate limits per period for selected attestation types.
+- Attestation modules enforce maximum payload sizes for attestation metadata, with evidence stored as anchors.
+
+#### 6.2B.2 Deposits and bonds (optional)
+
+For selected high impact attestation types, an attestation module may require a deposit or bond:
+
+- The deposit is denominated in DCHUB or USDC, as defined by module parameters.
+- Deposits are designed to price spam and abuse, not to create an endorsement market.
+- Any slashing or forfeiture conditions must be objective, verifiable, and narrowly defined (for example invalid schema, duplicate flooding, or proven key misuse), not based on the content or popularity of an attestation.
+
+Registered issuers may be exempt from per attestation deposits but may be required to maintain a module level issuer bond.
+
+#### 6.2B.3 Dispute rights
+
+Entities can publish dispute records without deposits. Disputes must reference the specific attestation and include evidence anchors. Reference interfaces must surface disputes prominently for any disputed attestation they display.
+
+------
+
+### 6.2C Reputation and scoring modules (optional)
+
+Reputation modules are optional protocol modules that compute scores from defined inputs. Reputation is not a core Hub function.
+
+A reputation module is a metric module, not a narrative system:
+
+- Outputs are numeric scores and subscores, plus enumerated reason codes and source anchors.
+- No free text accusations are required or expected.
+- Inputs may include:
+  - Objective on-chain behavior (anchoring cadence, governance participation, disclosure mode, reconciliation anchors present).
+  - Outputs from jurisdiction adapter modules (recognition active or withdrawn).
+  - Outputs from sector frameworks (allocation constraints met or missed).
+  - Attestations from selected attestation modules and issuer sets, if the reputation module chooses to incorporate them.
+
+Entities can attach to, or detach from, reputation modules. Detachment does not erase history; it ends new score updates for that entity under that module unless reattached. Counterparties, applications, and markets decide what module participation they require for trust.
+
+---
+
+### 6.3 Structural state on the Hub
+
+In addition to the registry, the Hub stores structural state for:
+
+* **Hub corporations**
+
+  * Unit balances and cap table changes.
+  * Governance parameters and voting rules.
+  * Attachments to jurisdiction and sector modules.
+* **nonprofits**
+
+  * Board composition and roles.
+  * Allocation rules for donation and program wallets.
+  * Governance events and resolutions.
+* **Sub chain corporations (at a summary level)**
+
+  * Chain IDs and connection details.
+  * Anchored summaries of cap tables and key financial metrics.
+  * Signals about compliance with dCorps sub chain standards.
+
+Structural state is designed to be:
+
+* Compact and indexable.
+* Sufficient for high-level analysis, even for entities that run complex operations on sub chains.
+
+---
+
+### 6.4 Future extension: Sub chain anchoring (post v1)
+
+This section is a future extension. v1 does not require any sub chains for entities to operate. It is included to document how optional execution environments could anchor summarized state to the Hub without changing kernel semantics.
+
+If recognized execution environments exist, they may periodically commit **Merkle roots** or similar commitments to the Hub. These commitments can represent:
+
+- Aggregated cap table roots for specialized instruments (if any).
+- Aggregated revenue and expense summaries per period.
+- Governance checkpoints, such as board elections or major executed resolutions.
+
+Anchoring provides:
+
+- A verifiable summary surface for auditors, institutions, and protocols that choose to rely on these environments.
+- A fallback mechanism for detecting forks or inconsistent behavior.
+- A way for tooling to remain Hub-first while still acknowledging optional extensions.
+
+If an anchored environment fails to anchor or violates standards, its recognition label can be downgraded so downstream tooling responds deterministically, without preventing the environment from operating independently.
+
+The normative cadence, schemas, proofs, and failure handling rules are defined in the **Sub chain Anchoring Standard** (see section 18.4).
+
+---
+
+### 6.5 Consensus and staking model
+
+The Hub uses a **proof of stake** consensus mechanism based on the Cosmos SDK:
+
+- **Validators** stake DCHUB to propose and validate blocks.
+- **Delegators** stake DCHUB via validators and share in rewards and penalties.
+- Misbehavior such as double signing or extended downtime leads to **slashing** of staked DCHUB according to parameters defined in governance.
+
+The security model relies on:
+
+- A sufficiently large, diverse validator set.
+- Transparent governance over key parameters.
+- Clear, documented expectations for validator operations and security.
+
+Recognized sub chains are expected to align with Hub security and accountability under explicit, objective standards:
+
+- To be recognized as a dCorps sub chain, a chain must meet protocol standards for:
+  - Anchoring required summaries to the Hub on a defined schedule.
+  - Preserving DCHUB as the economic security root through shared security or other governance approved aligned security mechanisms.
+  - Meeting recognition tier requirements, including any DCHUB deposits, bonds, or security fee payments specified by protocol standards.
+  - Clear validator accountability rules that can be evaluated objectively.
+- Recognized sub chains may accept transaction fees in DCHUB or in other denominations depending on the explicit recognition tier, while security remains aligned to DCHUB.
+- If a sub chain does not meet the recognition standards, the Hub can mark it as not recognized, and official explorers and modules treat its anchors as informational only.
+
+Some sub chains may also add local incentives for participation in the corporation’s governance, but DCHUB remains the security and coordination asset of the dCorps ecosystem.
+
+#### 6.5A Future extension: recognition labels for anchored environments (registry standard)
+
+Note: this is a future extension. v1 mainnet does not require any anchored execution environments. Recognition labels exist so that, if optional extensions are introduced later, explorers and modules can respond deterministically without changing kernel semantics.
+
+To avoid ambiguity, the Hub registry records a sub chain’s status using explicit labels that explorers and protocol modules can rely on:
+
+- **Recognized, Hub aligned security (DCHUB gas)**
+   Meets Hub aligned security requirements and uses DCHUB as the primary gas token for base fee payment on the sub chain.
+- **Recognized, Hub aligned security (flexible gas)**
+   Meets Hub aligned security requirements while allowing alternative transaction fee denominations at the application layer, subject to explicit recognition economics such as DCHUB deposits, bonds, or security fee payments defined by protocol standards.
+- **Recognized, limited alignment**
+   Meets anchoring and interface standards, but has additional disclosed security assumptions outside Hub aligned security.
+- **Not recognized**
+   Does not meet recognition standards; anchors (if any) are treated as informational only.
+
+The exact technical requirements behind each label are defined in protocol standards and can evolve through governance.
+
+A narrative summary of the Hub aligned security requirements and fee model variants appears in section 6.5B.1.
+
+#### 6.5B Future extension: aligned security for anchored environments (design option)
+
+Note: this is a future extension. v1 mainnet security is provided by the Hub validator set under DCHUB staking. Any aligned security model for optional anchored environments, if ever introduced, must preserve the kernel invariants and must not be required for ordinary entity operation.
+
+Recognized dCorps sub chains are expected to meet explicit security alignment requirements that are objective and verifiable. In v1, the default alignment mechanism for Hub aligned security is a shared security model (for example Cosmos Interchain Security) or an equivalent shared security standard approved through protocol governance.
+
+#### 6.5B.1 Recognized, Hub aligned security
+
+A sub chain qualifies for the “Recognized, Hub aligned security” label when it meets the shared security and anchoring requirements below, plus one of the supported fee model variants.
+
+**Shared requirements (all variants)**
+
+- **Shared validator security**
+   The sub chain uses the Hub validator set through a shared security protocol, with consumer chain evidence routed through the shared security protocol.
+- **Mandatory anchoring**
+   The sub chain anchors required summaries to the Hub on a defined schedule, including:
+  - Supply and cap table commitments for dShares (if applicable),
+  - Governance checkpoints for major corporate actions, and
+  - Period aggregates for standardized reporting categories (where applicable).
+- **Objective liveness and integrity rules**
+   Persistent failure to anchor, or repeated invalid anchors, triggers an automatic downgrade to “Not recognized” unless governance grants a documented exception.
+
+#### 6.5B.2 Recognized, Hub aligned security (flexible gas)
+
+To avoid repeating the shared requirements, the flexible gas variant is defined in section 6.5B.1 under **Fee model variants** (Variant B). This subsection is retained only for continuity of section numbering.
+
+   The sub chain satisfies recognition economics that preserve DCHUB as the security root, as defined by protocol standards. Illustrative components include:
+  - A mandatory DCHUB bond posted by the sub chain operator or entity (refundable under normal conditions, parameterized by governance).
+  - A periodic DCHUB security fee payment routed to Hub security, intended as payment for shared security and operations, not as price support.
+- **Mandatory anchoring**
+   The sub chain anchors required summaries to the Hub on a defined schedule, including:
+  - Supply and cap table commitments for dShares (if applicable),
+  - Governance checkpoints for major corporate actions, and
+  - Period aggregates for standardized reporting categories (where applicable).
+- **Objective liveness and integrity rules**
+   Persistent failure to anchor, or repeated invalid anchors, triggers automatic downgrade to “Not recognized” unless governance grants a documented exception.
+
+#### 6.5B.3 Recognized, limited alignment
+
+A sub chain may be labeled “Recognized, limited alignment” when:
+
+- It meets anchoring and interface standards, and
+- It does not use shared validator security with the Hub, or it has additional disclosed security assumptions.
+
+In this case, official interfaces must surface the additional assumptions, and protocol modules may restrict eligibility based on those assumptions.
+
+#### 6.5B.4 Not recognized
+
+A sub chain is labeled “Not recognized” when it fails objective standards or when it chooses not to meet them. Not recognized chains may still anchor data for informational purposes, but official modules and explorers treat those anchors as untrusted claims unless supported by independent attestations.
+
+#### 6.5B.5 Module and interface behavior by recognition tier (v1 standard)
+
+Recognition labels are operational inputs for official modules and reference interfaces:
+
+- **Reference interfaces**
+  - Must display the recognition label prominently for every sub chain corporation.
+  - Must surface additional security assumptions for “Recognized, limited alignment”.
+  - Must treat “Not recognized” anchors as informational and warn users accordingly.
+- **Protocol modules**
+  - Modules may declare eligibility requirements by tier.
+  - As a default stance for v1, modules that affect high stakes market integrity and public style instruments may require “Recognized, Hub aligned security (DCHUB gas)” unless explicitly designed to support the flexible gas tier.
+  - Modules focused on reporting, transparency, sector frameworks, and non market integrity features may support both Hub aligned tiers.
+  - Modules should treat “Recognized, limited alignment” as eligible only when the module explicitly declares that it supports that security assumption.
+- **Registry signals**
+  - Tier changes and downgrades are recorded as on-chain events so downstream tools can respond deterministically.
+
+#### 6.5B.6 Slashing and fault attribution under aligned security
+
+Under shared security, validator faults are handled through the shared security system:
+
+- Evidence of validator misbehavior on the sub chain is relayed to the Hub under the shared security protocol.
+- Slashing and penalties occur according to Hub governance parameters, with consumer chain specific parameters bounded by policies approved through governance.
+
+Entity level faults (for example, dishonest financial aggregates) are not handled by slashing validators. They are handled through invalid anchor detection rules, recognition label downgrades, issuer attestations and disputes, and jurisdiction and sector module consequences.
+
+---
+
+### 6.6 Upgrade and minimalism
+
+The Hub strives to be:
+
+* **Minimal**
+
+  * Only core modules needed for entity registry, base entity models, and protocol governance live on the Hub.
+  * Experimental or high-risk features are developed on testnets, sub chains, or as protocol modules before any move to the Hub.
+* **Upgradable with care**
+
+  * Protocol upgrades follow a structured path:
+
+    * Specification and code review.
+    * Testnet deployment.
+    * Governance proposal with clear rationale and risk analysis.
+    * Staged rollout with monitoring.
+* **Resilient**
+
+  * Avoids tight coupling between unrelated features.
+  * Uses well understood components and patterns where possible.
+
+This approach balances the need for evolution with the reliability that entities, NGOs, and institutions require.
+
+The foundation’s role is to propose and iterate on protocol modules and tooling as needs evolve, while aiming to keep the Hub’s core logic as stable and minimal as practical.
+
+---
+
+## 7. Entity models on the base layer
+
+### 7.1 Hub corporations
+
+#### 7.1.1 Ten thousand unit model
+
+By default, each Hub corporation uses a **10,000 base unit** cap table on the Hub.
+
+Ten thousand is the standard interoperability profile for simple mental math and comparability. It is not meant to limit real share structures.
+
+**v1 clarity: the base unit count is not forced**
+
+In v1, a corporation may choose an **expanded base unit count** when it is created, or it may adopt one later through a one-time **unit expansion** corporate action approved under its own governance thresholds.
+
+- The standard profile is **10,000** base units (1 unit = 0.01 percent).
+- Expanded profiles are allowed in v1 as **multiples of 10,000** (for example 100,000 or 1,000,000), which increases precision while preserving the same mental model.
+- A unit expansion is a mechanical action similar to a split: it does **not** change relative ownership or voting percentages, it only increases the number of base units used to represent them.
+- Tools and modules must read an entity’s declared base unit count from the registry and should display ownership primarily as percentages, with units as a secondary view.
+
+This design keeps the Hub simple for small teams while allowing advanced private corporation structures to remain Hub-first on a public chain.
+
+Ten thousand is a deliberate default:
+
+- It keeps the mental model simple. One unit is 0.01 percent of the corporation. A partner who owns 34.54 percent holds 3,454 units in the standard profile.
+- It makes Hub corporations easy to compare and reason about, since most private corporations on the Hub share the same default unit profile.
+- It discourages unit inflation games and awkward decimals, which are common problems with arbitrary token supplies.
+
+These base units are the internal equivalent of ownership in a traditional LLC or Inc style structure:
+
+- Units represent:
+  - Economic rights such as entitlement to distributions and exit proceeds.
+  - Voting power in unit-holder decisions.
+  - Exposure to dilution when new units are issued.
+
+Units are an internal ledger representation of rights defined by the corporation’s governing documents and chosen governance templates. Their legal effect, if any, depends on agreements and law outside the protocol.
+
+- By default, a simple **one unit, one vote** model applies for unit-holder votes.
+- Corporations can adopt alternative models through governance templates, such as:
+  - Non voting units.
+  - Weighted voting structures.
+  - Multiple classes with different rights or preferences.
+
+Units are internal to the corporation:
+
+- They are not global fungible tokens.
+- Transfers and balances are tracked in the corporation’s own state on the Hub.
+- External agreements may refer to unit holdings for calculations, but units do not circulate outside that entity context.
+
+Units are a protocol cap table primitive. They are on-chain state scoped to a single entity, used to represent ownership and voting relationships as defined by the entity’s governing documents and, where applicable, by attached optional modules. Whether a particular unit arrangement is treated as equity, a security, or another regulated instrument depends on facts and law outside the protocol. Transfer restrictions and approval workflows enforce on-chain process and evidence trails; they do not, by themselves, guarantee legal compliance.
+
+#### Optional precision for grants and vesting (v1 standard)
+
+Some entities need allocations smaller than 0.01 percent or need to model fine grained vesting and entitlements without changing the base 10,000 unit model.
+
+To keep “small entity” onboarding simple while supporting precision when required, dCorps supports an optional, additive module pattern:
+
+- **Allocation pool**
+   The corporation can allocate a defined number of units to a pool address (for example an employee or contributor pool). The pool ownership remains on-chain and visible.
+- **Claims ledger**
+   Inside the pool, the corporation can track fine grained economic claims using a fixed point claims ledger (for example micro units or basis points accounting), typically non transferable by default.
+- **Event mapping**
+   At economic events (distributions, exits, redemptions, or other defined events), the pool maps claims to outcomes according to published rules and governance approvals, with anchors to supporting documents where required.
+
+This pattern preserves the simplicity and comparability of the 10,000 unit cap table while enabling precise grants and vesting for startups and contributor heavy entities. Entities that do not need this precision never have to touch it.
+
+When structures become more complex, there are three main paths, all Hub-first:
+
+- Use standardized pools and claims on top of the 10,000 units for precision without changing the base model.
+- Use optional Hub extensions that define class-like rights, vesting schedules, conversions, and conditional instruments, while keeping the entity kernel and discovery on the Hub.
+- Only in rare future cases, use an additional execution environment for extreme scale or specialized privacy, anchored back to the Hub, without making it a requirement.
+
+---
+
+#### 7.1.2 Ownership, voting, and economic rights
+
+Ownership of units is expressed as balances associated with wallets and DIDs:
+
+* Corporations can set:
+
+  * Who is allowed to hold units.
+  * What consent is required for certain transfers.
+  * How votes are counted for different resolution types.
+
+Economic rights tied to units can include:
+
+* Profit distributions.
+* Exit proceeds, for example sale of the corporation.
+* Participation in rights issues or other capital actions.
+
+Voting rights can be:
+
+* Simple majority with defined quorum.
+* Supermajority for structural changes.
+* Weighted or class specific where templates allow.
+
+On-chain governance actions link resolutions to:
+
+* The units that participated.
+* The DIDs and role wallets that initiated or approved them.
+* Anchored legal documents where applicable.
+
+---
+
+#### 7.1.3 Transfers, restrictions, and approvals
+
+Units can be:
+
+* Transferred between holders.
+* Issued for new capital or compensation.
+* Cancelled or bought back.
+
+Transfers can be subject to:
+
+* **Restrictions**:
+
+  * Lockups for founders and employees.
+  * Waiting periods for investors.
+  * Whitelist rules where law requires only certain investors or jurisdictions.
+* **Approvals**:
+
+  * Board or shareholder approval for certain transfers.
+  * Automatic checks by protocol modules where jurisdiction rules apply.
+
+The protocol can enforce:
+
+* That a unit transfer passes through an approval workflow.
+* That a transfer is allowed only for whitelisted holders.
+* That locked or unvested units cannot be transferred.
+
+Compliance with law is not guaranteed by these patterns, but they make it much easier to implement and audit restrictions.
+
+---
+
+#### 7.1.4 Corporate actions and group structures
+
+Hub corporations are designed to support both simple LLC-like structures and advanced private corporation structures. The Hub records corporate actions as standardized on-chain events, linked to resolutions, approvals, and document anchors.
+
+Common corporate actions that can be expressed on the Hub include:
+
+- Issuance of new units (new financing, compensation, contributor grants).
+- Cancellation, repurchase, and redemption of units (when the entity chooses to model them on-chain).
+- Mechanical cap table changes that preserve proportional ownership:
+  - Unit splits and consolidations.
+  - Base unit count expansion (a precision increase), where desired.
+- Transfers governed by restriction and approval policies (lockups, vesting locks, whitelists, right-of-first-refusal style flows, and board or unit-holder approvals).
+- Creation, modification, and conversion of unit classes through governance templates:
+  - Voting versus non-voting classes.
+  - Weighted voting or protected matters.
+  - Class conversions (for example preferred-to-common).
+- Conditional instruments and entitlements expressed as standardized templates, such as:
+  - Option-like grants and warrants (typically non-transferable by default).
+  - Convertible claim templates (note-like or SAFE-like), expressed as conditional conversion rules and on-chain claims.
+- Pools and claims for vesting and fine-grained allocations (v1 standard optional precision).
+- Distributions and dividend-like payouts, including on-chain waterfall rules when the distribution itself occurs on-chain.
+- Mergers, asset sales, restructurings, and dissolutions recorded as governance actions with anchored agreements and resulting ownership changes when executed on-chain.
+
+Not every economic term can be enforced purely by the kernel. The design intent is:
+
+- Enforce what is purely on-chain (voting, restrictions, vesting, distribution math), and
+- Record and anchor what depends on external venues or counterparties, while preserving a clear evidence trail.
+
+Group structures are supported by allowing:
+
+- Entities to hold units or dShares of other entities.
+- Clear mapping of multi entity ownership chains.
+
+This same mechanism supports joint ventures and SPVs. Two or more corporations can hold units or dShares in a dedicated entity that runs on the Hub. The JV or SPV uses the same corporate primitives as any other dCorps corporation, but its wallets, governance rules, and reporting are tailored to a specific project or asset and are clearly separated from each parent entity’s own operations.
+
+Legal and tax consequences of group structures depend on jurisdiction and must be handled by advisors, but dCorps provides a precise map of the ownership relationships.
+
+---
+
+### 7.2 Future extension: public instruments (dShares) and anchored environments
+
+Note: this section describes a future extension. v1 mainnet focuses on Hub corporations and Hub nonprofits as complete, long-lived containers. Public instruments and anchored environments are not required for v1 adoption and are not part of the default entity lifecycle. This material is included for completeness and may evolve.
+
+#### 7.2.1 Why a Sub chain is optional
+
+Not every entity needs its own chain. Sub chains come with overhead:
+
+* Additional validator management.
+* Upgrade complexity.
+* Security considerations.
+
+Sub chains make sense when:
+
+* Transaction volume or complexity is high.
+* The entity needs custom logic that does not fit nicely on the Hub.
+* Public equity style trading of dShares is expected.
+
+For many small and medium entities, **remaining a Hub corporation is the right long term choice**.
+
+---
+
+#### 7.2.2 dShares as an equity style mechanism
+
+Public sub chain corporations issue **dShares** on their own sub chain:
+
+* dShares represent the corporation’s equity style interests on-chain.
+* dShares can carry:
+
+  * Governance rights such as voting on board elections or major corporate actions.
+  * Economic rights such as dividends or buybacks, where allowed by law and corporation policy.
+
+dCorps:
+
+* Does not design dShare terms.
+* Does not issue, custody, or manage dShares for entities.
+* Provides standards for how dShares and related data anchor into the Hub.
+
+Issuers and their advisers must ensure that dShare design and distribution comply with applicable law.
+
+---
+
+#### 7.2.3 Protocol boundary for dShares and law
+
+The boundary is:
+
+- dCorps defines:
+  - How dShares are represented technically on sub chains.
+  - How cap table snapshots and supply summaries are anchored to the Hub.
+  - How governance events and corporate actions are exposed as state.
+- Law and regulators define:
+  - Whether a given dShare is a security or another regulated instrument.
+  - What disclosures and approvals are required.
+  - Which investors can hold or trade them and in which venues.
+
+jurisdiction adapter modules can link these two worlds:
+
+- A jurisdiction, or a delegated service provider that acts under its supervision, can encode in a module:
+  - Which types of dShare offerings it is willing to recognize.
+  - What minimum disclosure standards apply.
+  - Which categories of investors are eligible.
+  - How ongoing reporting should work.
+- Modules can require specific **off-chain documents** and **on-chain anchors**, for example:
+  - A jurisdiction may require that any dShare offering under its regime file a prospectus or information document off-chain and publish a hash of that document on the Hub before new holders can be added under that module.
+  - Periodic financial statements can be anchored by hash and period, so that regulators and investors can verify they have the right version.
+
+Even when a jurisdiction adapter module exists, the **legal effect** comes from local law and contracts that refer to the module, not from the chain itself. The module is a technical expression of rules that the jurisdiction or its delegated providers choose to enforce.
+
+dCorps does not certify that any dShare or module is legally compliant. It provides the primitives and interfaces so that jurisdictions, issuers, and service providers can implement their obligations more transparently and programmatically.
+
+---
+
+#### 7.2.4 Anchoring and recognition as public dCorps corporation
+
+To be recognized at the Hub level as a **public dCorps corporation**, a sub chain must:
+
+- Register with the Hub registry.
+- Meet one of the Hub aligned security recognition tiers defined in section 6.5A and section 6.5B.
+- Implement the agreed interfaces for state summaries and anchoring.
+- Anchor periodic summaries as defined in protocol standards.
+- Publish clear fee and UX disclosures, including whether the sub chain uses DCHUB gas or flexible fee denominations.
+
+Entities are free to launch independent Cosmos chains that use their own security assumptions and do not follow these standards. Such chains are not recognized as dCorps sub chains and do not benefit from the shared Explorer, protocol modules, and standardized tooling described in this whitepaper.
+
+The Hub then:
+
+- Marks the entity as a public sub chain corporation.
+- Exposes its anchored data to explorers, modules, and tools.
+- Allows jurisdiction adapter and sector modules to reference it.
+
+Recognition by the Hub is technical and data oriented, tied to explicit security and anchoring standards. It does not mean a regulator has approved the corporation or that dShares are suitable for any user group.
+
+---
+
+### 7.3 Nonprofit entities
+
+Nonprofits on dCorps are **digital-native impact organizations**. Their governance and financial flows are expressed as verifiable on-chain state and executed through programmable rules.
+
+A Hub nonprofit is complete on the Hub. External charity registration, tax receipt workflows, and local compliance are optional overlays implemented through applications and adapters. They are not required for the nonprofit to exist, raise funds in stablecoins, allocate budgets, or publish transparency.
+
+The goal is to make nonprofit operations legible and auditable by default, while allowing selective disclosure patterns when needed.
+
+#### 7.3.1 Board based governance
+
+nonprofits on dCorps:
+
+* Have **boards** represented by DIDs and wallets.
+* Define roles such as chair, treasurer, secretary, and ordinary members.
+* Configure rules for:
+
+  * Quorum.
+  * Majority and supermajority thresholds.
+  * Term lengths and rotation.
+
+Board decisions are recorded as proposals and votes:
+
+* Each vote is tied to a board seat and DID.
+* Proposals include links to anchored minutes or documentation where appropriate.
+
+This gives donors, partners, and auditors a clear picture of how decisions are made.
+
+---
+
+#### 7.3.2 Donation and program flows
+
+nonprofits use:
+
+* A **donation wallet** as the primary income wallet for donations and grants.
+* Optional **program wallets** for specific initiatives.
+
+All inflows and outflows are:
+
+* Denominated primarily in approved stablecoins (USDC as the baseline reporting currency).
+* Tagged with:
+
+  * Type (donation, grant, program cost, overhead, fundraising cost, internal transfer, and similar categories).
+  * Counterparty type (donor, beneficiary, supplier, staff, partner NGO, jurisdiction, and similar categories).
+
+This supports:
+
+* Real time or near real time views of allocation.
+* Yearly reports built directly from on-chain data.
+* Cross NGO flows that are transparent rather than hidden.
+
+---
+
+#### 7.3.3 Allocation rules as code
+
+nonprofits can encode **allocation rules** as contracts, for example:
+
+* Minimum program spending ratio over a rolling period.
+* Maximum overhead or fundraising ratio.
+* Upper limits on board compensation or per category expenses.
+
+Changing these rules requires:
+
+* A board vote explicitly tied to the rule.
+* A recorded governance event with an anchor to the revised policy.
+
+Sector frameworks or other protocol modules can also:
+
+* Monitor adherence.
+* Raise alerts when entities drift from their own rules.
+* Apply consequences such as flagging entities in dashboards or affecting eligibility for certain programs.
+
+---
+
+#### 7.3.4 Transparency guarantees
+
+The core nonprofit module guarantees:
+
+* Public visibility of:
+
+  * Incoming donation and grant amounts.
+  * Outgoing spending at least at category level.
+  * Board governance events and allocation rule changes.
+
+nonprofits can still keep:
+
+* Beneficiary identities and sensitive details off-chain or in controlled zones.
+* Detailed breakdowns private except when shared with specific auditors or regulators.
+
+The guarantee is that money and high-level categories are visible, not that every detail is public.
+
+---
+
+#### 7.3.5 Donors, identity, and umbrella NGO pattern
+
+Donor identity and privacy are handled carefully:
+
+* Donors can be individuals, corporations, or pooled funds.
+* Donors may appear on-chain only as addresses or DIDs.
+* Where regulations require KYC, protocol modules or off-chain services can link donors to verified identities.
+
+Umbrella NGOs:
+
+* Can manage multiple program wallets that correspond to smaller partner NGOs or project teams.
+* Provide governance, compliance, and reporting infrastructure on top of dCorps.
+* Help smaller organizations plug into the system without managing everything themselves at first.
+
+This supports a diverse ecosystem of nonprofits while keeping flows coherent.
+
+------
+
+#### 7.3.6 Practical digital-only operating pattern
+
+A Hub nonprofit is designed to operate fully on-chain.
+
+A practical operating pattern looks like:
+
+1. The nonprofit receives donations and grants directly in one or more approved stablecoins into its **donation wallet** on the Hub.
+2. The nonprofit allocates funds to program wallets and operational categories through **board approved allocation rules**, ideally using typed workflows that emit deterministic categories.
+3. The nonprofit executes program spending, payroll, grants, and partner disbursements on-chain, with evidence anchors for material items where appropriate.
+4. The nonprofit publishes period allocation reports derived from the same ledger, including inflow coverage, outflow coverage, and evidence coverage, so donors can interpret transparency honestly.
+5. If the nonprofit uses multiple chains or other on-chain venues, it can publish optional completeness commitments and third-party attestations that reconcile those external positions to the Hub period record.
+
+This pattern is complete inside the digital economy. Any interaction with legacy fiat rails or local charity processes is outside protocol consensus and, where used, is implemented through optional adapters and external service providers.
+
+------
+
+
+
+### 7.4 Initial entity templates and first deployment patterns
+
+To make the design concrete, dCorps starts with a small set of canonical entity templates. These are opinionated defaults that cover common use cases and form the wedge for early adoption.
+
+In v1, the intended default is **Hub-first**: both simple and advanced structures can live on the public Hub through standard modules and governance templates. Additional execution environments (public sub chains, private sub chains, rollups) are optional future extensions used only for extreme scale or specialized privacy, not a requirement for complex share structures.
+
+- **Hub corporation (standard profile)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* Low
+   A straightforward private corporation on the shared Hub with the standard 10,000 base unit model, role-based governance, and USDC native wallets for revenue and expenses.
+
+- **Hub corporation (extended profile)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* Medium to high
+   A private corporation that needs advanced class structures, conditional instruments, complex transfer restrictions, and richer corporate actions. It remains on the Hub and attaches standardized extension modules and governance templates. It may also adopt an expanded base unit count (multiple of 10,000) for additional cap table precision.
+
+- **Hub nonprofit (standard profile)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* Low
+   A digital public goods organization with donation and program wallets, board governance, clear allocation categories, and default transparency guarantees.
+
+- **Hub nonprofit (extended profile)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* Medium
+   A nonprofit-like organization with more complex program structures, designated funds, multi wallet allocation rules, and optional privacy controls for sensitive counterparties, implemented through Hub modules while preserving category level public transparency.
+
+**Optional future extension: anchored environments**
+
+If an organization needs extreme throughput, specialized privacy, or bespoke execution logic, it may use an additional execution environment that anchors standardized summaries back to the Hub. This is not a v1 dependency and does not change kernel semantics.
+
+These templates are not a fixed catalog. Governance can introduce new templates, refine existing ones, or deprecate patterns that do not match real usage. The Hub and module architecture is designed so that new templates can be added as modules or standard entity types without rewriting core consensus logic.
+
+------
+
+### 7.5 Migration and adoption paths
+
+dCorps is designed for organizations born on-chain and operating inside the digital economy. Migration of existing legal entities is possible, but it is treated as an optional edge path. The core protocol does not depend on legacy registries, and many entities will never attach a jurisdiction adapter.
+
+The key idea is that adoption should not require a single irreversible jump. Entities can adopt the Hub kernel first and attach external overlays only when needed.
+
+#### 7.5.1 Registering an existing entity on the Hub (parallel ledger)
+
+An existing legal corporation or nonprofit can register a Hub entity and treat it as its canonical on-chain operating ledger:
+
+1. Register a Hub corporation or Hub nonprofit that corresponds to the existing entity.
+2. Anchor governing documents and key evidence (bylaws, board resolutions, signing policies) by hash.
+3. Map real-world roles to on-chain roles and wallets so authority is explicit and verifiable.
+4. Route stablecoin flows through canonical wallets and tagged accounting events to gain reproducible reporting and auditability.
+
+This does not magically transfer legal personhood to the chain. It creates a verifiable, programmable operating layer that can be referenced by counterparties and institutions that choose to rely on it.
+
+#### 7.5.2 Attaching a jurisdiction adapter for external recognition (optional)
+
+When external recognition is needed, the entity can attach a jurisdiction adapter as an overlay:
+
+1. The entity passes a governance resolution to attach the adapter and specify any required declarations or evidence links.
+2. The adapter workflow (off-chain where necessary) processes the recognition steps for that specific context.
+3. The adapter publishes a recognition status or proof pointers back to the Hub as derived state.
+
+This approach keeps the kernel neutral: the Hub records canonical truth, and the adapter expresses context-specific recognition without rewriting history or changing semantics.
+
+#### 7.5.3 Future extension: using an anchored execution environment (if ever needed)
+
+Some organizations may eventually require specialized execution for extreme scale or specialized privacy. If introduced, anchored execution environments would be a future extension and would not be required for ordinary Hub entity operation.
+
+If used, the design constraints are:
+
+- The Hub remains the canonical entity registry and authority log.
+- The environment must anchor standardized summaries and proofs to the Hub.
+- Tooling can safely ignore the environment and still have a complete Hub entity view.
+
+#### 7.5.4 Future extension: specialized privacy or volume modes for nonprofits
+
+Large nonprofits may have privacy or volume constraints (beneficiary privacy, large donor lists, high-frequency microdonations). Selective disclosure patterns and privacy-preserving reporting may be introduced as future extensions, while keeping the Hub as the canonical governance and accounting reference layer.
+
+---
+
+## 8. Identity, roles, and data architecture
+
+### 8.1 DIDs and identities
+
+Identity in dCorps is based on **wallet addresses** and optional **decentralized identifiers (DIDs)**:
+
+- Wallet addresses are the minimal, universal identity primitive used by the Hub.
+- DIDs are an optional, higher level identity layer used for roles, credentials, and cross system linkage.
+
+Each DID can represent an actor such as:
+
+- Founder or shareholder.
+- Board member or director.
+- Officer, for example CEO, CFO.
+- Auditor or reviewer.
+- Regulator or oversight body.
+
+A DID can be linked to:
+
+- One or more wallets.
+- Verifiable credentials and attestations issued by external identity and KYB providers.
+
+dCorps does not invent a proprietary identity standard:
+
+- The protocol aligns with the **W3C DID model**.
+- dCorps treats DIDs as an alias and credential compatibility layer on top of the wallet first base.
+
+**v1 identity stance**
+
+- Wallet only mode is fully supported. An entity can operate using addresses without any DID at all.
+- DIDs are optional and additive. Roles may be bound to wallets directly, or to DIDs that are linked to wallets.
+
+**v1 default DID method**
+
+- The default DID method for v1 is **`did:pkh`**, which maps to blockchain accounts and fits a multi chain Cosmos environment.
+- Additional DID methods may be added over time through standards and modules.
+
+**Optional institutional DID method**
+
+- dCorps may support **`did:web`** as an additive method for institutions that want identity anchored to a domain they control (for example auditors, foundations, or providers).
+
+**Credential and issuer integration stance**
+
+- Credentials enter the system as issuer signed attestations that reference either a wallet, a DID, or both.
+- Additional identity and credential ecosystems can be integrated later as optional modules (for example Cosmos ecosystem DID networks), without changing the v1 requirement that wallet only operation remains valid.
+
+Identity is designed to be pluggable and upgradable:
+
+- Entities can migrate role bindings from one DID method to another without losing their entity history, because the canonical record is the entity’s state and event timeline, not any single DID method.
+- Protocol modules and applications can apply their own identity policies, for example requiring specific credentials for attaching to a jurisdiction adapter module or for holding specific roles.
+
+---
+
+### 8.2 Role and permission model
+
+Roles are explicit constructs in the protocol:
+
+* Examples:
+
+  * Board seat.
+  * Director or officer role.
+  * Treasurer or CFO.
+  * Committee member.
+  * Auditor access role.
+  * Protocol Council member.
+
+Roles have:
+
+* Bound DIDs and wallets.
+* Specific permissions, such as:
+
+  * Proposing or approving transactions.
+  * Initiating governance proposals.
+  * Accessing controlled data.
+  * Attaching or detaching modules.
+
+Roles are separate from individuals:
+
+* When a person leaves, governance actions reassign the role to a new DID or wallet, preserving history.
+
+This structure:
+
+* Avoids single wallet choke points.
+* Aligns with how boards and management actually operate in law.
+
+---
+
+### 8.3 Wallet structure for entities
+
+Entities use a structured wallet model:
+
+* **Merchant wallet (corporations)**
+  Canonical income wallet for operating revenue. Default destination for invoices and customer payments.
+* **Donation wallet (nonprofits)**
+  Canonical income wallet for donations and grants.
+* **Treasury wallet**
+  Holds reserves and long term holdings. Not used for frequent operational payments.
+* **Program wallets**
+  Represent specific programs or projects, especially in NGOs. Have budgets, allocation rules, and separate dashboards.
+* **Role wallets**
+  Associated with roles such as director or CFO. Used for approvals and governance actions, not for personal funds.
+
+This structure makes it possible to:
+
+* Analyze flows by function.
+* Apply policies per wallet type.
+* Provide clear, consistent views for dashboards and auditors.
+
+Protocol modules can refer to wallet types, not just raw addresses, when applying rules.
+
+---
+
+### 8.4 Data categories: public, role gated actions, private, and off-chain
+
+dCorps distinguishes four broad data categories.
+
+**Public on-chain data**
+
+- Entity IDs, names, types, and tags.
+- Cap tables and ownership breakdowns for Hub corporations.
+- Board compositions and governance events for nonprofits.
+- High-level donation and spending categories for nonprofits.
+- Anchors of off-chain documents.
+- Protocol module outputs and signals where applicable, including jurisdiction recognition status, sector framework outputs, and optional attestation or reputation module outputs.
+
+**Role gated actions and permissions (on-chain)**
+
+- Certain actions are restricted by role, policy, or module checks, for example:
+  - Issuing or transferring Hub units under restrictions.
+  - Changing allocation rules for nonprofits.
+  - Executing treasury movements that require multi role approvals.
+  - Attaching or detaching protocol modules.
+- These restrictions control who can change state. They do not, by themselves, make state unreadable.
+
+**Private data commitments and encrypted payloads (on-chain, optional)**
+
+- When an entity needs to anchor sensitive facts without revealing raw details, it can store:
+  - Hash commitments to documents, ledgers, or datasets.
+  - Encrypted blobs intended for specific recipients.
+  - Proof artifacts or verification outputs from privacy-preserving systems.
+- The Hub records what was anchored and when. Decryption and access are handled by the entity and its counterparties, not by consensus.
+
+**Off-chain data**
+
+- Stored in external systems, with integrity anchored on-chain:
+  - Contracts and detailed legal documents.
+  - HR and payroll records with personal data.
+  - Beneficiary lists and sensitive field level program records.
+  - Full audit reports and supporting workpapers.
+  - Full general ledger exports and reconciliations where an entity chooses to publish them as anchors.
+
+This separation allows:
+
+- Public verifiability of key facts and category level flows.
+- Stronger control over sensitive personal and commercial data.
+- Evolution of privacy and storage technology without breaking core logic.
+
+---
+
+### 8.5 Privacy design and selective disclosure
+
+Privacy mechanisms include:
+
+* **Private contract zones**
+
+  * Specialized environments where detailed logic and data can live, while only publishing commitments or aggregates to the Hub or sub chains.
+* **Zero knowledge proofs**
+
+  * Allow entities to prove certain properties, such as:
+
+    * Meeting allocation rules.
+    * Maintaining solvency thresholds.
+  * Without revealing raw transaction details.
+* **Selective disclosure**
+
+  * Permissioned dashboards and data rooms for auditors, regulators, or major donors.
+  * Signed attestations by auditors or oversight bodies that confirm alignment between on-chain state and off-chain records.
+
+The protocol records that proofs or attestations exist and were verified. It does not decide which level of disclosure is sufficient for any particular law or contract.
+
+Protocol modules and applications can integrate these tools and require proofs or attestations as part of their logic.
+
+------
+
+### 8.5A Privacy tiers and disclosure modes
+
+dCorps is transparent by design, but organizations have legitimate privacy needs. Privacy in an on-chain system has two distinct meanings:
+
+- **Visibility policy**, meaning what official interfaces and standards require an entity to publish and how data is presented.
+- **Confidentiality**, meaning whether raw facts are technically hidden from the public.
+
+Visibility policy can be expressed through protocol rules and standards. Confidentiality generally requires privacy technology (encryption, private execution zones, and zero knowledge proofs) and often implies different execution environments.
+
+To make choices explicit, each entity declares a disclosure mode at creation. The disclosure mode is public metadata and is used by explorers, registries, sector frameworks, and jurisdiction adapters.
+
+#### 8.5A.1 Disclosure modes (v1)
+
+**Mode A, Public operations (maximum verifiability)**
+
+- Hub corporations: cap table balances (pseudonymous addresses and optional DIDs), governance events, and tagged operational flows are public on the Hub.
+- Hub nonprofits: board composition and governance events are public; donation inflows and category level outflows are public; program wallet structure is public.
+
+**Mode B, Public structure with aggregate reporting (privacy aware operations)**
+
+- Structural state remains public (entity identity, wallet types, governance events).
+- Operational detail may be kept off-chain or in controlled zones, while the Hub records:
+  - Commitments (hash anchors) to detailed ledgers or datasets,
+  - Encrypted payloads intended for specific recipients (auditors, regulators, major donors), and
+  - Period aggregates and standardized category totals for reporting.
+
+Mode B establishes a standard for publishing aggregates and proofs instead of raw line items where privacy tools are used.
+
+**Mode C, Private execution with public anchoring (sub chain or private zone required)**
+
+- Sensitive operations execute on a private sub chain or private contract zone.
+- The Hub records:
+  - Governance checkpoints,
+  - Period aggregates and standardized category totals, and
+  - Commitments to detailed records and, where applicable, proof verification artifacts.
+
+Mode C is intended for entities that require stronger confidentiality for beneficiaries, payroll, commercial terms, or regulated data.
+
+#### 8.5A.2 Minimum transparency guarantees by entity type
+
+**Hub nonprofits** must meet a minimum transparency floor in all modes. This floor is a protocol visibility policy, independent from whether raw line items are public.
+
+| Minimum requirement     | Hub nonprofit transparency floor (all disclosure modes)      |
+| ----------------------- | ------------------------------------------------------------ |
+| Cadence                 | At least quarterly, with monthly as the default target for reference tooling where practical |
+| Inflows                 | Total donation inflows and total grant inflows per period, plus total other inflows if used |
+| Outflows                | Total spending per period for, at minimum: program spending, general and administrative overhead, and fundraising costs; additional categories from the minimal chart of accounts may be exposed as the entity chooses |
+| Governance              | Board composition, proposals, votes, and allocation rule changes |
+| What may remain private | Beneficiary identities, payroll line items, vendor invoices, field level program data, and any personally identifiable information |
+
+In Mode A, the floor can be computed directly from on-chain line items. In Mode B and Mode C, the floor is met by publishing period aggregates and category totals, plus commitments and optional third-party attestations as described in section 8.5A.3.
+
+**Hub corporations** have no universal mandatory public expense disclosure by category. Corporations choose Mode A, B, or C, and counterparties can require a specific mode by contract or by module participation.
+
+#### 8.5A.3 Selective disclosure standards
+
+Where selective disclosure is used:
+
+- Every private dataset referenced for assurance is anchored by hash and period.
+- Access is granted through encrypted payloads or separate data rooms controlled by the entity.
+- Auditors and other issuers can publish signed attestations that a private dataset matches anchored commitments and reconciles to on-chain aggregates.
+
+#### 8.5A.4 Limits of protocol privacy
+
+Choosing a disclosure mode does not automatically provide confidentiality. Confidentiality exists only when an entity uses privacy-preserving execution or disclosure tools. Official interfaces surface this distinction clearly by labeling which views are raw on-chain data, which are aggregates, and which are claims supported by attestations.
+
+#### 8.5A.5 Transparency tiers for discovery and comparability (reference interface standard)
+
+To prevent “trust gaps” between raw disclosures and aggregate disclosures, reference explorers and dashboards surface a mechanical transparency tier alongside the disclosure mode. The tier is a presentation standard derived from observable facts and published signals, not an editorial judgment.
+
+Illustrative tiers include:
+
+- **Tier 1, Raw on-chain detail**
+   Period views are derived directly from on-chain line items for the relevant wallet flows.
+- **Tier 2, Public aggregates with evidence**
+   Period views are derived from published aggregates plus supporting commitments, proofs, or third-party attestations.
+- **Tier 3, Minimum transparency floor**
+   The entity meets the minimum nonprofit floor (where applicable) but does not publish additional detail or assurance beyond that floor.
+
+Reference interfaces must clearly distinguish:
+
+- Deterministic outputs from typed workflows
+- Self-reported aggregates
+- Aggregates supported by third-party attestations or proof verification artifacts
+
+This makes transparency a measurable advantage for entities that choose stronger disclosure, while allowing privacy aware organizations to participate without being presented as equally verifiable.
+
+------
+
+### 8.6 Example entity state representation (illustrative)
+
+The following examples are intentionally simplified and non normative. They are meant to show the kinds of structured state and events the Hub exposes. IDs, addresses, and dates are placeholders.
+
+```json
+{
+  "schema_version": "1.0",
+  "entity_id": "dcorp:hub:entity:00001234",
+  "entity_type": "hub_corporation",
+  "name": "Acme Labs",
+  "status": "active",
+  "tags": ["software", "remote_first"],
+  "created_at": "2025-06-15T12:00:00Z",
+  "attachments": [
+    {
+      "module_id": "dcorp:module:jurisdiction:example_v1",
+      "status": "attached",
+      "attached_at": "2025-07-01T00:00:00Z"
+    }
+  ]
+}
+```
+
+```json
+{
+  "schema_version": "1.0",
+  "entity_id": "dcorp:hub:entity:00001234",
+  "wallets": [
+    { "wallet_type": "merchant", "address": "dchub1..." },
+    { "wallet_type": "treasury", "address": "dchub1..." },
+    { "wallet_type": "fee_reserve", "address": "dchub1..." }
+  ]
+}
+```
+
+``` json
+{
+  "schema_version": "1.0",
+  "event_type": "accounting_event",
+  "entity_id": "dcorp:hub:entity:00001234",
+  "tx_hash": "0xabc123...",
+  "timestamp": "2025-08-01T18:30:00Z",
+  "from_wallet_type": "merchant",
+  "to_address": "dchub1...",
+  "amount": { "denom": "uusdc", "value": "30000000000" },
+  "tags": {
+    "category": "salaries_wages",
+    "counterparty_type": "staff",
+    "reference": "doc:ipfs:Qm..."
+  }
+}
+```
+
+``` json
+{
+  "schema_version": "1.0",
+  "event_type": "governance_resolution",
+  "entity_id": "dcorp:hub:entity:00005678",
+  "resolution_id": "res:00000042",
+  "timestamp": "2025-09-20T10:00:00Z",
+  "resolution_type": "nonprofit_allocation_rule_update",
+  "result": "passed",
+  "links": {
+    "minutes_anchor": "doc:ipfs:Qm...",
+    "policy_anchor": "doc:ipfs:Qm..."
+  }
+}
+```
+
+Note: in practice, USDC on the Hub may appear as an IBC denom (for example `ibc/...`) tracing back to Noble’s `uusdc`. This example keeps `uusdc` for readability.
+
+------
+
+### 8.7 Operational security and key management
+
+Most real world failures come from key compromise and process breakdowns, not from consensus bugs. dCorps is designed to support organization grade operational security through explicit roles, separation of duties, and policy aware wallet structures.
+
+#### 8.7.1 Recommended role and wallet patterns
+
+Common patterns include:
+
+- Split operational and long term funds:
+  - Merchant or donation wallet for frequent inflows and payouts
+  - Treasury wallet for reserves and infrequent moves
+- Use role wallets for approvals, not for holding large balances:
+  - CFO or treasurer role wallet proposes and signs approvals
+  - Executor wallets execute approved transactions under policy
+- Use multisig thresholds appropriate to risk:
+  - Operational wallets: 2 of 3 or 3 of 5
+  - Treasury wallets: 3 of 5, 4 of 7, or higher
+  - Board-governed actions: signatures mapped to board seats
+
+#### 8.7.2 Policy controls that reduce blast radius
+
+Entities and ecosystem applications can implement controls such as:
+
+- Spending limits per period and per category
+- Allow lists for trusted counterparties and vendor wallets
+- Two step approval for new beneficiaries (add beneficiary, then pay after delay)
+- Time delays for treasury outflows above a threshold
+- Mandatory dual control for policy changes (for example budget category rules)
+- Separate keys for proposing, approving, and executing
+
+#### 8.7.3 Key rotation, recovery, and incident response
+
+dCorps supports governance based reassignment of roles and wallets:
+
+- If a key is compromised, the entity can rotate the affected role binding and wallet permissions through a recorded governance action.
+- Recovery processes can be codified, including emergency committees with narrow authority, time bounded scope, and transparent logging.
+- Custodians and managed key services can integrate as external providers, but they remain separate from protocol consensus and do not receive protocol level superpowers.
+
+---
+
+## 9. On-chain operations
+
+### 9.1 Assets and operating currency
+
+dCorps separates:
+
+- **DCHUB** as the gas, staking, and governance token.
+- **USDC on Noble** (and potentially other approved stablecoins in the future) as the primary operating currency for:
+  - Invoices and revenue.
+  - Salaries and contractor payments.
+  - Vendor payments.
+  - Grants and donations.
+  - Jurisdiction fees and certain protocol fees.
+
+In the initial implementation, USDC on Noble is the reference stablecoin for reporting and protocol fees.
+
+**v1 mainnet expectation management**
+
+- Mainnet may launch with a small approved operating set, potentially just USDC, so that reliability, monitoring, and integrations are tight.
+- Additional stablecoins (including decentralized stablecoins) can be added later through the asset registry process after risk review and governance approval.
+- Entities can still accept and hold other digital assets, but v1 reference reporting and protocol service fees assume the approved stablecoin set for comparability.
+ In practice, entities hold and transact USDC on the Hub as an IBC transferred asset originating from Noble (and in some flows via interchain accounts or relayers where supported). Reports treat these balances as USDC denominated.
+
+dCorps is optimized for entities that treat dCorps wallets as their **primary digital operating accounts**. Incoming revenues and donations are received in stablecoins, primarily USDC, into merchant or donation wallets. Salaries, contractor payments, vendor payments, grants, and program costs are paid out from dCorps wallets. The on-chain view is the transparent, verifiable part of an entity’s activity.
+
+The protocol does not attempt to model fiat rails or bank payments. dCorps is complete inside the on-chain economy. If an entity chooses to interact with fiat systems, that activity occurs outside protocol consensus and is out of scope for v1. Where an entity wants to reference external documents for evidence or dispute clarity, it may anchor hashes and use optional attestation modules, without turning the Hub into a banking integration layer.
+
+Entities may hold and use other digital assets, but reports and metrics use USDC as the baseline unit of account.
+
+------
+
+### 9.1A Gas payment, fee abstraction, and sponsored transactions
+
+dCorps uses DCHUB for gas at the Hub protocol level, but the ecosystem is designed so that entities can operate in a stablecoin first manner without requiring every end user to directly hold DCHUB at all times.
+
+Design intentions include:
+
+- **Fee grants**
+  - Entities, applications, and service providers can grant gas allowances to specific wallets or roles, covering routine activity such as governance actions and reporting anchors.
+- **Sponsored transactions**
+  - Applications can sponsor gas for users and entities, paying gas from their own accounts and bundling costs into their own service fees or subscription models.
+- **Relayers and paymaster style services**
+  - Specialized relayers can submit transactions on behalf of entities, subject to explicit entity approvals and policy controls, enabling stablecoin denominated service billing off-chain while preserving on-chain transparency of the underlying actions.
+- **Clear UI requirements**
+  - Official interfaces and registry listed applications are expected to disclose when a transaction is sponsored, which party paid gas, and what policy controlled the sponsorship.
+
+**Non custodial requirements (hard boundary)**
+
+- The protocol is non custodial. Entities keep control of their wallets and keys.
+- Relayers and sponsors must not take custody of entity or user funds as part of gas abstraction. They pay gas from their own accounts. They may charge off-chain fees for service, but they do not control client assets inside dCorps as part of this flow.
+- Any delegation used to enable relayed execution must be message scoped, time bounded, and revocable, and must not grant discretionary control over an entity treasury.
+
+These mechanisms improve usability and reduce operational friction for small teams and nonprofits, while preserving DCHUB’s role in network security and governance.
+
+------
+
+### 9.1B Stablecoin issuer risk, freezes, and treasury continuity (recommended practices)
+
+dCorps is optimized for stablecoin native operation, but stablecoins introduce issuer and rail risk.
+
+Many fiat backed stablecoins include administrative controls such as blacklisting and freezes. When a freeze happens, reversal typically depends on the stablecoin issuer’s policy and the administrative controls of the token’s home chain. dCorps validators, governance, and reference interfaces cannot unfreeze a stablecoin balance and cannot override issuer enforcement.
+
+dCorps addresses this risk by design and by recommended operating practices:
+
+- **Asset registry risk labeling (protocol level)**
+  - The approved asset registry records issuer and rail risk factors, including freeze and redemption mechanics, and official interfaces surface these risk labels prominently.
+- **Multi stablecoin support (protocol and ecosystem)**
+  - Entities may diversify operating balances across multiple approved stablecoins over time, reducing dependency on any single issuer.
+- **Treasury segmentation (recommended)**
+  - Keep operational liquidity in the stablecoin most counterparties use.
+  - Keep reserves segmented and diversified, for example across multiple approved stablecoins and venues, with clear policy controls and internal limits.
+- **Decentralized stablecoins as partial reserves (optional)**
+  - Overcollateralized stablecoins (for example DAI style designs) can reduce issuer freeze exposure, but they introduce different risks, such as collateral volatility, peg stress, governance risk, and liquidity constraints.
+  - They should be treated as diversification instruments, not as a universal replacement for fiat backed stablecoins.
+- **Avoid “freeze bypass” wrappers as a core strategy**
+  - Wrapping a stablecoin does not remove the underlying issuer and redemption risk, and it adds smart contract and liquidity risk.
+  - dCorps does not position itself as a system for evading issuer controls or legal enforcement; entities remain responsible for compliance with applicable laws and sanctions regimes.
+- **Operating continuity planning (recommended)**
+  - Entities should maintain a documented continuity plan for stablecoin disruption, including:
+    - approved alternative settlement assets,
+    - minimum reserve buffers,
+    - wallet and policy controls that limit blast radius, and
+    - clear internal escalation and incident response procedures.
+
+---
+
+### 9.2 Income and invoicing
+
+Entities can:
+
+* Issue invoices or payment requests denominated in USDC.
+* Receive payments directly into their merchant or donation wallets.
+* Tag income with:
+
+  * Type (product, service, subscription, donation, grant, other).
+  * Counterparty type (customer, donor, grant maker, affiliate, jurisdiction, other).
+  * References to contracts or agreements anchored on-chain.
+
+This enables:
+
+* Automated aging and receivables tracking where integrations exist.
+* Simple views of revenue by type and counterparty over time.
+
+Entities that commit to routing all material income and payouts through dCorps wallets obtain the strongest possible transparency guarantees, because their public reports can be derived directly from on-chain flows.
+
+---
+
+### 9.3 Payroll, compensation, and vesting
+
+Corporations can:
+
+* Run payroll in USDC:
+
+  * Scheduled payments from merchant or treasury wallets.
+  * Batch operations for many employees at once.
+* Manage contractor payments with clear categorization.
+* Implement **vesting schedules** for:
+
+  * Hub units.
+  * dShares, once on a sub chain.
+  * Other incentive instruments.
+
+Vesting logic can include:
+
+* Cliff periods.
+* Linear or stepwise vesting.
+* Accelerated vesting conditions linked to governance events or external triggers.
+
+nonprofits can:
+
+* Pay staff and contractors through tagged transactions.
+* Keep board compensation within contract enforced caps that are visible to donors.
+
+---
+
+### 9.4 Expense management and approvals
+
+Expense management follows a standard pattern:
+
+1. **Proposal**
+
+   * An authorized role creates an expense proposal with:
+
+     * Amount and currency.
+     * Beneficiary.
+     * Category and subcategory.
+     * Links to anchored invoices or contracts.
+2. **Approval workflow**
+
+   * Depending on policy, approvals may require:
+
+     * Single signer for small amounts.
+     * Multiple signers or board votes for larger or sensitive items.
+     * Additional checks from protocol modules, for example jurisdiction or sector rules.
+3. **Execution**
+
+   * Once approved, a payment is executed and tagged.
+   * The link between proposal, approval, and execution is recorded.
+4. **Reporting**
+
+   * Dashboards can show budget versus actuals at many levels.
+   * Auditors can follow chains of proposals and approvals.
+
+Policies can be implemented in ecosystem applications that use these primitives.
+
+---
+
+### 9.5 Reporting and dashboards
+
+Because flows are on-chain and structured:
+
+* Entities can generate:
+
+  * Monthly and quarterly financial summaries.
+  * Cash flow statements.
+  * Allocation reports for NGOs.
+* Stakeholders can see:
+
+  * Revenue and expense trends.
+  * Allocation ratios, for example program versus overhead.
+  * Governance activity.
+
+Public entities are expected to meet baseline disclosure standards. Private entities have more flexibility but still benefit from internal reporting built directly from state.
+
+Protocol modules and external analytics tools can consume this data and provide scores, alerts, and comparisons.
+
+------
+
+### 9.5A Tag integrity, assurance, and audit signals
+
+Tagged accounting events improve machine readability, but tags are not automatically truthful. Amounts, timestamps, and wallet movements are verifiable on-chain for on-chain funds. Category tags and descriptions are interpretations created by entities or by the workflows they use.
+
+dCorps strengthens tag reliability by encouraging constrained, typed workflows instead of free form tagging:
+
+- **Typed modules emit deterministic tags (recommended)**
+   Core operating workflows (payroll, invoicing, grants, donation allocation, vendor pay flows) are expected to be implemented as typed modules or standardized message families that emit category tags as part of execution. In this model, the category is not merely an assertion, it is the output of a constrained process.
+- **Free form tags remain possible, but are clearly labeled**
+   Where entities use custom flows, events may include custom tags. Reference interfaces must label these as entity supplied tags and distinguish them from tags produced by typed workflows.
+
+dCorps separates:
+
+- **Verifiable movements** (what happened on-chain), and
+- **Interpretations and completeness** (what it means, and whether the view is complete).
+
+#### 9.5A.1 Evidence anchored tagging (recommended)
+
+For material flows above a parameterized threshold, entities are expected to attach at least one of the following:
+
+- An anchored invoice, contract, or resolution hash
+- A standardized reference ID that maps to an off-chain document in a controlled data room
+- A signed counterparty receipt or acknowledgement where practical
+
+Evidence anchors improve auditability without forcing sensitive content on-chain.
+
+#### 9.5A.2 Counterparty receipts (recommended)
+
+To raise integrity without requiring heavy third-party audits, dCorps supports optional counterparty receipts:
+
+- A vendor, contractor, partner, or recipient signs a receipt referencing the payment or invoice identifier and the relevant category and period.
+- Receipts can be stored as on-chain attestations or as anchored documents with a signed payload.
+
+Counterparty receipts make systematic misclassification harder without turning the protocol into an adjudicator.
+
+#### 9.5A.3 Completeness and cross-chain reconciliation signals (optional)
+
+dCorps does not require reconciliation to function. However, some entities operate across multiple on-chain venues (multiple chains, multiple DEXs, multiple custody models). These entities may voluntarily publish:
+
+- Period commitments (hashes of standardized exports, position snapshots, or reconciled inventory lists).
+- Third-party attestations that specified external balances or DeFi positions reconcile to the Hub period record.
+
+These signals are optional. They exist primarily to support large donors, risk-aware counterparties, and auditors who want a clear coverage story across venues. Reference dashboards must clearly distinguish self-reported views from views supported by third-party attestations.
+
+#### 9.5A.4 Assurance signals and module outputs (optional)
+
+Assurance signals and scoring are optional. They come from protocol modules and independent issuers, not from the Hub core.
+
+Examples include:
+
+- Auditor attestations that tagged aggregates match underlying records.
+- jurisdiction adapter outputs that required reports and fees were satisfied, or that recognition is active or withdrawn.
+- Sector framework outputs that allocation rules or reporting commitments were met.
+- Reputation module scores derived from defined inputs, published as metrics with reason codes and source anchors.
+
+Reference dashboards should distinguish clearly between:
+
+- Views produced from deterministic, typed workflows
+- Self-tagged and self-reported views
+- Views supported by independent attestations
+- Views supported by rule outputs or privacy proof verification artifacts
+
+------
+
+### 9.5B Cash-based operating reporting standard (v1)
+
+This section defines the v1 standard for cash-based operating reporting views produced from dCorps accounting primitives.
+
+Cash-based operating reporting is a period summary derived from cash-like inflows and outflows recorded through entity wallets, excluding accrual accounting treatments. It is a reporting view for operational clarity and comparability. It is not a GAAP, IFRS, or statutory financial statement.
+
+#### 9.5B.1 Period definition and currency
+
+- Reporting periods are defined as half open intervals: `[period_start, period_end)`.
+- Period timestamps use UTC for canonical reporting in reference tooling.
+- The baseline reporting currency is USDC.
+- When a period includes multiple stablecoins, reference views may display:
+  - Native denomination totals per denom, and
+  - An optional USD equivalent view using transparent conversion rules and explicit price feed sources, where supported by tooling.
+
+#### 9.5B.2 Required inputs and category mapping
+
+A cash-based report is derived from:
+
+- Accounting events that record cash-like inflows and outflows for the entity’s canonical wallet types (merchant, donation, program, treasury, and other configured wallet types).
+- The `category` tag on each accounting event, which must map to the minimal standard chart of accounts (section 9.8) or to an entity scoped extension that maps to a parent category in the minimal chart.
+
+Events that omit required tags are treated as uncategorized and must be surfaced explicitly in report coverage metrics.
+
+#### 9.5B.3 Source labeling and integrity signals
+
+To keep reporting honest about its inputs, cash-based reports include a source label for each aggregate:
+
+- **typed_workflow**
+   Category produced deterministically by a constrained workflow module (for example payroll, invoicing, donation allocation).
+- **entity_tagged**
+   Category provided directly by the entity or an external application using free form or custom logic.
+- **anchored_aggregate**
+   Aggregate derived from an anchored report or sub chain summary commitment rather than raw on-chain line items.
+
+Reference interfaces must distinguish these inputs clearly. This does not adjudicate truth; it makes the provenance of categories visible.
+
+#### 9.5B.4 v1 report object (reference schema excerpt)
+
+The following object is a reference excerpt for interoperability. Exact field names are defined in the Protocol Specification and reference indexer formats, but v1 implementations are expected to produce an equivalent structure.
+
+```json
+{
+  "schema_version": "1.0",
+  "entity_id": "dcorp:hub:entity:00001234",
+  "report_type": "cash_based_operating_statement",
+  "period": {
+    "period_start": "2025-11-01T00:00:00Z",
+    "period_end": "2025-12-01T00:00:00Z",
+    "timezone": "UTC"
+  },
+  "base_denom": "uusdc",
+  "coverage": {
+    "total_inflows": "50000000000",
+    "total_outflows": "42000000000",
+    "uncategorized_inflows": "0",
+    "uncategorized_outflows": "500000000",
+    "uncategorized_event_count": 2
+  },
+  "income": [
+    {
+      "category": "subscription_revenue",
+      "amount": "50000000000",
+      "source_type": "typed_workflow"
+    }
+  ],
+  "expenses": [
+    {
+      "category": "salaries_wages",
+      "amount": "30000000000",
+      "source_type": "typed_workflow"
+    },
+    {
+      "category": "contractors_freelancers",
+      "amount": "5000000000",
+      "source_type": "entity_tagged"
+    },
+    {
+      "category": "cloud_infrastructure",
+      "amount": "4000000000",
+      "source_type": "entity_tagged"
+    },
+    {
+      "category": "other_expenses",
+      "amount": "2000000000",
+      "source_type": "entity_tagged"
+    },
+    {
+      "category": "jurisdiction_compliance_fees",
+      "amount": "500000000",
+      "source_type": "typed_workflow"
+    }
+  ],
+  "net_operating_result": "8000000000",
+  "notes": {
+    "mode": "Mode A",
+    "derivation": "derived_from_accounting_events",
+    "disclosure": "cash_based_view_only"
+  },
+  "anchors": [
+    {
+      "anchor_type": "policy_or_minutes",
+      "reference": "doc:ipfs:Qm..."
+    }
+  ]
+}
+```
+
+Reference explorers are expected to show cash-based operating reporting only as a view over the ledger and to include clear labels that it is not an audited statement and not accrual accounting.
+
+---
+
+### 9.5C Nonprofit allocation reporting standard (v1)
+
+Nonprofits in dCorps are expected to publish a minimum transparency view that is meaningful for donors and oversight without forcing disclosure of sensitive beneficiary details.
+
+A nonprofit allocation report is a reproducible, cash-based period view derived from tagged accounting events and the nonprofit’s allocation rules.
+
+#### 9.5C.1 Required inputs and category mapping
+
+An allocation report is derived from:
+
+- Donation and grant inflows to canonical nonprofit wallets (for example the donation wallet and designated program wallets).
+- Tagged outflows that map to:
+  - program categories (for example `program_a_direct`),
+  - support categories (for example `general_admin`, `fundraising`),
+  - and any restricted fund categories when restriction logic is used.
+- Internal transfers to treasury wallets (for example retained buffers), which are recorded but are not treated as “distributed” spending.
+
+As with the corporate cash-based view, events that omit required tags are treated as uncategorized and must be surfaced explicitly in coverage metrics.
+
+#### 9.5C.2 v1 allocation report object (reference schema excerpt)
+
+The following object is a reference excerpt for interoperability. Implementations are expected to produce an equivalent structure.
+
+```json
+{
+  "schema_version": "1.0",
+  "entity_id": "dcorp:hub:entity:00005678",
+  "report_type": "nonprofit_allocation_statement",
+  "period": {
+    "period_start": "2025-11-01T00:00:00Z",
+    "period_end": "2025-12-01T00:00:00Z",
+    "timezone": "UTC"
+  },
+  "base_denom": "uusdc",
+  "coverage": {
+    "donations_in": "100000000000",
+    "distributed_out": "95000000000",
+    "retained": "5000000000",
+    "uncategorized_outflows": "0",
+    "uncategorized_event_count": 0
+  },
+  "by_category": [
+    { "category": "program_a_direct", "amount": "58000000000" },
+    { "category": "program_b_direct", "amount": "17000000000" },
+    { "category": "general_admin", "amount": "15000000000" },
+    { "category": "fundraising", "amount": "5000000000" }
+  ],
+  "ratios": {
+    "program_spending_ratio": "0.7895",
+    "overhead_ratio": "0.1579",
+    "fundraising_ratio": "0.0526"
+  },
+  "notes": {
+    "derivation": "derived_from_accounting_events",
+    "disclosure": "category_level_allocation_view"
+  }
+}
+```
+
+Reference explorers are expected to show this as a view over the ledger, to clearly label its disclosure mode, and to surface coverage and uncategorized amounts so donors can interpret transparency honestly.
+
+### 9.6 Governance actions and records
+
+Key governance actions are:
+
+* Recorded as proposals and votes.
+* Linked to:
+
+  * Roles and DIDs that participated.
+  * Anchored documents such as minutes or resolutions.
+  * Resulting state changes.
+
+Examples:
+
+* Board approval of an annual budget.
+* Shareholder vote on a major transaction.
+* nonprofit board decision to adjust allocation rules.
+
+This creates a tamper evident record of how decisions were made.
+
+---
+
+### 9.7 Integrated donation features for corporations
+
+Corporations can support nonprofits natively:
+
+* **Checkout donations**
+
+  * Customers can add a donation that goes directly from the customer wallet to the NGO donation wallet, with separate tagging.
+* **Revenue share commitments**
+
+  * Corporations can commit a percentage of revenue or profits to specific NGOs.
+  * Smart contracts route funds periodically from merchant wallet to NGO donation wallets.
+* **Matching programs**
+
+  * Corporations can match employee or customer donations up to a defined cap, with matching logic enforced by contracts.
+
+These patterns:
+
+* Do not turn corporations into banks or custodians of donated funds.
+* Allow donors and NGOs to verify commitments through on-chain data.
+
+Protocol modules and applications can make these flows visible and comparable.
+
+---
+
+### 9.8 Minimal standard chart of accounts
+
+To make the data standard claim concrete, dCorps defines a **minimal default chart of accounts**. Entities can extend it, but common categories ensure that tools and dashboards can compare entities consistently.
+
+**Income categories (examples)**
+
+- Product revenue.
+- Service revenue.
+- Subscription revenue.
+- Grants.
+- Donations (for NGOs and foundations).
+- Investment and interest income.
+- Other income.
+
+**Expense categories (examples)**
+
+- Salaries and wages.
+- Contractors and freelancers.
+- Vendors and suppliers.
+- Rent and facilities.
+- Cloud and infrastructure.
+- Marketing and sales.
+- Research and development.
+- Jurisdiction and compliance fees.
+- Taxes.
+- Grants to NGOs (for corporations and foundations).
+- Program spending (for NGOs).
+- Fundraising costs (for NGOs).
+- General and administrative overhead.
+- Travel and events.
+- Other expenses.
+
+**Balance sheet categories (examples)**
+
+- Cash and stablecoins (USDC and others).
+- DCHUB holdings.
+- dShares and other tokens.
+- Accounts receivable.
+- Prepaid expenses.
+- Accounts payable.
+- Deferred revenue.
+- Loans and other liabilities.
+
+This baseline is not a full accounting standard and does not replace local GAAP or IFRS. It is a neutral minimum schema that allows:
+
+- Standard dashboards across many entities.
+- Easier mapping into local accounting systems.
+- Sector and jurisdiction adapters to express additional rules without losing comparability.
+
+Balance sheet categories in this schema are an optional tagging and dashboard view standard; they are not audited financial statements and do not, by themselves, imply GAAP, IFRS, or statutory reporting compliance.
+
+The foundation is expected to maintain this minimal schema, propose extensions where needed, and work with the ecosystem when mapping to local accounting standards.
+
+------
+
+### 9.9 Multi stablecoin and CBDC support
+
+USDC is the baseline unit of account for early dCorps reporting, but the architecture supports multiple stablecoins and, where technically and legally possible, tokenized fiat instruments such as CBDCs.
+
+Design intentions include:
+
+- An on-chain approved asset registry that lists which stablecoins are supported for:
+  - Entity operations
+  - Protocol fees
+  - Reporting and metrics conversions
+- Clear risk criteria for approving, limiting, or retiring an asset, including:
+  - Issuer and legal structure
+  - Redemption, blacklisting, and freeze mechanics
+  - Availability over open rails such as IBC
+  - Liquidity and market depth in relevant venues
+  - Operational history and transparency of administrative control policies
+- Reporting that remains consistent across assets:
+  - Transactions are recorded with explicit `denom` and amounts
+  - Dashboards can produce USD denominated summaries using transparent conversion rules, price feeds, and reconciliation anchors
+  - Entities can choose which assets they accept while still producing comparable reports
+
+Not all CBDCs will be compatible with open on-chain systems. Many may be permissioned, non transferable, or restricted in ways that prevent direct integration. dCorps supports CBDC style assets only where their technical rails and legal constraints allow safe, auditable use.
+
+---
+
+## 10. Token model and economic design
+
+### 10.1 Separation of DCHUB, Hub units, dShares, and NGO governance
+
+The dCorps stack separates tokens and governance concepts by layer:
+
+* **DCHUB**
+
+  * Native token of the Hub and participating sub chains.
+  * Used for gas, staking, and protocol governance.
+  * Does not represent ownership in user entities or in the development corporation or foundation.
+* **Hub units**
+
+  * Ten thousand per Hub corporation.
+  * Represent ownership and voting rights inside that corporation.
+  * Not global tokens; entirely scoped to that entity.
+* **dShares**
+
+  * Equity style tokens of public sub chain corporations.
+  * Represent that corporation’s equity and governance rights.
+  * Designed and issued by each corporation under its own legal regime.
+* **nonprofit governance**
+
+  * Board and allocation rules, not equity.
+  * No token that represents ownership of a nonprofit.
+
+This separation reduces confusion between protocol participation and entity level ownership.
+
+---
+
+### 10.2 DCHUB utility and non equity nature
+
+dCorps uses two main assets with distinct roles.
+
+**DCHUB**
+
+- Native token of the Hub and recognized sub chains.
+- Used to pay gas for transactions on the Hub and on recognized sub chains.
+- Used for staking by validators and delegators who help keep the network live and correct.
+- Used for protocol level governance, within the scopes defined in this whitepaper and related governance charters.
+
+**USDC on Noble**
+
+- Primary operating currency for entities using dCorps.
+- Used for invoices and revenue, salaries and contractor payments, vendor payments, grants, donations, and other operating flows.
+- Used for many protocol level fees such as entity registration and renewal, premium names, and participation in jurisdiction adapter modules.
+
+In high-level economic terms:
+
+- More entities and more protocol modules increase utilization of the Hub and recognized sub chains.
+- Higher utilization can increase demand for blockspace and can affect staking participation and security budgets, but market outcomes are uncertain and parameter dependent.
+- Protocol and jurisdiction fees collected in USDC can fund security and ecosystem public goods, reducing reliance on emissions and avoiding a need for the protocol to depend solely on DCHUB distribution.
+
+These relationships describe protocol mechanics, not promises about price, liquidity, or any market outcome.
+
+DCHUB does not entitle holders to dividends, profit distributions, or rights to donations from any entity. It does not represent ownership of user entities, the development corporation, or the foundation. The design intention is that DCHUB is a protocol level utility token. How any given jurisdiction classifies DCHUB or related instruments is a matter of local law and facts. This whitepaper does not take a legal position on classification.
+
+---
+
+### 10.3 Total supply and allocations
+
+DCHUB has a hard cap maximum supply of **1,000,000,000 (one billion)** tokens.
+
+“Hard cap supply” means the protocol is designed so that total DCHUB supply **cannot exceed 1,000,000,000**.
+
+
+This section defines the cap and allocations. Vesting and lockups are described in section 10.4, and circulating supply release caps are described in section 10.4A.
+
+**v1 supply implementation stance**
+
+- At TGE, the full cap supply is created once in genesis and assigned into on-chain vesting accounts and governance controlled module accounts that correspond to the allocations below.
+- After genesis, there is no discretionary inflation path intended to create additional DCHUB beyond what was created at genesis. “Emissions” in this document refers to tokens entering circulation from these pre-funded allocation accounts (for example the staking and validator rewards pool), not to new supply creation beyond the hard cap.
+- Total supply may decrease over time through slashing and other burn mechanisms if adopted by the protocol, but it cannot rise above the genesis hard cap.
+
+An indicative allocation is:
+
+- **Founder**: 15 percent (150,000,000)
+- **Core team and future contributors**: 10 percent (100,000,000)
+- **Investors**: 10 percent (100,000,000)
+- **Community and ecosystem programs**: 35 percent (350,000,000)
+- **Staking and validator rewards**: 18 percent (180,000,000)
+- **Protocol Treasury**: 5 percent (50,000,000)
+- **dCorps foundation**: 5 percent (50,000,000)
+- **Liquidity bootstrap (operational liquidity)**: 2 percent (20,000,000)
+
+Founder, team, and investor allocations together represent 35 percent of supply. Community and ecosystem programs plus staking and validator rewards represent 53 percent of supply, distributed over time through open programs and network participation. Protocol Treasury, foundation, and liquidity bootstrap allocations are operational and stewardship pools and are designed to be non capturing by policy and by default governance configuration (see section 10.3A and section 10.7A).
+
+**Indicative sub allocation plan for Community and ecosystem programs (35 percent)**
+
+Community and ecosystem programs are intended to be programmatic and transparent, with clear buckets that map to public goods needs. An indicative split is:
+
+- **Security and audits**: 7 percent (70,000,000)
+  - Audits, monitoring, bug bounties, incident response tooling, safety critical infrastructure.
+- **Core tooling and developer grants**: 10 percent (100,000,000)
+  - SDKs, indexers, explorers, accounting and payroll tooling, compatibility tooling, module development grants.
+- **Jurisdiction pilots and module development**: 6 percent (60,000,000)
+  - jurisdiction adapter pilots, standards work, legal research support, jurisdiction adapter implementation grants.
+- **NGO onboarding and support**: 6 percent (60,000,000)
+  - NGO onboarding programs, nonprofit fee waivers where adopted, training, reporting tooling, local capacity building.
+- **Ecosystem growth and incentives**: 6 percent (60,000,000)
+  - Limited incentives for meaningful adoption, integrations, and ecosystem reliability, structured as time bounded programs with transparent criteria.
+
+These are budget buckets for governance and reporting. They do not imply that the full bucket amount is released early. Release caps and a circulating supply schedule are defined in section 10.4A.
+
+Exact vesting, lockups, unlock mechanics, custody, and distribution controls are defined in section 10.4 and section 10.4A and will be finalized in a separate Token Policy and related legal documents before any public sale.
+
+------
+
+### 10.3A Governance, concentration, and continuity
+
+Token distribution and governance are designed with two goals that must be balanced carefully:
+
+- Avoid permanent capture of the protocol by a small insider bloc.
+- Avoid destabilizing core development and security without a serious, deliberate process.
+
+Key design intentions and baseline rules are:
+
+- Over time, as staking rewards and community allocations are distributed, active validators, delegators, builders, and entities should hold a growing share of effective governance power. Governance parameters and program design should support this by prioritizing distributions tied to real participation and contribution.
+- **Community allocation custody and release (genesis stance)**
+  - Community and ecosystem program allocations are intended to be held in governance controlled module accounts or contracts with explicit release rules, not in discretionary personal wallets.
+  - Program releases are executed through published program categories (for example builder grants, audits and security, integrations, jurisdiction pilots, NGO onboarding) with transparent reporting of recipients, milestones, and outcomes.
+  - Where an administrator or operator role exists for program execution in early phases, it must be publicly disclosed, time bounded, and contestable through governance, with a clear path toward more automated and decentralized program administration.
+- **Protocol Treasury and foundation voting policy (default non voting)**
+  - DCHUB held in Protocol Treasury and dCorps foundation controlled accounts is **non voting by default** in protocol governance tallies.
+  - Treasury and foundation accounts are expected to be held in non delegating module accounts or contracts (or equivalent mechanisms) so these balances cannot be used to generate governance voting power through delegation.
+  - Governance can explicitly enable limited voting behavior for narrowly defined proposal classes if required for legal or operational reasons, but any such enablement must be:
+    - Time bounded
+    - Scope limited (explicit proposal types)
+    - Publicly disclosed as policy
+    - Enforced at the governance and staking module level where technically feasible
+- **Vesting weighted governance for locked allocations**
+  - DCHUB held in on-chain enforced vesting contracts is voting eligible only to the extent it is vested.
+  - The unvested portion of a vesting allocation is non transferable and non voting.
+  - This rule applies symmetrically to founder, team, and investor vesting contracts.
+  - Vesting weighted voting is designed to ensure that governance power emerges over time as long term commitments vest, while preserving the ability of locked allocations to contribute to network security through staking within defined constraints.
+- **Community and ecosystem allocation is programmatic, not discretionary**
+  - Community programs should be structured as published budgets and program categories with transparent reporting.
+  - Program design should prefer open calls, milestone based grants, and objective evaluation criteria, with public reporting on allocations and outcomes.
+  - Programs should include conflict and affiliation disclosures for decision makers and recipients.
+- **Anti capture guardrails for protected changes**
+  - Governance may require stake age requirements for protected proposal classes, where only bonded stake older than a parameterized minimum age is counted toward quorum and passing power for those proposals.
+  - Governance may require execution timelocks for protected proposal classes, giving the ecosystem time to react before a passed proposal takes effect.
+
+At the same time:
+
+- The development corporation is expected to remain a core engineering and product provider for the protocol for a long period.
+- Any decision to significantly reduce its role, or to move core development to a different primary provider, should require strong quorums and supermajorities in governance and be paired with a credible alternative development arrangement.
+
+Exact numerical thresholds, stake age parameters, timelock durations, and the detailed governance module configuration will be documented in the Governance Charter and related policy documents and can evolve through governance as the network matures.
+
+------
+
+### 10.4 Vesting, lockups, and emissions
+
+In this whitepaper, the **Token Generation Event (TGE)** is the same event as **mainnet launch**, defined as the first production block of the dCorps Hub mainnet, when initial DCHUB allocations become live on-chain and DCHUB becomes usable for gas and staking.
+
+In this whitepaper, “emissions” refers to **tokens entering circulation** from predefined allocations (for example the staking and validator rewards pool), not the creation of supply beyond the fixed cap defined in section 10.3.
+
+
+This section focuses on vesting and lockups. For circulating supply definitions, release caps, and an illustrative unlock schedule, see section 10.4A.
+
+dCorps uses long, on-chain enforced vesting schedules to align insiders with the long term health of the protocol. Indicative schedules are:
+
+- **Founder allocation (15 percent)**
+  - Total allocation: 150,000,000 DCHUB
+  - Cliff: 24 months after TGE
+  - Vesting: linear vesting from month 24 to month 96 after TGE, with monthly unlocks
+  - Transfer guidelines: during at least the first four years after TGE, only a limited portion of vested founder tokens may be transferred per year, except where tokens are used as stake or bond for protocol security. Detailed limits will be defined in a Token Policy and mirrored in legal agreements.
+  - Enforcement: founder vesting and any transfer limits will be enforced on-chain where technically feasible, with matching legal documentation.
+  - Governance voting: voting eligibility is limited to vested amounts (see section 10.3A).
+- **Core team and future contributors (10 percent)**
+  - Total allocation: 100,000,000 DCHUB
+  - Typical schedules: 12 month cliff followed by 36 month linear vesting for most roles, with longer schedules for senior roles
+  - Vesting is enforced on-chain using standardized vesting contracts. Leaving early may trigger clawback of unvested portions, subject to contracts.
+  - Governance voting: voting eligibility is limited to vested amounts (see section 10.3A).
+- **Investors (10 percent)**
+  - Total allocation: 100,000,000 DCHUB
+  - Early strategic investors:
+    - Lockup: no transfers during the first 12 months after TGE
+    - Vesting: linear vesting from month 12 to month 48 after TGE
+  - Later round or public sale investors (if any):
+    - Shorter lockups and vesting, subject to legal and market conditions
+  - Governance voting: voting eligibility is limited to vested amounts (see section 10.3A).
+- **Community and ecosystem programs (35 percent)**
+  - Total allocation: 350,000,000 DCHUB
+  - Held in governance controlled module accounts or contracts with explicit release rules, not discretionary personal wallets
+  - Released gradually through open programs and milestone based grants subject to governance
+  - Release caps are defined in section 10.4A to reduce circulating supply shocks and to make program releases legible and predictable
+- **Protocol Treasury (5 percent) and dCorps foundation (5 percent)**
+  - Total allocations: 50,000,000 DCHUB for the Protocol Treasury and 50,000,000 DCHUB for the foundation
+  - Held in Treasury and foundation controlled accounts or contracts under governance and, where required, by the legal entities that represent them
+  - Funds are released only through on-chain governance and, where needed, matching off-chain execution
+  - Governance voting: Treasury and foundation balances are non voting by default (see section 10.3A).
+- **Staking and validator rewards (18 percent)**
+  - Total allocation: 180,000,000 DCHUB reserved for validator and delegator rewards
+  - Distributed via a published, parameterized rewards schedule that fits within the pool cap, with a genesis default schedule described in section 10.4A
+  - Governance can adjust distribution parameters within predefined bounds (see section 10.6B), with stronger requirements for changes that materially increase near term emissions
+- **Liquidity and market support (2 percent)**
+  - Total allocation: 20,000,000 DCHUB
+  - A portion may be available at or shortly after TGE to seed DEX liquidity for operational usability
+  - The remainder is subject to internal policies that restrict its use to liquidity provisioning and operational market infrastructure, with transparent reporting and capped budgets
+  - Governance voting: balances reserved for liquidity and market support are expected to be non voting by default and held under policy constraints consistent with section 10.3A.
+
+All schedules and limits in this section are indicative. Final details will be documented in a Token Policy and legal agreements before any sale. A circulating supply schedule and release cap standard is defined in section 10.4A to make supply availability legible and predictable for entities, validators, and the ecosystem.
+
+------
+
+### 10.4A Circulating supply schedule and release caps (illustrative, v1 planning)
+
+This section defines a standard way to talk about circulating supply and unlocks in dCorps. It is designed to prevent ambiguity and to make supply availability legible for entities, validators, and the ecosystem.
+
+#### 10.4A.1 Definitions
+
+- **Minted supply**
+   DCHUB that exists on-chain, including tokens held in vesting contracts, module accounts, and distribution pools.
+- **Circulating supply**
+   DCHUB that is transferable by its holder without time locks or vesting restrictions and without a governance controlled release step.
+- **Liquid supply**
+   The portion of circulating supply that is actively available for typical market transfers. Liquid supply is a market condition, not a protocol guarantee.
+
+Reference explorers must publish minted supply and circulating supply explicitly as separate numbers.
+
+#### 10.4A.2 Genesis custody stance (design intention)
+
+At TGE, major allocations are expected to be held as follows:
+
+- Founder, team, and investor allocations are held in on-chain enforced vesting or lockup contracts.
+- Community and ecosystem programs allocation is held in governance controlled module accounts or contracts with explicit release rules.
+- Staking and validator rewards allocation is held in the distribution module account and becomes circulating only as rewards are paid out.
+- Protocol Treasury and foundation allocations are held in non delegating accounts or contracts, non voting by default, with governed release paths.
+- Liquidity bootstrap allocation may be deployed for operational liquidity under a published liquidity plan and Treasury policy.
+
+#### 10.4A.3 Maximum intended transferable supply at TGE (cap)
+
+The design intention is that TGE circulating supply is kept low.
+
+At TGE, the maximum intended transferable supply is:
+
+- Liquidity bootstrap: up to 20,000,000 DCHUB (2 percent of total supply)
+- Optional community launch distribution: up to 10,000,000 DCHUB (1 percent of total supply), only if approved through governance for launch programs
+
+All other major allocations are expected to be non transferable at TGE due to vesting, lockups, or governance controlled custody.
+
+#### 10.4A.4 Insider vesting unlock schedule (illustrative)
+
+The schedules below are illustrative, based on the indicative vesting patterns in section 10.4:
+
+- Team allocation assumed as a 12 month cliff followed by 36 month linear vesting.
+- Investor allocation assumed as a 12 month lockup followed by 36 month linear vesting.
+- Founder allocation assumed as a 24 month cliff followed by linear vesting from month 24 to month 96.
+
+**Illustrative cumulative unlocked amounts for insider allocations (end of year, in millions of DCHUB)**
+
+- End of year 1: 0.0 (team and investor cliffs)
+- End of year 2: 66.7 (team and investor partial unlocks)
+- End of year 3: 158.3 (team and investor partial unlocks plus founder partial unlock)
+- End of year 4: 250.0 (team and investor fully unlocked plus founder partial unlock)
+- End of year 5: 275.0
+- End of year 6: 300.0
+- End of year 7: 325.0
+- End of year 8: 350.0 (founder fully unlocked)
+
+```text
+Illustrative insider unlock curve (cumulative, millions of DCHUB)
+Year:     0    1    2     3     4     5     6     7     8
+Unlocked: 0  0.0  66.7  158.3  250.0  275.0  300.0  325.0  350.0
+```
+
+Reference explorers must show actual on-chain vesting contracts and the exact unlock timelines for each vesting schedule once deployed.
+
+#### 10.4A.5 Staking and validator rewards schedule (genesis default)
+
+To make emissions legible, the staking and validator rewards pool uses a published schedule that sums to the pool cap of 180,000,000 DCHUB.
+
+A genesis default schedule (illustrative, per year after TGE) is:
+
+- Year 1: 40,000,000
+- Year 2: 35,000,000
+- Year 3: 30,000,000
+- Year 4: 25,000,000
+- Year 5: 20,000,000
+- Year 6: 15,000,000
+- Year 7: 10,000,000
+- Year 8: 5,000,000
+
+Total: 180,000,000
+
+Governance may adjust the schedule within predefined bounds (see section 10.6B). Changes that materially increase near term emissions beyond those bounds are designated as Protected Changes under the governance framework.
+
+#### 10.4A.6 Community release caps (initial guardrails)
+
+To reduce sudden changes in circulating supply, community program releases from the Community and ecosystem programs allocation follow an explicit cap.
+
+Initial cap (design intention for v1):
+
+- Maximum release into circulating supply: 50,000,000 DCHUB per year (5 percent of total supply), measured over a rolling four quarter window.
+- Maximum release in any single quarter: 20,000,000 DCHUB.
+
+These caps apply to tokens leaving governance controlled community custody into transferable user addresses. Internal movements within governance controlled custody do not count as release.
+
+Raising these caps is designated as a Protected Change under the governance framework.
+
+---
+
+### 10.5 Protocol fees in USDC
+
+In addition to gas, the protocol supports fees in USDC (and potentially other stablecoins) for specific services, such as:
+
+- Entity registration and registry listing renewal (including name lease renewal where applicable).
+- Premium names and namespaces.
+- Official jurisdiction adapter module participation.
+- Certain sector framework services.
+
+These USDC fees are routed according to predefined rules, for example:
+
+- A share to the **Protocol Treasury**.
+- A share to the **dCorps foundation** once established.
+- A share to participating jurisdictions where jurisdiction adapter modules are used.
+
+Fees in USDC help fund operations and grants without forcing constant DCHUB sales.
+
+------
+
+### 10.5A Use of DCHUB in module economics and Treasury operations (policy aligned)
+
+USDC is the primary operating currency for entities and for many protocol level fees. DCHUB is the security and coordination asset for the Hub and recognized sub chains. dCorps uses DCHUB in module and registry economics to align protocol security with real usage, while avoiding any implication of investment return.
+
+#### 10.5A.1 DCHUB in protocol and module fee design
+
+Selected protocol services may include a DCHUB component, such as:
+
+- Application and module registry listing, upgrade, or renewal fees.
+- Deposits or bonds required for official jurisdiction adapter modules and sector frameworks.
+- Spam resistance deposits for selected on-chain actions.
+
+Where bonds are used, bond terms must be explicit:
+
+- The bond amount, duration, and release conditions are defined by governance parameters.
+- Slashing conditions apply only to objective, verifiable violations of published module integrity requirements, as defined in module standards.
+- Bonds are not used to punish policy disagreements or unpopular decisions.
+
+#### 10.5A.2 Treasury operations policy and prohibitions
+
+The Protocol Treasury may hold and manage assets for operational continuity, security, grants, and ecosystem development under a governance approved Treasury policy.
+
+Treasury policy explicitly prohibits:
+
+- Price targeting, informal pegs, or discretionary market operations intended to raise or defend the market price of DCHUB.
+- Public or private commitments to buy back DCHUB as a form of return to holders.
+- Any program that could reasonably be interpreted as a dividend, profit distribution, or yield promise to DCHUB holders.
+
+Treasury policy may permit, within strict budget bounds and transparency requirements:
+
+- Liquidity provisioning in DCHUB pairs to support:
+  - Predictable transaction fee markets,
+  - Routine on-chain operations, and
+  - Ecosystem usability for entities and builders.
+
+Any liquidity provisioning must be executed under an on-chain approved plan that discloses:
+
+- Maximum budget and duration,
+- Venues and custody assumptions,
+- Risk controls and withdrawal conditions, and
+- Public reporting cadence for positions and outcomes.
+
+#### 10.5A.3 No implied guarantees
+
+Nothing in protocol fee design or Treasury policy is a guarantee of value accrual. These mechanisms exist to fund security and public goods and to improve operational reliability, not to promise any financial outcome.
+
+---
+
+### 10.6 Long term sustainability and shift to fee based validator rewards
+
+The long term economic goal is:
+
+- Early on, use **staking rewards plus fees** to fund validator and delegator participation.
+- Over time, rely more on **fees** and less on rewards paid from reserved token pools.
+- Avoid permanent, high **new issuance into circulation** that dilutes long term holders.
+
+Validator and delegator rewards are therefore:
+
+- Higher in early years while transaction and protocol fee revenue are lower.
+- Expected to taper as usage and fee revenue grow.
+- Adjustable via governance within defined limits, based on observed network data and security needs.
+
+### 10.6A Post rewards pool security posture (explicit)
+
+The staking and validator rewards pool is finite. As that pool becomes materially depleted, validator incentives must come primarily from:
+
+- Gas fees (DCHUB) and any protocol fee routing that governance chooses to allocate to security.
+- Sub chain security rent (where sub chain tiers are used and recognized).
+- Explicit security budgets from Protocol Treasury or foundation administered programs, if needed, with transparent on-chain reporting and bounded policy limits.
+
+If usage is insufficient to fund the desired validator set size and security posture, governance must choose among legible tradeoffs, for example:
+
+- Reduce the validator set size and operating cost, within safety bounds.
+- Adjust protocol fees within predefined policy limits.
+- Allocate additional Treasury budget to security operations (a deliberate subsidy rather than hidden inflation).
+- Accept a lower security posture appropriate to observed network value at risk.
+
+The goal is that this transition is explicit and governable, not implied by token narratives.
+
+#### 10.6.1 Illustrative validator reward model
+
+To illustrate orders of magnitude, consider:
+
+- A target validator reward budget (B) in USDC terms per year, for example 5 to 10 million.
+- N annual transactions across Hub and participating sub chains.
+- An average effective gas fee (f) per transaction, measured in USDC terms, based on DCHUB price and gas consumption.
+
+Fee based rewards then provide roughly:
+
+- B_fees ≈ N × f.
+
+Examples:
+
+- If N = 5 million and f = 0.20 USDC, then B_fees is approximately 1 million USDC per year. Emissions still supply most of the validator reward budget.
+- If N = 50 million with the same f = 0.20, then B_fees is approximately 10 million USDC per year. This can fully cover a validator reward budget in that range.
+
+These figures are illustrative, not predictions or promises. If fee revenue is lower than expected, governance will need to choose between extending or reshaping the emission schedule, adjusting gas pricing, or accepting a smaller validator reward budget and validator set. The aim is to keep these trade offs explicit and governed, not hidden.
+
+------
+
+### 10.6B v1 protocol parameters snapshot (initial ranges)
+
+This section provides initial target ranges for v1 planning and launch configuration. Genesis values and ongoing adjustments are governed by protocol governance within bounded ranges defined in the Protocol Parameters and Economics reference.
+
+These are targets and bounded ranges, not guarantees.
+
+**Hub security and staking (v1 targets)**
+
+- Active validator set size:
+  - Launch target: 100
+  - Governance bounds: 60 to 150
+- Unbonding period:
+  - Launch target range: 14 to 21 days
+  - Governance bounds: 7 to 28 days
+- Target bonded staking ratio (design target, not enforced):
+  - 30 to 60 percent
+- Staking and validator rewards pool distribution (section 10.3 and section 10.4 context):
+  - Total pool cap: 180,000,000 DCHUB
+  - Intended distribution window: five to eight years after TGE
+  - Early years target annualized distribution: 25,000,000 to 40,000,000 DCHUB per year
+  - Later years target annualized distribution: 0 to 30,000,000 DCHUB per year
+  - Total distributed from the pool cannot exceed the pool cap
+
+**Gas and fee targets (Hub, usability targets)**
+
+- DCHUB is required for Hub gas at the base protocol level.
+- Target median fee range for common entity operations under normal load (measured in USDC terms and shown in UIs as an estimate):
+  - Standard operations: 0.05 to 0.25 USDC equivalent
+  - Heavier operations (batch actions, larger payload governance actions): 0.25 to 2.00 USDC equivalent
+- Validators set minimum gas prices in practice. Governance publishes a recommended band intended to keep typical operations within these usability targets while preserving anti spam conditions.
+
+**Protocol service fees (USDC, v1 initial ranges)**
+
+Protocol service fees are separate from gas and are designed to fund public goods, security operations, indexing, and ecosystem development without relying only on emissions.
+
+- Entity registration fee (one time):
+  - Hub corporation: 50 to 250 USDC
+  - Hub nonprofit: 0 to 100 USDC (with optional waivers per policy)
+- Registry listing renewal (annual, per entity):
+  - Hub corporation: 25 to 150 USDC
+  - Hub nonprofit: 0 to 50 USDC (with optional waivers per policy)
+- Premium names and namespaces (where used):
+  - Initial lease and renewal ranges are expected to be set to price scarce namespaces and reduce squatting, with values set by governance in USDC.
+- App and module registry listing fees (where used):
+  - Annual listing and renewal fees are set by governance in USDC with risk tiering (for example higher for custody related apps, issuance apps, and critical infrastructure modules).
+
+**Future extension: anchored environment recognition economics (illustrative ranges)**
+
+These parameters only apply if anchored execution environments are introduced as a future extension. They are not part of v1 mainnet scope and are shown to illustrate how recognition could be priced and secured if needed.
+
+Anchored environment recognition economics are designed to (1) price recognition based on the external surface area created, and (2) require a security bond that keeps incentives aligned, even if an anchored environment uses flexible fee denoms.
+
+- Recognition application and review deposit (USDC, refundable net of objective review costs):
+  - 2,500 to 25,000 USDC
+- Recognition bonds (DCHUB, refundable subject to exit rules):
+  - Recognized, Hub aligned security (DCHUB gas):
+    - Optional bond: 0 to 250,000 DCHUB (spam resistance and commitment signal)
+  - Recognized, Hub aligned security (flexible gas):
+    - Required bond: 250,000 to 2,500,000 DCHUB
+- Security rent (flexible gas tier, DCHUB):
+  - Base security fee: 2,000 to 20,000 DCHUB per month
+  - Variable security fee: 0.1 to 1.0 DCHUB per 1,000 anchored operations or per anchored period, with an explicit governance cap per period
+- Bond exit delay (for refunds after voluntary exit or downgrade):
+  - 30 to 180 days, parameterized
+- Objective downgrade and bond risk conditions:
+  - Persistent anchoring failure beyond defined grace windows
+  - Repeated invalid anchors according to published schema and proof rules
+  - Other objective integrity violations defined in the Sub chain Anchoring Standard
+
+**Governance change constraints (v1)**
+
+- Adjustments within these ranges follow standard on-chain governance.
+- Changes to the existence of these bounds, or changes that materially weaken security alignment requirements, are designated as Protected Changes under the governance framework.
+
+------
+
+### 10.6C Security budget logic and scenarios (v1)
+
+Security has real operating costs. dCorps uses a security budget framing to keep those costs explicit and governed, rather than implicitly subsidized or ignored.
+
+**Security budget components (conceptual)**
+
+- **Validator and delegator incentive budget**
+   The amount required to keep a sufficiently large and diverse validator set operating reliably, measured in USDC terms for planning, regardless of whether incentives are paid in DCHUB.
+- **Security operations budget**
+   Audits, monitoring, incident response, and safety critical infrastructure, funded through Treasury and program spending, generally measured in USDC.
+- **Incremental costs from recognized sub chains**
+   Recognized sub chains that consume shared security and anchoring attention are expected to contribute security rent so their incremental load is not subsidized entirely by general Hub users.
+
+**Security budget funding sources (v1)**
+
+- Hub gas fees (paid in DCHUB).
+- Protocol service fees (primarily in USDC).
+- Sub chain security rent and bonds (primarily in DCHUB for aligned security tiers).
+- Emissions from the staking and validator rewards pool as a defined supplement during early years.
+
+**Baseline planning target (illustrative)**
+
+- Early network planning assumes an annual validator incentive budget on the order of 5 to 10 million USDC equivalent, consistent with section 10.6.1.
+- Security operations budgets (audits, monitoring, bug bounties, incident response) are planned as an additional 0.5 to 3 million USDC per year in early phases, funded through Treasury policy and governance directed programs.
+
+These figures are planning anchors, not promises.
+
+**Illustrative scenarios (not predictions)**
+
+- **Scenario A, low usage**
+  - Hub activity: 1,000,000 transactions per year
+  - Average effective fee: 0.10 USDC equivalent per transaction
+  - Fee based contribution: approximately 100,000 USDC equivalent per year plus protocol service fees
+  - Most of the validator incentive budget is supplied by emissions from the rewards pool, with protocol service fees primarily funding audits, monitoring, and ecosystem public goods.
+- **Scenario B, moderate usage**
+  - Hub activity: 25,000,000 transactions per year
+  - Average effective fee: 0.10 USDC equivalent per transaction
+  - Fee based contribution: approximately 2,500,000 USDC equivalent per year plus protocol service fees
+  - If 10 to 20 recognized flexible gas sub chains exist, and each pays 2,000 to 20,000 DCHUB per month in base security rent, the aggregate security rent becomes a meaningful additive contributor to the validator incentive budget and to security operations funding.
+- **Scenario C, high usage**
+  - Hub activity: 200,000,000 transactions per year
+  - Average effective fee: 0.10 USDC equivalent per transaction
+  - Fee based contribution: approximately 20,000,000 USDC equivalent per year plus protocol service fees
+  - In this regime, fee based funding can support a large share of the security budget, enabling governance to reduce reliance on emissions within predefined bounds.
+
+**Governance response when security budget and usage diverge**
+
+If fee based funding is below the required security budget, governance can respond through explicit levers within bounded ranges:
+
+- Adjusting minimum gas pricing and fee market rules.
+- Adjusting protocol service fees (registration, renewal, module participation) in USDC within policy constraints.
+- Adjusting sub chain recognition economics (bonds and security rent) within recognition tier standards.
+- Adjusting the validator set size, slashing parameters, and reward distribution schedule within predefined limits.
+- Funding additional security operations from Treasury, not by changing core custody boundaries.
+
+The intent is that security economics remain legible, auditable, and governed, rather than implied by token narratives.
+
+---
+
+### 10.7 Liquidity strategy for DEX and CEX (reliability focused)
+
+dCorps does not operate exchanges or matching engines. Liquidity exists to support usability and network operations, not as a promise of market performance.
+
+#### 10.7.1 DEX liquidity (permitted scope)
+
+The Protocol Treasury may support limited DEX liquidity under Treasury policy to improve:
+
+- Predictable transaction fee conditions,
+- Onboarding and day to day usability for entities and builders, and
+- Reduced slippage for operational conversions related to protocol activity.
+
+DEX liquidity activities must:
+
+- Use capped budgets and time bounded programs,
+- Be executed transparently with public reporting, and
+- Avoid messaging that implies price support or return expectations.
+
+#### 10.7.2 CEX listings
+
+Centralized exchange listings are at the discretion of exchanges. Any integration work or listing fees, if ever paid by a dCorps controlled entity, must be:
+
+- Approved through governance where required by policy,
+- Disclosed transparently to the extent legally possible, and
+- Structured as infrastructure enablement, not as a performance promise.
+
+dCorps makes no promises of listing, liquidity, or any trading conditions.
+
+------
+
+### 10.7A Liquidity bootstrap policy (v1)
+
+The liquidity bootstrap allocation (2 percent of total supply) exists to support operational usability for gas, staking, and routine entity operations. It is not intended to target price, imply return, or act as a market support commitment.
+
+**Custody and control**
+
+- The liquidity bootstrap allocation is held in a dedicated on-chain account labeled for liquidity operations and controlled under the Treasury policy.
+- The liquidity bootstrap balance is non voting by default and is not delegated for governance power (see section 10.3A).
+- Deployments and withdrawals follow an on-chain approved Liquidity Plan that specifies:
+  - maximum budget and duration,
+  - permitted venues and custody assumptions,
+  - position sizing and risk limits,
+  - authorized operators (if any), and
+  - reporting cadence and public disclosures.
+- In early phases, execution may be delegated to a time bounded operational multisig with a narrow mandate (liquidity provisioning only). The multisig’s addresses, signers, and mandate must be publicly disclosed, and the delegation is revocable through governance.
+
+**Permitted venues and activities (default stance)**
+
+Permitted use cases are limited to actions that improve predictable on-chain usability:
+
+- Seeding and maintaining DEX liquidity in DCHUB paired pools (for example DCHUB and USDC) to reduce slippage for routine conversions needed by entities, validators, and service providers.
+- Rebalancing and consolidating liquidity positions within the same approved venues, within the risk limits and budget caps of the Liquidity Plan.
+- Supporting IBC routing usability where applicable, under the same transparency and custody constraints.
+
+Prohibited use cases include:
+
+- Discretionary market making intended to move price.
+- Private OTC activity where the effective terms are not publicly auditable.
+- Any messaging or program design that frames liquidity activity as a return mechanism for DCHUB holders.
+
+**Public reporting requirements (v1 standard)**
+
+Liquidity operations must be transparent and reproducible:
+
+- All liquidity positions controlled by the liquidity bootstrap account must be discoverable on-chain.
+- The Treasury publishes a periodic liquidity report (recommended monthly) that includes:
+  - current positions and venues,
+  - assets deployed and withdrawn over the period,
+  - fees earned and losses realized (if any),
+  - policy compliance attestations (budget caps, permitted venues), and
+  - a clear statement that results are not guaranteed and are not a promise of future performance.
+
+**CEX interaction boundary**
+
+dCorps does not operate exchanges or matching engines. If any centralized exchange integration is pursued, it follows the same reliability posture:
+
+- Any transfer of liquidity bootstrap tokens to a centralized venue must be explicitly authorized under a Liquidity Plan or a separate governance action and must be disclosed as infrastructure enablement, not as a market performance action.
+- Custody and counterparty risk is treated as a separate, explicit risk decision under Treasury policy.
+
+This policy exists to make liquidity actions legible, bounded, and auditable, while preserving a clear non intermediation and non promise posture.
+
+---
+
+### 10.8 Grants and incentives
+
+The **community and ecosystem** allocation and part of the USDC Protocol Treasury will fund:
+
+* Developer grants for:
+
+  * Tools and applications.
+  * jurisdiction adapter modules.
+  * Sector frameworks.
+  * Security and monitoring tools.
+* NGO and nonprofit support:
+
+  * Onboarding and training.
+  * Beneficiary management tools.
+  * Local capacity building.
+* Security and research:
+
+  * Independent audits.
+  * Bug bounty programs.
+  * Academic and applied research.
+
+The **dCorps foundation** is expected to administer a significant portion of these programs, in coordination with protocol governance. Grants will:
+
+* Be milestone based.
+* Use clear criteria and public reporting.
+* Not create employment or agency relationships unless accompanied by separate contracts.
+
+Treasury and grants policy is described further in the governance section.
+
+------
+
+### 10.9 Incentives by actor
+
+dCorps is designed as an ecosystem where different participants have aligned incentives that are not dependent on speculative narratives.
+
+- **Entities (corporations and nonprofits)**
+  - Gain standardized governance, transparent operating flows, and reusable tooling
+  - Gain reputational benefits from verifiable state, clearer audits, and credible histories
+- **Founders and core contributors**
+  - Are incentivized by long vesting schedules, reputation, and the long term health of the network
+- **Validators and delegators**
+  - Earn staking rewards and transaction fee revenue within protocol parameters
+  - Are incentivized to keep the chain reliable and credible for serious entities
+- **Builders (apps, modules, tooling)**
+  - Can earn revenue from software, integrations, and services
+  - Can receive grants and incentives tied to real adoption and milestones
+- **Jurisdictions and service providers**
+  - Can publish jurisdiction adapter modules and earn fees from entities that opt in
+  - Reduce integration costs by using a shared registry and standardized data models
+- **Auditors, reviewers, and oversight bodies**
+  - Can provide attestations and services with clearer evidence trails and lower reconciliation overhead
+- **Donors and grant makers**
+  - Gain real time visibility into allocation and governance, improving decision quality and reducing reporting friction
+
+None of these incentives imply any promise of returns. They describe why participants might choose to use and support the network.
+
+---
+
+## 11. Go to market, target users, and adoption targets
+
+### 11.1 Target user segments
+
+Primary target segments:
+
+* **Early stage remote first startups and small teams**
+
+  * Technology and services corporations with global customers.
+* **Crypto native protocols and DAOs**
+
+  * Especially those seeking to professionalize operations and governance.
+* **nonprofits and NGOs**
+
+  * Initially, organizations comfortable with high transparency and basic crypto exposure.
+* **Jurisdictions and corporate service providers**
+
+  * Looking for digital native products and programmable regimes.
+
+Secondary segments:
+
+* **Auditors, accountants, and law firms**
+
+  * Can build services and tools on top of dCorps for their clients.
+* **Donors and grant makers**
+
+  * Seeking better data about NGOs and projects.
+
+---
+
+### 11.2 First wave focus (first one to two years)
+
+In the first one to two years, dCorps focuses brutally on a narrow wedge of real use:
+
+- **Simple private entities on the Hub**
+
+  Remote first startups and small teams that are willing to run the large majority of their operating stack in USDC on the shared Hub. They use the simple private entity template: ten thousand internal units, standardized wallets, and on-chain accounting.
+
+- **Simple nonprofits on the Hub**
+
+  NGOs and nonprofit teams that want transparent donations and program spending, board based governance, and verifiable allocation ratios, again on the shared Hub without running their own chain.
+
+- **At least one jurisdiction attachment pilot (phased path, post mainnet)**
+
+  Because direct jurisdiction integration and key custody by a jurisdiction typically takes time, dCorps targets a phased path that can start shortly after mainnet launch:
+
+  1. A **temporary delegated filing provider bridge** that allows real formations, renewals, and registry updates to be completed off-chain by local providers and reflected on-chain through standardized attestations and labels.
+  2. A **disclosure, fee, and reporting module** that integrates with Hub entity state, collects fees in USDC, and produces machine readable oversight signals.
+  3. A **direct jurisdiction integration step** where legal recognition and registry actions are bound to on-chain module state under keys controlled by the jurisdiction (or an explicitly disclosed delegated operator under its supervision).
+
+Alongside these entities, the first wave of builders focuses on:
+
+- Explorers and dashboards that read the entity registry, wallets, and flows.
+- Accounting and payroll tools that use the standard chart of accounts and wallet structure.
+- NGO reporting tools that turn donation and program flows into usable reports for donors and grant makers.
+- Typed workflow modules that improve tag integrity by producing deterministic categories for common operating actions.
+
+Success in this phase is measured by:
+
+- Working software used by a small but serious set of entities.
+- Clear evidence that stablecoin native startups can run most or all of their operations from dCorps wallets.
+- NGOs that demonstrate real transparency benefits and better donor trust.
+- A validator set that is stable and engaged.
+
+The development corporation will play a leading role initially, shipping core modules and integrations. The foundation takes on more responsibilities for modules, grants, and registry operations as it is established.
+
+---
+
+### 11.3 Five year adoption targets (illustrative)
+
+Adoption projections are **aspirational scenarios**, not promises. A reasonable internal target by year five could be:
+
+* More than 1,000 active Hub corporations.
+* Hundreds of NGOs and foundations.
+* Between 10 and 30 public sub chain corporations.
+* Several jurisdiction adapter modules in production.
+* A healthy ecosystem of applications using dCorps data.
+
+These numbers help guide planning. They are forward looking and subject to change. Nothing in this section guarantees that they will be achieved.
+
+---
+
+### 11.4 Partner strategy
+
+Key partners include:
+
+* **Back office and accounting providers**
+
+  * Integrate their tools with dCorps data structures.
+  * Offer migration paths from traditional systems.
+* **Legal and corporate service providers**
+
+  * Use dCorps as a substrate for modern corporate and NGO services.
+  * Help clients choose jurisdictions and structures.
+  * Often interact with jurisdiction adapter modules.
+* **NGO infrastructure organizations**
+
+  * Foundations and intermediaries that work with many NGOs.
+  * Use dCorps to enhance transparency and trust.
+* **Infrastructure providers and validators**
+
+  * Cloud and bare metal providers that support validator operations.
+  * Security firms that support audits and monitoring.
+
+Partnerships are expected to be **open** and competitive. The protocol does not enshrine any exclusive provider.
+
+The foundation is expected to work with many partners, especially jurisdictions and sector bodies, while remaining neutral and protocol focused.
+
+---
+
+### 11.5 Success metrics beyond token price
+
+Success is judged by measurable adoption, operational usefulness, and security, not by token price.
+
+Token price and trading volume are not used as primary indicators of protocol success.
+
+For the structured metrics set used in implementation planning and ongoing reporting, see section 16.4.
+
+---
+
+## 12. Capital formation, markets, and donations
+
+dCorps does not run exchanges or fundraising platforms. It provides the primitives and state that independent platforms can use.
+
+### 12.1 Private ownership transfers and cap table updates
+
+Private transactions include:
+
+- Secondary sales between investors.
+- Founder liquidity events.
+- Employee option exercises.
+- Buybacks and redemptions.
+
+Pattern:
+
+- Legal agreements are negotiated off-chain.
+- Agreements are anchored on-chain via hashes and metadata.
+- Unit or dShare balances are updated according to agreed terms.
+- Cap tables are adjusted and versioned with links to the relevant approvals and documents.
+
+This creates a verifiable history of ownership changes, even for private dealings. These patterns also apply to joint venture and SPV structures, where parent entities or investors subscribe to units or dShares in a dedicated dCorps entity that is ring fenced from their main operations.
+
+---
+
+### 12.2 Primary issuance modules
+
+Primary issuances are handled by **modules and platforms**, not by the core protocol.
+
+Modules and platforms can be designed for:
+
+* **Private placements**
+
+  * For qualified or professional investors.
+  * Enforce eligibility through KYC, KYB, and credential based allow lists.
+* **Community offerings (where legal)**
+
+  * With jurisdiction specific constraints and protections.
+  * Enforce per user caps, geofencing, and other rules.
+* **NGO campaigns and recurring donations**
+
+  * Structured flows into program wallets.
+  * Clear commitments about allocation and reporting.
+
+These modules and platforms:
+
+* Can be built and operated by independent teams.
+* May receive support from the dCorps foundation or ecosystem grants.
+* Are not part of the base consensus layer.
+
+Legal compliance for offerings remains with the module operators and participating entities.
+
+---
+
+### 12.3 Listing and secondary markets
+
+dShares and DCHUB may be:
+
+* Listed on **decentralized exchanges** that choose to support them.
+* Supported by **centralized exchanges** that decide to list them.
+
+dCorps:
+
+* Does not operate exchanges or matching engines.
+* Does not guarantee listing or trading conditions anywhere.
+* Does not guarantee that any market is suitable or accessible to any given user.
+
+Venues retain responsibility for:
+
+* Eligibility rules and compliance.
+* KYC and AML requirements.
+* Listing and delisting decisions.
+
+---
+
+### 12.4 DeFi integrations and portfolio products
+
+DeFi protocols and structured product providers can:
+
+* Use DCHUB or selected dShares as collateral or portfolio elements.
+* Construct indices or baskets based on:
+
+  * Sector tags.
+  * Jurisdiction attachments.
+  * Transparency and allocation metrics for NGOs.
+
+Examples:
+
+* Lending markets that accept dShares of corporations with stable revenue and governance behavior.
+* Impact oriented portfolios that share a portion of yield with NGOs meeting defined criteria.
+
+These products are independent from dCorps. They carry their own smart contract, market, and regulatory risks.
+
+---
+
+### 12.5 Investor safeguards
+
+Capital formation on dCorps can incorporate safeguards, including:
+
+* **On-chain vesting and lockups**
+
+  * Founder, team, and early investor allocations vest over time.
+  * Transfers of locked or unvested tokens are blocked at contract level.
+  * Changes to vesting parameters require explicit governance actions.
+* **Transfer controls where required**
+
+  * Allow lists to ensure certain tokens are held only by eligible investors.
+  * Blacklists where law requires restriction of particular addresses, managed by regulated intermediaries.
+* **Governance change constraints**
+
+  * Rules that prevent sudden changes to voting rights or major protections without supermajority approval and notice.
+
+These patterns do not guarantee outcomes, but they reduce the risk of sudden, opaque changes.
+
+---
+
+### 12.6 Donor safeguards
+
+nonprofit and donor protections include:
+
+* **Allocation rules as code**
+
+  * Program versus overhead ratios and board compensation limits are enforced by contracts.
+  * Any change is visible and requires board approval.
+* **Restricted and designated funds**
+
+  * Donations can be tagged for specific programs.
+  * Contracts enforce that these funds are spent only for that purpose unless donors explicitly consent to changes.
+* **Transparent cross NGO flows**
+
+  * When funds move between NGOs, those flows are visible.
+  * Double counting and layering are easier to detect.
+
+These safeguards help donors and grant makers make more informed decisions but still require human judgment and oversight.
+
+---
+
+### 12.7 Roles in capital and donation flows
+
+Roles are clearly separated:
+
+* **dCorps protocol**
+
+  * Supplies primitives and state.
+  * Does not intermediate capital or donations.
+* **Entities (corporations and NGOs)**
+
+  * Decide how and where to raise funds or accept donations.
+  * Bear legal and fiduciary responsibility.
+* **Platforms and venues**
+
+  * Exchanges, issuance platforms, and donation portals.
+  * Provide interfaces, KYC, compliance checks, and matching.
+  * Are regulated or unregulated according to their own jurisdictions and activities.
+
+This structure is essential to keep dCorps as neutral infrastructure rather than an all in one financial platform.
+
+---
+
+## 13. Protocol governance
+
+### 13.1 Governance goals
+
+Protocol governance aims to:
+
+* Maintain the security and reliability of the Hub.
+* Keep the base layer neutral and predictable for entities and jurisdictions.
+* Allocate shared resources, such as Treasury and foundation funds, responsibly.
+* Allow evolution when needed, while limiting arbitrary or short term changes.
+* Keep the Hub core minimal, while evolving protocol modules and ecosystem tools as real world needs change.
+
+---
+
+### 13.2 Governance actors
+
+Actors in protocol governance include:
+
+- **DCHUB holders**
+  - Participate in voting on protocol level proposals.
+  - Provide signaling on app and module registry entries.
+- **Validators and delegators**
+  - Secure the network.
+  - Have practical influence through voting and delegation choices.
+- **Protocol Council** (once formed)
+  - A group of technical and ecosystem experts.
+  - Reviews and recommends on protocol upgrades, module approvals, and registry policies.
+  - Includes a reserved Founding Steward seat for an initial period, described in section 13.2A.
+- **Founding Steward**
+  - The individual recognized in protocol documents as the founding steward of dCorps.
+  - Holds the reserved Protocol Council seat for an initial period and participates in governance through that role.
+- **Development corporation**
+  - Implements code and supports early governance processes.
+  - Has no special rights over protocol state beyond what is defined in governance charters.
+- **dCorps foundation** (once established)
+  - Administers parts of the Treasury and grant programs.
+  - Acts as legal steward for certain assets and contracts.
+  - Coordinates development and maintenance of protocol modules, especially jurisdiction adapter modules and sector frameworks.
+  - Operates or delegates operation of the app and module registry according to governance instructions.
+  - Advocates for keeping the Hub core minimal and stable.
+- **Security and Continuity Council (Guardians)** (if adopted)
+  - A limited, time bound council with a narrow mandate: respond to critical security incidents and prevent clearly harmful protocol changes during defined emergency windows.
+  - Actions are limited to temporary pause or parameter freeze within predefined bounds, plus publishing signed incident statements.
+  - Any use of these powers must be followed by on-chain ratification within a short window, otherwise the action automatically expires.
+  - Guardians have no authority to move entity funds, edit cap tables, or override entity governance outcomes.
+
+------
+
+### 13.2A Founding Steward seat on the Protocol Council (continuity, accountability, and sunset)
+
+To support continuity and accountable delivery during the formative years, one seat on the Protocol Council is reserved for the founding steward of dCorps for a limited initial period, under explicit constraints. The purpose is to reduce early coordination risk and hostile takeover risk while the ecosystem is still fragile, not to create permanent control. All meaningful authority remains with on-chain governance, and any privileged operational powers are time bounded and contestable.
+
+#### 13.2A.1 Scope and limits
+
+- The Founding Steward seat is a single Council seat with one vote, no unilateral veto power, and no direct control over protocol state.
+- Council membership confers no special access to entity level funds, cap tables, role assignments, or entity governance outcomes.
+- The Council’s authority is advisory except for narrowly delegated functions explicitly approved by DCHUB governance.
+
+#### 13.2A.2 Duration, reaffirmation, and conversion
+
+- The reserved seat exists for three years after mainnet launch.
+- An annual reaffirmation vote is held each year during this period.
+- Failure to reaffirm converts the seat immediately into a standard rotating Council seat.
+- At the end of the three year period, the reserved seat automatically converts into a standard rotating Council seat.
+
+#### 13.2A.3 Removal standards and thresholds (baseline)
+
+Early removal during the initial period is permitted only for:
+
+- Permanent incapacity,
+- Explicit resignation, or
+- Proven fraud, serious misconduct, or material breach of Council duty related to the protocol.
+
+A successful early removal proposal requires, at minimum:
+
+- Quorum: 20 percent of voting power participating, and
+- Passing threshold: 67 percent yes of participating voting power.
+
+Final numerical thresholds, if adjusted, are documented in the Governance Charter.
+
+#### 13.2A.4 Conflict and affiliation disclosure
+
+All Council members, including the Founding Steward, must publish and maintain:
+
+- Material affiliations with entities, applicants, modules, and service providers,
+- A conflict of interest policy statement, and
+- Recusal commitments for votes where direct commercial benefit exists.
+
+---
+
+### 13.3 Governance phases (explicit emergency sunset and protected changes)
+
+Governance evolves through phases, with explicit constraints and automatic sunsets for emergency powers.
+
+#### 13.3.1 Phase 0: Early emergency and upgrade period (time bounded)
+
+A publicly disclosed multisig may hold narrowly scoped emergency and upgrade powers while the network stabilizes.
+
+**Permitted actions**
+
+- Rapid security patches and bug fixes for Hub consensus and core modules.
+- Emergency halts or parameter freezes within predefined bounds to prevent active exploitation.
+
+**Mandatory expiry and ratification (recommended)**
+
+- Any emergency halt or parameter freeze must automatically expire after a short window (for example 24 to 72 hours) unless extended or ratified through an on-chain vote.
+- Emergency actions must publish a structured incident record with scope, affected modules, and a remediation plan.
+
+
+**Hard prohibitions**
+
+- No movement of entity funds by this multisig.
+- No cap table edits, role reassignment, or entity governance outcome overrides.
+- No silent changes; actions are executed on-chain and accompanied by public incident reporting.
+
+**Automatic sunset**
+
+Phase 0 emergency powers expire at the earliest of:
+
+- 12 months after mainnet launch, or
+- The first successful upgrade executed purely through standard on-chain governance, or
+- A governance proposal that explicitly retires emergency powers sooner.
+
+After expiry, the emergency mechanism is disabled at the protocol level and cannot be re enabled except through a Protected Change process.
+
+#### 13.3.2 Phase 1: Hybrid governance with Council
+
+- A Protocol Council is formed through governance approved selection and rotation rules.
+- Protocol upgrades follow public specification, Council review, on-chain vote, and transparent execution.
+
+#### 13.3.3 Phase 2: Full on-chain governance (post Phase 0)
+
+- All protocol upgrades and parameter changes are executed through standard on-chain governance processes.
+- The Council operates under charters approved by governance and provides public review, risk analysis, and recommendations.
+- Any remaining privileged operational roles are limited to non consensus tasks (for example, reference interface operations) and remain contestable through governance.
+
+#### 13.3.4 Phase 3: Mature governance
+
+- Governance authority rests primarily with DCHUB holder voting.
+- The Council operates under charters approved by governance.
+- Any remaining emergency mechanisms are narrow, transparent, contestable, and time bounded.
+
+#### 13.3.5 Protected changes (higher thresholds)
+
+Certain actions are designated as Protected Changes and require higher thresholds, including:
+
+- Re-enabling emergency powers after the Phase 0 sunset.
+- Changing issuer registry governance rules in ways that reduce transparency or due process.
+- Changing hard limits related to non custodial boundaries and censorship resistance commitments.
+- Material changes to shared security assumptions for recognized sub chains.
+
+A Protected Change requires, at minimum:
+
+- Quorum: 25 percent of voting power participating, and
+- Passing threshold: 67 percent yes of participating voting power.
+
+In addition, Protected Changes are expected to include two safety mechanisms:
+
+- **Stake age requirement (anti raid)**
+  Only bonded stake older than a parameterized minimum age is counted toward quorum and voting power for Protected Changes.
+  For Protected Changes, quorum and yes or no vote weighting are computed using only stake that satisfies this age requirement.
+- **Execution timelock**
+  After a Protected Change passes, execution occurs only after a parameterized delay unless a narrowly defined emergency path applies under the governance charter.
+
+Final numerical thresholds, stake age parameters, and timelock durations, if adjusted, are documented in the Governance Charter.
+
+---
+
+### 13.4 Scope and hard limits
+
+Governance can:
+
+* Adjust parameters such as:
+
+  * Staking emissions curve within limits.
+  * Validator set size and slashing ratios.
+  * Criteria for official module status and app registry categories.
+* Approve or remove:
+
+  * Official jurisdiction adapter modules.
+  * Sector frameworks that want recognition.
+  * Policies for the app and module registry.
+* Allocate:
+
+  * Treasury and foundation funds for programs and grants.
+
+Governance cannot, where technically enforceable:
+
+* Arbitrarily seize individual user funds outside of predefined penalty modules.
+* Silently rewrite historical ownership records.
+* Unilaterally override clear legal prohibitions for entities or participants.
+
+Hard limits will be encoded wherever possible. Where not possible, they will be expressed in governance charters and legal documents.
+
+---
+
+### 13.5 On-chain governance processes
+
+Governance processes follow defined steps:
+
+1. **Proposal drafting**
+
+   * Proposers publish detailed rationales and specifications.
+   * Early discussion takes place in public forums.
+2. **Council review**
+
+   * The Protocol Council assesses technical and risk implications.
+   * Provides a recommendation and any suggested changes.
+3. **On-chain vote**
+
+   * DCHUB holders vote within a defined window.
+   * Quorum and majority thresholds are defined in governance parameters.
+4. **Execution**
+
+   * If approved, changes are executed through upgrade handlers or Treasury transactions.
+   * Results and changes are documented and anchored.
+
+Smaller parameter changes may use simpler paths. Large structural changes follow longer and more cautious processes.
+
+Registry changes, such as marking a module as official or flagging an app as unsafe, follow similar patterns but may use lighter processes, for example shorter voting windows or delegated authority to the Council with veto rights for token holders.
+
+---
+
+### 13.6 Execution by legal entities
+
+Some governance decisions require legal execution, for example:
+
+* Signing contracts with vendors or auditors.
+* Setting up and managing bank accounts for the foundation.
+* Hiring staff or entering commercial agreements.
+
+These acts are carried out by:
+
+* The development corporation.
+* The foundation.
+* Other organizations, as appropriate.
+
+Their charters and internal governance documents define how they reflect on-chain decisions in off-chain acts. Where legal constraints conflict with on-chain instructions, those conflicts must be disclosed and resolved case by case.
+
+---
+
+### 13.7 Grants, ecosystem funding, and Treasury policy
+
+Governance sets the principles for:
+
+* **Treasury use**
+
+  * What categories of spending are allowed.
+  * How much should be kept in reserves.
+  * Risk constraints on asset holdings and liquidity provision.
+* **Grant programs**
+
+  * Focus areas such as:
+
+    * Core tooling and infrastructure.
+    * jurisdiction adapter modules and sector frameworks.
+    * NGO tooling and impact reporting.
+    * Security, audits, and monitoring.
+  * Processes for:
+
+    * Proposals and evaluation.
+    * Milestones and reporting.
+    * Revocation or adjustment when necessary.
+
+The foundation is expected to administer these programs within the bounds of governance set policy, and to publish regular reports on grants, results, and remaining reserves.
+
+Treasury and grants policy will be documented in a dedicated policy that can evolve through governance, subject to legal requirements and the foundation’s charter.
+
+---
+
+## 14. Ecosystem, developer tools, and external modules
+
+### 14.1 Developer tools and builder experience
+
+Developers interact with dCorps through:
+
+* **SDKs and client libraries**
+
+  * For reading and writing entity state.
+  * For interacting with governance and accounting events.
+  * For integrating protocol modules.
+* **REST and gRPC endpoints**
+
+  * For integration with traditional web stacks.
+  * For querying entities, wallets, module state, and transaction summaries.
+* **Command line tools and scripts**
+
+  * For creating test entities.
+  * For running local simulations and integration tests.
+
+A developer portal will provide:
+
+* Quickstart guides for common flows.
+* Example applications.
+* API explorers and sandboxes.
+
+The goal is that a competent developer familiar with web APIs can build proof of concept integrations in days, not months.
+
+The foundation and development corporation are expected to contribute reference implementations and tooling, but the ecosystem remains open to any developer.
+
+------
+
+### 14.1A Module execution environments (v1 stance)
+
+Protocol modules may be implemented using one or both of the following execution environments:
+
+- **Native Hub modules (Cosmos SDK)**
+   Used for core registry, entity models, governance primitives, and other consensus critical logic that must be tightly integrated and conservatively upgraded.
+- **Wasm based modules (CosmWasm or equivalent)**
+   Used for rapid iteration of jurisdiction templates, sector frameworks, allocation logic, and other features that benefit from faster audit and upgrade cycles, subject to governance and security policy.
+
+v1 design intention:
+
+- The Hub core is implemented as native modules.
+- jurisdiction adapter modules and sector frameworks are expected to begin as Wasm based modules where practical, unless they require deep consensus integration.
+
+Modules must declare:
+
+- The schema versions they read and write,
+- Their upgrade policy and compatibility commitments,
+- Their accepted issuer inputs where applicable, and
+- Their anchoring and reporting outputs where applicable.
+
+------
+
+### 14.1B Minimal v1 protocol surface (messages, events, and queries)
+
+The protocol defines a minimal, stable surface area that applications and tools can rely on. Exact message names and APIs are defined in developer specifications, but the v1 surface includes the following functional families.
+
+#### 14.1B.1 Core message families
+
+- **Entity registry**
+   Entity creation, metadata updates, status updates, and sub chain registration and anchoring.
+- **Roles and governance**
+   Role binding and reassignment, proposal submission, voting, execution of resolutions, and document anchoring.
+- **Hub corporation**
+   Unit issuance and cancellation, transfers, restrictions, and approval workflows.
+- **Hub nonprofit**
+   Board seat management, allocation rule changes, and program wallet management.
+- **Accounting primitives**
+   Standardized accounting event emission for relevant flows and tag schema compliance.
+- **Module attachments**
+   Attaching and detaching protocol modules, and querying module attachment status.
+
+Attestations, assurance, and reputation are not required parts of the v1 core surface. They are provided by optional protocol modules that define their own message families and schemas.
+
+#### 14.1B.2 Required event streams
+
+Applications and indexers rely on stable events, including:
+
+- Registry events: entity created, updated, and status changed.
+- Role events: role bound and unbound.
+- Governance events: proposal submitted, vote cast, resolution executed.
+- Corporation events: units issued, transferred, and cancelled.
+- nonprofit events: donation received, spending recorded with category tags, allocation rule changed.
+- Anchoring events: document anchored, sub chain registered, sub chain anchor submitted, sub chain recognition label changed.
+- Module events: module attached, module detached.
+
+Optional protocol modules may emit additional event streams, such as attestation published, disputed, or superseded, or reputation score updated, according to their own standards.
+
+#### 14.1B.3 Canonical queries
+
+The Hub must expose query endpoints for:
+
+- Entity registry lookup by ID, name, tags, and status.
+- Entity structural state (type specific, versioned schemas).
+- Wallet type mappings for each entity.
+- Governance timelines, proposals, votes, and executed resolutions.
+- Accounting event streams by entity, wallet type, category tags, and period.
+- Sub chain registration, recognition label, and anchor history.
+- Module attachment status and module metadata.
+
+Optional protocol modules may expose additional canonical queries, for example:
+
+- Attestations and disputes by entity and by issuer
+- Reputation scores and reason codes by entity
+
+------
+
+### 14.1C Schema versioning and extensibility rules
+
+To support long term compatibility and safe evolution, dCorps uses explicit schema versioning rules.
+
+#### 14.1C.1 Versioned schemas
+
+- Every structured object type includes a `schema_version` field.
+- Schema versions are monotonic and backward compatible unless a major version bump is approved through governance.
+
+#### 14.1C.2 Tag schema rules
+
+- A baseline required tag set exists for accounting and reporting compatibility, including `category`, `counterparty_type`, and a `reference` or anchor pointer where applicable.
+- Entities may add custom tags, but custom tags should be namespaced to avoid collisions.
+
+#### 14.1C.3 Chart of accounts extensibility
+
+- The protocol maintains a minimal default chart of accounts as a global reference.
+- Entities may extend the chart through entity scoped namespaces.
+- For comparability, extended categories should map to a parent category in the minimal schema unless an entity explicitly opts out of comparability through its disclosure mode and reporting policy.
+
+#### 14.1C.4 Deprecation policy
+
+- Deprecations are announced through governance with replacement schemas, migration guidance, and a defined support window.
+- Official tools and reference indexers support both old and new schemas throughout the support window.
+
+---
+
+### 14.2 App and module registry (dCorps App Store)
+
+An **app and module registry** catalogs:
+
+- Applications that integrate with dCorps.
+- jurisdiction adapter modules.
+- Sector frameworks.
+- Tools such as explorers and analytics platforms.
+- Optional attestation, assurance, and reputation modules.
+
+The registry is presented as a kind of **dCorps App Store**:
+
+- Any developer who meets minimal technical and legal requirements, defined in the Registry and Module Policy, can submit an app or module for listing.
+- Listings include metadata such as:
+  - Category and use case.
+  - Links to source code, where available.
+  - Audit status.
+  - Usage metrics and age.
+
+The registry is:
+
+- Open to publication by developers.
+- Not a guarantee of security or compliance.
+
+Instead, the registry surfaces **signals**, for example:
+
+- Whether code has been audited and by whom.
+- Usage levels.
+- Age and update frequency.
+- Voluntary reviews or ratings.
+- Governance status, for example:
+  - **Official module** for jurisdiction adapter or sector modules that have been approved through DCHUB governance.
+  - **Recommended** for apps and tools that are widely used and reviewed.
+  - **Experimental** for early stage projects.
+  - **Flagged** for entries that governance or the Council consider clearly malicious, insecure, or seriously misleading.
+
+The **dCorps foundation**:
+
+- Operates or oversees operation of a reference registry and reference interfaces.
+- Maintains and publishes reference standards for listings, metadata, and signals.
+- Stewards the protocol module layer (module standards, interfaces, security requirements, and upgrade policies), in this document referred to as the **Module Protocol**.
+- Develops and maintains a set of **official protocol modules**, especially jurisdiction adapter modules and sector frameworks.
+  - Official modules may be implemented by the foundation directly or by third-party teams funded or commissioned by the foundation.
+  - In all cases, stewardship, versioning, and upgrade responsibility for official modules sits with the foundation under protocol governance oversight.
+- Implements governance decisions in the reference registry.
+
+Importantly, the registry is a **discovery and signaling layer**, not a hard gate:
+
+- Apps and modules can exist and be used even if they are not listed, or if they are listed as experimental or flagged.
+- Multiple registries and explorers can coexist. Any team can publish a registry view and any user can choose which registry and interface they trust.
+- Users and entities remain responsible for their own due diligence and for any legal or regulatory obligations that apply to their use of specific apps or modules.
+
+Emergency actions at the registry level:
+
+- Affect how entries are displayed in reference interfaces and default lists.
+- Do **not** delete or disable the underlying smart contracts or code.
+- Are subject to later review through transparent governance, with clear records of:
+  - Why the action was taken.
+  - Who requested or executed it.
+  - How and when it will be revisited.
+
+------
+
+
+
+### 14.2A Registry due process and safety actions (reference standard)
+
+The app and module registry is a discovery and signaling layer. Registry labels affect how entries are presented in reference interfaces and default lists. They do not disable underlying code, do not prevent deployment, and do not prevent users from choosing to interact with an entry.
+
+To avoid arbitrary or politicized labeling, the reference registry follows a due process standard for safety actions.
+
+#### 14.2A.1 Label taxonomy (reference)
+
+Registry entries may carry one or more labels:
+
+- **Official**
+   Approved through DCHUB governance for protocol module standards and compatibility expectations.
+- **Recommended**
+   A positive signal based on usage maturity and objective transparency signals (for example audits, open source, time in production), using criteria defined in Registry and Module Policy.
+- **Experimental**
+   Early stage, limited assurance, or rapidly changing entries.
+- **Quarantined**
+   A time bounded, emergency warning label used when there is credible evidence of active exploitation or imminent harm.
+- **Flagged**
+   A persistent warning label used when there is credible evidence of serious risk, malicious behavior, or materially misleading claims.
+
+Labels are signals, not judgments of legal compliance. Listing and labeling do not certify that an app, module, or provider is compliant, safe, or appropriate.
+
+#### 14.2A.2 Eligible initiators (who can trigger a review)
+
+A registry safety review can be initiated by:
+
+- Any DCHUB holder through an on-chain proposal.
+- The Protocol Council through a publicly logged request.
+- The foundation (or delegated registry operator) through a publicly logged request, limited to security and misinformation concerns that meet the evidence threshold below.
+- A security reporter submitting a disclosure package through a published security reporting process, where the reporter’s claims are anchored or otherwise made verifiable.
+
+Initiation does not determine outcome. It triggers a review record.
+
+#### 14.2A.3 Evidence requirements and record format
+
+A safety review request must include a structured record with:
+
+- Entry identifiers (name, version, chain addresses, repository references where applicable).
+- One or more enumerated reason codes, such as:
+  - Critical exploit or active drain risk
+  - Malware, phishing, key theft, or impersonation
+  - Material misrepresentation of protocol facts (for example claiming endorsement, recognition, or custody guarantees that do not exist)
+  - Repeat security negligence without remediation
+- Evidence anchors:
+  - audit reports, incident reports, exploit proofs, reproducible demonstrations, or other verifiable artifacts
+- A conflict and affiliation disclosure by the initiator, including whether the initiator is a competitor or has a direct commercial stake.
+
+Reference registries must publish these records in a consistent, indexable format.
+
+#### 14.2A.4 Emergency quarantine (time bounded)
+
+Quarantine is used only for imminent harm scenarios.
+
+- A Quarantined label can be applied immediately when credible evidence indicates active exploitation, imminent asset loss, or high probability of user harm.
+- The Quarantined label must include:
+  - a reason code,
+  - a short factual rationale, and
+  - evidence anchors (or a responsible disclosure record with a defined disclosure schedule).
+- Quarantine is time bounded:
+  - It automatically expires after a short window (recommended 72 hours) unless extended by an on-chain governance action.
+  - Extensions must include updated evidence anchors and a clear scope statement.
+
+Quarantine affects presentation in reference interfaces. It does not disable the underlying code.
+
+#### 14.2A.5 Standard Flagged process (notice, response, decision)
+
+A Flagged label requires a standard process:
+
+1. **Notice**
+    The registry publishes a notice to the listed contact channels for the entry maintainer (or issuer), and anchors the notice record.
+2. **Response window**
+    The maintainer can publish a response record with evidence anchors, correction actions, and version plans.
+3. **Review**
+    The Protocol Council may publish an assessment record with explicit reasoning and recusal statements.
+4. **Decision**
+    Final application or removal of the Flagged label is executed through an on-chain governance action or through a delegated registry authority explicitly authorized by governance for narrow categories.
+
+#### 14.2A.6 Appeals, reinstatement, and label expiry
+
+To reduce permanent, stale warnings and to keep registry status responsive to remediation:
+
+- A maintainer may appeal a Flagged label by publishing:
+  - remediation evidence,
+  - a versioned fix description,
+  - audit or verification anchors where applicable.
+- Reference registry policy may require periodic renewal of Flagged status (for example every 90 days) through an explicit reaffirmation record. If not reaffirmed, the label expires and reverts to Experimental, unless a new review is initiated.
+
+#### 14.2A.7 Neutrality and non exclusivity
+
+Due process is about interface integrity and user safety, not control:
+
+- Any developer can publish an alternative registry.
+- Any user can choose a different interface.
+- The Hub remains neutral and does not enforce registry labels as transaction censorship.
+
+------
+
+### 14.3 Jurisdiction adapter modules (optional overlays)
+
+Jurisdiction adapter modules are optional overlays. They are protocol modules that attach to the Hub, not separate execution layers.
+
+They are not part of the kernel and are not required for v1 operation or for the primary adoption path. dCorps is designed to be complete inside the on-chain economy without them.
+
+Adapters exist only to map Hub truth into external legal or institutional processes when an entity chooses to interact with them. Many entities will never attach any jurisdiction adapter.
+
+Early pilots, if any, are expected to focus on a small number of DAO-friendly jurisdictions and clearly disclosed delegated operators, coordinated through the dCorps foundation. None of this is a protocol dependency.
+
+Jurisdiction adapter modules implement the Module Protocol standards and can be developed by:
+
+- The **dCorps foundation** as official modules (or funded and commissioned by the foundation as official modules), and
+- Jurisdictions, service providers, and third-party builders as independent modules.
+
+They are frameworks where:
+
+- Jurisdictions encode:
+  - Which entity types they recognize and under what conditions.
+  - Required disclosures and reporting intervals.
+  - Fee and tax related obligations, including how fees are collected in USDC.
+- Entities opt in by:
+  - Attaching to the module on-chain.
+  - Accepting its terms off-chain where needed, for example by signing local incorporation or registration documents.
+
+These modules:
+
+- Run on the Hub or on tightly coupled chains that share security and data with the Hub.
+- Read entity state directly from the Hub:
+  - Ownership and cap table snapshots.
+  - Governance events and key resolutions.
+  - High-level financial aggregates and allocation metrics.
+- Write additional state such as:
+  - Recognition status (where applicable).
+  - Fee schedules and obligations.
+  - Compliance signals or alerts.
+
+Jurisdiction recognition is controlled by the jurisdiction adapter’s keys and rules, not by the dCorps development corporation, validators, or any reference interface. For official modules, the design intention is that operational recognition keys are held by the relevant jurisdiction or its explicitly disclosed delegated operator, not by the foundation, except where a jurisdiction explicitly delegates key custody under a publicly disclosed arrangement.
+
+- A jurisdiction adapter can withdraw recognition according to its published rules.
+- The Hub records this as module state and history.
+- If an entity disputes a recognition decision, recourse is in that jurisdiction’s legal system and processes.
+- If a court or authority compels a correction, the jurisdiction or its delegated operator is the party that updates the module state.
+
+Because direct jurisdiction integration often takes time, dCorps is designed to support a clear transition phase after mainnet launch: a temporary bridge that can provide immediate operational capacity and evidence for jurisdictions, while preserving the end goal of full, direct jurisdiction integration.
+
+### 14.3.1 Adoption path (phased, recommended)
+
+Jurisdiction adoption, if it happens, is expected to happen in phases. The optional path below exists for entities that choose to pursue external recognition. It is not required for digital-only operation, and it must never become an implied protocol milestone.
+
+The intent is to document a realistic, politically complex road and to keep interface labeling honest about what is and is not recognized.
+
+#### 14.3.1.1 Pilot Step 0 (temporary): Delegated filing provider bridge (post mainnet)
+
+**Purpose**
+
+Pilot Step 0 is a temporary bridge between mainnet launch and direct jurisdiction integration. It exists to:
+
+- Enable real formations, renewals, and registry updates now, even before a jurisdiction operated module is live.
+- Generate auditable lifecycle data and operational evidence that supports and accelerates jurisdiction adoption.
+- Standardize how off-chain legal actions are reflected on-chain, without implying recognition by the Hub itself.
+
+**How it works**
+
+- Providers (corporate service providers, registrars, law firms, or other operators) perform off-chain filings, renewals, and registry interactions under their own legal responsibilities and direct contracts with the entity.
+- The provider then publishes standardized on-chain attestations that reference:
+  - The subject entity ID,
+  - The jurisdiction and registry context,
+  - The filing type (formation, renewal, amendment, dissolution, other),
+  - Evidence anchors (receipts, confirmations, or document hashes),
+  - Validity windows and status (submitted, accepted, rejected, superseded, withdrawn, disputed), and
+  - A required disclosure marker stating that this is a Step 0 provider attestation and not jurisdiction integrated recognition.
+- Reference interfaces label the entity status clearly as **Filed via Provider (Pilot)** (or equivalent), distinct from any “jurisdiction integrated” or “recognition active” label.
+
+**Provider listing, weighting, and non endorsement stance**
+
+Step 0 may maintain an optional issuer registry used for discovery and default interface weighting only.
+
+- “Listed provider” status means that the provider has published required identity metadata and agrees to the module’s disclosure, correction, and dispute signaling standards.
+- “Listed provider” status is not legal authorization, not jurisdiction approval, and not a guarantee of compliance or licensing.
+- The foundation and reference registry do not recommend or endorse a provider as “approved.” Multiple providers can coexist, and entities remain responsible for due diligence and for selecting their own providers.
+
+**Provider conduct rules for default weighting (reference policy)**
+
+To be eligible for default weighting and “Listed provider” signals in reference interfaces, a provider must:
+
+- Publish identity and contact metadata sufficient for accountability, including:
+  - provider name and jurisdiction of operation,
+  - public contact channels,
+  - the signing DID or keys used for attestations, and
+  - a published key rotation and compromise response plan.
+- Publish a correction and dispute process:
+  - how errors are corrected (withdrawal and supersession),
+  - how entity disputes are received and addressed,
+  - expected response windows, and
+  - how final outcomes are recorded on-chain.
+- Follow strict marketing and labeling constraints:
+  - must not market Step 0 attestations as legal recognition or as an official jurisdiction integrated status,
+  - must not present any “dCorps listed” signal as a government endorsement or regulatory approval,
+  - must include clear disclosure language in client facing materials that Step 0 is an evidence bridge and not automatic legal personhood.
+
+Violations of these conduct rules result in:
+
+- removal from default weighting and “Listed provider” signals in reference interfaces, and
+- application of a warning label for the provider entry in the registry under the due process rules in section 14.2A.
+
+This does not prevent the provider from publishing attestations. It changes how reference interfaces present their signals.
+
+**Dispute, correction, and supersession**
+
+Step 0 uses the dispute and correction signaling standard defined in section 6.2A.4. The Hub records the signed dispute and correction statements, but it does not adjudicate disputes.
+
+Step 0 adds the following interface requirements for provider attestations:
+
+- Reference interfaces must display:
+  - issuer identity and registry status,
+  - evidence anchors,
+  - validity windows,
+  - disputed or superseded flags, and
+  - the most recent active attestation for the same filing context where applicable.
+
+**Foundation role in Step 0**
+
+The foundation’s role is stewardship and standardization, not legal authority and not incorporation as a service:
+
+- Operate or oversee the reference Step 0 module and publish the attestation schemas, dispute signaling standards, and interface labeling requirements.
+- Maintain an optional issuer registry used for default interface weighting and discovery only. It is not a gate and does not prevent any provider from publishing attestations on-chain.
+- Ensure the bridge is non exclusive and supports multiple providers.
+- Ensure entities can switch providers, and that switching is reflected transparently on-chain.
+
+The foundation does not grant legal status and does not act as the registry. Any legal effect comes from jurisdiction law and from the provider’s filings and contracts, not from the Hub.
+
+**Boundaries**
+
+- Step 0 is not jurisdiction recognition and is not presented as such.
+- Step 0 does not make the foundation a wrapper provider, agent, or coordinator for entity formation.
+- Providers may be regulated or licensed depending on their jurisdiction; compliance is their responsibility and the entity’s responsibility.
+- Step 0 does not require custody of entity funds by the foundation. Any provider fees are handled directly between the entity and the provider under their own arrangement.
+
+#### 14.3.1.2 Pilot Step 1: Disclosure, fee, and reporting module
+
+- The module defines eligibility, required disclosures (via anchored documents), reporting cadence, and fee collection in USDC.
+- The module produces clear, machine readable status outputs that regulators and counterparties can observe.
+- Legal effect may remain partially off-chain in this step, but the jurisdiction gains an operational dashboard and an auditable fee and reporting pipeline.
+- This step can be operated by a jurisdiction directly or by an explicitly disclosed delegated operator under the jurisdiction’s supervision, depending on the jurisdiction’s readiness.
+
+#### 14.3.1.3 Pilot Step 2 (target end state): Direct jurisdiction integration and recognition binding
+
+When local law, processes, and operational readiness support it, the jurisdiction binds legal recognition and registry actions to module state:
+
+- The jurisdiction (or an explicitly disclosed delegated operator under its supervision) controls the operational keys for recognition and registry status actions.
+- The module writes recognition active or withdrawn as on-chain status, with the legal effect arising from local law and contracts that reference that status.
+- Registry interactions become directly integrated, meaning the jurisdiction recognizes the on-chain module state as part of the official process, rather than relying on third-party attestations as the primary bridge.
+
+This is the intended final state for a mature jurisdiction integration.
+
+#### 14.3.1.4 Graduation, sunset, and interface labeling (reference standard)
+
+To make the temporary nature of Step 0 unambiguous, the ecosystem follows explicit graduation rules.
+
+**Graduation conditions (Step 0 deprecation triggers)**
+
+Step 0 is deprecated for a jurisdiction when any of the following becomes true:
+
+- A jurisdiction operated or jurisdiction supervised jurisdiction adapter module (Step 1 or Step 2) is live and available for that jurisdiction, or
+- A formal arrangement (MoU, delegation contract, or equivalent) exists that binds registry actions to the jurisdiction adapter under jurisdiction controlled keys, or
+- The jurisdiction publishes an official integration path and begins onboarding entities through direct module attachment.
+
+**Interface labels (required for reference explorers)**
+
+Reference explorers and dashboards must clearly distinguish:
+
+- **Filed via Provider (Pilot)** (Step 0)
+- **jurisdiction adapter Attached (Reporting and Fees)** (Step 1)
+- **Jurisdiction Integrated (Recognition Active)** (Step 2, where applicable)
+- **Recognition Withdrawn** (module output, where applicable)
+
+Interfaces must never present Step 0 as recognition. They must also show issuer identity, evidence anchors, validity windows, and dispute status for provider attestations.
+
+**Non exclusivity and portability (required)**
+
+- Multiple providers can exist per jurisdiction and per entity type.
+- Entities must be able to switch providers.
+- Switching providers does not erase history; it changes the active provider relationship going forward, with a recorded timeline and evidence anchors.
+
+This phased approach allows jurisdictions to adopt dCorps without requiring an all or nothing jump from day one, while producing practical value early. The success and legal effect of any jurisdiction adapter module depends on the **law and practice** of the relevant jurisdiction, not on this whitepaper or on-chain mechanics.
+
+Modules can:
+
+- Automatically collect fees in USDC from entities that opt in, splitting revenues between jurisdiction wallets, the Protocol Treasury, and possibly other public purpose sinks.
+- Provide structured data feeds and dashboards for regulators, corporate registrars, and tax administrations.
+- Serve as technical hooks for local compliance interfaces, such as filing portals and automated reporting pipelines.
+
+The **dCorps foundation** has a specific mission around these modules. It is expected to:
+
+- Design and steward the Module Protocol standards that jurisdiction adapter modules follow.
+- Research and co design **official** jurisdiction adapter modules in collaboration with local experts, regulators, and service providers.
+- Propose official modules to the community and governance for review and formal approval.
+- Maintain and update official modules as laws and regulations change, including funding third-party teams to implement updates where appropriate.
+- Support a broader ecosystem where third-party jurisdiction adapter modules can be built, listed, audited, and adopted by entities, even when they are not official.
+
+---
+
+### 14.4 Sector and impact frameworks
+
+Sector frameworks are:
+
+* Protocol modules focused on domains such as:
+
+  * Climate.
+  * Education.
+  * Public health.
+  * Other thematic areas where impact and standards matter.
+
+They define:
+
+* Standard metrics and indicators.
+* Reporting intervals.
+* Eligibility criteria for participation in certain funding or recognition programs.
+
+Entities can adopt these frameworks to:
+
+* Signal adherence to sector norms.
+* Access specialized funding or partner networks.
+* Provide more meaningful reporting to donors and investors.
+
+The dCorps foundation is expected to:
+
+* Work with sector experts, NGOs, and funders to design reference frameworks.
+* Sponsor pilots and experiments.
+* Maintain a set of official or recommended frameworks through governance.
+
+Frameworks are not laws. They are shared standards for their domains. Adoption is voluntary, though some funders or platforms may require participation as a condition for support.
+
+---
+
+### 14.5 External issuance and fundraising platforms
+
+Issuance and fundraising platforms:
+
+* Build on dCorps entity state and modules.
+* Handle user onboarding, KYC, and marketing.
+* Implement offering structures and payment flows.
+
+They remain independent entities with:
+
+* Their own legal and regulatory obligations.
+* Their own risk models.
+* Their own users and governance.
+
+dCorps provides them with:
+
+* Reliable entity data and governance state.
+* Hooks for allocation of tokens, units, or dShares.
+* Anchoring of offering documents and investor consents.
+
+Platforms may be listed in the app registry along with their audit and compliance status, but listing is not an endorsement or guarantee.
+
+---
+
+### 14.6 DeFi integrations and indices
+
+DeFi integrations and index providers:
+
+* Use dCorps data to inform:
+
+  * Collateral acceptability and parameters.
+  * Inclusion criteria for indices and baskets.
+
+They may rely on:
+
+* Governance and cap table metrics.
+* Revenue and allocation history.
+* NGO transparency and allocation scores.
+* Jurisdiction and sector framework participation.
+
+They are not part of the core protocol and carry their own risk profiles. dCorps aims to make their work easier and safer by providing better data, not by controlling their design.
+
+These integrations can also be listed in the registry, with DCHUB governance able to flag obvious abuses or misrepresentations.
+
+------
+
+### 14.7 Code and data licensing, forks, and compatibility
+
+dCorps is intended to be an open ecosystem.
+
+- **Core code**
+  - Hub chain code, standard entity modules, and reference tooling are intended to be open source under licenses that support broad use and contribution.
+  - Specific license choices and contribution policies will be published in the governance and repository documentation.
+- **Modules and applications**
+  - Third-party apps and modules may be open or closed source, but the registry surfaces transparency signals such as source availability and audit status.
+- **Public data and privacy**
+  - The protocol minimizes personal data on-chain by design. Public data focuses on entity level facts, governance records, and category level aggregates.
+  - Controlled zones, encryption, and anchoring patterns are used for sensitive data and private disclosures.
+- **Forks and compatibility**
+  - The code can be forked. Independent networks may exist and evolve under their own governance.
+  - The dCorps name, marks, and official registry branding are intended to be protected so that users can distinguish official networks and interfaces from forks.
+  - Compatibility standards, including schemas and interfaces for anchoring and modules, are published so that tools can interoperate across implementations where desired.
+
+---
+
+## 15. Security, privacy, and interoperability
+
+### 15.1 Threat model and key risks
+
+Key risks include:
+
+* Software bugs in Hub or modules.
+* Consensus failures or validator misbehavior.
+* Exploits of smart contracts on sub chains or protocol modules.
+* Bridge and interoperability failures.
+* Key compromises and poor operational security.
+* Malicious or low-quality third-party apps.
+
+dCorps does not claim to remove these risks. It aims to reduce them and to make them more manageable.
+
+---
+
+### 15.2 Secure development practices and audits
+
+Core components are developed with:
+
+* Code review and testing standards.
+* Unit, integration, and property based tests.
+* Fuzzing and adversarial testing.
+
+Independent audits:
+
+* Are conducted for:
+
+  * Hub core modules.
+  * Standard entity modules.
+  * Official jurisdiction adapter and sector frameworks.
+  * Critical infrastructure around the app and module registry.
+
+Audits are published with:
+
+* Scope and findings.
+* Remediation status, subject to responsible disclosure.
+
+A bug bounty program will encourage researchers to report vulnerabilities within defined rules.
+
+The foundation is expected to coordinate audits for official modules and core tooling, while other developers remain responsible for their own code.
+
+---
+
+### 15.3 Validator security
+
+Validators are encouraged to:
+
+* Use hardened infrastructure and hardware security modules.
+* Separate signing keys from general purpose machines.
+* Maintain monitoring and alerting.
+* Have clear internal response procedures.
+
+dCorps can:
+
+* Set slashing parameters.
+* Provide reference security guidance.
+* Encourage decentralization and good practices.
+
+It cannot enforce security practices by law; validator operators remain responsible for their setups.
+
+---
+
+### 15.4 Privacy tools and private zones
+
+Privacy tools include:
+
+* Private contract zones or chains that hold sensitive logic.
+* Encryption and access control for controlled data.
+* Zero knowledge proof systems for selected metrics.
+
+These tools are used to:
+
+* Protect personal data such as salaries and beneficiaries.
+* Keep commercially sensitive terms confidential.
+* Still allow proofs of compliance or performance.
+
+Which zones and tools to use is up to entities and builders. Protocol modules and apps can specify which privacy tools they require or support.
+
+---
+
+### 15.5 Zero knowledge proof patterns
+
+Zero knowledge proofs can be used to:
+
+* Prove that nonprofits meet allocation rules without revealing every single payment.
+* Prove that an entity maintains certain financial ratios or risk limits.
+* Prove that specific jurisdiction rules have been followed.
+
+dCorps is agnostic about specific proof systems, but it provides:
+
+* Anchoring for proofs.
+* Verification hooks in protocol modules.
+* Ways to link proofs to entities and reporting periods.
+
+Adoption of advanced zero knowledge techniques will grow over time as tooling matures.
+
+---
+
+### 15.6 Interoperability via IBC and bridges
+
+Within Cosmos:
+
+- dCorps uses **IBC** to connect with:
+  - Noble for USDC.
+  - DEX chains.
+  - Privacy zones and specialized contract chains.
+  - Other app chains where entities may operate.
+
+Outside Cosmos:
+
+- dCorps may connect to other ecosystems via selected bridges.
+
+Bridges are high-risk components. The design intent is that:
+
+- **Core entity accounting and governance on the Hub do not depend on any external bridge for correctness.** The canonical record of entities, Hub corporations, NGOs, and anchored sub chain summaries lives on the Hub and on recognized sub chains that share security with it.
+- Cross-chain assets are always used at your own risk and logically separate from core entity state. A bridge exploit can affect assets that have crossed that bridge, but it should not silently corrupt the basic records of who owns which units or dShares, how boards are composed, or how nonprofit flows are categorized.
+- Preference is given to well audited, widely used bridges with transparent security models.
+- Protocol modules and apps that rely on cross-chain data must clearly communicate their reliance and associated risks.
+
+Entities and users ultimately choose their own risk exposure to external chains. dCorps aims to make that exposure explicit and optional, not hidden inside the base protocol.
+
+---
+
+### 15.7 Incident response and decentralization path
+
+Incidents can and will happen. dCorps intends to handle them with:
+
+* Minimum necessary intervention.
+* No arbitrary confiscation or silent rewrites.
+* Transparent communication of any emergency actions.
+* Clear sunset and limitation on early emergency powers.
+
+In early phases:
+
+* More direct control is available to the core team for urgent issues.
+
+Over time:
+
+* Control is shifted to on-chain governance and broader stakeholders.
+* Emergency powers are narrowed and eventually retired where possible.
+
+The goal is a path toward robust decentralization, with realistic handling of the risks of young networks.
+
+The foundation and Council are expected to play key roles in incident response, within boundaries set by governance.
+
+------
+
+### 15.8 Example failure scenarios and responses
+
+dCorps assumes failures will occur and aims to make them visible, containable, and auditable.
+
+#### 15.8.1 Stablecoin disruption or issuer actions
+
+Scenario: a stablecoin used by entities depegs, faces redemption issues, or enforces freezes or blacklists on specific addresses.
+
+Response patterns:
+
+- Asset registry governance can:
+  - Limit or retire affected assets for protocol fees and default UI flows
+  - Introduce warnings and risk labels in official interfaces, including explicit labels for freeze and redemption mechanics
+  - Accelerate support for alternative approved settlement assets where safe and feasible
+- Entities can:
+  - Diversify treasury holdings across approved assets and venues
+  - Use wallet segmentation and policy controls to limit operational exposure to any one issuer or rail
+  - Maintain continuity plans for payroll, vendor payments, and NGO disbursements under stablecoin disruption scenarios
+
+Issuer actions are external enforcement and policy decisions. The Hub cannot override them; remediation depends on issuer policy and, where relevant, the token’s administrative controls on its home chain.
+
+#### 15.8.2 Bridge exploit or cross-chain asset failure
+
+Scenario: a bridge used for non core assets is exploited.
+
+Response patterns:
+
+- Core entity registry, cap tables, and governance state remain correct on the Hub.
+- Affected bridged assets are treated as external risk; dashboards and tools surface exposure.
+- Interfaces can label compromised assets and advise on containment without rewriting entity history.
+
+#### 15.8.3 Sub chain fails to anchor or violates standards
+
+Scenario: a recognized sub chain stops anchoring, forks inconsistently, or publishes invalid summaries.
+
+Response patterns:
+
+- The Hub can mark the sub chain as not recognized and surface warnings.
+- Protocol modules and registries can treat the chain as ineligible for official status.
+- The sub chain can still operate independently, but it loses the shared signaling layer and official integrations.
+
+#### 15.8.4 Entity treasury key compromise
+
+Scenario: an entity treasury is drained through compromised keys.
+
+Response patterns:
+
+- Recommended wallet separation and limits reduce blast radius.
+- Role reassignment and wallet rotation can be executed through recorded governance procedures.
+- Entities can use recovery committees, time delays, and external custody integrations to reduce the probability and impact of compromise.
+
+#### 15.8.5 Malicious or insecure third-party application
+
+Scenario: an app listed in the registry is found to be malicious or critically insecure.
+
+Response patterns:
+
+- The registry can quarantine or flag the listing in official interfaces with public rationale.
+- Governance can downgrade status signals and require security remediation for re listing.
+- The underlying contracts or code remain outside protocol control; users retain choice and responsibility.
+
+#### 15.8.6 Governance capture attempt or validator cartel behavior
+
+Scenario: a concentrated group attempts to push harmful parameter changes.
+
+Response patterns:
+
+- High visibility governance processes, Council review, and hard limits reduce surprise changes.
+- Entities and users can treat governance risk as a visible signal and adjust exposure.
+- Optional guardian or veto mechanisms, if adopted, provide narrow time bound protection against clearly harmful proposals.
+
+#### 15.8.7 jurisdiction adapter module becomes invalid due to legal change
+
+Scenario: a jurisdiction changes policy, withdraws support, or issues legal orders that affect a module.
+
+Response patterns:
+
+- Module status can be updated, including warnings and deprecation plans.
+- Entities can detach from the module and attach to alternatives, with a recorded timeline.
+- Records remain on-chain, preserving auditability of what was recognized and when.
+
+---
+
+## 16. Implementation status and roadmap
+
+### 16.1 Current state
+
+At the time of this master whitepaper revision (v1.3, December 21, 2025):
+
+- Architecture and core designs are specified at a conceptual level.
+- Prototype implementations of:
+  - The entity registry.
+  - Hub corporation and nonprofit modules.
+  - Wallet and accounting primitives exist in internal or limited test environments.
+- No production mainnet exists yet.
+- No public token sale or listing has occurred.
+- No foundation has been incorporated yet.
+
+All details are subject to change based on engineering work, testing, legal analysis, and community feedback.
+
+------
+
+### 16.1A Public artifacts and verification checklist (v1 readiness signals)
+
+dCorps is designed to be verifiable. The goal is that serious users can assess readiness without private access, informal assurances, or reliance on any single party.
+
+Before mainnet v1 is treated as production ready, dCorps intends to publish a concrete set of artifacts and verification signals.
+
+**Code and specifications (public, versioned)**
+
+- Hub chain implementation source code and build instructions.
+- Protocol Specification and module standards referenced in this whitepaper:
+  - core message families, state machines, and event schemas (`docs/spec/SPEC-CORE.md`),
+  - Module Protocol Standard and compatibility requirements (`docs/spec/SPEC-MODULES.md`),
+  - Sub chain Anchoring Standard and anchor schema versions (`docs/spec/SPEC-ANCHOR.md`).
+- Reference tooling source code:
+  - reference indexer behavior and export formats (`docs/spec/SPEC-INDEXER.md`),
+  - reference explorer behavior for entity pages and reporting views (`docs/spec/SPEC-INDEXER.md`),
+  - Compatibility Test Suite for schema and module conformance (`docs/spec/SPEC-CONFORMANCE-TESTS.md`).
+
+**Testnet and reproducibility**
+
+- A public testnet with:
+  - published chain ID, genesis file, and validator onboarding steps,
+  - tagged releases and reproducible build guidance,
+  - published upgrade rehearsals for at least one major upgrade path.
+- A deterministic way for third parties to:
+  - run a node,
+  - run the indexer,
+  - reproduce entity views and reporting outputs from raw chain data.
+
+- A public example entity package on testnet that includes:
+  - at least one corporation example and one nonprofit example,
+  - a full period of tagged accounting events with a few evidence anchors,
+  - the expected derived report objects (cash-based operating statement and nonprofit allocation statement),
+  - and a simple reproduction script or notebook that verifies the derived outputs against raw chain data.
+
+**Security and audits (public scope and remediation)**
+
+- Independent audits for:
+  - core Hub modules,
+  - entity modules (Hub corporation and Hub nonprofit),
+  - critical reference tooling used for reporting and registry presentation.
+- A bug bounty program with:
+  - scope, rules, and disclosure workflow,
+  - clear remediation commitments and public post mortems where appropriate.
+
+**Governance and operational policy artifacts**
+
+- Governance Charter and Validator Charter (or equivalent) describing:
+  - governance processes, protected changes, thresholds, and timelocks,
+  - validator expectations and objective accountability rules.
+- Treasury Policy, including:
+  - permitted uses and prohibitions,
+  - reporting cadence,
+  - liquidity bootstrap policy (see section 10.7A).
+
+These artifacts are designed to turn “trust us” claims into observable behavior, while keeping the protocol neutral and open.
+
+------
+
+### 16.1B Team, contributors, and advisors (disclosure policy)
+
+dCorps makes no claim that a whitepaper replaces execution. Team, governance, and security posture are therefore treated as first class public signals.
+
+**Current authorship and role**
+
+- **Founding Steward and Author**: Nicolas Turcotte, Founder
+
+**Disclosure commitments**
+
+To preserve credibility and reduce hidden conflicts, dCorps intends to maintain clear public disclosures for:
+
+- The legal identity and officers of the development corporation once incorporated, including its jurisdiction, directors, and controlling governance documents to the extent appropriate.
+- The legal identity and governance of the dCorps foundation once incorporated, including charter, board membership, and core policies, with finances and grants reported under published transparency commitments.
+- Material advisors and service providers, when engaged in protocol critical roles, including:
+  - auditors and security firms,
+  - core infrastructure providers for reference tooling,
+  - legal and regulatory counsel acting on protocol level structures,
+     subject to confidentiality constraints that may apply in specific engagements.
+
+**Conflict of interest and recusal standard**
+
+- Protocol Council members and any delegated registry operators must publish affiliation and conflict disclosures.
+- Where direct commercial benefit exists related to a module, app, provider, or grant decision, the relevant reviewer or decision maker is expected to recuse under the Governance Charter and registry policy.
+
+This section is about clarity of accountability. It does not imply endorsement of any party and does not modify the protocol’s neutral, non custodial boundaries.
+
+---
+
+### 16.2 Roadmap principles
+
+The roadmap is guided by a small set of principles. These are not marketing statements, they are constraints on what ships and in what order.
+
+1. **Kernel invariants first**
+
+   Every protocol change must preserve the kernel invariants in section 4.0. If a feature requires external authority to be correct, it is not part of the kernel.
+
+2. **Hub-first standardization**
+
+   The v1 adoption path is one strong public container on the Hub. Most entities should never need anything else. Optional modules and applications exist to extend the Hub, not to replace it.
+
+3. **Security and correctness before breadth**
+
+   The Hub is long-lived shared infrastructure. Audits, clear upgrade processes, conformance tests, and operational monitoring come before adding new surface area.
+
+4. **Adapters are optional and replaceable**
+
+   Jurisdiction and institutional integration is an adapter layer. It must never become a protocol dependency or a hidden milestone in the entity lifecycle.
+
+5. **Ecosystem enablement over vertical integration**
+
+   The protocol should make it easy for independent teams to build dashboards, payroll tooling, donor portals, and reporting modules. The foundation provides standards, reference tooling, and test suites, not a monopoly product suite.
+
+6. **Conservative upgrades, explicit versioning**
+### 16.3 Phased rollout
+
+This rollout plan is structured around one idea: **ship a stable Hub kernel first, then make it operationally complete, then add optional adapters.**
+
+The phases below start at **mainnet launch** and continue through a definition of **fully operational** infrastructure.
+
+#### Phase 1: Mainnet launch (Kernel v1)
+
+**Objective**: launch a stable Hub that can host complete Hub corporations and Hub nonprofits as the default entity containers.
+
+**Key deliverables**:
+
+- Hub chain genesis, validator set, and runtime stability.
+- DCHUB gas, staking, and protocol governance primitives.
+- Entity registry with IDs, types, metadata, and lifecycle status.
+- Hub corporation module v1:
+  - Ten thousand unit template
+  - Role and approval based governance
+  - Basic corporate actions (issuance, transfers, restrictions, pools and claims patterns)
+- Hub nonprofit module v1:
+  - Board governance
+  - Donation and program wallet types
+  - Allocation rules and restricted fund patterns
+- Canonical wallet types and standardized accounting event schemas.
+- Document anchoring and evidence timelines (hash anchoring of bylaws, minutes, audits, policies).
+- Reference explorer and indexer for entity discovery and event timelines.
+
+**Exit criteria**:
+
+- Core modules audited and deployed with reproducible builds.
+- Upgrade process and on-chain governance path tested on testnet and exercised in controlled mainnet upgrades.
+- First real entities can register, operate, and produce reproducible reports using only the Hub.
+
+#### Phase 2: Operational completeness and standards hardening
+
+**Objective**: make the Hub reliable enough that external builders can treat it as infrastructure, not an experiment.
+
+**Key deliverables**:
+
+- Conformance test suite for entity modules, event schemas, and indexing compatibility.
+- Stable APIs and SDKs for common operations (entity creation, role changes, approvals, reporting queries).
+- Monitoring, alerting, and incident processes for validators and core services.
+- Security hardening: bug bounty, audit extensions, and formalized threat models for the kernel.
+- Fee grants and UX primitives so entities can pay service fees in stablecoins while the chain still prices execution in DCHUB.
+
+**Exit criteria**:
+
+- Independent builders can integrate against published schemas and pass conformance tests.
+- A first cohort of entities operates end to end on mainnet for real value flows.
+
+#### Phase 3: Ecosystem bootstrapping and stablecoin rails
+
+**Objective**: make the Hub easy to use for real organizations and easy to integrate for service providers.
+
+**Key deliverables**:
+
+- IBC stablecoin connectivity and standard treasury patterns for stablecoin native operations.
+- App and module registry with clear metadata, versioning, and security posture disclosures.
+- Reference templates for common entity setups (basic corporation, basic nonprofit, umbrella sponsorship pattern).
+- Indexer redundancy and data availability patterns so the ecosystem is not dependent on a single hosted service.
+- Reference governance UI and reporting UI to validate the end user experience and reduce integration friction for new tools.
+
+**Exit criteria**:
+
+- Multiple independent applications and service providers operate in production.
+- Stablecoin based operations work reliably for real entities across a range of workflows (inflows, approvals, payouts, reporting).
+
+#### Phase 4: Adapter layer and institutional legibility
+
+**Objective**: enable optional external integration without making external systems a kernel dependency.
+
+**Key deliverables**:
+
+- Jurisdiction adapter framework (schemas, proofs, and reference workflows) so external recognition can be attached as an overlay.
+- Institutional reporting modules that derive verifiable reports from standardized accounting events and document anchors.
+- Attestation modules and selective disclosure patterns (where an entity can prove statements about its state without publishing everything).
+- Nonprofit specific overlays such as donation receipt workflows and sponsorship frameworks, implemented as adapters and applications.
+
+**Exit criteria**:
+
+- At least one high quality adapter implementation demonstrates external recognition or institutional integration while leaving the kernel unchanged.
+- Entities can choose to remain purely Hub-native or attach adapters based on their needs, without any concept of mandatory graduation.
+
+#### Phase 5: Fully operational maturity
+
+**Objective**: reach a state where the Hub is a long-lived, self-sustaining public utility for organizational infrastructure.
+
+**Fully operational** means:
+
+- The chain is stable and secure under a sufficiently decentralized validator set.
+- The standard is stable, versioned, and supported by conformance tests and multiple independent tooling stacks.
+- Governance and upgrades are predictable and do not depend on a single team or company.
+- The ecosystem has enough applications and service providers that real entities can operate without bespoke support.
+- Economics are sustainable, meaning fees and emissions policies can support security and public goods without constant external subsidy.
+
+**Key deliverables**:
+
+- Progressive decentralization of governance participation and validator diversity.
+- Multiple independent indexers and reference implementations for critical components (indexing, APIs, explorer tooling).
+- Mature protocol operations: upgrade cadence, emergency procedures, and long-term maintenance policies.
+- Sustainable foundation processes: standards stewardship, audits, grants, and ecosystem support aligned with kernel invariants.
+
+**Exit criteria**:
+
+- No single organization is required for the Hub to continue operating and evolving safely.
+- Entity creation and operation are routine, with predictable costs and predictable semantics.
+
+#### Optional future phase: Advanced execution environments and public instruments (only if justified)
+
+Subchains, specialized privacy execution, and public instrument models are only explored if real adoption proves they are needed. Any such work must preserve the kernel invariants and must not become a requirement for ordinary Hub entity operation.
+
+---
+
+
+Dates and details will depend on progress, adoption, legal developments, and resources.
+
+---
+
+### 16.4 Key metrics
+
+Important metrics include:
+
+* **Usage and adoption**
+
+  * Number and diversity of active entities.
+  * Retained activity over time (cohort retention and reactivation).
+  * Volume and nature of on-chain operations (typed workflows and tagged events, not only transfers).
+  * Real-world use in programs and operations (donations and program spending for nonprofits; payroll and operating flows for corporations).
+* **Security and decentralization**
+
+  * Number and distribution of validators.
+  * Governance participation rates (proposal and voting participation).
+  * Incident profile (downtime, slashing events, and security incidents).
+* **Ecosystem**
+
+  * Number and quality of applications and modules.
+  * Presence and adoption of jurisdiction adapters and sector frameworks.
+  * Activity in the app and module registry.
+* **Financial sustainability**
+
+  * Protocol fee revenue (entity registrations and operations fees).
+  * Treasury and foundation reserves.
+  * Validator rewards mix (fee-based rewards vs scheduled emissions).
+
+These metrics are more relevant to protocol health than token price.
+
+---
+
+## 17. Legal position, BVI to Switzerland, and risk
+
+### 17.1 Neutral infrastructure summary
+
+dCorps is intended to be **neutral infrastructure**. Functionally, using dCorps should feel more like using:
+
+* A public registry, plus
+* A cloud accounting and governance platform
+
+than like buying a managed fund or financial product.
+
+The protocol:
+
+* Records and helps execute organizational choices.
+* Does not pool client funds into discretionary portfolios.
+* Does not offer guaranteed returns or principal protection.
+
+Entities retain their own legal existence. dCorps is a shared technical substrate that many independent actors use.
+
+---
+
+### 17.2 Development corporation in BVI
+
+Initially, core development and early integrations are expected to be handled by a **development corporation incorporated in the British Virgin Islands (BVI)** or a similar jurisdiction.
+
+This corporation:
+
+- Builds and maintains the protocol code and reference implementations.
+- Provides integration and support services to early adopters.
+- Enters contracts with audit firms, infrastructure providers, and partners.
+
+BVI is considered for pragmatic reasons:
+
+- It has experience with globally oriented technology and blockchain projects.
+- It can offer clearer and more predictable treatment for a development corporation whose revenues come from software and services related to a utility style token, compared to some larger jurisdictions.
+- It is relatively fast and cost effective to set up, which matters in the earliest phases of the project.
+
+The development corporation is a software and services company, not:
+
+- A bank.
+- An exchange, broker, or asset manager.
+- A corporate or NGO service provider for all dCorps entities.
+
+Commercial relationships between the development corporation and entities will be governed by separate contracts.
+
+---
+
+### 17.3 Migration plan to Switzerland and crypto hub
+
+Once dCorps reaches greater maturity, the intention is to:
+
+- Add a **nonprofit foundation** in Switzerland or a similar crypto friendly jurisdiction.
+- Gradually shift stewardship of shared resources and protocol governance processes to that foundation.
+
+Switzerland is attractive because:
+
+- It has a long history of rule of law and predictable treatment of foundations.
+- It has practical experience with crypto and on-chain projects, including token foundations and nonprofit stewards.
+- It is easier for serious regulators, NGOs, and institutional partners to trust a Swiss based foundation than a purely offshore structure.
+
+The foundation will:
+
+- Steward parts of the Protocol Treasury and community allocations.
+- Administer grants and ecosystem programs.
+- Support long term protocol development and maintenance.
+- Coordinate the design, implementation, and maintenance of protocol modules that connect dCorps to the real world, especially:
+  - jurisdiction adapter modules.
+  - Sector and impact frameworks.
+  - Other non core features that interpret Hub state in terms of law, regulation, and societal standards.
+- Operate and evolve the app and module registry.
+- Promote neutrality and resist capture by any single corporate or jurisdictional interest.
+- Actively work with jurisdictions and institutions to co-design and validate jurisdiction adapter modules, using the Hub as a shared base layer.
+
+A core design principle is:
+
+- The **Hub** should remain pure, minimal on-chain infrastructure for entities.
+- Everything that links the Hub to the actual world, including legal regimes and sector specific rules, should be expressed as protocol modules and applications.
+- These modules must adapt as society, law, and technology evolve, without forcing changes to basic Hub logic.
+
+The foundation is the natural home for this adaptive work. It sponsors research, consults with stakeholders, proposes modules through governance, and retires or replaces modules when they no longer fit current realities.
+
+This is a **good faith design intention**, not a fixed commitment to move or incorporate by a specific date. The exact timing and structure of this transition will depend on legal, regulatory, financial, and operational considerations. Details will be documented in public filings and governance proposals.
+
+------
+
+### 17.3A Relationship between development corporation and foundation
+
+The development corporation and the foundation have complementary roles.
+
+The **development corporation**:
+
+- Is the primary engineering and product organization for dCorps.
+- Employs the core team that designs and implements the Hub, reference modules, and critical tooling.
+- Enters commercial contracts with entities and partners for integration and custom work.
+- Is expected to be one of the first Hub corporations on dCorps, using the same structures that other entities use.
+
+The **dCorps foundation**:
+
+- Is the neutral steward for long term public goods:
+  - Parts of the Protocol Treasury and community allocations.
+  - Official jurisdiction adapter and sector modules.
+  - The app and module registry.
+- Acts as a bridge to jurisdictions, regulators, NGOs, and other public stakeholders.
+
+The relationship between them is expected to be formalized through **framework agreements**, for example:
+
+- The foundation can recognize the development corporation as an **authorized development provider** for core protocol work and ecosystem projects.
+- The foundation can fund the development corporation to deliver specified milestones, while keeping intellectual property and governance structures aligned with the protocol.
+- The foundation can also fund other teams for specific modules, tools, or research, to avoid single vendor risk and to foster a broader ecosystem.
+
+Replacing or significantly downgrading the development corporation as the primary provider of core protocol work is possible, but it should be:
+
+- Governed by clear criteria and processes.
+- Subject to strong governance thresholds.
+- Paired with a credible alternative development arrangement.
+
+This balance aims to:
+
+- Give the founding team enough stability to build a serious, multi year project.
+- Ensure that, in the long run, the protocol is not dependent on a single private company if that company stops performing or shifts priorities.
+
+------
+
+### 17.3B Development corporation business model and neutrality
+
+The development corporation is expected to operate as a normal software and services provider, not as a protocol gatekeeper.
+
+Typical revenue sources may include:
+
+- Engineering services for entities and partners:
+  - Integrations, custom workflows, and deployment support
+  - Migration assistance for adopting dCorps as an operating layer
+- Maintenance and support contracts for infrastructure and tooling:
+  - Explorer and dashboard operations
+  - Enterprise grade APIs and monitoring services
+- Delivery of funded milestones:
+  - Foundation or Treasury funded work under transparent proposals and milestone reporting
+  - Work for jurisdictions or service providers building jurisdiction adapter modules, subject to clearly disclosed terms
+
+The protocol remains open to other development providers:
+
+- The foundation can fund multiple teams to reduce single vendor risk.
+- Entities can commission work from any provider.
+- Governance can change funding priorities and provider arrangements through documented processes.
+
+This structure is intended to support long term development capacity while keeping the Hub neutral, minimizing conflicts of interest, and avoiding exclusive control by any single private company.
+
+---
+
+### 17.4 Foundation as first nonprofit on dCorps
+
+The foundation is expected to be:
+
+* One of the first nonprofit entities registered on dCorps.
+* A user of the NGO module, with:
+
+  * Board based governance recorded on-chain.
+  * Transparent handling of its own funds.
+  * Allocations to programs visible to the community.
+
+This dogfooding reinforces the seriousness of dCorps for nonprofits.
+
+---
+
+### 17.5 Development corporation as first Hub corporation
+
+Similarly, the development corporation is expected to be:
+
+* One of the first Hub corporations on dCorps.
+* Using:
+
+  * Hub units for its internal cap table.
+  * Merchant and treasury wallets for operations.
+  * Governance modules for key decisions.
+
+This aligns the incentives of the core team with the robustness of the infrastructure.
+
+---
+
+### 17.6 User responsibilities
+
+Participants remain responsible for:
+
+* **Entities (corporations and NGOs)**
+
+  * Choosing appropriate legal forms and jurisdictions.
+  * Maintaining compliance with corporate, charity, tax, and other laws.
+  * Ensuring governance and financial practices match their obligations.
+* **Validators and delegators**
+
+  * Understanding the technical and economic risks of staking.
+  * Complying with local regulations about staking and infrastructure operation.
+* **Builders and service providers**
+
+  * Ensuring their tools, apps, and platforms are legally compliant.
+  * Managing security and operational risks for their users.
+
+Using dCorps does not remove any legal responsibilities that would otherwise exist.
+
+---
+
+### 17.7 Risk factors and acceptance
+
+Participation in dCorps involves significant risks, including:
+
+- **Technology and protocol risks**
+  - Bugs, exploits, or failures in code, consensus, or dependencies.
+- **Governance and organizational risks**
+  - Concentration of voting power.
+  - Low participation.
+  - Conflicts of interest.
+  - Coordination failures in incident response.
+- **Market and economic risks**
+  - Volatile and potentially low or zero market prices for DCHUB, dShares, or other assets.
+  - Illiquidity and slippage.
+  - Competition from other protocols or technologies.
+- **Regulatory and tax risks**
+  - Changes in how authorities treat tokens, entities, and activities.
+  - New licensing, reporting, or tax obligations.
+  - Restrictions or bans on certain activities or assets.
+
+Even though DCHUB is designed and intended as a protocol utility token, there is **no guarantee** that regulators in every jurisdiction will treat it that way. Some regulators may classify DCHUB, dShares, or other instruments associated with dCorps as securities or as falling under other categories of financial regulation. Classifications may differ across countries and may change over time as laws, regulations, and case law evolve. Participants should factor this uncertainty into their risk assessments and seek independent legal and tax advice.
+
+Other risks include:
+
+- **Counterparty and third-party risks**
+  - Failures, misbehavior, or insolvency of exchanges, custodians, or service providers.
+  - Poor quality or malicious third-party apps or modules.
+- **nonprofit and donor risks**
+  - Misinterpretation of on-chain data.
+  - Misuse of transparency to create misleading narratives.
+  - Local hostility in some regions toward NGOs using crypto infrastructure.
+
+Participants should only engage with dCorps, run entities, or hold related tokens if they are prepared to accept the possibility of partial or total loss and if they can comply with all applicable laws that apply to them.
+
+---
+
+### 17.8 Separation of roles and responsibilities
+
+To recap:
+
+* **dCorps protocol**
+
+  * Neutral infrastructure.
+  * Provides entity, governance, and financial primitives.
+* **Development corporation and foundation**
+
+  * Develop, maintain, and steward parts of the protocol and ecosystem.
+  * Execute decisions in the legal realm.
+  * Coordinate protocol modules, grants, and registry operations.
+* **Entities**
+
+  * Operate their businesses or NGOs.
+  * Bear legal, fiduciary, and operational responsibility.
+* **Market and service providers**
+
+  * Exchanges, issuance platforms, custodians, DeFi protocols, auditors, and others.
+  * Have their own legal and regulatory responsibilities.
+
+Maintaining these separations is essential for clarity, accountability, and long term trust.
+
+---
+
+## 18. Glossary and open decisions
+
+### 18.1 Selected glossary
+
+**dCorps**
+ The protocol and ecosystem described in this whitepaper; an on-chain base layer for entities.
+
+**Hub / dCorps Hub chain**
+ The Cosmos-based chain that acts as registry and coordination layer, runs DCHUB, and hosts Hub entities.
+
+**DCHUB**
+ The native token of the dCorps Hub, used for gas, staking, and protocol governance. Not equity in user entities or in the development corporation or foundation.
+
+**Hub corporation**
+ A corporation operating entirely on the Hub, with ten thousand internal units forming its cap table. Hub corporations can represent operating companies, holding companies, or joint venture and SPV style structures, depending on how their units, wallets, and governance are configured.
+
+**Hub units**
+ Internal units of a Hub corporation that represent economic and voting rights.
+
+**cash-based operating reporting**
+ Period summaries derived from tagged inflow and outflow events, excluding accrual accounting treatments.
+
+**Sub chain**
+ A Cosmos-based chain linked to the Hub that hosts a corporation’s operations and, for public sub chain corporations, its dShares.
+
+**Public sub chain corporation**
+ A corporation that operates its own sub chain and issues dShares as equity style tokens.
+
+**dShares**
+ Equity style tokens issued by public sub chain corporations, representing governance and economic rights for that corporation.
+
+**nonprofit / NGO entity**
+ An entity registered on the Hub as a nonprofit, using board based governance and transparent donation and program flows.
+
+**Protocol module**
+ An on-chain module that runs on the Hub or a tightly coupled chain, reads entity and financial state, and applies additional logic. Includes jurisdiction adapter modules, sector frameworks, and other rule sets. Does not change Hub consensus, but builds on top of it.
+
+**jurisdiction adapter module**
+ A protocol module encoding how a specific jurisdiction treats certain dCorps entities, including fees, recognition, and reporting expectations.
+
+**Sector framework**
+ A protocol module defining metrics and standards for a specific domain such as climate, education, or public health.
+
+**App and module registry / dCorps App Store**
+ The on-chain and off-chain registry that lists applications and protocol modules that integrate with dCorps, along with status, audits, and governance signals.
+
+**DID (Decentralized Identifier)**
+ An identifier under the W3C DID model that represents an entity, person, or role in a self sovereign way.
+
+**Protocol Council**
+ A multi stakeholder group that reviews protocol changes and module approvals and advises token holder governance.
+
+**Protocol Treasury**
+ The pool of assets governed by the protocol and foundation for long term development, security, and ecosystem support.
+
+**dCorps foundation**
+ The intended nonprofit foundation that will steward the protocol, manage parts of the Treasury, coordinate protocol modules and the app registry, and help keep the Hub core minimal and neutral.
+
+---
+
+### 18.2 Open technical parameters
+
+Several parameters will be finalized in separate documents and may change over time, including:
+
+* Target validator set size at launch and as the network grows.
+* Block time, throughput targets, and gas limits.
+* Staking emission curve and target staking ratio.
+* Exact slashing percentages for different types of validator misbehavior.
+* Minimum anchoring frequency and data schema for sub chains.
+* Specific interfaces and schemas for protocol modules.
+
+These will be documented in a **Protocol Parameters and Economics** reference and adjusted via governance as needed.
+
+---
+
+### 18.3 Open legal and organizational points
+
+Open points include:
+
+* Final legal structure and jurisdiction of the development corporation.
+* Exact legal form and jurisdiction of the dCorps foundation.
+* Details of the foundation’s charter, board composition, and initial membership.
+* Exact selection and rotation mechanisms for Protocol Council members.
+* The first set of jurisdictions to adopt jurisdiction adapter modules and the legal instruments they use.
+* Details of app and module registry policies, including categories and processes.
+
+These will be documented in charters, articles, and governance proposals and may evolve with experience and advice.
+
+---
+
+### 18.4 Future living documents
+
+This whitepaper will be complemented by living documents, including:
+
+#### Protocol core
+
+- **Protocol Specification**
+  - Normative rules, message families, state machines, and event schemas.
+- **Protocol Parameters and Economics**
+  - Concrete configuration values, bounded ranges, and economic assumptions.
+- **Module Protocol Standard**
+  - Attachment rules, interfaces, upgrade requirements, and compatibility tests.
+- **Sub chain Anchoring Standard**
+  - Required commitments, cadence, proofs, and failure handling rules.
+- **Data Standards**
+  - Schema versions, chart of accounts, tags, and reporting cadence rules.
+
+#### Governance and policy
+
+- **Governance Charter**
+  - Roles, phases, protected changes, thresholds, timelocks, and council processes.
+- **Treasury Policy**
+  - Permitted uses, prohibitions, reporting cadence, liquidity bootstrap rules.
+- **Registry and Module Policy**
+  - Listing rules, labels, signals, dispute handling, and deprecation rules.
+- **Validator Charter**
+  - Operational expectations, security guidance, and objective accountability rules.
+- **Foundation Charter**
+  - Mission, board processes, stewardship scope, and transparency commitments.
+
+#### Token
+
+- **Token Policy**
+  - Vesting contracts, voting restrictions, unlock schedules, and distribution controls.
+- **Genesis Distribution Plan**
+  - Genesis custody, lockups, and programmatic controls for major allocations.
+- **Emissions and Security Budget Notes**
+  - Validator reward schedules, fee assumptions, and sustainability targets.
+
+#### Security
+
+- **Security Policy**
+  - Development practices, audit requirements, and release processes.
+- **Audit Plan**
+  - Audit scope, sequencing, and disclosure policy.
+- **Bug Bounty Program**
+  - Scope, rules, payouts, and disclosure workflow.
+- **Incident Response Playbook**
+  - Communication commitments and response procedures.
+
+#### Legal and risk disclosures
+
+- **Risk Disclosure** (`docs/public/legal/RISK_DISCLOSURE.md`)
+  - Technical, governance, market, and regulatory risks in plain language.
+- **Non-custodial and Non-intermediation Statement** (`docs/public/legal/DISCLAIMERS.md`)
+  - Bright-line boundaries for custody, relayers, and service providers.
+- **Provider Attestation Framework** (`docs/spec/SPEC-ATTESTATIONS.md`)
+  - Step 0 schemas, labels, dispute rights, and roles.
+
+#### Developer and ecosystem
+
+- **Developer Documentation** (`docs/public/technical/TECHNICAL_OVERVIEW.md`, `docs/public/technical/INTEGRATION_GUIDE.md`)
+  - SDKs, APIs, indexing guides, and example integrations.
+- **Compatibility Test Suite** (`docs/spec/SPEC-CONFORMANCE-TESTS.md`)
+  - Module conformance tests and schema compliance tests.
+- **Reference Indexer Specification** (`docs/spec/SPEC-INDEXER.md`)
+  - Canonical indexing behavior and data export formats.
+- **Pilot Showcase**
+  - Living dashboards and case studies (published separately from this repo’s normative documents).
+
+These documents will reflect real world experience and will be updated through governance and legal processes.
