@@ -7,6 +7,8 @@
 
 > Scope: Canonical entry point for public-facing dCorps documents. Use the “Reader paths” section to pick the right depth for your goals.
 
+Full documentation map: `docs/INDEX.md`.
+
 ---
 
 ## Reader paths (choose your depth)
@@ -30,7 +32,7 @@
 
 - Read `docs/public/technical/TECHNICAL_OVERVIEW.md`.
 - Then use `docs/public/technical/INTEGRATION_GUIDE.md`.
-- For normative behavior and schemas, use the specs under `docs/spec/` (these are intended to be public, and are included in this repo’s public-by-default posture).
+- For normative behavior and schemas, start with `docs/spec/INDEX.md`, then use the specs under `docs/spec/` (these are intended to be public, and are included in this repo’s public-by-default posture).
 
 **If you are a validator**
 

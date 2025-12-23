@@ -4,7 +4,9 @@ Master documentation and specifications for the dCorps Hub protocol, including t
 
 > Status: publication-ready documentation set
 
+Start here (master index): `docs/INDEX.md`
 Start here (public docs): `docs/public/INDEX.md`
+Developer entry point (normative specs): `docs/spec/INDEX.md`
 
 ---
 
@@ -27,12 +29,16 @@ High-level layout:
 
 ```text
 docs/
+  INDEX.md                   Master documentation index (start here)
+  CONTEXT.md                 One-page context summary
+  REPOS.md                   Repository map
   master/
     DCHUB_MASTER.md          Master Reference (long whitepaper, source)
     CHANGELOG.md             Master Reference changelog
     TBD_REGISTER.md          Appendix A, open decisions
     DECISION_LOG.md          Appendix B, decisions taken
   spec/
+    INDEX.md                 Spec index (normative)
     SPEC-CORE.md             Protocol Specification
     SPEC-PARAMS.md           Protocol Parameters and Economics
     SPEC-MODULES.md          Module Protocol Standard
@@ -58,6 +64,27 @@ docs/
     AUDIT-PLAN.md
     BUG-BOUNTY.md
     INCIDENT-RESPONSE.md
+  engineering/
+    INDEX.md                 Engineering entry point
+    COSMOS_BASE.md           Base protocol notes (Cosmos, token, stablecoins)
+    PROTOCOL_INTERFACES.md   Interface surface map
+  interop/
+    INDEX.md                 Interop entry point
+    IBC.md                   IBC and interchain notes
+  roadmap/
+    INDEX.md                 Roadmap and phases
+  ops/
+    INDEX.md                 Operations index
+    TODO.md                  Canonical task list
+  people/
+    INDEX.md                 People and organizations index
+    TEAM.md                  Team and advisors
+    OPEN_ROLES.md            Open roles and hiring template
+  legal/
+    INDEX.md                 Legal and compliance index
+  website/
+    INDEX.md                 Website documentation index
+    SITEMAP.md               Website sitemap and content sources
   restricted/
     README.md                Safety-sensitive material (excluded from public website/exports)
   public/

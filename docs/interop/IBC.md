@@ -1,0 +1,38 @@
+# dCorps Hub - IBC and Interchain Notes
+
+**Document type**: Interop notes  
+**Doc ID**: INTEROP-IBC  
+**Status**: Final v0.1  
+**Source repo**: dcorps-docs (`docs/interop/IBC.md`)
+
+> Scope: Summarize how interchain connections are expected to be used for stablecoin operations and optional sub chains.
+
+---
+
+## Stablecoin routing
+
+- The Hub is designed for stablecoin-native operations.
+- USDC on Noble is the reference stablecoin; on the Hub it typically appears as an IBC denom tracing to Noble's `uusdc`.
+- Additional approved stablecoins may be added over time through governance and the asset registry process.
+
+---
+
+## Interchain posture
+
+- IBC is the open standard for stablecoin routing and cross-chain communication.
+- The Hub should not make any single bridge a dependency of kernel truth.
+- Some flows may use interchain accounts or relayers where supported; these are implementation details.
+
+---
+
+## Sub chains and anchoring
+
+- Sub chains are optional and must anchor summaries to the Hub to be considered recognized.
+- Recognition tiers and anchoring rules are defined in `docs/spec/SPEC-ANCHOR.md`.
+
+---
+
+## Open items
+
+- Port and channel IDs, relayer requirements, and production endpoints are not defined in this repo yet.
+- When chain implementation is published, link those details here.
