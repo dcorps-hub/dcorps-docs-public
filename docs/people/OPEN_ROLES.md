@@ -11,7 +11,37 @@
 
 ## Current openings
 
-No open roles listed yet.
+- Protocol Engineer (Go/Cosmos SDK)
+  - Team or organization: DevCo
+  - Scope and responsibilities: core modules, protobufs, state machine logic
+  - Required experience: Cosmos SDK, Go, consensus-safe development
+  - Location or time zone: Remote-friendly
+  - Status: paused
+  - Contact or application link: dev@dcorps.com
+
+- Data/Indexer Engineer
+  - Team or organization: DevCo
+  - Scope and responsibilities: indexer schema, ingestion, reporting outputs
+  - Required experience: Go or Python, PostgreSQL, data pipelines
+  - Location or time zone: Remote-friendly
+  - Status: paused
+  - Contact or application link: dev@dcorps.com
+
+- DevOps/SRE
+  - Team or organization: DevCo
+  - Scope and responsibilities: environments, CI/CD, monitoring, runbooks
+  - Required experience: Cosmos ops, IaC, observability
+  - Location or time zone: Remote-friendly
+  - Status: paused
+  - Contact or application link: dev@dcorps.com
+
+- Frontend Engineer (Explorer/App)
+  - Team or organization: DevCo
+  - Scope and responsibilities: explorer UI, wallet UX, reporting views
+  - Required experience: React/Next.js, TypeScript, wallets
+  - Location or time zone: Remote-friendly
+  - Status: paused
+  - Contact or application link: dev@dcorps.com
 
 ---
 

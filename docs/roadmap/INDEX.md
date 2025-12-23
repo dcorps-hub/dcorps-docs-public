@@ -11,7 +11,10 @@
 
 ## Execution phases (source-of-truth roadmap)
 
-These phases follow the Master Reference (section 16). Phase 0 is pre-mainnet readiness. Phases 1 to 5 start at mainnet launch.
+These phases follow the Master Reference (section 16) with a pre-phase for website finalization. Phase 0 is pre-mainnet readiness. Phases 1 to 5 start at mainnet launch.
+
+**Phase 0A: Public website finalization (static)**
+- Finalize the static public website and align copy to public docs.
 
 **Phase 0: Pre-mainnet readiness**
 - Publish specs, code, and verifiable testnet artifacts.
@@ -76,9 +79,10 @@ From `../dcorps-site/content/learn/vision.md`:
 - Vision path: `../dcorps-site/content/learn/vision.md`
 - Open questions: `docs/master/TBD_REGISTER.md`
 - Phase exit criteria: `docs/roadmap/PHASES.md`
+- Phase success metrics: `docs/ops/METRICS.md`
 
 ---
 
 ## Current status
 
-Current status is not recorded here yet. Update this section when testnet and mainnet milestones are defined.
+Phase 0A is in progress: static website finalization and alignment.

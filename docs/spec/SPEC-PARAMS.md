@@ -22,6 +22,8 @@ This document:
 
 Actual parameter values and recommended starting points SHOULD be maintained in a separate configuration document or genesis file and cross-referenced here.
 
+Baseline defaults are recorded in `docs/devops/NETWORK_PARAMS.md`.
+
 ---
 
 ## 2. Parameter catalog

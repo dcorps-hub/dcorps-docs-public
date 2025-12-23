@@ -21,11 +21,13 @@
 
 - `docs/devops/INDEX.md`
 - `docs/devops/ENVIRONMENTS.md`
+- `docs/devops/NETWORK_PARAMS.md`
 - `docs/devops/COSMOS_ENVIRONMENT.md`
 - `docs/devops/RELEASE_PROCESS.md`
 - `docs/devops/OBSERVABILITY.md`
 - `docs/devops/SECURITY.md`
 - `docs/security/INCIDENT-RESPONSE.md`
+- `docs/devops/RUNBOOKS.md`
 
 ---
 

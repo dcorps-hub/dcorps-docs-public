@@ -17,6 +17,19 @@
 
 ---
 
+## Decisions (v1 baseline)
+
+- Explorer and app: React + TypeScript with Next.js.
+- Data fetching and caching: React Query.
+- Wallet integration: cosmos-kit with Keplr, Leap, and Cosmostation; WalletConnect for mobile.
+- UI primitives: headless components + Tailwind CSS.
+- Hosting: Vercel for static site and app deployments.
+- Analytics: Plausible; error tracking: Sentry.
+
+These decisions are summarized in `docs/engineering/STACK.md` and should be treated as baseline unless superseded by a logged decision.
+
+---
+
 ## Future requirements
 
 The following capabilities are required to support the explorer, dashboards, and wallet-connected apps:
@@ -31,7 +44,4 @@ The following capabilities are required to support the explorer, dashboards, and
 
 ## Open decisions
 
-- Frontend framework and architecture for dynamic apps.
-- Data fetching and caching strategy.
-- Wallet connection standard and UX flows.
-- Hosting and deployment model.
+None.

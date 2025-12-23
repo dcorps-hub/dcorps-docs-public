@@ -23,6 +23,7 @@
 ## Navigation map
 
 - Full sitemap and content sources: `docs/website/SITEMAP.md`
+- Content guidelines: `docs/website/CONTENT_GUIDELINES.md`
 
 ---
 

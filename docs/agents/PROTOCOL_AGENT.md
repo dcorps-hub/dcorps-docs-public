@@ -29,6 +29,8 @@
 - `docs/spec/SPEC-CONFORMANCE-TESTS.md`
 - `docs/master/DCHUB_MASTER.md`
 - `docs/engineering/COSMOS_BASE.md`
+- `docs/engineering/CHAIN_LAYOUT.md`
+- `docs/engineering/API_SURFACES.md`
 - `docs/engineering/PROTOCOL_INTERFACES.md`
 
 ---

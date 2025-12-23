@@ -42,6 +42,30 @@ Governance involves both on-chain and off-chain actors:
 
 This policy does not grant additional formal voting power to off-chain bodies; their influence is exercised through proposals, expertise, and reputational trust.
 
+### 2.1 Protocol Council (advisory)
+
+The Protocol Council is an advisory body intended to:
+
+- review high-impact proposals and publish non-binding recommendations;
+- coordinate cross-domain review (security, economics, data standards);
+- flag proposals that require extended review or emergency scrutiny.
+
+The Council does not have veto power. It is advisory only.
+
+### 2.2 Council membership and rotation
+
+Baseline council structure:
+
+- 7 members with mixed expertise (protocol, security, ops, ecosystem).
+- Term length: 12 months.
+- Maximum consecutive terms: 2.
+- Members must disclose conflicts of interest and recuse where applicable.
+
+Selection:
+
+- Nominated and appointed via on-chain governance.
+- Removal can occur via governance for cause or inactivity.
+
 ---
 
 ## 3. Proposal types and lifecycle
@@ -154,6 +178,12 @@ Emergency use is:
 - followed by a formal governance review to ratify or unwind actions.
 
 The default assumption is that emergency powers are used very rarely and only to protect the integrity of the system.
+
+### 5.3 Emergency powers sunset and override
+
+- Emergency powers are time-limited and automatically sunset 90 days after activation.
+- Re-enabling emergency powers requires a Protected Change with higher thresholds and an execution timelock.
+- The Protocol Council SHOULD publish a public rationale and review summary for any emergency extension proposal.
 
 ---
 

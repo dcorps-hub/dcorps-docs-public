@@ -72,6 +72,8 @@ Changes that significantly affect security are:
 
 ## 4. Key and secret management
 
+See `docs/security/KEY-MANAGEMENT.md` for the public-safe key custody policy.
+
 ### 4.1 Validator and user keys
 
 Validators and users are responsible for:

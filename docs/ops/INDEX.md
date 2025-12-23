@@ -14,6 +14,8 @@
 - Decisions: `docs/master/DECISION_LOG.md`
 - Open questions: `docs/master/TBD_REGISTER.md`
 - Master changelog: `docs/master/CHANGELOG.md`
+- Update cadence: `docs/ops/CADENCE.md`
+- Phase success metrics: `docs/ops/METRICS.md`
 
 ---
 

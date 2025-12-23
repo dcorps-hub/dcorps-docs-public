@@ -21,6 +21,8 @@
 - Master reference legal section: `docs/master/DCHUB_MASTER.md` (section 17)
 - Governance charter: `docs/policy/POL-GOV.md`
 - Foundation charter: `docs/policy/POL-FOUNDATION.md`
+- Structure path: `docs/legal/STRUCTURE_PATH.md`
+- DevCo/Foundation relationship: `docs/legal/DEVCO_FOUNDATION_AGREEMENT.md`
 
 ---
 
@@ -30,5 +32,6 @@
 - `../dcorps-site/content/legals/privacy.md`
 - `../dcorps-site/content/legals/cookies.md`
 - `../dcorps-site/content/legals/disclaimer.md`
+- Draft tracking: `docs/legal/WEBSITE_LEGAL_DRAFTS.md`
 
 Note: Website legal pages require review by qualified counsel before publication.

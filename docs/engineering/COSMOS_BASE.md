@@ -37,8 +37,14 @@
 
 ---
 
+## Stack decisions
+
+Baseline implementation stack choices are recorded in `docs/engineering/STACK.md`.
+
+---
+
 ## Open implementation details (to be defined in code repos)
 
-- Chain ID, bech32 prefix, and genesis parameters.
-- Protobuf message definitions and gRPC/REST endpoints.
-- Reference node configuration and upgrade procedures.
+- Chain ID, bech32 prefix, and baseline parameters: `docs/devops/NETWORK_PARAMS.md`.
+- Protobuf message definitions and gRPC/REST endpoints: `docs/engineering/API_SURFACES.md`.
+- Reference node configuration and upgrade procedures: `docs/devops/RUNBOOKS.md`.

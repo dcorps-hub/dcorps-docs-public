@@ -44,4 +44,4 @@
 
 ## Implementation notes
 
-Concrete protobuf messages, gRPC services, REST endpoints, and event names should be published in the chain code repo and linked here when available.
+Concrete protobuf messages, gRPC services, REST endpoints, and event names are defined in `docs/engineering/API_SURFACES.md` and should be mirrored in the chain code repo.

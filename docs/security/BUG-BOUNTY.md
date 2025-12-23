@@ -85,6 +85,26 @@ Where a vulnerability affects multiple ecosystems, maintainers coordinate with o
 
 ---
 
+### 4.1 Submission workflow (baseline)
+
+- Contact: `security@dcorps.com`
+- Required report contents:
+  - impact summary
+  - affected component and version
+  - reproduction steps
+  - proof-of-concept or test case (if safe)
+  - suggested mitigation (optional)
+
+### 4.2 Response targets (baseline)
+
+- Acknowledgement: within 2 business days.
+- Triage decision: within 7 business days.
+- Severity assignment and remediation plan: within 14 business days.
+
+These targets may adjust based on severity and complexity.
+
+---
+
 ## 5. Disclosure and safe harbor
 
 The program intends to provide safe harbor for good-faith security research within published program rules. Subject to legal review and jurisdictional considerations, this generally means:
@@ -93,3 +113,8 @@ The program intends to provide safe harbor for good-faith security research with
 - working collaboratively with researchers to fix issues before public disclosure.
 
 Final, legally binding safe harbor language is published in the live bounty terms. Researchers are encouraged to review those terms carefully before beginning testing.
+
+### 5.1 Disclosure timeline (baseline)
+
+- Default coordinated disclosure window: 90 days.
+- Critical issues may require accelerated disclosure after remediation.

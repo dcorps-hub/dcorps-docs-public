@@ -11,7 +11,8 @@
 
 ## Core contributors
 
-No entries published yet.
+- Nicolas Turcotte — Founder  
+  Founder and primary author of the Master Reference and protocol vision.
 
 ---
 

@@ -49,6 +49,8 @@ This policy provides high-level guidance; detailed figures and schedules are def
 
 - `docs/token/TOKEN-GENESIS-PLAN.md` (supply and allocations at genesis), and
 - `docs/token/TOKEN-EMISSIONS-NOTES.md` (how tokens enter circulation over time).
+- `docs/token/TOKEN-VESTING-SCHEDULES.md` (baseline vesting and lockups).
+- `docs/token/TOKEN-TREASURY-FEE-FLOWS.md` (service fee routing and reporting).
 
 v1 supply stance (as described in `docs/master/DCHUB_MASTER.md`, section 10):
 

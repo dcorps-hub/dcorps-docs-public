@@ -29,9 +29,11 @@ Release promotion between dev, staging, and prod is defined in `docs/devops/RELE
 
 ## Chain pipeline (future)
 
-- Build and test chain binaries.
+- Build and test chain binaries (Go).
+- Run proto lint and generation (`buf`).
+- Run unit and integration tests.
 - Run conformance and integration tests.
-- Produce release artifacts and checksums.
+- Produce release artifacts and checksums (`goreleaser`).
 - Tag releases and link to upgrade notes.
 
 ---

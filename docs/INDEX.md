@@ -46,12 +46,12 @@
 
 - Specs and conformance: `docs/spec/INDEX.md`
 - Policy and governance: `docs/policy/POL-GOV.md`, `docs/policy/POL-VALIDATORS.md`
-- Token: `docs/token/TOKEN-POLICY.md`, `docs/token/TOKEN-GENESIS-PLAN.md`
-- Security: `docs/security/SECURITY-POLICY.md`, `docs/security/THREAT-MODEL.md`
+- Token: `docs/token/TOKEN-POLICY.md`, `docs/token/TOKEN-GENESIS-PLAN.md`, `docs/token/TOKEN-VESTING-SCHEDULES.md`, `docs/token/TOKEN-TREASURY-FEE-FLOWS.md`
+- Security: `docs/security/SECURITY-POLICY.md`, `docs/security/THREAT-MODEL.md`, `docs/security/KEY-MANAGEMENT.md`
 - Engineering: `docs/engineering/INDEX.md`
 - Interop: `docs/interop/INDEX.md`
 - DevOps: `docs/devops/INDEX.md`
-- Roadmap and ops: `docs/roadmap/INDEX.md`, `docs/ops/TODO.md`
+- Roadmap and ops: `docs/roadmap/INDEX.md`, `docs/ops/TODO.md`, `docs/ops/CADENCE.md`, `docs/ops/METRICS.md`
 - Agents: `docs/agents/INDEX.md`
 - Frontend: `docs/frontend/INDEX.md`
 - People and orgs: `docs/people/INDEX.md`

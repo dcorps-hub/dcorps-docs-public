@@ -37,10 +37,21 @@
 
 ---
 
-## Alerts (define thresholds)
+## Stack (baseline)
 
-- Chain halt or stalled blocks.
-- Validator downtime or double-sign evidence.
-- RPC endpoint outages.
-- IBC channel failures.
-- Disk or memory exhaustion.
+- Metrics: Prometheus
+- Dashboards: Grafana
+- Logs: Loki
+
+---
+
+## Alerts (baseline thresholds)
+
+- Target block time is defined in `docs/devops/NETWORK_PARAMS.md`.
+- Chain halt or no blocks for 3 minutes (critical).
+- Block time > 2x target for 10 minutes (warning), > 3x target for 30 minutes (critical).
+- Validator missed blocks > 5% in 1 hour (warning), > 10% (critical).
+- RPC/gRPC error rate > 5% for 5 minutes (warning), > 10% for 10 minutes (critical).
+- IBC packet backlog > 1,000 for 30 minutes (warning).
+- Disk usage > 80% (warning), > 90% (critical).
+- Memory usage > 90% for 10 minutes (critical).

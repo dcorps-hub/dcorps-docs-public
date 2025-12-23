@@ -92,3 +92,15 @@ Community members, explorers, and indexers may:
 - monitor validator performance and behavior;
 - surface metrics and flags (e.g. frequent downtime, governance participation);
 - provide reputational signals while remaining clear that delegators make their own decisions.
+
+---
+
+## 6. Enforcement approach
+
+Validator accountability is enforced through:
+
+- protocol-level slashing and jailing where applicable;
+- governance actions for removal from curated or foundation-backed validator lists;
+- public incident disclosures and performance reporting.
+
+This policy does not create a permissioned validator set. Enforcement is transparent and must align with on-chain governance decisions.

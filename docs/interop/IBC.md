@@ -34,5 +34,6 @@
 
 ## Open items
 
-- Port and channel IDs, relayer requirements, and production endpoints are not defined in this repo yet.
-- When chain implementation is published, link those details here.
+- Port is `transfer`. Channel IDs are assigned during IBC handshake and are published in environment release notes.
+- Relayer requirements and monitoring are defined in `docs/devops/IBC_OPERATIONS.md`.
+- Public endpoints are published per environment; do not hardcode them in code.

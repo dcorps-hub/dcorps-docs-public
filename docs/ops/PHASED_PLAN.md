@@ -17,6 +17,15 @@
 
 ---
 
+## Phase 0A - Public website finalization (static site)
+
+1. Website alignment tasks
+   - WEB-001, WEB-002, WEB-003, WEB-004
+
+Gate: static site ready and aligned for public launch.
+
+---
+
 ## Phase 0 - Pre-mainnet readiness
 
 1. Program setup and sequencing
@@ -38,8 +47,6 @@
 9. Legal and people foundations
    - LEGAL-001, LEGAL-002, LEGAL-003
    - PEOPLE-001, PEOPLE-002, PEOPLE-003
-10. Website alignment tasks
-   - WEB-001, WEB-002, WEB-003, WEB-004
 
 Gate: confirm Phase 0 exit criteria in `docs/roadmap/PHASES.md`.
 

@@ -11,16 +11,16 @@
 
 ## Required runbooks
 
-- Genesis creation and verification.
-- Validator onboarding and key rotation.
-- Chain upgrades and rollback plan.
-- Incident response and communications.
-- IBC relayer outage recovery.
-- Snapshot and backup restoration.
-- Indexer backfill and recovery.
+- Genesis creation and verification: `docs/devops/RUNBOOK-GENESIS.md`
+- Validator onboarding and key rotation: `docs/devops/RUNBOOK-VALIDATORS.md`
+- Chain upgrades and rollback plan: `docs/devops/RUNBOOK-UPGRADES.md`
+- Incident response and communications: `docs/devops/RUNBOOK-INCIDENTS.md`
+- IBC relayer outage recovery: `docs/devops/RUNBOOK-IBC.md`
+- Snapshot and backup restoration: `docs/devops/RUNBOOK-BACKUP.md`
+- Indexer backfill and recovery: `docs/devops/RUNBOOK-INDEXER.md`
 
 ---
 
 ## Status
 
-Runbooks are not drafted yet. Create public-safe versions here and keep sensitive steps under `docs/restricted/` if needed.
+Public-safe runbooks are drafted. Sensitive operator details belong in `docs/restricted/` if needed.

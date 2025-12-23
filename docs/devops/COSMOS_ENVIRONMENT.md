@@ -52,11 +52,11 @@ Minimum components to operate a network:
 
 ## Decisions required
 
-- Chain ID and network names.
-- Denom format and bech32 prefix.
-- Default parameter values.
-- Versioning and release cadence.
-- IBC channels and relayer requirements.
+- Chain ID and network names: `docs/devops/NETWORK_PARAMS.md`.
+- Denom format and bech32 prefix: `docs/devops/NETWORK_PARAMS.md`.
+- Default parameter values: `docs/devops/NETWORK_PARAMS.md`.
+- Versioning and release cadence: `docs/devops/ENVIRONMENTS.md`.
+- IBC channels and relayer requirements: `docs/devops/IBC_OPERATIONS.md`.
 
 ---
 

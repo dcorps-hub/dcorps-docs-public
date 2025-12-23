@@ -90,6 +90,8 @@ Publication note: documentation is public by default; only safety-sensitive oper
 - `docs/token/TOKEN-POLICY.md`
 - `docs/token/TOKEN-GENESIS-PLAN.md`
 - `docs/token/TOKEN-EMISSIONS-NOTES.md`
+- `docs/token/TOKEN-VESTING-SCHEDULES.md`
+- `docs/token/TOKEN-TREASURY-FEE-FLOWS.md`
 
 ---
 
@@ -110,6 +112,7 @@ Publication note: documentation is public by default; only safety-sensitive oper
 - `docs/security/AUDIT-PLAN.md`
 - `docs/security/BUG-BOUNTY.md`
 - `docs/security/INCIDENT-RESPONSE.md`
+- `docs/security/KEY-MANAGEMENT.md`
 
 ---
 

@@ -14,3 +14,4 @@
 - IBC and stablecoin routing: `docs/interop/IBC.md`
 - Sub chain anchoring spec: `docs/spec/SPEC-ANCHOR.md`
 - Cosmos base notes: `docs/engineering/COSMOS_BASE.md`
+- IBC relayer ops: `docs/devops/IBC_OPERATIONS.md`

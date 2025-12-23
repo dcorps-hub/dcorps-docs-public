@@ -9,6 +9,24 @@
 
 ---
 
+## Phase 0A - Public website finalization (static site)
+
+Objective: finalize the public-facing static website before the protocol build sequence begins.
+
+Key deliverables:
+
+- Website copy aligned to public docs and the Master Reference.
+- Publish and update dates under page titles where required.
+- Roadmap page includes a high-level disclaimer.
+- Links to public docs and specs are verified.
+
+Exit criteria:
+
+- Static site is ready to publish with verified doc links.
+- Website content and public docs remain aligned.
+
+---
+
 ## Phase 0 - Pre-mainnet readiness (public artifacts and testnet)
 
 Objective: publish verifiable artifacts and run a public testnet so readiness can be assessed without private access.

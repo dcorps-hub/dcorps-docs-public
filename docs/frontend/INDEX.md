@@ -32,3 +32,7 @@
 - Frontend roadmap: `docs/frontend/ROADMAP.md`
 - Frontend task list: `docs/frontend/TASKS.md`
 - Open decisions: `docs/frontend/DECISIONS.md`
+- Wallet signing flows: `docs/frontend/SIGNING_FLOWS.md`
+- Information architecture: `docs/frontend/INFO_ARCHITECTURE.md`
+- Explorer requirements: `docs/frontend/EXPLORER_REQUIREMENTS.md`
+- Accessibility guidelines: `docs/frontend/ACCESSIBILITY.md`

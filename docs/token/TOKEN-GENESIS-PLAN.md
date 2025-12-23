@@ -77,6 +77,8 @@ Indicative v1 schedules (see `docs/master/DCHUB_MASTER.md`, section 10.4 and 10.
 - **Staking and validator rewards (18%)**: distributed via a published schedule capped by the rewards pool (genesis default schedule described in section 10.4A.5 of the Master Reference).
 - **Community and ecosystem programs (35%)**: governed releases with explicit annual and quarterly release caps (Master Reference section 10.4A.6).
 
+For baseline schedules, see `docs/token/TOKEN-VESTING-SCHEDULES.md`.
+
 ---
 
 ## 4. Genesis state construction

@@ -34,9 +34,22 @@
 
 ---
 
+## Reference topology (baseline)
+
+Baseline infrastructure is cloud-hosted and can be mirrored by validators.
+
+- Validators run behind sentry nodes.
+- Public RPC/gRPC/REST nodes are isolated behind load balancers.
+- Indexer and explorer are separated from validator infrastructure.
+- Snapshots and backups are stored in independent object storage.
+
+This baseline is provider-agnostic but defaults to AWS for reference deployments.
+
+---
+
 ## Environment readiness checklist
 
-- Chain ID, denom, and bech32 prefixes defined and documented.
+- Chain ID, denom, and bech32 prefixes defined and documented (`docs/devops/NETWORK_PARAMS.md`).
 - Genesis process documented and repeatable.
 - RPC, gRPC, REST endpoints defined.
 - Faucet or funding workflow defined for dev and staging.
@@ -48,9 +61,11 @@
 
 ---
 
-## Open decisions
+## Decisions (baseline)
 
-- Exact chain IDs and network names.
-- Hosting and infrastructure topology.
-- Access control model and on-call rotation.
-- Release cadence for each environment.
+- Access control model: RBAC with least privilege, MFA required, break-glass access logged.
+- On-call rotation: weekly primary/secondary for prod; best-effort coverage for dev/staging.
+- Release cadence:
+  - Dev: weekly
+  - Staging: monthly
+  - Prod: quarterly (emergency patches as needed)

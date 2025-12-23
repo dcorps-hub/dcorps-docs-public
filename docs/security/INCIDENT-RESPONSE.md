@@ -72,6 +72,8 @@ All changes are:
 - logged and documented for later review;
 - communicated to validators and key ecosystem operators.
 
+Operational runbook: `docs/devops/RUNBOOK-INCIDENTS.md`.
+
 ---
 
 ## 5. Communication and post-incident review

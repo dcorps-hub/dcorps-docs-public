@@ -33,6 +33,8 @@ See `docs/policy/POL-FOUNDATION.md` and `docs/policy/POL-GOV.md`.
 ## Team and advisors
 
 - Roster and biographies: `docs/people/TEAM.md`
+- Core team roles: `docs/people/CORE_ROLES.md`
+- Advisor roles: `docs/people/ADVISOR_ROLES.md`
 
 ---
 

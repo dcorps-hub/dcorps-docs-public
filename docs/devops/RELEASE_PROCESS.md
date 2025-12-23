@@ -93,6 +93,14 @@ For changes that affect builders, validators, or entities:
 
 ---
 
+## Release cadence (baseline)
+
+- Dev: weekly.
+- Staging: monthly.
+- Prod: quarterly (emergency patches as needed).
+
+---
+
 ## Checklist template
 
 - Change type:
