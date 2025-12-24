@@ -54,7 +54,7 @@ Whitepaper source files:
 
 ---
 
-## Ecosystems
+## Tools (site path: /ecosystems)
 
 - `/ecosystems/overview` -> `../dcorps-site/content/ecosystems/overview.md`
 - `/ecosystems/registry` -> `../dcorps-site/content/ecosystems/registry.md`
@@ -65,7 +65,7 @@ Whitepaper source files:
 
 ---
 
-## Entities
+## Start (v1) (site path: /entities)
 
 - `/entities/overview` -> `../dcorps-site/content/entities/overview.md`
 - `/entities/simple-private-entity` -> `../dcorps-site/content/entities/simple-private-entity.md`
@@ -77,7 +77,7 @@ Whitepaper source files:
 
 ---
 
-## Standards
+## Roadmap overlays (site path: /standards)
 
 - `/standards/overview` -> `../dcorps-site/content/standards/overview.md`
 - `/standards/smart-jurisdiction` -> `../dcorps-site/content/standards/smart-jurisdiction.md`
