@@ -92,4 +92,4 @@ Protected Change thresholds follow `docs/policy/POL-GOV.md`.
 ## 10. Change control
 
 - Baseline values are subject to governance updates.
-- Any changes must be recorded in `docs/master/DECISION_LOG.md`.
+- Any changes must be recorded in internal decision tracking.

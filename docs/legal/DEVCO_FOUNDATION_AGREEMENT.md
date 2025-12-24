@@ -39,4 +39,4 @@
 
 ## 5. Change control
 
-Any material change to this relationship must be documented in governance proposals and recorded in `docs/master/DECISION_LOG.md`.
+Any material change to this relationship must be documented in governance proposals and recorded in internal decision tracking.

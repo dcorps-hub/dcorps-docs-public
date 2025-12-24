@@ -46,4 +46,4 @@ Reporting should be derived from tagged on-chain events where possible.
 ## 4. Change control
 
 - Fee routing changes require governance approval.
-- Changes must be recorded in `docs/master/DECISION_LOG.md`.
+- Changes must be recorded in internal decision tracking.

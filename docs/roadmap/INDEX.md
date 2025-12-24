@@ -77,9 +77,8 @@ From `../dcorps-site/content/learn/vision.md`:
 - Master reference roadmap: `docs/master/DCHUB_MASTER.md` (section 16)
 - Public roadmap page: `../dcorps-site/content/information/roadmap.md`
 - Vision path: `../dcorps-site/content/learn/vision.md`
-- Open questions: `docs/master/TBD_REGISTER.md`
 - Phase exit criteria: `docs/roadmap/PHASES.md`
-- Phase success metrics: `docs/ops/METRICS.md`
+- Internal planning artifacts (open questions, success metrics, backlogs): maintained privately.
 
 ---
 

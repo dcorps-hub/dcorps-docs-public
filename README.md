@@ -17,7 +17,7 @@ This repo exists to:
 - Hold the **Master Reference** for the dCorps Hub.
 - Hold **normative specs** for protocol behavior, parameters, modules, and data.
 - Hold **governance, treasury, token, and security policies**.
-- Publish documentation **public by default**, with safety-sensitive exceptions stored in `dcorps-docs-private/docs/restricted/` (see `docs/policy/POL-DOCS-PUBLICATION.md`).
+- Publish documentation **public by default**, with safety-sensitive exceptions and internal planning stored in the private documentation repo `dcorps-docs-private` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 Anything that defines how the protocol works, how entities behave, or how we describe dCorps externally should live here first, then be surfaced outward through controlled exports (manual for now; see `tools/docgen/README.md`).
 
@@ -32,21 +32,8 @@ docs/
   INDEX.md                   Master documentation index (start here)
   CONTEXT.md                 One-page context summary
   REPOS.md                   Repository map
-  agents/
-    INDEX.md                 Agent playbooks index
-    PROTOCOL_AGENT.md        Protocol and chain agent playbook
-    DATA_AGENT.md            Data and indexer agent playbook
-    DEVOPS_AGENT.md          DevOps agent playbook
-    FRONTEND_AGENT.md        Frontend and product agent playbook
-    POLICY_LEGAL_AGENT.md    Policy and legal agent playbook
-    WEBSITE_AGENT.md         Website and content agent playbook
-    SECURITY_AGENT.md        Security agent playbook
-    OPS_PM_AGENT.md          Ops and PM agent playbook
   master/
     DCHUB_MASTER.md          Master Reference (long whitepaper, source)
-    CHANGELOG.md             Master Reference changelog
-    TBD_REGISTER.md          Appendix A, open decisions
-    DECISION_LOG.md          Appendix B, decisions taken
   spec/
     INDEX.md                 Spec index (normative)
     SPEC-CORE.md             Protocol Specification
@@ -93,25 +80,19 @@ docs/
   roadmap/
     INDEX.md                 Roadmap and phases
     PHASES.md                Phase goals and exit criteria
-  ops/
-    INDEX.md                 Operations index
-    TODO.md                  Canonical task list
-    PHASED_PLAN.md           Sequential execution plan
   frontend/
     INDEX.md                 Frontend entry point
     STACK.md                 Current and future stack notes
-    ROADMAP.md               Frontend roadmap
-    TASKS.md                 Frontend task list
-    DECISIONS.md             Frontend decision log
+    ACCESSIBILITY.md         Accessibility guidelines
+    EXPLORER_REQUIREMENTS.md Explorer requirements
+    INFO_ARCHITECTURE.md     Information architecture
+    SIGNING_FLOWS.md         Signing flows
   people/
     INDEX.md                 People and organizations index
     TEAM.md                  Team and advisors
     OPEN_ROLES.md            Open roles and hiring template
   legal/
     INDEX.md                 Legal and compliance index
-  website/
-    INDEX.md                 Website documentation index
-    SITEMAP.md               Website sitemap and content sources
   public/
     INDEX.md                   Public doc map (start here)
     investor/
@@ -155,7 +136,7 @@ What must be private (or excluded from public distribution):
 How we organize this:
 
 - Public-by-default docs live throughout `docs/` (including `docs/spec/`, `docs/policy/`, `docs/security/`, and `docs/token/`).
-- Safety-sensitive operational material belongs in `dcorps-docs-private/docs/restricted/` and must be excluded from the public website and public exports.
+- Safety-sensitive and internal-only material belongs in the private documentation repo `dcorps-docs-private` and must be excluded from public website/exports.
 
 If repository visibility changes:
 

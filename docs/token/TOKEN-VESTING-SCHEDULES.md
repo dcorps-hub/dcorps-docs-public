@@ -39,4 +39,4 @@ Community, rewards, and treasury allocations follow programmatic release rules a
 
 ## 4. Change control
 
-Any change to vesting schedules requires governance approval and an entry in `docs/master/DECISION_LOG.md`.
+Any change to vesting schedules requires governance approval and an entry in internal decision tracking.

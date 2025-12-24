@@ -13,7 +13,7 @@
 
 - Static HTML/CSS/JS in `../dcorps-site`.
 - Content in markdown under `../dcorps-site/content`.
-- Routes mirror content folders (see `docs/website/SITEMAP.md`).
+- Routes mirror content folders in the site repo.
 
 ---
 

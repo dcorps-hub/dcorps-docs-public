@@ -35,4 +35,4 @@
 
 ## 4. Change control
 
-Any material change to the legal structure path must be documented in governance proposals and recorded in `docs/master/DECISION_LOG.md`.
+Any material change to the legal structure path must be documented in governance proposals and recorded in internal decision tracking.

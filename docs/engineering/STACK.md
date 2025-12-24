@@ -5,7 +5,7 @@
 **Status**: Living v0.1  
 **Source repo**: dcorps-docs-public (`docs/engineering/STACK.md`)
 
-> Scope: Baseline implementation stack for the Hub chain, indexer, and app surfaces. Changes require updating this file and the Decision Log.
+> Scope: Baseline implementation stack for the Hub chain, indexer, and app surfaces. Changes require updating this file and internal decision tracking.
 
 ---
 
@@ -61,4 +61,4 @@
 ## 6. Change control
 
 - Pin versions in code repositories.
-- Document all stack changes in `docs/master/DECISION_LOG.md`.
+- Document all stack changes in the internal Decision Log (private).

@@ -5,7 +5,9 @@
 **Status**: Final v0.1  
 **Source repo**: dcorps-docs-public (`docs/INDEX.md`)
 
-> Scope: Canonical entry point for all dCorps documentation across protocol, policy, operations, people, and website content.
+> Scope: Canonical entry point for publicly releasable dCorps documentation across protocol, policy, security, token, and supporting technical materials.
+
+Internal planning and working documents (backlogs, internal roadmaps, and playbooks) are maintained in a private documentation repository.
 
 ---
 
@@ -20,12 +22,9 @@
 - Interop and IBC: `docs/interop/INDEX.md`
 - DevOps: `docs/devops/INDEX.md`
 - Roadmap and phases: `docs/roadmap/INDEX.md`
-- Operations and tasks: `docs/ops/INDEX.md`
-- Agent playbooks: `docs/agents/INDEX.md`
 - Frontend: `docs/frontend/INDEX.md`
 - People and orgs: `docs/people/INDEX.md`
 - Legal: `docs/legal/INDEX.md`
-- Website: `docs/website/INDEX.md`
 - Publication policy: `docs/policy/POL-DOCS-PUBLICATION.md`
 
 ---
@@ -51,10 +50,7 @@
 - Engineering: `docs/engineering/INDEX.md`
 - Interop: `docs/interop/INDEX.md`
 - DevOps: `docs/devops/INDEX.md`
-- Roadmap and ops: `docs/roadmap/INDEX.md`, `docs/ops/TODO.md`, `docs/ops/CADENCE.md`, `docs/ops/METRICS.md`
-- Agents: `docs/agents/INDEX.md`
+- Roadmap: `docs/roadmap/INDEX.md`
 - Frontend: `docs/frontend/INDEX.md`
 - People and orgs: `docs/people/INDEX.md`
 - Legal: `docs/legal/INDEX.md`
-- Website: `docs/website/INDEX.md`
-- Restricted: `dcorps-docs-private/docs/restricted/README.md` (safety-sensitive only)

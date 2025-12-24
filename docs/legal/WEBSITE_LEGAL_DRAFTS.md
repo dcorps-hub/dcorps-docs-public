@@ -22,4 +22,4 @@
 
 - Legal review is required before publication.
 - Revisions must be tracked with publish and update dates.
-- Any material changes must be logged in `docs/master/DECISION_LOG.md`.
+- Any material changes must be logged in internal decision tracking.
