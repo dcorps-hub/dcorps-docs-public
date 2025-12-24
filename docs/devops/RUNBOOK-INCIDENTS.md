@@ -3,7 +3,7 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-INCIDENTS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/devops/RUNBOOK-INCIDENTS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-INCIDENTS.md`)
 
 > Scope: Operational incident steps aligned to `docs/security/INCIDENT-RESPONSE.md`.
 

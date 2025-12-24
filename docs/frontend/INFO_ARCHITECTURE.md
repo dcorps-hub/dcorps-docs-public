@@ -3,7 +3,7 @@
 **Document type**: Frontend requirements  
 **Doc ID**: FE-INFO-ARCH  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/frontend/INFO_ARCHITECTURE.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/INFO_ARCHITECTURE.md`)
 
 > Scope: Canonical information architecture across the public site, docs, and app surfaces.
 
@@ -37,4 +37,4 @@
 
 - Public site must link to docs and specs for detailed behavior.
 - App surfaces must link to relevant spec sections when presenting derived views.
-- Do not link to `docs/restricted/` from public surfaces.
+- Do not link to `dcorps-docs-private/docs/restricted/` from public surfaces.

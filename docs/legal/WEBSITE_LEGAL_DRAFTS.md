@@ -3,7 +3,7 @@
 **Document type**: Legal process  
 **Doc ID**: LEGAL-WEBSITE-DRAFTS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/legal/WEBSITE_LEGAL_DRAFTS.md`)
+**Source repo**: dcorps-docs-public (`docs/legal/WEBSITE_LEGAL_DRAFTS.md`)
 
 > Scope: Location and review expectations for website legal pages.
 

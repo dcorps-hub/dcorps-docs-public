@@ -3,7 +3,7 @@
 **Document type**: Policy  
 **Doc ID**: POL-TREASURY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/policy/POL-TREASURY.md`)
+**Source repo**: dcorps-docs-public (`docs/policy/POL-TREASURY.md`)
 
 > Scope: Management of protocol and foundation treasury assets, including objectives, controls, and transparency expectations.
 

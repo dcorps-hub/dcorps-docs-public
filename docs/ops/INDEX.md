@@ -3,7 +3,7 @@
 **Document type**: Operations index  
 **Doc ID**: OPS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/ops/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/ops/INDEX.md`)
 
 > Scope: How ongoing tasks, decisions, and open questions are tracked.
 

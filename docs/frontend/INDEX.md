@@ -3,7 +3,7 @@
 **Document type**: Frontend index  
 **Doc ID**: FE-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/frontend/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/INDEX.md`)
 
 > Scope: Frontend requirements, roadmap, and decisions for the website, explorer, and applications.
 

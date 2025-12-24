@@ -3,7 +3,7 @@
 **Document type**: Website map  
 **Doc ID**: WEBSITE-SITEMAP  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/website/SITEMAP.md`)
+**Source repo**: dcorps-docs-public (`docs/website/SITEMAP.md`)
 
 > Scope: Map public routes to their content files in the `dcorps-site` repo.
 

@@ -3,7 +3,7 @@
 **Document type**: Normative spec  
 **Doc ID**: SPEC-ANCHOR  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-ANCHOR.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/SPEC-ANCHOR.md`)
 
 > Scope: How recognized sub chains anchor commitments back to the Hub and how the Hub interprets them for recognition, security, and observability.
 

@@ -3,7 +3,7 @@
 **Document type**: Website guideline  
 **Doc ID**: WEBSITE-CONTENT-GUIDE  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/website/CONTENT_GUIDELINES.md`)
+**Source repo**: dcorps-docs-public (`docs/website/CONTENT_GUIDELINES.md`)
 
 > Scope: Rules to keep the public website aligned with the documentation set.
 

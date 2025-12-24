@@ -3,7 +3,7 @@
 **Document type**: Normative spec  
 **Doc ID**: SPEC-PARAMS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-PARAMS.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/SPEC-PARAMS.md`)
 
 > Scope: Parameter catalog and economic rules for the Hub and Hub-aligned sub chains. This spec defines how parameters are modeled and governed, not their final numeric values.
 

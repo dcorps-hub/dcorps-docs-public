@@ -3,7 +3,7 @@
 **Document type**: Normative spec  
 **Doc ID**: SPEC-ATTESTATIONS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-ATTESTATIONS.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/SPEC-ATTESTATIONS.md`)
 
 > Scope: Defines the minimum required record format and lifecycle rules for attestation-style protocol modules, plus reference interface requirements for presenting attestation outputs.
 

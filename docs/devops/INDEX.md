@@ -3,7 +3,7 @@
 **Document type**: DevOps index  
 **Doc ID**: DEVOPS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/INDEX.md`)
 
 > Scope: How infrastructure, environments, releases, and operations are planned for dCorps.
 

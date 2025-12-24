@@ -3,7 +3,7 @@
 **Document type**: Operations plan  
 **Doc ID**: OPS-PHASED-PLAN  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/ops/PHASED_PLAN.md`)
+**Source repo**: dcorps-docs-public (`docs/ops/PHASED_PLAN.md`)
 
 > Scope: Ordered execution plan by phase. Task IDs refer to `docs/ops/TODO.md` and must be updated there when status changes.
 

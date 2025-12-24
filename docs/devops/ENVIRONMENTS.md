@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-ENVIRONMENTS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/ENVIRONMENTS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/ENVIRONMENTS.md`)
 
 > Scope: Define dev, staging, and prod environments for dCorps infrastructure.
 

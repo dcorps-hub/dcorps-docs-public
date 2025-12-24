@@ -3,7 +3,7 @@
 **Document type**: Frontend roadmap  
 **Doc ID**: FE-ROADMAP  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/frontend/ROADMAP.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/ROADMAP.md`)
 
 > Scope: Phased plan to evolve from a static site to full explorer and app surfaces.
 

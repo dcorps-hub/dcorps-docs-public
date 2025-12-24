@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-IBC-OPS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/IBC_OPERATIONS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/IBC_OPERATIONS.md`)
 
 > Scope: Operational requirements for IBC relayers and channel health.
 

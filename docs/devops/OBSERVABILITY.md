@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-OBSERVABILITY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/OBSERVABILITY.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/OBSERVABILITY.md`)
 
 > Scope: Metrics, logs, and alerts required for a healthy dCorps network.
 

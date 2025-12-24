@@ -3,7 +3,7 @@
 **Document type**: Engineering decisions  
 **Doc ID**: ENG-STACK  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/engineering/STACK.md`)
+**Source repo**: dcorps-docs-public (`docs/engineering/STACK.md`)
 
 > Scope: Baseline implementation stack for the Hub chain, indexer, and app surfaces. Changes require updating this file and the Decision Log.
 

@@ -3,7 +3,7 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-VESTING-SCHEDULES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/token/TOKEN-VESTING-SCHEDULES.md`)
+**Source repo**: dcorps-docs-public (`docs/token/TOKEN-VESTING-SCHEDULES.md`)
 
 > Scope: Baseline vesting and lockup schedules for DCHUB allocations. These align with the Master Reference and Genesis Plan.
 

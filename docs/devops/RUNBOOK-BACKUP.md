@@ -3,7 +3,7 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-BACKUP  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/devops/RUNBOOK-BACKUP.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-BACKUP.md`)
 
 > Scope: Public-safe backup, snapshot, and restore procedures.
 

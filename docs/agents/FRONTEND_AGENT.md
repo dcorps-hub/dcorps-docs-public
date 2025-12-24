@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-FRONTEND  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/FRONTEND_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/FRONTEND_AGENT.md`)
 
 > Scope: Website, explorer, and wallet-connected app UX.
 

@@ -3,7 +3,7 @@
 **Document type**: Master index  
 **Doc ID**: DOCS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/INDEX.md`)
 
 > Scope: Canonical entry point for all dCorps documentation across protocol, policy, operations, people, and website content.
 
@@ -57,4 +57,4 @@
 - People and orgs: `docs/people/INDEX.md`
 - Legal: `docs/legal/INDEX.md`
 - Website: `docs/website/INDEX.md`
-- Restricted: `docs/restricted/README.md` (safety-sensitive only)
+- Restricted: `dcorps-docs-private/docs/restricted/README.md` (safety-sensitive only)

@@ -5,7 +5,7 @@
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs (`docs/public/technical/INTEGRATION_GUIDE.md`)
+**Source repo**: dcorps-docs-public (`docs/public/technical/INTEGRATION_GUIDE.md`)
 
 ---
 
@@ -13,7 +13,7 @@
 
 This guide is descriptive. Normative behavior, schemas, and compatibility rules are defined in `docs/spec/`. Nothing here is investment, legal, tax, or accounting advice.
 
-Note: In this repo, `docs/spec/` is part of the public documentation set. Only safety-sensitive operational material is intended to be kept out of public distribution under `docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
+Note: In this repo, `docs/spec/` is part of the public documentation set. Only safety-sensitive operational material is intended to be kept out of public distribution under `dcorps-docs-private/docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 ---
 

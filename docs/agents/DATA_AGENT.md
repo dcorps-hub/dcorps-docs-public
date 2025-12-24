@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-DATA  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/DATA_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/DATA_AGENT.md`)
 
 > Scope: Indexer, reporting, and data interfaces.
 

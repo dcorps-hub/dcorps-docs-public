@@ -3,7 +3,7 @@
 **Document type**: Repository index  
 **Doc ID**: REPOS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/REPOS.md`)
+**Source repo**: dcorps-docs-public (`docs/REPOS.md`)
 
 > Scope: Inventory of repositories that make up the dCorps ecosystem.
 
@@ -11,8 +11,11 @@
 
 ## Active repositories
 
-- `dcorps-docs` (this repo)  
+- `dcorps-docs-public` (this repo)  
   - Purpose: master documentation, specs, policies, and public docs.
+- `dcorps-docs-private` (sibling repo)  
+  - Purpose: restricted and safety-sensitive documentation.  
+  - Path: `../dcorps-docs-private`
 - `dcorps-site` (sibling repo)  
   - Purpose: public website source and content.  
   - Path: `../dcorps-site`

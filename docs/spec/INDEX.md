@@ -3,7 +3,7 @@
 **Document type**: Spec index  
 **Doc ID**: SPECS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/INDEX.md`)
 
 > Scope: Canonical entry point for the normative protocol specifications. These documents are developer and auditor oriented and define “what is” and “what must be” for compatibility.
 
@@ -68,4 +68,4 @@ When there is any conflict, treat `docs/spec/*` as the source of truth.
 
 ## Publication note
 
-This repo is public by default. Safety-sensitive operational material (not needed for third-party compatibility) belongs under `docs/restricted/` and must be excluded from public website/exports (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
+This repo is public by default. Safety-sensitive operational material (not needed for third-party compatibility) belongs under `dcorps-docs-private/docs/restricted/` and must be excluded from public website/exports (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).

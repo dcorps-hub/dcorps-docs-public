@@ -3,7 +3,7 @@
 **Document type**: Operations policy  
 **Doc ID**: OPS-CADENCE  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/ops/CADENCE.md`)
+**Source repo**: dcorps-docs-public (`docs/ops/CADENCE.md`)
 
 > Scope: Update cadence for the roadmap, backlog, and decision tracking.
 

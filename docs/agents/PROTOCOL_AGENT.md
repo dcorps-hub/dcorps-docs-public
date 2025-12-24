@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-PROTOCOL  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/PROTOCOL_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/PROTOCOL_AGENT.md`)
 
 > Scope: Core protocol and chain implementation work.
 

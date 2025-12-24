@@ -3,7 +3,7 @@
 **Document type**: Security policy  
 **Doc ID**: KEY-MANAGEMENT  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/security/KEY-MANAGEMENT.md`)
+**Source repo**: dcorps-docs-public (`docs/security/KEY-MANAGEMENT.md`)
 
 > Scope: Public-safe guidance for key custody, rotation, and separation of duties.
 
@@ -42,4 +42,4 @@
 
 ## 5. Restricted details
 
-Operational details for key storage, rotation steps, and emergency access are kept under `docs/restricted/` when needed.
+Operational details for key storage, rotation steps, and emergency access are kept under `dcorps-docs-private/docs/restricted/` when needed.

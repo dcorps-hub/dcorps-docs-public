@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-POLICY-LEGAL  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/POLICY_LEGAL_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/POLICY_LEGAL_AGENT.md`)
 
 > Scope: Governance, legal posture, and policy documentation.
 

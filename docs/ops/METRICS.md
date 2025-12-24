@@ -3,7 +3,7 @@
 **Document type**: Operations metrics  
 **Doc ID**: OPS-METRICS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/ops/METRICS.md`)
+**Source repo**: dcorps-docs-public (`docs/ops/METRICS.md`)
 
 > Scope: Measurable success metrics for each roadmap phase.
 

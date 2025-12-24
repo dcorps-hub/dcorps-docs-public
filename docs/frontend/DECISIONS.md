@@ -3,7 +3,7 @@
 **Document type**: Decision log  
 **Doc ID**: FE-DECISIONS  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/frontend/DECISIONS.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/DECISIONS.md`)
 
 > Scope: Track open decisions and final choices for frontend architecture.
 

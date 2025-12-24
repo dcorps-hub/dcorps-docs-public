@@ -3,7 +3,7 @@
 **Document type**: People roster  
 **Doc ID**: PEOPLE-TEAM  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/people/TEAM.md`)
+**Source repo**: dcorps-docs-public (`docs/people/TEAM.md`)
 
 > Scope: Record of core contributors and advisors. Keep biographies concise and relevant.
 

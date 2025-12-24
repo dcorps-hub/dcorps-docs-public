@@ -3,7 +3,7 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-TREASURY-FEE-FLOWS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/token/TOKEN-TREASURY-FEE-FLOWS.md`)
+**Source repo**: dcorps-docs-public (`docs/token/TOKEN-TREASURY-FEE-FLOWS.md`)
 
 > Scope: How protocol service fees and treasury-related flows are accounted for and reported.
 

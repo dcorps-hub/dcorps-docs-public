@@ -3,7 +3,7 @@
 **Document type**: People index  
 **Doc ID**: PEOPLE-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/people/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/people/INDEX.md`)
 
 > Scope: Where to find information about the entities that build and steward dCorps, plus team and hiring.
 

@@ -3,7 +3,7 @@
 **Document type**: Engineering index  
 **Doc ID**: ENG-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/engineering/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/engineering/INDEX.md`)
 
 > Scope: Entry point for implementation notes and technical orientation.
 

@@ -3,7 +3,7 @@
 **Document type**: Operations backlog  
 **Doc ID**: OPS-BACKLOG  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/ops/TODO.md`)
+**Source repo**: dcorps-docs-public (`docs/ops/TODO.md`)
 
 > Scope: Canonical, detailed task list for the dCorps project. This replaces scattered TODOs in other repos.
 
@@ -173,12 +173,12 @@ Priority values:
 - [ ] WEB-018 | status: not-started | priority: P1 | phase: 0A | owner: TBD | deps: WEB-017 | Scaffold docs center repo (dcorps-docs-center) with shared header/footer/topbar and base layout.
 - [x] WEB-019 | status: done | priority: P1 | phase: 0A | owner: TBD | deps: WEB-007 | Author a comprehensive plain-language whitepaper for the public website and docs repo.
 - [x] WEB-020 | status: done | priority: P1 | phase: 0A | owner: TBD | deps: WEB-019 | Update tokenomics and DCHUB token pages for full public details and balanced coverage.
-- [ ] WEB-021 | status: not-started | priority: P1 | phase: 0A | owner: TBD | deps: WEB-018 | Configure docs ingestion from dcorps-docs (submodule/CI clone), include public folders only, and block restricted content.
+- [ ] WEB-021 | status: not-started | priority: P1 | phase: 0A | owner: TBD | deps: WEB-018 | Configure docs ingestion from dcorps-docs-public (submodule/CI clone), include public folders only, and block restricted content.
 - [ ] WEB-022 | status: not-started | priority: P1 | phase: 0A | owner: TBD | deps: WEB-021 | Build navigation and sidebars from `docs/INDEX.md` and `docs/public/INDEX.md` with top-level tabs.
 - [ ] WEB-023 | status: not-started | priority: P1 | phase: 0A | owner: TBD | deps: WEB-022 | Implement docs UX (search, TOC, breadcrumbs, prev/next, anchor links) and reading layout.
 - [ ] WEB-024 | status: not-started | priority: P2 | phase: 0A | owner: TBD | deps: WEB-023 | Style doc metadata blocks (Doc ID, Status, Version) and normative/informative callouts.
 - [ ] WEB-025 | status: not-started | priority: P1 | phase: 0A | owner: TBD | deps: WEB-023 | Add link validation and restricted-link guard checks.
-- [ ] WEB-026 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: WEB-025 | Set up auto-sync pipeline from dcorps-docs with rebuilds on update.
+- [ ] WEB-026 | status: not-started | priority: P1 | phase: 1 | owner: TBD | deps: WEB-025 | Set up auto-sync pipeline from dcorps-docs-public with rebuilds on update.
 - [ ] WEB-027 | status: not-started | priority: P2 | phase: 1 | owner: TBD | deps: WEB-026 | Prepare deployment config and subdomain instructions (DNS/cert).
 - [x] WEB-005 | status: done | priority: P2 | phase: 1 | owner: docs | deps: - | Define copy update process to keep site aligned with `docs/master/DCHUB_MASTER.md`.
 

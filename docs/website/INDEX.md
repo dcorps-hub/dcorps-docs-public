@@ -3,7 +3,7 @@
 **Document type**: Website index  
 **Doc ID**: WEBSITE-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/website/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/website/INDEX.md`)
 
 > Scope: Document how the public website is organized and where its content lives.
 

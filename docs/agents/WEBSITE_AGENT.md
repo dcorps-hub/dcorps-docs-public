@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-WEBSITE  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/WEBSITE_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/WEBSITE_AGENT.md`)
 
 > Scope: Public website content and alignment with docs.
 

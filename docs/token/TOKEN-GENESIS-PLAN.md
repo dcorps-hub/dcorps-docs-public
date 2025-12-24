@@ -3,7 +3,7 @@
 **Document type**: Token plan  
 **Doc ID**: TOKEN-GENESIS-PLAN  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/token/TOKEN-GENESIS-PLAN.md`)
+**Source repo**: dcorps-docs-public (`docs/token/TOKEN-GENESIS-PLAN.md`)
 
 > Scope: Initial supply, allocations, vesting, and launch mechanics for DCHUB at network genesis. This plan aligns with the token model in `docs/master/DCHUB_MASTER.md` (section 10).
 

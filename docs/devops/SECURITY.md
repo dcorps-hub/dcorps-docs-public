@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-SECURITY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/SECURITY.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/SECURITY.md`)
 
 > Scope: Security posture for infrastructure and operations. No live secrets are stored in this repo.
 
@@ -22,7 +22,7 @@
 
 - Use dedicated secret management tools and access controls.
 - Rotate keys and credentials on a schedule.
-- Keep sensitive runbook details in `docs/restricted/` if needed.
+- Keep sensitive runbook details in `dcorps-docs-private/docs/restricted/` if needed.
 - Public-safe key policy: `docs/security/KEY-MANAGEMENT.md`.
 
 ---

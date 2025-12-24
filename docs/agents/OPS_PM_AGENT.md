@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-OPS-PM  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/OPS_PM_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/OPS_PM_AGENT.md`)
 
 > Scope: Backlog, sequencing, and coordination across agents.
 

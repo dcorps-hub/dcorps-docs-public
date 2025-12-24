@@ -3,7 +3,7 @@
 **Document type**: Frontend requirements  
 **Doc ID**: FE-EXPLORER-REQ  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/frontend/EXPLORER_REQUIREMENTS.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/EXPLORER_REQUIREMENTS.md`)
 
 > Scope: Read-only explorer requirements for Phase 1.
 

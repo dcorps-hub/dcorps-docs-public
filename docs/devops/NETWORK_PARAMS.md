@@ -3,7 +3,7 @@
 **Document type**: DevOps reference  
 **Doc ID**: DEVOPS-NETWORK-PARAMS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/devops/NETWORK_PARAMS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/NETWORK_PARAMS.md`)
 
 > Scope: Baseline chain IDs, denoms, prefixes, and genesis parameter defaults for dev, testnet, and mainnet.
 

@@ -3,7 +3,7 @@
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/roadmap/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/roadmap/INDEX.md`)
 
 > Scope: Consolidated view of dCorps phases and roadmap sources.
 

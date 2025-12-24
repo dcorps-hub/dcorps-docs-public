@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-DEVOPS  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/DEVOPS_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/DEVOPS_AGENT.md`)
 
 > Scope: Infrastructure, environments, releases, and operations.
 

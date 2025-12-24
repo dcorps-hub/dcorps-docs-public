@@ -3,7 +3,7 @@
 **Document type**: Context summary  
 **Doc ID**: DOCS-CONTEXT  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/CONTEXT.md`)
+**Source repo**: dcorps-docs-public (`docs/CONTEXT.md`)
 
 > Scope: One-page summary of what dCorps is, who it is for, and how the system is organized.
 

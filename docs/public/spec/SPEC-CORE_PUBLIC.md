@@ -3,7 +3,7 @@
 **Document type**: Public-facing spec  
 **Doc ID**: SPEC-CORE-PUBLIC  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/public/spec/SPEC-CORE_PUBLIC.md`)
+**Source repo**: dcorps-docs-public (`docs/public/spec/SPEC-CORE_PUBLIC.md`)
 
 > Scope: Public subset of `docs/spec/SPEC-CORE.md` for integrators and external reviewers. This document focuses on externally visible behavior and concepts.
 > Public index (recommended starting point): `docs/public/INDEX.md`

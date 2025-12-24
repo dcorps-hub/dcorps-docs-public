@@ -3,7 +3,7 @@
 **Document type**: Engineering map  
 **Doc ID**: ENG-PROTOCOL-INTERFACES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/engineering/PROTOCOL_INTERFACES.md`)
+**Source repo**: dcorps-docs-public (`docs/engineering/PROTOCOL_INTERFACES.md`)
 
 > Scope: High-level map of interface surfaces that implementations and integrators must support. This is not a full API reference; it points to normative specs.
 

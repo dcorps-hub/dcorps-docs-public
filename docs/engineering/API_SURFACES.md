@@ -3,7 +3,7 @@
 **Document type**: Engineering interface plan  
 **Doc ID**: ENG-API-SURFACES  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/engineering/API_SURFACES.md`)
+**Source repo**: dcorps-docs-public (`docs/engineering/API_SURFACES.md`)
 
 > Scope: Planned protobuf messages, gRPC queries, REST routes, and events for the Hub chain. This is the baseline for implementation.
 

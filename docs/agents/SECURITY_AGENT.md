@@ -3,7 +3,7 @@
 **Document type**: Agent playbook  
 **Doc ID**: AGENT-SECURITY  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/agents/SECURITY_AGENT.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/SECURITY_AGENT.md`)
 
 > Scope: Security posture, audits, and incident readiness.
 

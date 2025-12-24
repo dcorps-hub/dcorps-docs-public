@@ -3,7 +3,7 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-EMISSIONS-NOTES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/token/TOKEN-EMISSIONS-NOTES.md`)
+**Source repo**: dcorps-docs-public (`docs/token/TOKEN-EMISSIONS-NOTES.md`)
 
 > Scope: How DCHUB enters circulation over time under the fixed-supply model described in `docs/master/DCHUB_MASTER.md` (section 10). This document describes protocol mechanics, not market outcomes.
 

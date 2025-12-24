@@ -3,7 +3,7 @@
 **Document type**: Agent index  
 **Doc ID**: AGENTS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/agents/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/agents/INDEX.md`)
 
 > Scope: Playbooks for specialized agents working on dCorps tasks.
 

@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-CICD  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/CI_CD.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/CI_CD.md`)
 
 > Scope: Describe automated checks and release flow for documentation and, later, chain code.
 

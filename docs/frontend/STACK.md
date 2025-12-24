@@ -3,7 +3,7 @@
 **Document type**: Frontend guide  
 **Doc ID**: FE-STACK  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/frontend/STACK.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/STACK.md`)
 
 > Scope: Record current frontend state and future requirements.
 

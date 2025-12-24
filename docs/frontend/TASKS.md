@@ -3,7 +3,7 @@
 **Document type**: Frontend tasks  
 **Doc ID**: FE-TASKS  
 **Status**: Living  
-**Source repo**: dcorps-docs (`docs/frontend/TASKS.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/TASKS.md`)
 
 > Scope: Frontend-specific tasks. The authoritative, cross-team backlog is in `docs/ops/TODO.md`.
 

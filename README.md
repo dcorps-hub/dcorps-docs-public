@@ -1,4 +1,4 @@
-# dcorps-docs
+# dcorps-docs-public
 
 Master documentation and specifications for the dCorps Hub protocol, including the Master Reference (whitepaper), protocol specifications, policies, security documents, and token documentation.
 
@@ -17,7 +17,7 @@ This repo exists to:
 - Hold the **Master Reference** for the dCorps Hub.
 - Hold **normative specs** for protocol behavior, parameters, modules, and data.
 - Hold **governance, treasury, token, and security policies**.
-- Publish documentation **public by default**, with safety-sensitive exceptions under `docs/restricted/` (see `docs/policy/POL-DOCS-PUBLICATION.md`).
+- Publish documentation **public by default**, with safety-sensitive exceptions stored in `dcorps-docs-private/docs/restricted/` (see `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 Anything that defines how the protocol works, how entities behave, or how we describe dCorps externally should live here first, then be surfaced outward through controlled exports (manual for now; see `tools/docgen/README.md`).
 
@@ -112,8 +112,6 @@ docs/
   website/
     INDEX.md                 Website documentation index
     SITEMAP.md               Website sitemap and content sources
-  restricted/
-    README.md                Safety-sensitive material (excluded from public website/exports)
   public/
     INDEX.md                   Public doc map (start here)
     investor/
@@ -157,9 +155,9 @@ What must be private (or excluded from public distribution):
 How we organize this:
 
 - Public-by-default docs live throughout `docs/` (including `docs/spec/`, `docs/policy/`, `docs/security/`, and `docs/token/`).
-- Safety-sensitive operational material belongs under `docs/restricted/` and must be excluded from the public website and public exports.
+- Safety-sensitive operational material belongs in `dcorps-docs-private/docs/restricted/` and must be excluded from the public website and public exports.
 
 If repository visibility changes:
 
-- If the repository is made public, review `docs/restricted/` first and remove or redact anything that creates undue safety risk.
+- If `dcorps-docs-private` is ever made public, review `dcorps-docs-private/docs/restricted/` first and remove or redact anything that creates undue safety risk.
 - Use the policy as the source of truth: `docs/policy/POL-DOCS-PUBLICATION.md`.

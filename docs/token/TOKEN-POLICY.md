@@ -3,7 +3,7 @@
 **Document type**: Token policy  
 **Doc ID**: TOKEN-POLICY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/token/TOKEN-POLICY.md`)
+**Source repo**: dcorps-docs-public (`docs/token/TOKEN-POLICY.md`)
 
 > Scope: Purpose, allowed uses, and constraints for the DCHUB token, consistent with the Master Reference disclaimers. This document is not an offer or solicitation of any kind.
 

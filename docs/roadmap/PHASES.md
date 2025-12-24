@@ -3,7 +3,7 @@
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-PHASES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/roadmap/PHASES.md`)
+**Source repo**: dcorps-docs-public (`docs/roadmap/PHASES.md`)
 
 > Scope: Define phase goals and exit criteria based on the Master Reference (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
 

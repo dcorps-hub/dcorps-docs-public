@@ -3,7 +3,7 @@
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CONFORMANCE-TESTS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-CONFORMANCE-TESTS.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/SPEC-CONFORMANCE-TESTS.md`)
 
 > Scope: Defines the minimum conformance test coverage and reporting format for implementations that claim compatibility with dCorps specifications (Hub implementations, protocol modules, indexers, explorers, and reporting tooling).
 

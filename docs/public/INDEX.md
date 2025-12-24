@@ -3,7 +3,7 @@
 **Document type**: Public index  
 **Doc ID**: DOCS-PUBLIC-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/public/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/public/INDEX.md`)
 
 > Scope: Canonical entry point for public-facing dCorps documents. Use the “Reader paths” section to pick the right depth for your goals.
 
@@ -81,7 +81,7 @@ Normative specs (developer and auditor oriented):
 - `docs/spec/SPEC-INDEXER.md`
 - `docs/spec/SPEC-CONFORMANCE-TESTS.md`
 
-Publication note: documentation is public by default; only safety-sensitive operational material is intended to be kept out of public distribution under `docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
+Publication note: documentation is public by default; only safety-sensitive operational material is intended to be kept out of public distribution under `dcorps-docs-private/docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 ---
 
