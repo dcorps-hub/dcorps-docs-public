@@ -3,7 +3,7 @@
 **Document type**: Policy  
 **Doc ID**: POL-DOCS-PUBLICATION  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/policy/POL-DOCS-PUBLICATION.md`)
+**Source repo**: dcorps-docs-public (`docs/policy/POL-DOCS-PUBLICATION.md`)
 
 > Scope: Defines what is published by default, what must be restricted for safety, and how to keep public and restricted materials consistent.
 
@@ -25,13 +25,13 @@ A document MUST be treated as **restricted** if publishing it would reasonably i
 - ecosystem participants (validators, operators, integrators, entities);
 - custody, keys, credentials, or operational controls.
 
-Restricted documents MUST be placed under `docs/restricted/` and MUST NOT be published on the public website.
+Restricted documents MUST be placed under `dcorps-docs-private/docs/restricted/` and MUST NOT be published on the public website.
 
-Restricted documents MAY still be stored and versioned in this repository for internal sharing and backup, as long as repository visibility and access controls are managed appropriately.
+Restricted documents MAY still be stored and versioned in the private repository `dcorps-docs-private` for internal sharing and backup, as long as repository visibility and access controls are managed appropriately.
 
 ---
 
-## 3. What belongs in `docs/restricted/`
+## 3. What belongs in `dcorps-docs-private/docs/restricted/`
 
 Examples of restricted content include:
 
@@ -42,7 +42,7 @@ Examples of restricted content include:
 
 General “security posture” documents that avoid sensitive operational detail (e.g. `SECURITY-POLICY.md`, `THREAT-MODEL.md`, `BUG-BOUNTY.md`) are intended to remain public.
 
-Even in `docs/restricted/`, do not store live secrets. Keep secrets in dedicated secret-management systems.
+Even in `dcorps-docs-private/docs/restricted/`, do not store live secrets. Keep secrets in dedicated secret-management systems.
 
 ---
 
@@ -50,14 +50,14 @@ Even in `docs/restricted/`, do not store live secrets. Keep secrets in dedicated
 
 Security-relevant information should be published in a way that supports transparency without creating avoidable harm.
 
-- If an issue is **unpatched or actively exploitable**, keep detailed reproduction steps, exploit paths, and proofs in `docs/restricted/` until remediation is shipped.
+- If an issue is **unpatched or actively exploitable**, keep detailed reproduction steps, exploit paths, and proofs in `dcorps-docs-private/docs/restricted/` until remediation is shipped.
 - After remediation, publish a public write-up (e.g. incident report or advisory) that communicates impact, timeline, and fixes, while omitting unnecessary attacker-enabling detail.
 
 ---
 
 ## 5. Link and navigation rules
 
-- Public documents MUST NOT link to `docs/restricted/`.
+- Public documents MUST NOT link to restricted material in `dcorps-docs-private`.
 - Restricted documents MAY link to public documents.
 - If a public document needs to reference restricted material, use neutral language (e.g. “internal runbook available to operators”) without exposing locations or details.
 
@@ -65,8 +65,8 @@ Security-relevant information should be published in a way that supports transpa
 
 ## 6. Publishing rule (website and exports)
 
-Public website and public documentation exports MUST include everything under `docs/` **except** `docs/restricted/`.
+Public website and public documentation exports MUST include everything under `dcorps-docs-public/docs/` and MUST exclude anything under `dcorps-docs-private/docs/restricted/`.
 
-If a separate public mirror is used, exclude `docs/restricted/` from the mirror.
+If a separate public mirror is used, exclude `dcorps-docs-private` from the mirror.
 
-If the entire repository is made public, review `docs/restricted/` before publishing and remove or redact any material that would create undue safety risk.
+If `dcorps-docs-private` is made public, review `dcorps-docs-private/docs/restricted/` before publishing and remove or redact any material that would create undue safety risk.

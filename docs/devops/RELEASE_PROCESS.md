@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-RELEASE-PROCESS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/RELEASE_PROCESS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/RELEASE_PROCESS.md`)
 
 > Scope: Define how changes move from dev to staging to prod, and what approvals and verification are required.
 

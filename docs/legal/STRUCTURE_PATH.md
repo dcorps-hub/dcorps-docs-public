@@ -3,7 +3,7 @@
 **Document type**: Legal summary  
 **Doc ID**: LEGAL-STRUCTURE-PATH  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/legal/STRUCTURE_PATH.md`)
+**Source repo**: dcorps-docs-public (`docs/legal/STRUCTURE_PATH.md`)
 
 > Scope: Summary of the intended legal structure path described in the Master Reference.
 
@@ -35,4 +35,4 @@
 
 ## 4. Change control
 
-Any material change to the legal structure path must be documented in governance proposals and recorded in `docs/master/DECISION_LOG.md`.
+Any material change to the legal structure path must be documented in governance proposals and recorded in internal decision tracking.

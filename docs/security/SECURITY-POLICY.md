@@ -3,7 +3,7 @@
 **Document type**: Policy  
 **Doc ID**: SECURITY-POLICY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/security/SECURITY-POLICY.md`)
+**Source repo**: dcorps-docs-public (`docs/security/SECURITY-POLICY.md`)
 
 > Scope: Security principles, responsibilities, and baseline controls for the dCorps protocol and foundation. This policy is complementary to the Threat Model, Audit Plan, Bug Bounty, and Incident Response documents.
 

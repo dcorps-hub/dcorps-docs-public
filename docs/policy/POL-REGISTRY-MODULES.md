@@ -3,7 +3,7 @@
 **Document type**: Policy  
 **Doc ID**: POL-REGISTRY-MODULES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/policy/POL-REGISTRY-MODULES.md`)
+**Source repo**: dcorps-docs-public (`docs/policy/POL-REGISTRY-MODULES.md`)
 
 > Scope: Rules for listing, maintaining, and delisting modules and applications in official dCorps registries.
 

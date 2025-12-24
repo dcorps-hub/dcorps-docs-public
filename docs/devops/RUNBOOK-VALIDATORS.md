@@ -3,7 +3,7 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-VALIDATORS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/devops/RUNBOOK-VALIDATORS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-VALIDATORS.md`)
 
 > Scope: Public-safe validator onboarding steps and key rotation guidance.
 

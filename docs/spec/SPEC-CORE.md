@@ -3,7 +3,7 @@
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CORE  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-CORE.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/SPEC-CORE.md`)
 
 > Scope: Core behavior of the dCorps Hub chain as a registry and coordination layer for entities, roles, wallets, and baseline governance. This document is normative where explicitly stated.
 

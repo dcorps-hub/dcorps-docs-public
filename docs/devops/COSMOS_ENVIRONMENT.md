@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-COSMOS-ENV  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/COSMOS_ENVIRONMENT.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/COSMOS_ENVIRONMENT.md`)
 
 > Scope: Summarize what is required to stand up a Cosmos-based environment for the dCorps Hub.
 

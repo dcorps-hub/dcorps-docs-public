@@ -4,7 +4,7 @@
 **Doc ID**: DCORPS-DISCLAIMERS-PUBLIC-2025-12-21  
 **Status**: Final v0.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs (`docs/public/legal/DISCLAIMERS.md`)
+**Source repo**: dcorps-docs-public (`docs/public/legal/DISCLAIMERS.md`)
 
 ---
 

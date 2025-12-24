@@ -3,7 +3,7 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-TREASURY-FEE-FLOWS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/token/TOKEN-TREASURY-FEE-FLOWS.md`)
+**Source repo**: dcorps-docs-public (`docs/token/TOKEN-TREASURY-FEE-FLOWS.md`)
 
 > Scope: How protocol service fees and treasury-related flows are accounted for and reported.
 
@@ -46,4 +46,4 @@ Reporting should be derived from tagged on-chain events where possible.
 ## 4. Change control
 
 - Fee routing changes require governance approval.
-- Changes must be recorded in `docs/master/DECISION_LOG.md`.
+- Changes must be recorded in internal decision tracking.

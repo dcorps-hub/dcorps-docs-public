@@ -3,7 +3,7 @@
 **Document type**: Legal index  
 **Doc ID**: LEGAL-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/legal/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/legal/INDEX.md`)
 
 > Scope: Map legal and compliance documents across the ecosystem.
 

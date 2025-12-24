@@ -5,7 +5,7 @@
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs (`docs/public/technical/TECHNICAL_OVERVIEW.md`)
+**Source repo**: dcorps-docs-public (`docs/public/technical/TECHNICAL_OVERVIEW.md`)
 
 ---
 

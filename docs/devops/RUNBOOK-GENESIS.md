@@ -3,7 +3,7 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-GENESIS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/devops/RUNBOOK-GENESIS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-GENESIS.md`)
 
 > Scope: Public-safe steps to build, verify, and publish a genesis file.
 

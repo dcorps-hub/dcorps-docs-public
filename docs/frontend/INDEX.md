@@ -3,7 +3,7 @@
 **Document type**: Frontend index  
 **Doc ID**: FE-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/frontend/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/INDEX.md`)
 
 > Scope: Frontend requirements, roadmap, and decisions for the website, explorer, and applications.
 
@@ -29,10 +29,9 @@
 ## Start here
 
 - Current and future stack notes: `docs/frontend/STACK.md`
-- Frontend roadmap: `docs/frontend/ROADMAP.md`
-- Frontend task list: `docs/frontend/TASKS.md`
-- Open decisions: `docs/frontend/DECISIONS.md`
 - Wallet signing flows: `docs/frontend/SIGNING_FLOWS.md`
 - Information architecture: `docs/frontend/INFO_ARCHITECTURE.md`
 - Explorer requirements: `docs/frontend/EXPLORER_REQUIREMENTS.md`
 - Accessibility guidelines: `docs/frontend/ACCESSIBILITY.md`
+
+Internal frontend planning (tasks, roadmaps, and decision logs) is maintained privately.

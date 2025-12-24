@@ -3,7 +3,7 @@
 **Document type**: Policy  
 **Doc ID**: POL-GOV  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/policy/POL-GOV.md`)
+**Source repo**: dcorps-docs-public (`docs/policy/POL-GOV.md`)
 
 > Scope: Governance structures and processes for the dCorps protocol and related artifacts. This charter describes how decisions are proposed, evaluated, and adopted at the protocol level.
 

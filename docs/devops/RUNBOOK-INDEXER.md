@@ -3,7 +3,7 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-INDEXER  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/devops/RUNBOOK-INDEXER.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-INDEXER.md`)
 
 > Scope: Public-safe steps for indexer backfill and recovery.
 

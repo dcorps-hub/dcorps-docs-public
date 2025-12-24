@@ -3,7 +3,7 @@
 **Document type**: Engineering notes  
 **Doc ID**: ENG-COSMOS-BASE  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/engineering/COSMOS_BASE.md`)
+**Source repo**: dcorps-docs-public (`docs/engineering/COSMOS_BASE.md`)
 
 > Scope: Summarize base-layer assumptions and constraints for the Hub chain.
 

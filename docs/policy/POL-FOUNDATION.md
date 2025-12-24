@@ -3,7 +3,7 @@
 **Document type**: Policy  
 **Doc ID**: POL-FOUNDATION  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/policy/POL-FOUNDATION.md`)
+**Source repo**: dcorps-docs-public (`docs/policy/POL-FOUNDATION.md`)
 
 > Scope: Governance, mission, and operating principles of the dCorps Foundation as a nonprofit steward of the protocol.
 

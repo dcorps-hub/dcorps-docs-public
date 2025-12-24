@@ -3,7 +3,7 @@
 **Document type**: Public-facing reference  
 **Doc ID**: DCHUB-MASTER-PUBLIC  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/public/master/DCHUB_MASTER_PUBLIC.md`)
+**Source repo**: dcorps-docs-public (`docs/public/master/DCHUB_MASTER_PUBLIC.md`)
 
 > Scope: Public subset of `docs/master/DCHUB_MASTER.md`, stripped of internal notes, open questions, and non-public details. This document is descriptive and informational only.
 

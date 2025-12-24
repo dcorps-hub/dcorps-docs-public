@@ -3,7 +3,7 @@
 **Document type**: Frontend requirements  
 **Doc ID**: FE-SIGNING-FLOWS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/frontend/SIGNING_FLOWS.md`)
+**Source repo**: dcorps-docs-public (`docs/frontend/SIGNING_FLOWS.md`)
 
 > Scope: Wallet connection and signing flows for core Hub operations. These flows align with `docs/engineering/API_SURFACES.md`.
 

@@ -3,7 +3,7 @@
 **Document type**: Policy  
 **Doc ID**: POL-VALIDATORS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/policy/POL-VALIDATORS.md`)
+**Source repo**: dcorps-docs-public (`docs/policy/POL-VALIDATORS.md`)
 
 > Scope: Expectations, responsibilities, and consequences for validators participating in the dCorps Hub.
 

@@ -3,7 +3,7 @@
 **Document type**: Security policy  
 **Doc ID**: BUG-BOUNTY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/security/BUG-BOUNTY.md`)
+**Source repo**: dcorps-docs-public (`docs/security/BUG-BOUNTY.md`)
 
 > Scope: Rules and process for reporting vulnerabilities and receiving rewards. Actual reward amounts and legal terms are defined in separate, finalized program documents.
 

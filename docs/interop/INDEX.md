@@ -3,7 +3,7 @@
 **Document type**: Interop index  
 **Doc ID**: INTEROP-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/interop/INDEX.md`)
+**Source repo**: dcorps-docs-public (`docs/interop/INDEX.md`)
 
 > Scope: Entry point for interchain assumptions, IBC usage, and sub chain anchoring.
 

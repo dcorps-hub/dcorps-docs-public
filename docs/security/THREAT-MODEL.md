@@ -3,7 +3,7 @@
 **Document type**: Security analysis  
 **Doc ID**: THREAT-MODEL  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/security/THREAT-MODEL.md`)
+**Source repo**: dcorps-docs-public (`docs/security/THREAT-MODEL.md`)
 
 > Scope: Systematic analysis of threats, assets, and mitigations for the Hub, modules, and recognized sub chains. This document informs design, audits, and incident response.
 

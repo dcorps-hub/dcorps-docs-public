@@ -3,7 +3,7 @@
 **Document type**: Interop notes  
 **Doc ID**: INTEROP-IBC  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/interop/IBC.md`)
+**Source repo**: dcorps-docs-public (`docs/interop/IBC.md`)
 
 > Scope: Summarize how interchain connections are expected to be used for stablecoin operations and optional sub chains.
 

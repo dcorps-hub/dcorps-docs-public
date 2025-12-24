@@ -3,7 +3,7 @@
 **Document type**: DevOps reference  
 **Doc ID**: DEVOPS-NETWORK-PARAMS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/devops/NETWORK_PARAMS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/NETWORK_PARAMS.md`)
 
 > Scope: Baseline chain IDs, denoms, prefixes, and genesis parameter defaults for dev, testnet, and mainnet.
 
@@ -92,4 +92,4 @@ Protected Change thresholds follow `docs/policy/POL-GOV.md`.
 ## 10. Change control
 
 - Baseline values are subject to governance updates.
-- Any changes must be recorded in `docs/master/DECISION_LOG.md`.
+- Any changes must be recorded in internal decision tracking.

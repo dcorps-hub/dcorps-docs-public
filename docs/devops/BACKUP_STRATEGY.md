@@ -3,7 +3,7 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-BACKUP-STRATEGY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/BACKUP_STRATEGY.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/BACKUP_STRATEGY.md`)
 
 > Scope: Snapshot frequency, retention, and verification strategy for chain and indexer data.
 

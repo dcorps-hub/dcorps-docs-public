@@ -3,7 +3,7 @@
 **Document type**: People planning  
 **Doc ID**: PEOPLE-CORE-ROLES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/people/CORE_ROLES.md`)
+**Source repo**: dcorps-docs-public (`docs/people/CORE_ROLES.md`)
 
 > Scope: Core roles needed to execute Phase 0 and Phase 1.
 

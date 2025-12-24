@@ -3,7 +3,7 @@
 **Document type**: Legal process  
 **Doc ID**: LEGAL-WEBSITE-DRAFTS  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/legal/WEBSITE_LEGAL_DRAFTS.md`)
+**Source repo**: dcorps-docs-public (`docs/legal/WEBSITE_LEGAL_DRAFTS.md`)
 
 > Scope: Location and review expectations for website legal pages.
 
@@ -22,4 +22,4 @@
 
 - Legal review is required before publication.
 - Revisions must be tracked with publish and update dates.
-- Any material changes must be logged in `docs/master/DECISION_LOG.md`.
+- Any material changes must be logged in internal decision tracking.

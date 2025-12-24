@@ -3,9 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-RUNBOOKS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/devops/RUNBOOKS.md`)
+**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOKS.md`)
 
-> Scope: List required runbooks. Details may be stored under `docs/restricted/` if they contain sensitive operational steps.
+> Scope: List required runbooks. Details may be stored under `dcorps-docs-private/docs/restricted/` if they contain sensitive operational steps.
 
 ---
 
@@ -23,4 +23,4 @@
 
 ## Status
 
-Public-safe runbooks are drafted. Sensitive operator details belong in `docs/restricted/` if needed.
+Public-safe runbooks are drafted. Sensitive operator details belong in `dcorps-docs-private/docs/restricted/` if needed.

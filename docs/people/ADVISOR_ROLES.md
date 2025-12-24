@@ -3,7 +3,7 @@
 **Document type**: People planning  
 **Doc ID**: PEOPLE-ADVISOR-ROLES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/people/ADVISOR_ROLES.md`)
+**Source repo**: dcorps-docs-public (`docs/people/ADVISOR_ROLES.md`)
 
 > Scope: Advisor roles that strengthen governance, legal, and security posture.
 

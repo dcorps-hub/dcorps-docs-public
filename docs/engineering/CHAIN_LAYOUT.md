@@ -3,7 +3,7 @@
 **Document type**: Engineering plan  
 **Doc ID**: ENG-CHAIN-LAYOUT  
 **Status**: Living v0.1  
-**Source repo**: dcorps-docs (`docs/engineering/CHAIN_LAYOUT.md`)
+**Source repo**: dcorps-docs-public (`docs/engineering/CHAIN_LAYOUT.md`)
 
 > Scope: Planned repository layout and module boundaries for the Hub chain implementation.
 

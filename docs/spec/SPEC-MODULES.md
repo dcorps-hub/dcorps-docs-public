@@ -3,7 +3,7 @@
 **Document type**: Normative spec  
 **Doc ID**: SPEC-MODULES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-MODULES.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/SPEC-MODULES.md`)
 
 > Scope: Standard for protocol modules (jurisdiction adapter modules, sector frameworks, attestation modules, etc.) that extend the Hub without compromising its core invariants.
 

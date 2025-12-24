@@ -3,7 +3,7 @@
 **Document type**: Normative spec  
 **Doc ID**: SPEC-DATA  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs (`docs/spec/SPEC-DATA.md`)
+**Source repo**: dcorps-docs-public (`docs/spec/SPEC-DATA.md`)
 
 > Scope: Data models, schemas, chart of accounts, and tagging standards used across the Hub and modules.
 
