@@ -1,4 +1,4 @@
-# Welcome to the dCorps Docs Center
+# Welcome
 
 **Document type**: Welcome index  
 **Doc ID**: DOCS-WELCOME  
@@ -19,9 +19,15 @@ These Markdown files are the source of truth for the docs center; the public web
 
 ---
 
+## Start here
+
+- dCorps overview: [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
+- Full docs index: [docs/INDEX.md](/INDEX)
+
+---
+
 ## How the docs are organized
 
-- Start here: [docs/INDEX.md](/INDEX) (full index)
 - Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
 - Master reference (long-form): [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER)
 - Protocol specs (normative): [docs/spec/INDEX.md](/spec/INDEX)
@@ -42,7 +48,8 @@ These Markdown files are the source of truth for the docs center; the public web
 
 **If you are new to dCorps**
 
-- Start with [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY).
+- Start with [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW).
+- Then read [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY).
 - Then read [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER).
 
 **If you run a nonprofit or support nonprofits**

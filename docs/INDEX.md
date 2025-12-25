@@ -16,11 +16,10 @@ Internal planning and working documents (backlogs, internal roadmaps, and playbo
 ## Quick entry points
 
 - Docs center welcome: [docs/welcome/INDEX.md](/welcome/INDEX)
-- Context snapshot: [docs/CONTEXT.md](/CONTEXT)
+- dCorps overview: [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
 - Master reference: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER)
 - Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
 - Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
-- Repo map: [docs/REPOS.md](/REPOS)
 - Normative specs: [docs/spec/INDEX.md](/spec/INDEX)
 - Technical build notes: [docs/engineering/INDEX.md](/engineering/INDEX)
 - Interop and IBC: [docs/interop/INDEX.md](/interop/INDEX)

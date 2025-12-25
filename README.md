@@ -30,10 +30,10 @@ High-level layout:
 ```text
 docs/
   INDEX.md                   Master documentation index (start here)
-  CONTEXT.md                 One-page context summary
-  REPOS.md                   Repository map
+  REPOS.md                   Repository map (internal)
   welcome/
     INDEX.md                 Docs center welcome and reader paths
+    OVERVIEW.md              dCorps overview
   master/
     DCHUB_MASTER.md          Master Reference (long whitepaper, source)
     DCHUB_MASTER_PUBLIC.md   Master reference overview
