@@ -3,8 +3,9 @@
 **Document type**: Engineering map  
 **Doc ID**: ENG-PROTOCOL-INTERFACES  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/PROTOCOL_INTERFACES.md](/engineering/PROTOCOL_INTERFACES))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: High-level map of interface surfaces that implementations and integrators must support. This is not a full API reference; it points to normative specs.

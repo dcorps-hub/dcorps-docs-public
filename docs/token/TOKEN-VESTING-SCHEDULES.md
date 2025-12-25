@@ -3,8 +3,9 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-VESTING-SCHEDULES  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Baseline vesting and lockup schedules for DCHUB allocations. These align with the Whitepaper Long and Genesis Plan.

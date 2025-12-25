@@ -1,10 +1,11 @@
-# Whitepaper Suite
+# Whitepaper Index
 
 **Document type**: Whitepaper index  
 **Doc ID**: WHITEPAPER-INDEX  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/INDEX.md](/whitepaper/INDEX))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Entry point for the whitepaper suite and reader-friendly summaries.
@@ -15,7 +16,7 @@
 
 - Executive summary (1-2 pages): [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
 - Litepaper (short narrative + architecture): [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
-- Official whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
 
 ---
 
@@ -24,8 +25,8 @@
 - Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
 - Whitepaper (plain language): [docs/whitepaper/WHITEPAPER_PLAIN_LANGUAGE.md](/whitepaper/WHITEPAPER_PLAIN_LANGUAGE)
 - Litepaper: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
-- Whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
-- Whitepaper (long): [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
+- Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Official whitepaper (long): [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Nonprofit note: [docs/whitepaper/NONPROFIT_NOTE.md](/whitepaper/NONPROFIT_NOTE)
 - FAQ: [docs/whitepaper/FAQ.md](/whitepaper/FAQ)
 - Glossary: [docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY)

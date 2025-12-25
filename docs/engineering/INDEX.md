@@ -3,8 +3,9 @@
 **Document type**: Engineering index  
 **Doc ID**: ENG-INDEX  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/INDEX.md](/engineering/INDEX))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Entry point for implementation notes and technical orientation.

@@ -3,8 +3,9 @@
 **Document type**: Policy  
 **Doc ID**: POL-GOV  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-GOV.md](/policy/POL-GOV))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Governance structures and processes for the dCorps protocol and related artifacts. This charter describes how decisions are proposed, evaluated, and adopted at the protocol level.

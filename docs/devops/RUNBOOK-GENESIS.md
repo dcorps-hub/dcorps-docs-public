@@ -3,8 +3,9 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-GENESIS  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/RUNBOOK-GENESIS.md](/devops/RUNBOOK-GENESIS))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Public-safe steps to build, verify, and publish a genesis file for devnet, testnet, or mainnet.

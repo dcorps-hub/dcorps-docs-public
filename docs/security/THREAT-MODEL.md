@@ -3,8 +3,9 @@
 **Document type**: Security analysis  
 **Doc ID**: THREAT-MODEL  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/security/THREAT-MODEL.md](/security/THREAT-MODEL))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Systematic analysis of threats, assets, and mitigations for the Hub, modules, and recognized sub chains. This document informs design, audits, and incident response.

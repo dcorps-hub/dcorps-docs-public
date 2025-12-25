@@ -3,8 +3,9 @@
 **Document type**: People planning  
 **Doc ID**: PEOPLE-ADVISOR-ROLES  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/people/ADVISOR_ROLES.md](/people/ADVISOR_ROLES))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Advisor roles that strengthen governance, legal, and security posture.

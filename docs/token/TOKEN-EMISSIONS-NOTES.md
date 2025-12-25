@@ -3,8 +3,9 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-EMISSIONS-NOTES  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: How DCHUB enters circulation over time under the fixed-supply model described in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 10). This document describes protocol mechanics, not market outcomes.

@@ -3,8 +3,9 @@
 **Document type**: Engineering notes  
 **Doc ID**: ENG-COSMOS-BASE  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/COSMOS_BASE.md](/engineering/COSMOS_BASE))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Summarize base-layer assumptions and constraints for the Hub chain.

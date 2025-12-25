@@ -3,8 +3,9 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-TREASURY-FEE-FLOWS  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: How protocol service fees and treasury-related flows are accounted for and reported.

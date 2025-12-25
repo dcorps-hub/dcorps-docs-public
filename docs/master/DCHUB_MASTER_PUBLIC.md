@@ -3,8 +3,9 @@
 **Document type**: Reference overview  
 **Doc ID**: DCHUB-MASTER-PUBLIC  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/master/DCHUB_MASTER_PUBLIC.md](/master/DCHUB_MASTER_PUBLIC))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Overview subset of [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), stripped of internal notes, open questions, and non-public details. This document is descriptive and informational only.
@@ -14,7 +15,7 @@ Quick links:
 - Docs center index (start here): [docs/welcome/INDEX.md](/welcome/INDEX)
 - Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
 - Litepaper: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
-- Official whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
 - Long version: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Nonprofit note: [docs/whitepaper/NONPROFIT_NOTE.md](/whitepaper/NONPROFIT_NOTE)
 

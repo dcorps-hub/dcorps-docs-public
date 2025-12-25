@@ -3,8 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-RUNBOOKS  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/RUNBOOKS.md](/devops/RUNBOOKS))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: List required runbooks. Details may be stored under `dcorps-docs-private/docs/restricted/` if they contain sensitive operational steps.

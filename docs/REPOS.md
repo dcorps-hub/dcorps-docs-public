@@ -3,8 +3,9 @@
 **Document type**: Repository index  
 **Doc ID**: REPOS-INDEX  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/REPOS.md](/REPOS))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Inventory of repositories that make up the dCorps ecosystem.

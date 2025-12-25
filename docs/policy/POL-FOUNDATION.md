@@ -3,8 +3,9 @@
 **Document type**: Policy  
 **Doc ID**: POL-FOUNDATION  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Governance, mission, and operating principles of the dCorps Foundation as a nonprofit steward of the protocol.

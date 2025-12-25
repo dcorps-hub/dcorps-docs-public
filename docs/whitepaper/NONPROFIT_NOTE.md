@@ -1,14 +1,13 @@
 # Nonprofit Note
 
-**Document type**: Nonprofit note  
-**Doc ID**: DCHUB-NONPROFIT-NOTE-2025-12-21  
-**Version**: v1.3.1  
-**Status**: Final v1.3.1  
-**Release date**: December 21, 2025  
-**Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Publishing date**: 2025-12-24  
-**Last updated**: 2025-12-24  
+**Document type**: Nonprofit note
+**Doc ID**: DCHUB-NONPROFIT-NOTE-2025-12-21
+**Version**: v1.3.1
+**Status**: Final v1.3.1
+**Release date**: December 21, 2025
+**Author**: Nicolas Turcotte, Founder
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+**Last updated**: 2025-12-24
 
 ---
 
@@ -132,7 +131,7 @@ Optional jurisdiction adapter modules may support recognition workflows, but leg
 ## 6. References (recommended reading)
 
 - Docs center index: [docs/welcome/INDEX.md](/welcome/INDEX)
-- Official whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
 - FAQ and glossary: [docs/whitepaper/FAQ.md](/whitepaper/FAQ), [docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY)
 - Technical overview and integration guide: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW), [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE)
 - Normative specs: [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE), [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA), [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)

@@ -5,8 +5,8 @@
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/investor/TOKENOMICS_SUMMARY.md](/investor/TOKENOMICS_SUMMARY))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 ---
@@ -99,4 +99,4 @@ Circulating supply increases through a small number of explicit mechanisms:
 - Token policy: [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY)
 - Genesis plan: [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)
 - Emissions and rewards: [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES)
-- Official whitepaper: [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Condensed whitepaper: [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)

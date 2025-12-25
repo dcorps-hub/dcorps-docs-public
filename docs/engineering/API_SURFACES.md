@@ -3,8 +3,9 @@
 **Document type**: Engineering interface plan  
 **Doc ID**: ENG-API-SURFACES  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/API_SURFACES.md](/engineering/API_SURFACES))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Protobuf messages, gRPC queries, REST routes, and events for the Hub chain. This is the v0.1 baseline for implementation.

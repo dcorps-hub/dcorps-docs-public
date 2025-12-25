@@ -1,4 +1,4 @@
-# Whitepaper
+# Whitepaper (Condensed)
 
 **Document type**: Whitepaper (mid-length)  
 **Doc ID**: DCHUB-WP-PUBLIC-2025-12-21  
@@ -7,10 +7,9 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
-> This is the official mid-length whitepaper. For the long version, see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG).
+> This is the condensed whitepaper. For the official long version, see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG).
 
 ---
 

@@ -1,4 +1,4 @@
-# Whitepaper Long
+# Official Whitepaper
 
 #### Digitally native base layer for corporations and nonprofits, born and operated on-chain
 
@@ -11,7 +11,6 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
  [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 **Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).  
