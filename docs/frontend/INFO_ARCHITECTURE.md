@@ -21,9 +21,8 @@
 
 ## 2. Documentation hub
 
-- [docs/welcome/INDEX.md](/welcome/INDEX) is the docs center entry point.
+- [docs/welcome/INDEX.md](/welcome/INDEX) is the docs center entry point and canonical map.
 - [docs/spec/INDEX.md](/spec/INDEX) is the developer entry point.
-- [docs/INDEX.md](/INDEX) is the canonical map.
 
 ---
 

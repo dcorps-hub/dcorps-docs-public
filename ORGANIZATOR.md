@@ -2,7 +2,7 @@
 
 ## Purpose
 - Define the canonical folder and file order used by the public docs center.
-- Keep navigation and exports consistent with `docs/INDEX.md` and `docs/welcome/INDEX.md`.
+- Keep navigation and exports consistent with `docs/welcome/INDEX.md`.
 
 ## Update rule
 - Update this file whenever any file or folder is created, renamed, removed, or updated in scope or title.
@@ -22,7 +22,6 @@
 - tools/
 - tools/docgen/
 - docs/REPOS.md
-- docs/INDEX.md
 - docs/agents/
 - docs/agents/INDEX.md
 - docs/ops/
@@ -40,7 +39,6 @@
 - tools/
 
 ### docs/
-- INDEX.md
 - welcome/
 - REPOS.md
 - master/
