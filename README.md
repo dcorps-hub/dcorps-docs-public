@@ -121,6 +121,9 @@ tools/
     README.md                  Doc generation notes
 ```
 
+Canonical docs center ordering lives in `ORGANIZATOR.md`.
+- Update `ORGANIZATOR.md` whenever any file or folder is created or updated.
+
 ---
 
 ## 3. GitHub visibility and publishing policy
