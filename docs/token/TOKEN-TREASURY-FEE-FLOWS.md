@@ -1,4 +1,4 @@
-# DCHUB Token – Treasury Fee Flows
+# Treasury Fee Flows
 
 **Document type**: Token reference  
 **Doc ID**: TOKEN-TREASURY-FEE-FLOWS  

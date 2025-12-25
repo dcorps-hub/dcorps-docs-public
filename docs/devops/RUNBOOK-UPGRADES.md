@@ -1,4 +1,4 @@
-# Runbook - Chain Upgrades and Rollback
+# Runbook: Upgrades
 
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-UPGRADES  

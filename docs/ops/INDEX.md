@@ -1,4 +1,4 @@
-# Ops Index
+# Operations
 
 **Document type**: Ops index  
 **Doc ID**: OPS-INDEX  

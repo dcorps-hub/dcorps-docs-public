@@ -1,4 +1,4 @@
-# Advisor Roles (Phase 1 and Phase 2)
+# Advisor Roles
 
 **Document type**: People planning  
 **Doc ID**: PEOPLE-ADVISOR-ROLES  

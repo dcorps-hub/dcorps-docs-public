@@ -1,4 +1,4 @@
-# Attestation Modules and Interface Standards
+# Attestation Standard
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-ATTESTATIONS  
@@ -11,7 +11,7 @@
 
 This spec should be read together with:
 
-- [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (attestation design intent and boundaries),
+- [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (attestation design intent and boundaries),
 - [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) (entity IDs and core objects),
 - [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module lifecycle and compatibility requirements),
 - [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (schema and anchoring conventions where applicable),

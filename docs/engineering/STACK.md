@@ -1,4 +1,4 @@
-# Hub - Technical Stack Decisions
+# Technical Stack
 
 **Document type**: Engineering decisions  
 **Doc ID**: ENG-STACK  

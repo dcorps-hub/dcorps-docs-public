@@ -1,4 +1,4 @@
-# Roadmap and Phases
+# Roadmap
 
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-INDEX  
@@ -13,7 +13,7 @@
 
 ## Execution phases (source-of-truth roadmap)
 
-These phases follow the Master Reference (section 16) with a pre-phase for website finalization. Phase 0 is pre-mainnet readiness. Phases 1 to 5 start at mainnet launch.
+These phases follow the Whitepaper Long (section 16) with a pre-phase for website finalization. Phase 0 is pre-mainnet readiness. Phases 1 to 5 start at mainnet launch.
 
 **Phase 0A: Public website finalization (static)**
 - Finalize the static public website and align copy to public docs.
@@ -76,7 +76,7 @@ From `../dcorps-site/content/learn/vision.md`:
 
 ## Source of truth
 
-- Master reference roadmap: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (section 16)
+- Whitepaper Long roadmap: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 16)
 - Public roadmap page: `../dcorps-site/content/information/roadmap.md`
 - Vision path: `../dcorps-site/content/learn/vision.md`
 - Phase exit criteria: [docs/roadmap/PHASES.md](/roadmap/PHASES)

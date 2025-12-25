@@ -1,4 +1,4 @@
-# dCorps Overview
+# Overview
 
 **Document type**: Project overview  
 **Doc ID**: DOCS-OVERVIEW  
@@ -75,6 +75,6 @@ See [docs/policy/POL-GOV.md](/policy/POL-GOV) and [docs/policy/POL-FOUNDATION.md
 ## Where to go next
 
 - Docs center welcome: [docs/welcome/INDEX.md](/welcome/INDEX)
-- Master reference: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER)
+- Whitepaper Long: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Specs: [docs/spec/INDEX.md](/spec/INDEX)
 - Roadmap: [docs/roadmap/INDEX.md](/roadmap/INDEX)

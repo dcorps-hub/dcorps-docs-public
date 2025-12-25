@@ -1,4 +1,4 @@
-# Documentation Publication Policy
+# Docs Publication Policy
 
 **Document type**: Policy  
 **Doc ID**: POL-DOCS-PUBLICATION  

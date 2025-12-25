@@ -1,4 +1,4 @@
-# Information Architecture (Site, Docs, App)
+# Information Architecture
 
 **Document type**: Frontend requirements  
 **Doc ID**: FE-INFO-ARCH  

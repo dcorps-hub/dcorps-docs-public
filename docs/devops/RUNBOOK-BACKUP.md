@@ -1,4 +1,4 @@
-# Runbook - Snapshots and Backup Restoration
+# Runbook: Backups
 
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-BACKUP  

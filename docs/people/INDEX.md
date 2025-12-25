@@ -1,4 +1,4 @@
-# People and Organizations Index
+# People
 
 **Document type**: People index  
 **Doc ID**: PEOPLE-INDEX  
@@ -13,7 +13,7 @@
 
 ## Organizations around dCorps
 
-From the public website and master documentation:
+From the public website and public documentation:
 
 - **dCorps Hub Ltd (BVI)**
   - Holds core protocol intellectual property in early phases.

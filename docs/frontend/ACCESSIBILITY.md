@@ -1,4 +1,4 @@
-# Accessibility and UX Guidelines
+# Accessibility
 
 **Document type**: Frontend guideline  
 **Doc ID**: FE-ACCESSIBILITY  

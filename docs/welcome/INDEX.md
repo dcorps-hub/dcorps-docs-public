@@ -13,7 +13,7 @@
 
 ## What this project is
 
-dCorps is building a digitally native base layer for corporations and nonprofits that can be born and operated on-chain. This repo contains the canonical public documentation set: the master reference, protocol specs, governance and policy, security posture, token economics, and supporting technical guides.
+dCorps is building a digitally native base layer for corporations and nonprofits that can be born and operated on-chain. This repo contains the canonical public documentation set: the whitepaper suite, protocol specs, governance and policy, security posture, token economics, and supporting technical guides.
 
 These Markdown files are the source of truth for the docs center; the public website syncs documentation from this repository.
 
@@ -29,7 +29,7 @@ These Markdown files are the source of truth for the docs center; the public web
 ## How the docs are organized
 
 - Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
-- Master reference (long-form): [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER)
+- Whitepaper Long: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Protocol specs (normative): [docs/spec/INDEX.md](/spec/INDEX)
 - Engineering and integration: [docs/engineering/INDEX.md](/engineering/INDEX)
 - Governance and policy: [docs/policy/](/policy)

@@ -1,4 +1,4 @@
-# Hub Tokenomics Summary
+# Tokenomics Summary
 
 **Document type**: Tokenomics summary  
 **Doc ID**: DCHUB-TOKENOMICS-SUMMARY-2025-12-21  

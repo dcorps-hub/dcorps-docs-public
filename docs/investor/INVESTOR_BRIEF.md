@@ -1,4 +1,4 @@
-# Hub Investor and Partner Brief
+# Investor Brief
 
 **Document type**: Investor brief (informational)  
 **Doc ID**: DCHUB-INVESTOR-BRIEF-2025-12-21  
@@ -98,7 +98,7 @@ See [docs/policy/POL-GOV.md](/policy/POL-GOV).
 
 ## 6. Metrics and adoption framing (illustrative, non-binding)
 
-To keep adoption measurable, the Master Reference describes reproducible metrics such as:
+To keep adoption measurable, the Whitepaper Long describes reproducible metrics such as:
 
 - **Active reporting entities**: entities that produce reproducible period reports across consecutive periods.
 - **Coverage ratios** (illustrative): inflow coverage, outflow coverage, evidence coverage for material transactions.

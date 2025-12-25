@@ -1,4 +1,4 @@
-# Hub Integration Guide
+# Integration Guide
 
 **Document type**: Integration guide  
 **Doc ID**: DCHUB-INTEGRATION-GUIDE-2025-12-21  

@@ -1,4 +1,4 @@
-# DCHUB Token – Vesting Schedules
+# Vesting Schedules
 
 **Document type**: Token reference  
 **Doc ID**: TOKEN-VESTING-SCHEDULES  
@@ -7,7 +7,7 @@
 **Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
-> Scope: Baseline vesting and lockup schedules for DCHUB allocations. These align with the Master Reference and Genesis Plan.
+> Scope: Baseline vesting and lockup schedules for DCHUB allocations. These align with the Whitepaper Long and Genesis Plan.
 
 ---
 
@@ -34,7 +34,7 @@ Community, rewards, and treasury allocations follow programmatic release rules a
 ## 3. Rewards and program pools
 
 - Staking and validator rewards: released according to the schedule in [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES).
-- Community and ecosystem programs: governed releases subject to caps defined in the Master Reference.
+- Community and ecosystem programs: governed releases subject to caps defined in the Whitepaper Long.
 - Treasury and foundation allocations: governed releases with reporting requirements.
 
 ---

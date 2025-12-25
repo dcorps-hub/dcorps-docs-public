@@ -1,4 +1,4 @@
-# DevCo and Foundation Relationship Summary
+# DevCo Foundation Agreement
 
 **Document type**: Legal summary  
 **Doc ID**: LEGAL-DEVCO-FOUNDATION  

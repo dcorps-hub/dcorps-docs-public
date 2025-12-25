@@ -1,4 +1,4 @@
-# Hub FAQ
+# FAQ
 
 **Document type**: FAQ  
 **Doc ID**: DCHUB-FAQ-2025-12-21  

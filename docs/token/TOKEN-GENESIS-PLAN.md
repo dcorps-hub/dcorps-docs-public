@@ -1,4 +1,4 @@
-# DCHUB Token – Genesis Plan
+# Genesis Plan
 
 **Document type**: Token plan  
 **Doc ID**: TOKEN-GENESIS-PLAN  
@@ -7,7 +7,7 @@
 **Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
-> Scope: Initial supply, allocations, vesting, and launch mechanics for DCHUB at network genesis. This plan aligns with the token model in [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (section 10).
+> Scope: Initial supply, allocations, vesting, and launch mechanics for DCHUB at network genesis. This plan aligns with the token model in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 10).
 
 ---
 
@@ -33,7 +33,7 @@ The plan aims to:
 In v1, DCHUB is designed with a fixed hard-cap supply minted at genesis.
 
 - **Hard-cap total supply at genesis**: 1,000,000,000 DCHUB
-- **Supply creation**: the full hard-cap supply is created once at genesis and assigned into vesting accounts and governance-controlled module accounts (no discretionary inflation beyond genesis; see [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 10.3).
+- **Supply creation**: the full hard-cap supply is created once at genesis and assigned into vesting accounts and governance-controlled module accounts (no discretionary inflation beyond genesis; see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 10.3).
 
 An indicative allocation at genesis is:
 
@@ -71,13 +71,13 @@ Vesting may be implemented via:
 
 Where on-chain vesting is used, parameters (start times, cliffs, schedules) are encoded in the genesis state and verifiable by anyone.
 
-Indicative v1 schedules (see [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 10.4 and 10.4A):
+Indicative v1 schedules (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 10.4 and 10.4A):
 
 - **Founder (15%)**: 24-month cliff, then linear vesting from month 24 to month 96 after TGE (monthly unlocks).
 - **Core team and future contributors (10%)**: typical 12-month cliff, then 36-month linear vesting (longer for some roles).
 - **Investors (10%)**: typical 12-month lockup, then linear vesting from month 12 to month 48 after TGE.
-- **Staking and validator rewards (18%)**: distributed via a published schedule capped by the rewards pool (genesis default schedule described in section 10.4A.5 of the Master Reference).
-- **Community and ecosystem programs (35%)**: governed releases with explicit annual and quarterly release caps (Master Reference section 10.4A.6).
+- **Staking and validator rewards (18%)**: distributed via a published schedule capped by the rewards pool (genesis default schedule described in section 10.4A.5 of the Whitepaper Long).
+- **Community and ecosystem programs (35%)**: governed releases with explicit annual and quarterly release caps (Whitepaper Long section 10.4A.6).
 
 For baseline schedules, see [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES).
 

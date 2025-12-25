@@ -9,7 +9,7 @@
 The `docgen` tooling exists to:
 
 - generate public-safe documentation from internal sources;
-- keep public references in sync with the Master Reference and specs;
+- keep public references in sync with the whitepaper suite and specs;
 - minimize manual copy/paste and the risk of divergence.
 
 It operates primarily on Markdown files under `docs/` and produces outputs for the docs center and other targets as needed.
@@ -20,14 +20,14 @@ It operates primarily on Markdown files under `docs/` and produces outputs for t
 
 Typical inputs:
 
-- `docs/master/DCHUB_MASTER.md` and related master files;
+- whitepaper suite under `docs/whitepaper/`;
 - specification files under `docs/spec/`;
 - policy, token, and security documents where relevant.
 - restricted material under `dcorps-docs-private/docs/restricted/` (excluded from public outputs).
 
 Typical outputs:
 
-- public-facing master reference (`docs/master/DCHUB_MASTER_PUBLIC.md`);
+- public-facing whitepaper suite (`docs/whitepaper/`);
 - public specs (`docs/spec/`);
 - optionally, HTML, JSON, or other formats for websites and tooling.
 

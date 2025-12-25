@@ -1,4 +1,4 @@
-# Runbook - Indexer Backfill and Recovery
+# Runbook: Indexer
 
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-INDEXER  

@@ -1,4 +1,4 @@
-# Runbook - Genesis Creation and Verification
+# Runbook: Genesis
 
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-GENESIS  

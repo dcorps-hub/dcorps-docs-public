@@ -1,4 +1,4 @@
-# DevOps Index
+# DevOps
 
 **Document type**: DevOps index  
 **Doc ID**: DEVOPS-INDEX  

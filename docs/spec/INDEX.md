@@ -1,4 +1,4 @@
-# Hub – Specification Index (Normative)
+# Specifications
 
 **Document type**: Spec index  
 **Doc ID**: SPECS-INDEX  

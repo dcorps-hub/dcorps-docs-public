@@ -1,4 +1,4 @@
-# Engineering Index
+# Engineering
 
 **Document type**: Engineering index  
 **Doc ID**: ENG-INDEX  

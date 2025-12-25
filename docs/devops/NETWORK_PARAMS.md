@@ -1,4 +1,4 @@
-# Network Parameters and Genesis Defaults
+# Network Parameters
 
 **Document type**: DevOps reference  
 **Doc ID**: DEVOPS-NETWORK-PARAMS  

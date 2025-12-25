@@ -1,4 +1,4 @@
-# Hub Whitepaper (Long Version)
+# Whitepaper Long
 
 #### Digitally native base layer for corporations and nonprofits, born and operated on-chain
 

@@ -1,4 +1,4 @@
-# Core Team Roles (Phase 0 and Phase 1)
+# Core Team Roles
 
 **Document type**: People planning  
 **Doc ID**: PEOPLE-CORE-ROLES  

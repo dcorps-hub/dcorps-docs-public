@@ -1,4 +1,4 @@
-# Frontend Stack Notes
+# Frontend Stack
 
 **Document type**: Frontend guide  
 **Doc ID**: FE-STACK  

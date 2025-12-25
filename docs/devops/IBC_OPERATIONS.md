@@ -1,4 +1,4 @@
-# IBC Relayer Operations
+# IBC Operations
 
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-IBC-OPS  

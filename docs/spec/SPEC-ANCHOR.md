@@ -1,4 +1,4 @@
-# Sub Chain Anchoring Standard
+# Anchoring Standard
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-ANCHOR  

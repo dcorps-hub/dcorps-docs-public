@@ -1,4 +1,4 @@
-# Hub - Chain Repo Layout
+# Chain Layout
 
 **Document type**: Engineering plan  
 **Doc ID**: ENG-CHAIN-LAYOUT  

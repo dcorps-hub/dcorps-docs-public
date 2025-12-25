@@ -1,6 +1,6 @@
 # dcorps-docs-public
 
-Master documentation and specifications for the dCorps Hub protocol, including the Master Reference (whitepaper), protocol specifications, policies, security documents, and token documentation.
+Public documentation and specifications for the dCorps Hub protocol, including whitepapers, protocol specifications, policies, security documents, and token documentation.
 
 > Status: publication-ready documentation set
 
@@ -13,7 +13,7 @@ Developer entry point (normative specs): `docs/spec/INDEX.md`
 
 This repo exists to:
 
-- Hold the **Master Reference** for the dCorps Hub.
+- Hold the whitepaper suite for the dCorps Hub.
 - Hold **normative specs** for protocol behavior, parameters, modules, and data.
 - Hold **governance, treasury, token, and security policies**.
 - Publish documentation **public by default**, with safety-sensitive exceptions and internal planning stored in the private documentation repo `dcorps-docs-private` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
@@ -32,10 +32,6 @@ docs/
   welcome/
     INDEX.md                 Docs center welcome and reader paths
     OVERVIEW.md              dCorps overview
-  master/
-    DCHUB_MASTER.md          Master Reference (long whitepaper, source)
-    DCHUB_MASTER_PUBLIC.md   Master reference overview
-    DCHUB_WHITEPAPER_PUBLIC.md Redirect notice for legacy whitepaper path
   whitepaper/
     INDEX.md                 Whitepaper suite index
     EXECUTIVE_SUMMARY.md

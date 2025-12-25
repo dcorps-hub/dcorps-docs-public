@@ -1,4 +1,4 @@
-# DCHUB Token – Policy
+# Token Policy
 
 **Document type**: Token policy  
 **Doc ID**: TOKEN-POLICY  
@@ -7,7 +7,7 @@
 **Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
-> Scope: Purpose, allowed uses, and constraints for the DCHUB token, consistent with the Master Reference disclaimers. This document is not an offer or solicitation of any kind.
+> Scope: Purpose, allowed uses, and constraints for the DCHUB token, consistent with the public disclaimers. This document is not an offer or solicitation of any kind.
 
 ---
 
@@ -54,13 +54,13 @@ This policy provides high-level guidance; detailed figures and schedules are def
 - [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES) (baseline vesting and lockups).
 - [docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS) (service fee routing and reporting).
 
-v1 supply stance (as described in [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 10):
+v1 supply stance (as described in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 10):
 
 - DCHUB has a fixed hard-cap total supply minted at genesis.
 - There is no discretionary inflation path intended to create additional DCHUB beyond what was created at genesis.
 - “Emissions” refers to tokens entering circulation from predefined allocations (for example the staking and validator rewards pool), not supply creation beyond the fixed cap.
 
-Any changes to supply-related mechanics (for example release caps or rewards distribution parameters) should be debated transparently, enacted via on-chain governance, and documented in the Master Reference and related policy artifacts.
+Any changes to supply-related mechanics (for example release caps or rewards distribution parameters) should be debated transparently, enacted via on-chain governance, and documented in the whitepaper and related policy artifacts.
 
 ---
 

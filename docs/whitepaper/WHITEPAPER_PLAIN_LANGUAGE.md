@@ -1,4 +1,4 @@
-# Whitepaper (Plain Language)
+# Whitepaper Plain Language
 
 **Document type**: Whitepaper (plain language)  
 **Doc ID**: DCHUB-WP-PLAIN-2025-12-22  

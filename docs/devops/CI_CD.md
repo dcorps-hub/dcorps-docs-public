@@ -1,4 +1,4 @@
-# CI/CD and Release Flow
+# CI/CD
 
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-CICD  

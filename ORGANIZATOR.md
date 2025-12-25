@@ -24,6 +24,7 @@
 - docs/REPOS.md
 - docs/agents/
 - docs/agents/INDEX.md
+- docs/master/
 - docs/ops/
 - docs/ops/INDEX.md
 - docs/website/
@@ -41,7 +42,6 @@
 ### docs/
 - welcome/
 - REPOS.md
-- master/
 - whitepaper/
 - investor/
 - spec/
@@ -63,18 +63,13 @@
 - INDEX.md
 - OVERVIEW.md
 
-### docs/master/
-- DCHUB_MASTER_PUBLIC.md
-- DCHUB_MASTER.md
-- DCHUB_WHITEPAPER_PUBLIC.md
-
 ### docs/whitepaper/
 - INDEX.md
 - EXECUTIVE_SUMMARY.md
+- LITEPAPER.md
+- WHITEPAPER_PLAIN_LANGUAGE.md
 - WHITEPAPER.md
 - WHITEPAPER_LONG.md
-- WHITEPAPER_PLAIN_LANGUAGE.md
-- LITEPAPER.md
 - NONPROFIT_NOTE.md
 - FAQ.md
 - GLOSSARY.md

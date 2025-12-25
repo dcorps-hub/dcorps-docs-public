@@ -1,4 +1,4 @@
-# Hub Litepaper
+# Litepaper
 
 **Document type**: Litepaper  
 **Doc ID**: DCHUB-LITEPAPER-2025-12-21  

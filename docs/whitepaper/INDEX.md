@@ -1,4 +1,4 @@
-# Whitepaper Suite Index
+# Whitepaper Suite
 
 **Document type**: Whitepaper index  
 **Doc ID**: WHITEPAPER-INDEX  
@@ -21,7 +21,6 @@
 
 ## Full suite
 
-- Master reference overview: [docs/master/DCHUB_MASTER_PUBLIC.md](/master/DCHUB_MASTER_PUBLIC)
 - Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
 - Whitepaper (plain language): [docs/whitepaper/WHITEPAPER_PLAIN_LANGUAGE.md](/whitepaper/WHITEPAPER_PLAIN_LANGUAGE)
 - Litepaper: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)

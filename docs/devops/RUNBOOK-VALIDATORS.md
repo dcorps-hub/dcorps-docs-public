@@ -1,4 +1,4 @@
-# Runbook - Validator Onboarding and Key Rotation
+# Runbook: Validators
 
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-VALIDATORS  

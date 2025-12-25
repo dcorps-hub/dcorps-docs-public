@@ -1,4 +1,4 @@
-# Hub - IBC and Interchain Notes
+# IBC
 
 **Document type**: Interop notes  
 **Doc ID**: INTEROP-IBC  

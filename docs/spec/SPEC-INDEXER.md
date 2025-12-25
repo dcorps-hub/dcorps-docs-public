@@ -1,4 +1,4 @@
-# Reference Indexer Specification
+# Indexer Specification
 
 **Document type**: Reference spec  
 **Doc ID**: SPEC-INDEXER  

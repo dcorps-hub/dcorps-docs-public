@@ -1,4 +1,4 @@
-# Release and Environment Promotion Process
+# Release Process
 
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-RELEASE-PROCESS  

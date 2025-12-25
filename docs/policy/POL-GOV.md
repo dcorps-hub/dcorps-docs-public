@@ -137,7 +137,7 @@ Examples include:
 - material changes to shared security assumptions for recognized sub chains;
 - changes to hard limits that protect non-custodial boundaries and censorship-resistance commitments.
 
-Baseline requirement for a Protected Change (see [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 13.3.5):
+Baseline requirement for a Protected Change (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 13.3.5):
 
 - **Quorum**: 25% of voting power participating
 - **Passing threshold**: 67% Yes of participating voting power

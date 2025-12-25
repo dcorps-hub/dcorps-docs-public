@@ -1,4 +1,4 @@
-# Investor Materials Index
+# Investor
 
 **Document type**: Investor index  
 **Doc ID**: INVESTOR-INDEX  

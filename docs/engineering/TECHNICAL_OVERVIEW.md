@@ -1,4 +1,4 @@
-# Hub Technical Overview
+# Technical Overview
 
 **Document type**: Technical overview  
 **Doc ID**: DCHUB-TECH-OVERVIEW-2025-12-21  

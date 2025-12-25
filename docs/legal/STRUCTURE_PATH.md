@@ -1,4 +1,4 @@
-# Legal Structure Path (BVI to Switzerland)
+# Legal Structure
 
 **Document type**: Legal summary  
 **Doc ID**: LEGAL-STRUCTURE-PATH  
@@ -7,7 +7,7 @@
 **Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
-> Scope: Summary of the intended legal structure path described in the Master Reference.
+> Scope: Summary of the intended legal structure path described in the Whitepaper Long.
 
 ---
 
