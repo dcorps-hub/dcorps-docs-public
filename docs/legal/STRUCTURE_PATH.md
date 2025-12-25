@@ -3,7 +3,9 @@
 **Document type**: Legal summary  
 **Doc ID**: LEGAL-STRUCTURE-PATH  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/legal/STRUCTURE_PATH.md`)
+**Source repo**: dcorps-docs-public ([docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Summary of the intended legal structure path described in the Master Reference.
 

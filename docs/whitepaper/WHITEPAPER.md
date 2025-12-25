@@ -1,14 +1,16 @@
-# dCorps Hub Whitepaper (Public)
+# Hub Whitepaper (Mid-Length)
 
-**Document type**: Whitepaper (public, mid-length)  
+**Document type**: Whitepaper (mid-length)  
 **Doc ID**: DCHUB-WP-PUBLIC-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> This is the official mid-length public whitepaper. For the long version, see `docs/public/whitepaper/WHITEPAPER_LONG.md`.
+> This is the official mid-length whitepaper. For the long version, see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG).
 
 ---
 
@@ -32,9 +34,9 @@ Reader shortcuts:
 
 - Founders and operators: sections 0, 4, 5, 6, 7.
 - Nonprofit leaders and donors: sections 0, 4.2, 5, 8.
-- Builders and integrators: sections 3, 4, 5, plus `docs/spec/`.
-- Validators and security contributors: sections 6.4, 7, and `docs/security/`.
-- Institutions and legal professionals: sections 2, 7, 9, and `docs/public/legal/`.
+- Builders and integrators: sections 3, 4, 5, plus [docs/spec/](/spec).
+- Validators and security contributors: sections 6.4, 7, and [docs/security/](/security).
+- Institutions and legal professionals: sections 2, 7, 9, and [docs/legal/](/legal).
 
 ---
 
@@ -46,26 +48,26 @@ For interoperability and correctness, the intended document stack is:
 
 - **Whitepaper (this document)**: design intent and boundaries.
 - **Protocol specifications (normative)**:
-  - `docs/spec/SPEC-CORE.md` (core state and messages),
-  - `docs/spec/SPEC-DATA.md` (schemas and tagging),
-  - `docs/spec/SPEC-MODULES.md` (module standard),
-  - `docs/spec/SPEC-ATTESTATIONS.md` (attestation modules, if used),
-  - `docs/spec/SPEC-ANCHOR.md` (sub chain anchoring),
-  - `docs/spec/SPEC-PARAMS.md` (parameter model),
-  - `docs/spec/SPEC-INDEXER.md` (reference indexer and explorer behavior),
-  - `docs/spec/SPEC-CONFORMANCE-TESTS.md` (compatibility test expectations).
+  - [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) (core state and messages),
+  - [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (schemas and tagging),
+  - [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module standard),
+  - [docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS) (attestation modules, if used),
+  - [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR) (sub chain anchoring),
+  - [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS) (parameter model),
+  - [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER) (reference indexer and explorer behavior),
+  - [docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS) (compatibility test expectations).
 - **Governance and policy (normative for process and operations)**:
-  - `docs/policy/POL-GOV.md`,
-  - `docs/policy/POL-TREASURY.md`,
-  - `docs/policy/POL-FOUNDATION.md`,
-  - `docs/policy/POL-REGISTRY-MODULES.md`,
-  - `docs/policy/POL-VALIDATORS.md`.
+  - [docs/policy/POL-GOV.md](/policy/POL-GOV),
+  - [docs/policy/POL-TREASURY.md](/policy/POL-TREASURY),
+  - [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION),
+  - [docs/policy/POL-REGISTRY-MODULES.md](/policy/POL-REGISTRY-MODULES),
+  - [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS).
 - **Security artifacts (operationally normative)**:
-  - `docs/security/SECURITY-POLICY.md`,
-  - `docs/security/THREAT-MODEL.md`,
-  - `docs/security/AUDIT-PLAN.md`,
-  - `docs/security/BUG-BOUNTY.md`,
-  - `docs/security/INCIDENT-RESPONSE.md`.
+  - [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY),
+  - [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL),
+  - [docs/security/AUDIT-PLAN.md](/security/AUDIT-PLAN),
+  - [docs/security/BUG-BOUNTY.md](/security/BUG-BOUNTY),
+  - [docs/security/INCIDENT-RESPONSE.md](/security/INCIDENT-RESPONSE).
 
 If there is a conflict between this whitepaper and a normative specification, the normative specification is intended to take precedence.
 
@@ -278,9 +280,9 @@ This describes protocol mechanics, not promises about price, liquidity, or marke
 
 For the fixed hard-cap supply stance, indicative allocations, vesting, and emissions vocabulary, see:
 
-- `docs/token/TOKEN-POLICY.md`
-- `docs/token/TOKEN-GENESIS-PLAN.md`
-- `docs/token/TOKEN-EMISSIONS-NOTES.md`
+- [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY)
+- [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)
+- [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES)
 
 ---
 
@@ -292,7 +294,7 @@ The governance design intent is conservative:
 - make hostile or careless upgrades slower and more visible;
 - treat certain changes as higher-risk “Protected Changes” with higher thresholds and safety mechanisms.
 
-Governance process and proposal classes are described in `docs/policy/POL-GOV.md`. The Master Reference defines the baseline Protected Change thresholds and safety expectations.
+Governance process and proposal classes are described in [docs/policy/POL-GOV.md](/policy/POL-GOV). The Master Reference defines the baseline Protected Change thresholds and safety expectations.
 
 ---
 
@@ -306,7 +308,7 @@ dCorps treats security as a first-order constraint:
 
 Privacy is not assumed by default. Confidentiality exists only when an entity uses privacy-preserving execution or disclosure tools. Interfaces should clearly label what is raw on-chain data, what is aggregate, and what is a claim supported by attestations.
 
-For security posture and operational docs, see `docs/security/`. For a plain-language risk overview, see `docs/public/legal/RISK_DISCLOSURE.md`.
+For security posture and operational docs, see [docs/security/](/security). For a plain-language risk overview, see [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE).
 
 ---
 
@@ -318,20 +320,20 @@ Legal status, filings, reporting obligations, and enforcement remain off-chain a
 
 See:
 
-- `docs/public/legal/DISCLAIMERS.md`
-- `docs/public/legal/RISK_DISCLOSURE.md`
+- [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS)
+- [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)
 
 ---
 
 ## 10. What to read next
 
-- Executive summary: `docs/public/whitepaper/EXECUTIVE_SUMMARY.md`
-- Litepaper: `docs/public/whitepaper/LITEPAPER.md`
-- Long version: `docs/public/whitepaper/WHITEPAPER_LONG.md`
-- Nonprofit note: `docs/public/whitepaper/NONPROFIT_NOTE.md`
-- FAQ: `docs/public/whitepaper/FAQ.md`
-- Glossary: `docs/public/whitepaper/GLOSSARY.md`
-- Technical overview: `docs/public/technical/TECHNICAL_OVERVIEW.md`
-- Integration guide: `docs/public/technical/INTEGRATION_GUIDE.md`
-- Attestations standard (if used): `docs/spec/SPEC-ATTESTATIONS.md`
-- Conformance tests: `docs/spec/SPEC-CONFORMANCE-TESTS.md`
+- Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
+- Litepaper: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
+- Long version: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
+- Nonprofit note: [docs/whitepaper/NONPROFIT_NOTE.md](/whitepaper/NONPROFIT_NOTE)
+- FAQ: [docs/whitepaper/FAQ.md](/whitepaper/FAQ)
+- Glossary: [docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY)
+- Technical overview: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW)
+- Integration guide: [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE)
+- Attestations standard (if used): [docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS)
+- Conformance tests: [docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS)

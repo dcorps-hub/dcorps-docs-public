@@ -3,7 +3,9 @@
 **Document type**: Frontend requirements  
 **Doc ID**: FE-EXPLORER-REQ  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/frontend/EXPLORER_REQUIREMENTS.md`)
+**Source repo**: dcorps-docs-public ([docs/frontend/EXPLORER_REQUIREMENTS.md](/frontend/EXPLORER_REQUIREMENTS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Read-only explorer requirements for Phase 1.
 
@@ -43,7 +45,7 @@
 
 ## 5. API dependencies
 
-Explorer endpoints align to `docs/spec/SPEC-INDEXER.md`:
+Explorer endpoints align to [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER):
 
 - `GET /v1/entities`
 - `GET /v1/entities/{entity_id}`

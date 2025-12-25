@@ -3,7 +3,9 @@
 **Document type**: Token policy  
 **Doc ID**: TOKEN-POLICY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/token/TOKEN-POLICY.md`)
+**Source repo**: dcorps-docs-public ([docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Purpose, allowed uses, and constraints for the DCHUB token, consistent with the Master Reference disclaimers. This document is not an offer or solicitation of any kind.
 
@@ -47,12 +49,12 @@ Applications and services may accept DCHUB for their own purposes, but such uses
 
 This policy provides high-level guidance; detailed figures and schedules are defined in:
 
-- `docs/token/TOKEN-GENESIS-PLAN.md` (supply and allocations at genesis), and
-- `docs/token/TOKEN-EMISSIONS-NOTES.md` (how tokens enter circulation over time).
-- `docs/token/TOKEN-VESTING-SCHEDULES.md` (baseline vesting and lockups).
-- `docs/token/TOKEN-TREASURY-FEE-FLOWS.md` (service fee routing and reporting).
+- [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN) (supply and allocations at genesis), and
+- [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES) (how tokens enter circulation over time).
+- [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES) (baseline vesting and lockups).
+- [docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS) (service fee routing and reporting).
 
-v1 supply stance (as described in `docs/master/DCHUB_MASTER.md`, section 10):
+v1 supply stance (as described in [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 10):
 
 - DCHUB has a fixed hard-cap total supply minted at genesis.
 - There is no discretionary inflation path intended to create additional DCHUB beyond what was created at genesis.

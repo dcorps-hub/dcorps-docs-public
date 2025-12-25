@@ -3,11 +3,13 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-CICD  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/CI_CD.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/CI_CD.md](/devops/CI_CD))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Describe automated checks and release flow for documentation and, later, chain code.
 
-Release promotion between dev, staging, and prod is defined in `docs/devops/RELEASE_PROCESS.md`.
+Release promotion between dev, staging, and prod is defined in [docs/devops/RELEASE_PROCESS.md](/devops/RELEASE_PROCESS).
 
 ---
 

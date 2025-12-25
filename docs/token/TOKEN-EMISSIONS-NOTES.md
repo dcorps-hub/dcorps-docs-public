@@ -3,9 +3,11 @@
 **Document type**: Token reference  
 **Doc ID**: TOKEN-EMISSIONS-NOTES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/token/TOKEN-EMISSIONS-NOTES.md`)
+**Source repo**: dcorps-docs-public ([docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: How DCHUB enters circulation over time under the fixed-supply model described in `docs/master/DCHUB_MASTER.md` (section 10). This document describes protocol mechanics, not market outcomes.
+> Scope: How DCHUB enters circulation over time under the fixed-supply model described in [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (section 10). This document describes protocol mechanics, not market outcomes.
 
 ---
 
@@ -53,7 +55,7 @@ All of these mechanisms are intended to be visible as on-chain state, contract s
 
 ## 4. Staking and validator rewards schedule (genesis default)
 
-The Master Reference defines an illustrative genesis default schedule for the staking and validator rewards pool that sums to the pool cap of 180,000,000 DCHUB (see `docs/master/DCHUB_MASTER.md`, section 10.4A.5).
+The Master Reference defines an illustrative genesis default schedule for the staking and validator rewards pool that sums to the pool cap of 180,000,000 DCHUB (see [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 10.4A.5).
 
 Illustrative schedule (per year after TGE):
 
@@ -68,13 +70,13 @@ Illustrative schedule (per year after TGE):
 
 Total: 180,000,000
 
-As the rewards pool becomes materially depleted, the design intention is that validator incentives shift primarily to fee-based rewards (see `docs/master/DCHUB_MASTER.md`, section 10.6).
+As the rewards pool becomes materially depleted, the design intention is that validator incentives shift primarily to fee-based rewards (see [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 10.6).
 
 ---
 
 ## 5. Community release caps (initial guardrails)
 
-To reduce sudden changes in circulating supply, the Master Reference describes explicit release caps for community program releases (see `docs/master/DCHUB_MASTER.md`, section 10.4A.6).
+To reduce sudden changes in circulating supply, the Master Reference describes explicit release caps for community program releases (see [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 10.4A.6).
 
 Design intention for v1:
 
@@ -87,7 +89,7 @@ These caps apply to tokens leaving governance-controlled community custody into 
 
 ## 6. Governance controls and change safety
 
-Governance can adjust distribution parameters within predefined bounds and under the process described in the Governance Charter (`docs/policy/POL-GOV.md`).
+Governance can adjust distribution parameters within predefined bounds and under the process described in the Governance Charter ([docs/policy/POL-GOV.md](/policy/POL-GOV)).
 
 Changes that materially increase near-term emissions or raise release caps should be treated as high-impact changes and require stronger approval thresholds and longer lead times, consistent with the Master Reference’s “Protected Change” concept.
 

@@ -1,9 +1,11 @@
-# dCorps Hub - IBC and Interchain Notes
+# Hub - IBC and Interchain Notes
 
 **Document type**: Interop notes  
 **Doc ID**: INTEROP-IBC  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/interop/IBC.md`)
+**Source repo**: dcorps-docs-public ([docs/interop/IBC.md](/interop/IBC))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Summarize how interchain connections are expected to be used for stablecoin operations and optional sub chains.
 
@@ -28,12 +30,12 @@
 ## Sub chains and anchoring
 
 - Sub chains are optional and must anchor summaries to the Hub to be considered recognized.
-- Recognition tiers and anchoring rules are defined in `docs/spec/SPEC-ANCHOR.md`.
+- Recognition tiers and anchoring rules are defined in [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR).
 
 ---
 
 ## Open items
 
 - Port is `transfer`. Channel IDs are assigned during IBC handshake and are published in environment release notes.
-- Relayer requirements and monitoring are defined in `docs/devops/IBC_OPERATIONS.md`.
+- Relayer requirements and monitoring are defined in [docs/devops/IBC_OPERATIONS.md](/devops/IBC_OPERATIONS).
 - Public endpoints are published per environment; do not hardcode them in code.

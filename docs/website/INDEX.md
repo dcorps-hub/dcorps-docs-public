@@ -3,7 +3,9 @@
 **Document type**: Website index  
 **Doc ID**: WEBSITE-INDEX  
 **Status**: Draft v0.1  
-**Source repo**: dcorps-docs-public (`docs/website/INDEX.md`)
+**Source repo**: dcorps-docs-public ([docs/website/INDEX.md](/website/INDEX))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Public notes about website content sources and frontend documentation.
 
@@ -11,8 +13,8 @@
 
 ## Current sources
 
-- Frontend requirements and decisions: `docs/frontend/INDEX.md`
-- Public content entry point: `docs/public/INDEX.md`
+- Frontend requirements and decisions: [docs/frontend/INDEX.md](/frontend/INDEX)
+- Docs center entry point: [docs/welcome/INDEX.md](/welcome/INDEX)
 
 ---
 

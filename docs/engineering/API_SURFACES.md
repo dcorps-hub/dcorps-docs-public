@@ -1,9 +1,11 @@
-# dCorps Hub - API Surfaces (v0.1)
+# Hub - API Surfaces (v0.1)
 
 **Document type**: Engineering interface plan  
 **Doc ID**: ENG-API-SURFACES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/engineering/API_SURFACES.md`)
+**Source repo**: dcorps-docs-public ([docs/engineering/API_SURFACES.md](/engineering/API_SURFACES))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Protobuf messages, gRPC queries, REST routes, and events for the Hub chain. This is the v0.1 baseline for implementation.
 
@@ -15,7 +17,7 @@
 - `dcorps.accounting.v1`
 - `dcorps.registry.v1`
 
-Field catalogs and enums align with `docs/spec/SPEC-DATA.md`.
+Field catalogs and enums align with [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA).
 
 ---
 

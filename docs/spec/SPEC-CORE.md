@@ -1,19 +1,21 @@
-# dCorps Hub Protocol – Core Specification
+# Hub Protocol – Core Specification
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CORE  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-CORE.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-CORE.md](/spec/SPEC-CORE))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Core behavior of the dCorps Hub chain as a registry and coordination layer for entities, roles, wallets, and baseline governance. This document is normative where explicitly stated.
 
 This spec should be read together with:
 
-- `docs/master/DCHUB_MASTER.md` (Master Reference – conceptual and narrative source of truth).
-- `docs/spec/SPEC-DATA.md` (data models and schemas).
-- `docs/spec/SPEC-PARAMS.md` (parameters and economics).
-- `docs/spec/SPEC-MODULES.md` (module standard).
-- `docs/spec/SPEC-ANCHOR.md` (anchoring standard).
+- [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (Master Reference – conceptual and narrative source of truth).
+- [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (data models and schemas).
+- [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS) (parameters and economics).
+- [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module standard).
+- [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR) (anchoring standard).
 
 Where this document conflicts with an approved, versioned upgrade proposal, the approved proposal and resulting implementation control.
 

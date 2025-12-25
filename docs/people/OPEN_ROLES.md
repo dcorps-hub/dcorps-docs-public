@@ -3,7 +3,9 @@
 **Document type**: Hiring list  
 **Doc ID**: PEOPLE-OPEN-ROLES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/people/OPEN_ROLES.md`)
+**Source repo**: dcorps-docs-public ([docs/people/OPEN_ROLES.md](/people/OPEN_ROLES))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Open positions for the dCorps ecosystem.
 

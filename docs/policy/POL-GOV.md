@@ -1,9 +1,11 @@
-# dCorps – Governance Charter
+# Governance Charter
 
 **Document type**: Policy  
 **Doc ID**: POL-GOV  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/policy/POL-GOV.md`)
+**Source repo**: dcorps-docs-public ([docs/policy/POL-GOV.md](/policy/POL-GOV))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Governance structures and processes for the dCorps protocol and related artifacts. This charter describes how decisions are proposed, evaluated, and adopted at the protocol level.
 
@@ -135,7 +137,7 @@ Examples include:
 - material changes to shared security assumptions for recognized sub chains;
 - changes to hard limits that protect non-custodial boundaries and censorship-resistance commitments.
 
-Baseline requirement for a Protected Change (see `docs/master/DCHUB_MASTER.md`, section 13.3.5):
+Baseline requirement for a Protected Change (see [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), section 13.3.5):
 
 - **Quorum**: 25% of voting power participating
 - **Passing threshold**: 67% Yes of participating voting power

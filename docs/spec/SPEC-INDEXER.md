@@ -1,9 +1,11 @@
-# dCorps – Reference Indexer Specification
+# Reference Indexer Specification
 
 **Document type**: Reference spec  
 **Doc ID**: SPEC-INDEXER  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-INDEXER.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Expected behavior of a reference indexer and explorer for the Hub, modules, and recognized sub chains. This is non-normative for the chain, but normative for reference tooling.
 

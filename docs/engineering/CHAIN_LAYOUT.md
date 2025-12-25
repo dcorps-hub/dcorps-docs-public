@@ -1,9 +1,11 @@
-# dCorps Hub - Chain Repo Layout
+# Hub - Chain Repo Layout
 
 **Document type**: Engineering plan  
 **Doc ID**: ENG-CHAIN-LAYOUT  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/engineering/CHAIN_LAYOUT.md`)
+**Source repo**: dcorps-docs-public ([docs/engineering/CHAIN_LAYOUT.md](/engineering/CHAIN_LAYOUT))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Canonical repository layout and module boundaries for the Hub chain implementation.
 
@@ -13,7 +15,7 @@
 
 - Repo name: `dcorps-chain`.
 - Language: Go.
-- Framework: Cosmos SDK with CometBFT and IBC (see `docs/engineering/STACK.md`).
+- Framework: Cosmos SDK with CometBFT and IBC (see [docs/engineering/STACK.md](/engineering/STACK)).
 
 ---
 

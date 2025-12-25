@@ -3,7 +3,9 @@
 **Document type**: Frontend index  
 **Doc ID**: FE-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/frontend/INDEX.md`)
+**Source repo**: dcorps-docs-public ([docs/frontend/INDEX.md](/frontend/INDEX))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Frontend requirements, roadmap, and decisions for the website, explorer, and applications.
 
@@ -28,10 +30,10 @@
 
 ## Start here
 
-- Current and future stack notes: `docs/frontend/STACK.md`
-- Wallet signing flows: `docs/frontend/SIGNING_FLOWS.md`
-- Information architecture: `docs/frontend/INFO_ARCHITECTURE.md`
-- Explorer requirements: `docs/frontend/EXPLORER_REQUIREMENTS.md`
-- Accessibility guidelines: `docs/frontend/ACCESSIBILITY.md`
+- Current and future stack notes: [docs/frontend/STACK.md](/frontend/STACK)
+- Wallet signing flows: [docs/frontend/SIGNING_FLOWS.md](/frontend/SIGNING_FLOWS)
+- Information architecture: [docs/frontend/INFO_ARCHITECTURE.md](/frontend/INFO_ARCHITECTURE)
+- Explorer requirements: [docs/frontend/EXPLORER_REQUIREMENTS.md](/frontend/EXPLORER_REQUIREMENTS)
+- Accessibility guidelines: [docs/frontend/ACCESSIBILITY.md](/frontend/ACCESSIBILITY)
 
 Internal frontend planning (tasks, roadmaps, and decision logs) is maintained privately.

@@ -3,7 +3,9 @@
 **Document type**: Frontend requirements  
 **Doc ID**: FE-INFO-ARCH  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/frontend/INFO_ARCHITECTURE.md`)
+**Source repo**: dcorps-docs-public ([docs/frontend/INFO_ARCHITECTURE.md](/frontend/INFO_ARCHITECTURE))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Canonical information architecture across the public site, docs, and app surfaces.
 
@@ -12,16 +14,16 @@
 ## 1. Public site (marketing and onboarding)
 
 - Overview, vision, and protocol summaries.
-- Clear links to public docs and specs.
+- Clear links to docs and specs.
 - Legal and risk disclosures accessible from footer.
 
 ---
 
 ## 2. Documentation hub
 
-- `docs/public/INDEX.md` is the public entry point.
-- `docs/spec/INDEX.md` is the developer entry point.
-- `docs/INDEX.md` is the canonical internal map.
+- [docs/welcome/INDEX.md](/welcome/INDEX) is the docs center entry point.
+- [docs/spec/INDEX.md](/spec/INDEX) is the developer entry point.
+- [docs/INDEX.md](/INDEX) is the canonical map.
 
 ---
 

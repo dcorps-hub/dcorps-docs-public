@@ -3,7 +3,9 @@
 **Document type**: Legal summary  
 **Doc ID**: LEGAL-DEVCO-FOUNDATION  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/legal/DEVCO_FOUNDATION_AGREEMENT.md`)
+**Source repo**: dcorps-docs-public ([docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Public summary of the expected relationship between the development corporation and the foundation.
 

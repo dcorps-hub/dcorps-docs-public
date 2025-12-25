@@ -3,7 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-OBSERVABILITY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/OBSERVABILITY.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/OBSERVABILITY.md](/devops/OBSERVABILITY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Metrics, logs, and alerts required for a healthy dCorps network.
 
@@ -47,7 +49,7 @@
 
 ## Alerts (baseline thresholds)
 
-- Target block time is defined in `docs/devops/NETWORK_PARAMS.md`.
+- Target block time is defined in [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
 - Chain halt or no blocks for 3 minutes (critical).
 - Block time > 2x target for 10 minutes (warning), > 3x target for 30 minutes (critical).
 - Validator missed blocks > 5% in 1 hour (warning), > 10% (critical).

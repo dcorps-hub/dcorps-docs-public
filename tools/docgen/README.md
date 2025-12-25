@@ -12,7 +12,7 @@ The `docgen` tooling exists to:
 - keep public references in sync with the Master Reference and specs;
 - minimize manual copy/paste and the risk of divergence.
 
-It operates primarily on Markdown files under `docs/` and produces outputs for `docs/public/` and other targets as needed.
+It operates primarily on Markdown files under `docs/` and produces outputs for the docs center and other targets as needed.
 
 ---
 
@@ -23,12 +23,12 @@ Typical inputs:
 - `docs/master/DCHUB_MASTER.md` and related master files;
 - specification files under `docs/spec/`;
 - policy, token, and security documents where relevant.
-- restricted material under `docs/restricted/` (excluded from public outputs).
+- restricted material under `dcorps-docs-private/docs/restricted/` (excluded from public outputs).
 
 Typical outputs:
 
-- public-facing master reference (`docs/public/master/DCHUB_MASTER_PUBLIC.md`);
-- public specs (`docs/public/spec/`);
+- public-facing master reference (`docs/master/DCHUB_MASTER_PUBLIC.md`);
+- public specs (`docs/spec/`);
 - optionally, HTML, JSON, or other formats for websites and tooling.
 
 All outputs should be clearly traceable back to specific versions of source files.
@@ -56,11 +56,11 @@ Marker syntax and behavior should be documented here alongside any implemented s
 
 ## 4. Running the tooling
 
-Docgen scripts are not implemented in this repo yet. For now, public-facing files under `docs/public/` are maintained manually.
+Docgen scripts are not implemented in this repo yet. For now, docs are maintained manually under `docs/`.
 
-If/when docgen is implemented, document the exact commands and options here (including any scripts added under `tools/docgen/`), and describe the expected outputs under `docs/public/`.
+If/when docgen is implemented, document the exact commands and options here (including any scripts added under `tools/docgen/`), and describe the expected outputs under `docs/` and downstream exports.
 
-Public outputs MUST exclude `docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
+Public outputs MUST exclude `dcorps-docs-private/docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
 
 ---
 
@@ -68,7 +68,7 @@ Public outputs MUST exclude `docs/restricted/` (policy: `docs/policy/POL-DOCS-PU
 
 When editing internal docs that feed into docgen:
 
-- avoid duplicating content manually in `docs/public/`; let tooling handle derivation where possible;
+- avoid duplicating content manually once docgen is in place; let tooling handle derivation where possible;
 - use agreed marker conventions to separate internal details from public-safe content;
 - update this README when new transformations or outputs are added.
 

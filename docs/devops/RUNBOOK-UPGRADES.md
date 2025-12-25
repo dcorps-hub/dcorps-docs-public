@@ -3,7 +3,9 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-UPGRADES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-UPGRADES.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/RUNBOOK-UPGRADES.md](/devops/RUNBOOK-UPGRADES))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Public-safe steps for planned upgrades and rollback posture.
 

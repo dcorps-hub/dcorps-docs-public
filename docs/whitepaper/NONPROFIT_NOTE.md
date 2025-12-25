@@ -1,12 +1,14 @@
-# dCorps Hub – Nonprofit Note (Public)
+# Hub Nonprofit Note
 
-**Document type**: Nonprofit note (public)  
+**Document type**: Nonprofit note  
 **Doc ID**: DCHUB-NONPROFIT-NOTE-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
@@ -103,7 +105,7 @@ Nonprofits may need selective disclosure for beneficiary safety, payroll privacy
 
 For public risk framing, see:
 
-- `docs/public/legal/RISK_DISCLOSURE.md` (privacy and data risks)
+- [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE) (privacy and data risks)
 
 ---
 
@@ -129,10 +131,10 @@ Optional jurisdiction adapter modules may support recognition workflows, but leg
 
 ## 6. References (recommended reading)
 
-- Public index: `docs/public/INDEX.md`
-- Official public whitepaper: `docs/public/whitepaper/WHITEPAPER.md`
-- FAQ and glossary: `docs/public/whitepaper/FAQ.md`, `docs/public/whitepaper/GLOSSARY.md`
-- Technical overview and integration guide: `docs/public/technical/TECHNICAL_OVERVIEW.md`, `docs/public/technical/INTEGRATION_GUIDE.md`
-- Normative specs: `docs/spec/SPEC-CORE.md`, `docs/spec/SPEC-DATA.md`, `docs/spec/SPEC-MODULES.md`
-- Governance and policy: `docs/policy/POL-GOV.md`, `docs/policy/POL-VALIDATORS.md`
-- Legal and risk: `docs/public/legal/DISCLAIMERS.md`, `docs/public/legal/RISK_DISCLOSURE.md`
+- Docs center index: [docs/welcome/INDEX.md](/welcome/INDEX)
+- Official whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- FAQ and glossary: [docs/whitepaper/FAQ.md](/whitepaper/FAQ), [docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY)
+- Technical overview and integration guide: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW), [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE)
+- Normative specs: [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE), [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA), [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
+- Governance and policy: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS)
+- Legal and risk: [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS), [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)

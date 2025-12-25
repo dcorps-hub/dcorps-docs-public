@@ -1,9 +1,11 @@
-# dCorps Context Snapshot
+# Context Snapshot
 
 **Document type**: Context summary  
 **Doc ID**: DOCS-CONTEXT  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/CONTEXT.md`)
+**Source repo**: dcorps-docs-public ([docs/CONTEXT.md](/CONTEXT))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: One-page summary of what dCorps is, who it is for, and how the system is organized.
 
@@ -45,7 +47,7 @@ The Hub is intentionally minimal. Jurisdiction rules, sector frameworks, and use
 - Module registry and sub chain registry.
 - Anchors for documents and summarized external state.
 
-Normative rules for these primitives live in `docs/spec/*`.
+Normative rules for these primitives live in [docs/spec/*](/spec).
 
 ---
 
@@ -66,13 +68,13 @@ USDC on the Hub is typically represented as an IBC denom tracing back to Noble's
 - A foundation is intended to steward the protocol and registry in later phases.
 - An independent development company builds and supports reference tooling.
 
-See `docs/policy/POL-GOV.md` and `docs/policy/POL-FOUNDATION.md`.
+See [docs/policy/POL-GOV.md](/policy/POL-GOV) and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
 
 ---
 
 ## Where to go next
 
-- Public overview: `docs/public/INDEX.md`
-- Master reference: `docs/master/DCHUB_MASTER.md`
-- Specs: `docs/spec/INDEX.md`
-- Roadmap: `docs/roadmap/INDEX.md`
+- Docs center welcome: [docs/welcome/INDEX.md](/welcome/INDEX)
+- Master reference: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER)
+- Specs: [docs/spec/INDEX.md](/spec/INDEX)
+- Roadmap: [docs/roadmap/INDEX.md](/roadmap/INDEX)

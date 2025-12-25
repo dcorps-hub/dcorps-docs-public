@@ -3,7 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-COSMOS-ENV  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/COSMOS_ENVIRONMENT.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/COSMOS_ENVIRONMENT.md](/devops/COSMOS_ENVIRONMENT))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Summarize what is required to stand up a Cosmos-based environment for the dCorps Hub.
 
@@ -35,7 +37,7 @@ Minimum components to operate a network:
 ## Genesis workflow (high level)
 
 1. Define chain ID, denom, bech32 prefix, and initial parameters.
-2. Assemble genesis allocations and vesting accounts (see `docs/token/TOKEN-GENESIS-PLAN.md`).
+2. Assemble genesis allocations and vesting accounts (see [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)).
 3. Define initial validator set for dev or staging.
 4. Generate and validate the genesis file with reproducible scripts.
 5. Publish checksums and verification steps.
@@ -52,17 +54,17 @@ Minimum components to operate a network:
 
 ## Decisions required
 
-- Chain ID and network names: `docs/devops/NETWORK_PARAMS.md`.
-- Denom format and bech32 prefix: `docs/devops/NETWORK_PARAMS.md`.
-- Default parameter values: `docs/devops/NETWORK_PARAMS.md`.
-- Versioning and release cadence: `docs/devops/ENVIRONMENTS.md`.
-- IBC channels and relayer requirements: `docs/devops/IBC_OPERATIONS.md`.
+- Chain ID and network names: [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
+- Denom format and bech32 prefix: [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
+- Default parameter values: [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
+- Versioning and release cadence: [docs/devops/ENVIRONMENTS.md](/devops/ENVIRONMENTS).
+- IBC channels and relayer requirements: [docs/devops/IBC_OPERATIONS.md](/devops/IBC_OPERATIONS).
 
 ---
 
 ## References
 
-- `docs/spec/SPEC-CORE.md`
-- `docs/spec/SPEC-PARAMS.md`
-- `docs/spec/SPEC-ANCHOR.md`
-- `docs/token/TOKEN-GENESIS-PLAN.md`
+- [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE)
+- [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS)
+- [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)

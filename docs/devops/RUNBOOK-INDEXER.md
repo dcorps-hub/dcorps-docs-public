@@ -3,7 +3,9 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-INDEXER  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-INDEXER.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/RUNBOOK-INDEXER.md](/devops/RUNBOOK-INDEXER))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Public-safe steps for indexer backfill and recovery.
 
@@ -29,5 +31,5 @@
 ## 3. Recovery checklist
 
 - Verify last processed height matches the chain.
-- Confirm report outputs match reference expectations as defined in `docs/spec/SPEC-INDEXER.md`.
-- Confirm exported schemas and tags remain compatible with `docs/spec/SPEC-DATA.md`.
+- Confirm report outputs match reference expectations as defined in [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER).
+- Confirm exported schemas and tags remain compatible with [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA).

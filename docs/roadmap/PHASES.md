@@ -3,7 +3,9 @@
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-PHASES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/roadmap/PHASES.md`)
+**Source repo**: dcorps-docs-public ([docs/roadmap/PHASES.md](/roadmap/PHASES))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Define phase goals and exit criteria based on the Master Reference (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
 
@@ -34,13 +36,13 @@ Objective: publish verifiable artifacts and run a public testnet so readiness ca
 Key deliverables:
 
 - Hub chain source code and build instructions.
-- Protocol specs and module standards (`docs/spec/*`).
+- Protocol specs and module standards ([docs/spec/*](/spec)).
 - Public testnet with published chain ID, genesis file, and validator onboarding steps (testnet).
 - Reproducible tooling for nodes, indexers, and reporting views.
 - Public example entity package on testnet (corporation + nonprofit) with tagged events, anchors, and derived reports.
 - Audit scope and reports for core modules and reference tooling.
 - Bug bounty program with disclosure workflow.
-- Governance and validator charters plus Treasury policy (`docs/policy/*`).
+- Governance and validator charters plus Treasury policy ([docs/policy/*](/policy)).
 
 Exit criteria:
 

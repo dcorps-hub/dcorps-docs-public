@@ -3,7 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-IBC-OPS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/IBC_OPERATIONS.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/IBC_OPERATIONS.md](/devops/IBC_OPERATIONS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Operational requirements for IBC relayers and channel health.
 
@@ -27,7 +29,7 @@
 ## 3. Monitoring
 
 - Track packet backlog, retry counts, and channel status.
-- Alert if backlog exceeds thresholds in `docs/devops/OBSERVABILITY.md`.
+- Alert if backlog exceeds thresholds in [docs/devops/OBSERVABILITY.md](/devops/OBSERVABILITY).
 
 ---
 
@@ -40,4 +42,4 @@
 
 ## 5. Runbook
 
-Operational recovery steps are in `docs/devops/RUNBOOK-IBC.md`.
+Operational recovery steps are in [docs/devops/RUNBOOK-IBC.md](/devops/RUNBOOK-IBC).

@@ -1,12 +1,14 @@
-# dCorps Whitepaper (Public, Plain Language)
+# Whitepaper (Plain Language)
 
-**Document type**: Whitepaper (public, plain-language)  
+**Document type**: Whitepaper (plain language)  
 **Doc ID**: DCHUB-WP-PLAIN-2025-12-22  
 **Version**: v1.0  
 **Status**: Final v1.0  
 **Release date**: December 22, 2025  
 **Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) - [dev@dcorps.com](mailto:dev@dcorps.com)
+[www.dcorps.com](http://www.dcorps.com/) - [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > This is the public website whitepaper written for general readers. It is detailed, but uses plain language so anyone can follow.
 

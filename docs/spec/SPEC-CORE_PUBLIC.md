@@ -1,12 +1,14 @@
-# dCorps Hub Protocol – Core Specification (Public View)
+# Hub Protocol – Core Specification (Overview)
 
-**Document type**: Public-facing spec  
+**Document type**: Spec overview  
 **Doc ID**: SPEC-CORE-PUBLIC  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/public/spec/SPEC-CORE_PUBLIC.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-CORE_PUBLIC.md](/spec/SPEC-CORE_PUBLIC))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: Public subset of `docs/spec/SPEC-CORE.md` for integrators and external reviewers. This document focuses on externally visible behavior and concepts.
-> Public index (recommended starting point): `docs/public/INDEX.md`
+> Scope: Overview subset of [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) for integrators and external reviewers. This document focuses on externally visible behavior and concepts.
+> Docs center index (recommended starting point): [docs/welcome/INDEX.md](/welcome/INDEX)
 
 ---
 
@@ -40,7 +42,7 @@ These concepts are stable entry points; details such as exact message names or e
 
 ---
 
-## 3. Core behavior (public view)
+## 3. Core behavior (overview)
 
 High-level summary of the Hub:
 

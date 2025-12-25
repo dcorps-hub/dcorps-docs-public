@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `docs/` holds all canonical Markdown content. Start at `docs/INDEX.md`; public entry point is `docs/public/INDEX.md`.
+- `docs/` holds all canonical Markdown content. Start at `docs/INDEX.md`; public entry point is `docs/welcome/INDEX.md`.
 - Root folders: `docs/`, `tools/`.
 - `docs/spec/` is the normative protocol spec set; `docs/policy/`, `docs/security/`, `docs/token/`, and `docs/devops/` cover governance, safety, economics, and operations.
 - Internal playbooks (agents, ops planning) live in `dcorps-docs-private/docs/internal/` and must not be linked from public docs.
@@ -9,7 +9,7 @@
 - `tools/docgen/` documents the (future) doc generation workflow.
 
 ## Build, Test, and Development Commands
-- Build: none. Docgen is not implemented; public docs under `docs/public/` are maintained manually.
+- Build: none. Docgen is not implemented; docs are maintained manually under `docs/`.
 - Test: none. Validate changes by reading the relevant indexes and links.
 - Useful local search: `rg "SPEC-" docs/spec/` or `rg "POL-" docs/policy/`.
 

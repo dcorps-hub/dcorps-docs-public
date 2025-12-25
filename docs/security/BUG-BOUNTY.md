@@ -1,9 +1,11 @@
-# dCorps – Bug Bounty Program
+# Bug Bounty Program
 
 **Document type**: Security policy  
 **Doc ID**: BUG-BOUNTY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/security/BUG-BOUNTY.md`)
+**Source repo**: dcorps-docs-public ([docs/security/BUG-BOUNTY.md](/security/BUG-BOUNTY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Rules and process for reporting vulnerabilities and receiving rewards, including baseline reward ranges and safe-harbor expectations.
 

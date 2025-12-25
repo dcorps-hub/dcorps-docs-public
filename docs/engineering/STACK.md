@@ -1,9 +1,11 @@
-# dCorps Hub - Technical Stack Decisions
+# Hub - Technical Stack Decisions
 
 **Document type**: Engineering decisions  
 **Doc ID**: ENG-STACK  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/engineering/STACK.md`)
+**Source repo**: dcorps-docs-public ([docs/engineering/STACK.md](/engineering/STACK))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Baseline implementation stack for the Hub chain, indexer, and app surfaces. Changes require updating this file and referencing the change in relevant release notes (or governance proposals when protocol-affecting).
 

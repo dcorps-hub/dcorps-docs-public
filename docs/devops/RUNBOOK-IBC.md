@@ -3,7 +3,9 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-IBC  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-IBC.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/RUNBOOK-IBC.md](/devops/RUNBOOK-IBC))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Public-safe steps for IBC relayer outages and channel recovery.
 

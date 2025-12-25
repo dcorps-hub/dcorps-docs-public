@@ -1,9 +1,11 @@
-# dCorps – Audit Plan
+# Audit Plan
 
 **Document type**: Security process  
 **Doc ID**: AUDIT-PLAN  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/security/AUDIT-PLAN.md`)
+**Source repo**: dcorps-docs-public ([docs/security/AUDIT-PLAN.md](/security/AUDIT-PLAN))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Planning and execution framework for security and code audits across the dCorps protocol, modules, and critical tooling.
 

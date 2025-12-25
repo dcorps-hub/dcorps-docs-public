@@ -1,9 +1,11 @@
-# dCorps Hub – Protocol Parameters and Economics
+# Hub – Protocol Parameters and Economics
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-PARAMS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-PARAMS.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Parameter catalog and economic rules for the Hub and Hub-aligned sub chains. This spec defines how parameters are modeled and governed, not their final numeric values.
 
@@ -22,7 +24,7 @@ This document:
 
 Actual parameter values and recommended starting points SHOULD be maintained in a separate configuration document or genesis file and cross-referenced here.
 
-Baseline defaults are recorded in `docs/devops/NETWORK_PARAMS.md`.
+Baseline defaults are recorded in [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
 
 ---
 

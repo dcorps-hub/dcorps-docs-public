@@ -1,20 +1,22 @@
-# dCorps Hub Whitepaper (Public)
+# Hub Whitepaper (Long Version)
 
 #### Digitally native base layer for corporations and nonprofits, born and operated on-chain
 
-**Long Version**
+**Long Version**  
 
-**Document ID**: DCHUB-WP-2025-12-21
-**Version**: v1.3.1
-**Edition**: Public
-**Status**: Final v1.3.1 (public)
-**Release date**: December 21, 2025
-**Author**: Nicolas Turcotte, Founder
- [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+**Document ID**: DCHUB-WP-2025-12-21  
+**Version**: v1.3.1  
+**Edition**: Long  
+**Status**: Final v1.3.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
+ [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).
+**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).  
 
-**Editing note (linear read)**: This copy consolidates repeated definitions and uses short reminders plus section pointers, so it reads cleanly from page 1 to the end.
+**Editing note (linear read)**: This copy consolidates repeated definitions and uses short reminders plus section pointers, so it reads cleanly from page 1 to the end.  
 
 ---
 
@@ -56,10 +58,10 @@ For interoperability and correctness, the dCorps document stack is intended to b
 - **Governance Charter (normative for process)**: proposal types, thresholds, councils, upgrade process, emergency controls, and their sunset conditions.
 - **Token Policy (normative for operations)**: vesting, lockups, transfer constraints, custody rules, treasury policy, and release caps.
 - **Reference specifications (normative for interoperability)**:
-  - Module Protocol Standard (`docs/spec/SPEC-MODULES.md`) and compatibility requirements,
-  - Reference Indexer Specification (`docs/spec/SPEC-INDEXER.md`) and export formats,
-  - Reference explorer behavior for entity pages and reporting views (see `docs/spec/SPEC-INDEXER.md`),
-  - Compatibility Test Suite (`docs/spec/SPEC-CONFORMANCE-TESTS.md`) for schema and module conformance.
+  - Module Protocol Standard ([docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)) and compatibility requirements,
+  - Reference Indexer Specification ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)) and export formats,
+  - Reference explorer behavior for entity pages and reporting views (see [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
+  - Compatibility Test Suite ([docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS)) for schema and module conformance.
 
 If there is a conflict between this whitepaper and the Protocol Specification or Governance Charter, the Protocol Specification and the Governance Charter are intended to take precedence.
 
@@ -637,9 +639,9 @@ This whitepaper is intentionally long and complete. It is the canonical referenc
 
 Other documents are, or will be, shorter slices of the same design, for example:
 
-- A **litepaper** (`docs/public/whitepaper/LITEPAPER.md`) or **investor brief** (`docs/public/investor/INVESTOR_BRIEF.md`) that focuses on vision, architecture, token model, and adoption path.
-- A **nonprofit note** (`docs/public/whitepaper/NONPROFIT_NOTE.md`) that focuses on nonprofit modules, donor transparency, and jurisdiction adapter patterns for charities.
-- Public technical docs (`docs/public/technical/TECHNICAL_OVERVIEW.md`, `docs/public/technical/INTEGRATION_GUIDE.md`) and normative specs (`docs/spec/`) that focus on APIs, schemas, and implementation details.
+- A **litepaper** ([docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)) or **investor brief** ([docs/investor/INVESTOR_BRIEF.md](/investor/INVESTOR_BRIEF)) that focuses on vision, architecture, token model, and adoption path.
+- A **nonprofit note** ([docs/whitepaper/NONPROFIT_NOTE.md](/whitepaper/NONPROFIT_NOTE)) that focuses on nonprofit modules, donor transparency, and jurisdiction adapter patterns for charities.
+- Technical docs ([docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW), [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE)) and normative specs ([docs/spec/](/spec)) that focus on APIs, schemas, and implementation details.
 
 Those documents do not replace this whitepaper. They present the same structure from different angles. Where there is any doubt, this long form whitepaper is the starting point, and more precise parameter values or legal details live in the separate reference and policy documents listed in section 1.1.
 
@@ -5593,13 +5595,13 @@ Before mainnet v1 is treated as production ready, dCorps intends to publish a co
 
 - Hub chain implementation source code and build instructions.
 - Protocol Specification and module standards referenced in this whitepaper:
-  - core message families, state machines, and event schemas (`docs/spec/SPEC-CORE.md`),
-  - Module Protocol Standard and compatibility requirements (`docs/spec/SPEC-MODULES.md`),
-  - Sub chain Anchoring Standard and anchor schema versions (`docs/spec/SPEC-ANCHOR.md`).
+  - core message families, state machines, and event schemas ([docs/spec/SPEC-CORE.md](/spec/SPEC-CORE)),
+  - Module Protocol Standard and compatibility requirements ([docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)),
+  - Sub chain Anchoring Standard and anchor schema versions ([docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)).
 - Reference tooling source code:
-  - reference indexer behavior and export formats (`docs/spec/SPEC-INDEXER.md`),
-  - reference explorer behavior for entity pages and reporting views (`docs/spec/SPEC-INDEXER.md`),
-  - Compatibility Test Suite for schema and module conformance (`docs/spec/SPEC-CONFORMANCE-TESTS.md`).
+  - reference indexer behavior and export formats ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
+  - reference explorer behavior for entity pages and reporting views ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
+  - Compatibility Test Suite for schema and module conformance ([docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS)).
 
 **Testnet and reproducibility**
 
@@ -6249,20 +6251,20 @@ This whitepaper will be complemented by living documents, including:
 
 #### Legal and risk disclosures
 
-- **Risk Disclosure** (`docs/public/legal/RISK_DISCLOSURE.md`)
+- **Risk Disclosure** ([docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE))
   - Technical, governance, market, and regulatory risks in plain language.
-- **Non-custodial and Non-intermediation Statement** (`docs/public/legal/DISCLAIMERS.md`)
+- **Non-custodial and Non-intermediation Statement** ([docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS))
   - Bright-line boundaries for custody, relayers, and service providers.
-- **Provider Attestation Framework** (`docs/spec/SPEC-ATTESTATIONS.md`)
+- **Provider Attestation Framework** ([docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS))
   - Step 0 schemas, labels, dispute rights, and roles.
 
 #### Developer and ecosystem
 
-- **Developer Documentation** (`docs/public/technical/TECHNICAL_OVERVIEW.md`, `docs/public/technical/INTEGRATION_GUIDE.md`)
+- **Developer Documentation** ([docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW), [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE))
   - SDKs, APIs, indexing guides, and example integrations.
-- **Compatibility Test Suite** (`docs/spec/SPEC-CONFORMANCE-TESTS.md`)
+- **Compatibility Test Suite** ([docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS))
   - Module conformance tests and schema compliance tests.
-- **Reference Indexer Specification** (`docs/spec/SPEC-INDEXER.md`)
+- **Reference Indexer Specification** ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER))
   - Canonical indexing behavior and data export formats.
 - **Pilot Showcase**
   - Living dashboards and case studies (published separately from this repo’s normative documents).

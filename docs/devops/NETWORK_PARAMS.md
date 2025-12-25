@@ -3,7 +3,9 @@
 **Document type**: DevOps reference  
 **Doc ID**: DEVOPS-NETWORK-PARAMS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/NETWORK_PARAMS.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Baseline chain IDs, denoms, prefixes, and genesis parameter defaults for dev, testnet, and mainnet.
 
@@ -37,7 +39,7 @@
 ## 4. Genesis supply and allocations
 
 - Total supply at genesis: 1,000,000,000 DCHUB.
-- Allocation and vesting schedules follow `docs/token/TOKEN-GENESIS-PLAN.md`.
+- Allocation and vesting schedules follow [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN).
 
 ---
 
@@ -68,7 +70,7 @@
 - `threshold`: 0.50
 - `veto_threshold`: 0.334
 
-Protected Change thresholds follow `docs/policy/POL-GOV.md`.
+Protected Change thresholds follow [docs/policy/POL-GOV.md](/policy/POL-GOV).
 
 ---
 
