@@ -1,11 +1,13 @@
-# dCorps Hub - Technical Stack Decisions
+# Hub - Technical Stack Decisions
 
 **Document type**: Engineering decisions  
 **Doc ID**: ENG-STACK  
-**Status**: Living v0.1  
-**Source repo**: dcorps-docs-public (`docs/engineering/STACK.md`)
+**Status**: Final v0.1  
+**Source repo**: dcorps-docs-public ([docs/engineering/STACK.md](/engineering/STACK))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: Baseline implementation stack for the Hub chain, indexer, and app surfaces. Changes require updating this file and internal decision tracking.
+> Scope: Baseline implementation stack for the Hub chain, indexer, and app surfaces. Changes require updating this file and referencing the change in relevant release notes (or governance proposals when protocol-affecting).
 
 ---
 
@@ -53,7 +55,7 @@
 
 - Packaging: Docker for all services.
 - Infrastructure as code: Terraform.
-- CI: GitHub Actions or equivalent.
+- CI: GitHub Actions or equivalent (recommended for code repos; this docs repo has no CI yet).
 - Observability: Prometheus + Grafana; Loki for logs.
 
 ---
@@ -61,4 +63,4 @@
 ## 6. Change control
 
 - Pin versions in code repositories.
-- Document all stack changes in the internal Decision Log (private).
+- Document stack changes in this file and in relevant release notes (or governance proposals when protocol-affecting).

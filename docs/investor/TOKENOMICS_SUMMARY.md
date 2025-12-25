@@ -1,11 +1,13 @@
-# dCorps Hub – Tokenomics Summary (Public)
+# Hub Tokenomics Summary
 
-**Document type**: Tokenomics summary (public)  
+**Document type**: Tokenomics summary  
 **Doc ID**: DCHUB-TOKENOMICS-SUMMARY-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs-public (`docs/public/investor/TOKENOMICS_SUMMARY.md`)
+**Source repo**: dcorps-docs-public ([docs/investor/TOKENOMICS_SUMMARY.md](/investor/TOKENOMICS_SUMMARY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
@@ -60,13 +62,13 @@ The v1 design stance is a fixed hard-cap supply minted at genesis:
 - **Supply creation**: minted once at genesis and assigned into vesting accounts and governance-controlled module accounts.
 - **No discretionary inflation beyond genesis**: “emissions” refers to tokens entering circulation from predefined allocations (for example the staking and validator rewards pool), not supply creation beyond the fixed cap.
 
-For definitions of minted supply, circulating supply, and emissions, see `docs/token/TOKEN-EMISSIONS-NOTES.md`.
+For definitions of minted supply, circulating supply, and emissions, see [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES).
 
 ---
 
 ## 5. Indicative allocations (reference)
 
-Indicative allocation at genesis (see `docs/token/TOKEN-GENESIS-PLAN.md`):
+Indicative allocation at genesis (see [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)):
 
 - Founder: 15% (150,000,000)
 - Core team and future contributors: 10% (100,000,000)
@@ -94,7 +96,7 @@ Circulating supply increases through a small number of explicit mechanisms:
 
 ## 7. References (normative and detailed)
 
-- Token policy: `docs/token/TOKEN-POLICY.md`
-- Genesis plan: `docs/token/TOKEN-GENESIS-PLAN.md`
-- Emissions and rewards: `docs/token/TOKEN-EMISSIONS-NOTES.md`
-- Official whitepaper: `docs/public/whitepaper/WHITEPAPER.md`
+- Token policy: [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY)
+- Genesis plan: [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)
+- Emissions and rewards: [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES)
+- Official whitepaper: [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)

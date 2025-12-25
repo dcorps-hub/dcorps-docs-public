@@ -1,11 +1,13 @@
-# dCorps Hub – FAQ (Public)
+# Hub FAQ
 
-**Document type**: FAQ (public)  
+**Document type**: FAQ  
 **Doc ID**: DCHUB-FAQ-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs-public (`docs/public/whitepaper/FAQ.md`)
+**Source repo**: dcorps-docs-public ([docs/whitepaper/FAQ.md](/whitepaper/FAQ))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
@@ -19,7 +21,7 @@ Nothing in this document is investment, legal, tax, or accounting advice. Nothin
 
 dCorps is a digitally native base layer for corporations and nonprofit organizations. It provides a shared standard where entities can be created, owned or governed, and operated on-chain, with a verifiable record of authority and standardized accounting events.
 
-See `docs/public/whitepaper/EXECUTIVE_SUMMARY.md` and `docs/public/whitepaper/WHITEPAPER.md`.
+See [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY) and [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER).
 
 ---
 
@@ -61,7 +63,7 @@ Both are complete on-chain entity containers, but they differ in governance and 
 
 DCHUB is the Hub’s native token used for gas, staking (economic security), and protocol governance. It does not represent ownership in user entities, the development corporation, or the foundation.
 
-See `docs/token/TOKEN-POLICY.md`.
+See [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY).
 
 ---
 
@@ -95,7 +97,7 @@ Protocol modules are optional on-chain extensions that attach to, read, and writ
 
 Modules can publish derived interpretations but must not redefine kernel semantics or rewrite history.
 
-See `docs/spec/SPEC-MODULES.md`.
+See [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES).
 
 ---
 
@@ -115,22 +117,22 @@ Privacy is not assumed by default. Confidentiality exists only when an entity us
 
 v1 is intentionally narrow: a stable Hub kernel that can host complete Hub corporations and Hub nonprofits, run stablecoin operations through tagged accounting events, and produce reproducible period reporting views.
 
-See `docs/public/whitepaper/LITEPAPER.md` and `docs/public/whitepaper/WHITEPAPER.md`.
+See [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER) and [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER).
 
 ---
 
 ## Where are the specs and technical details?
 
-Normative specifications live in `docs/spec/`, including:
+Normative specifications live in [docs/spec/](/spec), including:
 
-- `docs/spec/SPEC-CORE.md`
-- `docs/spec/SPEC-DATA.md`
-- `docs/spec/SPEC-MODULES.md`
-- `docs/spec/SPEC-ANCHOR.md`
-- `docs/spec/SPEC-PARAMS.md`
-- `docs/spec/SPEC-INDEXER.md`
+- [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE)
+- [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA)
+- [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
+- [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS)
+- [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)
 
-For a public technical overview, see `docs/public/technical/TECHNICAL_OVERVIEW.md`.
+For a technical overview, see [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW).
 
 ---
 
@@ -138,4 +140,4 @@ For a public technical overview, see `docs/public/technical/TECHNICAL_OVERVIEW.m
 
 Key risks include technical risks (software bugs), governance risks, stablecoin issuer and rail risks, bridge and cross-chain risks, third-party application risks, and regulatory/jurisdiction risks.
 
-See `docs/public/legal/RISK_DISCLOSURE.md`.
+See [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE).

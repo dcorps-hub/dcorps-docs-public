@@ -1,11 +1,13 @@
-# dCorps – Bug Bounty Program
+# Bug Bounty Program
 
 **Document type**: Security policy  
 **Doc ID**: BUG-BOUNTY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/security/BUG-BOUNTY.md`)
+**Source repo**: dcorps-docs-public ([docs/security/BUG-BOUNTY.md](/security/BUG-BOUNTY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: Rules and process for reporting vulnerabilities and receiving rewards. Actual reward amounts and legal terms are defined in separate, finalized program documents.
+> Scope: Rules and process for reporting vulnerabilities and receiving rewards, including baseline reward ranges and safe-harbor expectations.
 
 ---
 
@@ -35,15 +37,18 @@ Examples of in-scope targets:
 - sub chain anchoring and recognition logic;
 - treasury and foundation-related smart contracts where applicable.
 
+In-scope deployments and artifacts are limited to those explicitly published by dCorps (official repos, binaries, and public endpoints).
+
 ### 2.2 Out-of-scope
 
 Generally out of scope:
 
 - user errors (e.g. lost keys, phishing);
 - third-party services and apps not designated as in-scope;
-- denial-of-service vulnerabilities that require unrealistic resources or are inherent to public blockchains.
+- denial-of-service vulnerabilities that require unrealistic resources or are inherent to public blockchains;
+- spam, rate-limit bypass, and “gas griefing” reports that do not lead to concrete protocol harm.
 
-Specific scope and exclusions are defined in the live bounty program documentation.
+Reports that rely on social engineering, physical attacks, or insider access are generally out of scope unless they reveal a systemic weakness in published controls.
 
 ---
 
@@ -63,7 +68,25 @@ Indicative severities:
 - medium – meaningful but mitigated by existing defenses or limited in scope;
 - low – minor issues, hard-to-exploit bugs, or defense-in-depth findings.
 
-Reward ranges are published for each severity but ultimately determined on a case-by-case basis.
+### 3.1 Reward ranges (baseline)
+
+Rewards are paid in USDC (or equivalent) and are granted at the discretion of the program based on impact and report quality.
+
+| Severity | Typical impact | Reward range (USDC) |
+| --- | --- | --- |
+| Critical | consensus failure, chain halt, or credible large-scale fund loss | 25,000 to 150,000 |
+| High | severe security impact with meaningful constraints | 5,000 to 25,000 |
+| Medium | meaningful impact with mitigating factors | 1,000 to 5,000 |
+| Low | limited impact or defense-in-depth | 250 to 1,000 |
+| Informational | best practices, low-risk issues | 0 to 250 |
+
+### 3.2 Eligibility and award rules (baseline)
+
+- First valid reporter is eligible for rewards; duplicates may be acknowledged but typically are not rewarded.
+- Reports must include clear reproduction steps and sufficient detail to validate the issue.
+- Reports that include safe, minimal proof-of-concept code may be rewarded higher.
+- Researchers who are employees, contractors, or paid auditors for dCorps (or acting under their direction) are not eligible for rewards.
+- Where legally required, payment may be subject to sanctions checks or similar compliance requirements.
 
 ---
 
@@ -107,12 +130,19 @@ These targets may adjust based on severity and complexity.
 
 ## 5. Disclosure and safe harbor
 
-The program intends to provide safe harbor for good-faith security research within published program rules. Subject to legal review and jurisdictional considerations, this generally means:
+The program intends to provide safe harbor for good-faith security research within published program rules. This generally means:
 
 - refraining from pursuing legal action against researchers who comply with the program rules and act in good faith;
 - working collaboratively with researchers to fix issues before public disclosure.
 
-Final, legally binding safe harbor language is published in the live bounty terms. Researchers are encouraged to review those terms carefully before beginning testing.
+Researchers must:
+
+- make a good-faith effort to avoid privacy violations, data destruction, and service disruption;
+- avoid accessing, modifying, or exfiltrating funds or sensitive data beyond what is necessary to demonstrate impact;
+- stop testing and report immediately if sensitive data is accessed unintentionally;
+- not publicly disclose details until a coordinated disclosure plan is agreed.
+
+This document is a program policy and does not constitute legal advice.
 
 ### 5.1 Disclosure timeline (baseline)
 

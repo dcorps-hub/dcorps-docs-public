@@ -1,17 +1,19 @@
-# dCorps Hub – Technical Overview (Public)
+# Hub Technical Overview
 
-**Document type**: Technical overview (public)  
+**Document type**: Technical overview  
 **Doc ID**: DCHUB-TECH-OVERVIEW-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs-public (`docs/public/technical/TECHNICAL_OVERVIEW.md`)
+**Source repo**: dcorps-docs-public ([docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
 ## Disclaimer
 
-This document is descriptive. Normative behavior is defined in the specifications under `docs/spec/`. Nothing in this document is investment, legal, tax, or accounting advice.
+This document is descriptive. Normative behavior is defined in the specifications under [docs/spec/](/spec). Nothing in this document is investment, legal, tax, or accounting advice.
 
 ---
 
@@ -25,12 +27,12 @@ This technical overview is a public map of the dCorps Hub architecture:
 
 This document does not define consensus-critical rules. For normative definitions, use:
 
-- `docs/spec/SPEC-CORE.md`
-- `docs/spec/SPEC-DATA.md`
-- `docs/spec/SPEC-MODULES.md`
-- `docs/spec/SPEC-ANCHOR.md`
-- `docs/spec/SPEC-PARAMS.md`
-- `docs/spec/SPEC-INDEXER.md`
+- [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE)
+- [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA)
+- [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
+- [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS)
+- [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)
 
 ---
 
@@ -89,7 +91,7 @@ The core objects described in the specs include:
 - **Sub chain registry (optional)**
   - sub chain identifiers, recognition tiers, anchors, and status labels.
 
-Exact schema fields and encodings are defined in `docs/spec/SPEC-DATA.md`.
+Exact schema fields and encodings are defined in [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA).
 
 ---
 
@@ -114,7 +116,7 @@ Sub chains are optional execution environments that may anchor summarized commit
 
 v1 does not require sub chains. If introduced, anchors and recognition tiers exist so indexers and explorers can interpret sub chain-derived claims deterministically without changing kernel semantics.
 
-Normative anchoring behavior and recognition tiers are defined in `docs/spec/SPEC-ANCHOR.md`.
+Normative anchoring behavior and recognition tiers are defined in [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR).
 
 ---
 
@@ -122,25 +124,25 @@ Normative anchoring behavior and recognition tiers are defined in `docs/spec/SPE
 
 The Hub uses parameters (rather than hard-coded constants) for many economic and governance behaviors so changes can be made through governance without frequent hard forks.
 
-Governance processes are described in `docs/policy/POL-GOV.md`. Parameter modeling is described in `docs/spec/SPEC-PARAMS.md`.
+Governance processes are described in [docs/policy/POL-GOV.md](/policy/POL-GOV). Parameter modeling is described in [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS).
 
 ---
 
-## 8. Security and risk notes (public)
+## 8. Security and risk notes
 
 Security posture is covered by:
 
-- `docs/security/SECURITY-POLICY.md`
-- `docs/security/THREAT-MODEL.md`
-- `docs/security/AUDIT-PLAN.md`
-- `docs/security/BUG-BOUNTY.md`
-- `docs/security/INCIDENT-RESPONSE.md`
+- [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY)
+- [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL)
+- [docs/security/AUDIT-PLAN.md](/security/AUDIT-PLAN)
+- [docs/security/BUG-BOUNTY.md](/security/BUG-BOUNTY)
+- [docs/security/INCIDENT-RESPONSE.md](/security/INCIDENT-RESPONSE)
 
-Plain-language risk disclosure: `docs/public/legal/RISK_DISCLOSURE.md`.
+Plain-language risk disclosure: [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE).
 
 ---
 
 ## 9. Next steps for builders
 
-- Integration guide: `docs/public/technical/INTEGRATION_GUIDE.md`
-- Specs (normative): `docs/spec/`
+- Integration guide: [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE)
+- Specs (normative): [docs/spec/](/spec)

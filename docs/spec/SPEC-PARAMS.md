@@ -1,9 +1,11 @@
-# dCorps Hub – Protocol Parameters and Economics
+# Hub – Protocol Parameters and Economics
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-PARAMS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-PARAMS.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Parameter catalog and economic rules for the Hub and Hub-aligned sub chains. This spec defines how parameters are modeled and governed, not their final numeric values.
 
@@ -22,7 +24,7 @@ This document:
 
 Actual parameter values and recommended starting points SHOULD be maintained in a separate configuration document or genesis file and cross-referenced here.
 
-Baseline defaults are recorded in `docs/devops/NETWORK_PARAMS.md`.
+Baseline defaults are recorded in [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
 
 ---
 
@@ -189,7 +191,7 @@ Any change to parameters defined in this spec MUST go through an on-chain govern
 
 - specifies which parameters are being changed and from what values to what values;
 - includes a human-readable rationale and risk assessment;
-- references relevant items in `DECISION_LOG.md` where appropriate.
+- references any supporting analyses or documents where appropriate.
 
 Implementations SHOULD enforce proposal validation to prevent:
 
@@ -210,6 +212,6 @@ All parameter changes MUST be:
 
 - recorded on-chain;
 - reflected in off-chain documentation and dashboards;
-- cross-referenced in the Master Reference and changelog where they affect protocol behavior.
+- cross-referenced in the Master Reference and public release notes where they affect protocol behavior.
 
 This spec, together with `SPEC-CORE.md`, SHOULD be kept up to date as parameters evolve, to avoid drift between documentation and actual behavior.

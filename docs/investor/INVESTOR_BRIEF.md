@@ -1,12 +1,14 @@
-# dCorps Hub – Investor & Partner Brief (Public)
+# Hub Investor and Partner Brief
 
-**Document type**: Investor brief (public, informational)  
+**Document type**: Investor brief (informational)  
 **Doc ID**: DCHUB-INVESTOR-BRIEF-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
@@ -75,10 +77,10 @@ The token model separates:
 
 For details on supply, allocations, vesting, and emissions vocabulary, see:
 
-- `docs/public/investor/TOKENOMICS_SUMMARY.md`
-- `docs/token/TOKEN-POLICY.md`
-- `docs/token/TOKEN-GENESIS-PLAN.md`
-- `docs/token/TOKEN-EMISSIONS-NOTES.md`
+- [docs/investor/TOKENOMICS_SUMMARY.md](/investor/TOKENOMICS_SUMMARY)
+- [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY)
+- [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)
+- [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES)
 
 ---
 
@@ -90,7 +92,7 @@ Governance is designed to be conservative:
 - require stronger thresholds and safety mechanisms for high-impact “Protected Changes”;
 - keep module and registry decisions legible through explicit proposal types and documentation.
 
-See `docs/policy/POL-GOV.md`.
+See [docs/policy/POL-GOV.md](/policy/POL-GOV).
 
 ---
 
@@ -116,13 +118,13 @@ Key risks include:
 - regulatory and jurisdiction risks;
 - third-party application and module risks.
 
-See `docs/public/legal/RISK_DISCLOSURE.md` and `docs/public/legal/DISCLAIMERS.md`.
+See [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE) and [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS).
 
 ---
 
 ## 8. What to read next
 
-- Executive summary: `docs/public/whitepaper/EXECUTIVE_SUMMARY.md`
-- Official public whitepaper: `docs/public/whitepaper/WHITEPAPER.md`
-- Technical overview: `docs/public/technical/TECHNICAL_OVERVIEW.md`
-- Specs (normative): `docs/spec/`
+- Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
+- Official whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Technical overview: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW)
+- Specs (normative): [docs/spec/](/spec)

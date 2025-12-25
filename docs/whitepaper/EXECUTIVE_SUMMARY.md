@@ -1,12 +1,14 @@
-# dCorps Hub Whitepaper – Executive Summary
+# Hub Whitepaper – Executive Summary
 
-**Document type**: Executive summary (public)  
+**Document type**: Executive summary  
 **Doc ID**: DCHUB-EXEC-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
@@ -113,8 +115,8 @@ This describes protocol mechanics, not market outcomes.
 
 ## What to read next
 
-- Executive narrative: `docs/public/whitepaper/LITEPAPER.md`
-- Official mid-length: `docs/public/whitepaper/WHITEPAPER.md`
-- Long version: `docs/public/whitepaper/WHITEPAPER_LONG.md`
-- Developer and auditor specs: `docs/spec/`
-- Risk disclosure: `docs/public/legal/RISK_DISCLOSURE.md`
+- Executive narrative: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
+- Official mid-length: [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Long version: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
+- Developer and auditor specs: [docs/spec/](/spec)
+- Risk disclosure: [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)

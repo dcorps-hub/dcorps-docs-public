@@ -1,9 +1,11 @@
-# dCorps – Security Policy
+# Security Policy
 
 **Document type**: Policy  
 **Doc ID**: SECURITY-POLICY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/security/SECURITY-POLICY.md`)
+**Source repo**: dcorps-docs-public ([docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Security principles, responsibilities, and baseline controls for the dCorps protocol and foundation. This policy is complementary to the Threat Model, Audit Plan, Bug Bounty, and Incident Response documents.
 
@@ -72,7 +74,7 @@ Changes that significantly affect security are:
 
 ## 4. Key and secret management
 
-See `docs/security/KEY-MANAGEMENT.md` for the public-safe key custody policy.
+See [docs/security/KEY-MANAGEMENT.md](/security/KEY-MANAGEMENT) for the public-safe key custody policy.
 
 ### 4.1 Validator and user keys
 

@@ -3,7 +3,9 @@
 **Document type**: Frontend guideline  
 **Doc ID**: FE-ACCESSIBILITY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/frontend/ACCESSIBILITY.md`)
+**Source repo**: dcorps-docs-public ([docs/frontend/ACCESSIBILITY.md](/frontend/ACCESSIBILITY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Accessibility and UX requirements for the website, explorer, and app.
 

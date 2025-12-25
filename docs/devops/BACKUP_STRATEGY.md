@@ -3,7 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-BACKUP-STRATEGY  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/BACKUP_STRATEGY.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/BACKUP_STRATEGY.md](/devops/BACKUP_STRATEGY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Snapshot frequency, retention, and verification strategy for chain and indexer data.
 
@@ -42,4 +44,4 @@
 
 ## 5. Runbook
 
-Operational steps are in `docs/devops/RUNBOOK-BACKUP.md`.
+Operational steps are in [docs/devops/RUNBOOK-BACKUP.md](/devops/RUNBOOK-BACKUP).

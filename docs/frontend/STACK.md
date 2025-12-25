@@ -3,9 +3,11 @@
 **Document type**: Frontend guide  
 **Doc ID**: FE-STACK  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/frontend/STACK.md`)
+**Source repo**: dcorps-docs-public ([docs/frontend/STACK.md](/frontend/STACK))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: Record current frontend state and future requirements.
+> Scope: Record current frontend state and baseline requirements.
 
 ---
 
@@ -26,7 +28,7 @@
 - Hosting: Vercel for static site and app deployments.
 - Analytics: Plausible; error tracking: Sentry.
 
-These decisions are summarized in `docs/engineering/STACK.md` and should be treated as baseline unless superseded by a logged decision.
+These decisions are summarized in [docs/engineering/STACK.md](/engineering/STACK) and should be treated as baseline unless superseded by an explicit update in the relevant repo release notes.
 
 ---
 

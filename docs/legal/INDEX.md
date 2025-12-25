@@ -3,35 +3,31 @@
 **Document type**: Legal index  
 **Doc ID**: LEGAL-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/legal/INDEX.md`)
+**Source repo**: dcorps-docs-public ([docs/legal/INDEX.md](/legal/INDEX))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Map legal and compliance documents across the ecosystem.
 
 ---
 
-## Public legal and risk
+## Legal and risk
 
-- `docs/public/legal/DISCLAIMERS.md`
-- `docs/public/legal/RISK_DISCLOSURE.md`
+- [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS)
+- [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)
 
 ---
 
 ## Legal posture and structure
 
-- Master reference legal section: `docs/master/DCHUB_MASTER.md` (section 17)
-- Governance charter: `docs/policy/POL-GOV.md`
-- Foundation charter: `docs/policy/POL-FOUNDATION.md`
-- Structure path: `docs/legal/STRUCTURE_PATH.md`
-- DevCo/Foundation relationship: `docs/legal/DEVCO_FOUNDATION_AGREEMENT.md`
+- Master reference legal section: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (section 17)
+- Governance charter: [docs/policy/POL-GOV.md](/policy/POL-GOV)
+- Foundation charter: [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION)
+- Structure path: [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH)
+- DevCo/Foundation relationship: [docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT)
 
 ---
 
-## Website legal drafts (content repo)
+## Website legal pages
 
-- `../dcorps-site/content/legals/terms.md`
-- `../dcorps-site/content/legals/privacy.md`
-- `../dcorps-site/content/legals/cookies.md`
-- `../dcorps-site/content/legals/disclaimer.md`
-- Draft tracking: `docs/legal/WEBSITE_LEGAL_DRAFTS.md`
-
-Note: Website legal pages require review by qualified counsel before publication.
+Website legal pages (terms, privacy, cookies, disclaimer) are published with the website and maintained in the website content repository and deployment pipeline.

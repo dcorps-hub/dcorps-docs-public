@@ -1,12 +1,14 @@
-# dCorps Hub – Litepaper (Public)
+# Hub Litepaper
 
-**Document type**: Litepaper (public)  
+**Document type**: Litepaper  
 **Doc ID**: DCHUB-LITEPAPER-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
@@ -183,9 +185,9 @@ This describes protocol mechanics, not market outcomes.
 
 Supply, allocations, vesting, and release caps are described in:
 
-- `docs/token/TOKEN-POLICY.md`
-- `docs/token/TOKEN-GENESIS-PLAN.md`
-- `docs/token/TOKEN-EMISSIONS-NOTES.md`
+- [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY)
+- [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)
+- [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES)
 
 ---
 
@@ -197,14 +199,14 @@ Protocol governance is designed to be conservative:
 - upgrades and sensitive changes are slower and more visible;
 - “Protected Changes” require higher thresholds and additional safety mechanisms.
 
-For governance process and proposal types, see `docs/policy/POL-GOV.md`.
+For governance process and proposal types, see [docs/policy/POL-GOV.md](/policy/POL-GOV).
 
 ---
 
 ## 10. What to read next
 
-- Official mid-length whitepaper: `docs/public/whitepaper/WHITEPAPER.md`
-- Long version: `docs/public/whitepaper/WHITEPAPER_LONG.md`
-- Technical overview: `docs/public/technical/TECHNICAL_OVERVIEW.md`
-- Specs (normative): `docs/spec/`
-- Risk disclosure: `docs/public/legal/RISK_DISCLOSURE.md`
+- Official mid-length whitepaper: [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Long version: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
+- Technical overview: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW)
+- Specs (normative): [docs/spec/](/spec)
+- Risk disclosure: [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)

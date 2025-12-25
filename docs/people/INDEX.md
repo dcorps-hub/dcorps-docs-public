@@ -3,7 +3,9 @@
 **Document type**: People index  
 **Doc ID**: PEOPLE-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/people/INDEX.md`)
+**Source repo**: dcorps-docs-public ([docs/people/INDEX.md](/people/INDEX))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Where to find information about the entities that build and steward dCorps, plus team and hiring.
 
@@ -26,18 +28,18 @@ From the public website and master documentation:
   - Coordinates smart jurisdiction modules and sector frameworks.
   - Operates the app and module registry in later phases.
 
-See `docs/policy/POL-FOUNDATION.md` and `docs/policy/POL-GOV.md`.
+See [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION) and [docs/policy/POL-GOV.md](/policy/POL-GOV).
 
 ---
 
 ## Team and advisors
 
-- Roster and biographies: `docs/people/TEAM.md`
-- Core team roles: `docs/people/CORE_ROLES.md`
-- Advisor roles: `docs/people/ADVISOR_ROLES.md`
+- Roster and biographies: [docs/people/TEAM.md](/people/TEAM)
+- Core team roles: [docs/people/CORE_ROLES.md](/people/CORE_ROLES)
+- Advisor roles: [docs/people/ADVISOR_ROLES.md](/people/ADVISOR_ROLES)
 
 ---
 
 ## Open roles
 
-- Hiring and open positions: `docs/people/OPEN_ROLES.md`
+- Hiring and open positions: [docs/people/OPEN_ROLES.md](/people/OPEN_ROLES)

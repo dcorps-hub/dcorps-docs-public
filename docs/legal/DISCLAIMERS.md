@@ -1,16 +1,18 @@
-# dCorps – Public Disclaimers
+# Disclaimers
 
-**Document type**: Legal and disclosures (public)  
+**Document type**: Legal and disclosures  
 **Doc ID**: DCORPS-DISCLAIMERS-PUBLIC-2025-12-21  
 **Status**: Final v0.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs-public (`docs/public/legal/DISCLAIMERS.md`)
+**Source repo**: dcorps-docs-public ([docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
 ## Core disclaimers
 
-Nothing in the dCorps documentation, including the public whitepaper and related materials, is:
+Nothing in the dCorps documentation, including the whitepaper suite and related materials, is:
 
 - an offer to sell, or a solicitation of an offer to buy, any token, share, or security;
 - investment, legal, tax, accounting, or financial advice; or

@@ -1,9 +1,11 @@
-# dCorps – Audit Plan
+# Audit Plan
 
 **Document type**: Security process  
 **Doc ID**: AUDIT-PLAN  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/security/AUDIT-PLAN.md`)
+**Source repo**: dcorps-docs-public ([docs/security/AUDIT-PLAN.md](/security/AUDIT-PLAN))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Planning and execution framework for security and code audits across the dCorps protocol, modules, and critical tooling.
 
@@ -64,7 +66,7 @@ Typical lifecycle:
 5. **Remediation and verification**
    - implement fixes;
    - obtain verification from auditors where applicable;
-   - publish updated reports and changelogs.
+   - publish updated reports and release notes.
 
 Timelines allow for iterative review and fixes before high-risk launches or upgrades.
 

@@ -1,9 +1,11 @@
-# dCorps – Documentation Publication Policy
+# Documentation Publication Policy
 
 **Document type**: Policy  
 **Doc ID**: POL-DOCS-PUBLICATION  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/policy/POL-DOCS-PUBLICATION.md`)
+**Source repo**: dcorps-docs-public ([docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Defines what is published by default, what must be restricted for safety, and how to keep public and restricted materials consistent.
 

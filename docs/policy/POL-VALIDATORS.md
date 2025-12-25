@@ -1,9 +1,11 @@
-# dCorps – Validator Charter
+# Validator Charter
 
 **Document type**: Policy  
 **Doc ID**: POL-VALIDATORS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/policy/POL-VALIDATORS.md`)
+**Source repo**: dcorps-docs-public ([docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Expectations, responsibilities, and consequences for validators participating in the dCorps Hub.
 

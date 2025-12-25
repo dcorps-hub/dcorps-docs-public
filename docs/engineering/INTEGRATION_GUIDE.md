@@ -1,19 +1,21 @@
-# dCorps Hub – Integration Guide (Public)
+# Hub Integration Guide
 
-**Document type**: Integration guide (public)  
+**Document type**: Integration guide  
 **Doc ID**: DCHUB-INTEGRATION-GUIDE-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs-public (`docs/public/technical/INTEGRATION_GUIDE.md`)
+**Source repo**: dcorps-docs-public ([docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
 ## Disclaimer
 
-This guide is descriptive. Normative behavior, schemas, and compatibility rules are defined in `docs/spec/`. Nothing here is investment, legal, tax, or accounting advice.
+This guide is descriptive. Normative behavior, schemas, and compatibility rules are defined in [docs/spec/](/spec). Nothing here is investment, legal, tax, or accounting advice.
 
-Note: In this repo, `docs/spec/` is part of the public documentation set. Only safety-sensitive operational material is intended to be kept out of public distribution under `dcorps-docs-private/docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
+Note: In this repo, [docs/spec/](/spec) is part of the public documentation set. Only safety-sensitive operational material is intended to be kept out of public distribution under `dcorps-docs-private/docs/restricted/` (policy: [docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION)).
 
 ---
 
@@ -28,7 +30,7 @@ Most builders integrate at one (or more) of these levels:
 3. **Module integration (advanced)**
    - Build optional protocol modules (jurisdiction adapter modules, sector frameworks, attestations) under the module standard.
 
-If you are building a chain indexer or explorer, start with `docs/spec/SPEC-INDEXER.md`.
+If you are building a chain indexer or explorer, start with [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER).
 
 ---
 
@@ -47,7 +49,7 @@ To support basic interoperability, indexers and applications should be able to r
 - **Anchors**
   - document anchors and references linked to governance actions or accounting events.
 
-Schema and tag catalogs live in `docs/spec/SPEC-DATA.md`.
+Schema and tag catalogs live in [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA).
 
 ---
 
@@ -79,8 +81,8 @@ If your application surfaces outputs from modules or sub chains:
 
 Normative rules:
 
-- modules: `docs/spec/SPEC-MODULES.md`
-- sub chain anchoring: `docs/spec/SPEC-ANCHOR.md`
+- modules: [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
+- sub chain anchoring: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
 
 ---
 
@@ -93,28 +95,28 @@ Reference explorers and serious applications should:
 - surface custody and counterparty risks where third-party services or bridges are involved;
 - support evidence anchors and links for material items (where entities provide them).
 
-Risk disclosure baseline: `docs/public/legal/RISK_DISCLOSURE.md`.
+Risk disclosure baseline: [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE).
 
 ---
 
 ## 6. Where to find the exact rules (normative)
 
-- Core protocol: `docs/spec/SPEC-CORE.md`
-- Data and schemas: `docs/spec/SPEC-DATA.md`
-- Module standard: `docs/spec/SPEC-MODULES.md`
-- Attestations standard (if used): `docs/spec/SPEC-ATTESTATIONS.md`
-- Sub chain anchoring: `docs/spec/SPEC-ANCHOR.md`
-- Parameters and economics model: `docs/spec/SPEC-PARAMS.md`
-- Reference indexer behavior: `docs/spec/SPEC-INDEXER.md`
-- Conformance tests: `docs/spec/SPEC-CONFORMANCE-TESTS.md`
+- Core protocol: [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE)
+- Data and schemas: [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA)
+- Module standard: [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
+- Attestations standard (if used): [docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS)
+- Sub chain anchoring: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- Parameters and economics model: [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS)
+- Reference indexer behavior: [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)
+- Conformance tests: [docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS)
 
 ---
 
 ## 7. Recommended reading order (builder)
 
-1. `docs/public/technical/TECHNICAL_OVERVIEW.md`
-2. `docs/public/whitepaper/WHITEPAPER.md` (for boundaries and scope)
-3. `docs/spec/SPEC-CORE.md` + `docs/spec/SPEC-DATA.md`
-4. `docs/spec/SPEC-INDEXER.md` (if you index)
-5. `docs/spec/SPEC-MODULES.md` (if you build modules)
-6. `docs/spec/SPEC-CONFORMANCE-TESTS.md` (if you publish compatibility claims)
+1. [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW)
+2. [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER) (for boundaries and scope)
+3. [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) + [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA)
+4. [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER) (if you index)
+5. [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (if you build modules)
+6. [docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS) (if you publish compatibility claims)

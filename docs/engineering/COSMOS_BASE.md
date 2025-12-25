@@ -1,9 +1,11 @@
-# dCorps Hub - Cosmos Base Protocol Notes
+# Hub - Cosmos Base Protocol Notes
 
 **Document type**: Engineering notes  
 **Doc ID**: ENG-COSMOS-BASE  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/engineering/COSMOS_BASE.md`)
+**Source repo**: dcorps-docs-public ([docs/engineering/COSMOS_BASE.md](/engineering/COSMOS_BASE))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Summarize base-layer assumptions and constraints for the Hub chain.
 
@@ -29,22 +31,22 @@
 
 ## Where the canonical rules live
 
-- Core behavior: `docs/spec/SPEC-CORE.md`
-- Data and schemas: `docs/spec/SPEC-DATA.md`
-- Anchoring: `docs/spec/SPEC-ANCHOR.md`
-- Modules: `docs/spec/SPEC-MODULES.md`
-- Parameters: `docs/spec/SPEC-PARAMS.md`
+- Core behavior: [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE)
+- Data and schemas: [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA)
+- Anchoring: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- Modules: [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
+- Parameters: [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS)
 
 ---
 
 ## Stack decisions
 
-Baseline implementation stack choices are recorded in `docs/engineering/STACK.md`.
+Baseline implementation stack choices are recorded in [docs/engineering/STACK.md](/engineering/STACK).
 
 ---
 
 ## Open implementation details (to be defined in code repos)
 
-- Chain ID, bech32 prefix, and baseline parameters: `docs/devops/NETWORK_PARAMS.md`.
-- Protobuf message definitions and gRPC/REST endpoints: `docs/engineering/API_SURFACES.md`.
-- Reference node configuration and upgrade procedures: `docs/devops/RUNBOOKS.md`.
+- Chain ID, bech32 prefix, and baseline parameters: [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
+- Protobuf message definitions and gRPC/REST endpoints: [docs/engineering/API_SURFACES.md](/engineering/API_SURFACES).
+- Reference node configuration and upgrade procedures: [docs/devops/RUNBOOKS.md](/devops/RUNBOOKS).

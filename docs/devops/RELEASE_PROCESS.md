@@ -3,7 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-RELEASE-PROCESS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/RELEASE_PROCESS.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/RELEASE_PROCESS.md](/devops/RELEASE_PROCESS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Define how changes move from dev to staging to prod, and what approvals and verification are required.
 
@@ -30,8 +32,9 @@ Each class has its own gate set. Chain and infrastructure changes require the hi
 Entry criteria:
 
 - Change is reviewed and merged.
-- Basic tests and linting pass.
-- Changelog and release notes drafted (if applicable).
+- Docs-only changes: manual link and consistency checks pass (until CI is implemented).
+- Code changes (chain/indexer/site): relevant repo tests and checks pass.
+- Release notes prepared (if applicable).
 
 Staging validation:
 
@@ -50,7 +53,7 @@ Exit criteria:
 Entry criteria:
 
 - Staging exit criteria met.
-- Governance approval when required (see `docs/policy/POL-GOV.md`).
+- Governance approval when required (see [docs/policy/POL-GOV.md](/policy/POL-GOV)).
 - Upgrade plan reviewed and communicated.
 
 Production rollout:
@@ -68,8 +71,8 @@ Exit criteria:
 
 ## Release artifacts (minimum set)
 
-- Version tag and changelog entry.
-- Release notes with upgrade instructions.
+- Version tag and release notes.
+- Upgrade instructions included in release notes (where applicable).
 - Checksums for binaries and artifacts (chain code repo).
 - Migration notes for breaking API changes.
 
@@ -79,7 +82,7 @@ Exit criteria:
 
 - Dev and staging can be rolled back quickly.
 - Production rollbacks are exceptional and require governance alignment.
-- If an incident occurs, follow `docs/security/INCIDENT-RESPONSE.md` and publish a post-incident summary when appropriate.
+- If an incident occurs, follow [docs/security/INCIDENT-RESPONSE.md](/security/INCIDENT-RESPONSE) and publish a post-incident summary when appropriate.
 
 ---
 

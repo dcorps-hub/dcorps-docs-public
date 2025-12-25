@@ -2,10 +2,12 @@
 
 **Document type**: Frontend requirements  
 **Doc ID**: FE-SIGNING-FLOWS  
-**Status**: Living v0.1  
-**Source repo**: dcorps-docs-public (`docs/frontend/SIGNING_FLOWS.md`)
+**Status**: Final v0.1  
+**Source repo**: dcorps-docs-public ([docs/frontend/SIGNING_FLOWS.md](/frontend/SIGNING_FLOWS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: Wallet connection and signing flows for core Hub operations. These flows align with `docs/engineering/API_SURFACES.md`.
+> Scope: Wallet connection and signing flows for core Hub operations. These flows align with [docs/engineering/API_SURFACES.md](/engineering/API_SURFACES).
 
 ---
 
@@ -27,7 +29,7 @@ Role type labels map to `SPEC-DATA.md` catalogs.
 ## 2. Wallet connection flow
 
 1. Connect wallet (Keplr, Leap, or Cosmostation via cosmos-kit).
-2. Verify chain ID and bech32 prefix (`docs/devops/NETWORK_PARAMS.md`).
+2. Verify chain ID and bech32 prefix ([docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS)).
 3. Fetch entity roles and validate required role for the action.
 4. Block the action if role authority is missing.
 

@@ -5,7 +5,7 @@ Master documentation and specifications for the dCorps Hub protocol, including t
 > Status: publication-ready documentation set
 
 Start here (master index): `docs/INDEX.md`
-Start here (public docs): `docs/public/INDEX.md`
+Start here (docs center welcome): `docs/welcome/INDEX.md`
 Developer entry point (normative specs): `docs/spec/INDEX.md`
 
 ---
@@ -32,11 +32,30 @@ docs/
   INDEX.md                   Master documentation index (start here)
   CONTEXT.md                 One-page context summary
   REPOS.md                   Repository map
+  welcome/
+    INDEX.md                 Docs center welcome and reader paths
   master/
     DCHUB_MASTER.md          Master Reference (long whitepaper, source)
+    DCHUB_MASTER_PUBLIC.md   Master reference overview
+    DCHUB_WHITEPAPER_PUBLIC.md Redirect notice for legacy whitepaper path
+  whitepaper/
+    INDEX.md                 Whitepaper suite index
+    EXECUTIVE_SUMMARY.md
+    FAQ.md
+    GLOSSARY.md
+    LITEPAPER.md
+    NONPROFIT_NOTE.md
+    WHITEPAPER.md
+    WHITEPAPER_LONG.md
+    WHITEPAPER_PLAIN_LANGUAGE.md
+  investor/
+    INDEX.md                 Investor materials index
+    INVESTOR_BRIEF.md
+    TOKENOMICS_SUMMARY.md
   spec/
     INDEX.md                 Spec index (normative)
     SPEC-CORE.md             Protocol Specification
+    SPEC-CORE_PUBLIC.md      Core spec overview
     SPEC-PARAMS.md           Protocol Parameters and Economics
     SPEC-MODULES.md          Module Protocol Standard
     SPEC-ATTESTATIONS.md     Attestation Module Standard
@@ -63,6 +82,8 @@ docs/
     INCIDENT-RESPONSE.md
   engineering/
     INDEX.md                 Engineering entry point
+    TECHNICAL_OVERVIEW.md    Technical overview
+    INTEGRATION_GUIDE.md     Integration guide
     COSMOS_BASE.md           Base protocol notes (Cosmos, token, stablecoins)
     PROTOCOL_INTERFACES.md   Interface surface map
   devops/
@@ -93,30 +114,8 @@ docs/
     OPEN_ROLES.md            Open roles and hiring template
   legal/
     INDEX.md                 Legal and compliance index
-  public/
-    INDEX.md                   Public doc map (start here)
-    investor/
-      INVESTOR_BRIEF.md
-      TOKENOMICS_SUMMARY.md
-    legal/
-      DISCLAIMERS.md
-      RISK_DISCLOSURE.md
-    master/
-      DCHUB_MASTER_PUBLIC.md   Short public overview
-      DCHUB_WHITEPAPER_PUBLIC.md Public-facing master/whitepaper view
-    spec/
-      SPEC-CORE_PUBLIC.md      Public spec view (core)
-    technical/
-      INTEGRATION_GUIDE.md
-      TECHNICAL_OVERVIEW.md
-    whitepaper/
-      EXECUTIVE_SUMMARY.md
-      FAQ.md
-      GLOSSARY.md
-      LITEPAPER.md
-      NONPROFIT_NOTE.md
-      WHITEPAPER.md
-      WHITEPAPER_LONG.md
+    DISCLAIMERS.md
+    RISK_DISCLOSURE.md
 tools/
   docgen/
     README.md                  Doc generation notes

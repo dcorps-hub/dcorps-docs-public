@@ -3,7 +3,9 @@
 **Document type**: Legal summary  
 **Doc ID**: LEGAL-DEVCO-FOUNDATION  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/legal/DEVCO_FOUNDATION_AGREEMENT.md`)
+**Source repo**: dcorps-docs-public ([docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Public summary of the expected relationship between the development corporation and the foundation.
 
@@ -39,4 +41,4 @@
 
 ## 5. Change control
 
-Any material change to this relationship must be documented in governance proposals and recorded in internal decision tracking.
+Any material change to this relationship must be documented in governance proposals and reflected in updates to this document.

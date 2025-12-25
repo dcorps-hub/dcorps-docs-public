@@ -1,26 +1,28 @@
-# dCorps Hub Master Reference – Public View
+# Hub Master Reference – Overview
 
-**Document type**: Public-facing reference  
+**Document type**: Reference overview  
 **Doc ID**: DCHUB-MASTER-PUBLIC  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/public/master/DCHUB_MASTER_PUBLIC.md`)
+**Source repo**: dcorps-docs-public ([docs/master/DCHUB_MASTER_PUBLIC.md](/master/DCHUB_MASTER_PUBLIC))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: Public subset of `docs/master/DCHUB_MASTER.md`, stripped of internal notes, open questions, and non-public details. This document is descriptive and informational only.
+> Scope: Overview subset of [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER), stripped of internal notes, open questions, and non-public details. This document is descriptive and informational only.
 
 Quick links:
 
-- Public index (start here): `docs/public/INDEX.md`
-- Executive summary: `docs/public/whitepaper/EXECUTIVE_SUMMARY.md`
-- Litepaper: `docs/public/whitepaper/LITEPAPER.md`
-- Official whitepaper (mid-length): `docs/public/whitepaper/WHITEPAPER.md`
-- Long version: `docs/public/whitepaper/WHITEPAPER_LONG.md`
-- Nonprofit note: `docs/public/whitepaper/NONPROFIT_NOTE.md`
+- Docs center index (start here): [docs/welcome/INDEX.md](/welcome/INDEX)
+- Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
+- Litepaper: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
+- Official whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Long version: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
+- Nonprofit note: [docs/whitepaper/NONPROFIT_NOTE.md](/whitepaper/NONPROFIT_NOTE)
 
 ---
 
 ## 1. Purpose and audience
 
-This public view provides:
+This overview provides:
 
 - a high-level overview of the dCorps Hub and its role in the ecosystem;
 - a conceptual map for founders, nonprofits, builders, and stakeholders considering integration;
@@ -78,7 +80,7 @@ Together, these pieces aim to make serious entities more transparent, programmab
 
 ---
 
-## 4. Protocol architecture (public view)
+## 4. Protocol architecture (overview)
 
 At a simplified level:
 
@@ -97,7 +99,7 @@ The Hub is intentionally minimal: many complex behaviors live at the module or s
 
 ---
 
-## 5. Governance and security (public view)
+## 5. Governance and security (overview)
 
 High-level governance characteristics:
 

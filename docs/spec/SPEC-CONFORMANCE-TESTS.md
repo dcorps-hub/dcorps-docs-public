@@ -1,20 +1,22 @@
-# dCorps – Compatibility and Conformance Tests
+# Compatibility and Conformance Tests
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CONFORMANCE-TESTS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-CONFORMANCE-TESTS.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Defines the minimum conformance test coverage and reporting format for implementations that claim compatibility with dCorps specifications (Hub implementations, protocol modules, indexers, explorers, and reporting tooling).
 
 This spec should be read together with:
 
-- `docs/master/DCHUB_MASTER.md` (design intent and ecosystem expectations),
-- `docs/spec/SPEC-CORE.md` (core state and message families),
-- `docs/spec/SPEC-DATA.md` (schemas, tags, chart of accounts),
-- `docs/spec/SPEC-MODULES.md` (module standard),
-- `docs/spec/SPEC-ANCHOR.md` (sub chain anchoring standard),
-- `docs/spec/SPEC-INDEXER.md` (reference indexer and explorer behavior).
+- [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (design intent and ecosystem expectations),
+- [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) (core state and message families),
+- [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (schemas, tags, chart of accounts),
+- [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module standard),
+- [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR) (sub chain anchoring standard),
+- [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER) (reference indexer and explorer behavior).
 
 ---
 

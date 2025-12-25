@@ -1,9 +1,11 @@
-# dCorps Team and Advisors
+# Team and Advisors
 
 **Document type**: People roster  
 **Doc ID**: PEOPLE-TEAM  
-**Status**: Living  
-**Source repo**: dcorps-docs-public (`docs/people/TEAM.md`)
+**Status**: Final v0.1  
+**Source repo**: dcorps-docs-public ([docs/people/TEAM.md](/people/TEAM))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Record of core contributors and advisors. Keep biographies concise and relevant.
 

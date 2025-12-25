@@ -1,10 +1,12 @@
-# dCorps – Risk Disclosure (Public)
+# Risk Disclosure
 
-**Document type**: Risk disclosure (public)  
+**Document type**: Risk disclosure  
 **Doc ID**: DCORPS-RISK-DISCLOSURE-PUBLIC-2025-12-21  
 **Status**: Final v0.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs-public (`docs/public/legal/RISK_DISCLOSURE.md`)
+**Source repo**: dcorps-docs-public ([docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 
@@ -126,7 +128,7 @@ There is no guarantee that any token will be listed, liquid, or have stable pric
 
 ## 10. References
 
-- Public disclaimers: `docs/public/legal/DISCLAIMERS.md`
-- Security docs: `docs/security/`
-- Whitepaper: `docs/public/whitepaper/WHITEPAPER.md`
-- Long version: `docs/public/whitepaper/WHITEPAPER_LONG.md`
+- Public disclaimers: [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS)
+- Security docs: [docs/security/](/security)
+- Whitepaper: [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Long version: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)

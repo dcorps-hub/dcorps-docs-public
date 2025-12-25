@@ -1,9 +1,11 @@
-# dCorps Roadmap and Phases
+# Roadmap and Phases
 
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/roadmap/INDEX.md`)
+**Source repo**: dcorps-docs-public ([docs/roadmap/INDEX.md](/roadmap/INDEX))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Consolidated view of dCorps phases and roadmap sources.
 
@@ -36,7 +38,7 @@ These phases follow the Master Reference (section 16) with a pre-phase for websi
 **Phase 5: Fully operational maturity**
 - Decentralized operations, multiple independent tooling stacks, and sustainable governance.
 
-See detailed goals and exit criteria in `docs/roadmap/PHASES.md`.
+See detailed goals and exit criteria in [docs/roadmap/PHASES.md](/roadmap/PHASES).
 
 ---
 
@@ -74,10 +76,10 @@ From `../dcorps-site/content/learn/vision.md`:
 
 ## Source of truth
 
-- Master reference roadmap: `docs/master/DCHUB_MASTER.md` (section 16)
+- Master reference roadmap: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (section 16)
 - Public roadmap page: `../dcorps-site/content/information/roadmap.md`
 - Vision path: `../dcorps-site/content/learn/vision.md`
-- Phase exit criteria: `docs/roadmap/PHASES.md`
+- Phase exit criteria: [docs/roadmap/PHASES.md](/roadmap/PHASES)
 - Internal planning artifacts (open questions, success metrics, backlogs): maintained privately.
 
 ---

@@ -1,19 +1,21 @@
-# dCorps – Attestation Modules and Interface Standards
+# Attestation Modules and Interface Standards
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-ATTESTATIONS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-ATTESTATIONS.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Defines the minimum required record format and lifecycle rules for attestation-style protocol modules, plus reference interface requirements for presenting attestation outputs.
 
 This spec should be read together with:
 
-- `docs/master/DCHUB_MASTER.md` (attestation design intent and boundaries),
-- `docs/spec/SPEC-CORE.md` (entity IDs and core objects),
-- `docs/spec/SPEC-MODULES.md` (module lifecycle and compatibility requirements),
-- `docs/spec/SPEC-DATA.md` (schema and anchoring conventions where applicable),
-- `docs/spec/SPEC-INDEXER.md` (reference explorer and indexer behavior).
+- [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (attestation design intent and boundaries),
+- [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) (entity IDs and core objects),
+- [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module lifecycle and compatibility requirements),
+- [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (schema and anchoring conventions where applicable),
+- [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER) (reference explorer and indexer behavior).
 
 ---
 

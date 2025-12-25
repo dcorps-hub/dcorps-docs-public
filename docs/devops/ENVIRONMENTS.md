@@ -3,7 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-ENVIRONMENTS  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/devops/ENVIRONMENTS.md`)
+**Source repo**: dcorps-docs-public ([docs/devops/ENVIRONMENTS.md](/devops/ENVIRONMENTS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Define dev, staging, and prod environments for dCorps infrastructure.
 
@@ -49,7 +51,7 @@ This baseline is provider-agnostic but defaults to AWS for reference deployments
 
 ## Environment readiness checklist
 
-- Chain ID, denom, and bech32 prefixes defined and documented (`docs/devops/NETWORK_PARAMS.md`).
+- Chain ID, denom, and bech32 prefixes defined and documented ([docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS)).
 - Genesis process documented and repeatable.
 - RPC, gRPC, REST endpoints defined.
 - Faucet or funding workflow defined for dev and staging.
@@ -57,7 +59,7 @@ This baseline is provider-agnostic but defaults to AWS for reference deployments
 - Monitoring and alerting active.
 - Backups and snapshots defined.
 - Runbooks available for upgrades and incidents.
-- Promotion gates defined (`docs/devops/RELEASE_PROCESS.md`).
+- Promotion gates defined ([docs/devops/RELEASE_PROCESS.md](/devops/RELEASE_PROCESS)).
 
 ---
 

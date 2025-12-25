@@ -1,9 +1,11 @@
-# dCorps Repositories Map
+# Repositories Map
 
 **Document type**: Repository index  
 **Doc ID**: REPOS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/REPOS.md`)
+**Source repo**: dcorps-docs-public ([docs/REPOS.md](/REPOS))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Inventory of repositories that make up the dCorps ecosystem.
 

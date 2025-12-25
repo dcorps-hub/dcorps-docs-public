@@ -1,11 +1,13 @@
-# dCorps – Glossary (Public)
+# Glossary
 
-**Document type**: Glossary (public)  
+**Document type**: Glossary  
 **Doc ID**: DCHUB-GLOSSARY-2025-12-21  
 **Version**: v1.3.1  
 **Status**: Final v1.3.1  
 **Release date**: December 21, 2025  
-**Source repo**: dcorps-docs-public (`docs/public/whitepaper/GLOSSARY.md`)
+**Source repo**: dcorps-docs-public ([docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 ---
 

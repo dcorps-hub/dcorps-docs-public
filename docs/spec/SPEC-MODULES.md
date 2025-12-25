@@ -1,9 +1,11 @@
-# dCorps – Module Protocol Standard
+# Module Protocol Standard
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-MODULES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-MODULES.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Standard for protocol modules (jurisdiction adapter modules, sector frameworks, attestation modules, etc.) that extend the Hub without compromising its core invariants.
 
@@ -25,7 +27,7 @@ This spec defines:
 - how permissions and capabilities are modeled;
 - how modules interact with governance and other modules.
 
-Attestation-style modules that publish issuer-signed attestations SHOULD follow `docs/spec/SPEC-ATTESTATIONS.md` for record format, lifecycle, dispute/correction signaling, and reference interface presentation.
+Attestation-style modules that publish issuer-signed attestations SHOULD follow [docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS) for record format, lifecycle, dispute/correction signaling, and reference interface presentation.
 
 The design goal is to allow rapid innovation at the module layer while keeping the Hub stable, neutral, and conservative.
 
@@ -65,7 +67,7 @@ In both cases:
 
 - governance MUST approve the change;
 - entities MUST have a clear migration path and timeline;
-- risk and compatibility impacts MUST be documented in the Decision Log.
+- risk and compatibility impacts MUST be documented in the governing proposal and accompanying release notes.
 
 Deprecation and withdrawal MUST be communicated clearly and SHOULD include automated safeguards where feasible (e.g. preventing new attachments after a certain block height).
 

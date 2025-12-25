@@ -1,9 +1,11 @@
-# dCorps – Reference Indexer Specification
+# Reference Indexer Specification
 
 **Document type**: Reference spec  
 **Doc ID**: SPEC-INDEXER  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/spec/SPEC-INDEXER.md`)
+**Source repo**: dcorps-docs-public ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Expected behavior of a reference indexer and explorer for the Hub, modules, and recognized sub chains. This is non-normative for the chain, but normative for reference tooling.
 
@@ -55,7 +57,7 @@ Indexers SHOULD maintain structured representations of at least:
 2. **Roles and governance**
    - role bindings per entity;
    - governance proposals, votes, and outcomes;
-   - links to the Decision Log and TBD Register where available.
+   - links to governance proposals and public rationale where available.
 3. **Wallets and flows**
    - balance history for canonical wallets;
    - tagged inflow and outflow events;

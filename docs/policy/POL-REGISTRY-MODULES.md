@@ -1,9 +1,11 @@
-# dCorps – Module and App Registry Policy
+# Module and App Registry Policy
 
 **Document type**: Policy  
 **Doc ID**: POL-REGISTRY-MODULES  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/policy/POL-REGISTRY-MODULES.md`)
+**Source repo**: dcorps-docs-public ([docs/policy/POL-REGISTRY-MODULES.md](/policy/POL-REGISTRY-MODULES))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Rules for listing, maintaining, and delisting modules and applications in official dCorps registries.
 

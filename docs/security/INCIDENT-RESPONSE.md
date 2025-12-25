@@ -1,9 +1,11 @@
-# dCorps – Security Incident Response
+# Security Incident Response
 
 **Document type**: Security playbook  
 **Doc ID**: INCIDENT-RESPONSE  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public (`docs/security/INCIDENT-RESPONSE.md`)
+**Source repo**: dcorps-docs-public ([docs/security/INCIDENT-RESPONSE.md](/security/INCIDENT-RESPONSE))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
 > Scope: Process and roles for detecting, triaging, and responding to security incidents affecting the dCorps Hub, modules, and related infrastructure.
 
@@ -72,7 +74,7 @@ All changes are:
 - logged and documented for later review;
 - communicated to validators and key ecosystem operators.
 
-Operational runbook: `docs/devops/RUNBOOK-INCIDENTS.md`.
+Operational runbook: [docs/devops/RUNBOOK-INCIDENTS.md](/devops/RUNBOOK-INCIDENTS).
 
 ---
 

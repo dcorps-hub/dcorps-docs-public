@@ -1,23 +1,25 @@
-# dCorps Hub - Chain Repo Layout
+# Hub - Chain Repo Layout
 
 **Document type**: Engineering plan  
 **Doc ID**: ENG-CHAIN-LAYOUT  
-**Status**: Living v0.1  
-**Source repo**: dcorps-docs-public (`docs/engineering/CHAIN_LAYOUT.md`)
+**Status**: Final v0.1  
+**Source repo**: dcorps-docs-public ([docs/engineering/CHAIN_LAYOUT.md](/engineering/CHAIN_LAYOUT))  
+**Publishing date**: 2025-12-24  
+**Last updated**: 2025-12-24  
 
-> Scope: Planned repository layout and module boundaries for the Hub chain implementation.
+> Scope: Canonical repository layout and module boundaries for the Hub chain implementation.
 
 ---
 
-## 1. Planned repository
+## 1. Chain repository
 
-- Repo name: `dcorps-chain` (planned).
+- Repo name: `dcorps-chain`.
 - Language: Go.
-- Framework: Cosmos SDK with CometBFT and IBC (see `docs/engineering/STACK.md`).
+- Framework: Cosmos SDK with CometBFT and IBC (see [docs/engineering/STACK.md](/engineering/STACK)).
 
 ---
 
-## 2. Top-level layout (planned)
+## 2. Top-level layout
 
 ```text
 dcorps-chain/
@@ -41,7 +43,7 @@ dcorps-chain/
 
 ---
 
-## 3. Custom modules (planned)
+## 3. Custom modules
 
 - `x/entity`
   - Entity registry, lifecycle status, and metadata.
@@ -62,7 +64,7 @@ Standard Cosmos modules are used for auth, bank, staking, slashing, gov, feegran
 
 ---
 
-## 4. Protobuf namespaces (planned)
+## 4. Protobuf namespaces
 
 - `dcorps.entity.v1`
 - `dcorps.accounting.v1`
@@ -70,7 +72,7 @@ Standard Cosmos modules are used for auth, bank, staking, slashing, gov, feegran
 
 ---
 
-## 5. Build and release tooling (planned)
+## 5. Build and release tooling
 
 - `buf` for proto linting and generation.
 - `goreleaser` for tagged release artifacts.
