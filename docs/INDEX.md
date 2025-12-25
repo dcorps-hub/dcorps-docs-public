@@ -1,4 +1,4 @@
-# Documentation Index
+# Documentation
 
 **Document type**: Master index  
 **Doc ID**: DOCS-INDEX  
@@ -17,7 +17,7 @@ Internal planning and working documents (backlogs, internal roadmaps, and playbo
 
 - Docs center welcome: [docs/welcome/INDEX.md](/welcome/INDEX)
 - dCorps overview: [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
-- Master reference: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER)
+- Whitepaper Long: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
 - Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
 - Normative specs: [docs/spec/INDEX.md](/spec/INDEX)
@@ -38,7 +38,7 @@ Internal planning and working documents (backlogs, internal roadmaps, and playbo
 - Policy and governance: [docs/policy/*](/policy)
 - Token and economics: [docs/token/*](/token)
 - Security posture: [docs/security/*](/security)
-- Master narrative and rationale: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER)
+- Whitepaper Long narrative and rationale: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Website content sources: `../dcorps-site/content/*` (site repo)
 
 ---

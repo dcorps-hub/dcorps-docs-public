@@ -1,4 +1,4 @@
-# Legal and Compliance Index
+# Legal
 
 **Document type**: Legal index  
 **Doc ID**: LEGAL-INDEX  
@@ -20,7 +20,7 @@
 
 ## Legal posture and structure
 
-- Master reference legal section: [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (section 17)
+- Whitepaper Long legal section: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 17)
 - Governance charter: [docs/policy/POL-GOV.md](/policy/POL-GOV)
 - Foundation charter: [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION)
 - Structure path: [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH)

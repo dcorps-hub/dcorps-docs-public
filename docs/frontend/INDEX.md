@@ -1,4 +1,4 @@
-# Frontend Index
+# Frontend
 
 **Document type**: Frontend index  
 **Doc ID**: FE-INDEX  

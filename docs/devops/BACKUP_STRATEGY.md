@@ -1,4 +1,4 @@
-# Backup and Snapshot Strategy
+# Backup Strategy
 
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-BACKUP-STRATEGY  

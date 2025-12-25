@@ -1,4 +1,4 @@
-# Key Management Policy (Public-Safe)
+# Key Management
 
 **Document type**: Security policy  
 **Doc ID**: KEY-MANAGEMENT  

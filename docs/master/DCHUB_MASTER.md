@@ -1,4 +1,4 @@
-# Hub *Whitepaper*
+# Master Reference
 
 #### Digitally native base layer for corporations and nonprofits, born and operated on-chain
 

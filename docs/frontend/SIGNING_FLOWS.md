@@ -1,4 +1,4 @@
-# Wallet Signing and Authority Flows
+# Signing Flows
 
 **Document type**: Frontend requirements  
 **Doc ID**: FE-SIGNING-FLOWS  

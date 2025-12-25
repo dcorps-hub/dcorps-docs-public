@@ -1,4 +1,4 @@
-# Data Standards and Schemas
+# Data Standards
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-DATA  

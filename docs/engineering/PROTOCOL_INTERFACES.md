@@ -1,4 +1,4 @@
-# Hub - Protocol Interfaces Map
+# Protocol Interfaces
 
 **Document type**: Engineering map  
 **Doc ID**: ENG-PROTOCOL-INTERFACES  

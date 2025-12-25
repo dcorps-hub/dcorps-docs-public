@@ -1,4 +1,4 @@
-# Repositories Map
+# Repositories
 
 **Document type**: Repository index  
 **Doc ID**: REPOS-INDEX  
@@ -14,7 +14,7 @@
 ## Active repositories
 
 - `dcorps-docs-public` (this repo)  
-  - Purpose: master documentation, specs, policies, and public docs.
+  - Purpose: whitepapers, specs, policies, and public docs.
 - `dcorps-docs-private` (sibling repo)  
   - Purpose: restricted and safety-sensitive documentation.  
   - Path: `../dcorps-docs-private`

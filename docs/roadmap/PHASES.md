@@ -1,4 +1,4 @@
-# Roadmap Phases and Exit Criteria
+# Phases
 
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-PHASES  
@@ -7,7 +7,7 @@
 **Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
-> Scope: Define phase goals and exit criteria based on the Master Reference (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
+> Scope: Define phase goals and exit criteria based on the Whitepaper Long (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
 
 ---
 
@@ -17,7 +17,7 @@ Objective: finalize the public-facing static website before the protocol build s
 
 Key deliverables:
 
-- Website copy aligned to public docs and the Master Reference.
+- Website copy aligned to public docs and the Whitepaper Long.
 - Publish and update dates under page titles where required.
 - Roadmap page includes a high-level disclaimer.
 - Links to public docs and specs are verified.

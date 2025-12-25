@@ -1,4 +1,4 @@
-# Team and Advisors
+# Team
 
 **Document type**: People roster  
 **Doc ID**: PEOPLE-TEAM  
@@ -14,7 +14,7 @@
 ## Core contributors
 
 - Nicolas Turcotte — Founder  
-  Founder and primary author of the Master Reference and protocol vision.
+  Founder and primary author of the whitepaper suite and protocol vision.
 
 ---
 

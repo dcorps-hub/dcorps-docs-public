@@ -1,4 +1,4 @@
-# Hub Master Reference – Overview
+# Master Reference Overview
 
 **Document type**: Reference overview  
 **Doc ID**: DCHUB-MASTER-PUBLIC  

@@ -1,4 +1,4 @@
-# Cosmos Environment Setup
+# Cosmos Environment
 
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-COSMOS-ENV  
@@ -11,7 +11,7 @@
 
 ---
 
-## Assumptions from the Master Reference
+## Assumptions from the Whitepaper Long
 
 - The Hub is a Cosmos-based Layer 1 chain.
 - DCHUB is the native token for gas, staking, and governance.

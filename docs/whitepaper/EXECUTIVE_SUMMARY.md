@@ -1,4 +1,4 @@
-# Hub Whitepaper – Executive Summary
+# Executive Summary
 
 **Document type**: Executive summary  
 **Doc ID**: DCHUB-EXEC-2025-12-21  

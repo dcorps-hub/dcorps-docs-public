@@ -1,4 +1,4 @@
-# Hub Protocol – Core Specification (Overview)
+# Core Spec Overview
 
 **Document type**: Spec overview  
 **Doc ID**: SPEC-CORE-PUBLIC  
@@ -18,7 +18,7 @@ This public spec summarizes the core behavior of the dCorps Hub in a way that is
 
 - stable enough for integrators and tools to rely on;
 - high-level enough to avoid exposing internal implementation details;
-- aligned with the full specification and Master Reference.
+- aligned with the full specification and Whitepaper Long.
 
 It is intended for:
 

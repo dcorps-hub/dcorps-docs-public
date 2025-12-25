@@ -1,4 +1,4 @@
-# Hub - Cosmos Base Protocol Notes
+# Cosmos Base
 
 **Document type**: Engineering notes  
 **Doc ID**: ENG-COSMOS-BASE  

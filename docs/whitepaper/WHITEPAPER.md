@@ -1,4 +1,4 @@
-# Hub Whitepaper (Mid-Length)
+# Whitepaper
 
 **Document type**: Whitepaper (mid-length)  
 **Doc ID**: DCHUB-WP-PUBLIC-2025-12-21  
@@ -294,7 +294,7 @@ The governance design intent is conservative:
 - make hostile or careless upgrades slower and more visible;
 - treat certain changes as higher-risk “Protected Changes” with higher thresholds and safety mechanisms.
 
-Governance process and proposal classes are described in [docs/policy/POL-GOV.md](/policy/POL-GOV). The Master Reference defines the baseline Protected Change thresholds and safety expectations.
+Governance process and proposal classes are described in [docs/policy/POL-GOV.md](/policy/POL-GOV). The Whitepaper Long defines the baseline Protected Change thresholds and safety expectations.
 
 ---
 

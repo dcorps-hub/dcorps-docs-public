@@ -1,4 +1,4 @@
-# Module Protocol Standard
+# Module Standard
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-MODULES  

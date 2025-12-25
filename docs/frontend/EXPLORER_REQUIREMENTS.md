@@ -1,4 +1,4 @@
-# Explorer Requirements (Read-Only)
+# Explorer Requirements
 
 **Document type**: Frontend requirements  
 **Doc ID**: FE-EXPLORER-REQ  

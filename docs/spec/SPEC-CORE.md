@@ -1,4 +1,4 @@
-# Hub Protocol – Core Specification
+# Core Specification
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CORE  
@@ -11,7 +11,7 @@
 
 This spec should be read together with:
 
-- [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (Master Reference – conceptual and narrative source of truth).
+- [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (Whitepaper Long – conceptual and narrative source of truth).
 - [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (data models and schemas).
 - [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS) (parameters and economics).
 - [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module standard).
@@ -49,7 +49,7 @@ This spec is intended for:
 
 The following documents are normative where referenced:
 
-- `DCHUB_MASTER.md` – dCorps Hub Master Reference (conceptual design and rationale).
+- `WHITEPAPER_LONG.md` – dCorps Hub whitepaper (long) (conceptual design and rationale).
 - `SPEC-DATA.md` – Data Standards and Schemas.
 - `SPEC-PARAMS.md` – Protocol Parameters and Economics.
 - `SPEC-MODULES.md` – Module Protocol Standard.
@@ -63,7 +63,7 @@ For the purposes of this spec:
 
 - **Hub** – the dCorps Hub chain, including its consensus, state machine, and governance.
 - **Entity** – an on-chain organizational object representing a corporation, nonprofit, foundation, or similar structure.
-- **Hub corporation** – an entity modeled as a corporation on the Hub, with roles and units as defined in the Master Reference.
+- **Hub corporation** – an entity modeled as a corporation on the Hub, with roles and units as defined in the Whitepaper Long.
 - **Hub nonprofit** – an entity modeled as a nonprofit/NGO on the Hub, with board-driven governance and allocation rules.
 - **Canonical wallet** – a designated on-chain address (or address set) associated with an entity for specific purposes (e.g. merchant wallet, donation wallet, treasury wallet).
 - **Tagged event** – an on-chain event or transaction output annotated with categories and tags per `SPEC-DATA.md`, enabling cash-based operating reporting.

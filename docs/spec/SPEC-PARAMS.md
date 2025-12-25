@@ -1,4 +1,4 @@
-# Hub – Protocol Parameters and Economics
+# Protocol Parameters
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-PARAMS  
@@ -99,7 +99,7 @@ Fee calculation MUST include:
 - gas metering based on computational and storage costs;
 - a configurable minimum gas price (`tx_min_gas_price`) expressed per gas unit and denominated in one or more accepted fee tokens.
 
-Implementations MAY support fee grants or sponsored transactions as described in the Master Reference, but MUST ensure that:
+Implementations MAY support fee grants or sponsored transactions as described in the Whitepaper Long, but MUST ensure that:
 
 - fee grants do not bypass economic security (grants are limited and revocable);
 - fee grants are auditable and can be tagged for reporting purposes.
@@ -212,6 +212,6 @@ All parameter changes MUST be:
 
 - recorded on-chain;
 - reflected in off-chain documentation and dashboards;
-- cross-referenced in the Master Reference and public release notes where they affect protocol behavior.
+- cross-referenced in the Whitepaper Long and public release notes where they affect protocol behavior.
 
 This spec, together with `SPEC-CORE.md`, SHOULD be kept up to date as parameters evolve, to avoid drift between documentation and actual behavior.

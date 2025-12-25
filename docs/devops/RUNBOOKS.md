@@ -1,4 +1,4 @@
-# Runbook Index
+# Runbooks
 
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-RUNBOOKS  

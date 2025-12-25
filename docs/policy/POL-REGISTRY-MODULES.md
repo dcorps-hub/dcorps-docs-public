@@ -1,4 +1,4 @@
-# Module and App Registry Policy
+# Registry Modules Policy
 
 **Document type**: Policy  
 **Doc ID**: POL-REGISTRY-MODULES  

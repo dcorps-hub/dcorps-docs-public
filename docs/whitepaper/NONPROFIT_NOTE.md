@@ -1,4 +1,4 @@
-# Hub Nonprofit Note
+# Nonprofit Note
 
 **Document type**: Nonprofit note  
 **Doc ID**: DCHUB-NONPROFIT-NOTE-2025-12-21  

@@ -1,4 +1,4 @@
-# Runbook - IBC Relayer Outage Recovery
+# Runbook: IBC Outage
 
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-IBC  

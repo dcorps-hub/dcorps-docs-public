@@ -1,4 +1,4 @@
-# Agents Index
+# Agents
 
 **Document type**: Agents index  
 **Doc ID**: AGENTS-INDEX  

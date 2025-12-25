@@ -1,4 +1,4 @@
-# Compatibility and Conformance Tests
+# Conformance Tests
 
 **Document type**: Normative spec  
 **Doc ID**: SPEC-CONFORMANCE-TESTS  
@@ -11,7 +11,7 @@
 
 This spec should be read together with:
 
-- [docs/master/DCHUB_MASTER.md](/master/DCHUB_MASTER) (design intent and ecosystem expectations),
+- [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (design intent and ecosystem expectations),
 - [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) (core state and message families),
 - [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (schemas, tags, chart of accounts),
 - [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module standard),
@@ -40,7 +40,7 @@ An implementation that claims compatibility SHOULD state its conformance scope e
 - **Hub implementation conformance**: conforms to `SPEC-CORE.md` + referenced specs at stated versions.
 - **Module conformance**: conforms to `SPEC-MODULES.md` and any module-specific interfaces/schemas it claims to implement.
 - **Indexer / explorer conformance**: conforms to `SPEC-INDEXER.md` (and required schema parsing from `SPEC-DATA.md`).
-- **Reporting conformance**: produces cash-based operating and allocation views consistent with the standards in the Master Reference and `SPEC-DATA.md`.
+- **Reporting conformance**: produces cash-based operating and allocation views consistent with the standards in the Whitepaper Long and `SPEC-DATA.md`.
 
 Conformance claims MUST name:
 
@@ -101,7 +101,7 @@ Indexers and explorers that claim compatibility MUST be tested for:
 - correct module and sub chain registry presentation, including recognition tiers; and
 - consistent derived reporting views where supported (cash-based and allocation views).
 
-Where token supply metrics are displayed, tooling SHOULD distinguish minted supply vs circulating supply and show vesting/unlock evidence when available (see the Master Reference token terminology).
+Where token supply metrics are displayed, tooling SHOULD distinguish minted supply vs circulating supply and show vesting/unlock evidence when available (see the Whitepaper Long token terminology).
 
 ---
 

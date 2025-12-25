@@ -1,4 +1,4 @@
-# Website Index
+# Website
 
 **Document type**: Website index  
 **Doc ID**: WEBSITE-INDEX  

@@ -1,4 +1,4 @@
-# Interop and IBC Index
+# Interop
 
 **Document type**: Interop index  
 **Doc ID**: INTEROP-INDEX  

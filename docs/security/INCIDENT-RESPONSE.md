@@ -1,4 +1,4 @@
-# Security Incident Response
+# Incident Response
 
 **Document type**: Security playbook  
 **Doc ID**: INCIDENT-RESPONSE  

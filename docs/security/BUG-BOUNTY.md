@@ -1,4 +1,4 @@
-# Bug Bounty Program
+# Bug Bounty
 
 **Document type**: Security policy  
 **Doc ID**: BUG-BOUNTY  

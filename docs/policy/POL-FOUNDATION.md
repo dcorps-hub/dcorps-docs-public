@@ -1,4 +1,4 @@
-# Foundation – Governance Policy
+# Foundation Policy
 
 **Document type**: Policy  
 **Doc ID**: POL-FOUNDATION  
