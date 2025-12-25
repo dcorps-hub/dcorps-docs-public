@@ -4,8 +4,8 @@
 **Doc ID**: DCORPS-DISCLAIMERS-PUBLIC-2025-12-21  
 **Status**: Final v0.1  
 **Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 ---

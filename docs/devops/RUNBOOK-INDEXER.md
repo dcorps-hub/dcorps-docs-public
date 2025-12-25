@@ -3,8 +3,9 @@
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-INDEXER  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/RUNBOOK-INDEXER.md](/devops/RUNBOOK-INDEXER))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Public-safe steps for indexer backfill and recovery.

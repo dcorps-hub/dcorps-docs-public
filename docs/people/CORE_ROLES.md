@@ -3,8 +3,9 @@
 **Document type**: People planning  
 **Doc ID**: PEOPLE-CORE-ROLES  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/people/CORE_ROLES.md](/people/CORE_ROLES))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Core roles needed to execute Phase 0 and Phase 1.

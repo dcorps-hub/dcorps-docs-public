@@ -3,8 +3,9 @@
 **Document type**: Token policy  
 **Doc ID**: TOKEN-POLICY  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Purpose, allowed uses, and constraints for the DCHUB token, consistent with the public disclaimers. This document is not an offer or solicitation of any kind.

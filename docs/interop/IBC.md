@@ -3,8 +3,9 @@
 **Document type**: Interop notes  
 **Doc ID**: INTEROP-IBC  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/interop/IBC.md](/interop/IBC))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Summarize how interchain connections are expected to be used for stablecoin operations and optional sub chains.

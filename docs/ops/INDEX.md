@@ -3,8 +3,9 @@
 **Document type**: Ops index  
 **Doc ID**: OPS-INDEX  
 **Status**: Draft v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/ops/INDEX.md](/ops/INDEX))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Public operations overview and pointers to published material.

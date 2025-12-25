@@ -3,8 +3,9 @@
 **Document type**: Security policy  
 **Doc ID**: KEY-MANAGEMENT  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/security/KEY-MANAGEMENT.md](/security/KEY-MANAGEMENT))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Public-safe guidance for key custody, rotation, and separation of duties.

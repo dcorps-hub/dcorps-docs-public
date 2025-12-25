@@ -3,8 +3,9 @@
 **Document type**: Spec index  
 **Doc ID**: SPECS-INDEX  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/INDEX.md](/spec/INDEX))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Canonical entry point for the normative protocol specifications. These documents are developer and auditor oriented and define “what is” and “what must be” for compatibility.

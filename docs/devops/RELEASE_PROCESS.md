@@ -3,8 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-RELEASE-PROCESS  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/RELEASE_PROCESS.md](/devops/RELEASE_PROCESS))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Define how changes move from dev to staging to prod, and what approvals and verification are required.

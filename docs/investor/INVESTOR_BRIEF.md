@@ -7,7 +7,6 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 ---
@@ -125,6 +124,6 @@ See [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE) and [docs/legal/DISC
 ## 8. What to read next
 
 - Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
-- Official whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
+- Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
 - Technical overview: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW)
 - Specs (normative): [docs/spec/](/spec)

@@ -3,8 +3,9 @@
 **Document type**: Frontend requirements  
 **Doc ID**: FE-INFO-ARCH  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/INFO_ARCHITECTURE.md](/frontend/INFO_ARCHITECTURE))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Canonical information architecture across the public site, docs, and app surfaces.

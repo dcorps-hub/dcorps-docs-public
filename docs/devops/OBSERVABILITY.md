@@ -3,8 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-OBSERVABILITY  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/OBSERVABILITY.md](/devops/OBSERVABILITY))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Metrics, logs, and alerts required for a healthy dCorps network.

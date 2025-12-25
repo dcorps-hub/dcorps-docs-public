@@ -3,8 +3,9 @@
 **Document type**: Frontend requirements  
 **Doc ID**: FE-SIGNING-FLOWS  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/SIGNING_FLOWS.md](/frontend/SIGNING_FLOWS))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Wallet connection and signing flows for core Hub operations. These flows align with [docs/engineering/API_SURFACES.md](/engineering/API_SURFACES).

@@ -3,8 +3,9 @@
 **Document type**: Spec overview  
 **Doc ID**: SPEC-CORE-PUBLIC  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-CORE_PUBLIC.md](/spec/SPEC-CORE_PUBLIC))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Overview subset of [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) for integrators and external reviewers. This document focuses on externally visible behavior and concepts.

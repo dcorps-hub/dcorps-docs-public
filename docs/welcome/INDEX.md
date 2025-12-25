@@ -3,8 +3,9 @@
 **Document type**: Welcome index  
 **Doc ID**: DOCS-WELCOME  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/welcome/INDEX.md](/welcome/INDEX))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Orientation, navigation, and reader paths for the public documentation set.

@@ -3,8 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-SECURITY  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/SECURITY.md](/devops/SECURITY))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Security posture for infrastructure and operations. No live secrets are stored in this repo.

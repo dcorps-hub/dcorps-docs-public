@@ -3,8 +3,9 @@
 **Document type**: Interop index  
 **Doc ID**: INTEROP-INDEX  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/interop/INDEX.md](/interop/INDEX))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Entry point for interchain assumptions, IBC usage, and sub chain anchoring.

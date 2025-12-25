@@ -3,8 +3,9 @@
 **Document type**: DevOps guide  
 **Doc ID**: DEVOPS-COSMOS-ENV  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/COSMOS_ENVIRONMENT.md](/devops/COSMOS_ENVIRONMENT))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Summarize what is required to stand up a Cosmos-based environment for the dCorps Hub.

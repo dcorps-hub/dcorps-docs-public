@@ -3,8 +3,9 @@
 **Document type**: Legal index  
 **Doc ID**: LEGAL-INDEX  
 **Status**: Final v0.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/INDEX.md](/legal/INDEX))  
-**Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
 > Scope: Map legal and compliance documents across the ecosystem.

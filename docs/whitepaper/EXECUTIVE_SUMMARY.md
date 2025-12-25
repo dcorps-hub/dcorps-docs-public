@@ -1,14 +1,13 @@
 # Executive Summary
 
-**Document type**: Executive summary  
-**Doc ID**: DCHUB-EXEC-2025-12-21  
-**Version**: v1.3.1  
-**Status**: Final v1.3.1  
-**Release date**: December 21, 2025  
-**Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Publishing date**: 2025-12-24  
-**Last updated**: 2025-12-24  
+**Document type**: Executive summary
+**Doc ID**: DCHUB-EXEC-2025-12-21
+**Version**: v1.3.1
+**Status**: Final v1.3.1
+**Release date**: December 21, 2025
+**Author**: Nicolas Turcotte, Founder
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+**Last updated**: 2025-12-24
 
 ---
 
