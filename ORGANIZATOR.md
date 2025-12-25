@@ -22,6 +22,7 @@
 - tools/
 - tools/docgen/
 - docs/REPOS.md
+- docs/INDEX.md
 - docs/agents/
 - docs/agents/INDEX.md
 - docs/ops/
