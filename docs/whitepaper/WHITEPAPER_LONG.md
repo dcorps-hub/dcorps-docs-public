@@ -1,21 +1,21 @@
-# Official Whitepaper
+# Whitepaper (Official)
 
 #### Digitally native base layer for corporations and nonprofits, born and operated on-chain
 
-**Long Version**  
+**Long Version**
 
-**Document ID**: DCHUB-WP-2025-12-21  
-**Version**: v1.3.1  
-**Edition**: Long  
-**Status**: Final v1.3.1  
-**Release date**: December 21, 2025  
-**Author**: Nicolas Turcotte, Founder  
- [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2025-12-24  
+**Document ID**: DCHUB-WP-2025-12-21
+**Version**: v1.3.1
+**Edition**: Long
+**Status**: Final v1.3.1
+**Release date**: December 21, 2025
+**Author**: Nicolas Turcotte, Founder
+ [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
+**Last updated**: 2025-12-24
 
-**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).  
+**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).
 
-**Editing note (linear read)**: This copy consolidates repeated definitions and uses short reminders plus section pointers, so it reads cleanly from page 1 to the end.  
+**Editing note (linear read)**: This copy consolidates repeated definitions and uses short reminders plus section pointers, so it reads cleanly from page 1 to the end.
 
 ---
 
