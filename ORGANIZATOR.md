@@ -21,6 +21,7 @@
 - AGENTS.md
 - tools/
 - tools/docgen/
+- docs/REPOS.md
 - docs/agents/
 - docs/agents/INDEX.md
 - docs/ops/
@@ -40,7 +41,6 @@
 ### docs/
 - INDEX.md
 - welcome/
-- CONTEXT.md
 - REPOS.md
 - master/
 - whitepaper/
@@ -62,6 +62,7 @@
 
 ### docs/welcome/
 - INDEX.md
+- OVERVIEW.md
 
 ### docs/master/
 - DCHUB_MASTER_PUBLIC.md

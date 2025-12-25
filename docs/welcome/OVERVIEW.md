@@ -1,19 +1,19 @@
-# Context Snapshot
+# dCorps Overview
 
-**Document type**: Context summary  
-**Doc ID**: DOCS-CONTEXT  
+**Document type**: Project overview  
+**Doc ID**: DOCS-OVERVIEW  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public ([docs/CONTEXT.md](/CONTEXT))  
+**Source repo**: dcorps-docs-public ([docs/welcome/OVERVIEW.md](/welcome/OVERVIEW))  
 **Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 
-> Scope: One-page summary of what dCorps is, who it is for, and how the system is organized.
+> Scope: Quick orientation to what dCorps is, who it serves, and how the system is organized.
 
 ---
 
 ## What dCorps is
 
-dCorps is a Cosmos-based Hub chain that treats corporations and nonprofits as first class objects. It provides a neutral registry, standardized entity models, and a consistent way to observe ownership, governance, and financial flows over time.
+dCorps is a Cosmos-based Hub chain that treats corporations and nonprofits as first-class objects. It provides a neutral registry, standardized entity models, and a consistent way to observe ownership, governance, and financial flows over time.
 
 The Hub is intentionally minimal. Jurisdiction rules, sector frameworks, and user interfaces live in modules and applications that sit on top of the Hub.
 
@@ -29,7 +29,7 @@ The Hub is intentionally minimal. Jurisdiction rules, sector frameworks, and use
 
 ---
 
-## Architecture layers
+## System layers
 
 1. **Hub**: the base chain with the entity registry, governance, and accounting primitives.
 2. **Entities**: Hub corporations and Hub nonprofits, plus optional sub chain corporations.
@@ -47,11 +47,11 @@ The Hub is intentionally minimal. Jurisdiction rules, sector frameworks, and use
 - Module registry and sub chain registry.
 - Anchors for documents and summarized external state.
 
-Normative rules for these primitives live in [docs/spec/*](/spec).
+Normative rules for these primitives live in [docs/spec/INDEX.md](/spec/INDEX).
 
 ---
 
-## Operating currency vs protocol token
+## Currency and protocol token
 
 - **USDC (and other approved stablecoins)**: primary operating currency for entities.
 - **DCHUB**: gas, staking, and protocol governance for the Hub and recognized sub chains.
