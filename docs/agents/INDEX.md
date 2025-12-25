@@ -20,5 +20,5 @@ Agent playbooks and internal workflows are maintained privately and are not publ
 ## Related docs
 
 - Project overview: [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
-- Master index: [docs/INDEX.md](/INDEX)
+- Docs center entry: [docs/welcome/INDEX.md](/welcome/INDEX)
 - Engineering overview: [docs/engineering/INDEX.md](/engineering/INDEX)

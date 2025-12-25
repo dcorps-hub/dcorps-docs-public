@@ -4,8 +4,7 @@ Master documentation and specifications for the dCorps Hub protocol, including t
 
 > Status: publication-ready documentation set
 
-Start here (master index): `docs/INDEX.md`
-Start here (docs center welcome): `docs/welcome/INDEX.md`
+Docs center entry point: `docs/welcome/INDEX.md`
 Developer entry point (normative specs): `docs/spec/INDEX.md`
 
 ---
@@ -29,7 +28,6 @@ High-level layout:
 
 ```text
 docs/
-  INDEX.md                   Master documentation index (start here)
   REPOS.md                   Repository map (internal)
   welcome/
     INDEX.md                 Docs center welcome and reader paths

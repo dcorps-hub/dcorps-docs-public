@@ -3,7 +3,7 @@
 **Document type**: Master index  
 **Doc ID**: DOCS-INDEX  
 **Status**: Final v0.1  
-**Source repo**: dcorps-docs-public ([docs/INDEX.md](/INDEX))  
+**Source repo**: dcorps-docs-public (internal index)  
 **Publishing date**: 2025-12-24  
 **Last updated**: 2025-12-24  
 

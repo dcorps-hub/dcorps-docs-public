@@ -22,7 +22,7 @@ These Markdown files are the source of truth for the docs center; the public web
 ## Start here
 
 - dCorps overview: [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
-- Full docs index: [docs/INDEX.md](/INDEX)
+- Docs center map: see the sections below.
 
 ---
 
