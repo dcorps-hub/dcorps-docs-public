@@ -2,10 +2,10 @@
 
 **Document type**: Engineering interface plan  
 **Doc ID**: ENG-API-SURFACES  
-**Status**: Living v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs-public (`docs/engineering/API_SURFACES.md`)
 
-> Scope: Planned protobuf messages, gRPC queries, REST routes, and events for the Hub chain. This is the baseline for implementation.
+> Scope: Protobuf messages, gRPC queries, REST routes, and events for the Hub chain. This is the v0.1 baseline for implementation.
 
 ---
 
@@ -205,4 +205,4 @@ All gRPC services are exposed through REST with standard Cosmos SDK conventions:
 
 ## 6. Status
 
-This interface set is the planned baseline for v0.1 and must be reflected in chain code and indexer mappings.
+This interface set is the v0.1 baseline and must be reflected in chain code and indexer mappings.

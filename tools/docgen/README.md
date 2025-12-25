@@ -28,7 +28,7 @@ Typical inputs:
 Typical outputs:
 
 - public-facing master reference (`docs/public/master/DCHUB_MASTER_PUBLIC.md`);
-- public specs (`docs/public/spec/*_PUBLIC.md`);
+- public specs (`docs/public/spec/`);
 - optionally, HTML, JSON, or other formats for websites and tooling.
 
 All outputs should be clearly traceable back to specific versions of source files.

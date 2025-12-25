@@ -65,7 +65,7 @@ In both cases:
 
 - governance MUST approve the change;
 - entities MUST have a clear migration path and timeline;
-- risk and compatibility impacts MUST be documented in the Decision Log.
+- risk and compatibility impacts MUST be documented in the governing proposal and accompanying release notes.
 
 Deprecation and withdrawal MUST be communicated clearly and SHOULD include automated safeguards where feasible (e.g. preventing new attachments after a certain block height).
 

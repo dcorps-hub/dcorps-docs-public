@@ -26,7 +26,7 @@ If you want a public onboarding path first, start at `docs/public/INDEX.md`.
 
 - `docs/public/technical/*` is descriptive guidance for integrators.
 - `docs/spec/*` is normative: rules, schemas, and compatibility requirements.
-- `docs/public/spec/*_PUBLIC.md` is a public-view subset of some specs (high-level and externally focused).
+- `docs/public/spec/` contains public-view subsets of some specs (high-level and externally focused).
 
 When there is any conflict, treat `docs/spec/*` as the source of truth.
 

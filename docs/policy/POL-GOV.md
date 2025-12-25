@@ -104,7 +104,7 @@ For each proposal:
 6. **Execution**
    - Approved proposals are executed, either automatically (parameter changes) or via coordinated upgrades and processes.
 
-All major proposals should be summarized in `DECISION_LOG.md` once resolved.
+All major proposals SHOULD include a durable public rationale in the proposal itself and in any linked supporting documents.
 
 ---
 
@@ -192,7 +192,7 @@ The default assumption is that emergency powers are used very rarely and only to
 To maintain trust:
 
 - all proposals, votes, and outcomes are recorded on-chain and easily accessible via explorers and APIs;
-- major decisions are summarized in `DECISION_LOG.md` with context and rationale;
+- major decisions have durable rationale in governance proposal records and public communications;
 - the foundation and core teams publish periodic governance reports, including:
   - proposals made and their outcomes;
   - upgrades executed;

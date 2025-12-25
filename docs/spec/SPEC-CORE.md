@@ -276,7 +276,7 @@ Governance implementations SHOULD favor:
 
 - long grace periods for breaking changes;
 - strong transparency around votes and rationales;
-- integration with the `DECISION_LOG.md` process for durable documentation of rationale.
+- durable rationale in governance proposal metadata and public release notes (or equivalent public documentation).
 
 ---
 

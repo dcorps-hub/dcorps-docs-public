@@ -55,7 +55,7 @@ Indexers SHOULD maintain structured representations of at least:
 2. **Roles and governance**
    - role bindings per entity;
    - governance proposals, votes, and outcomes;
-   - links to the Decision Log and TBD Register where available.
+   - links to governance proposals and public rationale where available.
 3. **Wallets and flows**
    - balance history for canonical wallets;
    - tagged inflow and outflow events;

@@ -3,8 +3,8 @@
 ## Project Structure & Module Organization
 - `docs/` holds all canonical Markdown content. Start at `docs/INDEX.md`; public entry point is `docs/public/INDEX.md`.
 - Root folders: `docs/`, `tools/`.
-- `docs/spec/` is the normative protocol spec set; `docs/policy/`, `docs/security/`, `docs/token/`, and `docs/ops/` cover governance, safety, economics, and operations.
-- `docs/agents/` contains agent playbooks; update `docs/agents/INDEX.md` when adding a new one.
+- `docs/spec/` is the normative protocol spec set; `docs/policy/`, `docs/security/`, `docs/token/`, and `docs/devops/` cover governance, safety, economics, and operations.
+- Internal playbooks (agents, ops planning) live in `dcorps-docs-private/docs/internal/` and must not be linked from public docs.
 - Restricted docs live in `dcorps-docs-private/docs/restricted/` and must stay out of public exports.
 - `tools/docgen/` documents the (future) doc generation workflow.
 

@@ -64,7 +64,7 @@ Typical lifecycle:
 5. **Remediation and verification**
    - implement fixes;
    - obtain verification from auditors where applicable;
-   - publish updated reports and changelogs.
+   - publish updated reports and release notes.
 
 Timelines allow for iterative review and fixes before high-risk launches or upgrades.
 

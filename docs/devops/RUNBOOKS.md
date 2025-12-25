@@ -23,4 +23,4 @@
 
 ## Status
 
-Public-safe runbooks are drafted. Sensitive operator details belong in `dcorps-docs-private/docs/restricted/` if needed.
+Public-safe runbooks are published in this repo. Sensitive operator details belong in `dcorps-docs-private/docs/restricted/` if needed.

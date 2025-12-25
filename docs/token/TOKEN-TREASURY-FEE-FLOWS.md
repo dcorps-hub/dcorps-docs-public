@@ -25,8 +25,11 @@
 
 ### 2.2 Service fees
 
-- Default routing: 100% to the Protocol Treasury module account.
-- Governance MAY change the split to fund the community pool or other program accounts.
+- Default routing: 100% to the Protocol Treasury module account (genesis default).
+- Governance MAY define explicit splits by fee type, for example:
+  - a share to the dCorps foundation once established; and
+  - a share to participating jurisdictions where jurisdiction adapter modules are used.
+- Governance MAY also route a share to the community pool or other program accounts where adopted.
 
 ---
 
@@ -46,4 +49,4 @@ Reporting should be derived from tagged on-chain events where possible.
 ## 4. Change control
 
 - Fee routing changes require governance approval.
-- Changes must be recorded in internal decision tracking.
+- Changes MUST be recorded on-chain (governance) and reflected by updating this document.

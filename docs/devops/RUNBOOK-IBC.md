@@ -2,17 +2,21 @@
 
 **Document type**: DevOps runbook  
 **Doc ID**: DEVOPS-RUNBOOK-IBC  
-**Status**: Living v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs-public (`docs/devops/RUNBOOK-IBC.md`)
 
 > Scope: Public-safe steps for IBC relayer outages and channel recovery.
 
 ---
 
-## 1. Detection
+## 1. Detection and triage
 
 - Confirm packet backlog and relayer health.
 - Check channel status and connection state.
+- Confirm whether the issue is:
+  - relayer-only (process/config), or
+  - chain-side (client expiry, connection/channel state), or
+  - upstream dependency (counterparty chain halt).
 
 ---
 
@@ -22,6 +26,7 @@
 2. Verify channel is open and packets are relayed.
 3. Re-sync relayer client states if required.
 4. Confirm stablecoin balances and pending transfers.
+5. If the counterparty chain is halted or the channel is closed, follow the documented channel recovery policy for that environment and publish an operator update.
 
 ---
 

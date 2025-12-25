@@ -26,12 +26,6 @@
 
 ---
 
-## Website legal drafts (content repo)
+## Website legal pages
 
-- `../dcorps-site/content/legals/terms.md`
-- `../dcorps-site/content/legals/privacy.md`
-- `../dcorps-site/content/legals/cookies.md`
-- `../dcorps-site/content/legals/disclaimer.md`
-- Draft tracking: `docs/legal/WEBSITE_LEGAL_DRAFTS.md`
-
-Note: Website legal pages require review by qualified counsel before publication.
+Website legal pages (terms, privacy, cookies, disclaimer) are published with the website and maintained in the website content repository and deployment pipeline.

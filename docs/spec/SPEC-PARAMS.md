@@ -189,7 +189,7 @@ Any change to parameters defined in this spec MUST go through an on-chain govern
 
 - specifies which parameters are being changed and from what values to what values;
 - includes a human-readable rationale and risk assessment;
-- references relevant items in `DECISION_LOG.md` where appropriate.
+- references any supporting analyses or documents where appropriate.
 
 Implementations SHOULD enforce proposal validation to prevent:
 
@@ -210,6 +210,6 @@ All parameter changes MUST be:
 
 - recorded on-chain;
 - reflected in off-chain documentation and dashboards;
-- cross-referenced in the Master Reference and changelog where they affect protocol behavior.
+- cross-referenced in the Master Reference and public release notes where they affect protocol behavior.
 
 This spec, together with `SPEC-CORE.md`, SHOULD be kept up to date as parameters evolve, to avoid drift between documentation and actual behavior.

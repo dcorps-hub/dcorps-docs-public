@@ -2,7 +2,7 @@
 
 **Document type**: DevOps reference  
 **Doc ID**: DEVOPS-NETWORK-PARAMS  
-**Status**: Living v0.1  
+**Status**: Final v0.1  
 **Source repo**: dcorps-docs-public (`docs/devops/NETWORK_PARAMS.md`)
 
 > Scope: Baseline chain IDs, denoms, prefixes, and genesis parameter defaults for dev, testnet, and mainnet.
@@ -64,7 +64,7 @@
   - testnet: 3 days
   - mainnet: 7 days
 - `min_deposit`: 10,000 DCHUB
-- `quorum`: 0.25
+- `quorum`: 0.20
 - `threshold`: 0.50
 - `veto_threshold`: 0.334
 
@@ -92,4 +92,4 @@ Protected Change thresholds follow `docs/policy/POL-GOV.md`.
 ## 10. Change control
 
 - Baseline values are subject to governance updates.
-- Any changes must be recorded in internal decision tracking.
+- Any changes MUST be approved via on-chain governance (or encoded at genesis for launch) and reflected by updating this document.

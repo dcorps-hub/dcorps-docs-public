@@ -27,7 +27,7 @@ The approach is to:
 - document existing and planned mitigations;
 - record residual risks and assumptions.
 
-This document is a living artifact and is updated as the system evolves.
+This document captures the threat model for the current v0.1 design. Updates are published as versioned revisions as the protocol and tooling evolve.
 
 ---
 

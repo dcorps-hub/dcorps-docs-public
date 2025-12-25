@@ -30,8 +30,9 @@ Each class has its own gate set. Chain and infrastructure changes require the hi
 Entry criteria:
 
 - Change is reviewed and merged.
-- Basic tests and linting pass.
-- Changelog and release notes drafted (if applicable).
+- Docs-only changes: manual link and consistency checks pass (until CI is implemented).
+- Code changes (chain/indexer/site): relevant repo tests and checks pass.
+- Release notes prepared (if applicable).
 
 Staging validation:
 
@@ -68,8 +69,8 @@ Exit criteria:
 
 ## Release artifacts (minimum set)
 
-- Version tag and changelog entry.
-- Release notes with upgrade instructions.
+- Version tag and release notes.
+- Upgrade instructions included in release notes (where applicable).
 - Checksums for binaries and artifacts (chain code repo).
 - Migration notes for breaking API changes.
 

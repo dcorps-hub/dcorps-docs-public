@@ -76,7 +76,7 @@ High-impact changes (e.g. major shifts in emissions schedules, release caps, or 
 
 - have stronger approval thresholds and longer voting periods;
 - be accompanied by analysis, scenarios, and stress tests;
-- be recorded in `DECISION_LOG.md` with clear rationale.
+- be recorded in governance proposal metadata with clear rationale.
 
 Governance may not retroactively change the terms of any legal agreements or contracts under which DCHUB has already been sold or granted; those remain governed by their own documentation.
 

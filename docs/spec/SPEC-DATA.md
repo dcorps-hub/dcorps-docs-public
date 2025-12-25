@@ -164,7 +164,7 @@ Breaking changes MUST be:
 
 - proposed and approved via governance;
 - accompanied by migration plans for existing data;
-- documented in the changelog and Decision Log.
+- documented in governance proposal records and public release notes.
 
 ### 6.2 Migrations
 
