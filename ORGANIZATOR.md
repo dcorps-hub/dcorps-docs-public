@@ -60,7 +60,6 @@
 - agents/
 
 ### docs/welcome/
-- INDEX.md
 - OVERVIEW.md
 
 ### docs/whitepaper/
