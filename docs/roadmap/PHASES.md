@@ -44,6 +44,7 @@ Key deliverables:
 - Audit scope and reports for core modules and reference tooling.
 - Bug bounty program with disclosure workflow.
 - Governance and validator charters plus Treasury policy ([docs/policy/*](/policy)).
+- Governance transition plan through foundation readiness ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
 
 Exit criteria:
 

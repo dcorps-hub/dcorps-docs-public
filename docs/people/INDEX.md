@@ -20,16 +20,18 @@ From the public website and public documentation:
   - Holds core protocol intellectual property in early phases.
   - Coordinates development of the Hub and reference tooling.
   - Signs contracts with auditors, infrastructure providers, and early partners.
-- **Independent development company**
+- **dCorps Development Company (BVI)** (“dCorps Dev”, DevCo)
   - Provides engineering services, integrations, custom development, and support.
-  - Uses dCorps for its own cap table and accounting.
-  - Builds apps and modules like any other participant.
+  - Builds protocol modules and reference tooling like any other participant, subject to governance and audits.
+- **dCorps Research LLC (Wyoming)** (ResCo)
+  - Supports research, analysis, and publication work related to the protocol and ecosystem.
+  - May collaborate with the foundation and other ecosystem contributors under disclosed arrangements.
 - **dCorps Foundation (planned, Switzerland)**
   - Intended to be a neutral nonprofit steward of the protocol.
   - Coordinates smart jurisdiction modules and sector frameworks.
   - Operates the app and module registry in later phases.
 
-See [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION) and [docs/policy/POL-GOV.md](/policy/POL-GOV).
+See [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
 
 ---
 

@@ -23,6 +23,7 @@
 
 - Whitepaper Long legal section: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 17)
 - Governance charter: [docs/policy/POL-GOV.md](/policy/POL-GOV)
+- Governance transition plan: [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)
 - Foundation charter: [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION)
 - Structure path: [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH)
 - DevCo/Foundation relationship: [docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT)

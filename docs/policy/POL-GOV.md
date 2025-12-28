@@ -10,6 +10,8 @@
 
 > Scope: Governance structures and processes for the dCorps protocol and related artifacts. This charter describes how decisions are proposed, evaluated, and adopted at the protocol level.
 
+For the phased plan from founder-led pre-mainnet work through foundation readiness, see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION).
+
 ---
 
 ## 1. Mission and principles

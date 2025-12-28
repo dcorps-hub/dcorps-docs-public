@@ -67,9 +67,10 @@ USDC on the Hub is typically represented as an IBC denom tracing back to Noble's
 - Validators and delegators secure the chain.
 - A protocol council may review upgrades and module proposals.
 - A foundation is intended to steward the protocol and registry in later phases.
-- An independent development company builds and supports reference tooling.
+- DevCo (currently dCorps Development Company (BVI), “dCorps Dev”) builds and supports protocol work and reference tooling as a service provider.
+- ResCo (currently dCorps Research LLC (Wyoming)) supports research and publication work.
 
-See [docs/policy/POL-GOV.md](/policy/POL-GOV) and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
+See [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
 
 ---
 

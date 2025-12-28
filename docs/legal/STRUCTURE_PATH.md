@@ -14,8 +14,9 @@
 
 ## 1. Current posture (early phase)
 
-- Development corporation incorporated in BVI or similar jurisdiction.
-- Focused on protocol engineering and integration services.
+- Development corporation incorporated in BVI or similar jurisdiction (current: **dCorps Development Company (BVI)**, “dCorps Dev”).
+- Research company incorporated separately (current: **dCorps Research LLC (Wyoming)**) to support research and publications.
+- Focused on protocol engineering, integration services, and public documentation.
 - No custody or financial intermediation role.
 
 ---

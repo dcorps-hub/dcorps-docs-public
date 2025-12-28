@@ -14,14 +14,16 @@
 
 ## 1. Roles
 
-- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work.
+- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work. Current DevCo entity: **dCorps Development Company (BVI)** (“dCorps Dev”).
 - **Foundation**: steward of public goods, standards, grants, and registry operations.
+- **Research company (ResCo)** (optional): research, analysis, and publication work. Current ResCo entity: **dCorps Research LLC (Wyoming)**.
 
 ---
 
 ## 2. Funding and agreements
 
 - The foundation may fund DevCo through milestone-based grants or service agreements.
+- The foundation may fund ResCo for research work under similarly disclosed and scoped agreements.
 - Funding is subject to governance oversight and public reporting.
 
 ---
@@ -29,7 +31,7 @@
 ## 3. IP and neutrality
 
 - Protocol standards and core specifications remain public and neutral.
-- The foundation may sponsor multiple providers to reduce single-vendor risk.
+- The foundation may sponsor multiple providers to reduce single-vendor risk and avoid de facto exclusivity.
 
 ---
 
