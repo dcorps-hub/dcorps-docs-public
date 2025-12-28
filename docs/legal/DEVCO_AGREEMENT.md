@@ -18,14 +18,14 @@ Status note: This is not an executed contract and does not constitute legal advi
 
 - **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work. Planned DevCo entity: **dCorps Development Company (BVI)** (“dCorps Dev”; incorporation pending).
 - **Foundation (planned; not yet incorporated)**: intended steward of public goods, standards, grants, and registry operations.
-- **Research company (ResCo)** (optional): research, analysis, and publication work. Current ResCo entity: **dCorps Research LLC (Wyoming)**.
+- **Research company (ResCo)** (planned; incorporation pending): adoption-focused research organization (see [ResCo Agreement](/legal/RESCO_AGREEMENT)).
 
 ---
 
 ## 2. Funding and agreements
 
 - The foundation may fund DevCo through milestone-based grants or service agreements.
-- The foundation may fund ResCo for research work under similarly disclosed and scoped agreements.
+- The foundation may fund ResCo for adoption research, module proposals, and integration work under similarly disclosed and scoped agreements.
 - Funding is subject to governance oversight and public reporting.
 
 ---

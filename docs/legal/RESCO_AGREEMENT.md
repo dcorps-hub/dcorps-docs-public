@@ -10,13 +10,13 @@
 
 > Scope: Public summary of the intended relationship between ResCo and the dCorps ecosystem.
 
-Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet, and DevCo incorporation is pending.
+Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet, and DevCo/ResCo incorporation is pending.
 
 ---
 
 ## 1. Roles
 
-- **Research company (ResCo)**: research, analysis, and publication work related to the protocol and ecosystem. Current entity: **dCorps Research LLC (Wyoming)**.
+- **Research company (ResCo)**: planned adoption-focused research organization (incorporation pending).
 - **DevCo (planned; incorporation pending)**: engineering delivery of protocol and tooling work (see [DevCo Agreement](/legal/DEVCO_AGREEMENT)).
 - **Foundation (planned; not yet incorporated)**: intended steward of public goods and ecosystem programs (see [Foundation Policy](/policy/POL-FOUNDATION)).
 
@@ -27,6 +27,11 @@ Status note: This is not an executed contract and does not constitute legal advi
 - ResCo work may be funded or commissioned through disclosed agreements (research grants, publication support, commissioned analysis).
 - Where the foundation exists, it may fund ResCo work under transparent reporting and conflict-of-interest rules.
 - Funding does not imply protocol authority and is not a guarantee of outcomes.
+
+ResCo work is intended to focus on dCorps Hub and protocol adoption, including:
+
+- analyzing adoption requirements across engineering, policy, legal, and operational constraints, and
+- translating findings into module proposals and integration plans for specific jurisdictions, states, sectors, and industries (non-binding; subject to governance, audits, and legal constraints).
 
 ---
 
@@ -48,4 +53,3 @@ Status note: This is not an executed contract and does not constitute legal advi
 ## 5. Change control
 
 Any material change to this relationship should be reflected in updates to this document and, once on-chain governance is live, documented through governance processes where applicable.
-

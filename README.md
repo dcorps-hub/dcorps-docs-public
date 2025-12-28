@@ -64,6 +64,7 @@ docs/
     POL-REGISTRY-MODULES.md  Registry and Module Policy
     POL-VALIDATORS.md        Validator Charter
     POL-FOUNDATION.md        Foundation Policy (planned)
+    POL-LOCALIZATION.md      Localization and translations policy
     POL-DOCS-PUBLICATION.md  Documentation Publication Policy
   token/
     TOKEN-POLICY.md
@@ -104,7 +105,7 @@ docs/
     INFO_ARCHITECTURE.md     Information architecture
     SIGNING_FLOWS.md         Signing flows
   people/
-    INDEX.md                 People & Organization index
+    INDEX.md                 People and Organization index
     TEAM.md                  Team roster
     ORGANIZATIONS.md         DevCo/ResCo/Foundation overview
     ROLES.md                 Roles needed (capability map)

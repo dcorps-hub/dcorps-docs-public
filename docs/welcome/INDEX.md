@@ -29,7 +29,7 @@ Current status: Phase 0A (development). Mainnet is not live, the foundation is n
 - Specs (normative protocol rules): [docs/spec/INDEX.md](/spec/INDEX)
 - Policy (governance, validators, treasury, foundation): [docs/policy/POL-GOV.md](/policy/POL-GOV)
 - Roadmap and phases: [docs/roadmap/INDEX.md](/roadmap/INDEX)
-- People & Organization: [docs/people/INDEX.md](/people/INDEX)
+- People and Organization: [docs/people/INDEX.md](/people/INDEX)
 - Legal posture (summary docs, no advice): [docs/legal/INDEX.md](/legal/INDEX)
 
 ---

@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/roadmap/PHASES.md](/roadmap/PHASES))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2025-12-28  
 
 > Scope: Define phase goals and exit criteria based on the Whitepaper Long (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
 
@@ -24,6 +24,7 @@ Key deliverables:
 - Publish and update dates under page titles where required.
 - Roadmap page includes a high-level disclaimer.
 - Links to public docs and specs are verified.
+- Publish the localization plan and target language set for translating project surfaces (plan only; translations are not shipped yet): [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION).
 
 Exit criteria:
 
@@ -47,6 +48,7 @@ Key deliverables:
 - Bug bounty program with disclosure workflow.
 - Governance and validator charters plus Treasury policy ([docs/policy/*](/policy)).
 - Governance transition plan through foundation readiness ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
+- Begin translation of testnet-facing material (docs, onboarding, and notices) under the language set in [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION) (design intention).
 - Publish the foundation formation posture (design intention): whether the foundation is intended to be incorporated before mainnet or after, and what interim coordination and disclosures apply until then.
 - Publish an IP stewardship posture (design intention): what assets are intended to transfer to the foundation, and what public disclosures will accompany that transition.
 
@@ -71,6 +73,7 @@ Key deliverables:
 - Canonical wallets and tagged accounting event schemas.
 - Document anchoring and evidence timelines.
 - Reference explorer and indexer for entity discovery and event timelines.
+- Publish localized mainnet launch materials (website + docs) under [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION) (design intention).
 
 Exit criteria:
 
