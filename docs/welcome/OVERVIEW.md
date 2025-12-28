@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/welcome/OVERVIEW.md](/welcome/OVERVIEW))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2025-12-28  
 
 > Scope: Quick orientation to what dCorps is, who it serves, and how the system is organized.
 
@@ -72,7 +72,7 @@ Design intention (once mainnet is live):
 - A protocol council may review upgrades and module proposals.
 - A foundation is intended to steward public goods over time (not incorporated yet).
 - DevCo is intended to deliver protocol and tooling work as a service provider (planned: dCorps Development Company (BVI), “dCorps Dev”; incorporation pending).
-- ResCo supports research and publication work (dCorps Research LLC (Wyoming)).
+- ResCo is intended to focus on protocol adoption research and integration planning (planned; incorporation pending).
 
 See [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
 

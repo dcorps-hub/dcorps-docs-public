@@ -80,6 +80,10 @@ Owns visual system and information design across the site and tools. Makes compl
 
 Maintains the docs center as a coherent, conservative reference. Keeps specs, policy docs, and user-facing explanations aligned and searchable.
 
+### Content and SEO lead
+
+Owns discoverability and information hygiene across the website and docs center: technical SEO, site structure, metadata consistency, and editorial distribution. Keeps language conservative (no promises, no investment framing) while making the material findable by the right audiences.
+
 ---
 
 ## Governance, policy, and public posture

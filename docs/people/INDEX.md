@@ -1,6 +1,6 @@
-# People & Organization
+# Index
 
-**Document type**: People & org index  
+**Document type**: People and organization index  
 **Doc ID**: PEOPLE-INDEX  
 **Status**: Final v0.1  
 **Release date**: December 21, 2025  
@@ -12,7 +12,7 @@
 
 ---
 
-Status note: dCorps is founder-led in Phase 0A (development). The foundation is planned and not incorporated yet; DevCo incorporation is pending.
+Status note: dCorps is founder-led in Phase 0A (development). The foundation is planned and not incorporated yet; DevCo/ResCo incorporation is pending.
 
 ---
 

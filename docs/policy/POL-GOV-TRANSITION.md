@@ -16,7 +16,7 @@
 
 - dCorps is in Phase 0A (development). Mainnet is not live and on-chain governance is not active yet.
 - The foundation described in this document is not incorporated yet, and any future formation timing is not finalized.
-- DevCo is planned but not yet incorporated (see definitions). ResCo exists as a separate research entity.
+- DevCo and ResCo are planned; incorporation is pending.
 
 This document aims to make “who decides what” legible during pre-mainnet work, while explicitly separating design intention from executed legal arrangements.
 
@@ -26,7 +26,7 @@ This document aims to make “who decides what” legible during pre-mainnet wor
 
 - **Phases**: use the roadmap definitions in [docs/roadmap/PHASES.md](/roadmap/PHASES).
 - **DevCo**: the development company that delivers protocol and tooling work (planned: **dCorps Development Company (BVI)**, “dCorps Dev”; incorporation pending).
-- **ResCo**: the research company that can support research and publications (current: **dCorps Research LLC (Wyoming)**).
+- **ResCo**: the research organization intended to focus on protocol adoption analysis and integration planning (planned; incorporation pending).
 - **Foundation**: the planned nonprofit steward described in [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION). No foundation has been incorporated yet.
 
 ---
@@ -117,7 +117,7 @@ Readiness signals (design intention):
 Design intention:
 
 - **DevCo** (dCorps Dev) is a services provider that can deliver protocol and tooling work under clearly scoped, milestone-based agreements.
-- **ResCo** (dCorps Research LLC) can support research, analysis, and publication work, and may be commissioned or funded like any other contributor.
+- **ResCo** (planned; incorporation pending) is intended to support adoption research, analysis, and publication work, and may be commissioned or funded like any other contributor.
 - The foundation may fund DevCo/ResCo, but relationships should be:
   - non-exclusive where practical;
   - publicly disclosed (scope, milestones, and reporting expectations);

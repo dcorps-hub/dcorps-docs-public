@@ -16,10 +16,10 @@
 
 Status note: dCorps is in Phase 0A (development). Mainnet is not live and the foundation is not incorporated yet.
 
-Current posture (design intention + current facts):
+Current posture (design intention):
 
 - **DevCo (planned)**: **dCorps Development Company (BVI)** (“dCorps Dev”) is the intended development company; incorporation is pending.
-- **ResCo (current)**: **dCorps Research LLC (Wyoming)** supports research and publications.
+- **ResCo (planned)**: ResCo is the intended research organization; incorporation is pending.
 - Early work focuses on protocol engineering, reference tooling, and public documentation.
 - This structure is not intended to create a custody or financial intermediation role.
 

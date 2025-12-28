@@ -6,11 +6,11 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/people/OPEN_ROLES.md](/people/OPEN_ROLES))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2025-12-28  
 
 > Scope: Open positions for the dCorps ecosystem.
 
-Note: In this document, **DevCo** refers to the planned dCorps Development Company (BVI) (“dCorps Dev”; incorporation pending). **ResCo** refers to dCorps Research LLC (Wyoming). The foundation is planned and not yet incorporated.
+Note: In this document, **DevCo** refers to the planned dCorps Development Company (BVI) (“dCorps Dev”; incorporation pending). **ResCo** is planned (incorporation pending). The foundation is planned and not yet incorporated.
 
 ---
 

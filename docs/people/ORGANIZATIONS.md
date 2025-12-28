@@ -32,11 +32,17 @@ See: [DevCo Agreement](/legal/DEVCO_AGREEMENT).
 
 ---
 
-## ResCo (current)
+## ResCo (planned; incorporation pending)
 
-- **dCorps Research LLC (Wyoming)**
-  - Intended role: research, analysis, and publication work related to the protocol and ecosystem.
-  - Contributes reports and design work under disclosed arrangements.
+- Planned entity: **ResCo** (incorporation pending).
+
+ResCo is intended to focus exclusively on dCorps Hub and protocol adoption: it analyzes adoption requirements across engineering, policy, legal, and operational constraints, then translates those findings into concrete module proposals and integration plans.
+
+Design intention:
+
+- Produce adoption research and strategy for specific jurisdictions, states, sectors, and industries.
+- Deliver “adoption packages” to the foundation and ecosystem: module specifications, integration requirements, partner maps, and rollout playbooks (non-binding; subject to governance, audits, and legal constraints).
+- Coordinate external specialists where needed (for example local counsel, policy experts, and government-relations/lobbying firms) to support serious, jurisdiction-specific adoption work—without implying guarantees or outcomes.
 
 See: [ResCo Agreement](/legal/RESCO_AGREEMENT).
 
@@ -49,4 +55,3 @@ See: [ResCo Agreement](/legal/RESCO_AGREEMENT).
 - Formation timing and jurisdiction are not finalized. Incorporation details, board structure, and policies will be published when finalized.
 
 See: [Foundation Policy](/policy/POL-FOUNDATION) and [Governance Transition Plan](/policy/POL-GOV-TRANSITION).
-
