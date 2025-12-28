@@ -104,11 +104,17 @@ docs/
     INFO_ARCHITECTURE.md     Information architecture
     SIGNING_FLOWS.md         Signing flows
   people/
-    INDEX.md                 People and organizations index
-    TEAM.md                  Team and advisors
+    INDEX.md                 People & Organization index
+    TEAM.md                  Team roster
+    ORGANIZATIONS.md         DevCo/ResCo/Foundation overview
+    ROLES.md                 Roles needed (capability map)
+    ADVISOR_ROLES.md         Advisor role map
     OPEN_ROLES.md            Open roles (coverage needed; hiring may be paused)
   legal/
     INDEX.md                 Legal and compliance index
+    STRUCTURE_PATH.md
+    DEVCO_AGREEMENT.md
+    RESCO_AGREEMENT.md
     DISCLAIMERS.md
     RISK_DISCLOSURE.md
 tools/

@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/INDEX.md](/legal/INDEX))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2025-12-28  
 
 > Scope: Map legal and compliance documents across the ecosystem.
 
@@ -26,7 +26,8 @@
 - Governance transition plan: [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)
 - Foundation policy (planned; foundation not yet incorporated): [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION)
 - Structure path: [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH)
-- DevCo/Foundation relationship (design intention): [docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT)
+- DevCo agreement (design intention): [docs/legal/DEVCO_AGREEMENT.md](/legal/DEVCO_AGREEMENT)
+- ResCo agreement (design intention): [docs/legal/RESCO_AGREEMENT.md](/legal/RESCO_AGREEMENT)
 
 ---
 

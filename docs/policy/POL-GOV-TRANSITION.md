@@ -124,7 +124,7 @@ Design intention:
   - governed by conflict-of-interest rules and recusal requirements;
   - reviewable and replaceable through governance over time.
 
-See also: [docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT) and [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH).
+See also: [docs/legal/DEVCO_AGREEMENT.md](/legal/DEVCO_AGREEMENT), [docs/legal/RESCO_AGREEMENT.md](/legal/RESCO_AGREEMENT), and [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH).
 
 ---
 
