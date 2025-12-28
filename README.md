@@ -2,7 +2,7 @@
 
 Public documentation and specifications for the dCorps Hub protocol, including whitepapers, protocol specifications, policies, security documents, and token documentation.
 
-> Status: publication-ready documentation set
+> Status: Phase 0A (development) — public baseline documentation set (mainnet is not live; the foundation is not incorporated; DevCo incorporation is pending)
 
 Docs center entry point: `docs/welcome/INDEX.md`
 Developer entry point (normative specs): `docs/spec/INDEX.md`
@@ -59,10 +59,11 @@ docs/
     SPEC-DATA.md             Data Standards, schemas, chart of accounts, tags
   policy/
     POL-GOV.md               Governance Charter
+    POL-GOV-TRANSITION.md    Governance transition plan (founder-led → foundation readiness)
     POL-TREASURY.md          Treasury Policy
     POL-REGISTRY-MODULES.md  Registry and Module Policy
     POL-VALIDATORS.md        Validator Charter
-    POL-FOUNDATION.md        Foundation Charter
+    POL-FOUNDATION.md        Foundation Policy (planned)
     POL-DOCS-PUBLICATION.md  Documentation Publication Policy
   token/
     TOKEN-POLICY.md
@@ -105,7 +106,7 @@ docs/
   people/
     INDEX.md                 People and organizations index
     TEAM.md                  Team and advisors
-    OPEN_ROLES.md            Open roles and hiring template
+    OPEN_ROLES.md            Open roles (coverage needed; hiring may be paused)
   legal/
     INDEX.md                 Legal and compliance index
     DISCLAIMERS.md

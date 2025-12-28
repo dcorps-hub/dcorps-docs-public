@@ -14,9 +14,14 @@
 
 ## 1. Current posture (early phase)
 
-- Development corporation incorporated in BVI or similar jurisdiction.
-- Focused on protocol engineering and integration services.
-- No custody or financial intermediation role.
+Status note: dCorps is in Phase 0A (development). Mainnet is not live and the foundation is not incorporated yet.
+
+Current posture (design intention + current facts):
+
+- **DevCo (planned)**: **dCorps Development Company (BVI)** (“dCorps Dev”) is the intended development company; incorporation is pending.
+- **ResCo (current)**: **dCorps Research LLC (Wyoming)** supports research and publications.
+- Early work focuses on protocol engineering, reference tooling, and public documentation.
+- This structure is not intended to create a custody or financial intermediation role.
 
 ---
 
@@ -25,6 +30,7 @@
 - Establish a nonprofit foundation in Switzerland or a comparable jurisdiction.
 - Transfer stewardship of shared standards and public goods to the foundation.
 - Retain protocol neutrality and reduce single-vendor dependence.
+  - This includes making any IP stewardship arrangement explicit (see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION) and [docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT)).
 
 ---
 
@@ -38,4 +44,4 @@
 
 ## 4. Change control
 
-Any material change to the legal structure path must be documented in governance proposals and reflected in updates to this document.
+Any material change to the legal structure path should be reflected in updates to this document and, once on-chain governance is live, documented via governance proposals where applicable.

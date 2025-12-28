@@ -10,18 +10,22 @@
 
 > Scope: Public summary of the expected relationship between the development corporation and the foundation.
 
+Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet, and DevCo incorporation is pending.
+
 ---
 
 ## 1. Roles
 
-- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work.
-- **Foundation**: steward of public goods, standards, grants, and registry operations.
+- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work. Planned DevCo entity: **dCorps Development Company (BVI)** (“dCorps Dev”; incorporation pending).
+- **Foundation (planned; not yet incorporated)**: intended steward of public goods, standards, grants, and registry operations.
+- **Research company (ResCo)** (optional): research, analysis, and publication work. Current ResCo entity: **dCorps Research LLC (Wyoming)**.
 
 ---
 
 ## 2. Funding and agreements
 
 - The foundation may fund DevCo through milestone-based grants or service agreements.
+- The foundation may fund ResCo for research work under similarly disclosed and scoped agreements.
 - Funding is subject to governance oversight and public reporting.
 
 ---
@@ -29,7 +33,13 @@
 ## 3. IP and neutrality
 
 - Protocol standards and core specifications remain public and neutral.
-- The foundation may sponsor multiple providers to reduce single-vendor risk.
+- The foundation may sponsor multiple providers to reduce single-vendor risk and avoid de facto exclusivity.
+
+Design intention (IP stewardship transition):
+
+- In early phases, protocol and brand IP may be held by the founder and/or DevCo once incorporated.
+- Once the foundation is incorporated and operationally ready, stewardship is intended to migrate to the foundation via a documented arrangement (assignment and/or licensing as appropriate).
+- Any IP transition should be publicly disclosed with clear scope, so observers do not need to infer ownership from narrative docs.
 
 ---
 

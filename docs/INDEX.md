@@ -12,6 +12,8 @@
 
 Internal planning and working documents (backlogs, internal roadmaps, and playbooks) are maintained in a private documentation repository.
 
+Current status: Phase 0A (development). Mainnet is not live, on-chain governance is not active yet, and the foundation is not incorporated.
+
 ---
 
 ## Quick entry points
@@ -30,6 +32,7 @@ Internal planning and working documents (backlogs, internal roadmaps, and playbo
 - People and orgs: [docs/people/INDEX.md](/people/INDEX)
 - Legal: [docs/legal/INDEX.md](/legal/INDEX)
 - Publication policy: [docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION)
+- Governance transition plan (pre-mainnet → foundation readiness): [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)
 
 ---
 
@@ -49,7 +52,7 @@ Internal planning and working documents (backlogs, internal roadmaps, and playbo
 - Specs and conformance: [docs/spec/INDEX.md](/spec/INDEX)
 - Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
 - Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
-- Policy and governance: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS)
+- Policy and governance: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION), [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS)
 - Token: [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY), [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN), [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES), [docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS)
 - Security: [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY), [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL), [docs/security/KEY-MANAGEMENT.md](/security/KEY-MANAGEMENT)
 - Engineering: [docs/engineering/INDEX.md](/engineering/INDEX)

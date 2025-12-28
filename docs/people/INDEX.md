@@ -16,20 +16,20 @@
 
 From the public website and public documentation:
 
-- **dCorps Hub Ltd (BVI)**
-  - Holds core protocol intellectual property in early phases.
-  - Coordinates development of the Hub and reference tooling.
-  - Signs contracts with auditors, infrastructure providers, and early partners.
-- **Independent development company**
-  - Provides engineering services, integrations, custom development, and support.
-  - Uses dCorps for its own cap table and accounting.
-  - Builds apps and modules like any other participant.
-- **dCorps Foundation (planned, Switzerland)**
-  - Intended to be a neutral nonprofit steward of the protocol.
-  - Coordinates smart jurisdiction modules and sector frameworks.
-  - Operates the app and module registry in later phases.
+Status note: dCorps is founder-led in Phase 0A (development). Entities listed below are described as **planned** where they are not yet incorporated, and nothing here should be read as an executed legal arrangement.
 
-See [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION) and [docs/policy/POL-GOV.md](/policy/POL-GOV).
+- **Founder**
+  - Nicolas Turcotte is the founder and current primary engineer while the team is built out.
+- **DevCo (planned, BVI; incorporation pending)** — **dCorps Development Company** (“dCorps Dev”)
+  - Intended development company for engineering services, integrations, and support.
+  - Intended to build protocol modules and reference tooling like any other participant, subject to audits and governance once mainnet is live.
+- **ResCo (Wyoming)** — **dCorps Research LLC**
+  - Supports research, analysis, and publication work related to the protocol and ecosystem.
+- **dCorps Foundation (planned; jurisdiction not finalized)**
+  - Intended neutral nonprofit steward of public goods (standards, conformance, audits coordination, ecosystem programs).
+  - Foundation formation timing and any IP stewardship transition are design intention and are documented in [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION) and [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH).
+
+See [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
 
 ---
 

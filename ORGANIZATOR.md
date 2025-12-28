@@ -60,6 +60,7 @@
 - agents/
 
 ### docs/welcome/
+- INDEX.md
 - OVERVIEW.md
 
 ### docs/whitepaper/
@@ -93,6 +94,7 @@
 ### docs/policy/
 - POL-FOUNDATION.md
 - POL-GOV.md
+- POL-GOV-TRANSITION.md
 - POL-VALIDATORS.md
 - POL-TREASURY.md
 - POL-REGISTRY-MODULES.md
