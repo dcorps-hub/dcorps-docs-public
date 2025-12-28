@@ -14,14 +14,6 @@ Status note: dCorps is founder-led in Phase 0A (development). Unless explicitly 
 
 ---
 
-## Founder
-
-- **Nicolas Turcotte**
-  - Founder and current primary engineer.
-  - Publishes the public documentation baseline and coordinates early development.
-
----
-
 ## DevCo (planned; incorporation pending)
 
 - **dCorps Development Company (BVI)** (“dCorps Dev”)
