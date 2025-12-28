@@ -105,7 +105,7 @@ docs/
     INFO_ARCHITECTURE.md     Information architecture
     SIGNING_FLOWS.md         Signing flows
   people/
-    INDEX.md                 People ^ Organization index
+    INDEX.md                 People & Organization index
     TEAM.md                  Team roster
     ORGANIZATIONS.md         DevCo/ResCo/Foundation overview
     ROLES.md                 Roles needed (capability map)
