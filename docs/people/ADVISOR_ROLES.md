@@ -15,7 +15,9 @@
 ## Advisor roles
 
 - Legal/regulatory advisor (token + entity structures).
+- Cryptography/formal methods advisor (security-critical review).
 - Security advisor (audits, incident readiness).
 - Nonprofit governance advisor.
 - Token economics advisor.
 - Institutional partnerships advisor.
+- Communications/PR advisor (public posture, credibility, media relations, and events/speaking).
