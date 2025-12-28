@@ -1,14 +1,14 @@
-# DevCo Foundation Agreement
+# DevCo Agreement
 
 **Document type**: Legal summary  
-**Doc ID**: LEGAL-DEVCO-FOUNDATION  
+**Doc ID**: LEGAL-DEVCO-AGREEMENT  
 **Status**: Final v0.1  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
-**Source repo**: dcorps-docs-public ([docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT))  
-**Last updated**: 2025-12-24  
+**Source repo**: dcorps-docs-public ([docs/legal/DEVCO_AGREEMENT.md](/legal/DEVCO_AGREEMENT))  
+**Last updated**: 2025-12-28  
 
-> Scope: Public summary of the expected relationship between the development corporation and the foundation.
+> Scope: Public summary of the intended relationship between DevCo and the dCorps ecosystem.
 
 Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet, and DevCo incorporation is pending.
 
