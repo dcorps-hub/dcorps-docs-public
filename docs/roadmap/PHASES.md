@@ -16,6 +16,8 @@
 
 Objective: finalize the public-facing static website before the protocol build sequence begins.
 
+Current status: Phase 0A (development).
+
 Key deliverables:
 
 - Website copy aligned to public docs and the Whitepaper Long.
@@ -45,6 +47,8 @@ Key deliverables:
 - Bug bounty program with disclosure workflow.
 - Governance and validator charters plus Treasury policy ([docs/policy/*](/policy)).
 - Governance transition plan through foundation readiness ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
+- Publish the foundation formation posture (design intention): whether the foundation is intended to be incorporated before mainnet or after, and what interim coordination and disclosures apply until then.
+- Publish an IP stewardship posture (design intention): what assets are intended to transfer to the foundation, and what public disclosures will accompany that transition.
 
 Exit criteria:
 

@@ -12,11 +12,21 @@
 
 ---
 
+## 0. Current status (Phase 0A)
+
+- dCorps is in Phase 0A (development). Mainnet is not live and on-chain governance is not active yet.
+- The foundation described in this document is not incorporated yet, and any future formation timing is not finalized.
+- DevCo is planned but not yet incorporated (see definitions). ResCo exists as a separate research entity.
+
+This document aims to make “who decides what” legible during pre-mainnet work, while explicitly separating design intention from executed legal arrangements.
+
+---
+
 ## 1. Definitions
 
 - **Phases**: use the roadmap definitions in [docs/roadmap/PHASES.md](/roadmap/PHASES).
-- **DevCo**: the development company that delivers protocol and tooling work (currently **dCorps Development Company (BVI)**, “dCorps Dev”).
-- **ResCo**: the research company that can support research and publications (currently **dCorps Research LLC (Wyoming)**).
+- **DevCo**: the development company that delivers protocol and tooling work (planned: **dCorps Development Company (BVI)**, “dCorps Dev”; incorporation pending).
+- **ResCo**: the research company that can support research and publications (current: **dCorps Research LLC (Wyoming)**).
 - **Foundation**: the planned nonprofit steward described in [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION). No foundation has been incorporated yet.
 
 ---
@@ -52,6 +62,9 @@ Governance scaffolding (design intention):
 Foundation readiness preparation:
 
 - Draft the foundation’s initial charter, reporting commitments, and ethics/conflict policies (see [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION)).
+- Decide and publish the intended foundation formation window (design intention):
+  - **Option A (preferred where feasible)**: incorporate the foundation **before mainnet** so stewardship, disclosures, and conflict policies exist from day one.
+  - **Option B**: incorporate the foundation **after mainnet** while keeping interim coordination legible and time-bounded.
 - Define how the foundation can fund multiple providers over time to reduce single-vendor risk.
 
 ---
@@ -95,6 +108,7 @@ Readiness signals (design intention):
 - Public conflict-of-interest and related-party transaction policies (especially around grants and vendor funding).
 - Financial controls and transparent reporting commitments (budgets, grants, and major contracts).
 - Operational ability to coordinate audits and public-goods work without claiming protocol authority.
+- A published IP stewardship posture (what is held by whom, and what transition steps are intended).
 
 ---
 
@@ -111,6 +125,28 @@ Design intention:
   - reviewable and replaceable through governance over time.
 
 See also: [docs/legal/DEVCO_FOUNDATION_AGREEMENT.md](/legal/DEVCO_FOUNDATION_AGREEMENT) and [docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH).
+
+---
+
+## 7A. IP and brand stewardship transition (design intention)
+
+Goal: make ownership and stewardship of core protocol assets explicit and legible, without implying that legal transfers are already executed.
+
+Design intention:
+
+- In early phases, protocol and brand IP may be held by the founder and/or by DevCo once incorporated.
+- Once the foundation is incorporated and “foundation ready”, stewardship should migrate to the foundation through a documented legal arrangement (assignment and/or licensing as appropriate), so public-good assets are held by a neutral nonprofit rather than a single for-profit provider.
+
+What should be explicit when it happens (illustrative, not exhaustive):
+
+- what assets are included (e.g., trademarks, domains, website assets, specification copyrights, reference implementations);
+- what stays open under open-source licensing and what changes operationally (usually nothing for users);
+- what DevCo’s ongoing role is (services provider under contract, not the steward by default);
+- how conflicts are managed and disclosed (related-party posture, recusal, reporting).
+
+Timing (not finalized):
+
+- Target posture is to complete the stewardship transition **before mainnet where feasible**; otherwise, publish an interim custody and disclosure plan and complete the transfer as soon as practical after foundation formation.
 
 ---
 

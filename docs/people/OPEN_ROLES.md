@@ -10,7 +10,7 @@
 
 > Scope: Open positions for the dCorps ecosystem.
 
-Note: In this document, **DevCo** refers to dCorps Development Company (BVI) (“dCorps Dev”). **ResCo** refers to dCorps Research LLC (Wyoming). The foundation is planned and not yet incorporated.
+Note: In this document, **DevCo** refers to the planned dCorps Development Company (BVI) (“dCorps Dev”; incorporation pending). **ResCo** refers to dCorps Research LLC (Wyoming). The foundation is planned and not yet incorporated.
 
 ---
 

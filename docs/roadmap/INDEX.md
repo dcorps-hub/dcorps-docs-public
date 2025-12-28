@@ -45,32 +45,25 @@ See detailed goals and exit criteria in [docs/roadmap/PHASES.md](/roadmap/PHASES
 
 ## Public roadmap (website summary)
 
-The website uses a simplified public view:
-
-- Phase 0: Design and private prototyping
-- Phase 1: Public testnet and mainnet v1
-- Phase 2: Smart jurisdictions and first sub chains
-- Phase 3: Scale and fee based sustainability
-
-See `../dcorps-site/content/information/roadmap.md`.
+The website maintains a public summary in `../dcorps-site/content/information/roadmap.md`. It mirrors Phases 0A to 5 and also includes an optional **Phase 1A** jurisdiction pilot sequence (Step 0 → Step 2) as a post-mainnet overlay, not a kernel dependency.
 
 ---
 
-## Vision phases (longer-term sequence)
+## Vision events (longer-term sequence)
 
 From `../dcorps-site/content/learn/vision.md`:
 
-1. First serious Web3 operator
-2. Stablecoin-native operations
-3. Legal and temporal bridge
-4. First fully digital nonprofit
-5. Jurisdiction modules and pilots
-6. Networks standardize on dCorps
-7. Standard evidence and services
-8. Service ecosystem standardizes on the Hub
-9. Public data and research layer
-10. Global soft standard
-11. Infrastructure status
+1. First Hub corporation in production
+2. First Hub nonprofit in production
+3. Counterparty trust without jurisdiction integration
+4. Human bridge: delegated filing providers (Pilot Step 0)
+5. Jurisdiction modules mature (Pilot Step 1 → Step 2)
+6. Typed workflows and interoperable tooling
+7. Professional assurance becomes routine
+8. Serious Web3 operators adopt the Hub
+9. Networks coordinate on shared rails
+10. Public data and research layer
+11. Global soft standard and infrastructure status
 12. DCHUB economics
 
 ---

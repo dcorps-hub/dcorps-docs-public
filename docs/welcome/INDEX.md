@@ -18,6 +18,8 @@ This is the public documentation set for dCorps and the DCHUB Hub chain: specs, 
 
 Internal playbooks and working documents are maintained separately and are not published here.
 
+Current status: Phase 0A (development). Mainnet is not live, the foundation is not incorporated, and DevCo incorporation is pending.
+
 ---
 
 ## Recommended reading order
@@ -36,4 +38,3 @@ Internal playbooks and working documents are maintained separately and are not p
 
 - When a document says **design intention**, treat it as a target posture that may change through audits, governance decisions, and legal constraints.
 - For protocol behavior, defer to the normative spec set: [docs/spec/*](/spec).
-

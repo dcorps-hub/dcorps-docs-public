@@ -10,6 +10,8 @@
 
 > Scope: Governance structures and processes for the dCorps protocol and related artifacts. This charter describes how decisions are proposed, evaluated, and adopted at the protocol level.
 
+Status note: Current project status is Phase 0A (development). On-chain governance is not live until mainnet. This charter documents intended governance for mainnet and beyond; interim founder-led process is described in [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION).
+
 For the phased plan from founder-led pre-mainnet work through foundation readiness, see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION).
 
 ---
@@ -38,8 +40,8 @@ Governance involves both on-chain and off-chain actors:
 
 - **On-chain token governance**
   - DCHUB stakers and delegators participate in on-chain voting on proposals affecting the protocol, parameters, and recognition.
-- **dCorps Foundation**
-  - A nonprofit steward that can propose changes, fund development, and act as an interface with regulators and partners, subject to this charter and `POL-FOUNDATION.md`.
+- **dCorps Foundation (planned; not yet incorporated)**
+  - Intended nonprofit steward that can propose changes, fund development, and act as an interface with regulators and partners, subject to this charter and `POL-FOUNDATION.md` once the foundation exists.
 - **Core development teams**
   - Independent teams that design and implement protocol upgrades, subject to on-chain approval.
 - **Advisory and working groups**
@@ -166,7 +168,7 @@ For planned upgrades:
 
 - proposals include upgrade plans, testing summaries, and rollback strategies;
 - validators and node operators are given sufficient lead time to prepare;
-- the foundation coordinates communication and support.
+- the foundation (once incorporated) coordinates communication and support; until then, coordination is founder-led and/or delegated to the relevant working group.
 
 ### 5.2 Emergency actions
 
@@ -198,7 +200,7 @@ To maintain trust:
 
 - all proposals, votes, and outcomes are recorded on-chain and easily accessible via explorers and APIs;
 - major decisions have durable rationale in governance proposal records and public communications;
-- the foundation and core teams publish periodic governance reports, including:
+- once the foundation exists, the foundation and core teams publish periodic governance reports, including:
   - proposals made and their outcomes;
   - upgrades executed;
   - parameter changes and their expected impact.

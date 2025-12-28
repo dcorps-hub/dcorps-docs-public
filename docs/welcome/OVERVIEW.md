@@ -14,9 +14,11 @@
 
 ## What dCorps is
 
-dCorps is a Cosmos-based Hub chain that treats corporations and nonprofits as first-class objects. It provides a neutral registry, standardized entity models, and a consistent way to observe ownership, governance, and financial flows over time.
+dCorps is a project to build a Cosmos-based Hub chain that treats corporations and nonprofits as first-class objects. It is designed to provide a neutral registry, standardized entity models, and a consistent way to observe ownership, governance, and financial flows over time.
 
 The Hub is intentionally minimal. Jurisdiction rules, sector frameworks, and user interfaces live in modules and applications that sit on top of the Hub.
+
+Current status: Phase 0A (development). Mainnet is not live, on-chain governance is not active yet, and the foundation has not been incorporated.
 
 ---
 
@@ -63,12 +65,14 @@ USDC on the Hub is typically represented as an IBC denom tracing back to Noble's
 
 ## Governance and institutions
 
+Design intention (once mainnet is live):
+
 - DCHUB holders vote on protocol upgrades and parameters.
 - Validators and delegators secure the chain.
 - A protocol council may review upgrades and module proposals.
-- A foundation is intended to steward the protocol and registry in later phases.
-- DevCo (currently dCorps Development Company (BVI), “dCorps Dev”) builds and supports protocol work and reference tooling as a service provider.
-- ResCo (currently dCorps Research LLC (Wyoming)) supports research and publication work.
+- A foundation is intended to steward public goods over time (not incorporated yet).
+- DevCo is intended to deliver protocol and tooling work as a service provider (planned: dCorps Development Company (BVI), “dCorps Dev”; incorporation pending).
+- ResCo supports research and publication work (dCorps Research LLC (Wyoming)).
 
 See [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
 
