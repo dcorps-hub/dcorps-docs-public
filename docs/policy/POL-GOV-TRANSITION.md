@@ -25,8 +25,8 @@ This document aims to make “who decides what” legible during pre-mainnet wor
 ## 1. Definitions
 
 - **Phases**: use the roadmap definitions in [docs/roadmap/PHASES.md](/roadmap/PHASES).
-- **DevCo**: the development company that delivers protocol and tooling work (planned: **dCorps Development Company (BVI)**, “dCorps Dev”; incorporation pending).
-- **ResCo**: the research organization intended to focus on protocol adoption analysis and integration planning (planned; incorporation pending).
+- **DevCo**: the development company that delivers protocol and tooling work. Planned DevCo legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending).
+- **ResCo**: the research organization intended to focus on protocol adoption analysis and integration planning. Planned ResCo legal entity (design intention): **dCorps Research LLC** (intended jurisdiction: **Wyoming (USA)**; incorporation pending).
 - **Foundation**: the planned nonprofit steward described in [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION). No foundation has been incorporated yet.
 
 ---
@@ -116,7 +116,7 @@ Readiness signals (design intention):
 
 Design intention:
 
-- **DevCo** (dCorps Dev) is a services provider that can deliver protocol and tooling work under clearly scoped, milestone-based agreements.
+- **DevCo** (planned; incorporation pending) is a services provider that can deliver protocol and tooling work under clearly scoped, milestone-based agreements.
 - **ResCo** (planned; incorporation pending) is intended to support adoption research, analysis, and publication work, and may be commissioned or funded like any other contributor.
 - The foundation may fund DevCo/ResCo, but relationships should be:
   - non-exclusive where practical;
