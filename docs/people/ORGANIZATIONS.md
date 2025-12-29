@@ -16,7 +16,7 @@ Status note: dCorps is founder-led in Phase 0A (development). Unless explicitly 
 
 ## DevCo (planned; incorporation pending)
 
-- **dCorps Development Company (BVI)** (“dCorps Dev”)
+- **DevCo (Development Company)** — planned legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending).
   - Intended role: protocol and tooling engineering services, integrations, and delivery support.
   - Intended posture: a services provider, not the protocol steward by default.
 
@@ -26,7 +26,7 @@ See: [DevCo Agreement](/legal/DEVCO_AGREEMENT).
 
 ## ResCo (planned; incorporation pending)
 
-- Planned entity: **ResCo** (incorporation pending).
+- **ResCo (Research Company)** — planned legal entity (design intention): **dCorps Research LLC** (intended jurisdiction: **Wyoming (USA)**; incorporation pending).
 
 ResCo is intended to focus exclusively on dCorps Hub and protocol adoption: it analyzes adoption requirements across engineering, policy, legal, and operational constraints, then translates those findings into concrete module proposals and integration plans.
 

@@ -71,8 +71,8 @@ Design intention (once mainnet is live):
 - Validators and delegators secure the chain.
 - A protocol council may review upgrades and module proposals.
 - A foundation is intended to steward public goods over time (not incorporated yet).
-- DevCo is intended to deliver protocol and tooling work as a service provider (planned: dCorps Development Company (BVI), “dCorps Dev”; incorporation pending).
-- ResCo is intended to focus on protocol adoption research and integration planning (planned; incorporation pending).
+- DevCo is intended to deliver protocol and tooling work as a service provider (planned legal entity, design intention: dCorps Development Ltd.; intended jurisdiction: British Virgin Islands (BVI); incorporation pending).
+- ResCo is intended to focus on protocol adoption research and integration planning (planned legal entity, design intention: dCorps Research LLC; intended jurisdiction: Wyoming (USA); incorporation pending).
 
 See [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), and [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION).
 

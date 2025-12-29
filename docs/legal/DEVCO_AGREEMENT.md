@@ -16,9 +16,9 @@ Status note: This is not an executed contract and does not constitute legal advi
 
 ## 1. Roles
 
-- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work. Planned DevCo entity: **dCorps Development Company (BVI)** (“dCorps Dev”; incorporation pending).
+- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work. Planned DevCo legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending).
 - **Foundation (planned; not yet incorporated)**: intended steward of public goods, standards, grants, and registry operations.
-- **Research company (ResCo)** (planned; incorporation pending): adoption-focused research organization (see [ResCo Agreement](/legal/RESCO_AGREEMENT)).
+- **Research company (ResCo)** (planned; incorporation pending): adoption-focused research organization. Planned ResCo legal entity (design intention): **dCorps Research LLC** (intended jurisdiction: **Wyoming (USA)**; incorporation pending) (see [ResCo Agreement](/legal/RESCO_AGREEMENT)).
 
 ---
 

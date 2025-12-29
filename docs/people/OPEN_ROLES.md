@@ -10,7 +10,7 @@
 
 > Scope: Open positions for the dCorps ecosystem.
 
-Note: In this document, **DevCo** refers to the planned dCorps Development Company (BVI) (“dCorps Dev”; incorporation pending). **ResCo** is planned (incorporation pending). The foundation is planned and not yet incorporated.
+Note: In this document, **DevCo** refers to the planned DevCo legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending). **ResCo** refers to the planned ResCo legal entity (design intention): **dCorps Research LLC** (intended jurisdiction: **Wyoming (USA)**; incorporation pending). The foundation is planned and not yet incorporated.
 
 ---
 
