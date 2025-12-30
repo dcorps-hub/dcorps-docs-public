@@ -55,7 +55,7 @@ Current status: Phase 0A (development). Mainnet is not live, on-chain governance
 - Policy and governance: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION), [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS)
 - Localization and translations: [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION)
 - Token: [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY), [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN), [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES), [docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS)
-- Security: [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY), [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL), [docs/security/KEY-MANAGEMENT.md](/security/KEY-MANAGEMENT)
+- Security: [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY), [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL)
 - Engineering: [docs/engineering/INDEX.md](/engineering/INDEX)
 - Interop: [docs/interop/INDEX.md](/interop/INDEX)
 - DevOps: [docs/devops/INDEX.md](/devops/INDEX)

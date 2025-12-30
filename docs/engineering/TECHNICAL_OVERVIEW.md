@@ -64,7 +64,7 @@ The Hub kernel is intended to provide:
 - **Entity registry**: stable IDs, metadata, and lifecycle status for entities.
 - **Authority and governance primitives**: roles, permissions, proposals/votes/resolutions (as defined by entity module templates).
 - **Canonical wallets**: standard wallet types bound to an entity (merchant, donation, program, treasury, reserves, etc.).
-- **Accounting primitives**: tagged accounting events for inflows/outflows and standardized reporting views.
+- **Accounting primitives**: tagged accounting events for inflows/outflows and the standardized data needed to derive views in explorers and indexers.
 - **Document anchoring**: hash anchoring and references for governing documents and material evidence.
 - **Registries**: module registry and (optional) sub chain registry with recognition labels and anchor history.
 
@@ -83,7 +83,7 @@ The core objects described in the specs include:
 - **Canonical wallet**
   - wallet type + address binding, used as the basis for operating flows and reporting.
 - **Tagged accounting event**
-  - event record with category and tag fields enabling reproducible period reports.
+  - event record with category and tag fields enabling reproducible views over any selected timeframe (derived by explorers/indexers).
 - **Anchor**
   - reference to a document hash or commitment, linked to governance actions or accounting events.
 - **Module registry**
@@ -97,7 +97,7 @@ Exact schema fields and encodings are defined in [docs/spec/SPEC-DATA.md](/spec/
 
 ## 5. Reporting views (cash-based and allocation)
 
-dCorps supports reproducible period reporting derived from tagged events:
+dCorps supports reproducible views over any selected timeframe derived from tagged events:
 
 - **Cash-based operating reporting** for corporations (distinct from GAAP/IFRS accrual statements).
 - **Nonprofit allocation reporting** derived from donation/program flows and allocation rules.

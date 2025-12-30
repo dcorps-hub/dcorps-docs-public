@@ -55,7 +55,7 @@ A Hub entity is an on-chain organizational object registered on the dCorps Hub, 
 Both are complete on-chain entity containers, but they differ in governance and transparency posture:
 
 - Hub corporations use an internal unit-based cap table and role-based governance.
-- Hub nonprofits use board governance and publish donor-relevant transparency views (allocation reporting) with a minimum transparency floor.
+- Hub nonprofits use board governance and publish donor-relevant transparency views (allocation views) with a minimum transparency floor.
 
 ---
 
@@ -73,15 +73,15 @@ Hub units are internal units of a Hub corporation. They represent economic and v
 
 ---
 
-## What is “cash-based operating reporting”?
+## What is a “cash-based operating view”?
 
-Cash-based operating reporting is a period summary derived from tagged inflow and outflow events through canonical wallets, excluding accrual accounting treatments. It is designed for operational clarity and comparability. It is not a GAAP/IFRS financial statement.
+A cash-based operating view is a time-window summary derived from tagged inflow and outflow events through canonical wallets, excluding accrual accounting treatments. It is designed for operational clarity and comparability. It is not a GAAP/IFRS financial statement.
 
 ---
 
-## How does nonprofit allocation reporting work?
+## How do nonprofit allocation views work?
 
-A nonprofit allocation report is a reproducible cash-based period view derived from tagged accounting events and the nonprofit’s allocation rules. It is designed to be meaningful for donors while allowing selective disclosure patterns for sensitive details where needed.
+A nonprofit allocation view is a reproducible cash-based time-window view derived from tagged accounting events and the nonprofit’s allocation rules. It is designed to be meaningful for donors while allowing selective disclosure patterns for sensitive details where needed.
 
 ---
 
@@ -105,6 +105,8 @@ See [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES).
 
 A jurisdiction adapter module is a protocol module encoding how a specific jurisdiction treats certain dCorps entities, including recognition workflows, fees, and reporting expectations. It is optional. Entities can operate without adapters.
 
+Jurisdiction adapters may also publish eligibility signals for jurisdiction-scoped settlement rails (for example local stablecoins or CBDC integrations), but identity checks remain off-chain and feasibility depends on the CBDC’s technical rail and legal constraints.
+
 ---
 
 ## Does dCorps provide privacy?
@@ -115,7 +117,7 @@ Privacy is not assumed by default. Confidentiality exists only when an entity us
 
 ## What is in scope for v1?
 
-v1 is intentionally narrow: a stable Hub kernel that can host complete Hub corporations and Hub nonprofits, run stablecoin operations through tagged accounting events, and produce reproducible period reporting views.
+v1 is intentionally narrow: a stable Hub kernel that can host complete Hub corporations and Hub nonprofits, run stablecoin operations through tagged accounting events, and support explorer/indexer-derived views over any selected timeframe.
 
 See [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER) and [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER).
 

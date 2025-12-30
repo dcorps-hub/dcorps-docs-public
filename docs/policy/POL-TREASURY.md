@@ -84,9 +84,9 @@ All significant disbursements:
 
 Treasury custody uses robust controls such as:
 
-- multisignature wallets or hardware-backed key management;
+- multisignature wallets or hardware-backed custody;
 - separation of duties between proposers, approvers, and signers;
-- documented procedures for key rotation and incident response.
+- documented procedures for signer rotation and incident response.
 
 Signers:
 
@@ -102,10 +102,9 @@ For on-chain-controlled treasuries, smart-contract-level controls may complement
 
 Treasury transparency is essential to trust. At minimum:
 
-- up-to-date treasury balances and key wallet addresses are publicly documented;
-- periodic reports (e.g. quarterly) summarize:
+- key wallet addresses and current balances are publicly discoverable (preferably on-chain labeled and linked from public docs);
+- explorers/indexers SHOULD provide reproducible views over any caller-selected timeframe, including:
   - starting balances and inflows;
   - outflows by category (development, grants, operations, reserves);
   - material changes in strategy or risk.
-
-Where possible, reporting is derived directly from tagged on-chain activity, using the same data standards available to all other entities operating on dCorps.
+- any narrative summaries published by the Treasury or Foundation SHOULD cite the exact timeframe and be reproducible from tagged on-chain activity, using the same data standards available to all other entities operating on dCorps.

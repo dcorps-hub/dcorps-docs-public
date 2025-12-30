@@ -25,7 +25,8 @@ This brief is informational and describes a technical and economic design for th
 
 ## 1. What dCorps is (one paragraph)
 
-dCorps is a digitally native base layer for corporations and nonprofit organizations. It provides a shared standard where entities can be registered, governed, and operated on-chain, with canonical identity, verifiable authority, standardized accounting events, and reproducible period reporting views.
+dCorps is a digitally native base layer for corporations and nonprofit organizations. It provides a shared standard where entities can be registered, governed, and operated on-chain, with canonical identity, verifiable authority, standardized accounting events, and reproducible views over any selected timeframe (derived by explorers and indexers from those events).
+
 
 ---
 
@@ -41,7 +42,7 @@ dCorps’ v1 wedge focuses on a measurable workflow:
 
 1. Register an entity, bind canonical wallets and roles, and anchor baseline governing documents.
 2. Route inflows/outflows through canonical wallets with tagged accounting events.
-3. Produce reproducible period reporting objects with coverage and integrity signals.
+3. Produce reproducible views over any selected timeframe with coverage and integrity signals (derived by explorers/indexers; no periodic report objects are required in the kernel).
 
 This is designed to produce verifiable, reusable entity records and operating views without relying on bespoke SaaS formats.
 
@@ -54,7 +55,7 @@ v1 is intentionally narrow:
 - Hub chain with DCHUB staking, gas, and protocol governance.
 - Hub corporation and Hub nonprofit entity containers.
 - Canonical wallet types and tagged accounting events.
-- Reproducible cash-based operating reporting (corporations) and allocation reporting (nonprofits).
+- Reproducible cash-based operating views (corporations) and allocation views (nonprofits) over any selected timeframe.
 - Document anchoring and reference standards for indexers and explorers.
 
 Out of scope for v1 includes: bank integrations, custody, mandatory protocol-level KYC/KYB/AML, and any guarantee of public-market infrastructure or liquidity.
@@ -99,7 +100,7 @@ See [docs/policy/POL-GOV.md](/policy/POL-GOV).
 
 To keep adoption measurable, the Whitepaper Long describes reproducible metrics such as:
 
-- **Active reporting entities**: entities that produce reproducible period reports across consecutive periods.
+- **Active viewable entities**: entities whose on-chain activity can be summarized into reproducible views over any selected timeframe.
 - **Coverage ratios** (illustrative): inflow coverage, outflow coverage, evidence coverage for material transactions.
 
 These are planning benchmarks, not guarantees. Exact metrics and thresholds may evolve.

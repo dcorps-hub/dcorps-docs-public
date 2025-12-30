@@ -31,7 +31,7 @@ Status note: This is not an executed contract and does not constitute legal advi
 ResCo work is intended to focus on dCorps Hub and protocol adoption, including:
 
 - analyzing adoption requirements across engineering, policy, legal, and operational constraints, and
-- translating findings into module proposals and integration plans for specific jurisdictions, states, sectors, and industries (non-binding; subject to governance, audits, and legal constraints).
+- translating findings into module proposals and integration plans for specific jurisdictions, states, sectors, and industries (non-binding; subject to governance, audits, and legal constraints), including cooperative regulated-rail integrations such as CBDC-style instruments where feasible.
 
 ---
 

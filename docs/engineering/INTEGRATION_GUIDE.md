@@ -55,7 +55,7 @@ Schema and tag catalogs live in [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA).
 
 ## 3. Reporting views (recommended outputs)
 
-If you are building reporting tooling, implement reproducible period views:
+If you are building reporting tooling, implement reproducible time-window views (any selected timeframe):
 
 - **Cash-based operating reporting** (corporations)
 - **Nonprofit allocation reporting** (nonprofits)

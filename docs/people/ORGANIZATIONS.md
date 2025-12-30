@@ -33,6 +33,7 @@ ResCo is intended to focus exclusively on dCorps Hub and protocol adoption: it a
 Design intention:
 
 - Produce adoption research and strategy for specific jurisdictions, states, sectors, and industries.
+- Research cooperative regulated-rail integrations (for example CBDC-style instruments where feasible) and translate feasibility constraints into concrete module and gateway proposals.
 - Deliver “adoption packages” to the foundation and ecosystem: module specifications, integration requirements, partner maps, and rollout playbooks (non-binding; subject to governance, audits, and legal constraints).
 - Coordinate external specialists where needed (for example local counsel, policy experts, and government-relations/lobbying firms) to support serious, jurisdiction-specific adoption work—without implying guarantees or outcomes.
 

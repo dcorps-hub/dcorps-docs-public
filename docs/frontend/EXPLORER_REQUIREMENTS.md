@@ -24,7 +24,7 @@
 ## 2. Accounting views
 
 - Recent inflows/outflows with tags.
-- Category summaries for period views.
+- Category summaries for time-window views.
 - Coverage and uncategorized amounts.
 
 ---
