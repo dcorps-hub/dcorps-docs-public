@@ -45,13 +45,16 @@ See detailed goals and exit criteria in [docs/roadmap/PHASES.md](/roadmap/PHASES
 
 ## Public roadmap (website summary)
 
-The website maintains a public summary in `../dcorps-site/content/information/roadmap.md`. It mirrors Phases 0A to 5 and also includes an optional **Phase 1A** jurisdiction pilot sequence (Step 0 → Step 2) as a post-mainnet overlay, not a kernel dependency.
+The website maintains a public summary in:
+
+- `../dcorps-site/roadmap/dev-phases/index.html` (Phases 0A to 5)
+- `../dcorps-site/roadmap/adoption-tracks/index.html` (optional overlays, including Smart Jurisdiction adoption)
 
 ---
 
 ## Vision events (longer-term sequence)
 
-From `../dcorps-site/content/learn/vision.md`:
+From `../dcorps-site/learn/vision/index.html`:
 
 1. First Hub corporation in production
 2. First Hub nonprofit in production
@@ -71,8 +74,8 @@ From `../dcorps-site/content/learn/vision.md`:
 ## Source of truth
 
 - Whitepaper Long roadmap: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 16)
-- Public roadmap page: `../dcorps-site/content/information/roadmap.md`
-- Vision path: `../dcorps-site/content/learn/vision.md`
+- Public roadmap pages: `../dcorps-site/roadmap/dev-phases/index.html` and `../dcorps-site/roadmap/adoption-tracks/index.html`
+- Vision path: `../dcorps-site/learn/vision/index.html`
 - Phase exit criteria: [docs/roadmap/PHASES.md](/roadmap/PHASES)
 - Internal planning artifacts (open questions, success metrics, backlogs): maintained privately.
 

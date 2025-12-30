@@ -53,7 +53,7 @@ The result: teams can move money, but they cannot easily prove, in a shared and 
 
 - who had authority to act;
 - what approvals were required and obtained; and
-- how period totals were derived from underlying activity.
+- how totals for a selected timeframe were derived from underlying activity.
 
 ---
 
@@ -86,7 +86,7 @@ v1 is intentionally narrow: ship a stable Hub kernel that can host complete corp
   - Hub corporation (units, role-based governance, structured accounting primitives).
   - Hub nonprofit (board governance, donation/program flows, allocation rules, transparency floor).
 - Canonical wallet types and tagged accounting events.
-- Reproducible cash-based period reporting views (corporations) and allocation reporting views (nonprofits).
+- Reproducible cash-based operating views (corporations) and allocation views (nonprofits) over any selected timeframe.
 - Document anchoring for minutes, agreements, audits, and key artifacts.
 - Reference tooling standards (indexer/export formats and explorer expectations).
 
@@ -115,14 +115,14 @@ v1 is intentionally narrow: ship a stable Hub kernel that can host complete corp
 2. Execute payouts from canonical wallets using tagged accounting events.
 3. Anchor evidence for material items where appropriate.
 
-### 5.3 Generate period reporting views
+### 5.3 Generate views (any timeframe)
 
-Entities can generate reproducible period views from tagged accounting events:
+Entities can generate reproducible views over any selected timeframe from tagged accounting events:
 
 - corporations: cash-based operating reporting (distinct from GAAP/IFRS accrual reporting);
 - nonprofits: allocation reporting derived from donation and program flows plus allocation rules.
 
-Period views include coverage and integrity signals (e.g., uncategorized flows surfaced explicitly).
+Views include coverage and integrity signals (e.g., uncategorized flows surfaced explicitly).
 
 ---
 

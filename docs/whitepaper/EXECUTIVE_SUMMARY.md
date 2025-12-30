@@ -42,7 +42,7 @@ dCorps is infrastructure, not a bank, broker, exchange, or custodial service.
 
 ## v1 in one sentence
 
-In v1, an entity can register, bind roles and wallets, run stablecoin operations through tagged accounting events, and generate reproducible monthly cash-based operating views (corporations) or allocation views (nonprofits), with optional evidence anchoring.
+In v1, an entity can register, bind roles and wallets, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
 
 ---
 
@@ -52,7 +52,7 @@ The first workflow is intentionally narrow:
 
 1. Register an entity, set canonical wallets and roles, and anchor baseline governing documents by hash.
 2. Route inflows and outflows through canonical on-chain wallets and emit tagged accounting events.
-3. Generate a reproducible period report object directly from the tagged ledger (cash-based operating report or nonprofit allocation report), with clear coverage metrics.
+3. Use explorers/indexers (and optional dApps) to derive reproducible cash-based operating and allocation views over any selected timeframe directly from tagged ledger events, with clear coverage metrics.
 
 Measurable outcome:
 
@@ -64,7 +64,7 @@ Measurable outcome:
 
 dCorps is designed for:
 
-- stablecoin-native founders and small teams that want clear ownership, approvals, and cash-based operating reporting without heavy reconciliation;
+- stablecoin-native founders and small teams that want clear ownership, approvals, and cash-based operating views without heavy reconciliation;
 - nonprofits and NGOs that want donation and allocation transparency with board-governed controls;
 - builders and service providers that want a shared entity and accounting standard to build interoperable tools;
 - validators and security contributors that want a clear, conservative base layer to secure.
@@ -107,6 +107,7 @@ dCorps uses two primary assets with distinct roles:
 
 - **USDC** is the baseline operating currency and the unit of account for examples and many protocol service fees (registration, renewals, premium names, optional module participation).
 - **DCHUB** is the Hub’s gas, staking, and protocol governance token, and the security root for the Hub and recognized sub chains.
+- The architecture also supports multiple approved stablecoins and, where technically and legally feasible, CBDC-style instruments via the approved asset registry and optional jurisdiction adapters (some rails may require disclosed gateways or provider attestations); adoption is expected to depend on issuer/jurisdiction cooperation and to be pursued through adoption work coordinated by the foundation and ResCo (planned).
 
 This describes protocol mechanics, not market outcomes.
 

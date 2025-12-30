@@ -111,7 +111,6 @@
 ### docs/security/
 - SECURITY-POLICY.md
 - THREAT-MODEL.md
-- KEY-MANAGEMENT.md
 - AUDIT-PLAN.md
 - BUG-BOUNTY.md
 - INCIDENT-RESPONSE.md

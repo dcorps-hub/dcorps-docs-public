@@ -59,7 +59,7 @@ For interoperability and correctness, the dCorps document stack is intended to b
 - **Reference specifications (normative for interoperability)**:
   - Module Protocol Standard ([docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)) and compatibility requirements,
   - Reference Indexer Specification ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)) and export formats,
-  - Reference explorer behavior for entity pages and reporting views (see [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
+  - Reference explorer behavior for entity pages and derived views (see [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
   - Compatibility Test Suite ([docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS)) for schema and module conformance.
 
 If there is a conflict between this whitepaper and the Protocol Specification or Governance Charter, the Protocol Specification and the Governance Charter are intended to take precedence.
@@ -105,7 +105,7 @@ Future extensions (not required for v1): additional execution environments may a
 
 1. Receive inflows to canonical wallets (merchant or donation wallets).
 2. Execute payouts from canonical wallets using tagged accounting events.
-3. Produce period reporting views from tagged flows (cash-based operating reporting for corporations; category level allocation reporting for nonprofits).
+3. Use explorers/indexers to view live, reproducible time-window summaries over tagged flows (cash-based operating view for corporations; allocation view for nonprofits) for any selected timeframe.
 
 **3. Optionally attach adapters and derived modules (not required for core operation)**
 
@@ -125,7 +125,7 @@ It provides a shared standard where organizations can be created, owned, governe
 
 **v1 in one sentence (minimum lovable product)**
 
-In v1, an entity can register, set roles and wallets, run stablecoin operations through tagged accounting events, and generate reproducible monthly operating and allocation views, with optional evidence anchoring.
+In v1, an entity can register, set roles and wallets, run stablecoin operations through tagged accounting events, and view reproducible operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
 
 It provides:
 
@@ -156,7 +156,7 @@ A nonprofit **dCorps foundation** is intended to steward public goods over time.
 
 In practice, dCorps is an **entity operating ledger** for stablecoin native organizations. It is optimized for entities that can keep core operations in crypto and stablecoins, without relying on bank rails as a dependency.
 
-Here, **cash-based operating reporting** means period summaries derived from tagged inflow and outflow events, excluding accrual accounting treatments.
+Here, **cash-based operating views** means time-window summaries derived from tagged inflow and outflow events, excluding accrual accounting treatments.
 
 dCorps is explicitly optimized for entities that can route meaningful parts of their operations through the protocol, but it does not attempt to be a bank integration layer in v1.
 
@@ -165,7 +165,7 @@ Concretely, dCorps gives entities:
 - A **standard entity container** with canonical identity, roles, and wallets, so any builder can serve any entity without bespoke formats.
 - A way to express **ownership and governance as verifiable state** (units, boards and roles, proposals, approvals, and executed resolutions), rather than only narrative policies, PDFs, and private spreadsheets.
 - A **digital-native operating posture** where counterparties can rely on on-chain authority and approvals as the default, even when no legal adapter is attached.
-- **Treasury and accounting primitives** (tagged flows, budget categories, standardized reporting views) that make operations auditable and comparable over time.
+- **Treasury and accounting primitives** (tagged flows, budget categories, standardized view outputs) that make operations auditable and comparable over time.
 - **Optional adapters** for external contexts (jurisdiction recognition, institutional reporting, sector frameworks) that can be attached without changing the entity’s kernel history or semantics.
 - A neutral substrate for service providers and applications (dashboards, payroll, donation portals, analytics), built on shared interfaces and standards.
 
@@ -189,19 +189,19 @@ dCorps is designed for an era where stablecoins and wallets are already usable a
 - **First killer workflow**
   1. Register an entity, bind canonical wallets and roles, and anchor baseline governing documents by hash.
   2. Route operational inflows and outflows through canonical wallets and emit tagged accounting events through typed workflows where possible.
-  3. Generate a period cash-based operating report (corporations) or allocation report (nonprofits) directly from the tagged ledger, with clear coverage metrics and evidence anchors for material items.
+  3. Use explorers/indexers (and optional dApps) to derive cash-based operating and allocation views over any selected timeframe directly from tagged ledger events, with clear coverage metrics and evidence anchors for material items.
 - **Measurable outcome**
   - An independent party can verify, using only public chain data and anchored evidence, that:
     - who had authority to act for an entity at a given time is discoverable from the role and governance record,
     - a material payment was approved under the entity’s policy and linked to a resolution and document anchor, and
-    - a monthly cash-based operating view or nonprofit allocation view can be reproduced from the same underlying ledger inputs.
+    - a cash-based operating view or nonprofit allocation view can be reproduced for any selected timeframe from the same underlying ledger inputs.
 
 
 **Illustrative v1 traction benchmark (non-binding)**
 
 To make adoption measurable without relying on narratives, v1 traction is tracked using public, reproducible metrics:
 
-- **Active reporting entities**: count of active entities that produce a reproducible period report object for at least two consecutive reporting periods.
+- **Active viewable entities**: count of active entities with sufficient tagged coverage for a reference indexer/explorer to reproduce a cash-based operating or allocation view across at least two consecutive measurement windows.
 - **Coverage targets (illustrative)**:
   - Inflow coverage ratio: at least 0.90
   - Outflow coverage ratio: at least 0.90
@@ -262,7 +262,7 @@ dCorps is a long-term multi layer vision. Mainnet v1 is intentionally narrow: sh
 - Wallet and accounting primitives:
   - Canonical wallet types
   - Tagged accounting events
-  - Reproducible cash-based operating reporting views
+  - Reproducible cash-based operating views (derived from tagged events)
 - Reference tooling and standards:
   - Explorer and indexer
   - Entity schemas and APIs
@@ -822,7 +822,7 @@ On dCorps they:
 - Register a **Hub corporation** and allocate the ten thousand internal units among founders, early contributors, and a contributor pool.
 - Receive income into a **merchant wallet** in USDC.
 - Pay contractors, infrastructure costs, and distributions from treasury and operating wallets using tagged accounting events.
-- At month end, generate a **cash-based operating statement** suitable for stakeholder transparency, distinct from GAAP or IFRS reporting.
+- At any time, generate a **cash-based operating view** over a selected timeframe, suitable for stakeholder transparency, distinct from GAAP or IFRS reporting.
 - If they later need to sign contracts with legacy counterparties, they can attach an optional **jurisdiction or institutional adapter** that references on-chain governance and ownership, without changing the kernel.
 
 #### Radically transparent nonprofit
@@ -848,7 +848,7 @@ On dCorps they:
 - Register a dedicated **Hub corporation** as a joint venture or SPV, owned by the parent entities, with its own units and wallets.
 - Allocate units to the parent entities according to their agreement, and optionally allocate a contributor pool for project work.
 - Route project revenues and costs through dedicated wallets, tagged separately from each parent entity’s own operations.
-- Use on-chain approvals and reporting views to give both parents and external financiers a clear picture of the project’s performance.
+- Use on-chain approvals and derived views to give both parents and external financiers a clear picture of the project’s performance.
 
 The JV behaves like any other Hub corporation from the protocol’s perspective, while remaining ring-fenced from each parent’s main operations.
 
@@ -868,24 +868,24 @@ In this model, dCorps remains the kernel, and jurisdictions integrate as optiona
 
 ### 2.7 Concrete operating examples with numbers
 
-The following examples are simplified cash flow and tagged ledger views to make the reporting model concrete. They are not intended to represent GAAP, IFRS, or any local statutory reporting standard.
+The following examples are simplified cash flow and tagged ledger views to make the view model concrete. They are not intended to represent GAAP, IFRS, or any local statutory reporting standard.
 
 They illustrate:
 
 - canonical wallets,
 - tagged accounting events,
 - optional evidence anchors,
-- and the reproducible period views described later in section 9.5B (corporations) and section 9.5C (nonprofits).
+- and the reproducible time-window views described later in section 9.5B (corporations) and section 9.5C (nonprofits).
 
-#### 2.7.1 Hub corporation, monthly operations example (end-to-end)
+#### 2.7.1 Hub corporation, timeframe operations example (end-to-end)
 
 A Hub corporation routes all material revenue and operating payouts through its dCorps wallets.
 
-**Month inputs (merchant wallet inflows)**
+**Selected timeframe inputs (merchant wallet inflows)**
 
 - Subscription revenue (invoicing module, typed workflow): 50,000 USDC
 
-**Month outputs (operating outflows)**
+**Selected timeframe outputs (operating outflows)**
 
 - Salaries (payroll batch, typed workflow): 30,000 USDC
 - Contractors (tagged outflows): 5,000 USDC
@@ -898,7 +898,7 @@ A Hub corporation routes all material revenue and operating payouts through its 
 
 - Transfer to treasury wallet for reserves: 8,000 USDC
 
-**End of month balances (illustrative)**
+**End of timeframe balances (illustrative)**
 
 - Merchant wallet remaining: 0 USDC
 - Treasury wallet: 8,000 USDC
@@ -950,15 +950,15 @@ A Hub corporation routes all material revenue and operating payouts through its 
 
 This view is reproducible from the underlying accounting events and explicitly surfaces missing tags.
 
-#### 2.7.2 Hub nonprofit, monthly allocation example (end-to-end)
+#### 2.7.2 Hub nonprofit, timeframe allocation example (end-to-end)
 
 A Hub nonprofit receives donations into its donation wallet and distributes funds across program and support categories with board visibility and enforcement.
 
-**Month inputs (donation wallet inflows)**
+**Selected timeframe inputs (donation wallet inflows)**
 
 - Donations received (donation module, typed workflow): 100,000 USDC
 
-**Month allocations (donation wallet outflows)**
+**Selected timeframe allocations (donation wallet outflows)**
 
 - Program A direct costs (program category, typed workflow): 58,000 USDC
 - Program B direct costs (program category, typed workflow): 17,000 USDC
@@ -967,11 +967,11 @@ A Hub nonprofit receives donations into its donation wallet and distributes fund
 
 **Treasury retention (internal transfer, not an expense)**
 
-- Retained for next month buffer (donation wallet -> treasury wallet): 5,000 USDC
+- Retained for future buffer (donation wallet -> treasury wallet): 5,000 USDC
 
 **Allocation ratios (illustrative, based on distributed funds)**
 
-- Total distributed this month: 95,000 USDC
+- Total distributed in this timeframe: 95,000 USDC
 - Program spending: 75,000 USDC (79 percent)
 - Overhead: 15,000 USDC (16 percent)
 - Fundraising: 5,000 USDC (5 percent)
@@ -1232,7 +1232,7 @@ Transparency is not marketing language, it is a property of the system:
 
 - Ownership, governance, and key financial flows are recorded as state transitions, not only as documents.
 - nonprofits have clear, on-chain donation and program spending categories.
-- Corporations have on-chain **cash-based operating reporting** derived from tagged transaction flows.
+- Corporations have **cash-based operating views** derived from tagged transaction flows (views over on-chain events).
 
 At the same time, dCorps:
 
@@ -1471,7 +1471,7 @@ Data flows through the system in consistent patterns:
   * Sub chains periodically publish Merkle roots or similar commitments representing:
 
     * Cap tables and dShare supply snapshots.
-    * Key financial aggregates for reporting periods.
+    * Key financial aggregates for selected time windows.
     * Governance checkpoints such as board elections or major resolutions.
 * **Documents and off-chain data**
 
@@ -1539,7 +1539,7 @@ A nonprofit in dCorps is a digital-native impact organization. Its mission, gove
    * A larger nonprofit can sponsor smaller initiatives:
 
      * The sponsor is itself a Hub nonprofit with established governance and reporting posture.
-     * Sponsored initiatives can operate as dedicated programs and wallets with separate reporting views.
+     * Sponsored initiatives can operate as dedicated programs and wallets with separate views.
      * Sponsorship is a service relationship, not a change in kernel semantics.
 
 4. **Optional external overlays (adapters, when needed)**
@@ -2464,8 +2464,9 @@ A practical operating pattern looks like:
 1. The nonprofit receives donations and grants directly in one or more approved stablecoins into its **donation wallet** on the Hub.
 2. The nonprofit allocates funds to program wallets and operational categories through **board approved allocation rules**, ideally using typed workflows that emit deterministic categories.
 3. The nonprofit executes program spending, payroll, grants, and partner disbursements on-chain, with evidence anchors for material items where appropriate.
-4. The nonprofit publishes period allocation reports derived from the same ledger, including inflow coverage, outflow coverage, and evidence coverage, so donors can interpret transparency honestly.
-5. If the nonprofit uses multiple chains or other on-chain venues, it can publish optional completeness commitments and third-party attestations that reconcile those external positions to the Hub period record.
+4. Explorers and dashboards can derive reproducible allocation views over any selected timeframe from the same ledger, including inflow coverage, outflow coverage, and evidence coverage, so donors can interpret transparency honestly.
+5. If the nonprofit uses multiple chains or other on-chain venues, it can publish optional completeness commitments and third-party attestations that reconcile those external positions to the Hub time-window view for the selected timeframe.
+
 
 This pattern is complete inside the digital economy. Any interaction with legacy fiat rails or local charity processes is outside protocol consensus and, where used, is implemented through optional adapters and external service providers.
 
@@ -2758,7 +2759,7 @@ To make choices explicit, each entity declares a disclosure mode at creation. Th
 - Operational detail may be kept off-chain or in controlled zones, while the Hub records:
   - Commitments (hash anchors) to detailed ledgers or datasets,
   - Encrypted payloads intended for specific recipients (auditors, regulators, major donors), and
-  - Period aggregates and standardized category totals for reporting.
+  - Time-window aggregates and standardized category totals for public views (where published).
 
 Mode B establishes a standard for publishing aggregates and proofs instead of raw line items where privacy tools are used.
 
@@ -2767,7 +2768,7 @@ Mode B establishes a standard for publishing aggregates and proofs instead of ra
 - Sensitive operations execute on a private sub chain or private contract zone.
 - The Hub records:
   - Governance checkpoints,
-  - Period aggregates and standardized category totals, and
+  - Time-window aggregates and standardized category totals (where published), and
   - Commitments to detailed records and, where applicable, proof verification artifacts.
 
 Mode C is intended for entities that require stronger confidentiality for beneficiaries, payroll, commercial terms, or regulated data.
@@ -2778,13 +2779,13 @@ Mode C is intended for entities that require stronger confidentiality for benefi
 
 | Minimum requirement     | Hub nonprofit transparency floor (all disclosure modes)      |
 | ----------------------- | ------------------------------------------------------------ |
-| Cadence                 | At least quarterly, with monthly as the default target for reference tooling where practical |
-| Inflows                 | Total donation inflows and total grant inflows per period, plus total other inflows if used |
-| Outflows                | Total spending per period for, at minimum: program spending, general and administrative overhead, and fundraising costs; additional categories from the minimal chart of accounts may be exposed as the entity chooses |
+| Timeframe               | Views are available live; reference tooling can compute totals over any selected timeframe |
+| Inflows                 | Total donation inflows and total grant inflows over selected timeframe, plus total other inflows if used |
+| Outflows                | Total spending over selected timeframe for, at minimum: program spending, general and administrative overhead, and fundraising costs; additional categories from the minimal chart of accounts may be exposed as the entity chooses |
 | Governance              | Board composition, proposals, votes, and allocation rule changes |
 | What may remain private | Beneficiary identities, payroll line items, vendor invoices, field level program data, and any personally identifiable information |
 
-In Mode A, the floor can be computed directly from on-chain line items. In Mode B and Mode C, the floor is met by publishing period aggregates and category totals, plus commitments and optional third-party attestations as described in section 8.5A.3.
+In Mode A, the floor can be computed directly from on-chain line items. In Mode B and Mode C, the floor can be met by publishing time-window aggregates and category totals, plus commitments and optional third-party attestations as described in section 8.5A.3.
 
 **Hub corporations** have no universal mandatory public expense disclosure by category. Corporations choose Mode A, B, or C, and counterparties can require a specific mode by contract or by module participation.
 
@@ -2792,7 +2793,7 @@ In Mode A, the floor can be computed directly from on-chain line items. In Mode 
 
 Where selective disclosure is used:
 
-- Every private dataset referenced for assurance is anchored by hash and period.
+- Every private dataset referenced for assurance is anchored by hash and timeframe.
 - Access is granted through encrypted payloads or separate data rooms controlled by the entity.
 - Auditors and other issuers can publish signed attestations that a private dataset matches anchored commitments and reconciles to on-chain aggregates.
 
@@ -2807,9 +2808,9 @@ To prevent “trust gaps” between raw disclosures and aggregate disclosures, r
 Illustrative tiers include:
 
 - **Tier 1, Raw on-chain detail**
-   Period views are derived directly from on-chain line items for the relevant wallet flows.
+   Time-window views are derived directly from on-chain line items for the relevant wallet flows.
 - **Tier 2, Public aggregates with evidence**
-   Period views are derived from published aggregates plus supporting commitments, proofs, or third-party attestations.
+   Time-window views are derived from published aggregates plus supporting commitments, proofs, or third-party attestations.
 - **Tier 3, Minimum transparency floor**
    The entity meets the minimum nonprofit floor (where applicable) but does not publish additional detail or assurance beyond that floor.
 
@@ -2896,43 +2897,11 @@ Note: in practice, USDC on the Hub may appear as an IBC denom (for example `ibc/
 
 ------
 
-### 8.7 Operational security and key management
+### 8.7 Operational security (non-custodial)
 
-Most real world failures come from key compromise and process breakdowns, not from consensus bugs. dCorps is designed to support organization grade operational security through explicit roles, separation of duties, and policy aware wallet structures.
+Most real world failures come from compromised signers and process breakdowns, not from consensus bugs. dCorps is designed to support organization-grade operational security through explicit roles, separation of duties, policy-aware wallet structures, and auditable governance actions.
 
-#### 8.7.1 Recommended role and wallet patterns
-
-Common patterns include:
-
-- Split operational and long term funds:
-  - Merchant or donation wallet for frequent inflows and payouts
-  - Treasury wallet for reserves and infrequent moves
-- Use role wallets for approvals, not for holding large balances:
-  - CFO or treasurer role wallet proposes and signs approvals
-  - Executor wallets execute approved transactions under policy
-- Use multisig thresholds appropriate to risk:
-  - Operational wallets: 2 of 3 or 3 of 5
-  - Treasury wallets: 3 of 5, 4 of 7, or higher
-  - Board-governed actions: signatures mapped to board seats
-
-#### 8.7.2 Policy controls that reduce blast radius
-
-Entities and ecosystem applications can implement controls such as:
-
-- Spending limits per period and per category
-- Allow lists for trusted counterparties and vendor wallets
-- Two step approval for new beneficiaries (add beneficiary, then pay after delay)
-- Time delays for treasury outflows above a threshold
-- Mandatory dual control for policy changes (for example budget category rules)
-- Separate keys for proposing, approving, and executing
-
-#### 8.7.3 Key rotation, recovery, and incident response
-
-dCorps supports governance based reassignment of roles and wallets:
-
-- If a key is compromised, the entity can rotate the affected role binding and wallet permissions through a recorded governance action.
-- Recovery processes can be codified, including emergency committees with narrow authority, time bounded scope, and transparent logging.
-- Custodians and managed key services can integrate as external providers, but they remain separate from protocol consensus and do not receive protocol level superpowers.
+Custody and wallet security procedures remain the responsibility of validators and entities and are not specified by the public documentation.
 
 ---
 
@@ -3103,15 +3072,15 @@ Policies can be implemented in ecosystem applications that use these primitives.
 
 ---
 
-### 9.5 Reporting and dashboards
+### 9.5 Views and dashboards
 
-Because flows are on-chain and structured:
+Because flows are on-chain and structured, explorers and dashboards can derive:
 
-* Entities can generate:
+* Timeframe-selected summaries and views, including:
 
-  * Monthly and quarterly financial summaries.
-  * Cash flow statements.
-  * Allocation reports for NGOs.
+  * Cash-based operating summaries for corporations (views over tagged events).
+  * Allocation summaries for nonprofits (views over tagged events plus allocation rules).
+  * Cash-flow and category trend views for any selected timeframe.
 * Stakeholders can see:
 
   * Revenue and expense trends.
@@ -3163,8 +3132,8 @@ Counterparty receipts make systematic misclassification harder without turning t
 
 dCorps does not require reconciliation to function. However, some entities operate across multiple on-chain venues (multiple chains, multiple DEXs, multiple custody models). These entities may voluntarily publish:
 
-- Period commitments (hashes of standardized exports, position snapshots, or reconciled inventory lists).
-- Third-party attestations that specified external balances or DeFi positions reconcile to the Hub period record.
+- Time-window commitments (hashes of standardized exports, position snapshots, or reconciled inventory lists).
+- Third-party attestations that specified external balances or DeFi positions reconcile to the Hub time-window view for a selected timeframe.
 
 These signals are optional. They exist primarily to support large donors, risk-aware counterparties, and auditors who want a clear coverage story across venues. Reference dashboards must clearly distinguish self-reported views from views supported by third-party attestations.
 
@@ -3188,46 +3157,48 @@ Reference dashboards should distinguish clearly between:
 
 ------
 
-### 9.5B Cash-based operating reporting standard (v1)
+### 9.5B Cash-based operating view standard (v1)
 
-This section defines the v1 standard for cash-based operating reporting views produced from dCorps accounting primitives.
+This section defines the v1 standard for cash-based operating views derived from dCorps accounting primitives.
 
-Cash-based operating reporting is a period summary derived from cash-like inflows and outflows recorded through entity wallets, excluding accrual accounting treatments. It is a reporting view for operational clarity and comparability. It is not a GAAP, IFRS, or statutory financial statement.
+Cash-based operating views are time-window summaries derived from cash-like inflows and outflows recorded through entity wallets, excluding accrual accounting treatments. They are designed for operational clarity and comparability. They are not GAAP, IFRS, or statutory financial statements.
 
-#### 9.5B.1 Period definition and currency
+Important boundary: these views are derived by explorers/indexers (and optional dApps) from on-chain events. The kernel does not require a reporting cadence and does not store periodic statements as native state.
 
-- Reporting periods are defined as half open intervals: `[period_start, period_end)`.
-- Period timestamps use UTC for canonical reporting in reference tooling.
+#### 9.5B.1 Time window definition and currency
+
+- View time windows are defined as half open intervals: `[period_start, period_end)`.
+- Window timestamps use UTC for canonical views in reference tooling.
 - The baseline reporting currency is USDC.
-- When a period includes multiple stablecoins, reference views may display:
+- When a window includes multiple stablecoins, reference views may display:
   - Native denomination totals per denom, and
   - An optional USD equivalent view using transparent conversion rules and explicit price feed sources, where supported by tooling.
 
 #### 9.5B.2 Required inputs and category mapping
 
-A cash-based report is derived from:
+A cash-based view is derived from:
 
 - Accounting events that record cash-like inflows and outflows for the entity’s canonical wallet types (merchant, donation, program, treasury, and other configured wallet types).
 - The `category` tag on each accounting event, which must map to the minimal standard chart of accounts (section 9.8) or to an entity scoped extension that maps to a parent category in the minimal chart.
 
-Events that omit required tags are treated as uncategorized and must be surfaced explicitly in report coverage metrics.
+Events that omit required tags are treated as uncategorized and must be surfaced explicitly in coverage metrics.
 
 #### 9.5B.3 Source labeling and integrity signals
 
-To keep reporting honest about its inputs, cash-based reports include a source label for each aggregate:
+To keep views honest about their inputs, cash-based view exports include a source label for each aggregate:
 
 - **typed_workflow**
    Category produced deterministically by a constrained workflow module (for example payroll, invoicing, donation allocation).
 - **entity_tagged**
    Category provided directly by the entity or an external application using free form or custom logic.
 - **anchored_aggregate**
-   Aggregate derived from an anchored report or sub chain summary commitment rather than raw on-chain line items.
+   Aggregate derived from an anchored dataset/export or sub chain summary commitment rather than raw on-chain line items.
 
 Reference interfaces must distinguish these inputs clearly. This does not adjudicate truth; it makes the provenance of categories visible.
 
-#### 9.5B.4 v1 report object (reference schema excerpt)
+#### 9.5B.4 v1 derived view export (reference schema excerpt)
 
-The following object is a reference excerpt for interoperability. Exact field names are defined in the Protocol Specification and reference indexer formats, but v1 implementations are expected to produce an equivalent structure.
+The following object is a reference excerpt for interoperability between explorers, indexers, and dApps. It is not an on-chain object. Exact field names are defined in reference formats, but implementations are expected to produce an equivalent structure.
 
 ```json
 {
@@ -3235,8 +3206,8 @@ The following object is a reference excerpt for interoperability. Exact field na
   "entity_id": "dcorp:hub:entity:00001234",
   "report_type": "cash_based_operating_statement",
   "period": {
-    "period_start": "2025-11-01T00:00:00Z",
-    "period_end": "2025-12-01T00:00:00Z",
+    "period_start": "2025-11-10T00:00:00Z",
+    "period_end": "2025-12-15T00:00:00Z",
     "timezone": "UTC"
   },
   "base_denom": "uusdc",
@@ -3296,19 +3267,19 @@ The following object is a reference excerpt for interoperability. Exact field na
 }
 ```
 
-Reference explorers are expected to show cash-based operating reporting only as a view over the ledger and to include clear labels that it is not an audited statement and not accrual accounting.
+Reference explorers are expected to show cash-based operating views only as a view over the ledger and to include clear labels that it is not an audited statement and not accrual accounting.
 
 ---
 
-### 9.5C Nonprofit allocation reporting standard (v1)
+### 9.5C Nonprofit allocation view standard (v1)
 
 Nonprofits in dCorps are expected to publish a minimum transparency view that is meaningful for donors and oversight without forcing disclosure of sensitive beneficiary details.
 
-A nonprofit allocation report is a reproducible, cash-based period view derived from tagged accounting events and the nonprofit’s allocation rules.
+A nonprofit allocation view is a reproducible, cash-based time-window view derived from tagged accounting events and the nonprofit’s allocation rules.
 
 #### 9.5C.1 Required inputs and category mapping
 
-An allocation report is derived from:
+An allocation view is derived from:
 
 - Donation and grant inflows to canonical nonprofit wallets (for example the donation wallet and designated program wallets).
 - Tagged outflows that map to:
@@ -3319,9 +3290,9 @@ An allocation report is derived from:
 
 As with the corporate cash-based view, events that omit required tags are treated as uncategorized and must be surfaced explicitly in coverage metrics.
 
-#### 9.5C.2 v1 allocation report object (reference schema excerpt)
+#### 9.5C.2 v1 allocation view export (reference schema excerpt)
 
-The following object is a reference excerpt for interoperability. Implementations are expected to produce an equivalent structure.
+The following object is a reference excerpt for interoperability between explorers, indexers, and dApps. It is not an on-chain object. Implementations are expected to produce an equivalent structure.
 
 ```json
 {
@@ -3329,8 +3300,8 @@ The following object is a reference excerpt for interoperability. Implementation
   "entity_id": "dcorp:hub:entity:00005678",
   "report_type": "nonprofit_allocation_statement",
   "period": {
-    "period_start": "2025-11-01T00:00:00Z",
-    "period_end": "2025-12-01T00:00:00Z",
+    "period_start": "2025-11-10T00:00:00Z",
+    "period_end": "2025-12-15T00:00:00Z",
     "timezone": "UTC"
   },
   "base_denom": "uusdc",
@@ -3482,7 +3453,17 @@ Design intentions include:
   - Dashboards can produce USD denominated summaries using transparent conversion rules, price feeds, and reconciliation anchors
   - Entities can choose which assets they accept while still producing comparable reports
 
-Not all CBDCs will be compatible with open on-chain systems. Many may be permissioned, non transferable, or restricted in ways that prevent direct integration. dCorps supports CBDC style assets only where their technical rails and legal constraints allow safe, auditable use.
+Not all CBDCs will be compatible with open on-chain systems. Many may be permissioned, non transferable, or restricted in ways that prevent direct integration. dCorps supports CBDC-style assets only where their technical rails and legal constraints allow safe, auditable use.
+
+**CBDC rails and integration patterns (non-normative)**
+
+- **Open token rails**: CBDC-style assets that exist as transferable tokens on open networks can be treated similarly to stablecoins, subject to the same asset registry risk review and disclosure of administrative controls.
+- **Permissioned token rails**: CBDCs on permissioned networks (or with strict whitelisting) typically require regulated gateways or delegated operators to move funds and to publish attestations. Any on-Hub representation is treated as a separate approved asset with explicit counterparty and audit risk.
+- **Account or API rails**: where a CBDC is not available as an on-chain transferable asset, dCorps treats it as an external settlement rail; the Hub can still record tagged accounting events and anchor evidence or provider attestations, without attempting to mirror balances inside the kernel.
+
+Eligibility constraints (residency, local-agent verification, wallet whitelisting, and similar rules) are handled as optional adapter logic and off-chain processes. The kernel remains non-custodial and does not perform KYC/KYB.
+
+Because CBDC integration depends on issuer and jurisdiction cooperation, dCorps treats it as an adoption track rather than a kernel dependency. Where a jurisdiction or issuer is willing to interoperate, the foundation and ecosystem-funded adoption research groups (such as ResCo, if established) are expected to coordinate feasibility research, partner mapping, and government-relations work (where lawful), then translate that work into governance-reviewable module proposals and pilot implementations.
 
 ---
 
@@ -4087,7 +4068,7 @@ The liquidity bootstrap allocation (2 percent of total supply) exists to support
   - permitted venues and custody assumptions,
   - position sizing and risk limits,
   - authorized operators (if any), and
-  - reporting cadence and public disclosures.
+  - transparency requirements (public disclosures and reproducible time-window views).
 - In early phases, execution may be delegated to a time bounded operational multisig with a narrow mandate (liquidity provisioning only). The multisig’s addresses, signers, and mandate must be publicly disclosed, and the delegation is revocable through governance.
 
 **Permitted venues and activities (default stance)**
@@ -4104,14 +4085,14 @@ Prohibited use cases include:
 - Private OTC activity where the effective terms are not publicly auditable.
 - Any messaging or program design that frames liquidity activity as a return mechanism for DCHUB holders.
 
-**Public reporting requirements (v1 standard)**
+**Transparency requirements (v1 standard)**
 
 Liquidity operations must be transparent and reproducible:
 
 - All liquidity positions controlled by the liquidity bootstrap account must be discoverable on-chain.
-- The Treasury publishes a periodic liquidity report (recommended monthly) that includes:
+- Any liquidity summary published by the Treasury MUST be reproducible from tagged on-chain activity and MUST state the timeframe covered (no fixed monthly/periodic cadence is required by the kernel), including:
   - current positions and venues,
-  - assets deployed and withdrawn over the period,
+  - assets deployed and withdrawn over the timeframe,
   - fees earned and losses realized (if any),
   - policy compliance attestations (budget caps, permitted venues), and
   - a clear statement that results are not guaranteed and are not a promise of future performance.
@@ -5053,6 +5034,7 @@ They are frameworks where:
   - Which entity types they recognize and under what conditions.
   - Required disclosures and reporting intervals.
   - Fee and tax related obligations, including how fees are collected in USDC.
+  - Eligibility rules for jurisdiction-scoped settlement instruments (for example a local stablecoin, tokenized deposits, or a CBDC), including any delegated operator or gateway requirements.
 - Entities opt in by:
   - Attaching to the module on-chain.
   - Accepting its terms off-chain where needed, for example by signing local incorporation or registration documents.
@@ -5066,6 +5048,7 @@ These modules:
   - High-level financial aggregates and allocation metrics.
 - Write additional state such as:
   - Recognition status (where applicable).
+  - Eligible settlement rails or assets (where applicable), with expiry windows and required disclosures.
   - Fee schedules and obligations.
   - Compliance signals or alerts.
 
@@ -5427,7 +5410,7 @@ dCorps is agnostic about specific proof systems, but it provides:
 
 * Anchoring for proofs.
 * Verification hooks in protocol modules.
-* Ways to link proofs to entities and reporting periods.
+* Ways to link proofs to entities and selected time windows.
 
 Adoption of advanced zero knowledge techniques will grow over time as tooling matures.
 
@@ -5599,7 +5582,7 @@ Before mainnet v1 is treated as production ready, dCorps intends to publish a co
   - Sub chain Anchoring Standard and anchor schema versions ([docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)).
 - Reference tooling source code:
   - reference indexer behavior and export formats ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
-  - reference explorer behavior for entity pages and reporting views ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
+  - reference explorer behavior for entity pages and derived views ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)),
   - Compatibility Test Suite for schema and module conformance ([docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS)).
 
 **Testnet and reproducibility**
@@ -5611,12 +5594,12 @@ Before mainnet v1 is treated as production ready, dCorps intends to publish a co
 - A deterministic way for third parties to:
   - run a node,
   - run the indexer,
-  - reproduce entity views and reporting outputs from raw chain data.
+  - reproduce entity views and derived outputs from raw chain data.
 
 - A public example entity package on testnet that includes:
   - at least one corporation example and one nonprofit example,
-  - a full period of tagged accounting events with a few evidence anchors,
-  - the expected derived report objects (cash-based operating statement and nonprofit allocation statement),
+  - a complete time window of tagged accounting events with a few evidence anchors,
+  - the expected derived view export objects (cash-based operating statement and nonprofit allocation statement),
   - and a simple reproduction script or notebook that verifies the derived outputs against raw chain data.
 
 **Security and audits (public scope and remediation)**
@@ -5771,6 +5754,7 @@ The phases below start at **mainnet launch** and continue through a definition o
 **Key deliverables**:
 
 - Jurisdiction adapter framework (schemas, proofs, and reference workflows) so external recognition can be attached as an overlay.
+- Reference patterns for regulated payment rails (including CBDC-style instruments where feasible), including gateway disclosure, eligibility signals, and audit-ready evidence anchoring.
 - Institutional reporting modules that derive verifiable reports from standardized accounting events and document anchors.
 - Attestation modules and selective disclosure patterns (where an entity can prove statements about its state without publishing everything).
 - Nonprofit specific overlays such as donation receipt workflows and sponsorship frameworks, implemented as adapters and applications.
@@ -6127,8 +6111,8 @@ Maintaining these separations is essential for clarity, accountability, and long
 **Hub units**
  Internal units of a Hub corporation that represent economic and voting rights.
 
-**cash-based operating reporting**
- Period summaries derived from tagged inflow and outflow events, excluding accrual accounting treatments.
+**cash-based operating view**
+ Time-window summaries derived from tagged inflow and outflow events, excluding accrual accounting treatments.
 
 **Sub chain**
  A Cosmos-based chain linked to the Hub that hosts a corporation’s operations and, for public sub chain corporations, its dShares.

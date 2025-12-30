@@ -98,7 +98,9 @@ It provides a shared standard where organizations can be created, owned, governe
 
 **v1 in one sentence**
 
-In v1, an entity can register, set roles and wallets, run stablecoin operations through tagged accounting events, and generate reproducible monthly cash-based operating views (corporations) or allocation views (nonprofits), with optional evidence anchoring.
+In v1, an entity can register, set roles and wallets, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
+
+Later phases are designed to support multiple approved stablecoins and, where technically and legally possible, CBDC-style instruments through the approved asset registry and optional jurisdiction adapter modules. This is expected to require issuer and jurisdiction cooperation and to be pursued through ecosystem adoption work coordinated by the foundation and ResCo (planned).
 
 ### 0.2 Kernel and adapters
 
@@ -116,7 +118,7 @@ Entities must be able to operate without adapters. Adapters may publish derived 
 - Hub chain, DCHUB gas and staking, and basic on-chain protocol governance.
 - Hub corporation and Hub nonprofit entity containers.
 - Canonical wallet types and tagged accounting events.
-- Reproducible cash-based period reporting views and nonprofit allocation reporting views.
+- Explorer/indexer-derived cash-based operating views (corporations) and allocation views (nonprofits) over any selected timeframe.
 - Document anchoring and reference standards for explorers and indexers.
 
 **Out of scope for v1**
@@ -217,7 +219,7 @@ Core characteristics:
 - board governance with explicit roles and voting rules;
 - donation and program wallet structure;
 - allocation rules and category-level transparency;
-- reproducible period allocation views derived from tagged accounting events.
+- reproducible allocation views derived from tagged accounting events over any selected timeframe.
 
 Nonprofits are expected to meet a minimum transparency floor meaningful for donors, while allowing selective disclosure patterns as needed for beneficiary safety.
 
@@ -229,7 +231,7 @@ v1 does not require any sub chains for entities to operate.
 
 ---
 
-## 5. Operations, accounting events, and reporting
+## 5. Operations, accounting events, and views
 
 ### 5.1 Canonical wallets and tagged accounting events
 
@@ -237,15 +239,17 @@ Entities operate through canonical wallet types (for example merchant, donation,
 
 Tags are explicit. The Hub does not attempt to infer them. Typed workflows can produce deterministic tags, while external applications may also submit tags under the entity’s authority.
 
-### 5.2 Cash-based operating reporting (corporations)
+### 5.2 Cash-based operating views (corporations)
 
-dCorps supports cash-based operating reporting: period summaries derived from tagged inflow/outflow events, excluding accrual accounting treatments.
+dCorps supports cash-based operating views: time-window summaries derived from tagged inflow/outflow events, excluding accrual accounting treatments.
 
 Cash-based views are designed for operational clarity and comparability. They are not GAAP/IFRS financial statements.
 
-### 5.3 Nonprofit allocation reporting
+Important boundary: these views are derived by explorers/indexers (and optional dApps) from on-chain events. The kernel does not require a reporting cadence and does not store periodic statements as native state.
 
-Nonprofit allocation reporting is a reproducible cash-based period view derived from tagged accounting events and the nonprofit’s allocation rules.
+### 5.3 Nonprofit allocation views
+
+Nonprofit allocation views are reproducible cash-based time-window views derived from tagged accounting events and the nonprofit’s allocation rules.
 
 The design goal is meaningful transparency for donors without forcing disclosure of sensitive details.
 
@@ -253,7 +257,7 @@ The design goal is meaningful transparency for donors without forcing disclosure
 
 For material items, entities may anchor evidence (invoices, receipts, agreements) by hash and link accounting events to evidence references.
 
-Period views should surface integrity signals, such as uncategorized flows, provenance labels (typed workflow vs entity-tagged), and optional attestation signals.
+Views should surface integrity signals, such as uncategorized flows, provenance labels (typed workflow vs entity-tagged), and optional attestation signals.
 
 ---
 

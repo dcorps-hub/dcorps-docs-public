@@ -50,10 +50,10 @@ An on-chain event or transaction output annotated with categories and tags per d
 A standardized code used to tag inflows and outflows for comparability in reporting views. Entities may extend categories when extensions map to the minimal standard.
 
 **cash-based operating reporting**  
-Period summaries derived from tagged inflow and outflow events through canonical wallets, excluding accrual accounting treatments.
+Time-window summaries derived from tagged inflow and outflow events through canonical wallets, excluding accrual accounting treatments.
 
 **Nonprofit allocation reporting**  
-A reproducible cash-based period view derived from tagged accounting events and the nonprofit’s allocation rules.
+A reproducible cash-based time-window view derived from tagged accounting events and the nonprofit’s allocation rules.
 
 **Evidence anchoring**  
 Anchoring a document hash on-chain (for example invoices, receipts, agreements, minutes, policies) so accounting events and governance actions can reference verifiable commitments.

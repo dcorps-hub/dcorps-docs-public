@@ -26,6 +26,8 @@ This spec defines:
 - basic schemas and query capabilities;
 - expectations around consistency, reliability, and observability.
 
+Important boundary: “reports” returned by the indexer are derived views computed over a caller-selected timeframe (`period_start`/`period_end`). The Hub chain stores on-chain facts (events, tags, anchors), not periodic report objects.
+
 Implementers MAY extend this spec with additional features, but SHOULD maintain compatibility with the core data model.
 
 ---
@@ -62,7 +64,7 @@ Indexers SHOULD maintain structured representations of at least:
 3. **Wallets and flows**
    - balance history for canonical wallets;
    - tagged inflow and outflow events;
-   - evidence references and derived reports.
+   - evidence references and derived views (report outputs).
 4. **Modules and sub chains**
    - module registry entries with status and risk labels;
    - sub chain registry, anchors, and recognition tiers.
@@ -79,7 +81,7 @@ Reference indexers SHOULD expose APIs that allow:
 - listing canonical wallets and recent flows with tags;
 - retrieving governance proposals, votes, and statuses;
 - listing modules and sub chains by type, risk label, or status;
-- generating basic cash-based operating and allocation reports for entities over a period.
+- generating basic cash-based operating and allocation views for entities over any selected timeframe.
 
 APIs SHOULD:
 

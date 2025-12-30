@@ -44,7 +44,7 @@ At a high level, a Hub nonprofit:
 - records authority (board and roles) as on-chain state, not only as documents;
 - operates through canonical wallets (for example donation and program wallets);
 - records inflows and outflows as **tagged accounting events**; and
-- produces reproducible **nonprofit allocation reports** from those tagged flows.
+- produces reproducible **nonprofit allocation views** over any selected timeframe from those tagged flows.
 
 Nonprofits do not have equity. There is no token representing ownership of a nonprofit.
 
@@ -72,13 +72,13 @@ Nonprofit transparency on dCorps relies on explicit tagging:
 
 This is designed to make transparency honest: readers can see what is supported by on-chain facts and where classification is incomplete.
 
-### 3.3 Allocation rules and reproducible reports
+### 3.3 Allocation rules and reproducible views
 
-A nonprofit can define allocation rules (for example category-level allocation mappings) and publish period reports that are reproducible from the same underlying ledger inputs.
+A nonprofit can define allocation rules (for example category-level allocation mappings) and publish reproducible allocation views over any selected timeframe, derived from the same underlying ledger inputs.
 
-The intended v1 outcome is a **nonprofit allocation report** that:
+The intended v1 outcome is a **nonprofit allocation view** that:
 
-- summarizes tagged flows, by category, over a defined period;
+- summarizes tagged flows, by category, over a selected timeframe;
 - includes integrity signals (coverage, uncategorized totals, provenance labels); and
 - can optionally reference evidence anchors for material items.
 
@@ -115,7 +115,7 @@ For public risk framing, see:
 - register a Hub nonprofit and its canonical wallets;
 - define board roles and authority rules;
 - record and tag donation and spending flows as accounting events;
-- generate reproducible period allocation reports from tagged flows; and
+- generate reproducible allocation views over any selected timeframe from tagged flows; and
 - anchor evidence hashes for material items.
 
 **Not assumed in v1**

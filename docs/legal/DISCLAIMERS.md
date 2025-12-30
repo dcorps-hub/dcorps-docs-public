@@ -31,7 +31,7 @@ dCorps is intended to be infrastructure. It is not:
 - a bank, broker, dealer, exchange, matching engine, or fundraising platform; or
 - a custodial service.
 
-Entities and users are responsible for their own key management, custody decisions, and security practices.
+Entities and users are responsible for their own custody decisions and security practices.
 
 ---
 

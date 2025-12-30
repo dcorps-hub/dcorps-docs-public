@@ -40,7 +40,7 @@ Security is a shared responsibility:
   - maintain secure development practices and code review standards;
   - coordinate technical response to vulnerabilities and incidents.
 - **Validators and node operators**
-  - secure validator infrastructure and keys;
+  - secure validator infrastructure and signing access;
   - keep software up to date;
   - participate in coordinated incident handling.
 - **dCorps Foundation**
@@ -73,29 +73,11 @@ Changes that significantly affect security are:
 
 ---
 
-## 4. Key and secret management
+## 4. Custody and operational security
 
-See [docs/security/KEY-MANAGEMENT.md](/security/KEY-MANAGEMENT) for the public-safe key custody policy.
+dCorps is non-custodial. Validators, entities, and users are responsible for securing their wallets, signing access, and operational procedures.
 
-### 4.1 Validator and user keys
-
-Validators and users are responsible for:
-
-- using hardware-backed keys or equivalent secure storage for high-value keys;
-- protecting seed phrases and backups with strong operational controls;
-- promptly rotating keys in the event of suspected compromise.
-
-Validator key management expectations are further described in `POL-VALIDATORS.md`.
-
-### 4.2 Foundation and treasury keys
-
-The foundation:
-
-- uses multisignature or equivalent mechanisms for treasury and high-value accounts;
-- defines clear signer roles and rotation schedules;
-- keeps detailed internal records of key custody and access.
-
-Private keys are never stored in plaintext in code repositories, chat logs, or documentation.
+Foundation and treasury operational security details are maintained internally and are not part of the public documentation set.
 
 ---
 

@@ -24,7 +24,7 @@ Scope priorities:
 
 - core Hub state machine and consensus integration;
 - protocol modules with high impact (funds, governance, or recognition);
-- critical infrastructure and key management tooling where feasible.
+- critical infrastructure and security tooling where feasible.
 
 Audits are not a guarantee of safety and do not replace ongoing security work.
 

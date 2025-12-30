@@ -54,7 +54,7 @@ dcorps-chain/
 - `x/accounting`
   - Tagged accounting events.
   - Event validation against tag catalogs.
-  - Period reporting indexes (lightweight).
+  - Time-window view indexes (lightweight).
 - `x/registry`
   - Module registry and lifecycle.
   - Module attachment records for entities.

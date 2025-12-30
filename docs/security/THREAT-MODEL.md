@@ -65,7 +65,7 @@ Representative attacker types include:
 
 - economically motivated attackers – seek to steal funds, manipulate markets, or extract MEV beyond acceptable limits;
 - protocol adversaries – attempt to disrupt consensus, censor transactions, or corrupt the entity registry;
-- insiders and colluding parties – compromised or malicious validators, developers, or key holders;
+- insiders and colluding parties – compromised or malicious validators, developers, or privileged signers;
 - regulatory or legal actors – may impose constraints that indirectly affect security or availability;
 - opportunistic attackers – exploit unpatched bugs, misconfigurations, or poorly secured infrastructure.
 
@@ -80,7 +80,7 @@ Examples of threat categories and scenarios:
 - **Consensus and staking**
   - stake concentration enabling censorship or reorgs;
   - double-signing and equivocation attacks;
-  - long-range attacks if key management or unbonding rules are weak.
+  - long-range attacks if validator operational security or unbonding rules are weak.
 - **Entity and module integrity**
   - unauthorized entity or module registrations;
   - malicious modules with excessive privileges;
@@ -117,7 +117,7 @@ Mitigations span multiple layers:
   - delegation structures that reduce capture risk.
 - **Operational-level**
   - secure development and deployment processes;
-  - robust key and infrastructure management;
+  - robust operational security and infrastructure management;
   - coordinated incident response and communication.
 
 Residual risks are clearly documented along with:

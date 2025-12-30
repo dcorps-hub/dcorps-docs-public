@@ -21,12 +21,11 @@
 
 ---
 
-## Key and secret management
+## Secret handling
 
 - Use dedicated secret management tools and access controls.
-- Rotate keys and credentials on a schedule.
+- Rotate credentials on a schedule.
 - Keep sensitive runbook details in `dcorps-docs-private/docs/restricted/` if needed.
-- Public-safe key policy: [docs/security/KEY-MANAGEMENT.md](/security/KEY-MANAGEMENT).
 
 ---
 
