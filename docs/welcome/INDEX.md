@@ -1,12 +1,12 @@
-# Welcome
+# Welcome Test
 
-**Document type**: Entry point  
-**Doc ID**: DOCS-WELCOME  
-**Status**: Final v0.1  
-**Release date**: December 28, 2025  
-**Author**: Nicolas Turcotte, Founder  
-**Source repo**: dcorps-docs-public ([docs/welcome/INDEX.md](/welcome/INDEX))  
-**Last updated**: 2025-12-28  
+**Document type**: Entry point
+**Doc ID**: DOCS-WELCOME
+**Status**: Final v0.1
+**Release date**: December 28, 2025
+**Author**: Nicolas Turcotte, Founder
+**Source repo**: dcorps-docs-public ([docs/welcome/INDEX.md](/welcome/INDEX))
+**Last updated**: 2025-12-28
 
 > Scope: Start here for the public dCorps documentation set.
 
