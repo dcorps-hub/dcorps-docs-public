@@ -1,0 +1,12 @@
+name: Deploy docs center
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy
+        run: curl -X POST "${{ secrets.DOCS_CENTER_DEPLOY_HOOK }}"
