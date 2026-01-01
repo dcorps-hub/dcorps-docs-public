@@ -1,4 +1,4 @@
-# Welcome Test
+# Welcome
 
 **Document type**: Entry point
 **Doc ID**: DOCS-WELCOME
