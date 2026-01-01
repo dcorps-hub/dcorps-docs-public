@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/COSMOS_ENVIRONMENT.md](/devops/COSMOS_ENVIRONMENT))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-01  
 
 > Scope: Summarize what is required to stand up a Cosmos-based environment for the dCorps Hub.
 
@@ -47,9 +47,32 @@ Minimum components to operate a network:
 
 ## Network lifecycle
 
-- Dev: rapid iteration and resets allowed.
-- Staging: upgrade rehearsals and release candidates.
-- Prod: formal change control and governance-aligned upgrades.
+This lifecycle is intentionally split into **network stages** (what is happening) and **environment classes** (how strictly it is operated).
+
+Network stages (design intention):
+
+- **Baseline (local)**: developers iterate locally, publish specs, and validate reproducible build outputs.
+- **Dev testnet (devnet)**: team-only chain for early integration; resets allowed; validator ops are exercised by a small, trusted set.
+- **Public testnet**: published chain ID, genesis, and onboarding; open validator participation; upgrades and governance workflows are rehearsed in public.
+- **Mainnet rehearsal testnet**: final pre-launch dress rehearsal with mainnet-like procedures (release candidates, genesis packaging, and coordinated validator start), while still resettable.
+- **Genesis mainnet (TGE)**: mainnet launch and Token Generation Event; DCHUB supply becomes live at genesis and the production validator set begins signing.
+- **Post-genesis**: stabilization, monitoring, and the first governed upgrades and operational budgets.
+
+Environment classes (operational posture):
+
+- **Dev**: fast iteration, best-effort uptime, resets expected.
+- **Staging**: release candidates and upgrade rehearsals, configuration mirrors production, coordinated operator testing.
+- **Prod**: mainnet, strict change control, full monitoring and incident response.
+
+Audits and security gates:
+
+- Audits should start as soon as the kernel and critical tooling are stable enough to review, and **critical/high findings are addressed before genesis** ([docs/security/AUDIT-PLAN.md](/security/AUDIT-PLAN)).
+- Mainnet rehearsal is the point where audit reports, release artifacts, and runbooks should be in a publishable, verifiable state.
+
+Validator participation:
+
+- Validator onboarding follows [docs/devops/RUNBOOK-VALIDATORS.md](/devops/RUNBOOK-VALIDATORS) and expectations in [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS).
+- At least one upgrade rehearsal is expected before mainnet expectations ([docs/devops/RUNBOOK-UPGRADES.md](/devops/RUNBOOK-UPGRADES)).
 
 ---
 

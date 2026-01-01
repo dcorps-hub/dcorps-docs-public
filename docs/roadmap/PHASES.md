@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/roadmap/PHASES.md](/roadmap/PHASES))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-01  
 
 > Scope: Define phase goals and exit criteria based on the Whitepaper Long (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
 
@@ -41,7 +41,8 @@ Key deliverables:
 
 - Hub chain source code and build instructions.
 - Protocol specs and module standards ([docs/spec/*](/spec)).
-- Public testnet with published chain ID, genesis file, and validator onboarding steps (testnet).
+- Network progression through testnet stages (design intention): baseline (local) → dev testnet (devnet) → public testnet → mainnet rehearsal testnet ([docs/devops/COSMOS_ENVIRONMENT.md](/devops/COSMOS_ENVIRONMENT)).
+- Public testnet with published chain ID, genesis file, and validator onboarding steps.
 - Reproducible tooling for nodes, indexers, and reporting views.
 - Public example entity package on testnet (corporation + nonprofit) with tagged events, anchors, and derived reports.
 - Audit scope and reports for core modules and reference tooling.
@@ -49,8 +50,7 @@ Key deliverables:
 - Governance and validator charters plus Treasury policy ([docs/policy/*](/policy)).
 - Governance transition plan through foundation readiness ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
 - Begin translation of testnet-facing material (docs, onboarding, and notices) under the language set in [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION) (design intention).
-- Publish the foundation formation posture (design intention): whether the foundation is intended to be incorporated before mainnet or after, and what interim coordination and disclosures apply until then.
-- Publish an IP stewardship posture (design intention): what assets are intended to transfer to the foundation, and what public disclosures will accompany that transition.
+- Publish governance and stewardship posture (design intention): interim coordination, foundation readiness targets, and IP/brand stewardship disclosures.
 
 Exit criteria:
 
@@ -66,13 +66,14 @@ Objective: launch a stable Hub that can host complete Hub corporations and Hub n
 
 Key deliverables:
 
-- Hub chain genesis, validator set, and runtime stability.
+- Genesis mainnet (TGE): published genesis package and checksums, coordinated validator start, and runtime stability.
 - DCHUB gas, staking, and governance primitives.
 - Entity registry with IDs, types, metadata, and lifecycle status.
 - Hub corporation module v1 and Hub nonprofit module v1.
 - Canonical wallets and tagged accounting event schemas.
 - Document anchoring and evidence timelines.
 - Reference explorer and indexer for entity discovery and event timelines.
+- Post-genesis stabilization (design intention): monitoring, incident response readiness, and the first governed upgrades and operational budgets.
 - Publish localized mainnet launch materials (website + docs) under [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION) (design intention).
 
 Exit criteria:
