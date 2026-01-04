@@ -43,7 +43,7 @@
 - welcome/
 - REPOS.md
 - whitepaper/
-- investor/
+- hub-templates/
 - spec/
 - policy/
 - token/
@@ -56,6 +56,7 @@
 - frontend/
 - website/
 - people/
+- investor/
 - legal/
 - agents/
 
@@ -74,10 +75,15 @@
 - FAQ.md
 - GLOSSARY.md
 
-### docs/investor/
+### docs/hub-templates/
 - INDEX.md
-- INVESTOR_BRIEF.md
-- TOKENOMICS_SUMMARY.md
+- CORP-SOLO.md
+- CORP-PRIVATE-STD.md
+- CORP-VENTURE.md
+- CORP-COMPLEX-PRIVATE.md
+- NONPROFIT-SIMPLE.md
+- NONPROFIT-BOARD.md
+- NONPROFIT-COMPLEX.md
 
 ### docs/spec/
 - INDEX.md
@@ -174,6 +180,11 @@
 - ROLES.md
 - ADVISOR_ROLES.md
 - OPEN_ROLES.md
+
+### docs/investor/
+- INDEX.md
+- INVESTOR_BRIEF.md
+- TOKENOMICS_SUMMARY.md
 
 ### docs/legal/
 - INDEX.md
