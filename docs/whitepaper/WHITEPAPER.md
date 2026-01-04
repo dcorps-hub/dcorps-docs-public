@@ -210,6 +210,8 @@ Core characteristics:
 
 Units are scoped to the entity. They are not global protocol tokens.
 
+The base unit count is a declared denominator (10,000 by default). Corporations may expand it in multiples of 10,000 to increase precision without changing ownership percentages; v0.1 templates recommend a practical maximum of 1,000,000 base units for interoperability and UI performance.
+
 ### 4.2 Hub nonprofit (board-governed nonprofit container)
 
 A Hub nonprofit is a complete on-chain entity container designed for donor-relevant transparency and board-governed controls.
@@ -222,6 +224,8 @@ Core characteristics:
 - reproducible allocation views derived from tagged accounting events over any selected timeframe.
 
 Nonprofits are expected to meet a minimum transparency floor meaningful for donors, while allowing selective disclosure patterns as needed for beneficiary safety.
+
+Nonprofits do not have equity and are not “owned” by units, but they can still participate in group structures (for example by holding units in a Hub corporation subsidiary).
 
 ### 4.3 Optional future extension: recognized sub chains
 

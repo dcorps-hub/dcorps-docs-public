@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public (internal index)  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-03  
 
 > Scope: Canonical entry point for publicly releasable dCorps documentation across protocol, policy, security, token, and supporting technical materials.
 
@@ -22,6 +22,8 @@ Current status: Phase 0A (development). Mainnet is not live, on-chain governance
 - dCorps overview: [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
 - Whitepaper Long: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
+- Hub templates: [docs/hub-templates/INDEX.md](/hub-templates/INDEX)
+- Adoption guides: [docs/adoption/INDEX.md](/adoption/INDEX)
 - Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
 - Normative specs: [docs/spec/INDEX.md](/spec/INDEX)
 - Technical build notes: [docs/engineering/INDEX.md](/engineering/INDEX)
@@ -51,6 +53,8 @@ Current status: Phase 0A (development). Mainnet is not live, on-chain governance
 
 - Specs and conformance: [docs/spec/INDEX.md](/spec/INDEX)
 - Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
+- Hub templates: [docs/hub-templates/INDEX.md](/hub-templates/INDEX)
+- Adoption guides: [docs/adoption/INDEX.md](/adoption/INDEX)
 - Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
 - Policy and governance: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION), [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS)
 - Localization and translations: [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION)

@@ -2087,22 +2087,23 @@ The foundation’s role is to propose and iterate on protocol modules and toolin
 
 By default, each Hub corporation uses a **10,000 base unit** cap table on the Hub.
 
-Ten thousand is the standard interoperability profile for simple mental math and comparability. It is not meant to limit real share structures.
+Ten thousand is the default interoperability profile for simple mental math and comparability. It is not meant to limit real share structures.
 
 **v1 clarity: the base unit count is not forced**
 
 In v1, a corporation may choose an **expanded base unit count** when it is created, or it may adopt one later through a one-time **unit expansion** corporate action approved under its own governance thresholds.
 
-- The standard profile is **10,000** base units (1 unit = 0.01 percent).
-- Expanded profiles are allowed in v1 as **multiples of 10,000** (for example 100,000 or 1,000,000), which increases precision while preserving the same mental model.
+- The default base unit profile is **10,000** base units (1 unit = 0.01 percent).
+- Expanded base unit counts are allowed in v1 as **multiples of 10,000** (for example 100,000 or 1,000,000), which increases precision while preserving the same mental model.
 - A unit expansion is a mechanical action similar to a split: it does **not** change relative ownership or voting percentages, it only increases the number of base units used to represent them.
 - Tools and modules must read an entity’s declared base unit count from the registry and should display ownership primarily as percentages, with units as a secondary view.
+- The protocol does not enforce a maximum base unit count, but v0.1 templates and reference tooling assume a practical guardrail: **recommended maximum 1,000,000 base units** for interoperability and UI performance.
 
 This design keeps the Hub simple for small teams while allowing advanced private corporation structures to remain Hub-first on a public chain.
 
 Ten thousand is a deliberate default:
 
-- It keeps the mental model simple. One unit is 0.01 percent of the corporation. A partner who owns 34.54 percent holds 3,454 units in the standard profile.
+- It keeps the mental model simple. One unit is 0.01 percent of the corporation. A partner who owns 34.54 percent holds 3,454 units in the default base unit profile.
 - It makes Hub corporations easy to compare and reason about, since most private corporations on the Hub share the same default unit profile.
 - It discourages unit inflation games and awkward decimals, which are common problems with arbitrary token supplies.
 
@@ -2129,7 +2130,7 @@ Units are internal to the corporation:
 
 Units are a protocol cap table primitive. They are on-chain state scoped to a single entity, used to represent ownership and voting relationships as defined by the entity’s governing documents and, where applicable, by attached optional modules. Whether a particular unit arrangement is treated as equity, a security, or another regulated instrument depends on facts and law outside the protocol. Transfer restrictions and approval workflows enforce on-chain process and evidence trails; they do not, by themselves, guarantee legal compliance.
 
-#### Optional precision for grants and vesting (v1 standard)
+#### Optional precision for grants and vesting (v1 default)
 
 Some entities need allocations smaller than 0.01 percent or need to model fine grained vesting and entitlements without changing the base 10,000 unit model.
 
@@ -2246,6 +2247,8 @@ Group structures are supported by allowing:
 - Clear mapping of multi entity ownership chains.
 
 This same mechanism supports joint ventures and SPVs. Two or more corporations can hold units or dShares in a dedicated entity that runs on the Hub. The JV or SPV uses the same corporate primitives as any other dCorps corporation, but its wallets, governance rules, and reporting are tailored to a specific project or asset and are clearly separated from each parent entity’s own operations.
+
+Nonprofits do not have equity and are not “owned” by units. They can still participate in group structures by holding units in Hub corporations (for-profit subsidiaries) and by anchoring off-chain control documents where relevant (for example membership or appointment rights), while using board governance as their primary on-chain control surface.
 
 Legal and tax consequences of group structures depend on jurisdiction and must be handled by advisors, but dCorps provides a precise map of the ownership relationships.
 
@@ -2480,31 +2483,52 @@ To make the design concrete, dCorps starts with a small set of canonical entity 
 
 In v1, the intended default is **Hub-first**: both simple and advanced structures can live on the public Hub through standard modules and governance templates. Additional execution environments (public sub chains, private sub chains, rollups) are optional future extensions used only for extreme scale or specialized privacy, not a requirement for complex share structures.
 
-- **Hub corporation (standard profile)**
+Templates are grouped under Hub corporation and Hub nonprofit. Each template has a public-facing name and a code identifier used by tooling and specs.
+
+**Hub corporation templates**
+
+- **Solo operator (CORP-SOLO)**
    *Deployment:* dCorps Hub (shared)
    *Complexity:* Low
-   A straightforward private corporation on the shared Hub with the standard 10,000 base unit model, role-based governance, and USDC native wallets for revenue and expenses.
+   A single-signer corporation with a 1-of-1 treasury, a 10,000 base unit cap table, and minimal role structure for small owner-operators.
 
-- **Hub corporation (extended profile)**
+- **Private standard (CORP-PRIVATE-STD)**
    *Deployment:* dCorps Hub (shared)
-   *Complexity:* Medium to high
-   A private corporation that needs advanced class structures, conditional instruments, complex transfer restrictions, and richer corporate actions. It remains on the Hub and attaches standardized extension modules and governance templates. It may also adopt an expanded base unit count (multiple of 10,000) for additional cap table precision.
+   *Complexity:* Low to medium
+   A small or LLC-style private corporation with the default 10,000 base unit model, role-based governance, and USDC native wallets for revenue and expenses.
 
-- **Hub nonprofit (standard profile)**
-   *Deployment:* dCorps Hub (shared)
-   *Complexity:* Low
-   A digital public goods organization with donation and program wallets, board governance, clear allocation categories, and default transparency guarantees.
-
-- **Hub nonprofit (extended profile)**
+- **Venture-grade (CORP-VENTURE)**
    *Deployment:* dCorps Hub (shared)
    *Complexity:* Medium
-   A nonprofit-like organization with more complex program structures, designated funds, multi wallet allocation rules, and optional privacy controls for sensitive counterparties, implemented through Hub modules while preserving category level public transparency.
+   A private corporation with board approvals, unit pools, vesting schedules, and stricter transfer rules, while remaining Hub-first.
+
+- **Complex private (CORP-COMPLEX-PRIVATE)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* High
+   A private corporation with multi-class units, committees, advanced treasury policy, and multi-entity holdings or group structures.
+
+**Hub nonprofit templates**
+
+- **Nonprofit simple (NONPROFIT-SIMPLE)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* Low
+   A board-governed nonprofit with donation and program wallets, clear allocation categories, and the default transparency floor.
+
+- **Nonprofit board (NONPROFIT-BOARD)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* Medium
+   A nonprofit with board and committee structures, multi-program operations, and tighter allocation policies for donors and partners.
+
+- **Nonprofit complex (NONPROFIT-COMPLEX)**
+   *Deployment:* dCorps Hub (shared)
+   *Complexity:* Medium to high
+   A nonprofit with designated funds, umbrella program structures, and selective disclosure patterns while preserving category level transparency (often used for foundations and fiscal sponsorship/umbrella programs).
 
 **Optional future extension: anchored environments**
 
 If an organization needs extreme throughput, specialized privacy, or bespoke execution logic, it may use an additional execution environment that anchors standardized summaries back to the Hub. This is not a v1 dependency and does not change kernel semantics.
 
-These templates are not a fixed catalog. Governance can introduce new templates, refine existing ones, or deprecate patterns that do not match real usage. The Hub and module architecture is designed so that new templates can be added as modules or standard entity types without rewriting core consensus logic.
+These templates are not a fixed catalog. Governance can introduce new templates, refine existing ones, or deprecate patterns that do not match real usage. The Hub and module architecture is designed so that new templates can be added as modules or standard entity types without rewriting core consensus logic. Examples could include sector-specific corporation templates (for example a DeFi market operator or a CBDC settlement desk) as the ecosystem matures.
 
 ------
 
@@ -4200,11 +4224,11 @@ Secondary segments:
 
 In the first one to two years, dCorps focuses brutally on a narrow wedge of real use:
 
-- **Simple private entities on the Hub**
+- **Private corporation baseline on the Hub (CORP-PRIVATE-STD)**
 
-  Remote first startups and small teams that are willing to run the large majority of their operating stack in USDC on the shared Hub. They use the simple private entity template: ten thousand internal units, standardized wallets, and on-chain accounting.
+  Remote first startups and small teams that are willing to run the large majority of their operating stack in USDC on the shared Hub. They use the CORP-PRIVATE-STD template: ten thousand internal units, standardized wallets, and on-chain accounting.
 
-- **Simple nonprofits on the Hub**
+- **Nonprofit baseline on the Hub (NONPROFIT-SIMPLE)**
 
   NGOs and nonprofit teams that want transparent donations and program spending, board based governance, and verifiable allocation ratios, again on the shared Hub without running their own chain.
 

@@ -22,7 +22,7 @@ Nothing in this document is an offer to sell, or a solicitation of an offer to b
 dCorps separates protocol participation and entity-level ownership:
 
 - **DCHUB**: gas, staking, and protocol governance on the Hub; security root for the Hub and recognized sub chains.
-- **Hub units**: entity-scoped ownership and voting rights inside a Hub corporation (not a global protocol token).
+- **Hub units**: entity-scoped ownership and voting rights inside a Hub corporation (not a global protocol token; 10,000 base units by default, expandable in multiples of 10,000; v0.1 templates recommend a practical maximum of 1,000,000 base units).
 - **Nonprofit governance**: board and allocation rules, not equity; no token represents ownership of a nonprofit.
 - **dShares (optional future extension)**: equity-style tokens issued by public sub chain corporations on their own sub chains, under their own legal regime.
 

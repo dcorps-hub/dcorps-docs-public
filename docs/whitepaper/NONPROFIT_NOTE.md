@@ -48,6 +48,8 @@ At a high level, a Hub nonprofit:
 
 Nonprofits do not have equity. There is no token representing ownership of a nonprofit.
 
+A nonprofit can still participate in group structures (for example by holding units in a Hub corporation subsidiary). Control relationships that exist in traditional nonprofit law (for example membership or appointment rights) remain off-chain, but they can be anchored as evidence and referenced alongside on-chain governance actions.
+
 ---
 
 ## 3. The transparency model (what is verifiable)

@@ -71,6 +71,23 @@ See [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY).
 
 Hub units are internal units of a Hub corporation. They represent economic and voting rights inside that corporation and are scoped to that entity. They are not global protocol tokens.
 
+In v1:
+
+- Default base unit count is **10,000** (1 unit = 0.01 percent).
+- A corporation may adopt an expanded base unit count as a **multiple of 10,000** (e.g., 100,000 or 1,000,000) to increase precision without changing ownership percentages.
+- The protocol does not enforce a maximum base unit count, but v0.1 templates and reference tooling assume a practical guardrail: **recommended maximum 1,000,000 base units** for interoperability and UI performance.
+
+---
+
+## Can a Hub entity own another Hub entity?
+
+Yes.
+
+- A Hub corporation can hold units in other Hub corporations (holding companies, subsidiaries, SPVs, joint ventures).
+- Hub nonprofits have no equity and are not “owned” by units, but they can still participate in group structures by holding units in a Hub corporation subsidiary and by anchoring off-chain control documents (for example membership or appointment rights) as evidence.
+
+Legal effect depends on jurisdiction and off-chain agreements; the Hub provides an explicit, queryable map of the on-chain state and the anchored evidence trail.
+
 ---
 
 ## What is a “cash-based operating view”?

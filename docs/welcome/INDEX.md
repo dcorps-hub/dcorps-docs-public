@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025
 **Author**: Nicolas Turcotte, Founder
 **Source repo**: dcorps-docs-public ([docs/welcome/INDEX.md](/welcome/INDEX))
-**Last updated**: 2025-12-28
+**Last updated**: 2026-01-03
 
 > Scope: Start here for the public dCorps documentation set.
 
@@ -26,6 +26,7 @@ Current status: Phase 0A (development). Mainnet is not live, the foundation is n
 
 - Overview (what dCorps is and how layers fit): [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
 - Whitepaper Long (narrative + rationale): [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
+- Hub templates (entity template catalog): [docs/hub-templates/INDEX.md](/hub-templates/INDEX)
 - Specs (normative protocol rules): [docs/spec/INDEX.md](/spec/INDEX)
 - Policy (governance, validators, treasury, foundation): [docs/policy/POL-GOV.md](/policy/POL-GOV)
 - Roadmap and phases: [docs/roadmap/INDEX.md](/roadmap/INDEX)
