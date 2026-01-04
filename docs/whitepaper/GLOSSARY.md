@@ -32,7 +32,7 @@ A corporation operating on the Hub, with an internal unit-based cap table, role-
 A nonprofit/NGO entity operating on the Hub, with board governance, donation/program flows, and reproducible allocation reporting.
 
 **Hub units**  
-Internal units of a Hub corporation that represent economic and voting rights inside that corporation. Scoped to that entity.
+Internal units of a Hub corporation that represent economic and voting rights inside that corporation. Scoped to that entity. Default base unit count is 10,000 (1 unit = 0.01 percent), expandable in multiples of 10,000; v0.1 templates recommend a practical maximum of 1,000,000 base units for interoperability and UI performance.
 
 **DCHUB**  
 The Hub’s native token used for gas, staking, and protocol governance. Not equity in user entities or in the development corporation or foundation.

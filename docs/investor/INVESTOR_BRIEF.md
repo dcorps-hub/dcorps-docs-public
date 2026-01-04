@@ -72,7 +72,7 @@ dCorps uses two primary assets with distinct roles:
 The token model separates:
 
 - DCHUB (protocol participation),
-- Hub units (entity-level corporate ownership, scoped per corporation), and
+- Hub units (entity-level corporate ownership, scoped per corporation; 10,000 base units by default, expandable in multiples of 10,000), and
 - nonprofit governance (board and allocation rules, not equity).
 
 For details on supply, allocations, vesting, and emissions vocabulary, see:

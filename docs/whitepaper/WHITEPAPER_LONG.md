@@ -2097,6 +2097,7 @@ In v1, a corporation may choose an **expanded base unit count** when it is creat
 - Expanded base unit counts are allowed in v1 as **multiples of 10,000** (for example 100,000 or 1,000,000), which increases precision while preserving the same mental model.
 - A unit expansion is a mechanical action similar to a split: it does **not** change relative ownership or voting percentages, it only increases the number of base units used to represent them.
 - Tools and modules must read an entity’s declared base unit count from the registry and should display ownership primarily as percentages, with units as a secondary view.
+- The protocol does not enforce a maximum base unit count, but v0.1 templates and reference tooling assume a practical guardrail: **recommended maximum 1,000,000 base units** for interoperability and UI performance.
 
 This design keeps the Hub simple for small teams while allowing advanced private corporation structures to remain Hub-first on a public chain.
 
@@ -2246,6 +2247,8 @@ Group structures are supported by allowing:
 - Clear mapping of multi entity ownership chains.
 
 This same mechanism supports joint ventures and SPVs. Two or more corporations can hold units or dShares in a dedicated entity that runs on the Hub. The JV or SPV uses the same corporate primitives as any other dCorps corporation, but its wallets, governance rules, and reporting are tailored to a specific project or asset and are clearly separated from each parent entity’s own operations.
+
+Nonprofits do not have equity and are not “owned” by units. They can still participate in group structures by holding units in Hub corporations (for-profit subsidiaries) and by anchoring off-chain control documents where relevant (for example membership or appointment rights), while using board governance as their primary on-chain control surface.
 
 Legal and tax consequences of group structures depend on jurisdiction and must be handled by advisors, but dCorps provides a precise map of the ownership relationships.
 
@@ -2519,7 +2522,7 @@ Templates are grouped under Hub corporation and Hub nonprofit. Each template has
 - **Nonprofit complex (NONPROFIT-COMPLEX)**
    *Deployment:* dCorps Hub (shared)
    *Complexity:* Medium to high
-   A nonprofit with designated funds, umbrella program structures, and selective disclosure patterns while preserving category level transparency.
+   A nonprofit with designated funds, umbrella program structures, and selective disclosure patterns while preserving category level transparency (often used for foundations and fiscal sponsorship/umbrella programs).
 
 **Optional future extension: anchored environments**
 

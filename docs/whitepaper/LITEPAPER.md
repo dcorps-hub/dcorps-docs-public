@@ -157,6 +157,8 @@ A Hub corporation is an on-chain entity container with:
 
 Units and governance rights are scoped to the entity. They are not global protocol tokens.
 
+The base unit count is a declared denominator (10,000 by default). Corporations may expand it in multiples of 10,000 to increase precision without changing ownership percentages; v0.1 templates recommend a practical maximum of 1,000,000 base units for interoperability and UI performance.
+
 ### 7.2 Hub nonprofit
 
 A Hub nonprofit is an on-chain entity container with:
@@ -166,6 +168,8 @@ A Hub nonprofit is an on-chain entity container with:
 - allocation rules and category-level transparency.
 
 The nonprofit module is designed to produce a minimum transparency floor meaningful to donors without forcing disclosure of sensitive beneficiary details.
+
+Nonprofits do not have equity and are not “owned” by units, but they can still participate in group structures (for example by holding units in a Hub corporation subsidiary).
 
 ### 7.3 Optional extensions
 
