@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/INDEX.md](/legal/INDEX))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-08  
 
 > Scope: Map legal and compliance documents across the ecosystem.
 
@@ -16,6 +16,7 @@
 
 - [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS)
 - [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)
+- [docs/legal/ACCREDITATION.md](/legal/ACCREDITATION)
 
 ---
 
