@@ -27,7 +27,7 @@ Current status: Phase 0A (development). Mainnet is not live, on-chain governance
 - Founders and corporations that need clear ownership and verifiable governance.
 - Nonprofits and NGOs that want donor-grade transparency for donations and programs.
 - Protocols and DAOs that have outgrown ad hoc governance and multisigs.
-- Jurisdictions and regulators that need machine-readable records instead of paper-only registries.
+- Jurisdictions and regulators that need machine-readable records instead of paper registries and private databases.
 - Builders and auditors that want standard schemas and predictable primitives.
 
 ---

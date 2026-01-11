@@ -163,7 +163,7 @@ dCorps is explicitly optimized for entities that can route meaningful parts of t
 Concretely, dCorps gives entities:
 
 - A **standard entity container** with canonical identity, roles, and wallets, so any builder can serve any entity without bespoke formats.
-- A way to express **ownership and governance as verifiable state** (units, boards and roles, proposals, approvals, and executed resolutions), rather than only narrative policies, PDFs, and private spreadsheets.
+- A way to express **ownership and governance as verifiable state** (units, boards and roles, proposals, approvals, and executed resolutions), instead of relying on private systems and ad-hoc reporting exports (spreadsheets/PDFs).
 - A **digital-native operating posture** where counterparties can rely on on-chain authority and approvals as the default, even when no legal adapter is attached.
 - **Treasury and accounting primitives** (tagged flows, budget categories, standardized view outputs) that make operations auditable and comparable over time.
 - **Optional adapters** for external contexts (jurisdiction recognition, institutional reporting, sector frameworks) that can be attached without changing the entity’s kernel history or semantics.
@@ -179,7 +179,7 @@ dCorps is designed for an era where stablecoins and wallets are already usable a
 
 - Stablecoin rails and cross-chain connectivity make it practical for serious entities to route a large share of revenue, payroll, grants, and vendor payments through on-chain wallets.
 - Remote first teams and cross border collaborators increasingly need shared, verifiable approval trails that do not depend on a single country, bank, or SaaS vendor.
-- Donors, counterparties, and institutions increasingly demand verifiable evidence, not only PDFs, for governance decisions and financial allocation claims.
+- Donors, counterparties, and institutions increasingly demand verifiable evidence, not just private reports and manual audits, for governance decisions and financial allocation claims.
 
 **The v1 wedge**
 
@@ -301,7 +301,7 @@ The core promises are:
 - **Access**
    Founders and nonprofit leaders should be able to form and operate serious structures without needing to be in a small set of favored jurisdictions.
 - **Transparency**
-   Governance, cap tables, and financial flows should be anchored in verifiable state, not just in private spreadsheets or PDFs.
+   Governance, cap tables, and financial flows should be anchored in verifiable state, not just in private systems and manual reports.
 - **Programmability**
    Common organizational processes such as vesting, donations, board approvals, and allocation rules should be expressible as code, not only as narrative policies.
 - **Digital-only by default, optional external interoperability**
@@ -725,10 +725,10 @@ Two teams of equal skill and seriousness often face entirely different futures b
 
 **Fragmentation and manual reconciliation**
 
-* Legal status lives in registries and paper bound law.
-* Money lives in bank accounts and payment networks.
-* Governance lives in minutes, email threads, and third-party portals.
-* Accounting lives in private ledgers and spreadsheets.
+* Legal status lives in registries and jurisdiction-bound processes.
+* Money lives in bank accounts, payment networks, custodians, and stablecoin wallets.
+* Governance lives across private tools (board minutes, internal workflows, service providers, and third-party portals).
+* Accounting lives in private ledgers and spreadsheets, reconciled by humans.
 
 Keeping these in sync is manual and error prone. Cap tables drift from reality. NGO reports lag reality by months or years.
 
@@ -739,7 +739,7 @@ Keeping these in sync is manual and error prone. Cap tables drift from reality. 
 
 **Transparency that is narrative, not cryptography**
 
-* Transparency usually means self-reported PDFs, selectively compiled.
+* Transparency often means self-reported exports and human audits, selectively compiled.
 * Underlying records can often be changed without global visibility.
 * Donors and investors see stories, not ledgers.
 
@@ -1017,7 +1017,7 @@ A Hub nonprofit receives donations into its donation wallet and distributes fund
 }
 ```
 
-Allocation rules can enforce constraints such as minimum program ratios, maximum overhead, board compensation limits, or restricted fund logic. The point is that the allocation view flows directly from the ledger and associated governance events, not from unverifiable PDFs.
+Allocation rules can enforce constraints such as minimum program ratios, maximum overhead, board compensation limits, or restricted fund logic. The point is that the allocation view flows directly from the ledger and associated governance events, not from privately compiled reports.
 
 
 ## 3. Market landscape and competition

@@ -140,7 +140,7 @@ Stablecoins and wallets can already function as day-to-day operating accounts fo
 Common failure modes include:
 
 - unclear or unverifiable authority (who could approve what, when);
-- approvals and policies stored as PDFs and email threads without a shared, queryable history;
+- approvals and policies scattered across private tools and reporting artifacts, without a shared, queryable history;
 - operational reporting that requires manual reconciliation and cannot be reproduced from shared inputs; and
 - nonprofit allocation claims that are difficult for donors to verify without trusting custom reporting.
 
