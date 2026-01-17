@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/NONPROFIT-SIMPLE.md](/hub-templates/NONPROFIT-SIMPLE))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-16  
 
 > Scope: Defines the NONPROFIT-SIMPLE Hub nonprofit template.
 
@@ -57,6 +57,8 @@
 - **Donation and program wallet structure**
   - Canonical donation wallet for inflows.
   - Optional program wallets for clear allocation and reporting.
+- **Commerce primitives (items, payment requests, recurring plans)**
+  - On-chain payment requests (invoices) for donations, grants, or services, plus optional recurring plans.
 - **Baseline allocation categories**
   - At minimum: program spending vs overhead (and fundraising if used).
 - **Transparency floor (all disclosure modes)**
@@ -93,6 +95,8 @@ This section describes the minimum structure the template expects. Exact message
     - `treasurer` (recommended)
     - `secretary` (recommended)
   - Quorum and approval thresholds for board actions.
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
 - **Canonical wallets (minimum)**
   - `DONATION` (required): donation and grant inflows
   - `PROGRAM` (optional): one or more program wallets
@@ -109,14 +113,32 @@ This section describes the minimum structure the template expects. Exact message
   - Board-approved allocation rules and spend approvals (as needed by entity policy).
 - **Tagging and evidence (minimum)**
   - Each material inflow/outflow is tagged with:
-    - category code (chart of accounts),
+    - `category_code` (chart of accounts),
+    - `counterparty_type`,
+    - `reference_id` and `reference_type` when applicable,
     - amount and denom (USDC-only in v0.1),
-    - optional program tag (if multiple programs),
+    - optional allocation context tags (`program_tag`, `fund_tag`, `restriction_tag`, `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `region_tag`, `counterparty_tag`),
     - optional evidence reference (anchor ID or hash).
   - Evidence anchors are recommended above a materiality threshold (default planning threshold: 1,000 USDC; configurable by entity policy).
 - **Transparency floor (all disclosure modes)**
   - Board composition, proposals, votes, and allocation rule changes.
   - Donation inflows and category-level outflows over any selected timeframe.
+
+---
+
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Program/fund: `program_tag`, `fund_tag`, `restriction_tag`.
+- Donor/grant: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `region_tag`, `counterparty_tag`.
 
 ---
 
@@ -165,22 +187,24 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - program vs overhead (and fundraising if used),
   - define approval requirements for material disbursements; sign.
 - Set basic tags:
-  - categories + program tags if multiple programs; sign.
+  - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+  - allocation context: `program_tag`, `fund_tag`, `restriction_tag`, `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `region_tag`, `counterparty_tag`; sign.
 
 ### 2) Operate (repeat)
 
 - Receive donations/grants:
   - donors send USDC (on Noble, via IBC) to `DONATION`; confirm on-chain.
+  - optional: issue payment requests or recurring plans for structured giving (grants, sponsorships, memberships).
 - Record donation/grant inflow events:
-  - tag with donation/grant category,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
-  - link donor receipt or grant agreement anchor when available; sign.
+  - link donation receipt or grant agreement anchor when available; sign.
 - Allocate to programs (if used):
   - transfer from `DONATION`/`OPERATING_TREASURY` to `PROGRAM` wallets per board-approved rules; sign.
 - Spend on programs and operations:
   - execute payments from `PROGRAM` and/or `OPERATING_TREASURY`; sign.
 - Record outflow events:
-  - tag as program/overhead/fundraising as applicable,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipt anchor/ref when available; sign.
 

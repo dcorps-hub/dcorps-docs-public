@@ -14,7 +14,7 @@
 
 ## 1. Fee types
 
-- **Gas fees (DCHUB)**: paid per transaction and distributed to validators/delegators.
+- **Gas fees (DCHUB)**: paid per transaction; distributed to validators/delegators by default, with an optional capped Treasury share if governance adopts it.
 - **Service fees (USDC or approved stablecoins)**: charged for protocol services such as entity registration, premium names, and module participation.
 
 ---
@@ -23,7 +23,8 @@
 
 ### 2.1 Gas fees
 
-- Collected by the chain and distributed through the standard distribution module.
+- Collected by the chain and distributed through the standard distribution module (validators/delegators) by default.
+- Governance MAY introduce a capped Treasury share with explicit parameters and disclosure.
 - Visible in chain events and validator reward records.
 
 ### 2.2 Service fees

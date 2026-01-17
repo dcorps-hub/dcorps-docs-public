@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-16  
 
 ---
 
@@ -30,7 +30,7 @@ Most builders integrate at one (or more) of these levels:
 3. **Module integration (advanced)**
    - Build optional protocol modules (jurisdiction adapter modules, sector frameworks, attestations) under the module standard.
 
-If you are building a chain indexer or explorer, start with [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER).
+If you are building a chain indexer or explorer, start with [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER). dCorps maintains an official reference indexer used by the official explorer; independent indexers are encouraged.
 
 ---
 

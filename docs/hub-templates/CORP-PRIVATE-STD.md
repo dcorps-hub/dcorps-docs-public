@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-PRIVATE-STD.md](/hub-templates/CORP-PRIVATE-STD))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-16  
 
 > Scope: Defines the CORP-PRIVATE-STD Hub corporation template.
 
@@ -60,6 +60,8 @@
   - Recommended spend tiers (routine vs protected) with explicit co-approval for large or sensitive actions.
 - **Canonical wallet structure**
   - Standard wallet bindings used to compute consistent reporting views.
+- **Commerce primitives (items, invoices, recurring plans)**
+  - On-chain catalog items/services, invoices with status tracking, and optional recurring plans.
 - **Tagged flows + evidence anchors**
   - Tagged inflows/outflows drive reproducible time-window reporting.
   - Evidence anchors recommended for material transactions and major decisions.
@@ -91,6 +93,8 @@ This section describes the minimum structure the template expects. Exact message
   - `treasurer`: operating payments + accounting event emission
   - `approver`: co-approves protected treasury and cap table actions
   - Optional: `secretary` (evidence/anchors operator), `board` (if you want a formal board layer)
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
 - **Canonical wallets (minimum)**
   - `MERCHANT` (recommended): revenue inflows (invoice and checkout payment address)
   - `OPERATING_TREASURY` (required): primary operating spending
@@ -105,11 +109,29 @@ This section describes the minimum structure the template expects. Exact message
   - Require approvals for sensitive configuration actions (roles, wallets, policies) and for unit actions (issue/transfer/cancel).
 - **Tagging and evidence (minimum)**
   - Each material inflow/outflow is tagged with:
-    - category code (chart of accounts),
+    - `category_code` (chart of accounts),
+    - `counterparty_type`,
+    - `reference_id` and `reference_type` when applicable,
     - amount and denom (USDC-only in v0.1),
-    - optional program/business-unit tags,
+    - optional operating/org and equity context tags (`business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`),
     - optional evidence reference (anchor ID or hash).
   - Evidence anchors are recommended above a materiality threshold (default planning threshold: 1,000 USDC; configurable by entity policy).
+
+---
+
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Operating/org: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+- Equity context (if issuing units): `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`.
 
 ---
 
@@ -158,8 +180,9 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - protected spend tier (treasurer + approver above limit),
   - optional per-wallet limits and evidence requirements; sign.
 - Set basic tags:
-  - define minimal revenue and expense categories,
-  - add program/business-unit tags if needed; sign.
+  - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+  - operating/org context: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`,
+  - equity context (if issuing units): `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`; sign.
 
 ### 2) Operate (repeat)
 
@@ -170,7 +193,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - hash invoice/receipt/contract file (as applicable),
   - anchor the hash on-chain; optionally include a URI; sign.
 - Record income events:
-  - category + optional tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link invoice reference or anchor; sign.
 - (Optional) Move operating funds to treasury:
@@ -180,7 +203,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - routine payment: treasurer initiates and signs (within limit).
   - protected payment: treasurer initiates; approver co-signs (above limit or protected category).
 - Record expense events:
-  - category + optional tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipt anchor/ref when available; sign.
 - Cap table actions (when needed):

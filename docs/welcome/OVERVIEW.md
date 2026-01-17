@@ -54,6 +54,14 @@ Normative rules for these primitives live in [docs/spec/INDEX.md](/spec/INDEX).
 
 ---
 
+## Privacy, disclosure, and lifecycle
+
+Transparency is the default, but entities can choose how much detail to publish. Each entity declares a disclosure mode (Mode A, B, or C) as public metadata that tells interfaces whether data is fully public, aggregated, or anchored with privacy-preserving proofs.
+
+Confidentiality exists only when privacy tools are used. The entity registry also records lifecycle status (draft, active, suspended, or dissolved) so counterparties can see standing at a glance.
+
+---
+
 ## Currency and protocol token
 
 - **USDC (and other approved stablecoins)**: primary operating currency for entities.

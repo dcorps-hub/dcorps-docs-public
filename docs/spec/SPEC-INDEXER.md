@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-16  
 
 > Scope: Expected behavior of a reference indexer and explorer for the Hub, modules, and recognized sub chains. This is non-normative for the chain, but normative for reference tooling.
 
@@ -19,6 +19,8 @@ The Hub’s on-chain state is optimized for security and consensus, not for end-
 - ingest Hub and sub chain data;
 - maintain denormalized views and derived tables;
 - expose APIs and UIs for entities, donors, regulators, and builders.
+
+dCorps publishes an official reference indexer that powers the official explorer and reporting summaries. Independent indexers are encouraged; on-chain state remains authoritative.
 
 This spec defines:
 
@@ -39,7 +41,7 @@ Indexers MUST support ingesting at least:
 - Hub chain blocks, transactions, and events (via RPC, gRPC, or direct node integration);
 - module-specific logs and events where available;
 - anchor records and metadata for recognized sub chains;
-- optional off-chain feeds where needed for enrichment (e.g. token prices, fiat conversions), clearly labeled as off-chain.
+- optional off-chain feeds where needed for enrichment (e.g. token prices, unit conversions), clearly labeled as off-chain.
 
 Ingestion SHOULD:
 
@@ -65,7 +67,11 @@ Indexers SHOULD maintain structured representations of at least:
    - balance history for canonical wallets;
    - tagged inflow and outflow events;
    - evidence references and derived views (report outputs).
-4. **Modules and sub chains**
+4. **Commerce objects**
+   - catalog items/services;
+   - invoices and their status history;
+   - recurring plans and next-run schedule.
+5. **Modules and sub chains**
    - module registry entries with status and risk labels;
    - sub chain registry, anchors, and recognition tiers.
 
@@ -79,6 +85,7 @@ Reference indexers SHOULD expose APIs that allow:
 
 - fetching entities by ID, name, type, or attached modules;
 - listing canonical wallets and recent flows with tags;
+- listing catalog items, invoices, and recurring plans by entity;
 - retrieving governance proposals, votes, and statuses;
 - listing modules and sub chains by type, risk label, or status;
 - generating basic cash-based operating and allocation views for entities over any selected timeframe.
@@ -214,6 +221,49 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | metadata_json | json | Optional |
 | timestamp | timestamp | Hub time |
 
+### 6.9 Catalog items
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| item_id | string | Unique |
+| entity_id | string | FK |
+| label | string | Human-readable |
+| price | string | Amount + denom |
+| cost | string | Optional |
+| status | string | Active, paused, retired |
+| created_at | timestamp | Hub time |
+| updated_at | timestamp | Hub time |
+
+### 6.10 Invoices
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| invoice_id | string | Unique |
+| entity_id | string | FK |
+| counterparty | string | Wallet or pseudonymous ID |
+| amount_total | string | Amount + denom |
+| payment_wallet_type | string | `SPEC-DATA.md` |
+| payment_address | string | Resolved address (optional) |
+| status | string | Draft, open, partial, paid, overdue, waived, canceled |
+| due_date | timestamp | Optional |
+| line_items_json | json | Item references |
+| created_at | timestamp | Hub time |
+| updated_at | timestamp | Hub time |
+
+### 6.11 Recurring plans
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| plan_id | string | Unique |
+| entity_id | string | FK |
+| cadence | string | Monthly, quarterly, etc |
+| amount_total | string | Optional |
+| line_items_json | json | Optional |
+| status | string | Active, paused, canceled |
+| next_run_at | timestamp | Optional |
+| created_at | timestamp | Hub time |
+| updated_at | timestamp | Hub time |
+
 ---
 
 ## 7. Reference API contract (v0.1)
@@ -228,6 +278,9 @@ All endpoints return JSON with pagination via `limit` and `cursor` where applica
 - `GET /v1/entities/{entity_id}/wallets`
 - `GET /v1/entities/{entity_id}/events`
 - `GET /v1/entities/{entity_id}/anchors`
+- `GET /v1/entities/{entity_id}/items`
+- `GET /v1/entities/{entity_id}/invoices`
+- `GET /v1/entities/{entity_id}/plans`
 
 ### 7.2 Accounting events
 
@@ -249,6 +302,12 @@ All endpoints return JSON with pagination via `limit` and `cursor` where applica
   - Query: `entity_id`, `period_start`, `period_end`
 - `GET /v1/reports/allocation`
   - Query: `entity_id`, `period_start`, `period_end`
+
+### 7.5 Commerce objects
+
+- `GET /v1/items/{item_id}`
+- `GET /v1/invoices/{invoice_id}`
+- `GET /v1/plans/{plan_id}`
 
 ---
 

@@ -11,7 +11,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
  [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2025-12-24
+**Last updated**: 2026-01-16
 
 **Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).
 
@@ -154,11 +154,11 @@ A nonprofit **dCorps foundation** is intended to steward public goods over time.
 
 ### 0.1.1 In practice, what dCorps gives entities
 
-In practice, dCorps is an **entity operating ledger** for stablecoin native organizations. It is optimized for entities that can keep core operations in crypto and stablecoins, without relying on bank rails as a dependency.
+In practice, dCorps is an **entity operating ledger** for stablecoin native organizations. It is optimized for entities that keep core operations in crypto, stablecoins, and (where approved) CBDCs only.
 
 Here, **cash-based operating views** means time-window summaries derived from tagged inflow and outflow events, excluding accrual accounting treatments.
 
-dCorps is explicitly optimized for entities that can route meaningful parts of their operations through the protocol, but it does not attempt to be a bank integration layer in v1.
+dCorps is explicitly optimized for entities that can route meaningful parts of their operations through the protocol, and it does not support bank or fiat rail integrations at any layer.
 
 Concretely, dCorps gives entities:
 
@@ -272,8 +272,8 @@ dCorps is a long-term multi layer vision. Mainnet v1 is intentionally narrow: sh
 
 - Any requirement to attach a jurisdiction, legal wrapper, or compliance process.
 - Operating or providing:
-  - a bank integration layer
-  - fiat rails, on-chain fiat payments, or custody of fiat
+  - any bank or fiat rail integration (not supported at any layer)
+  - on-chain fiat payments or custody of fiat
   - broker or dealer services, exchanges, matching engines, or fundraising platforms
 - Automatic legal personhood or guaranteed compliance in any jurisdiction without off-chain legal processes.
 - Public market features as a core protocol promise:
@@ -539,7 +539,7 @@ Because dCorps needs a stable, neutral home for entity IDs, governance evidence 
 
 **Can entities lie with tags and reporting?**
 
-Amounts, timestamps, and transfers for on-chain funds are verifiable. Category tags are interpretations and can be misused. dCorps mitigates this by encouraging typed workflows that emit deterministic categories, evidence anchoring for material transactions, counterparty receipts, and optional third-party attestations and reconciliation signals (see section 9.5A and section 9.5B).
+Amounts, timestamps, and transfers for on-chain funds are verifiable. Category codes are interpretations and can be misused. dCorps mitigates this by encouraging typed workflows that emit deterministic categories, evidence anchoring for material transactions, counterparty receipts, and optional third-party attestations and reconciliation signals (see section 9.5A and section 9.5B).
 
 **Is dCorps a bank, broker, exchange, or fundraising platform?**
 
@@ -681,7 +681,7 @@ This whitepaper assumes:
 - Cosmos and IBC remain viable open standards for cross-chain communication and stablecoin routing.
 - USDC on Noble (and other approved stablecoins in the future) remains available as an operating currency, with issuer controls and rail risk treated as external constraints (see section 9.1B).
 - One or more independent indexers and explorers exist and remain available, because most users experience the protocol through indexed views rather than raw node queries.
-- Entities that want strong transparency route the large majority of their material activity through canonical on-chain wallets and standardized workflows. If an entity uses multiple chains or external systems, it may publish optional completeness commitments and attestations, but the Hub kernel does not depend on fiat rails.
+- Entities that want strong transparency route the large majority of their material activity through canonical on-chain wallets and standardized workflows. If an entity uses multiple chains or external systems, it may publish optional completeness commitments and attestations, but the Hub kernel does not support fiat rails.
 - Recognized sub chains can meet anchoring and security alignment standards and can be objectively downgraded when they do not (see section 6.5B and section 6.5B.5).
 - Jurisdiction adapters are optional and may be delayed, limited, or unavailable for long periods; legal recognition remains jurisdiction dependent and off-chain (see section 0.3B and section 14.3).
 - Privacy-preserving execution and zero knowledge reporting are optional evolutions; v1 does not assume they are universally available or easy to deploy (see section 8.5).
@@ -892,7 +892,7 @@ A Hub corporation routes all material revenue and operating payouts through its 
 - Cloud and infrastructure (tagged outflows): 4,000 USDC
 - Other operating expenses (tagged outflows): 2,000 USDC
 - Jurisdiction compliance fees (optional adapter, typed workflow): 500 USDC
-- One uncategorized outflow (missing required category tag, surfaced in coverage): 500 USDC
+- One uncategorized outflow (missing required category code, surfaced in coverage): 500 USDC
 
 **Treasury sweep (internal transfer, not an expense)**
 
@@ -912,16 +912,16 @@ A Hub corporation routes all material revenue and operating payouts through its 
 
 **Tagged accounting events (simplified excerpt)**
 
-| Event | Direction | Wallet type | Amount | Category tag | Source type | Evidence anchor |
+| Event | Direction | Wallet type | Amount | Category code | Source type | Evidence anchor |
 | --- | --- | --- | ---:| --- | --- | --- |
-| Subscription revenue | inflow | merchant | 50,000 | `subscription_revenue` | typed_workflow | invoice batch anchor (optional) |
-| Payroll batch | outflow | merchant | 30,000 | `salaries_wages` | typed_workflow | payroll report anchor |
-| Contractor payout | outflow | merchant | 5,000 | `contractors_freelancers` | entity_tagged | invoice anchor |
-| Cloud bill | outflow | merchant | 4,000 | `cloud_infrastructure` | entity_tagged | statement anchor (optional) |
-| Other opex | outflow | merchant | 2,000 | `other_expenses` | entity_tagged | receipt anchors (optional) |
-| Compliance fee | outflow | merchant | 500 | `jurisdiction_compliance_fees` | typed_workflow | policy or invoice anchor (optional) |
+| Subscription revenue | inflow | merchant | 50,000 | `REV_SUBSCRIPTION` | typed_workflow | invoice batch anchor (optional) |
+| Payroll batch | outflow | merchant | 30,000 | `EXP_PAYROLL` | typed_workflow | payroll report anchor |
+| Contractor payout | outflow | merchant | 5,000 | `EXP_CONTRACTOR` | entity_tagged | invoice anchor |
+| Cloud bill | outflow | merchant | 4,000 | `EXP_INFRA` | entity_tagged | statement anchor (optional) |
+| Other opex | outflow | merchant | 2,000 | `EXP_OTHER` | entity_tagged | receipt anchors (optional) |
+| Compliance fee | outflow | merchant | 500 | `EXP_COMPLIANCE` | typed_workflow | policy or invoice anchor (optional) |
 | Missing category example | outflow | merchant | 500 | (missing) | entity_tagged | none |
-| Treasury sweep | internal | merchant -> treasury | 8,000 | `internal_transfer` | typed_workflow | none |
+| Treasury sweep | internal | merchant -> treasury | 8,000 | `TREASURY_MOVEMENT` | typed_workflow | none |
 
 **Derived cash-based operating view (category totals excerpt)**
 
@@ -930,14 +930,14 @@ A Hub corporation routes all material revenue and operating payouts through its 
   "report_type": "cash_based_operating_statement",
   "base_denom": "uusdc",
   "income": [
-    { "category": "subscription_revenue", "amount": "50000000000", "source_type": "typed_workflow" }
+    { "category_code": "REV_SUBSCRIPTION", "amount": "50000000000", "source_type": "typed_workflow" }
   ],
   "expenses": [
-    { "category": "salaries_wages", "amount": "30000000000", "source_type": "typed_workflow" },
-    { "category": "contractors_freelancers", "amount": "5000000000", "source_type": "entity_tagged" },
-    { "category": "cloud_infrastructure", "amount": "4000000000", "source_type": "entity_tagged" },
-    { "category": "other_expenses", "amount": "2000000000", "source_type": "entity_tagged" },
-    { "category": "jurisdiction_compliance_fees", "amount": "500000000", "source_type": "typed_workflow" }
+    { "category_code": "EXP_PAYROLL", "amount": "30000000000", "source_type": "typed_workflow" },
+    { "category_code": "EXP_CONTRACTOR", "amount": "5000000000", "source_type": "entity_tagged" },
+    { "category_code": "EXP_INFRA", "amount": "4000000000", "source_type": "entity_tagged" },
+    { "category_code": "EXP_OTHER", "amount": "2000000000", "source_type": "entity_tagged" },
+    { "category_code": "EXP_COMPLIANCE", "amount": "500000000", "source_type": "typed_workflow" }
   ],
   "coverage": {
     "total_inflows": "50000000000",
@@ -985,14 +985,14 @@ A Hub nonprofit receives donations into its donation wallet and distributes fund
 
 **Tagged accounting events (simplified excerpt)**
 
-| Event | Direction | Wallet type | Amount | Category tag | Source type | Evidence anchor |
+| Event | Direction | Wallet type | Amount | Category code | Source type | Evidence anchor |
 | --- | --- | --- | ---:| --- | --- | --- |
-| Donation inflow | inflow | donation | 100,000 | `donation_unrestricted` | typed_workflow | none (optional donor receipt anchor) |
-| Program A spending | outflow | donation | 58,000 | `program_a_direct` | typed_workflow | invoice and receipt anchors (recommended for material items) |
-| Program B spending | outflow | donation | 17,000 | `program_b_direct` | typed_workflow | invoice and receipt anchors |
-| Overhead spending | outflow | donation | 15,000 | `general_admin` | entity_tagged | receipt anchors (optional) |
-| Fundraising spending | outflow | donation | 5,000 | `fundraising` | entity_tagged | receipt anchors (optional) |
-| Treasury retention | internal | donation -> treasury | 5,000 | `internal_transfer` | typed_workflow | none |
+| Donation inflow | inflow | donation | 100,000 | `DONATION_GENERAL` | typed_workflow | none (optional donor receipt anchor) |
+| Program A spending | outflow | donation | 58,000 | `EXP_PROGRAM` | typed_workflow | invoice and receipt anchors (recommended for material items) |
+| Program B spending | outflow | donation | 17,000 | `EXP_PROGRAM` | typed_workflow | invoice and receipt anchors |
+| Overhead spending | outflow | donation | 15,000 | `EXP_ADMIN` | entity_tagged | receipt anchors (optional) |
+| Fundraising spending | outflow | donation | 5,000 | `EXP_FUNDRAISING` | entity_tagged | receipt anchors (optional) |
+| Treasury retention | internal | donation -> treasury | 5,000 | `TREASURY_MOVEMENT` | typed_workflow | none |
 
 **Derived nonprofit allocation view (category totals excerpt)**
 
@@ -1004,10 +1004,9 @@ A Hub nonprofit receives donations into its donation wallet and distributes fund
   "distributed_out": "95000000000",
   "retained": "5000000000",
   "by_category": [
-    { "category": "program_a_direct", "amount": "58000000000" },
-    { "category": "program_b_direct", "amount": "17000000000" },
-    { "category": "general_admin", "amount": "15000000000" },
-    { "category": "fundraising", "amount": "5000000000" }
+    { "category_code": "EXP_PROGRAM", "amount": "75000000000" },
+    { "category_code": "EXP_ADMIN", "amount": "15000000000" },
+    { "category_code": "EXP_FUNDRAISING", "amount": "5000000000" }
   ],
   "ratios": {
     "program_spending_ratio": "0.7895",
@@ -1159,7 +1158,7 @@ Section 0.3 introduces the kernel and adapter model. This section makes that bou
 1. **Canonical identity and discovery live on the Hub registry.**
 2. **Canonical ownership and authority live on the Hub.** Units, roles, approvals, and executed resolutions are the source of truth.
 3. **Canonical treasury and accounting events are recorded on the Hub** using standardized event types and schemas.
-4. **Every entity can operate without any adapter** and without touching fiat rails as a protocol dependency.
+4. **Every entity can operate without any adapter** and without any fiat or bank rail dependency (not supported).
 5. **Adapters may read kernel state and publish derived interpretations**, but they must not mutate kernel semantics or rewrite history.
 6. **External recognition is derived and context-specific.** It can be attached when needed, but it is never required for correctness.
 7. **Tooling must be interoperable.** Applications and modules integrate once through stable, versioned schemas and interfaces.
@@ -1188,10 +1187,10 @@ The protocol is non custodial:
 dCorps is built for organizations that primarily operate in crypto and on-chain systems.
 
 - The protocol is optimized for stablecoin native operations, DeFi-native treasury flows, and on-chain governance and accounting events.
-- It does not aim to replicate banking, fiat payment rails, or state-based corporate registries inside the protocol.
-- Interaction with the fiat economy is treated as an external edge, handled by optional applications, adapters, or regulated partners when an entity chooses to do so.
+- It does not replicate banking, fiat payment rails, or state-based corporate registries inside the protocol.
+- Fiat or bank rail integrations are not supported at any layer.
 
-This boundary is intentional. dCorps is meant to enable a digital economy that can function without relying on fiat rails as a prerequisite.
+This boundary is intentional. dCorps is meant to enable a digital economy that functions without fiat rails.
 
 ### 4.2 Separation of base layer and higher layers
 
@@ -1484,6 +1483,29 @@ Protocol modules may:
 * Write additional state such as recognition status, allocation scores, or compliance signals.
 
 Anchoring creates a verifiable timeline without overloading the Hub with all raw data.
+
+---
+
+### 5.3A Privacy, disclosure, and lifecycle (summary)
+
+Privacy and disclosure are related but not the same. The protocol defines what must be visible (visibility policy), while confidentiality requires privacy-preserving execution or selective disclosure tools.
+
+Each entity declares a disclosure mode at creation. The disclosure mode is public metadata used by explorers, registries, and modules:
+
+* **Mode A**: public operations (maximum verifiability).
+* **Mode B**: public structure with aggregate reporting (privacy-aware operations).
+* **Mode C**: private execution with public anchoring (sub chain or private zone).
+
+Choosing a disclosure mode does not automatically provide confidentiality; it signals what is published and how proofs or aggregates are presented. Detailed privacy tiers and guarantees are defined in section 8.5A.
+
+Every entity also carries a lifecycle status in the registry so counterparties can understand standing at a glance:
+
+* **draft**
+* **active**
+* **suspended**
+* **dissolved**
+
+Lifecycle changes are recorded on-chain as governance actions and are part of the kernel record. See sections 5.4 and 5.5 and the Protocol Specification ([docs/spec/SPEC-CORE.md](/spec/SPEC-CORE)) for lifecycle flows.
 
 ---
 
@@ -2464,14 +2486,14 @@ A Hub nonprofit is designed to operate fully on-chain.
 
 A practical operating pattern looks like:
 
-1. The nonprofit receives donations and grants directly in one or more approved stablecoins into its **donation wallet** on the Hub.
+1. The nonprofit receives donations and grants directly in one or more approved stablecoins into its **donation wallet** on the Hub. Structured giving (grants, sponsorships, memberships) may use invoices or recurring plans, while ad-hoc donations do not require any invoice.
 2. The nonprofit allocates funds to program wallets and operational categories through **board approved allocation rules**, ideally using typed workflows that emit deterministic categories.
 3. The nonprofit executes program spending, payroll, grants, and partner disbursements on-chain, with evidence anchors for material items where appropriate.
 4. Explorers and dashboards can derive reproducible allocation views over any selected timeframe from the same ledger, including inflow coverage, outflow coverage, and evidence coverage, so donors can interpret transparency honestly.
 5. If the nonprofit uses multiple chains or other on-chain venues, it can publish optional completeness commitments and third-party attestations that reconcile those external positions to the Hub time-window view for the selected timeframe.
 
 
-This pattern is complete inside the digital economy. Any interaction with legacy fiat rails or local charity processes is outside protocol consensus and, where used, is implemented through optional adapters and external service providers.
+This pattern is complete inside the digital economy. dCorps does not support fiat rails or bank integrations; any legacy fiat or charity processes are outside the system.
 
 ------
 
@@ -2523,6 +2545,43 @@ Templates are grouped under Hub corporation and Hub nonprofit. Each template has
    *Deployment:* dCorps Hub (shared)
    *Complexity:* Medium to high
    A nonprofit with designated funds, umbrella program structures, and selective disclosure patterns while preserving category level transparency (often used for foundations and fiscal sponsorship/umbrella programs).
+
+#### 7.4A Tag schema by template
+
+All templates use the same required tags:
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template-specific context tags:
+
+- **CORP-SOLO**
+  - Operating/org: `program_tag` or `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+  - Equity context: `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`.
+- **CORP-PRIVATE-STD**
+  - Operating/org: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+  - Equity context: `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`.
+- **CORP-VENTURE**
+  - Operating/org: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+  - Capital/financing: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`.
+- **CORP-COMPLEX-PRIVATE**
+  - Operating/org: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+  - Capital/financing: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`.
+  - Treasury/asset: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`.
+- **NONPROFIT-SIMPLE**
+  - Program/fund: `program_tag`, `fund_tag`, `restriction_tag`.
+  - Donor/grant: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `region_tag`, `counterparty_tag`.
+- **NONPROFIT-BOARD**
+  - Program/fund: `program_tag`, `fund_tag`, `restriction_tag`.
+  - Donor/reporting: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `beneficiary_tag`, `impact_area_tag`, `region_tag`, `project_tag`, `counterparty_tag`.
+- **NONPROFIT-COMPLEX**
+  - Program/fund: `fund_tag`, `restriction_tag`, `program_tag`, `project_tag`.
+  - Donor/impact: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `beneficiary_tag`, `impact_area_tag`, `region_tag`, `counterparty_tag`.
+  - Treasury/asset: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`.
+
+See section 9.8A for the full tag taxonomy and definitions.
 
 **Optional future extension: anchored environments**
 
@@ -2664,7 +2723,7 @@ This structure:
 
 ### 8.3 Wallet structure for entities
 
-Entities use a structured wallet model:
+Entities use a structured wallet model that separates **authority wallets** (role control) from **operational wallets** (USDC flows):
 
 * **Merchant wallet (corporations)**
   Canonical income wallet for operating revenue. Default destination for invoices and customer payments.
@@ -2674,8 +2733,8 @@ Entities use a structured wallet model:
   Holds reserves and long term holdings. Not used for frequent operational payments.
 * **Program wallets**
   Represent specific programs or projects, especially in NGOs. Have budgets, allocation rules, and separate dashboards.
-* **Role wallets**
-  Associated with roles such as director or CFO. Used for approvals and governance actions, not for personal funds.
+* **Role (authority) wallets**
+  Bound to roles such as director or CFO. Used to sign governance actions and approvals, not to receive customer payments.
 
 This structure makes it possible to:
 
@@ -2684,6 +2743,27 @@ This structure makes it possible to:
 * Provide clear, consistent views for dashboards and auditors.
 
 Protocol modules can refer to wallet types, not just raw addresses, when applying rules.
+
+---
+
+### 8.3A Commerce primitives (items, invoices, recurring plans)
+
+The Hub includes minimal commerce objects so businesses can run end-to-end on-chain:
+
+* **Catalog item / service**
+  On-chain item ID with a label, price, and optional cost baseline. Used for sales and invoices.
+* **Invoice (payment request)**
+  On-chain request that resolves to a canonical payment wallet and amount. Includes line items, counterparty reference (wallet or pseudonymous ID), due date, and status.
+* **Recurring plan**
+  On-chain schedule that creates invoices on a fixed cadence.
+
+Invoice status states: `draft`, `open`, `partial`, `paid`, `overdue`, `waived`, `canceled`.  
+Item status states: `active`, `paused`, `retired`.  
+Plan status states: `active`, `paused`, `canceled`.
+
+Applications generate payment links from invoice IDs, and merchant integrations use SDK/API calls to create invoices and read status.
+
+Nonprofit donation flows are open by default: donors can send directly to the donation wallet without an invoice. Payment requests or recurring plans are optional for grants, sponsorships, memberships, or pledged giving. When confirmations are needed, entities anchor donation receipts and reference them in the accounting event (`reference_type=donation_receipt`).
 
 ---
 
@@ -2699,6 +2779,7 @@ dCorps distinguishes four broad data categories.
 - High-level donation and spending categories for nonprofits.
 - Anchors of off-chain documents.
 - Protocol module outputs and signals where applicable, including jurisdiction recognition status, sector framework outputs, and optional attestation or reputation module outputs.
+- Counterparty references may be stored as wallet addresses or pseudonymous IDs; private mappings stay off-chain.
 
 **Role gated actions and permissions (on-chain)**
 
@@ -2894,9 +2975,10 @@ The following examples are intentionally simplified and non normative. They are 
   "to_address": "dchub1...",
   "amount": { "denom": "uusdc", "value": "30000000000" },
   "tags": {
-    "category": "salaries_wages",
-    "counterparty_type": "staff",
-    "reference": "doc:ipfs:Qm..."
+    "category_code": "EXP_PAYROLL",
+    "counterparty_type": "employee",
+    "reference_id": "payroll_batch:2025-08",
+    "reference_type": "payroll_batch"
   }
 }
 ```
@@ -2945,6 +3027,8 @@ dCorps separates:
 
 In the initial implementation, USDC on Noble is the reference stablecoin for reporting and protocol fees.
 
+Treasury and reserve wallets may also hold DCHUB for gas buffers or protocol exposure; DCHUB holdings should be labeled with `asset_tag` and the `BAL_DCHUB` category.
+
 **v1 mainnet expectation management**
 
 - Mainnet may launch with a small approved operating set, potentially just USDC, so that reliability, monitoring, and integrations are tight.
@@ -2954,7 +3038,7 @@ In the initial implementation, USDC on Noble is the reference stablecoin for rep
 
 dCorps is optimized for entities that treat dCorps wallets as their **primary digital operating accounts**. Incoming revenues and donations are received in stablecoins, primarily USDC, into merchant or donation wallets. Salaries, contractor payments, vendor payments, grants, and program costs are paid out from dCorps wallets. The on-chain view is the transparent, verifiable part of an entity’s activity.
 
-The protocol does not attempt to model fiat rails or bank payments. dCorps is complete inside the on-chain economy. If an entity chooses to interact with fiat systems, that activity occurs outside protocol consensus and is out of scope for v1. Where an entity wants to reference external documents for evidence or dispute clarity, it may anchor hashes and use optional attestation modules, without turning the Hub into a banking integration layer.
+The protocol does not support fiat rails or bank payments at any layer. dCorps is complete inside the on-chain economy. Any fiat activity is outside the system and is not integrated.
 
 Entities may hold and use other digital assets, but reports and metrics use USDC as the baseline unit of account.
 
@@ -3124,7 +3208,7 @@ Tagged accounting events improve machine readability, but tags are not automatic
 dCorps strengthens tag reliability by encouraging constrained, typed workflows instead of free form tagging:
 
 - **Typed modules emit deterministic tags (recommended)**
-   Core operating workflows (payroll, invoicing, grants, donation allocation, vendor pay flows) are expected to be implemented as typed modules or standardized message families that emit category tags as part of execution. In this model, the category is not merely an assertion, it is the output of a constrained process.
+   Core operating workflows (payroll, invoicing, grants, donation allocation, vendor pay flows) are expected to be implemented as typed modules or standardized message families that emit category codes as part of execution. In this model, the category is not merely an assertion, it is the output of a constrained process.
 - **Free form tags remain possible, but are clearly labeled**
    Where entities use custom flows, events may include custom tags. Reference interfaces must label these as entity supplied tags and distinguish them from tags produced by typed workflows.
 
@@ -3203,7 +3287,7 @@ Important boundary: these views are derived by explorers/indexers (and optional 
 A cash-based view is derived from:
 
 - Accounting events that record cash-like inflows and outflows for the entity’s canonical wallet types (merchant, donation, program, treasury, and other configured wallet types).
-- The `category` tag on each accounting event, which must map to the minimal standard chart of accounts (section 9.8) or to an entity scoped extension that maps to a parent category in the minimal chart.
+- The `category_code` tag on each accounting event, which must map to the minimal standard chart of accounts (section 9.8) or to an entity scoped extension that maps to a parent category in the minimal chart.
 
 Events that omit required tags are treated as uncategorized and must be surfaced explicitly in coverage metrics.
 
@@ -3244,34 +3328,34 @@ The following object is a reference excerpt for interoperability between explore
   },
   "income": [
     {
-      "category": "subscription_revenue",
+      "category_code": "REV_SUBSCRIPTION",
       "amount": "50000000000",
       "source_type": "typed_workflow"
     }
   ],
   "expenses": [
     {
-      "category": "salaries_wages",
+      "category_code": "EXP_PAYROLL",
       "amount": "30000000000",
       "source_type": "typed_workflow"
     },
     {
-      "category": "contractors_freelancers",
+      "category_code": "EXP_CONTRACTOR",
       "amount": "5000000000",
       "source_type": "entity_tagged"
     },
     {
-      "category": "cloud_infrastructure",
+      "category_code": "EXP_INFRA",
       "amount": "4000000000",
       "source_type": "entity_tagged"
     },
     {
-      "category": "other_expenses",
+      "category_code": "EXP_OTHER",
       "amount": "2000000000",
       "source_type": "entity_tagged"
     },
     {
-      "category": "jurisdiction_compliance_fees",
+      "category_code": "EXP_COMPLIANCE",
       "amount": "500000000",
       "source_type": "typed_workflow"
     }
@@ -3307,8 +3391,8 @@ An allocation view is derived from:
 
 - Donation and grant inflows to canonical nonprofit wallets (for example the donation wallet and designated program wallets).
 - Tagged outflows that map to:
-  - program categories (for example `program_a_direct`),
-  - support categories (for example `general_admin`, `fundraising`),
+  - program categories (for example `EXP_PROGRAM` with `program_tag`),
+  - support categories (for example `EXP_ADMIN`, `EXP_FUNDRAISING`),
   - and any restricted fund categories when restriction logic is used.
 - Internal transfers to treasury wallets (for example retained buffers), which are recorded but are not treated as “distributed” spending.
 
@@ -3337,10 +3421,9 @@ The following object is a reference excerpt for interoperability between explore
     "uncategorized_event_count": 0
   },
   "by_category": [
-    { "category": "program_a_direct", "amount": "58000000000" },
-    { "category": "program_b_direct", "amount": "17000000000" },
-    { "category": "general_admin", "amount": "15000000000" },
-    { "category": "fundraising", "amount": "5000000000" }
+    { "category_code": "EXP_PROGRAM", "amount": "75000000000" },
+    { "category_code": "EXP_ADMIN", "amount": "15000000000" },
+    { "category_code": "EXP_FUNDRAISING", "amount": "5000000000" }
   ],
   "ratios": {
     "program_spending_ratio": "0.7895",
@@ -3405,44 +3488,56 @@ Protocol modules and applications can make these flows visible and comparable.
 
 To make the data standard claim concrete, dCorps defines a **minimal default chart of accounts**. Entities can extend it, but common categories ensure that tools and dashboards can compare entities consistently.
 
-**Income categories (examples)**
+**Income categories (default codes)**
 
-- Product revenue.
-- Service revenue.
-- Subscription revenue.
-- Grants.
-- Donations (for NGOs and foundations).
-- Investment and interest income.
-- Other income.
+- `REV_PRODUCT` – Product revenue.
+- `REV_SERVICE` – Service revenue.
+- `REV_SUBSCRIPTION` – Subscription revenue.
+- `REV_GRANT` – Grants.
+- `DONATION_GENERAL` – Unrestricted donations (for NGOs and foundations).
+- `DONATION_RESTRICTED` – Restricted donations.
+- `REV_INTEREST` – Investment and interest income.
+- `REV_OTHER` – Other income.
+- `REV_NONOPERATING` – Non-operating revenue (fallback bucket).
 
-**Expense categories (examples)**
+**Expense categories (default codes)**
 
-- Salaries and wages.
-- Contractors and freelancers.
-- Vendors and suppliers.
-- Rent and facilities.
-- Cloud and infrastructure.
-- Marketing and sales.
-- Research and development.
-- Jurisdiction and compliance fees.
-- Taxes.
-- Grants to NGOs (for corporations and foundations).
-- Program spending (for NGOs).
-- Fundraising costs (for NGOs).
-- General and administrative overhead.
-- Travel and events.
-- Other expenses.
+- `EXP_PAYROLL` – Salaries, wages, and payroll taxes.
+- `EXP_CONTRACTOR` – Contractors and freelancers.
+- `EXP_VENDOR` – Vendors and suppliers.
+- `EXP_RENT` – Rent and facilities.
+- `EXP_INFRA` – Cloud and infrastructure.
+- `EXP_MARKETING` – Marketing and sales.
+- `EXP_RND` – Research and development.
+- `EXP_COMPLIANCE` – Jurisdiction and compliance fees.
+- `EXP_TAX` – Taxes.
+- `EXP_GRANTS` – Grants to NGOs (for corporations and foundations).
+- `EXP_PROGRAM` – Program spending (for NGOs).
+- `EXP_FUNDRAISING` – Fundraising costs (for NGOs).
+- `EXP_ADMIN` – General and administrative overhead.
+- `EXP_TRAVEL` – Travel and events.
+- `EXP_OTHER` – Other expenses.
 
-**Balance sheet categories (examples)**
+**Capital, financing, and treasury (default codes)**
 
-- Cash and stablecoins (USDC and others).
-- DCHUB holdings.
-- dShares and other tokens.
-- Accounts receivable.
-- Prepaid expenses.
-- Accounts payable.
-- Deferred revenue.
-- Loans and other liabilities.
+- `CAPEX` – Capital expenditures.
+- `FIN_EQUITY_RAISE` – Equity financing inflows.
+- `FIN_DEBT_DRAW` – Debt financing inflows.
+- `FIN_DEBT_REPAY` – Debt repayments.
+- `FIN_DIVIDEND` – Distributions/dividends.
+- `FIN_OWNER_DRAW` – Owner draws.
+- `TREASURY_MOVEMENT` – Internal treasury rebalancing.
+
+**Balance sheet categories (optional tags)**
+
+- `BAL_CASH` – Cash and stablecoins (USDC and others).
+- `BAL_DCHUB` – DCHUB holdings.
+- `BAL_TOKEN` – dShares and other tokens.
+- `BAL_AR` – Accounts receivable.
+- `BAL_PREPAID` – Prepaid expenses.
+- `BAL_AP` – Accounts payable.
+- `BAL_DEFERRED_REV` – Deferred revenue.
+- `BAL_DEBT` – Loans and other liabilities.
 
 This baseline is not a full accounting standard and does not replace local GAAP or IFRS. It is a neutral minimum schema that allows:
 
@@ -3453,6 +3548,55 @@ This baseline is not a full accounting standard and does not replace local GAAP 
 Balance sheet categories in this schema are an optional tagging and dashboard view standard; they are not audited financial statements and do not, by themselves, imply GAAP, IFRS, or statutory reporting compliance.
 
 The foundation is expected to maintain this minimal schema, propose extensions where needed, and work with the ecosystem when mapping to local accounting standards.
+
+#### 9.8A Tag taxonomy (required + optional tags)
+
+Every tagged accounting event MUST include:
+
+- `category_code` – required category code from the minimal chart (section 9.8).
+- `counterparty_type` – who the counterparty is (`customer`, `vendor`, `contractor`, `employee`, `donor`, `grantee`, `beneficiary`, `investor`, `lender`, `government`, `bank`, `custodian`, `payment_processor`, `affiliate`, `exchange`, `nonprofit`, `foundation`, `other`).
+- `reference_id` – external reference when applicable (invoice, contract, grant, payroll batch, policy, resolution).
+- `reference_type` – recommended when `reference_id` is present; standard values include `invoice`, `payment_request`, `receipt`, `contract`, `purchase_order`, `payroll_batch`, `expense_report`, `grant_agreement`, `donation_receipt`, `subscription_plan`, `bank_statement`, `board_resolution`, `cap_table_update`, `policy`, `tax_filing`, `audit_report`, `other`.
+
+Standard optional tags (v0.1) add context and should be used where applicable:
+
+Operating and org context:
+- `program_tag` – nonprofit program or operating unit.
+- `business_unit_tag` – corporate business unit (optional alternative to `program_tag`).
+- `department_tag` – department or team owner.
+- `cost_center_tag` – internal cost center or budget code.
+- `project_tag` – project or initiative.
+- `product_tag` – product or service line.
+- `item_id` – on-chain catalog item/service ID (optional).
+- `channel_tag` – revenue or distribution channel.
+- `region_tag` – ISO country or region code.
+- `counterparty_tag` – pseudonymous counterparty identifier (hashed or coded when privacy is required).
+
+Nonprofit allocation context:
+- `fund_tag` – designated or restricted fund (nonprofits).
+- `restriction_tag` – restriction code or policy label.
+- `grant_id` – grant or award identifier.
+- `donor_tag` – donor identifier (hashed or coded).
+- `campaign_tag` – fundraising campaign identifier.
+- `beneficiary_tag` – beneficiary group or cohort identifier.
+- `impact_area_tag` – impact theme or program domain.
+
+Capital and financing context:
+- `round_tag` – financing round label (Seed, Series A).
+- `security_type_tag` – equity/SAFE/note type.
+- `equity_class_tag` – equity class label (e.g. Class A, Class B).
+- `vesting_schedule_tag` – vesting schedule identifier.
+- `option_pool_tag` – option pool identifier.
+- `debt_instrument_tag` – debt instrument type (note, credit line).
+- `loan_id` – loan or facility identifier.
+
+Treasury and asset context:
+- `wallet_tag` – internal wallet label (ops, reserves, pass-through).
+- `treasury_bucket_tag` – treasury segmentation bucket.
+- `asset_tag` – asset or token grouping (USDC, DCHUB, other).
+- `custody_tag` – custody or provider identifier.
+
+Entities may add custom tags, but custom tags should be namespaced to avoid collisions.
 
 ------
 
@@ -3568,30 +3712,39 @@ This section defines the cap and allocations. Vesting and lockups are described 
 An indicative allocation is:
 
 - **Founder**: 15 percent (150,000,000)
-- **Core team and future contributors**: 10 percent (100,000,000)
-- **Investors**: 10 percent (100,000,000)
-- **Community and ecosystem programs**: 35 percent (350,000,000)
+- **Core team and future contributors**: 8 percent (80,000,000)
+- **Investors**: 15 percent (150,000,000)
+  - Seed: 2.5 percent (25,000,000)
+  - Series A: 3.5 percent (35,000,000)
+  - Series B: 3 percent (30,000,000)
+  - Series C: 2 percent (20,000,000)
+  - Public sale / ICO (if any): 4 percent (40,000,000)
+- **Community and ecosystem programs**: 33 percent (330,000,000)
 - **Staking and validator rewards**: 18 percent (180,000,000)
-- **Protocol Treasury**: 5 percent (50,000,000)
-- **dCorps foundation**: 5 percent (50,000,000)
-- **Liquidity bootstrap (operational liquidity)**: 2 percent (20,000,000)
+- **Protocol Treasury**: 4 percent (40,000,000)
+- **dCorps foundation**: 4 percent (40,000,000)
+- **Liquidity bootstrap (operational liquidity)**: 3 percent (30,000,000)
 
-Founder, team, and investor allocations together represent 35 percent of supply. Community and ecosystem programs plus staking and validator rewards represent 53 percent of supply, distributed over time through open programs and network participation. Protocol Treasury, foundation, and liquidity bootstrap allocations are operational and stewardship pools and are designed to be non capturing by policy and by default governance configuration (see section 10.3A and section 10.7A).
+Founder, team, and investor allocations together represent 38 percent of supply. Community and ecosystem programs plus staking and validator rewards represent 51 percent of supply, distributed over time through open programs and network participation. Protocol Treasury, foundation, and liquidity bootstrap allocations are operational and stewardship pools and are designed to be non capturing by policy and by default governance configuration (see section 10.3A and section 10.7A).
 
-**Indicative sub allocation plan for Community and ecosystem programs (35 percent)**
+**Indicative sub allocation plan for Community and ecosystem programs (33 percent)**
 
 Community and ecosystem programs are intended to be programmatic and transparent, with clear buckets that map to public goods needs. An indicative split is:
 
 - **Security and audits**: 7 percent (70,000,000)
   - Audits, monitoring, bug bounties, incident response tooling, safety critical infrastructure.
-- **Core tooling and developer grants**: 10 percent (100,000,000)
+- **Core tooling and developer grants**: 9 percent (90,000,000)
   - SDKs, indexers, explorers, accounting and payroll tooling, compatibility tooling, module development grants.
 - **Jurisdiction pilots and module development**: 6 percent (60,000,000)
   - jurisdiction adapter pilots, standards work, legal research support, jurisdiction adapter implementation grants.
 - **NGO onboarding and support**: 6 percent (60,000,000)
   - NGO onboarding programs, nonprofit fee waivers where adopted, training, reporting tooling, local capacity building.
-- **Ecosystem growth and incentives**: 6 percent (60,000,000)
-  - Limited incentives for meaningful adoption, integrations, and ecosystem reliability, structured as time bounded programs with transparent criteria.
+- **Ecosystem growth and incentives**: 4.95 percent (49,500,000)
+  - Limited incentives for meaningful adoption, integrations, ecosystem reliability, recruiting incentives, and targeted airdrops, structured as time bounded programs with transparent criteria.
+- **Gas-free onboarding credits**: 0.05 percent (500,000)
+  - Time-boxed fee grants that cover entity onboarding gas at scale, with per-entity caps, governance approval, and public reporting.
+
+Entity onboarding gas support may be issued as time-boxed fee grants rather than direct transfers, capped per entity and governed through the community program pool.
 
 These are budget buckets for governance and reporting. They do not imply that the full bucket amount is released early. Release caps and a circulating supply schedule are defined in section 10.4A.
 
@@ -3661,26 +3814,26 @@ dCorps uses long, on-chain enforced vesting schedules to align insiders with the
   - Transfer guidelines: during at least the first four years after TGE, only a limited portion of vested founder tokens may be transferred per year, except where tokens are used as stake or bond for protocol security. Detailed limits will be defined in a Token Policy and mirrored in legal agreements.
   - Enforcement: founder vesting and any transfer limits will be enforced on-chain where technically feasible, with matching legal documentation.
   - Governance voting: voting eligibility is limited to vested amounts (see section 10.3A).
-- **Core team and future contributors (10 percent)**
-  - Total allocation: 100,000,000 DCHUB
-  - Typical schedules: 12 month cliff followed by 36 month linear vesting for most roles, with longer schedules for senior roles
+- **Core team and future contributors (8 percent)**
+  - Total allocation: 80,000,000 DCHUB
+  - Typical schedules: 18 month cliff followed by 48 month linear vesting for most roles, with longer schedules for senior roles
   - Vesting is enforced on-chain using standardized vesting contracts. Leaving early may trigger clawback of unvested portions, subject to contracts.
   - Governance voting: voting eligibility is limited to vested amounts (see section 10.3A).
-- **Investors (10 percent)**
-  - Total allocation: 100,000,000 DCHUB
-  - Early strategic investors:
-    - Lockup: no transfers during the first 12 months after TGE
-    - Vesting: linear vesting from month 12 to month 48 after TGE
-  - Later round or public sale investors (if any):
-    - Shorter lockups and vesting, subject to legal and market conditions
+- **Investors (15 percent)**
+  - Total allocation: 150,000,000 DCHUB
+  - Seed: 12 month lockup, then 36 month linear vesting
+  - Series A: 9 month lockup, then 36 month linear vesting
+  - Series B: 6 month lockup, then 30 month linear vesting
+  - Series C: 3 month lockup, then 24 month linear vesting
+  - Public sale (if any): 10 percent available at TGE; remaining 90 percent linear vesting over 12 months
   - Governance voting: voting eligibility is limited to vested amounts (see section 10.3A).
-- **Community and ecosystem programs (35 percent)**
-  - Total allocation: 350,000,000 DCHUB
+- **Community and ecosystem programs (33 percent)**
+  - Total allocation: 330,000,000 DCHUB
   - Held in governance controlled module accounts or contracts with explicit release rules, not discretionary personal wallets
   - Released gradually through open programs and milestone based grants subject to governance
   - Release caps are defined in section 10.4A to reduce circulating supply shocks and to make program releases legible and predictable
-- **Protocol Treasury (5 percent) and dCorps foundation (5 percent)**
-  - Total allocations: 50,000,000 DCHUB for the Protocol Treasury and 50,000,000 DCHUB for the foundation
+- **Protocol Treasury (4 percent) and dCorps foundation (4 percent)**
+  - Total allocations: 40,000,000 DCHUB for the Protocol Treasury and 40,000,000 DCHUB for the foundation
   - Held in Treasury and foundation controlled accounts or contracts under governance and, where required, by the legal entities that represent them
   - Funds are released only through on-chain governance and, where needed, matching off-chain execution
   - Governance voting: Treasury and foundation balances are non voting by default (see section 10.3A).
@@ -3688,8 +3841,8 @@ dCorps uses long, on-chain enforced vesting schedules to align insiders with the
   - Total allocation: 180,000,000 DCHUB reserved for validator and delegator rewards
   - Distributed via a published, parameterized rewards schedule that fits within the pool cap, with a genesis default schedule described in section 10.4A
   - Governance can adjust distribution parameters within predefined bounds (see section 10.6B), with stronger requirements for changes that materially increase near term emissions
-- **Liquidity and market support (2 percent)**
-  - Total allocation: 20,000,000 DCHUB
+- **Liquidity and market support (3 percent)**
+  - Total allocation: 30,000,000 DCHUB
   - A portion may be available at or shortly after TGE to seed DEX liquidity for operational usability
   - The remainder is subject to internal policies that restrict its use to liquidity provisioning and operational market infrastructure, with transparent reporting and capped budgets
   - Governance voting: balances reserved for liquidity and market support are expected to be non voting by default and held under policy constraints consistent with section 10.3A.
@@ -3729,7 +3882,7 @@ The design intention is that TGE circulating supply is kept low.
 
 At TGE, the maximum intended transferable supply is:
 
-- Liquidity bootstrap: up to 20,000,000 DCHUB (2 percent of total supply)
+- Liquidity bootstrap: up to 30,000,000 DCHUB (3 percent of total supply)
 - Optional community launch distribution: up to 10,000,000 DCHUB (1 percent of total supply), only if approved through governance for launch programs
 
 All other major allocations are expected to be non transferable at TGE due to vesting, lockups, or governance controlled custody.
@@ -3738,25 +3891,30 @@ All other major allocations are expected to be non transferable at TGE due to ve
 
 The schedules below are illustrative, based on the indicative vesting patterns in section 10.4:
 
-- Team allocation assumed as a 12 month cliff followed by 36 month linear vesting.
-- Investor allocation assumed as a 12 month lockup followed by 36 month linear vesting.
+- Team allocation assumed as an 18 month cliff followed by 48 month linear vesting.
+- Investor allocation assumed as round-based lockups and vesting:
+  - Seed: 12 month lockup + 36 month vesting.
+  - Series A: 9 month lockup + 36 month vesting.
+  - Series B: 6 month lockup + 30 month vesting.
+  - Series C: 3 month lockup + 24 month vesting.
+  - Public sale: 10 percent at TGE + 12 month linear vesting for the remainder.
 - Founder allocation assumed as a 24 month cliff followed by linear vesting from month 24 to month 96.
 
 **Illustrative cumulative unlocked amounts for insider allocations (end of year, in millions of DCHUB)**
 
-- End of year 1: 0.0 (team and investor cliffs)
-- End of year 2: 66.7 (team and investor partial unlocks)
-- End of year 3: 158.3 (team and investor partial unlocks plus founder partial unlock)
-- End of year 4: 250.0 (team and investor fully unlocked plus founder partial unlock)
-- End of year 5: 275.0
-- End of year 6: 300.0
-- End of year 7: 325.0
-- End of year 8: 350.0 (founder fully unlocked)
+- End of year 1: 56.4 (public sale unlocks and early investor vesting)
+- End of year 2: 108.4 (team partial vesting and investor unlocks)
+- End of year 3: 187.9 (team and investor unlocks plus founder partial unlock)
+- End of year 4: 250.0 (investors fully unlocked plus founder and team partial unlocks)
+- End of year 5: 295.0
+- End of year 6: 330.0
+- End of year 7: 355.0
+- End of year 8: 380.0 (founder fully unlocked)
 
 ```text
 Illustrative insider unlock curve (cumulative, millions of DCHUB)
 Year:     0    1    2     3     4     5     6     7     8
-Unlocked: 0  0.0  66.7  158.3  250.0  275.0  300.0  325.0  350.0
+Unlocked: 0  56.4  108.4  187.9  250.0  295.0  330.0  355.0  380.0
 ```
 
 Reference explorers must show actual on-chain vesting contracts and the exact unlock timelines for each vesting schedule once deployed.
@@ -3880,7 +4038,7 @@ Validator and delegator rewards are therefore:
 
 The staking and validator rewards pool is finite. As that pool becomes materially depleted, validator incentives must come primarily from:
 
-- Gas fees (DCHUB) and any protocol fee routing that governance chooses to allocate to security.
+- Gas fees (DCHUB), routed to validators/delegators by default; governance may introduce a capped Treasury share for security funding.
 - Sub chain security rent (where sub chain tiers are used and recognized).
 - Explicit security budgets from Protocol Treasury or foundation administered programs, if needed, with transparent on-chain reporting and bounded policy limits.
 
@@ -4081,7 +4239,7 @@ dCorps makes no promises of listing, liquidity, or any trading conditions.
 
 ### 10.7A Liquidity bootstrap policy (v1)
 
-The liquidity bootstrap allocation (2 percent of total supply) exists to support operational usability for gas, staking, and routine entity operations. It is not intended to target price, imply return, or act as a market support commitment.
+The liquidity bootstrap allocation (3 percent of total supply) exists to support operational usability for gas, staking, and routine entity operations. It is not intended to target price, imply return, or act as a market support commitment.
 
 **Custody and control**
 
@@ -4822,7 +4980,7 @@ Applications and indexers rely on stable events, including:
 - Role events: role bound and unbound.
 - Governance events: proposal submitted, vote cast, resolution executed.
 - Corporation events: units issued, transferred, and cancelled.
-- nonprofit events: donation received, spending recorded with category tags, allocation rule changed.
+- nonprofit events: donation received, spending recorded with category codes, allocation rule changed.
 - Anchoring events: document anchored, sub chain registered, sub chain anchor submitted, sub chain recognition label changed.
 - Module events: module attached, module detached.
 
@@ -4836,7 +4994,7 @@ The Hub must expose query endpoints for:
 - Entity structural state (type specific, versioned schemas).
 - Wallet type mappings for each entity.
 - Governance timelines, proposals, votes, and executed resolutions.
-- Accounting event streams by entity, wallet type, category tags, and period.
+- Accounting event streams by entity, wallet type, category codes, and period.
 - Sub chain registration, recognition label, and anchor history.
 - Module attachment status and module metadata.
 
@@ -4858,7 +5016,7 @@ To support long term compatibility and safe evolution, dCorps uses explicit sche
 
 #### 14.1C.2 Tag schema rules
 
-- A baseline required tag set exists for accounting and reporting compatibility, including `category`, `counterparty_type`, and a `reference` or anchor pointer where applicable.
+- A baseline required tag set exists for accounting and reporting compatibility, including `category_code`, `counterparty_type`, and a `reference_id` or anchor pointer where applicable. `reference_type` is recommended when `reference_id` is present.
 - Entities may add custom tags, but custom tags should be namespaced to avoid collisions.
 
 #### 14.1C.3 Chart of accounts extensibility
@@ -5853,7 +6011,7 @@ These metrics are more relevant to protocol health than token price.
 
 ---
 
-## 17. Legal position, BVI to Switzerland, and risk
+## 17. Legal position, BVI to Switzerland or ADGM, and risk
 
 ### 17.1 Neutral infrastructure summary
 
@@ -5900,11 +6058,11 @@ Commercial relationships between the development corporation and entities will b
 
 ---
 
-### 17.3 Migration plan to Switzerland and crypto hub
+### 17.3 Foundation jurisdiction (Switzerland or ADGM)
 
 Once dCorps reaches greater maturity, the intention is to:
 
-- Add a **nonprofit foundation** in Switzerland or a similar crypto friendly jurisdiction.
+- Add a **nonprofit foundation** in a reputable jurisdiction. Two leading candidates are Switzerland and ADGM (Abu Dhabi Global Market).
 - Gradually shift stewardship of shared resources and protocol governance processes to that foundation.
 
 Switzerland is attractive because:
@@ -5912,6 +6070,18 @@ Switzerland is attractive because:
 - It has a long history of rule of law and predictable treatment of foundations.
 - It has practical experience with crypto and on-chain projects, including token foundations and nonprofit stewards.
 - It is easier for serious regulators, NGOs, and institutional partners to trust a Swiss based foundation than a purely offshore structure.
+
+ADGM is attractive because:
+
+- It offers a modern foundation framework with remote-friendly setup and lower early overhead.
+- It is a credible international jurisdiction and can remain lean while governance and reporting standards mature.
+
+Decision process and status:
+
+- The foundation is not incorporated yet.
+- ADGM is a leading candidate for an initial, lean setup; Switzerland remains a strong option for maximum institutional signaling.
+- The jurisdiction choice will be made before incorporation based on credibility, governance needs, operational overhead, and the ability to publish transparent reporting.
+- The final decision will be published in foundation filings and governance communications.
 
 The foundation will:
 

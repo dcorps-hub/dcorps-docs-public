@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2025-12-24
+**Last updated**: 2026-01-16
 
 ---
 
@@ -33,7 +33,8 @@ The dCorps Hub is the kernel. It defines:
 
 - canonical entity identity and discovery;
 - ownership and authority (roles, approvals, and governance actions);
-- treasury primitives and standardized accounting events; and
+- wallet structure (authority approvals and operational payments) and standardized accounting events;
+- commerce primitives (catalog items/services, invoices, recurring plans); and
 - anchoring of key documents by hash.
 
 dCorps is infrastructure, not a bank, broker, exchange, or custodial service.
@@ -42,7 +43,7 @@ dCorps is infrastructure, not a bank, broker, exchange, or custodial service.
 
 ## v1 in one sentence
 
-In v1, an entity can register, bind roles and wallets, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
+In v1, an entity can register, bind roles and authority/operational wallets, issue invoices or recurring plans, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
 
 ---
 
@@ -50,9 +51,11 @@ In v1, an entity can register, bind roles and wallets, run stablecoin operations
 
 The first workflow is intentionally narrow:
 
-1. Register an entity, set canonical wallets and roles, and anchor baseline governing documents by hash.
-2. Route inflows and outflows through canonical on-chain wallets and emit tagged accounting events.
+1. Register an entity, set authority and canonical operational wallets, and anchor baseline governing documents by hash.
+2. Issue invoices or recurring plans tied to canonical payment wallets and route inflows/outflows through those wallets with tagged accounting events.
 3. Use explorers/indexers (and optional dApps) to derive reproducible cash-based operating and allocation views over any selected timeframe directly from tagged ledger events, with clear coverage metrics.
+
+Nonprofits may accept direct donations to the donation wallet without invoices; payment requests and recurring plans are optional for structured giving, with optional donation receipt anchors.
 
 Measurable outcome:
 
@@ -77,10 +80,18 @@ dCorps is not designed for entities that want opaque structures, cosmetic govern
 
 dCorps keeps a strict boundary between a minimal kernel and optional modules:
 
-- **Kernel (required)**: identity, roles and authority, governance actions, treasury primitives, accounting events, and document anchoring.
+- **Kernel (required)**: identity, roles and authority, governance actions, wallet structure, commerce primitives, accounting events, and document anchoring.
 - **Adapters and modules (optional)**: jurisdiction recognition workflows, institutional reporting views, sector frameworks, attestations, and derived signals.
 
 Entities must be able to operate without adapters. Adapters may publish derived interpretations, but they must not redefine kernel semantics or rewrite history.
+
+---
+
+## Privacy, disclosure, and lifecycle
+
+Each entity declares a disclosure mode at creation (Mode A, B, or C), and the mode is public metadata that tells interfaces whether data is fully public, aggregated, or anchored with privacy-preserving proofs. Confidentiality exists only when privacy tools are used.
+
+The registry also records lifecycle status (draft, active, suspended, or dissolved) so counterparties can see standing at a glance.
 
 ---
 
@@ -93,7 +104,7 @@ External applications (UIs, payroll, donation portals, dashboards)
 Optional adapters and modules (jurisdiction recognition, sector frameworks, attestations)
         |
         v
-dCorps Hub kernel (entity registry, roles, governance, wallets, accounting events, anchoring)
+dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
         |
         v
 DCHUB staking and consensus (security, gas, protocol governance)

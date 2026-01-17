@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-COMPLEX-PRIVATE.md](/hub-templates/CORP-COMPLEX-PRIVATE))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-16  
 
 > Scope: Defines the CORP-COMPLEX-PRIVATE Hub corporation template.
 
@@ -59,6 +59,10 @@
 - **Advanced treasury policy**
   - Multi-tier spend approvals (routine vs protected vs extraordinary).
   - Per-wallet limits, category constraints, and evidence requirements by policy.
+- **Canonical wallet structure**
+  - Standard wallet bindings used to compute consistent reporting views.
+- **Commerce primitives (items, invoices, recurring plans)**
+  - On-chain catalog items/services, invoices with status tracking, and optional recurring plans.
 - **Group/holdings support**
   - Entities can hold units of other entities.
   - Clear mapping of parent/subsidiary relationships and intercompany actions.
@@ -101,6 +105,8 @@ This section describes the minimum structure the template expects. Exact message
     - `comp_committee`
     - `finance_committee`
   - Optional: `risk_officer` / `compliance_officer` where needed (often backed by off-chain processes)
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
 - **Canonical wallets (recommended baseline)**
   - `MERCHANT` (recommended): revenue inflows (invoice and checkout payment address; may use multiple, labeled, if operating multiple business lines)
   - `OPERATING_TREASURY` (required): primary operating spending (may use multiple, labeled)
@@ -120,7 +126,24 @@ This section describes the minimum structure the template expects. Exact message
     - class-specific approvals,
     - vesting/lockup checks,
     - right-of-first-refusal style routing (where the protocol/module supports it).
-  - Corporate actions (issuance, cancellation, conversions, reorganizations) are recorded as standardized events linked to approvals and anchored documents.
+- Corporate actions (issuance, cancellation, conversions, reorganizations) are recorded as standardized events linked to approvals and anchored documents.
+
+---
+
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Operating/org: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+- Capital/financing: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`.
+- Treasury/asset: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`.
 
 ---
 
@@ -179,8 +202,10 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - per-wallet limits and category constraints,
   - evidence requirements by materiality and category; sign.
 - Set tags:
-  - minimal chart-of-accounts categories,
-  - business-unit tags (commonly required at this complexity level); sign.
+  - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+  - operating/org context: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`,
+  - capital/financing context: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`,
+  - treasury/asset context: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`; sign.
 - (Optional) Establish group structure:
   - create subsidiary entities (if not already),
   - execute unit issuances/transfers so the parent holds the subsidiary,
@@ -195,7 +220,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - hash invoice/receipt/contract file (as applicable),
   - anchor the hash on-chain; optionally include a URI; sign.
 - Record income events:
-  - category + business-unit tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link invoice reference or anchor; sign.
 - (Optional) Move operating funds to treasury:
@@ -206,7 +231,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - protected payment: committee or board approval above limit; execute; sign.
   - extraordinary action: supermajority approvals; execute; sign.
 - Record expense events:
-  - category + business-unit tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipt anchor/ref when available; sign.
 - Maintain class rules and transfer restrictions:

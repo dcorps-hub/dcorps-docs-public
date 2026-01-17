@@ -71,15 +71,54 @@ For definitions of minted supply, circulating supply, and emissions, see [docs/t
 Indicative allocation at genesis (see [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN)):
 
 - Founder: 15% (150,000,000)
-- Core team and future contributors: 10% (100,000,000)
-- Investors: 10% (100,000,000)
-- Community and ecosystem programs: 35% (350,000,000)
+- Core team and future contributors: 8% (80,000,000)
+- Investors: 15% (150,000,000)
+- Community and ecosystem programs: 33% (330,000,000)
 - Staking and validator rewards: 18% (180,000,000)
-- Protocol Treasury: 5% (50,000,000)
-- dCorps foundation: 5% (50,000,000)
-- Liquidity bootstrap (operational liquidity): 2% (20,000,000)
+- Protocol Treasury: 4% (40,000,000)
+- dCorps foundation: 4% (40,000,000)
+- Liquidity bootstrap (operational liquidity): 3% (30,000,000)
+
+Indicative sub allocation plan for Community and ecosystem programs (33%):
+
+Community and ecosystem programs are intended to be programmatic and transparent, with clear buckets that map to public goods needs. An indicative split is:
+
+- Security and audits: 7% (70,000,000)
+  - Audits, monitoring, bug bounties, incident response tooling, safety critical infrastructure.
+- Core tooling and developer grants: 9% (90,000,000)
+  - SDKs, indexers, explorers, accounting and payroll tooling, compatibility tooling, module development grants.
+- Jurisdiction pilots and module development: 6% (60,000,000)
+  - jurisdiction adapter pilots, standards work, legal research support, jurisdiction adapter implementation grants.
+- NGO onboarding and support: 6% (60,000,000)
+  - NGO onboarding programs, nonprofit fee waivers where adopted, training, reporting tooling, local capacity building.
+- Ecosystem growth and incentives: 4.95% (49,500,000)
+  - Limited incentives for meaningful adoption, integrations, ecosystem reliability, recruiting incentives, and targeted airdrops, structured as time bounded programs with transparent criteria.
+- Gas-free onboarding credits: 0.05% (500,000)
+  - Time-boxed fee grants that cover entity onboarding gas at scale, with per-entity caps, governance approval, and public reporting.
+
+Entity onboarding gas support may be issued as time-boxed fee grants rather than direct transfers, capped per entity and governed through the community program pool.
+
+These are budget buckets for governance and reporting. They do not imply that the full bucket amount is released early. Release caps and a circulating supply schedule are defined in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) section 10.4A.
 
 Vesting, lockups, and release caps constrain transferable supply, especially early in the network lifecycle.
+
+Investor breakdown (15% total):
+
+- Seed: 2.5% (25,000,000)
+- Series A: 3.5% (35,000,000)
+- Series B: 3% (30,000,000)
+- Series C: 2% (20,000,000)
+- Public sale / ICO (if any): 4% (40,000,000)
+
+Vesting highlights (summary):
+
+- Founder: 24-month cliff, then 72-month linear vesting.
+- Core team and future contributors: 18-month cliff, then 48-month linear vesting.
+- Seed: 12-month lockup, then 36-month linear vesting.
+- Series A: 9-month lockup, then 36-month linear vesting.
+- Series B: 6-month lockup, then 30-month linear vesting.
+- Series C: 3-month lockup, then 24-month linear vesting.
+- Public sale / ICO (if any): 10% at TGE, 90% linear vesting over 12 months.
 
 ---
 

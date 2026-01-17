@@ -22,11 +22,15 @@
 
 ## 2. Baseline schedules (v1)
 
-| Allocation | Cliff | Vesting duration | Notes |
+| Allocation | Cliff / lockup | Vesting duration | Notes |
 | --- | --- | --- | --- |
 | Founder (15%) | 24 months | 72 months | Linear monthly unlocks after cliff |
-| Core team and future contributors (10%) | 12 months | 36 months | Linear monthly unlocks after cliff |
-| Investors (10%) | 12 months | 36 months | Linear monthly unlocks after lockup |
+| Core team and future contributors (8%) | 18 months | 48 months | Linear monthly unlocks after cliff |
+| Seed investors (2.5%) | 12 months | 36 months | Linear monthly unlocks after lockup |
+| Series A investors (3.5%) | 9 months | 36 months | Linear monthly unlocks after lockup |
+| Series B investors (3%) | 6 months | 30 months | Linear monthly unlocks after lockup |
+| Series C investors (2%) | 3 months | 24 months | Linear monthly unlocks after lockup |
+| Public sale / ICO (4%) | 10% at TGE | 12 months | Remaining 90% linear vesting |
 
 Community, rewards, and treasury allocations follow programmatic release rules and are not time-vested in the same way.
 

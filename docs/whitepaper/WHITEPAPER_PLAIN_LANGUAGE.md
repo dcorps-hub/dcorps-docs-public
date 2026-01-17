@@ -7,7 +7,7 @@
 **Release date**: January 1, 2026  
 **Author**: Nicolas Turcotte, Founder  
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2026-01-01  
+**Last updated**: 2026-01-16  
 
 > Scope: Plain-language overview of what dCorps is, what v1 enables, and the boundaries (what it does not claim to do). This document is non-normative.
 
@@ -33,7 +33,8 @@ It lets an organization:
 
 - register a canonical identity and public profile;
 - define who has authority to act (roles, approvals, governance actions);
-- operate using on-chain wallets and standardized accounting events; and
+- operate using on-chain payment wallets, control wallets for approvals, and standardized accounting events;
+- issue on-chain invoices and recurring payment plans tied to their payment wallets; and
 - anchor key documents and evidence by hash.
 
 The goal is simple: make it possible for an outside party to verify **authority** and **money trails** from a shared public record, instead of relying on screenshots, private exports, or trust-me reporting.
@@ -44,16 +45,32 @@ The goal is simple: make it possible for an outside party to verify **authority*
 
 In v1, an entity can:
 
-1. Register an entity and bind canonical wallets and roles.
-2. Route inflows/outflows through canonical wallets and emit tagged accounting events.
+1. Register an entity and bind roles, control wallets (for approvals), and payment wallets (for money).
+2. Issue invoices or recurring payment plans and route inflows/outflows through payment wallets, emitting tagged accounting events.
 3. Produce reproducible cash-based operating and allocation summaries over any selected timeframe, derived from those tagged events.
 4. Anchor key documents (governing documents, resolutions, evidence) by hash so they can be referenced without publishing private content.
+
+Nonprofits can accept direct donations to the donation wallet without invoices; payment requests are optional for grants, sponsorships, memberships, or pledged giving. When confirmations are needed, a donation receipt can be anchored and referenced.
 
 If an entity uses these primitives consistently, a third party can verify:
 
 - who had authority to act at a given time;
 - what approvals or governance actions were recorded; and
 - how period totals were derived from underlying ledger activity.
+
+---
+
+## Privacy, disclosure, and lifecycle
+
+dCorps is transparent by default, but organizations can choose how much detail to publish. Each entity picks a disclosure mode:
+
+- **Mode A**: everything public.
+- **Mode B**: public structure with aggregate reporting.
+- **Mode C**: private execution with public proof anchors.
+
+Choosing a mode does not automatically hide data. Confidentiality exists only when privacy-preserving tools are used.
+
+Every entity also has a lifecycle status in the registry so people can see if it is draft, active, suspended, or dissolved.
 
 ---
 

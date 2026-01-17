@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-15  
 
 > Scope: Summary of the intended legal structure path described in the Whitepaper Long.
 
@@ -27,7 +27,9 @@ Current posture (design intention):
 
 ## 2. Transition posture (maturity phase)
 
-- Establish a nonprofit foundation in Switzerland or a comparable jurisdiction.
+- Establish a nonprofit foundation in Switzerland or ADGM (Abu Dhabi Global Market).
+- Switzerland offers strong institutional credibility and supervisory expectations; ADGM offers a lean, remote-friendly setup with lower early overhead.
+- The foundation is not incorporated yet; the jurisdiction choice will be made before incorporation and published with the foundation charter and governance updates.
 - Transfer stewardship of shared standards and public goods to the foundation.
 - Retain protocol neutrality and reduce single-vendor dependence.
   - This includes making any IP stewardship arrangement explicit (see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/legal/DEVCO_AGREEMENT.md](/legal/DEVCO_AGREEMENT), and [docs/legal/RESCO_AGREEMENT.md](/legal/RESCO_AGREEMENT)).

@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-CORE_PUBLIC.md](/spec/SPEC-CORE_PUBLIC))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-16  
 
 > Scope: Overview subset of [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) for integrators and external reviewers. This document focuses on externally visible behavior and concepts.
 > Docs center index (recommended starting point): [docs/welcome/INDEX.md](/welcome/INDEX)
@@ -35,6 +35,11 @@ For public integration purposes:
 
 - **Entity** – an on-chain record representing an organization (corporation, nonprofit, foundation, etc.).
 - **Canonical wallet** – a designated on-chain address associated with an entity for specific purposes (e.g. merchant, donation, treasury).
+- **Authority wallet** – a role-bound wallet that signs governance actions.
+- **Operational wallet** – a canonical wallet used for USDC inflows and outflows.
+- **Invoice (payment request)** – an on-chain request that resolves to a canonical payment wallet and amount, with status.
+- **Catalog item / service** – an on-chain item ID used for sales and invoicing.
+- **Recurring plan** – an on-chain schedule that creates invoices on a cadence.
 - **Tagged event** – a transfer or state change that includes standardized tags to describe its business or programmatic meaning.
 - **Module** – an extension that adds domain-specific logic, such as jurisdictional rules or sector-specific reporting frameworks.
 - **Recognized sub chain** – an external blockchain that interoperates with the Hub through standardized anchoring and recognition rules.
@@ -48,8 +53,11 @@ These concepts are stable entry points; details such as exact message names or e
 High-level summary of the Hub:
 
 - allows entities to be registered with minimal required metadata and canonical wallets;
-- records updates to entity metadata, roles, and wallet bindings;
+- records updates to entity metadata, roles, and wallet bindings (authority and operational);
+- supports delegated employee roles with approval scopes and limits (separate from payee wallets);
 - supports emission of tagged events associated with canonical wallets;
+- supports catalog items, invoices, and recurring plans for on-chain business operations;
+- supports nonprofit donation flows where direct transfers to donation wallets are allowed, with optional payment requests and anchored donation receipts;
 - enables governance over parameters, modules, and recognition;
 - maintains registries of modules and recognized sub chains.
 

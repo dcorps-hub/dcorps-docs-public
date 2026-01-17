@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-VENTURE.md](/hub-templates/CORP-VENTURE))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-16  
 
 > Scope: Defines the CORP-VENTURE Hub corporation template.
 
@@ -59,6 +59,10 @@
   - Optional precision patterns (pools + claims / vesting schedules) without breaking the base unit model.
 - **Stricter transfer rules**
   - Lockups, vesting locks, whitelists, and approval workflows for transfers.
+- **Canonical wallet structure**
+  - Standard wallet bindings used to compute consistent reporting views.
+- **Commerce primitives (items, invoices, recurring plans)**
+  - On-chain catalog items/services, invoices with status tracking, and optional recurring plans.
 - **Institutionally legible evidence trail**
   - Anchored board consents/resolutions and material agreements (term sheets, SAFEs/notes, grant letters).
   - Tagged operating flows for reproducible time-window reporting.
@@ -91,6 +95,8 @@ This section describes the minimum structure the template expects. Exact message
   - `treasurer`: operating payments + accounting event emission
   - `secretary`: governance records, minutes, and anchors (optional but recommended)
   - Optional: committee roles (e.g. `comp_committee`, `audit_committee`) if the entity wants delegated approvals
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
 - **Canonical wallets (minimum)**
   - `MERCHANT` (recommended): revenue inflows (invoice and checkout payment address)
   - `OPERATING_TREASURY` (required): primary operating spending
@@ -105,7 +111,23 @@ This section describes the minimum structure the template expects. Exact message
 - **Transfers and cap table policy (recommended baseline)**
   - Founders/investors: lockups and transfer approvals where required by agreements.
   - Employees/advisors: vesting locks and non-transferability defaults for unvested or claim-based grants.
-  - Unit actions (issue/transfer/cancel) treated as protected matters with required approvals and anchored evidence.
+- Unit actions (issue/transfer/cancel) treated as protected matters with required approvals and anchored evidence.
+
+---
+
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Operating/org: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+- Capital/financing: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`.
 
 ---
 
@@ -160,8 +182,9 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - define transfer restrictions (lockups, whitelists, approvals),
   - define approval requirements for unit actions; sign.
 - Set basic tags:
-  - define minimal revenue and expense categories,
-  - add business-unit tags if needed; sign.
+  - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+  - operating/org context: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`,
+  - capital/financing context: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`; sign.
 - (Optional) Set up a contributor pool:
   - allocate a pool of units to a pool address,
   - publish a vesting/grant policy and anchor supporting docs; sign.
@@ -175,7 +198,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - hash invoice/receipt/contract file (as applicable),
   - anchor the hash on-chain; optionally include a URI; sign.
 - Record income events:
-  - category + optional tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link invoice reference or anchor; sign.
 - (Optional) Move operating funds to treasury:
@@ -185,7 +208,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - routine payment: treasurer initiates and signs (within limit).
   - protected payment: treasurer initiates; board/committee approves; execute and record; sign.
 - Record expense events:
-  - category + optional tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipt anchor/ref when available; sign.
 
