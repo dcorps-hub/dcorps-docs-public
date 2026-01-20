@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025
 **Author**: Nicolas Turcotte, Founder
 **Source repo**: dcorps-docs-public ([docs/welcome/INDEX.md](/welcome/INDEX))
-**Last updated**: 2026-01-03
+**Last updated**: 2026-01-18
 
 > Scope: Start here for the public dCorps documentation set.
 
@@ -18,7 +18,7 @@ This is the public documentation set for dCorps and the DCHUB Hub chain: specs, 
 
 Internal playbooks and working documents are maintained separately and are not published here.
 
-Current status: Phase 0A (development). Mainnet is not live, the foundation is not incorporated, and DevCo incorporation is pending.
+Current status: Phase 0A (development). Mainnet is not live, the foundation is not incorporated, and DevCo is incorporated and active in the British Virgin Islands.
 
 ---
 

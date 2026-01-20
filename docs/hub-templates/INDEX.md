@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/INDEX.md](/hub-templates/INDEX))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-17  
 
 > Scope: Public reference for the Hub template catalog (corporation and nonprofit templates).
 
@@ -121,13 +121,13 @@ These clarifications apply across the template catalog:
 | `CORP-SOLO` | Low | Single operator (1-of-1) | Single-class units, simple cap table | Solo operator, fastest setup | `CORP-PRIVATE-STD` |
 | `CORP-PRIVATE-STD` | Low–Medium | Role-based separation of duties | Single-class units, routine approvals | Small teams, “serious small company” | `CORP-VENTURE` |
 | `CORP-VENTURE` | Medium | Board + protected matters | Pools/vesting patterns, stricter transfers | Venture-backed governance | `CORP-COMPLEX-PRIVATE` |
-| `CORP-COMPLEX-PRIVATE` | High | Board + committees | Multi-class units + group structures | Mature private corp / holdings | Custom / future templates |
+| `CORP-COMPLEX-PRIVATE` | High | Board + committees | Multi-class units + rounds + pools/vesting + group structures | Mature private corp / holdings | Custom / future templates |
 
 Common upgrade triggers:
 
 - Add separation of duties or multiple signers → move from `CORP-SOLO` to `CORP-PRIVATE-STD`.
 - Add a board, financings, pools/vesting, and stricter transfer restrictions → move to `CORP-VENTURE`.
-- Add multi-class units, committees, and holdings → move to `CORP-COMPLEX-PRIVATE`.
+- Add multi-class units, committees, holdings, or advanced treasury tiers → move to `CORP-COMPLEX-PRIVATE`.
 
 ---
 

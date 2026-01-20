@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/roadmap/PHASES.md](/roadmap/PHASES))  
-**Last updated**: 2026-01-01  
+**Last updated**: 2026-01-18  
 
 > Scope: Define phase goals and exit criteria based on the Whitepaper Long (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
 
@@ -57,6 +57,7 @@ Exit criteria:
 - Third parties can reproduce entity views and reporting outputs from raw chain data.
 - At least one upgrade rehearsal is executed on testnet.
 - Security and governance artifacts are published and verifiable.
+- IP stewardship transfer to the foundation is completed and publicly disclosed before mainnet.
 
 ---
 

@@ -6,17 +6,17 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/DEVCO_AGREEMENT.md](/legal/DEVCO_AGREEMENT))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-18  
 
 > Scope: Public summary of the intended relationship between DevCo and the dCorps ecosystem.
 
-Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet, and DevCo incorporation is pending.
+Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet; DevCo is incorporated and active in the British Virgin Islands.
 
 ---
 
 ## 1. Roles
 
-- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work. Planned DevCo legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending).
+- **Development corporation (DevCo)**: engineering, integrations, and delivery of protocol and tooling work. Legal entity: **dCorps Development Ltd.** (jurisdiction: **British Virgin Islands (BVI)**; incorporated; active).
 - **Foundation (planned; not yet incorporated)**: intended steward of public goods, standards, grants, and registry operations.
 - **Research company (ResCo)** (planned; incorporation pending): adoption-focused research organization. Planned ResCo legal entity (design intention): **dCorps Research LLC** (intended jurisdiction: **Wyoming (USA)**; incorporation pending) (see [ResCo Agreement](/legal/RESCO_AGREEMENT)).
 
@@ -37,8 +37,8 @@ Status note: This is not an executed contract and does not constitute legal advi
 
 Design intention (IP stewardship transition):
 
-- In early phases, protocol and brand IP may be held by the founder and/or DevCo once incorporated.
-- Once the foundation is incorporated and operationally ready, stewardship is intended to migrate to the foundation via a documented arrangement (assignment and/or licensing as appropriate).
+- In early phases, protocol and brand IP may be held by the founder and/or DevCo.
+- Once the foundation is incorporated and operationally ready, stewardship must migrate to the foundation via a documented arrangement (assignment and/or licensing as appropriate) before mainnet.
 - Any IP transition should be publicly disclosed with clear scope, so observers do not need to infer ownership from narrative docs.
 
 ---

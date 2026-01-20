@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-COMPLEX-PRIVATE.md](/hub-templates/CORP-COMPLEX-PRIVATE))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-17  
 
 > Scope: Defines the CORP-COMPLEX-PRIVATE Hub corporation template.
 
@@ -17,7 +17,7 @@
 - **Code**: CORP-COMPLEX-PRIVATE
 - **Template class**: Hub corporation
 - **Complexity**: High
-- **Primary objective**: multi-class private corporation with committee governance and advanced treasury policy
+- **Primary objective**: multi-class private corporation with committee governance, venture-grade capital controls, and advanced treasury policy
 - **Reporting view**: cash-based time-window operating view (unit of account: USDC)
 
 ---
@@ -27,6 +27,7 @@
 - Some private corporations need “institutional legibility” at the structure level:
   - multiple unit classes with distinct rights,
   - committees and delegated approvals,
+  - venture rounds, pools/vesting, and investor consent routing layered onto multi-class governance,
   - stronger treasury controls and policy enforcement,
   - holding-company/group structures with clear ownership chains.
 - CORP-COMPLEX-PRIVATE is the highest-complexity Hub-first corporation template in the initial catalog, intended for mature private structures that still want the Hub as their canonical registry, authority log, and operating ledger.
@@ -36,6 +37,7 @@
 ## Intended for
 
 - Private corporations with multi-class units and committee governance.
+- Venture-backed or late-stage private companies that require investor consents, pools/vesting, and committee oversight.
 - Multi-entity holdings or group structures that need explicit ownership mapping and intercompany evidence trails.
 - Teams that require advanced treasury policy (multi-tier approvals, budgets, per-wallet constraints).
 
@@ -54,6 +56,12 @@
 - **Multi-class unit structures**
   - Multiple unit classes with class-specific voting/economic rules (as defined by governance and anchored governing docs).
   - Class conversions, protected matters, and class-specific approvals where used.
+- **Venture-grade capital controls**
+  - Investor consents for protected matters where required.
+  - Financing rounds and security actions tracked with capital tags and approvals.
+- **Pools and vesting workflows**
+  - Option pools and vesting schedules supported for grants and incentives.
+  - Approval routing and evidence anchors for equity actions.
 - **Committee governance**
   - Board plus committee layers (e.g., audit, compensation, finance/investment) with explicit delegated powers.
 - **Advanced treasury policy**
@@ -124,6 +132,7 @@ This section describes the minimum structure the template expects. Exact message
   - Transfers can require:
     - whitelist checks,
     - class-specific approvals,
+    - investor consent checks (where required),
     - vesting/lockup checks,
     - right-of-first-refusal style routing (where the protocol/module supports it).
 - Corporate actions (issuance, cancellation, conversions, reorganizations) are recorded as standardized events linked to approvals and anchored documents.

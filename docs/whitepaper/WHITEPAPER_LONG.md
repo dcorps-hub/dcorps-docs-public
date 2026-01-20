@@ -11,7 +11,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
  [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-16
+**Last updated**: 2026-01-18
 
 **Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).
 
@@ -2527,7 +2527,7 @@ Templates are grouped under Hub corporation and Hub nonprofit. Each template has
 - **Complex private (CORP-COMPLEX-PRIVATE)**
    *Deployment:* dCorps Hub (shared)
    *Complexity:* High
-   A private corporation with multi-class units, committees, advanced treasury policy, and multi-entity holdings or group structures.
+   A private corporation with venture-grade capital controls (rounds, investor consents, pools/vesting), multi-class units, committees, advanced treasury policy, and multi-entity holdings or group structures.
 
 **Hub nonprofit templates**
 
@@ -6104,7 +6104,7 @@ A core design principle is:
 
 The foundation is the natural home for this adaptive work. It sponsors research, consults with stakeholders, proposes modules through governance, and retires or replaces modules when they no longer fit current realities.
 
-This is a **good faith design intention**, not a fixed commitment to move or incorporate by a specific date. The exact timing and structure of this transition will depend on legal, regulatory, financial, and operational considerations. Details will be documented in public filings and governance proposals.
+This is a **good faith design intention**, not a fixed commitment to move or incorporate by a specific date. The exact timing and structure of this transition will depend on legal, regulatory, financial, and operational considerations. Mainnet is gated on transferring protocol and brand IP stewardship to the foundation once formed; until that transfer is complete, mainnet does not proceed. Details will be documented in public filings and governance proposals.
 
 ------
 

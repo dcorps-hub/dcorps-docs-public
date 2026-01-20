@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH))  
-**Last updated**: 2026-01-15  
+**Last updated**: 2026-01-18  
 
 > Scope: Summary of the intended legal structure path described in the Whitepaper Long.
 
@@ -18,7 +18,7 @@ Status note: dCorps is in Phase 0A (development). Mainnet is not live and the fo
 
 Current posture (design intention):
 
-- **DevCo (planned)**: **dCorps Development Ltd.** is the intended development company (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending).
+- **DevCo (active)**: **dCorps Development Ltd.** is the development company (jurisdiction: **British Virgin Islands (BVI)**; incorporated; active).
 - **ResCo (planned)**: **dCorps Research LLC** is the intended research organization (intended jurisdiction: **Wyoming (USA)**; incorporation pending).
 - Early work focuses on protocol engineering, reference tooling, and public documentation.
 - This structure is not intended to create a custody or financial intermediation role.
@@ -31,6 +31,7 @@ Current posture (design intention):
 - Switzerland offers strong institutional credibility and supervisory expectations; ADGM offers a lean, remote-friendly setup with lower early overhead.
 - The foundation is not incorporated yet; the jurisdiction choice will be made before incorporation and published with the foundation charter and governance updates.
 - Transfer stewardship of shared standards and public goods to the foundation.
+- Transfer protocol and brand IP to the foundation before mainnet; launch is gated on completion.
 - Retain protocol neutrality and reduce single-vendor dependence.
   - This includes making any IP stewardship arrangement explicit (see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/legal/DEVCO_AGREEMENT.md](/legal/DEVCO_AGREEMENT), and [docs/legal/RESCO_AGREEMENT.md](/legal/RESCO_AGREEMENT)).
 
