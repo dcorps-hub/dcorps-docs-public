@@ -2,16 +2,16 @@
 
 #### Digitally native base layer for corporations and nonprofits, born and operated on-chain
 
-**Long Version**
+**Long Version**  
 
-**Document ID**: DCHUB-WP-2025-12-21
-**Version**: v1.3.1
-**Edition**: Long
-**Status**: Final v1.3.1
-**Release date**: December 21, 2025
-**Author**: Nicolas Turcotte, Founder
- [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-25
+**Document ID**: DCHUB-WP-2025-12-21  
+**Version**: v1.3.1  
+**Edition**: Long  
+**Status**: Final v1.3.1  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
+ [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Last updated**: 2026-01-25  
 
 **Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar). 2026-01-25: Orbit rollup sanity fixes (fee model alignment, operator roles, canonical stablecoin address language).
 
