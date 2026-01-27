@@ -26,7 +26,7 @@
 - Rollup stack: Arbitrum Orbit (Rollup mode) using Nitro.
 - Execution: EVM contracts (Solidity/Vyper) for the kernel and modules.
 - Settlement and data availability: Ethereum L1.
-- Bridging: canonical Ethereum <-> dCorps bridge gateways.
+- Bridging: canonical Ethereum to/from dCorps bridge gateways.
 - Upgrade pattern: timelocked upgradeable proxies with public admin roles.
 
 ---
