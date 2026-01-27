@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/roadmap/INDEX.md](/roadmap/INDEX))  
-**Last updated**: 2026-01-01  
+**Last updated**: 2026-01-25
 
 > Scope: Consolidated view of dCorps phases and roadmap sources.
 
@@ -22,7 +22,7 @@ These phases follow the Whitepaper Long (section 16) with a pre-phase for websit
 **Phase 0: Pre-mainnet readiness**
 - Publish specs, code, and verifiable testnet artifacts.
 - Provide reproducible tooling and example entity package.
-- Progress from baseline → dev testnet → public testnet → mainnet rehearsal testnet (design intention): [docs/devops/COSMOS_ENVIRONMENT.md](/devops/COSMOS_ENVIRONMENT).
+- Progress from baseline → dev testnet → public testnet → mainnet rehearsal testnet (design intention): [docs/devops/ROLLUP_ENVIRONMENT.md](/devops/ROLLUP_ENVIRONMENT).
 
 **Phase 1: Mainnet launch (Kernel v1)**
 - Launch stable Hub with core entity models and registries.
@@ -32,7 +32,7 @@ These phases follow the Whitepaper Long (section 16) with a pre-phase for websit
 - Conformance tests, stable APIs/SDKs, monitoring, and incident processes.
 
 **Phase 3: Ecosystem bootstrapping and stablecoin rails**
-- IBC stablecoin connectivity, registry systems, and reference UIs.
+- Ethereum bridge gateway stablecoin connectivity, registry systems, and reference UIs.
 
 **Phase 4: Adapter layer and institutional legibility**
 - Jurisdiction adapters, attestation modules, and institutional overlays.

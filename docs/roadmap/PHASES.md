@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/roadmap/PHASES.md](/roadmap/PHASES))  
-**Last updated**: 2026-01-01  
+**Last updated**: 2026-01-25
 
 > Scope: Define phase goals and exit criteria based on the Whitepaper Long (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
 
@@ -41,13 +41,13 @@ Key deliverables:
 
 - Hub chain source code and build instructions.
 - Protocol specs and module standards ([docs/spec/*](/spec)).
-- Network progression through testnet stages (design intention): baseline (local) → dev testnet (devnet) → public testnet → mainnet rehearsal testnet ([docs/devops/COSMOS_ENVIRONMENT.md](/devops/COSMOS_ENVIRONMENT)).
-- Public testnet with published chain ID, genesis file, and validator onboarding steps.
+- Network progression through testnet stages (design intention): baseline (local) → dev testnet (devnet) → public testnet → mainnet rehearsal testnet ([docs/devops/ROLLUP_ENVIRONMENT.md](/devops/ROLLUP_ENVIRONMENT)).
+- Public testnet with published chain ID, rollup contracts, and operator onboarding steps.
 - Reproducible tooling for nodes, indexers, and reporting views.
 - Public example entity package on testnet (corporation + nonprofit) with tagged events, anchors, and derived reports.
 - Audit scope and reports for core modules and reference tooling.
 - Bug bounty program with disclosure workflow.
-- Governance and validator charters plus Treasury policy ([docs/policy/*](/policy)).
+- Governance and operator charters plus Treasury policy ([docs/policy/*](/policy)).
 - Governance transition plan through foundation readiness ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
 - Begin translation of testnet-facing material (docs, onboarding, and notices) under the language set in [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION) (design intention).
 - Publish governance and stewardship posture (design intention): interim coordination, foundation readiness targets, and IP/brand stewardship disclosures.
@@ -57,6 +57,7 @@ Exit criteria:
 - Third parties can reproduce entity views and reporting outputs from raw chain data.
 - At least one upgrade rehearsal is executed on testnet.
 - Security and governance artifacts are published and verifiable.
+- IP stewardship transfer to the foundation is completed and publicly disclosed before mainnet.
 
 ---
 
@@ -66,8 +67,8 @@ Objective: launch a stable Hub that can host complete Hub corporations and Hub n
 
 Key deliverables:
 
-- Genesis mainnet (TGE): published genesis package and checksums, coordinated validator start, and runtime stability.
-- DCHUB gas, staking, and governance primitives.
+- Genesis mainnet (TGE): published genesis package and checksums, coordinated operator launch, and runtime stability.
+- DCHUB gas and governance primitives (timelocked upgrades).
 - Entity registry with IDs, types, metadata, and lifecycle status.
 - Hub corporation module v1 and Hub nonprofit module v1.
 - Canonical wallets and tagged accounting event schemas.
@@ -92,9 +93,9 @@ Key deliverables:
 
 - Conformance test suite for entity modules, schemas, and indexing compatibility.
 - Stable APIs and SDKs for core operations.
-- Monitoring, alerting, and incident processes for validators and core services.
+- Monitoring, alerting, and incident processes for operators and core services.
 - Bug bounty expansion and formalized threat models for the kernel.
-- UX primitives such as fee grants that allow stablecoin service fees while execution uses DCHUB.
+- UX primitives such as fee grants that allow stablecoin-sponsored coverage of DCHUB protocol fees while execution uses DCHUB.
 
 Exit criteria:
 
@@ -109,7 +110,7 @@ Objective: make the Hub easy to use for real organizations and easy to integrate
 
 Key deliverables:
 
-- IBC stablecoin connectivity and standard treasury patterns.
+- Ethereum bridge gateway stablecoin connectivity and standard treasury patterns.
 - App and module registry with metadata, versioning, and security posture disclosures.
 - Reference templates for common entity setups.
 - Indexer redundancy and data availability patterns.
@@ -146,7 +147,7 @@ Objective: reach a state where the Hub is a long-lived, self-sustaining public u
 
 Key deliverables:
 
-- Decentralized validator set and governance participation.
+- Decentralized operator set and governance participation.
 - Multiple independent indexers and reference implementations.
 - Predictable upgrade cadence and mature incident processes.
 - Sustainable foundation processes for standards, audits, and ecosystem support.
@@ -160,4 +161,4 @@ Exit criteria:
 
 ## Optional future phase - Advanced execution environments
 
-Sub chains, specialized privacy execution, and public instrument models are explored only if real adoption proves they are needed and kernel invariants remain intact.
+Specialized privacy execution and public instrument models are explored only if real adoption proves they are needed and kernel invariants remain intact.

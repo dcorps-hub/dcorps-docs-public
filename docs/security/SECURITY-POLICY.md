@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Security principles, responsibilities, and baseline controls for the dCorps protocol and foundation. This policy is complementary to the Threat Model, Audit Plan, Bug Bounty, and Incident Response documents.
 
@@ -25,7 +25,7 @@ dCorps adopts the following principles:
 Security considerations span:
 
 - core protocol and modules;
-- validators and node operators;
+- rollup operators and infrastructure providers;
 - foundation operations and treasury;
 - ecosystem tooling and integrations.
 
@@ -39,8 +39,8 @@ Security is a shared responsibility:
   - design and implement protocol logic with security in mind;
   - maintain secure development practices and code review standards;
   - coordinate technical response to vulnerabilities and incidents.
-- **Validators and node operators**
-  - secure validator infrastructure and signing access;
+- **Rollup operators and infrastructure providers**
+  - secure sequencing, batch-posting, and RPC infrastructure and signing access;
   - keep software up to date;
   - participate in coordinated incident handling.
 - **dCorps Foundation**
@@ -61,7 +61,7 @@ Core protocol and critical tooling follow a secure development lifecycle (SDLC) 
 
 - security-conscious design reviews for new features and changes;
 - static and dynamic analysis where appropriate;
-- mandatory peer review for code changes affecting consensus, cryptography, or funds;
+- mandatory peer review for code changes affecting rollup configuration, cryptography, or funds;
 - structured testing at unit, integration, and system levels;
 - periodic security training for contributors.
 
@@ -75,7 +75,7 @@ Changes that significantly affect security are:
 
 ## 4. Custody and operational security
 
-dCorps is non-custodial. Validators, entities, and users are responsible for securing their wallets, signing access, and operational procedures.
+dCorps is non-custodial. Operators, entities, and users are responsible for securing their wallets, signing access, and operational procedures.
 
 Foundation and treasury operational security details are maintained internally and are not part of the public documentation set.
 
@@ -96,4 +96,4 @@ Operational guidance covers:
 - secure use of third-party dependencies and services;
 - backups and disaster recovery plans for critical systems.
 
-Validators and ecosystem participants are encouraged to adopt similar best practices, adapted to their own risk profiles.
+Operators and ecosystem participants are encouraged to adopt similar best practices, adapted to their own risk profiles.

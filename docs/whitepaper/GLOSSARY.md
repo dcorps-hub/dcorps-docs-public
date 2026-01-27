@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-26
 
 ---
 
@@ -16,8 +16,11 @@
 **dCorps**  
 The protocol and ecosystem described in the dCorps documentation; a digitally native base layer for entities.
 
-**Hub / dCorps Hub chain**  
-The Cosmos-based chain that acts as the canonical registry and coordination layer, runs DCHUB, and hosts Hub entities.
+**dCorps Hub**  
+The platform and coordination layer for entities, governance, templates, and shared standards. The Hub runs on dCorps Chain and anchors canonical entity state.
+
+**dCorps Chain / Hub chain**  
+The Arbitrum Orbit rollup (Rollup mode) that executes Hub transactions, runs DCHUB, and settles to Ethereum. Sometimes called the Hub chain in technical contexts.
 
 **Hub entity**  
 An entity that operates directly on the Hub (Hub corporation or Hub nonprofit).
@@ -35,10 +38,10 @@ A nonprofit/NGO entity operating on the Hub, with board governance, donation/pro
 Internal units of a Hub corporation that represent economic and voting rights inside that corporation. Scoped to that entity. Default base unit count is 10,000 (1 unit = 0.01 percent), expandable in multiples of 10,000; v0.1 templates recommend a practical maximum of 1,000,000 base units for interoperability and UI performance.
 
 **DCHUB**  
-The Hub’s native token used for gas, staking, and protocol governance. Not equity in user entities or in the development corporation or foundation.
+The Hub’s native token used for gas, protocol governance, and protocol-level fees. Not equity in user entities or in the development corporation or foundation.
 
 **USDC**  
-The baseline unit of account for examples and the primary operating currency for many entities and protocol service fees.
+The baseline unit of account for examples and the primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
 
 **Canonical wallet**  
 A designated on-chain address (or address set) associated with an entity for specific purposes (for example merchant, donation, program, operating treasury, reserves).
@@ -70,20 +73,14 @@ A protocol module defining metrics and standards for a domain such as climate, e
 **Attestation**  
 A signed statement or signal produced by an entity or third-party about facts or reconciliation claims, published through optional modules.
 
-**Sub chain**  
-A Cosmos-based chain registered with the Hub and anchored to it under dCorps standards. Sub chains are optional and are not required for v1 entity operation.
-
-**Recognized sub chain**  
-A sub chain that meets explicit anchoring and recognition standards and is labeled accordingly in the Hub registry.
-
-**Recognition tier**  
-A label describing the level and type of recognition granted to a sub chain by the Hub, used by explorers and modules to interpret anchors.
+**Bridge gateway**  
+Canonical contracts that move assets between Ethereum and the Hub.
 
 **Protocol governance**  
 On-chain governance processes that control protocol upgrades, parameters, module registry status, and related decisions.
 
 **Protected Change**  
-A class of high-impact protocol change intended to require higher thresholds and additional safety mechanisms (for example stake-age weighting and execution timelocks).
+A class of high-impact protocol change intended to require higher thresholds and additional safety mechanisms (for example voting-power age and execution timelocks).
 
 **Protocol Treasury**  
 The pool of assets governed by the protocol and related policy frameworks for long-term development, security, and ecosystem support.

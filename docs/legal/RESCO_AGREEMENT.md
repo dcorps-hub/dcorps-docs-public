@@ -6,18 +6,18 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/RESCO_AGREEMENT.md](/legal/RESCO_AGREEMENT))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-18  
 
 > Scope: Public summary of the intended relationship between ResCo and the dCorps ecosystem.
 
-Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet, and DevCo/ResCo incorporation is pending.
+Status note: This is not an executed contract and does not constitute legal advice. The foundation is not incorporated yet; DevCo is incorporated and active in the British Virgin Islands and ResCo incorporation is pending.
 
 ---
 
 ## 1. Roles
 
 - **Research company (ResCo)**: planned adoption-focused research organization. Planned ResCo legal entity (design intention): **dCorps Research LLC** (intended jurisdiction: **Wyoming (USA)**; incorporation pending).
-- **DevCo (planned; incorporation pending)**: engineering delivery of protocol and tooling work. Planned DevCo legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending) (see [DevCo Agreement](/legal/DEVCO_AGREEMENT)).
+- **DevCo (active)**: engineering delivery of protocol and tooling work. Legal entity: **dCorps Development Ltd.** (jurisdiction: **British Virgin Islands (BVI)**; incorporated; active) (see [DevCo Agreement](/legal/DEVCO_AGREEMENT)).
 - **Foundation (planned; not yet incorporated)**: intended steward of public goods and ecosystem programs (see [Foundation Policy](/policy/POL-FOUNDATION)).
 
 ---
@@ -39,6 +39,7 @@ ResCo work is intended to focus on dCorps Hub and protocol adoption, including:
 
 - Core protocol standards and specifications are intended to remain public and neutral.
 - Research outputs may be published under open terms where appropriate, or under clearly disclosed licenses if not.
+- IP stewardship must transfer to the foundation before mainnet through a documented arrangement.
 - Any IP stewardship transition to a future foundation should be disclosed explicitly with scope and boundaries.
 
 ---

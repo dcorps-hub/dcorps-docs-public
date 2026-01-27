@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-SOLO.md](/hub-templates/CORP-SOLO))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the CORP-SOLO Hub corporation template (solo owner-operator).
 
@@ -38,6 +38,7 @@
 - Solo founders or owner-operators who want a clean, legible on-chain structure.
 - Teams that accept a single controller during the early phase (1 signer, minimal separation of duties).
 - Migrating an existing off-chain entity to a parallel on-chain operating ledger under one controller (optional).
+- Solo owners who still delegate limited authority to employees or operators.
 
 ---
 
@@ -59,11 +60,24 @@
 - **Single-operator authority**
   - One address holds admin, board, and treasurer powers.
   - Default treasury approval is 1-of-1.
+- **Delegated operators and employee roles (optional)**
+  - Employee role wallets can draft invoices, tag flows, or prepare payouts.
+  - The owner retains final approval for protected actions.
 - **Canonical wallet structure**
   - Standard wallet bindings used by apps and indexers to compute consistent views.
+- **Approval scopes and limits**
+  - Per-wallet or per-category thresholds define what can execute automatically vs require approval.
+- **Commerce primitives (items, invoices, recurring plans)**
+  - On-chain catalog items/services, invoices with status tracking, and optional recurring plans.
+  - Invoice status supports waivers and cancellations for exceptions.
+- **Payroll and contractor payouts**
+  - Payee wallets receive salary; role wallets handle approvals or execution (kept separate).
+  - Tagged payouts for payroll/contractor expenses (optional schedules via apps).
 - **Tagged flows for reproducible reporting**
-  - Inflows/outflows are tagged with category codes and optional program tags.
+  - Inflows/outflows are tagged with category codes plus operating and equity context tags as needed.
   - Material items can link to anchored evidence (invoices, receipts, agreements).
+- **Counterparty directory (privacy-aware)**
+  - Pseudonymous counterparty IDs (`counterparty_tag`) map to off-chain records for repeat clients/vendors.
 - **Deterministic reporting outputs (reference tooling)**
   - Balances by canonical wallet type.
   - Inflows/outflows by category over any selected timeframe.
@@ -95,27 +109,53 @@ This section describes the minimum structure the template expects. Exact message
   - `admin`: one address
   - `board`: same address
   - `treasurer`: same address
+- **Delegated roles (optional)**
+  - Bind employee role wallets for invoicing, tagging, payout prep, or execution under limits.
+  - Recommended role types: `operator`, `accountant`, `approver`, `payout_executor`.
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
+  - Payee wallets used for salary are not authority wallets unless explicitly bound to a role.
 - **Canonical wallets (minimum)**
   - `MERCHANT` (recommended): revenue inflows (invoice and checkout payment address)
   - `OPERATING_TREASURY` (required): primary operating spending
   - `RESERVES` (optional): buffers and strategic reserves
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
+  - Treasury/reserve wallets may hold DCHUB for gas buffers or protocol exposure; tag holdings with `asset_tag` and `BAL_DCHUB`.
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Treasury policy (default)**
   - Approval rule: 1-of-1 (the treasurer address).
-  - Optional: per-wallet outbound limits and evidence requirements above a materiality threshold.
+  - Optional: per-wallet or per-category limits, plus evidence requirements above a materiality threshold.
 - **Tagging and evidence (minimum)**
   - Each material inflow/outflow is tagged with:
-    - category code (chart of accounts),
+    - `category_code` (chart of accounts),
+    - `counterparty_type`,
+    - `reference_id` and `reference_type` when applicable,
     - amount and denom (USDC-only in v0.1),
-    - optional program/business-unit tags,
+    - optional operating and equity context tags (`program_tag` or `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`),
     - optional evidence reference (anchor ID or hash).
+  - Use `counterparty_tag` as a pseudonymous ID; keep mappings off-chain.
   - Evidence anchors are recommended above a materiality threshold (default planning threshold: 1,000 USDC; configurable by entity policy).
 
 ---
 
-## Reporting view (what downstream tools can produce)
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Operating/org: `program_tag` or `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+- Equity context: `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`.
+
+---
+
+## Live on-chain views (what explorers show)
 
 - **Cash-based time-window view** (for any selected timeframe)
   - Wallet balances and movements for canonical wallets.
@@ -156,27 +196,35 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - sets owner-of-record at creation.
 - Assign roles (solo):
   - bind `admin`, `board`, `treasurer` to the same address; sign.
+- Optional: bind delegated employee roles:
+  - bind employee role wallets (invoicing, tagging, payout prep, payout execution); sign.
 - Bind canonical wallets:
   - bind `OPERATING_TREASURY` and (recommended) `MERCHANT`; sign.
 - Set a simple treasury policy:
   - approval rule: 1-of-1,
-  - optional per-wallet limits; sign.
+  - optional per-wallet or per-category limits; sign.
+- Optional: bind payee wallets:
+  - add payroll/contractor payee wallets (separate from role wallets); sign if stored on-chain.
+- Optional: register counterparties and payees:
+  - create pseudonymous counterparty IDs and map them off-chain; sign if stored on-chain.
 - Set basic tags:
-  - define minimal revenue and expense categories,
-  - add program/business-unit tags if needed; sign.
+  - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+  - optional: `program_tag` or `business_unit_tag`, `project_tag`, `region_tag`, `counterparty_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`; sign.
 
 ### 2) Operate (repeat)
 
 - Fund the company wallet:
-  - receive USDC (on Noble, via IBC) into a canonical wallet.
-- (Optional) Create an invoice and anchor evidence:
+  - receive USDC (bridged from Ethereum to the canonical USDC contract on dCorps) into a canonical wallet.
+- (Optional) Create a catalog item:
+  - define `item_id`, label, and price; sign.
+- (Optional) Create an invoice or recurring plan and anchor evidence:
   - ensure the invoice/checkout pays to the canonical `MERCHANT` wallet,
   - hash invoice/receipt file,
   - anchor the hash on-chain; optionally include a URI; sign.
 - Receive payment:
   - payer transfers USDC to the canonical wallet shown on the invoice/checkout (typically `MERCHANT`); confirm on-chain.
 - Record income event:
-  - tag with category + optional program tag,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link invoice reference or anchor; sign.
 - (Optional) Move operating funds to treasury:
@@ -184,23 +232,29 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - tag as treasury movement/internal transfer; sign.
 - Pay a vendor:
   - transfer from a canonical wallet; sign.
+- Pay employees or contractors (optional):
+  - transfer from `OPERATING_TREASURY` to payee wallets; sign or approve.
+  - delegated employees can execute within limits if authorized.
 - Record expense event:
-  - tag with category + optional program tag,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipt hash if available; sign.
 - Owner draw (if used):
   - transfer to personal wallet,
   - tag as draw/distribution under your category scheme; sign.
+- Handle waivers or cancellations (if needed):
+  - update invoice status to `waived` or `canceled`; sign.
 
-### 3) Review, report, and close (repeat)
+### 3) Review, verify, and close (repeat)
 
 - Review dashboard:
   - balances by canonical wallet,
   - tagged flows and coverage (inflow, outflow, evidence),
   - missing tags or anchors.
-- Export a report:
+- View live summary:
   - select period,
-  - export the cash-based operating view (unit of account: USDC).
+  - view the cash-based operating view (unit of account: USDC),
+  - export a snapshot if needed.
 - Anchor a decision (optional):
   - hash the decision note,
   - anchor hash on-chain,

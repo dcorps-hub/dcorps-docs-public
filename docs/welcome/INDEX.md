@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025
 **Author**: Nicolas Turcotte, Founder
 **Source repo**: dcorps-docs-public ([docs/welcome/INDEX.md](/welcome/INDEX))
-**Last updated**: 2026-01-03
+**Last updated**: 2026-01-26
 
 > Scope: Start here for the public dCorps documentation set.
 
@@ -14,11 +14,11 @@
 
 ## What this docs center is
 
-This is the public documentation set for dCorps and the DCHUB Hub chain: specs, policy, security posture, token documents, roadmap notes, and supporting materials.
+This is the public documentation set for dCorps and the dCorps Hub chain: specs, policy, security posture, token documents, roadmap notes, and supporting materials.
 
 Internal playbooks and working documents are maintained separately and are not published here.
 
-Current status: Phase 0A (development). Mainnet is not live, the foundation is not incorporated, and DevCo incorporation is pending.
+Current status: Phase 0A (development). Mainnet is not live, the foundation is not incorporated, and DevCo is incorporated and active in the British Virgin Islands.
 
 ---
 
@@ -28,7 +28,7 @@ Current status: Phase 0A (development). Mainnet is not live, the foundation is n
 - Whitepaper Long (narrative + rationale): [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
 - Hub templates (entity template catalog): [docs/hub-templates/INDEX.md](/hub-templates/INDEX)
 - Specs (normative protocol rules): [docs/spec/INDEX.md](/spec/INDEX)
-- Policy (governance, validators, treasury, foundation): [docs/policy/POL-GOV.md](/policy/POL-GOV)
+- Policy (governance, operators, treasury, foundation): [docs/policy/POL-GOV.md](/policy/POL-GOV)
 - Roadmap and phases: [docs/roadmap/INDEX.md](/roadmap/INDEX)
 - People & Organization: [docs/people/INDEX.md](/people/INDEX)
 - Legal posture (summary docs, no advice): [docs/legal/INDEX.md](/legal/INDEX)

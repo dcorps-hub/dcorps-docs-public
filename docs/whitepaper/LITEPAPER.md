@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2025-12-24
+**Last updated**: 2026-01-25
 
 ---
 
@@ -31,7 +31,7 @@ It provides a shared standard where organizations can be:
 
 - registered with canonical identity;
 - owned or governed with verifiable roles and governance actions;
-- operated with standardized treasury and accounting events; and
+- operated with standardized wallet structures and accounting events; and
 - audited over time through deterministic on-chain state and anchored evidence.
 
 dCorps is infrastructure. It does not provide legal, tax, or regulatory guarantees. It does not provide custody. It does not operate as a bank, broker, exchange, or fundraising platform.
@@ -65,7 +65,7 @@ The kernel provides:
 
 - canonical entity identity and discovery;
 - ownership and authority (roles, approvals, governance actions);
-- treasury primitives and standardized accounting events;
+- wallet structure (authority approvals and operational payments), commerce primitives, and standardized accounting events;
 - document anchoring for governing documents, resolutions, and evidence.
 
 Everything that varies by jurisdiction, institution, or sector is optional and sits above the kernel as protocol modules.
@@ -80,7 +80,7 @@ v1 is intentionally narrow: ship a stable Hub kernel that can host complete corp
 
 **In scope for v1**
 
-- Hub chain, DCHUB gas and staking, and basic on-chain protocol governance.
+- Hub rollup (Arbitrum Orbit, Rollup mode), DCHUB gas + protocol governance + protocol-level fees, and basic on-chain governance.
 - Entity registry and entity lifecycle status.
 - Standard on-chain entity containers:
   - Hub corporation (units, role-based governance, structured accounting primitives).
@@ -94,9 +94,21 @@ v1 is intentionally narrow: ship a stable Hub kernel that can host complete corp
 
 - any requirement to attach a jurisdiction adapter or compliance process;
 - any promise of listing, liquidity, or public-market infrastructure;
-- operating fiat rails, bank integrations, or custody;
+- operating any fiat rails or bank integrations (not supported at any layer), or custody of fiat;
 - mandatory protocol-level KYC/KYB/AML (these live in applications and optional modules);
 - default full privacy execution (privacy is an optional evolution).
+
+### Privacy, disclosure, and lifecycle
+
+Transparency is the default, but entities can choose how much detail to publish. Each entity declares a disclosure mode at creation:
+
+- **Mode A**: everything public.
+- **Mode B**: public structure with aggregate reporting.
+- **Mode C**: private execution with public proof anchors.
+
+Choosing a mode does not automatically hide data; confidentiality requires privacy-preserving tools.
+
+Every entity also has a lifecycle status in the registry so counterparties can see whether it is draft, active, suspended, or dissolved.
 
 ---
 
@@ -106,14 +118,16 @@ v1 is intentionally narrow: ship a stable Hub kernel that can host complete corp
 
 1. Submit an entity registration transaction and pay protocol fees.
 2. Bind initial roles (board seats for nonprofits; governance roles for corporations).
-3. Bind canonical wallets (merchant, donation, program, treasury, and other configured wallet types).
+3. Bind authority wallets (role-bound) and canonical operational wallets (merchant, donation, program, treasury, and other configured wallet types).
 4. Anchor baseline governing documents by hash.
 
 ### 5.2 Operate day to day in stablecoins
 
-1. Receive inflows to canonical wallets.
-2. Execute payouts from canonical wallets using tagged accounting events.
-3. Anchor evidence for material items where appropriate.
+1. Issue invoices or recurring plans tied to canonical payment wallets.
+   - Nonprofits can accept direct donations to the donation wallet without invoices; payment requests are optional for structured giving.
+2. Receive inflows to canonical wallets.
+3. Execute payouts from canonical wallets using tagged accounting events.
+4. Anchor evidence for material items where appropriate.
 
 ### 5.3 Generate views (any timeframe)
 
@@ -135,10 +149,10 @@ External applications (UIs, payroll, donation portals, dashboards)
 Optional adapters and modules (jurisdiction recognition, sector frameworks, attestations)
         |
         v
-dCorps Hub kernel (entity registry, roles, governance, wallets, accounting events, anchoring)
+dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
         |
         v
-DCHUB staking and consensus (security, gas, protocol governance)
+DCHUB gas + rollup settlement (sequencer + Ethereum)
 ```
 
 The Hub is intended to be the canonical source of truth for entity identity, authority, and standardized accounting events.
@@ -173,7 +187,7 @@ Nonprofits do not have equity and are not “owned” by units, but they can sti
 
 ### 7.3 Optional extensions
 
-The ecosystem may support optional, registered sub chains in the future. v1 does not require any sub chains for entities to operate.
+The ecosystem may support optional private execution zones or specialized application workflows in the future. v1 does not require any private execution zones for entities to operate.
 
 ---
 
@@ -181,8 +195,7 @@ The ecosystem may support optional, registered sub chains in the future. v1 does
 
 dCorps uses two primary assets with distinct roles:
 
-- **DCHUB**: gas, staking, and protocol governance; security root for the Hub and recognized sub chains.
-- **USDC**: baseline unit of account and primary operating currency for many entities and protocol service fees.
+- **DCHUB**: gas, protocol governance, and protocol-level fees in the Orbit rollup architecture.\n+- **USDC**: baseline unit of account and primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
 
 This describes protocol mechanics, not market outcomes.
 

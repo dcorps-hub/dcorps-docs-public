@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/INDEX.md](/devops/INDEX))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: How infrastructure, environments, releases, and operations are planned for dCorps.
 
@@ -16,11 +16,11 @@
 
 - Environment strategy: [docs/devops/ENVIRONMENTS.md](/devops/ENVIRONMENTS)
 - Network parameters: [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS)
-- Cosmos environment setup: [docs/devops/COSMOS_ENVIRONMENT.md](/devops/COSMOS_ENVIRONMENT)
+- Rollup environment setup: [docs/devops/ROLLUP_ENVIRONMENT.md](/devops/ROLLUP_ENVIRONMENT)
 - CI/CD and release flow: [docs/devops/CI_CD.md](/devops/CI_CD)
 - Release and promotion process: [docs/devops/RELEASE_PROCESS.md](/devops/RELEASE_PROCESS)
 - Observability: [docs/devops/OBSERVABILITY.md](/devops/OBSERVABILITY)
 - Security and access: [docs/devops/SECURITY.md](/devops/SECURITY)
 - Backup strategy: [docs/devops/BACKUP_STRATEGY.md](/devops/BACKUP_STRATEGY)
-- IBC relayer ops: [docs/devops/IBC_OPERATIONS.md](/devops/IBC_OPERATIONS)
+- Bridge gateway ops: [docs/devops/BRIDGE_OPERATIONS.md](/devops/BRIDGE_OPERATIONS)
 - Runbook index: [docs/devops/RUNBOOKS.md](/devops/RUNBOOKS)

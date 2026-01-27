@@ -6,37 +6,37 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/STACK.md](/engineering/STACK))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
-> Scope: Baseline implementation stack for the Hub chain, indexer, and app surfaces. Changes require updating this file and referencing the change in relevant release notes (or governance proposals when protocol-affecting).
+> Scope: Baseline implementation stack for the Hub rollup, indexer, and app surfaces. Changes require updating this file and referencing the change in relevant release notes (or governance proposals when protocol-affecting).
 
 ---
 
 ## 1. Goals
 
-- Minimize novel tech; prefer Cosmos defaults.
-- Keep consensus-critical code in a single primary language.
+- Minimize novel tech; prefer Orbit and EVM defaults.
+- Keep consensus-critical components minimal and transparent.
 - Keep data pipelines reproducible and auditable.
-- Align frontend with Cosmos wallet standards.
+- Align frontend with EVM wallet standards.
 
 ---
 
-## 2. Chain and core protocol
+## 2. Rollup and core protocol
 
-- Language: Go.
-- Framework: Cosmos SDK (target v0.50.x baseline).
-- Consensus engine: CometBFT (target v0.38.x baseline).
-- IBC: ibc-go (target v8.x baseline).
-- Smart contracts: disabled in v1; CosmWasm is optional for later phases only.
+- Rollup stack: Arbitrum Orbit (Rollup mode) using Nitro.
+- Execution: EVM contracts (Solidity/Vyper) for the kernel and modules.
+- Settlement and data availability: Ethereum L1.
+- Bridging: canonical Ethereum <-> dCorps bridge gateways.
+- Upgrade pattern: timelocked upgradeable proxies with public admin roles.
 
 ---
 
 ## 3. Indexer and data services
 
-- Ingestion service: Go.
+- Ingestion service: Go or TypeScript (implementation-specific).
 - Primary datastore: PostgreSQL.
 - Reporting and analytics: Python (pandas) for reproducible report generation.
-- Public API surface: REST + gRPC; GraphQL is optional after Phase 1.
+- Public API surface: JSON-RPC + REST; GraphQL is optional after Phase 1.
 
 ---
 
@@ -46,7 +46,7 @@
 - Explorer and app: React + TypeScript with Next.js.
 - Data fetching: React Query.
 - UI primitives: headless components + Tailwind CSS.
-- Wallet integration: cosmos-kit with Keplr, Leap, and Cosmostation; WalletConnect for mobile.
+- Wallet integration: MetaMask, Rabby, and WalletConnect (mobile-compatible).
 - Hosting: Vercel for static site and app deployments.
 - Analytics: Plausible; error tracking: Sentry.
 

@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/FAQ.md](/whitepaper/FAQ))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 ---
 
@@ -61,7 +61,7 @@ Both are complete on-chain entity containers, but they differ in governance and 
 
 ## What is DCHUB?
 
-DCHUB is the Hub’s native token used for gas, staking (economic security), and protocol governance. It does not represent ownership in user entities, the development corporation, or the foundation.
+DCHUB is the Hub’s native token used for gas, protocol governance, and protocol-level fees. It does not represent ownership in user entities, the development corporation, or the foundation.
 
 See [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY).
 

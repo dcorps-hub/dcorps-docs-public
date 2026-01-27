@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/INDEX.md](/hub-templates/INDEX))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-25
 
 > Scope: Public reference for the Hub template catalog (corporation and nonprofit templates).
 
@@ -23,14 +23,39 @@ Templates are standardized governance and operating blueprints for Hub entities.
 - Pick the template code that matches your governance needs and operating complexity.
 - Create the entity on the Hub using that template code.
 - Bind canonical wallets and roles according to the template.
-- Use USDC (on Noble, via IBC) as the v0.1 operating currency and reporting unit of account (USDC-only in v0.1; additional assets may be approved later).
+- Create catalog items/services and on-chain invoices; use the canonical payment wallet type for customer or donor payments.
+- Use USDC (bridged from Ethereum to the canonical USDC contract on dCorps) as the v0.1 operating currency and reporting unit of account (USDC-only in v0.1; additional assets may be approved later).
 - Configure gas coverage for signers (DCHUB): keep signer balances funded, set up DCHUB fee grants, or use apps with sponsored transactions.
 - Route inflows/outflows through canonical wallets to maximize coverage.
-- Tag material inflows/outflows using the standard chart-of-accounts categories and your program/business-unit tags.
+- Tag material inflows/outflows using the required tags (`category_code`, `counterparty_type`, `reference_id`, `reference_type` when applicable) plus template-specific tags from each guide.
 - Anchor evidence (minutes, policies, invoices, receipts, agreements) for material items.
+- Use recurring plans when you need automatic, scheduled invoices.
 - Use reference tooling (indexers/explorers) to generate time-window reporting views over any selected timeframe:
   - corporations: cash-based operating view
   - nonprofits: allocation view (with a required transparency floor)
+
+---
+
+## Tagging and template-specific tags
+
+Tags make accounting events and allocation views reproducible. Every template uses the same required tags:
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Each template highlights a focused set of optional tag groups. Use the full taxonomy in `SPEC-DATA.md` when you need additional granularity.
+
+### Template tag sets (at a glance)
+
+- CORP-SOLO: operating/org context + equity context tags.
+- CORP-PRIVATE-STD: operating/org context + equity context tags.
+- CORP-VENTURE: operating/org context + capital/financing context tags.
+- CORP-COMPLEX-PRIVATE: operating/org context + capital/financing + treasury/asset context tags.
+- NONPROFIT-SIMPLE: program/fund + donor/grant context tags.
+- NONPROFIT-BOARD: program/fund + donor/grant + impact/reporting context tags.
+- NONPROFIT-COMPLEX: program/fund + donor/grant + impact + treasury/asset context tags.
 
 ---
 
@@ -42,8 +67,12 @@ Across corporation and nonprofit templates, the Hub kernel provides the same cor
   - stable Entity ID, type, lifecycle status, and minimal metadata.
 - **Role bindings and authority**
   - who can configure the entity, approve actions, and sign flows.
+- **Authority and operational wallets**
+  - role-bound authority wallets sign actions; operational wallets receive and send USDC.
 - **Canonical wallets**
-  - standardized wallet type bindings used by apps and indexers.
+  - standardized wallet type bindings used by apps and indexers for payment routing.
+- **Commerce primitives**
+  - catalog items/services, invoices (payment requests), and recurring plans with status tracking.
 - **Tagged accounting events**
   - category codes and tags on inflows/outflows for reproducible reporting.
 - **Anchors**
@@ -92,13 +121,13 @@ These clarifications apply across the template catalog:
 | `CORP-SOLO` | Low | Single operator (1-of-1) | Single-class units, simple cap table | Solo operator, fastest setup | `CORP-PRIVATE-STD` |
 | `CORP-PRIVATE-STD` | Low–Medium | Role-based separation of duties | Single-class units, routine approvals | Small teams, “serious small company” | `CORP-VENTURE` |
 | `CORP-VENTURE` | Medium | Board + protected matters | Pools/vesting patterns, stricter transfers | Venture-backed governance | `CORP-COMPLEX-PRIVATE` |
-| `CORP-COMPLEX-PRIVATE` | High | Board + committees | Multi-class units + group structures | Mature private corp / holdings | Custom / future templates |
+| `CORP-COMPLEX-PRIVATE` | High | Board + committees | Multi-class units + rounds + pools/vesting + group structures | Mature private corp / holdings | Custom / future templates |
 
 Common upgrade triggers:
 
 - Add separation of duties or multiple signers → move from `CORP-SOLO` to `CORP-PRIVATE-STD`.
 - Add a board, financings, pools/vesting, and stricter transfer restrictions → move to `CORP-VENTURE`.
-- Add multi-class units, committees, and holdings → move to `CORP-COMPLEX-PRIVATE`.
+- Add multi-class units, committees, holdings, or advanced treasury tiers → move to `CORP-COMPLEX-PRIVATE`.
 
 ---
 

@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-26
 
 ---
 
@@ -19,7 +19,7 @@ This document is descriptive. Normative behavior is defined in the specification
 
 ## 1. What this is (and is not)
 
-This technical overview is a public map of the dCorps Hub architecture:
+This technical overview is a public map of the dCorps Hub architecture. The Hub runs on dCorps Chain, an Arbitrum Orbit rollup (Rollup mode) that settles to Ethereum:
 
 - what the Hub kernel does;
 - what lives in protocol modules (optional); and
@@ -50,7 +50,7 @@ Optional protocol modules (jurisdiction adapter modules, sector frameworks, atte
 dCorps Hub kernel (entity registry, roles, governance, wallets, accounting events, anchoring)
         |
         v
-DCHUB staking + consensus (security, gas, protocol governance)
+DCHUB gas + rollup settlement (sequencer + Ethereum)
 ```
 
 Key boundary: entities must be able to operate without optional modules. Modules may publish derived interpretations, but must not redefine kernel semantics.
@@ -66,7 +66,7 @@ The Hub kernel is intended to provide:
 - **Canonical wallets**: standard wallet types bound to an entity (merchant, donation, program, treasury, reserves, etc.).
 - **Accounting primitives**: tagged accounting events for inflows/outflows and the standardized data needed to derive views in explorers and indexers.
 - **Document anchoring**: hash anchoring and references for governing documents and material evidence.
-- **Registries**: module registry and (optional) sub chain registry with recognition labels and anchor history.
+- **Registries**: module registry and asset registry with canonical contract references.
 
 The Hub is not a bank integration layer and does not provide custody.
 
@@ -88,8 +88,6 @@ The core objects described in the specs include:
   - reference to a document hash or commitment, linked to governance actions or accounting events.
 - **Module registry**
   - module IDs, types, versions, statuses, and integration metadata.
-- **Sub chain registry (optional)**
-  - sub chain identifiers, recognition tiers, anchors, and status labels.
 
 Exact schema fields and encodings are defined in [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA).
 
@@ -110,13 +108,11 @@ Reporting honesty is achieved by surfacing:
 
 ---
 
-## 6. Optional sub chains and anchoring (future extension)
+## 6. Anchoring and evidence
 
-Sub chains are optional execution environments that may anchor summarized commitments to the Hub under explicit standards.
+Anchors provide durable references to off-chain documents and evidence (bylaws, resolutions, reports, invoices). Anchors are immutable and must reference the authoritative entity and anchor type.
 
-v1 does not require sub chains. If introduced, anchors and recognition tiers exist so indexers and explorers can interpret sub chain-derived claims deterministically without changing kernel semantics.
-
-Normative anchoring behavior and recognition tiers are defined in [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR).
+Normative anchoring behavior is defined in [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR).
 
 ---
 

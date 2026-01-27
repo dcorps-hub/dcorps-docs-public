@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/NONPROFIT-COMPLEX.md](/hub-templates/NONPROFIT-COMPLEX))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the NONPROFIT-COMPLEX Hub nonprofit template.
 
@@ -60,6 +60,8 @@
   - Clear governance and approval routing for program onboarding and disbursements.
 - **Foundation/grantmaking workflows (common pattern)**
   - Fits grantmaking programs (applications → committee review → approvals → disbursements) while preserving the transparency floor.
+- **Commerce primitives (items, payment requests, recurring plans)**
+  - On-chain payment requests (invoices) for donations, grants, or services, plus optional recurring plans.
 - **Selective disclosure patterns (while preserving transparency floor)**
   - Supports disclosure modes where raw line items may be private, but:
     - time-window aggregates and category totals can be published for public views,
@@ -103,13 +105,15 @@ This section describes the minimum structure the template expects. Exact message
     - `audit_committee` (controls, evidence requirements, auditor coordination)
     - `grants_committee` (grant approvals, partner disbursements)
     - `sponsorship_committee` (project onboarding, sponsorship agreements, compliance)
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
 - **Canonical wallets (recommended baseline)**
   - `DONATION` (required): donation and grant inflows (tagged as restricted/unrestricted where applicable)
   - `PROGRAM` (recommended): program wallets (often one per designated fund/program/project, labeled)
   - `OPERATING_TREASURY` (recommended): overhead and shared operating spending
   - `RESERVES` (optional): buffers and designated reserves
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Designated fund model (recommended baseline)**
   - Fund designations (restricted/unrestricted) expressed via:
@@ -120,18 +124,37 @@ This section describes the minimum structure the template expects. Exact message
   - Disclosure mode is declared and used by explorers and tools:
     - Mode A: raw on-chain detail (maximum verifiability)
     - Mode B: public aggregates + commitments and selective disclosure
-    - Mode C: private execution with public anchoring (requires private zones/sub chains)
+    - Mode C: private execution with public anchoring (requires private zones)
   - Hub nonprofits must meet a minimum transparency floor in all modes:
     - donation inflows totals and category-level outflows over any timeframe,
     - board composition and governance events,
     - allocation rule and fund policy changes.
 - **Tagging and evidence (minimum)**
   - Each material inflow/outflow is tagged with:
-    - category code (chart of accounts),
+    - `category_code` (chart of accounts),
+    - `counterparty_type`,
+    - `reference_id` and `reference_type` when applicable,
     - amount and denom (USDC-only in v0.1),
-    - fund designation tag (restricted/unrestricted) where applicable,
-    - program/project tag where applicable,
+    - fund, program, and impact context tags as needed,
+    - optional treasury/asset context tags where relevant,
     - optional evidence reference (anchor ID or hash).
+
+---
+
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Program/fund: `fund_tag`, `restriction_tag`, `program_tag`, `project_tag`.
+- Donor/impact: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `beneficiary_tag`, `impact_area_tag`, `region_tag`, `counterparty_tag`.
+- Treasury/asset: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`.
 
 ---
 
@@ -182,7 +205,11 @@ This is the canonical action sequence used later to build a graph/canvas represe
 - Define designated funds and program structure:
   - define fund designations (restricted/unrestricted),
   - bind `PROGRAM` wallets per fund/program/project (labeled),
-  - define which categories/tags must be used for each fund; sign.
+  - set tags:
+    - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+    - program/fund context: `fund_tag`, `restriction_tag`, `program_tag`, `project_tag`,
+    - donor/impact context: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `beneficiary_tag`, `impact_area_tag`, `region_tag`, `counterparty_tag`,
+    - treasury/asset context: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`; sign.
 - Bind canonical wallets:
   - bind `DONATION`, `OPERATING_TREASURY`, optional `RESERVES`; sign.
 - Set allocation and fund policies:
@@ -198,19 +225,19 @@ This is the canonical action sequence used later to build a graph/canvas represe
 
 ### 2) Operate (repeat)
 
-- Receive donations/grants (USDC on Noble, via IBC) into `DONATION`; confirm on-chain.
+- Receive donations/grants (USDC bridged from Ethereum to the canonical USDC contract on dCorps) into `DONATION`; confirm on-chain.
+- Optional: issue payment requests or recurring plans for structured giving (grants, sponsorships, memberships).
 - Record inflow events:
-  - tag with donation/grant category,
-  - tag restricted/unrestricted where applicable,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
-  - link grant agreement anchor when available; sign.
+  - link donation receipt or grant agreement anchor when available; sign.
 - Allocate to designated funds/programs:
   - transfer to the appropriate `PROGRAM` wallet(s) under fund restrictions and board-approved rules; sign.
 - Spend and disburse:
   - routine spending within policy: execute and record.
   - protected disbursements/grants: obtain committee/board approval first; then execute and record; sign.
 - Record outflow events:
-  - tag category + fund designation + program/project,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipts/grant agreements anchors when available; sign.
 - Umbrella sponsorship (when used):

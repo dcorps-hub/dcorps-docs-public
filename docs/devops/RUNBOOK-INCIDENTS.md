@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/RUNBOOK-INCIDENTS.md](/devops/RUNBOOK-INCIDENTS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Operational incident steps aligned to [docs/security/INCIDENT-RESPONSE.md](/security/INCIDENT-RESPONSE).
 
@@ -27,7 +27,7 @@
 ## 2. Containment
 
 - Isolate impacted services.
-- Notify validators and operators.
+- Notify operators and critical service owners.
 - Document immediate mitigations.
 - Avoid publishing attacker-enabling details until remediation is deployed (see [docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION)).
 

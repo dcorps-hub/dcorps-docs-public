@@ -6,15 +6,15 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/interop/INDEX.md](/interop/INDEX))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
-> Scope: Entry point for interchain assumptions, IBC usage, and sub chain anchoring.
+> Scope: Entry point for bridge gateway assumptions, stablecoin routing, and anchoring.
 
 ---
 
 ## Start here
 
-- IBC and stablecoin routing: [docs/interop/IBC.md](/interop/IBC)
-- Sub chain anchoring spec: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
-- Cosmos base notes: [docs/engineering/COSMOS_BASE.md](/engineering/COSMOS_BASE)
-- IBC relayer ops: [docs/devops/IBC_OPERATIONS.md](/devops/IBC_OPERATIONS)
+- Bridge gateways and stablecoin routing: [docs/interop/BRIDGE_GATEWAYS.md](/interop/BRIDGE_GATEWAYS)
+- Anchoring spec: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- Orbit base notes: [docs/engineering/ORBIT_BASE.md](/engineering/ORBIT_BASE)
+- Bridge gateway ops: [docs/devops/BRIDGE_OPERATIONS.md](/devops/BRIDGE_OPERATIONS)

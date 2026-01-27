@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Defines what is published by default, what must be restricted for safety, and how to keep public and restricted materials consistent.
 
@@ -25,7 +25,7 @@ This includes specifications, governance and policy documents, security posture 
 A document MUST be treated as **restricted** if publishing it would reasonably increase the likelihood, impact, or success rate of attacks against:
 
 - the protocol, reference implementations, or network operations;
-- ecosystem participants (validators, operators, integrators, entities);
+- ecosystem participants (operators, integrators, entities);
 - custody, keys, credentials, or operational controls.
 
 Restricted documents MUST be placed under `dcorps-docs-private/docs/restricted/` and MUST NOT be published on the public website.

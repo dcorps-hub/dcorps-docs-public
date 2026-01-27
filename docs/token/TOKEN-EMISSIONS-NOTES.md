@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: How DCHUB enters circulation over time under the fixed-supply model described in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 10). This document describes protocol mechanics, not market outcomes.
 
@@ -18,7 +18,7 @@ This document uses the same vocabulary as the Whitepaper Long:
 
 - **Minted supply**: DCHUB that exists on-chain, including tokens held in vesting contracts, module accounts, and distribution pools.
 - **Circulating supply**: DCHUB that is transferable by its holder without time locks or vesting restrictions and without a governance-controlled release step.
-- **Emissions**: tokens entering circulation from predefined allocations (for example the staking and validator rewards pool), not supply creation beyond the fixed cap.
+- **Emissions**: tokens entering circulation from predefined allocations (for example the protocol operations pool), not supply creation beyond the fixed cap.
 
 ---
 
@@ -31,7 +31,7 @@ In v1, the design intention is:
 
 “Emissions” refers to circulation over time from:
 
-- rewards distribution,
+- operator incentives distribution,
 - governed releases from program pools, and
 - vesting unlocks from time-locked allocations.
 
@@ -41,8 +41,8 @@ In v1, the design intention is:
 
 In practice, DCHUB enters circulating supply through a small number of explicit mechanisms:
 
-1. **Staking and validator rewards pool distribution**  
-   Rewards paid out from the rewards pool become circulating when distributed to validators and delegators.
+1. **Operator incentives and protocol operations pool distribution**  
+   Distributions from the operations pool become circulating when released to approved recipients.
 2. **Community and ecosystem program releases**  
    Tokens leave governance-controlled custody through explicit grants, programs, or distributions, subject to release caps.
 3. **Insider vesting unlocks**  
@@ -54,9 +54,9 @@ All of these mechanisms are intended to be visible as on-chain state, contract s
 
 ---
 
-## 4. Staking and validator rewards schedule (genesis default)
+## 4. Operator incentives and protocol operations schedule (genesis default)
 
-The Whitepaper Long defines an illustrative genesis default schedule for the staking and validator rewards pool that sums to the pool cap of 180,000,000 DCHUB (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 10.4A.5).
+The Whitepaper Long defines an illustrative genesis default schedule for the operator incentives and protocol operations pool that sums to the pool cap of 180,000,000 DCHUB (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 10.4A.5).
 
 Illustrative schedule (per year after TGE):
 
@@ -71,7 +71,7 @@ Illustrative schedule (per year after TGE):
 
 Total: 180,000,000
 
-As the rewards pool becomes materially depleted, the design intention is that validator incentives shift primarily to fee-based rewards (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 10.6).
+As the operations pool becomes materially depleted, the design intention is that operator compensation shifts primarily to fee-based rewards (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 10.6).
 
 ---
 
@@ -102,4 +102,4 @@ To keep supply mechanics legible and auditable:
 
 - reference explorers and dashboards should publish minted supply and circulating supply explicitly as separate numbers;
 - vesting/lockup contracts and their unlock schedules should be easily inspectable; and
-- rewards distributions and governance-controlled releases should be traceable from source module accounts to recipient addresses.
+- operations distributions and governance-controlled releases should be traceable from source module accounts to recipient addresses.

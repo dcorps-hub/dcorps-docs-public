@@ -2,7 +2,7 @@
 
 Public documentation and specifications for the dCorps Hub protocol, including whitepapers, protocol specifications, policies, security documents, and token documentation.
 
-> Status: Phase 0A (development) — public baseline documentation set (mainnet is not live; the foundation is not incorporated; DevCo incorporation is pending)
+> Status: Phase 0A (development) — public baseline documentation set (mainnet is not live; the foundation is not incorporated; DevCo is incorporated and active in the British Virgin Islands)
 
 Docs center entry point: `docs/welcome/INDEX.md`
 Developer entry point (normative specs): `docs/spec/INDEX.md`
@@ -62,7 +62,7 @@ docs/
     POL-GOV-TRANSITION.md    Governance transition plan (founder-led → foundation readiness)
     POL-TREASURY.md          Treasury Policy
     POL-REGISTRY-MODULES.md  Registry and Module Policy
-    POL-VALIDATORS.md        Validator Charter
+    POL-OPERATORS.md         Operator Charter
     POL-FOUNDATION.md        Foundation Policy (planned)
     POL-LOCALIZATION.md      Localization and translations policy
     POL-DOCS-PUBLICATION.md  Documentation Publication Policy
@@ -80,12 +80,12 @@ docs/
     INDEX.md                 Engineering entry point
     TECHNICAL_OVERVIEW.md    Technical overview
     INTEGRATION_GUIDE.md     Integration guide
-    COSMOS_BASE.md           Base protocol notes (Cosmos, token, stablecoins)
+    ORBIT_BASE.md            Base protocol notes (Orbit rollup, token, stablecoins)
     PROTOCOL_INTERFACES.md   Interface surface map
   devops/
     INDEX.md                 DevOps entry point
     ENVIRONMENTS.md          Dev, staging, and prod definitions
-    COSMOS_ENVIRONMENT.md    Cosmos environment setup notes
+    ROLLUP_ENVIRONMENT.md    Rollup environment setup notes
     CI_CD.md                 CI/CD and release flow
     RELEASE_PROCESS.md       Release and environment promotion process
     OBSERVABILITY.md         Metrics, logs, and alerts
@@ -93,7 +93,7 @@ docs/
     RUNBOOKS.md              Runbook index
   interop/
     INDEX.md                 Interop entry point
-    IBC.md                   IBC and interchain notes
+    BRIDGE_GATEWAYS.md       Bridge gateway and interop notes
   roadmap/
     INDEX.md                 Roadmap and phases
     PHASES.md                Phase goals and exit criteria

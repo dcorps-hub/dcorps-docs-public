@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/EXPLORER_REQUIREMENTS.md](/frontend/EXPLORER_REQUIREMENTS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Read-only explorer requirements for Phase 1.
 
@@ -52,6 +52,6 @@ Explorer endpoints align to [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER):
 - `GET /v1/entities/{entity_id}`
 - `GET /v1/entities/{entity_id}/events`
 - `GET /v1/modules`
-- `GET /v1/subchains`
+- `GET /v1/anchors`
 - `GET /v1/reports/cash`
 - `GET /v1/reports/allocation`

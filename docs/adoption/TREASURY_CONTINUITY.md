@@ -6,7 +6,7 @@
 **Release date**: January 4, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/adoption/TREASURY_CONTINUITY.md](/adoption/TREASURY_CONTINUITY))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-25
 
 > Scope: Adoption-oriented checklist for treasury continuity and stablecoin disruption planning for entities using Hub templates.
 
@@ -14,10 +14,10 @@
 
 ## Summary (v0.1 assumptions)
 
-- **Operating currency (v0.1)**: USDC-only (USDC on Noble, via IBC).
+- **Operating currency (v0.1)**: USDC-only (bridged from Ethereum to the canonical USDC contract on dCorps).
 - **Gas**: DCHUB is paid by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Canonical wallets are public**: wallet bindings exist to make verification and reporting reproducible; privacy-first operation uses different disclosure modes (aggregates/commitments), not “hidden canonical wallets”.
-- **USDC freezes cannot be overridden**: stablecoin issuer actions and rail risk are external to the Hub and cannot be overridden by validators or governance.
+- **USDC freezes cannot be overridden**: stablecoin issuer actions and rail risk are external to the Hub and cannot be overridden by operators or governance.
 
 ---
 

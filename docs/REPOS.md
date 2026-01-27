@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/REPOS.md](/REPOS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Inventory of repositories that make up the dCorps ecosystem.
 
@@ -28,10 +28,10 @@
 ## Planned repositories
 
 - `dcorps-chain`  
-  - Purpose: Cosmos SDK implementation of the Hub chain.  
+  - Purpose: Arbitrum Orbit rollup contracts and node stack for the Hub (EVM).  
   - Status: planned.
 - `dcorps-indexer`  
-  - Purpose: reference indexer and reporting APIs.  
+  - Purpose: official reference indexer and reporting APIs.  
   - Status: planned.
 - `dcorps-app`  
   - Purpose: explorer and wallet-connected console.  

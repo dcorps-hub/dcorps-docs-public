@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/security/AUDIT-PLAN.md](/security/AUDIT-PLAN))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Planning and execution framework for security and code audits across the dCorps protocol, modules, and critical tooling.
 
@@ -18,11 +18,11 @@ Audits are intended to:
 
 - identify and remediate security vulnerabilities before they are exploited;
 - validate correctness of critical protocol logic and implementations;
-- build confidence for users, validators, and partners.
+- build confidence for users, operators, and partners.
 
 Scope priorities:
 
-- core Hub state machine and consensus integration;
+- core Hub contracts and rollup integration;
 - protocol modules with high impact (funds, governance, or recognition);
 - critical infrastructure and security tooling where feasible.
 

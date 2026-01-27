@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/STACK.md](/frontend/STACK))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Record current frontend state and baseline requirements.
 
@@ -24,7 +24,7 @@
 
 - Explorer and app: React + TypeScript with Next.js.
 - Data fetching and caching: React Query.
-- Wallet integration: cosmos-kit with Keplr, Leap, and Cosmostation; WalletConnect for mobile.
+- Wallet integration: wagmi/viem with MetaMask, Rabby, and WalletConnect.
 - UI primitives: headless components + Tailwind CSS.
 - Hosting: Vercel for static site and app deployments.
 - Analytics: Plausible; error tracking: Sentry.
@@ -41,7 +41,7 @@ The following capabilities are required to support the explorer, dashboards, and
 - Wallet connection flows for signing actions.
 - Role-based views for entity admins vs public viewers.
 - Reporting dashboards based on tagged events.
-- Module and sub chain status views.
+- Module and bridge status views.
 
 ---
 

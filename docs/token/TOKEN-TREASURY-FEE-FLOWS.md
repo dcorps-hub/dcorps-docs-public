@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: How protocol service fees and treasury-related flows are accounted for and reported.
 
@@ -14,7 +14,7 @@
 
 ## 1. Fee types
 
-- **Gas fees (DCHUB)**: paid per transaction and distributed to validators/delegators.
+- **Gas fees (DCHUB)**: paid per transaction; distributed to operators by default, with an optional capped Treasury share if governance adopts it.
 - **Service fees (USDC or approved stablecoins)**: charged for protocol services such as entity registration, premium names, and module participation.
 
 ---
@@ -23,8 +23,9 @@
 
 ### 2.1 Gas fees
 
-- Collected by the chain and distributed through the standard distribution module.
-- Visible in chain events and validator reward records.
+- Collected by the chain and distributed to operators by default.
+- Governance MAY introduce a capped Treasury share with explicit parameters and disclosure.
+- Visible in chain events and operator reward records.
 
 ### 2.2 Service fees
 

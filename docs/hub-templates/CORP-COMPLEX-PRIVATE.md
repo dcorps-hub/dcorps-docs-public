@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-COMPLEX-PRIVATE.md](/hub-templates/CORP-COMPLEX-PRIVATE))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the CORP-COMPLEX-PRIVATE Hub corporation template.
 
@@ -17,7 +17,7 @@
 - **Code**: CORP-COMPLEX-PRIVATE
 - **Template class**: Hub corporation
 - **Complexity**: High
-- **Primary objective**: multi-class private corporation with committee governance and advanced treasury policy
+- **Primary objective**: multi-class private corporation with committee governance, venture-grade capital controls, and advanced treasury policy
 - **Reporting view**: cash-based time-window operating view (unit of account: USDC)
 
 ---
@@ -27,6 +27,7 @@
 - Some private corporations need “institutional legibility” at the structure level:
   - multiple unit classes with distinct rights,
   - committees and delegated approvals,
+  - venture rounds, pools/vesting, and investor consent routing layered onto multi-class governance,
   - stronger treasury controls and policy enforcement,
   - holding-company/group structures with clear ownership chains.
 - CORP-COMPLEX-PRIVATE is the highest-complexity Hub-first corporation template in the initial catalog, intended for mature private structures that still want the Hub as their canonical registry, authority log, and operating ledger.
@@ -36,6 +37,7 @@
 ## Intended for
 
 - Private corporations with multi-class units and committee governance.
+- Venture-backed or late-stage private companies that require investor consents, pools/vesting, and committee oversight.
 - Multi-entity holdings or group structures that need explicit ownership mapping and intercompany evidence trails.
 - Teams that require advanced treasury policy (multi-tier approvals, budgets, per-wallet constraints).
 
@@ -54,11 +56,21 @@
 - **Multi-class unit structures**
   - Multiple unit classes with class-specific voting/economic rules (as defined by governance and anchored governing docs).
   - Class conversions, protected matters, and class-specific approvals where used.
+- **Venture-grade capital controls**
+  - Investor consents for protected matters where required.
+  - Financing rounds and security actions tracked with capital tags and approvals.
+- **Pools and vesting workflows**
+  - Option pools and vesting schedules supported for grants and incentives.
+  - Approval routing and evidence anchors for equity actions.
 - **Committee governance**
   - Board plus committee layers (e.g., audit, compensation, finance/investment) with explicit delegated powers.
 - **Advanced treasury policy**
   - Multi-tier spend approvals (routine vs protected vs extraordinary).
   - Per-wallet limits, category constraints, and evidence requirements by policy.
+- **Canonical wallet structure**
+  - Standard wallet bindings used to compute consistent reporting views.
+- **Commerce primitives (items, invoices, recurring plans)**
+  - On-chain catalog items/services, invoices with status tracking, and optional recurring plans.
 - **Group/holdings support**
   - Entities can hold units of other entities.
   - Clear mapping of parent/subsidiary relationships and intercompany actions.
@@ -101,12 +113,14 @@ This section describes the minimum structure the template expects. Exact message
     - `comp_committee`
     - `finance_committee`
   - Optional: `risk_officer` / `compliance_officer` where needed (often backed by off-chain processes)
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
 - **Canonical wallets (recommended baseline)**
   - `MERCHANT` (recommended): revenue inflows (invoice and checkout payment address; may use multiple, labeled, if operating multiple business lines)
   - `OPERATING_TREASURY` (required): primary operating spending (may use multiple, labeled)
   - `RESERVES` (recommended): buffers, restricted reserves, and strategic holdings
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Treasury policy (recommended baseline)**
   - At least three tiers:
@@ -118,9 +132,27 @@ This section describes the minimum structure the template expects. Exact message
   - Transfers can require:
     - whitelist checks,
     - class-specific approvals,
+    - investor consent checks (where required),
     - vesting/lockup checks,
     - right-of-first-refusal style routing (where the protocol/module supports it).
-  - Corporate actions (issuance, cancellation, conversions, reorganizations) are recorded as standardized events linked to approvals and anchored documents.
+- Corporate actions (issuance, cancellation, conversions, reorganizations) are recorded as standardized events linked to approvals and anchored documents.
+
+---
+
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Operating/org: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`.
+- Capital/financing: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`.
+- Treasury/asset: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`.
 
 ---
 
@@ -179,8 +211,10 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - per-wallet limits and category constraints,
   - evidence requirements by materiality and category; sign.
 - Set tags:
-  - minimal chart-of-accounts categories,
-  - business-unit tags (commonly required at this complexity level); sign.
+  - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+  - operating/org context: `business_unit_tag`, `department_tag`, `cost_center_tag`, `project_tag`, `product_tag`, `item_id`, `channel_tag`, `region_tag`, `counterparty_tag`,
+  - capital/financing context: `round_tag`, `security_type_tag`, `equity_class_tag`, `vesting_schedule_tag`, `option_pool_tag`, `debt_instrument_tag`, `loan_id`,
+  - treasury/asset context: `wallet_tag`, `treasury_bucket_tag`, `asset_tag`, `custody_tag`; sign.
 - (Optional) Establish group structure:
   - create subsidiary entities (if not already),
   - execute unit issuances/transfers so the parent holds the subsidiary,
@@ -188,14 +222,14 @@ This is the canonical action sequence used later to build a graph/canvas represe
 
 ### 2) Operate (repeat)
 
-- Receive USDC (on Noble, via IBC) into canonical wallets to maximize inflow coverage.
+- Receive USDC (bridged from Ethereum to the canonical USDC contract on dCorps) into canonical wallets to maximize inflow coverage.
 - Use `MERCHANT` as the invoice/checkout payment address for revenue inflows.
 - (Optional) Issue an invoice or checkout payment request and anchor evidence:
   - denominate in USDC and pay to `MERCHANT`,
   - hash invoice/receipt/contract file (as applicable),
   - anchor the hash on-chain; optionally include a URI; sign.
 - Record income events:
-  - category + business-unit tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link invoice reference or anchor; sign.
 - (Optional) Move operating funds to treasury:
@@ -206,7 +240,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
   - protected payment: committee or board approval above limit; execute; sign.
   - extraordinary action: supermajority approvals; execute; sign.
 - Record expense events:
-  - category + business-unit tags,
+  - `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipt anchor/ref when available; sign.
 - Maintain class rules and transfer restrictions:

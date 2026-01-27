@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2025-12-24
+**Last updated**: 2026-01-25
 
 ---
 
@@ -137,5 +137,5 @@ Optional jurisdiction adapter modules may support recognition workflows, but leg
 - FAQ and glossary: [docs/whitepaper/FAQ.md](/whitepaper/FAQ), [docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY)
 - Technical overview and integration guide: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW), [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE)
 - Normative specs: [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE), [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA), [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
-- Governance and policy: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS)
+- Governance and policy: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-OPERATORS.md](/policy/POL-OPERATORS)
 - Legal and risk: [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS), [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)

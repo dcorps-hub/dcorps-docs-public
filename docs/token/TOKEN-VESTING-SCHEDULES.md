@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Baseline vesting and lockup schedules for DCHUB allocations. These align with the Whitepaper Long and Genesis Plan.
 
@@ -22,11 +22,15 @@
 
 ## 2. Baseline schedules (v1)
 
-| Allocation | Cliff | Vesting duration | Notes |
+| Allocation | Cliff / lockup | Vesting duration | Notes |
 | --- | --- | --- | --- |
 | Founder (15%) | 24 months | 72 months | Linear monthly unlocks after cliff |
-| Core team and future contributors (10%) | 12 months | 36 months | Linear monthly unlocks after cliff |
-| Investors (10%) | 12 months | 36 months | Linear monthly unlocks after lockup |
+| Core team and future contributors (8%) | 18 months | 48 months | Linear monthly unlocks after cliff |
+| Seed investors (2.5%) | 12 months | 36 months | Linear monthly unlocks after lockup |
+| Series A investors (3.5%) | 9 months | 36 months | Linear monthly unlocks after lockup |
+| Series B investors (3%) | 6 months | 30 months | Linear monthly unlocks after lockup |
+| Series C investors (2%) | 3 months | 24 months | Linear monthly unlocks after lockup |
+| Public sale / ICO (4%) | 10% at TGE | 12 months | Remaining 90% linear vesting |
 
 Community, rewards, and treasury allocations follow programmatic release rules and are not time-vested in the same way.
 
@@ -34,7 +38,7 @@ Community, rewards, and treasury allocations follow programmatic release rules a
 
 ## 3. Rewards and program pools
 
-- Staking and validator rewards: released according to the schedule in [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES).
+- Operator incentives and protocol operations: released according to the schedule in [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES).
 - Community and ecosystem programs: governed releases subject to caps defined in the Whitepaper Long.
 - Treasury and foundation allocations: governed releases with reporting requirements.
 

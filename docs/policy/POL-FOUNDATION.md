@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-18  
 
 > Scope: Governance, mission, and operating principles of the dCorps Foundation as a nonprofit steward of the protocol.
 
@@ -101,5 +101,5 @@ Where possible, the foundation:
 ## 6. Current status (Phase 0A)
 
 - The foundation is not incorporated yet, and timing is not finalized (see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
+- Mainnet is gated on IP stewardship transferring to the foundation once formed; the transfer will be documented explicitly when executed.
 - Any future incorporation details (jurisdiction, board, charter, conflict policies) will be published when finalized.
-- Any future IP stewardship or asset custody arrangements will be documented explicitly and should not be inferred from this policy.

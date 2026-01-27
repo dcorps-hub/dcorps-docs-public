@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/security/BUG-BOUNTY.md](/security/BUG-BOUNTY))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Rules and process for reporting vulnerabilities and receiving rewards, including baseline reward ranges and safe-harbor expectations.
 
@@ -33,9 +33,9 @@ The program covers:
 
 Examples of in-scope targets:
 
-- consensus and state machine logic;
-- staking, governance, and module integration code;
-- sub chain anchoring and recognition logic;
+- rollup execution and settlement logic;
+- governance and module integration code;
+- document anchoring logic;
 - treasury and foundation-related smart contracts where applicable.
 
 In-scope deployments and artifacts are limited to those explicitly published by dCorps (official repos, binaries, and public endpoints).

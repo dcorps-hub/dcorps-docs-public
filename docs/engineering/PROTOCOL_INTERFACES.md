@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/PROTOCOL_INTERFACES.md](/engineering/PROTOCOL_INTERFACES))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: High-level map of interface surfaces that implementations and integrators must support. This is not a full API reference; it points to normative specs.
 
@@ -35,7 +35,7 @@
 
 ## Interop and anchoring surfaces
 
-- Sub chain registration and anchoring requirements: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- Document anchoring requirements: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
 
 ---
 
@@ -47,4 +47,4 @@
 
 ## Implementation notes
 
-Concrete protobuf messages, gRPC services, REST endpoints, and event names are defined in [docs/engineering/API_SURFACES.md](/engineering/API_SURFACES) and should be mirrored in the chain code repo.
+Contract ABIs, JSON-RPC usage, and event names are defined in [docs/engineering/API_SURFACES.md](/engineering/API_SURFACES) and should be mirrored in the contract code repo.

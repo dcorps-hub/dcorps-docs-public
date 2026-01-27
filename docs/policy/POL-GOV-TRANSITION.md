@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-25
 
 > Scope: A phased governance plan from founder-led pre-mainnet work through foundation readiness. This document describes design intention, not a commitment of timing or outcomes.
 
@@ -16,7 +16,7 @@
 
 - dCorps is in Phase 0A (development). Mainnet is not live and on-chain governance is not active yet.
 - The foundation described in this document is not incorporated yet, and any future formation timing is not finalized.
-- DevCo and ResCo are planned; incorporation is pending.
+- DevCo is incorporated and active in the British Virgin Islands; ResCo is planned and not incorporated yet.
 
 This document aims to make “who decides what” legible during pre-mainnet work, while explicitly separating design intention from executed legal arrangements.
 
@@ -25,7 +25,7 @@ This document aims to make “who decides what” legible during pre-mainnet wor
 ## 1. Definitions
 
 - **Phases**: use the roadmap definitions in [docs/roadmap/PHASES.md](/roadmap/PHASES).
-- **DevCo**: the development company that delivers protocol and tooling work. Planned DevCo legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending).
+- **DevCo**: the development company that delivers protocol and tooling work. Legal entity: **dCorps Development Ltd.** (jurisdiction: **British Virgin Islands (BVI)**; incorporated; active).
 - **ResCo**: the research organization intended to focus on protocol adoption analysis and integration planning. Planned ResCo legal entity (design intention): **dCorps Research LLC** (intended jurisdiction: **Wyoming (USA)**; incorporation pending).
 - **Foundation**: the planned nonprofit steward described in [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION). No foundation has been incorporated yet.
 
@@ -43,7 +43,7 @@ Governance posture:
 
 Deliverables (governance-specific):
 
-- Publish and maintain the baseline policy set (`POL-GOV`, `POL-FOUNDATION`, `POL-VALIDATORS`, `POL-TREASURY`).
+- Publish and maintain the baseline policy set (`POL-GOV`, `POL-FOUNDATION`, `POL-OPERATORS`, `POL-TREASURY`).
 - Publish a public conflict-of-interest posture for any future funding or related-party arrangements (see Section 6).
 
 ---
@@ -62,21 +62,19 @@ Governance scaffolding (design intention):
 Foundation readiness preparation:
 
 - Draft the foundation’s initial charter, reporting commitments, and ethics/conflict policies (see [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION)).
-- Decide and publish the intended foundation formation window (design intention):
-  - **Option A (preferred where feasible)**: incorporate the foundation **before mainnet** so stewardship, disclosures, and conflict policies exist from day one.
-  - **Option B**: incorporate the foundation **after mainnet** while keeping interim coordination legible and time-bounded.
+- Incorporate the foundation **before mainnet** so stewardship, disclosures, and conflict policies exist from day one; mainnet is gated on formation and IP stewardship transfer.
 - Define how the foundation can fund multiple providers over time to reduce single-vendor risk.
 
 ---
 
 ## 4. Phase 1 (mainnet launch) — on-chain governance becomes primary
 
-Goal: transition protocol change control to on-chain governance under `DCHUB` staking and voting, with conservative safety guardrails.
+Goal: transition protocol change control to on-chain governance under `DCHUB` token-weighted voting, with conservative safety guardrails.
 
 Governance posture (design intention):
 
 - **On-chain voting** is the canonical approval path for protocol upgrades, parameter changes, and module lifecycle decisions (see [docs/policy/POL-GOV.md](/policy/POL-GOV)).
-- **Protected Changes** use higher thresholds and safety mechanisms (stake age, timelocks) for high-impact actions.
+- **Protected Changes** use higher thresholds and safety mechanisms (voting-power age, timelocks) for high-impact actions.
 - **Transparency** is treated as a security control: proposals include durable rationale, risk notes, and references.
 
 If the foundation is not yet operational at launch:
@@ -116,7 +114,7 @@ Readiness signals (design intention):
 
 Design intention:
 
-- **DevCo** (planned; incorporation pending) is a services provider that can deliver protocol and tooling work under clearly scoped, milestone-based agreements.
+- **DevCo** (active) is a services provider that can deliver protocol and tooling work under clearly scoped, milestone-based agreements.
 - **ResCo** (planned; incorporation pending) is intended to support adoption research, analysis, and publication work, and may be commissioned or funded like any other contributor.
 - The foundation may fund DevCo/ResCo, but relationships should be:
   - non-exclusive where practical;
@@ -134,8 +132,8 @@ Goal: make ownership and stewardship of core protocol assets explicit and legibl
 
 Design intention:
 
-- In early phases, protocol and brand IP may be held by the founder and/or by DevCo once incorporated.
-- Once the foundation is incorporated and “foundation ready”, stewardship should migrate to the foundation through a documented legal arrangement (assignment and/or licensing as appropriate), so public-good assets are held by a neutral nonprofit rather than a single for-profit provider.
+- In early phases, protocol and brand IP may be held by the founder and/or by DevCo.
+- Once the foundation is incorporated and “foundation ready”, stewardship must migrate to the foundation through a documented legal arrangement (assignment and/or licensing as appropriate), so public-good assets are held by a neutral nonprofit rather than a single for-profit provider.
 
 What should be explicit when it happens (illustrative, not exhaustive):
 
@@ -144,9 +142,9 @@ What should be explicit when it happens (illustrative, not exhaustive):
 - what DevCo’s ongoing role is (services provider under contract, not the steward by default);
 - how conflicts are managed and disclosed (related-party posture, recusal, reporting).
 
-Timing (not finalized):
+Mainnet gate (no date promises):
 
-- Target posture is to complete the stewardship transition **before mainnet where feasible**; otherwise, publish an interim custody and disclosure plan and complete the transfer as soon as practical after foundation formation.
+- Mainnet does not proceed until the IP stewardship transfer is complete and publicly disclosed.
 
 ---
 

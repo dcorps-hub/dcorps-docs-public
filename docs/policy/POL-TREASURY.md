@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-TREASURY.md](/policy/POL-TREASURY))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-16  
 
 > Scope: Management of protocol and foundation treasury assets, including objectives, controls, and transparency expectations.
 
@@ -37,7 +37,7 @@ Treasury assets may include:
 - DCHUB tokens (native token);
 - widely used, reputable stablecoins;
 - major cryptoassets relevant to the ecosystem;
-- fiat balances held in compliant, regulated institutions where necessary.
+- approved CBDC instruments where legally available and technically supported.
 
 Exotic or illiquid assets are generally avoided unless specifically justified and approved by governance.
 
@@ -46,7 +46,7 @@ Exotic or illiquid assets are generally avoided unless specifically justified an
 Risk management includes:
 
 - diversification limits by asset and counterparty;
-- maximum exposure to any single stablecoin issuer or bank;
+- maximum exposure to any single stablecoin issuer or custodian;
 - guidelines for duration and liquidity risk (e.g. limits on long lockups).
 
 Governance reviews and updates risk limits periodically, especially after major market events.

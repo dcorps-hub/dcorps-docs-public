@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/INDEX.md](/frontend/INDEX))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-17  
 
 > Scope: Frontend requirements, roadmap, and decisions for the website, explorer, and applications.
 
@@ -32,6 +32,7 @@
 ## Start here
 
 - Current and future stack notes: [docs/frontend/STACK.md](/frontend/STACK)
+- Official app reference: [docs/frontend/OFFICIAL_APP.md](/frontend/OFFICIAL_APP)
 - Wallet signing flows: [docs/frontend/SIGNING_FLOWS.md](/frontend/SIGNING_FLOWS)
 - Information architecture: [docs/frontend/INFO_ARCHITECTURE.md](/frontend/INFO_ARCHITECTURE)
 - Explorer requirements: [docs/frontend/EXPLORER_REQUIREMENTS.md](/frontend/EXPLORER_REQUIREMENTS)

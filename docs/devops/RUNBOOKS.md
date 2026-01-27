@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/RUNBOOKS.md](/devops/RUNBOOKS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: List required runbooks. Details may be stored under `dcorps-docs-private/docs/restricted/` if they contain sensitive operational steps.
 
@@ -14,11 +14,11 @@
 
 ## Required runbooks
 
-- Genesis creation and verification: [docs/devops/RUNBOOK-GENESIS.md](/devops/RUNBOOK-GENESIS)
-- Validator onboarding and key rotation: [docs/devops/RUNBOOK-VALIDATORS.md](/devops/RUNBOOK-VALIDATORS)
+- Rollup deployment and verification: [docs/devops/RUNBOOK-GENESIS.md](/devops/RUNBOOK-GENESIS)
+- Operator onboarding and key rotation: [docs/devops/RUNBOOK-OPERATORS.md](/devops/RUNBOOK-OPERATORS)
 - Chain upgrades and rollback plan: [docs/devops/RUNBOOK-UPGRADES.md](/devops/RUNBOOK-UPGRADES)
 - Incident response and communications: [docs/devops/RUNBOOK-INCIDENTS.md](/devops/RUNBOOK-INCIDENTS)
-- IBC relayer outage recovery: [docs/devops/RUNBOOK-IBC.md](/devops/RUNBOOK-IBC)
+- Bridge gateway outage recovery: [docs/devops/RUNBOOK-BRIDGE.md](/devops/RUNBOOK-BRIDGE)
 - Snapshot and backup restoration: [docs/devops/RUNBOOK-BACKUP.md](/devops/RUNBOOK-BACKUP)
 - Indexer backfill and recovery: [docs/devops/RUNBOOK-INDEXER.md](/devops/RUNBOOK-INDEXER)
 

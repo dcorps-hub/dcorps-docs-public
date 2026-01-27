@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/people/ORGANIZATIONS.md](/people/ORGANIZATIONS))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-18  
 
 > Scope: Public overview of the entities around dCorps (DevCo, ResCo, and the planned foundation), and how they are intended to relate.
 
@@ -14,11 +14,11 @@ Status note: dCorps is founder-led in Phase 0A (development). Unless explicitly 
 
 ---
 
-## DevCo (planned; incorporation pending)
+## DevCo (active)
 
-- **DevCo (Development Company)** — planned legal entity (design intention): **dCorps Development Ltd.** (intended jurisdiction: **British Virgin Islands (BVI)**; incorporation pending).
-  - Intended role: protocol and tooling engineering services, integrations, and delivery support.
-  - Intended posture: a services provider, not the protocol steward by default.
+- **DevCo (Development Company)** — legal entity: **dCorps Development Ltd.** (jurisdiction: **British Virgin Islands (BVI)**; incorporated; active).
+  - Role: protocol and tooling engineering services, integrations, and delivery support.
+  - Posture: a services provider, not the protocol steward by default.
 
 See: [DevCo Agreement](/legal/DEVCO_AGREEMENT).
 

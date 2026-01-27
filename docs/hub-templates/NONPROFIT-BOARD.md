@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/NONPROFIT-BOARD.md](/hub-templates/NONPROFIT-BOARD))  
-**Last updated**: 2026-01-04  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the NONPROFIT-BOARD Hub nonprofit template.
 
@@ -56,6 +56,8 @@
 - **Multi-program wallet structure**
   - Canonical donation wallet plus multiple program wallets (recommended).
   - Optional operating treasury and reserves for overhead and buffers.
+- **Commerce primitives (items, payment requests, recurring plans)**
+  - On-chain payment requests (invoices) for donations, grants, or services, plus optional recurring plans.
 - **Allocation policies as enforceable rules**
   - Board-approved allocation policies (e.g., budget caps, materiality thresholds).
   - Committee approvals for program disbursements or grants where desired.
@@ -99,13 +101,15 @@ This section describes the minimum structure the template expects. Exact message
     - `audit_committee` (controls, evidence requirements, auditor coordination)
     - `grants_committee` (grant approvals, partner disbursements)
     - `program_committee` (program allocations, program-level policy)
+- **Authority wallets**
+  - Role-bound wallets sign governance actions and approvals; keep separate from payment wallets.
 - **Canonical wallets (recommended baseline)**
   - `DONATION` (required): donation and grant inflows
   - `PROGRAM` (recommended): one wallet per program (labeled)
   - `OPERATING_TREASURY` (recommended): shared overhead spending
   - `RESERVES` (optional): buffers and designated reserves (designated funds are formalized in `NONPROFIT-COMPLEX`)
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Allocation policy (recommended baseline)**
   - Define:
@@ -116,13 +120,31 @@ This section describes the minimum structure the template expects. Exact message
   - Policies and changes are board-approved and anchored.
 - **Tagging and evidence (minimum)**
   - Each material inflow/outflow is tagged with:
-    - category code (chart of accounts),
+    - `category_code` (chart of accounts),
+    - `counterparty_type`,
+    - `reference_id` and `reference_type` when applicable,
     - amount and denom (USDC-only in v0.1),
-    - program tag and/or program wallet label,
+    - program tag and/or program wallet label, plus allocation/impact context tags as needed,
     - optional evidence reference (anchor ID or hash).
 - **Transparency floor (all disclosure modes)**
   - Board composition, proposals, votes, and allocation rule changes.
   - Donation inflows and category-level outflows over any selected timeframe.
+
+---
+
+## Tag schema (template-specific)
+
+Required tags (all templates):
+
+- `category_code`
+- `counterparty_type`
+- `reference_id` (when applicable)
+- `reference_type` (when `reference_id` is present)
+
+Template context tags (use when applicable):
+
+- Program/fund: `program_tag`, `fund_tag`, `restriction_tag`.
+- Donor/reporting: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `beneficiary_tag`, `impact_area_tag`, `region_tag`, `project_tag`, `counterparty_tag`.
 
 ---
 
@@ -178,22 +200,25 @@ This is the canonical action sequence used later to build a graph/canvas represe
 - Anchor policy documents (recommended):
   - minutes, committee charters, budgets, grant policies; anchor hashes and link them to governance records.
 - Set tags:
-  - categories + program tags aligned to programs; sign.
+  - required: `category_code`, `counterparty_type`, `reference_id` (when applicable), `reference_type` (when `reference_id` is present),
+  - program/fund context: `program_tag`, `fund_tag`, `restriction_tag`,
+  - donor/reporting context: `grant_id`, `donor_tag`, `campaign_tag`, `item_id`, `region_tag`, `project_tag`, `beneficiary_tag`, `impact_area_tag`, `counterparty_tag`; sign.
 
 ### 2) Operate (repeat)
 
-- Receive donations/grants (USDC on Noble, via IBC) into `DONATION`; confirm on-chain.
+- Receive donations/grants (USDC bridged from Ethereum to the canonical USDC contract on dCorps) into `DONATION`; confirm on-chain.
+- Optional: issue payment requests or recurring plans for structured giving (grants, sponsorships, memberships).
 - Record inflow events:
-  - tag with donation/grant category,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
-  - link donor receipt or grant agreement anchor when available; sign.
+  - link donation receipt or grant agreement anchor when available; sign.
 - Allocate to programs:
   - transfer from `DONATION`/`OPERATING_TREASURY` to `PROGRAM` wallets under the allocation policy; sign.
 - Spend within programs:
   - routine program spend: program signer executes and records under policy.
   - protected program spend: obtain committee/board approval first; then execute and record; sign.
 - Record outflow events:
-  - tag as program/overhead/fundraising as applicable,
+  - tag with `category_code` + required fields + optional context tags,
   - include amount (USDC),
   - link receipt/grant agreement anchors when available; sign.
 
