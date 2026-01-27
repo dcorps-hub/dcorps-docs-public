@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/people/OPEN_ROLES.md](/people/OPEN_ROLES))  
-**Last updated**: 2026-01-18  
+**Last updated**: 2026-01-25
 
 > Scope: Open positions for the dCorps ecosystem.
 
@@ -20,10 +20,10 @@ Current roster is founder-led. The roles below represent the typical coverage ne
 
 ### Protocol and core engineering
 
-- Protocol Engineer (Go/Cosmos SDK)
+- Protocol Engineer (EVM/rollup stack)
   - Team or organization: DevCo
-  - Scope and responsibilities: core modules, protobufs, state machine logic, upgrades
-  - Required experience: Cosmos SDK, Go, consensus-safe development
+  - Scope and responsibilities: core contracts, event schemas, rollup integration, upgrades
+  - Required experience: EVM/solidity, rollup architecture, consensus-safe development
   - Location or time zone: Remote-friendly
   - Status: paused
   - Contact or application link: dev@dcorps.com
@@ -63,7 +63,7 @@ Current roster is founder-led. The roles below represent the typical coverage ne
 - DevOps/SRE
   - Team or organization: DevCo
   - Scope and responsibilities: environments, CI/CD, monitoring, runbooks, release automation
-  - Required experience: Cosmos ops, IaC, observability
+  - Required experience: rollup ops, IaC, observability
   - Location or time zone: Remote-friendly
   - Status: paused
   - Contact or application link: dev@dcorps.com
@@ -152,7 +152,7 @@ Current roster is founder-led. The roles below represent the typical coverage ne
 
 - Ecosystem support and integration lead (DevRel)
   - Team or organization: DevCo
-  - Scope and responsibilities: onboarding builders and validators, support, documentation feedback loop
+  - Scope and responsibilities: onboarding builders and operators, support, documentation feedback loop
   - Required experience: developer relations, integrations, technical communication
   - Location or time zone: Remote-friendly
   - Status: paused

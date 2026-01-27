@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-CORE.md](/spec/SPEC-CORE))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
 > Scope: Core behavior of the dCorps Hub chain as a registry and coordination layer for entities, roles, wallets, and baseline governance. This document is normative where explicitly stated.
 
@@ -26,7 +26,7 @@ Where this document conflicts with an approved, versioned upgrade proposal, the 
 
 ### 1.1 Purpose
 
-The dCorps Hub is a Cosmos-based blockchain that provides a neutral, long-lived registry and coordination layer for **corporations** and **nonprofit organizations** that operate primarily in stablecoins.
+The dCorps Hub is an Arbitrum Orbit rollup (Rollup mode) on Ethereum that provides a neutral, long-lived registry and coordination layer for **corporations** and **nonprofit organizations** that operate primarily in stablecoins.
 
 This core specification defines:
 
@@ -35,7 +35,7 @@ This core specification defines:
 - the baseline transaction and governance flows needed to register and operate entities;
 - invariants and constraints that all conforming implementations must preserve.
 
-The goal is to keep the Hub itself **minimal, conservative, and neutral**, while allowing rich behavior to live in protocol modules, jurisdiction adapter modules, sub chains, and off-chain applications.
+The goal is to keep the Hub itself **minimal, conservative, and neutral**, while allowing rich behavior to live in protocol modules, jurisdiction adapter modules, and off-chain applications.
 
 ### 1.2 Audience
 
@@ -54,7 +54,7 @@ The following documents are normative where referenced:
 - `SPEC-DATA.md` – Data Standards and Schemas.
 - `SPEC-PARAMS.md` – Protocol Parameters and Economics.
 - `SPEC-MODULES.md` – Module Protocol Standard.
-- `SPEC-ANCHOR.md` – Sub Chain Anchoring Standard.
+- `SPEC-ANCHOR.md` – Document Anchoring Standard.
 
 ---
 
@@ -62,7 +62,7 @@ The following documents are normative where referenced:
 
 For the purposes of this spec:
 
-- **Hub** – the dCorps Hub chain, including its consensus, state machine, and governance.
+- **Hub** – the dCorps Hub rollup, including its execution environment, settlement configuration, and governance.
 - **Entity** – an on-chain organizational object representing a corporation, nonprofit, foundation, or similar structure.
 - **Hub corporation** – an entity modeled as a corporation on the Hub, with roles and units as defined in the Whitepaper Long.
 - **Hub nonprofit** – an entity modeled as a nonprofit/NGO on the Hub, with board-driven governance and allocation rules.
@@ -74,8 +74,8 @@ For the purposes of this spec:
 - **Recurring plan** – an on-chain schedule that creates invoices on a cadence.
 - **Tagged event** – an on-chain event or transaction output annotated with categories and tags per `SPEC-DATA.md`, enabling cash-based operating reporting.
 - **Module** – a protocol module that extends Hub functionality under `SPEC-MODULES.md` (e.g. jurisdiction adapter module, sector framework, attestation module).
-- **Recognized sub chain** – a separate blockchain that implements recognition and anchoring rules under `SPEC-ANCHOR.md` and is registered on the Hub.
-- **Recognition tier** – a label describing the level and type of recognition granted to a sub chain by the Hub (e.g. experimental, standard, restricted).
+- **Bridge gateway** – the canonical L1/L2 bridge contracts that move assets between Ethereum and the Hub.
+- **Operator** – the entity responsible for sequencing and batch posting within the Hub rollup.
 - **Governance** – the combination of on-chain voting, parameter changes, and upgrade mechanisms that affect the Hub protocol.
 
 Terms such as **MUST**, **MUST NOT**, **SHOULD**, and **MAY** are to be interpreted as described in RFC 2119 when used in normative requirements.
@@ -84,7 +84,7 @@ Terms such as **MUST**, **MUST NOT**, **SHOULD**, and **MAY** are to be interpre
 
 ## 3. High-level architecture
 
-The Hub is a specialized Cosmos-based chain with the following high-level responsibilities:
+The Hub is an Arbitrum Orbit rollup with the following high-level responsibilities:
 
 1. **Entity registry**
    - Assign globally unique identifiers for entities.
@@ -95,13 +95,13 @@ The Hub is a specialized Cosmos-based chain with the following high-level respon
 3. **Governance and role modeling**
    - Represent roles (e.g. board members, officers, signers) and their powers at the entity level.
    - Provide hooks for approval workflows and programmatic controls.
-4. **Module and sub chain integration**
-   - Maintain a registry of protocol modules and recognized sub chains.
-   - Provide anchoring and recognition primitives, not business logic for each domain.
+4. **Module integration and anchoring**
+   - Maintain a registry of protocol modules.
+   - Provide anchoring primitives for documents and evidence, not business logic for each domain.
 
 The Hub does not:
 
-- custody funds on behalf of users beyond the default behavior of accounts on a proof-of-stake chain;
+- custody funds on behalf of users beyond the default behavior of EVM accounts;
 - replace legal recognition or filings, which remain the responsibility of off-chain jurisdictions and processes;
 - run application-specific logic that can reasonably live in modules or separate chains.
 
@@ -122,7 +122,6 @@ The Hub MUST store a registry of `Entity` records. Each entity record includes a
 - **Creation height** and **creation time**;
 - **Owner-of-record** or originating controller at the time of creation;
 - optional **jurisdiction binding** information for entities recognized via modules;
-- optional reference to a **sub chain** if the entity is primarily represented there (promotion).
 
 Each entity MUST have exactly one current lifecycle status at any given block height.
 
@@ -204,13 +203,14 @@ The Hub maintains a registry of protocol modules as described in `SPEC-MODULES.m
 - **status** (e.g. proposed, active, deprecated, withdrawn);
 - interface metadata needed for modules to integrate with the Hub.
 
-### 4.6 Sub chain registry and anchors
+### 4.6 Anchors and evidence
 
-The Hub stores metadata about recognized sub chains and their anchors as defined in `SPEC-ANCHOR.md`, including:
+The Hub stores anchor records as defined in `SPEC-ANCHOR.md`, including:
 
-- **Sub chain ID** and chain identifiers;
-- **recognition tier** and status;
-- latest accepted anchor and related metadata.
+- **Anchor ID** and anchor type;
+- **Entity ID** and optional reference IDs (invoice, contract, grant, policy);
+- **Commitment hash** and optional URI pointer;
+- **Timestamp** and submitter address.
 
 ---
 
@@ -281,7 +281,6 @@ Governance proposal types SHOULD include:
 
 - parameter changes (see `SPEC-PARAMS.md`);
 - module lifecycle actions (see `SPEC-MODULES.md`);
-- sub chain recognition changes (see `SPEC-ANCHOR.md`);
 - software upgrades (chain-wide).
 
 ### 5.6 Module integration hooks
@@ -304,7 +303,7 @@ Conforming implementations MUST enforce at least the following:
 3. **Wallet binding integrity** – a canonical wallet MUST NOT be bound to more than one entity for the same wallet type at the same time.
 4. **Tag integrity** – once a tag is recorded it MUST NOT be silently modified; corrections MUST be modeled as explicit corrective events.
 5. **Module isolation** – modules MUST NOT be able to corrupt core Hub invariants; failures in module logic MUST fail cleanly without compromising the base registry.
-6. **Anchoring consistency** – anchors from recognized sub chains MUST satisfy the conditions in `SPEC-ANCHOR.md` or be rejected.
+6. **Anchoring consistency** – anchors MUST satisfy the conditions in `SPEC-ANCHOR.md` or be rejected.
 
 Implementations MAY strengthen these invariants but MUST document any additional constraints that impact integrators.
 
@@ -312,7 +311,7 @@ Implementations MAY strengthen these invariants but MUST document any additional
 
 ## 7. Governance hooks
 
-The Hub’s core state (entities, roles, parameters, module registry, sub chain registry) is governed by on-chain mechanisms that:
+The Hub’s core state (entities, roles, parameters, module registry, anchor registry) is governed by on-chain mechanisms that:
 
 - define who can propose changes;
 - define which proposals require which thresholds and quorums;
@@ -322,7 +321,6 @@ At minimum:
 
 - parameter changes MUST be gated by governance in accordance with `SPEC-PARAMS.md`;
 - module activation/deactivation MUST be recorded in governance state under `SPEC-MODULES.md`;
-- sub chain recognition tier changes MUST be traceable to explicit governance decisions.
 
 Governance implementations SHOULD favor:
 

@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/people/ROLES.md](/people/ROLES))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-25
 
 > Scope: Roles needed to build, secure, and operate dCorps over time.
 
@@ -20,9 +20,9 @@ Current status: founder-led Phase 0A (development). This page is a capability ma
 
 Owns kernel architecture, module boundaries, and upgrade strategy. Turns the spec stack into a safe, testable implementation with clear invariants and upgrade rehearsals.
 
-### Protocol engineer (Go/Cosmos SDK)
+### Protocol engineer (EVM/rollup stack)
 
-Implements core modules, protobufs, state transitions, and parameter logic. Ships reproducible builds and participates in testnet operations and upgrade rehearsals.
+Implements core contracts, event schemas, and rollup integration logic. Ships reproducible builds and participates in testnet operations and upgrade rehearsals.
 
 ### Protocol module engineer (optional overlays)
 
@@ -122,7 +122,7 @@ Runs budgeting, vendor management, reporting, and internal controls with conserv
 
 ### DevRel and ecosystem support
 
-Supports builders, validators, and partners integrating with the Hub. Owns integration guidance, support loops, and partner onboarding patterns that keep the ecosystem open and interoperable.
+Supports builders, operators, and partners integrating with the Hub. Owns integration guidance, support loops, and partner onboarding patterns that keep the ecosystem open and interoperable.
 
 ### Partnerships and institutional outreach
 

@@ -6,75 +6,70 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/CHAIN_LAYOUT.md](/engineering/CHAIN_LAYOUT))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
-> Scope: Canonical repository layout and module boundaries for the Hub chain implementation.
+> Scope: Canonical repository layout and module boundaries for the Hub rollup implementation.
 
 ---
 
 ## 1. Chain repository
 
 - Repo name: `dcorps-chain`.
-- Language: Go.
-- Framework: Cosmos SDK with CometBFT and IBC (see [docs/engineering/STACK.md](/engineering/STACK)).
+- Execution environment: Arbitrum Orbit (Rollup mode) with EVM contracts.
+- Contract language: Solidity (with optional Vyper where justified).
 
 ---
 
-## 2. Top-level layout
+## 2. Top-level layout (illustrative)
 
 ```text
 dcorps-chain/
-  app/
-    app.go
-    encoding.go
-  cmd/
-    dcorpsd/
-  proto/
-    dcorps/
-      entity/v1/
-      accounting/v1/
-      registry/v1/
-  x/
+  contracts/
     entity/
     accounting/
     registry/
-  docs/
+    modules/
+  interfaces/
   scripts/
+  deployments/
+  config/
+  docs/
+  tests/
 ```
 
 ---
 
-## 3. Custom modules
+## 3. Core contracts
 
-- `x/entity`
+- `contracts/entity`
   - Entity registry, lifecycle status, and metadata.
   - Role bindings and authority checks.
   - Canonical wallet bindings.
   - Document anchors (evidence hashes).
-- `x/accounting`
+- `contracts/accounting`
   - Tagged accounting events.
   - Event validation against tag catalogs.
-  - Time-window view indexes (lightweight).
-- `x/registry`
+  - Time-window view indexes (lightweight and indexer-friendly).
+- `contracts/registry`
   - Module registry and lifecycle.
   - Module attachment records for entities.
-  - Sub chain registry and recognition tiers.
-  - Sub chain anchor submissions and validation.
-
-Standard Cosmos modules are used for auth, bank, staking, slashing, gov, feegrant, distribution, upgrade, and params.
+  - Asset registry and canonical token identifiers.
+  - Bridge gateway references and status signals.
 
 ---
 
-## 4. Protobuf namespaces
+## 4. Interface definitions
 
-- `dcorps.entity.v1`
-- `dcorps.accounting.v1`
-- `dcorps.registry.v1`
+- Typed events and ABI interfaces for:
+  - entity registry actions;
+  - role bindings and governance actions;
+  - accounting events and anchors;
+  - module registry and attachments.
 
 ---
 
 ## 5. Build and release tooling
 
-- `buf` for proto linting and generation.
-- `goreleaser` for tagged release artifacts.
-- `cosmovisor` for upgrade automation.
+- `forge` or `hardhat` for contract builds and tests.
+- reproducible build scripts and deterministic deployment manifests.
+- timelocked upgrade procedures and versioned deployment artifacts.

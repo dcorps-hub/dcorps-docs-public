@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION))  
-**Last updated**: 2025-12-28  
+**Last updated**: 2026-01-25
 
 > Scope: Define the intended language coverage for dCorps across the website, documentation, and testnet/mainnet-facing materials.
 
@@ -42,7 +42,7 @@ In scope:
 
 - Website copy and navigation (`dcorps-site/`).
 - Docs Center content in this repo (`docs/`), including whitepapers and policy documents.
-- Testnet and mainnet operational materials: release notes, validator onboarding guides, upgrade notices, and incident communications.
+- Testnet and mainnet operational materials: release notes, operator onboarding guides, upgrade notices, and incident communications.
 - Reference tooling UI text (where applicable): explorer, registry, wallet guidance, and official app.
 
 Out of scope (by default):

@@ -6,7 +6,7 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION))  
-**Last updated**: 2026-01-18  
+**Last updated**: 2026-01-25
 
 > Scope: A phased governance plan from founder-led pre-mainnet work through foundation readiness. This document describes design intention, not a commitment of timing or outcomes.
 
@@ -43,7 +43,7 @@ Governance posture:
 
 Deliverables (governance-specific):
 
-- Publish and maintain the baseline policy set (`POL-GOV`, `POL-FOUNDATION`, `POL-VALIDATORS`, `POL-TREASURY`).
+- Publish and maintain the baseline policy set (`POL-GOV`, `POL-FOUNDATION`, `POL-OPERATORS`, `POL-TREASURY`).
 - Publish a public conflict-of-interest posture for any future funding or related-party arrangements (see Section 6).
 
 ---
@@ -69,12 +69,12 @@ Foundation readiness preparation:
 
 ## 4. Phase 1 (mainnet launch) — on-chain governance becomes primary
 
-Goal: transition protocol change control to on-chain governance under `DCHUB` staking and voting, with conservative safety guardrails.
+Goal: transition protocol change control to on-chain governance under `DCHUB` token-weighted voting, with conservative safety guardrails.
 
 Governance posture (design intention):
 
 - **On-chain voting** is the canonical approval path for protocol upgrades, parameter changes, and module lifecycle decisions (see [docs/policy/POL-GOV.md](/policy/POL-GOV)).
-- **Protected Changes** use higher thresholds and safety mechanisms (stake age, timelocks) for high-impact actions.
+- **Protected Changes** use higher thresholds and safety mechanisms (voting-power age, timelocks) for high-impact actions.
 - **Transparency** is treated as a security control: proposals include durable rationale, risk notes, and references.
 
 If the foundation is not yet operational at launch:

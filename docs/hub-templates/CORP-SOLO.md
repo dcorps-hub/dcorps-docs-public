@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-SOLO.md](/hub-templates/CORP-SOLO))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the CORP-SOLO Hub corporation template (solo owner-operator).
 
@@ -120,7 +120,7 @@ This section describes the minimum structure the template expects. Exact message
   - `OPERATING_TREASURY` (required): primary operating spending
   - `RESERVES` (optional): buffers and strategic reserves
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Treasury/reserve wallets may hold DCHUB for gas buffers or protocol exposure; tag holdings with `asset_tag` and `BAL_DCHUB`.
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Treasury policy (default)**
@@ -214,7 +214,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
 ### 2) Operate (repeat)
 
 - Fund the company wallet:
-  - receive USDC (on Noble, via IBC) into a canonical wallet.
+  - receive USDC (bridged from Ethereum to the canonical USDC contract on dCorps) into a canonical wallet.
 - (Optional) Create a catalog item:
   - define `item_id`, label, and price; sign.
 - (Optional) Create an invoice or recurring plan and anchor evidence:

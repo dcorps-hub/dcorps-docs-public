@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the minimum required record format and lifecycle rules for attestation-style protocol modules, plus reference interface requirements for presenting attestation outputs.
 
@@ -52,7 +52,7 @@ A compliant attestation record MUST include, at minimum:
 
 - **Issuer identity** (DID and signing address).
 - **Issuer scope** (for example jurisdiction authority, auditor, sector framework operator, oversight body, analytics provider).
-- **Subject entity ID** (and optional sub chain ID if relevant).
+- **Subject entity ID** (and optional external reference ID if relevant).
 - **Attestation type** (enumerated), for example:
   - Recognition active
   - Recognition withdrawn
@@ -162,7 +162,7 @@ For selected high-impact attestation types, a module MAY require a deposit or bo
 
 - the deposit is denominated in DCHUB or USDC, as defined by module parameters;
 - deposits are designed to price spam and abuse, not to create an endorsement market; and
-- any slashing or forfeiture conditions MUST be objective, verifiable, and narrowly defined (for example invalid schema, duplicate flooding, or proven key misuse), not based on the content or popularity of an attestation.
+- any forfeiture conditions MUST be objective, verifiable, and narrowly defined (for example invalid schema, duplicate flooding, or proven key misuse), not based on the content or popularity of an attestation.
 
 Registered issuers MAY be exempt from per-attestation deposits but MAY be required to maintain a module-level issuer bond.
 

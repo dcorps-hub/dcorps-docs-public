@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Initial supply, allocations, vesting, and launch mechanics for DCHUB at network genesis. This plan aligns with the token model in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 10).
 
@@ -47,7 +47,7 @@ An indicative allocation at genesis is:
   - Series C: 2% (20,000,000)
   - Public sale / ICO (if any): 4% (40,000,000)
 - **Community and ecosystem programs**: 33% (330,000,000)
-- **Staking and validator rewards**: 18% (180,000,000)
+- **Operator incentives and protocol operations**: 18% (180,000,000)
 - **Protocol Treasury**: 4% (40,000,000)
 - **dCorps foundation**: 4% (40,000,000)
 - **Liquidity bootstrap (operational liquidity)**: 3% (30,000,000)
@@ -77,7 +77,7 @@ Genesis custody stance (design intention):
 
 - Founder, team, and investor allocations are held in on-chain enforced vesting or lockup contracts.
 - Community and ecosystem programs allocation is held in governance-controlled module accounts or contracts with explicit release rules.
-- Staking and validator rewards allocation is held in the distribution module account and becomes circulating only as rewards are paid out.
+- Operator incentives and protocol operations allocation is held in governance-controlled contracts and becomes circulating only as approved distributions are made.
 - Protocol Treasury and foundation allocations are held in non-delegating accounts or contracts, non-voting by default, with governed release paths.
 - Liquidity bootstrap allocation may be deployed for operational liquidity under a published liquidity plan and Treasury policy.
 
@@ -108,7 +108,7 @@ Indicative v1 schedules (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WH
   - Series B: 6-month lockup, then 30-month linear vesting.
   - Series C: 3-month lockup, then 24-month linear vesting.
   - Public sale / ICO (if any): 10% at TGE, 90% linear vesting over 12 months.
-- **Staking and validator rewards (18%)**: distributed via a published schedule capped by the rewards pool (genesis default schedule described in section 10.4A.5 of the Whitepaper Long).
+- **Operator incentives and protocol operations (18%)**: distributed via a published schedule capped by the pool (genesis default schedule described in section 10.4A.5 of the Whitepaper Long).
 - **Community and ecosystem programs (33%)**: governed releases with explicit annual and quarterly release caps (Whitepaper Long section 10.4A.6).
 
 For baseline schedules, see [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES).
@@ -120,7 +120,7 @@ For baseline schedules, see [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN
 Constructing the genesis state involves:
 
 - defining all initial accounts, balances, and vesting schedules;
-- specifying initial validator set and staking allocations, if any;
+- specifying initial operator addresses and rollup configuration;
 - setting initial parameters as described in `SPEC-PARAMS.md`.
 
 The process includes:
@@ -151,7 +151,7 @@ Launch may be structured into phases such as:
 - private testnets – early validation of functionality and security;
 - public testnets – wider testing and integration by ecosystem participants;
 - genesis dry-run – full rehearsal of the planned mainnet genesis;
-- mainnet launch – activation of genesis, initial staking, and governance.
+- mainnet launch – activation of rollup configuration, initial operator set, and governance.
 
 Safeguards include:
 
@@ -159,4 +159,4 @@ Safeguards include:
 - go/no-go checklists for mainnet launch (e.g. audits, tooling readiness);
 - contingency plans for delaying launch or rolling back to a prior phase if critical issues are discovered.
 
-The final mainnet launch decision is a coordinated action between on-chain governance, validators, and the foundation, with clear communication to all stakeholders.
+The final mainnet launch decision is a coordinated action between on-chain governance, operators, and the foundation, with clear communication to all stakeholders.

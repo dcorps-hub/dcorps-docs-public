@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
 > This is the condensed whitepaper. For the official long version, see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG).
 
@@ -34,7 +34,7 @@ Reader shortcuts:
 - Founders and operators: sections 0, 4, 5, 6, 7.
 - Nonprofit leaders and donors: sections 0, 4.2, 5, 8.
 - Builders and integrators: sections 3, 4, 5, plus [docs/spec/](/spec).
-- Validators and security contributors: sections 6.4, 7, and [docs/security/](/security).
+- Rollup operators and security contributors: sections 6.4, 7, and [docs/security/](/security).
 - Institutions and legal professionals: sections 2, 7, 9, and [docs/legal/](/legal).
 
 ---
@@ -51,7 +51,7 @@ For interoperability and correctness, the intended document stack is:
   - [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (schemas and tagging),
   - [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module standard),
   - [docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS) (attestation modules, if used),
-  - [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR) (sub chain anchoring),
+  - [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR) (anchoring standard),
   - [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS) (parameter model),
   - [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER) (reference indexer and explorer behavior),
   - [docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS) (compatibility test expectations).
@@ -60,7 +60,7 @@ For interoperability and correctness, the intended document stack is:
   - [docs/policy/POL-TREASURY.md](/policy/POL-TREASURY),
   - [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION),
   - [docs/policy/POL-REGISTRY-MODULES.md](/policy/POL-REGISTRY-MODULES),
-  - [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS).
+  - [docs/policy/POL-OPERATORS.md](/policy/POL-OPERATORS).
 - **Security artifacts (operationally normative)**:
   - [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY),
   - [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL),
@@ -115,7 +115,7 @@ Entities must be able to operate without adapters. Adapters may publish derived 
 
 **In scope for v1**
 
-- Hub chain, DCHUB gas and staking, and basic on-chain protocol governance.
+- Hub rollup (Arbitrum Orbit, Rollup mode), DCHUB gas + protocol governance + protocol-level fees, and basic on-chain governance.
 - Hub corporation and Hub nonprofit entity containers.
 - Authority and canonical operational wallets.
 - Commerce primitives (catalog items/services, invoices, recurring plans).
@@ -190,7 +190,7 @@ Optional adapters and modules (jurisdiction recognition, sector frameworks, atte
 dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
         |
         v
-DCHUB staking and consensus (security, gas, protocol governance)
+DCHUB gas + rollup settlement (sequencer + Ethereum)
 ```
 
 Applications provide user experience. The Hub provides canonical state and events. Optional modules publish derived interpretations under explicit rules and governance.
@@ -231,11 +231,11 @@ Nonprofits are expected to meet a minimum transparency floor meaningful for dono
 
 Nonprofits do not have equity and are not “owned” by units, but they can still participate in group structures (for example by holding units in a Hub corporation subsidiary).
 
-### 4.3 Optional future extension: recognized sub chains
+### 4.3 Optional future extension: private execution zones
 
-Some organizations may eventually require specialized execution environments for extreme scale or specialized privacy. If introduced, recognized sub chains would anchor summarized commitments to the Hub under explicit standards.
+Some organizations may eventually require specialized execution environments for extreme scale or specialized privacy. These can be implemented as application-level execution zones or off-chain workflows that anchor evidence back to the Hub under explicit standards.
 
-v1 does not require any sub chains for entities to operate.
+v1 does not require any private execution zones for entities to operate.
 
 ---
 
@@ -278,15 +278,14 @@ Views should surface integrity signals, such as uncategorized flows, provenance 
 
 dCorps separates protocol participation and entity-level ownership:
 
-- **DCHUB**: Hub gas, staking, and protocol governance; does not represent ownership in user entities.
+- **DCHUB**: Hub gas, protocol governance, and protocol-level fees; does not represent ownership in user entities.
 - **Hub units**: internal ownership and voting rights within a Hub corporation; scoped to that entity.
-- **dShares (optional future extension)**: equity-style tokens issued by public sub chain corporations on their own sub chains, under their own legal regime.
+- **dShares (optional future extension)**: equity-style tokens issued by entities under applicable legal regimes, potentially via Hub modules or approved external rails.
 - **Nonprofit governance**: board and allocation rules, not equity; no token represents ownership of a nonprofit.
 
 ### 6.2 DCHUB and USDC roles
 
-- **DCHUB** prices execution (gas) and secures the Hub through staking and validator consensus.
-- **USDC** is the baseline unit of account for examples and the primary operating currency for many entities and protocol service fees.
+- **DCHUB** prices execution (gas) and supports protocol governance and protocol-level fees.\n+- **USDC** is the baseline unit of account for examples and the primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
 
 This describes protocol mechanics, not promises about price, liquidity, or market outcomes.
 

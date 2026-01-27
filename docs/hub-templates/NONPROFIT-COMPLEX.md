@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/NONPROFIT-COMPLEX.md](/hub-templates/NONPROFIT-COMPLEX))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the NONPROFIT-COMPLEX Hub nonprofit template.
 
@@ -113,7 +113,7 @@ This section describes the minimum structure the template expects. Exact message
   - `OPERATING_TREASURY` (recommended): overhead and shared operating spending
   - `RESERVES` (optional): buffers and designated reserves
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Designated fund model (recommended baseline)**
   - Fund designations (restricted/unrestricted) expressed via:
@@ -124,7 +124,7 @@ This section describes the minimum structure the template expects. Exact message
   - Disclosure mode is declared and used by explorers and tools:
     - Mode A: raw on-chain detail (maximum verifiability)
     - Mode B: public aggregates + commitments and selective disclosure
-    - Mode C: private execution with public anchoring (requires private zones/sub chains)
+    - Mode C: private execution with public anchoring (requires private zones)
   - Hub nonprofits must meet a minimum transparency floor in all modes:
     - donation inflows totals and category-level outflows over any timeframe,
     - board composition and governance events,
@@ -225,7 +225,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
 
 ### 2) Operate (repeat)
 
-- Receive donations/grants (USDC on Noble, via IBC) into `DONATION`; confirm on-chain.
+- Receive donations/grants (USDC bridged from Ethereum to the canonical USDC contract on dCorps) into `DONATION`; confirm on-chain.
 - Optional: issue payment requests or recurring plans for structured giving (grants, sponsorships, memberships).
 - Record inflow events:
   - tag with `category_code` + required fields + optional context tags,

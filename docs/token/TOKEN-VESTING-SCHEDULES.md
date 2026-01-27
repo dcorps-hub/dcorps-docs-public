@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Baseline vesting and lockup schedules for DCHUB allocations. These align with the Whitepaper Long and Genesis Plan.
 
@@ -38,7 +38,7 @@ Community, rewards, and treasury allocations follow programmatic release rules a
 
 ## 3. Rewards and program pools
 
-- Staking and validator rewards: released according to the schedule in [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES).
+- Operator incentives and protocol operations: released according to the schedule in [docs/token/TOKEN-EMISSIONS-NOTES.md](/token/TOKEN-EMISSIONS-NOTES).
 - Community and ecosystem programs: governed releases subject to caps defined in the Whitepaper Long.
 - Treasury and foundation allocations: governed releases with reporting requirements.
 

@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public (internal index)  
-**Last updated**: 2026-01-03  
+**Last updated**: 2026-01-25
 
 > Scope: Canonical entry point for publicly releasable dCorps documentation across protocol, policy, security, token, and supporting technical materials.
 
@@ -27,7 +27,7 @@ Current status: Phase 0A (development). Mainnet is not live, on-chain governance
 - Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
 - Normative specs: [docs/spec/INDEX.md](/spec/INDEX)
 - Technical build notes: [docs/engineering/INDEX.md](/engineering/INDEX)
-- Interop and IBC: [docs/interop/INDEX.md](/interop/INDEX)
+- Interop and bridge gateways: [docs/interop/INDEX.md](/interop/INDEX)
 - DevOps: [docs/devops/INDEX.md](/devops/INDEX)
 - Roadmap and phases: [docs/roadmap/INDEX.md](/roadmap/INDEX)
 - Frontend: [docs/frontend/INDEX.md](/frontend/INDEX)
@@ -56,12 +56,12 @@ Current status: Phase 0A (development). Mainnet is not live, on-chain governance
 - Hub templates: [docs/hub-templates/INDEX.md](/hub-templates/INDEX)
 - Adoption guides: [docs/adoption/INDEX.md](/adoption/INDEX)
 - Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
-- Policy and governance: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION), [docs/policy/POL-VALIDATORS.md](/policy/POL-VALIDATORS)
+- Policy and governance: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION), [docs/policy/POL-OPERATORS.md](/policy/POL-OPERATORS)
 - Localization and translations: [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION)
 - Token: [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY), [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN), [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES), [docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS)
 - Security: [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY), [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL)
 - Engineering: [docs/engineering/INDEX.md](/engineering/INDEX)
-- Interop: [docs/interop/INDEX.md](/interop/INDEX)
+- Interop and bridge gateways: [docs/interop/INDEX.md](/interop/INDEX)
 - DevOps: [docs/devops/INDEX.md](/devops/INDEX)
 - Roadmap: [docs/roadmap/INDEX.md](/roadmap/INDEX)
 - Frontend: [docs/frontend/INDEX.md](/frontend/INDEX)

@@ -6,9 +6,9 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
-> Scope: Baseline chain IDs, denoms, prefixes, and genesis parameter defaults for dev, testnet, and mainnet.
+> Scope: Baseline chain IDs, rollup configuration, and fee defaults for dev, testnet, and mainnet.
 
 ---
 
@@ -20,47 +20,43 @@
 
 ---
 
-## 2. Denoms and decimals
+## 2. Native token and decimals
 
 - Native token: DCHUB
-- Base denom: `udchub` (1 DCHUB = 1,000,000 udchub)
-- Stablecoin reference: `uusdc` via IBC (Noble)
+- Native decimals: 18
 
 ---
 
-## 3. Bech32 prefixes
+## 3. Canonical asset contracts
 
-- Account: `dcorps`
-- Validator operator: `dcorpsvaloper`
-- Validator consensus: `dcorpsvalcons`
-- Public key: `dcorpspub`
+- Canonical USDC contract on dCorps (single address per environment).
+- L1 source: Ethereum USDC; bridged via the canonical gateway.
+- Additional stablecoins (USDT, DAI) are listed only after governance approval.
 
----
-
-## 4. Genesis supply and allocations
-
-- Total supply at genesis: 1,000,000,000 DCHUB.
-- Allocation and vesting schedules follow [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN).
+Contract addresses are published in release notes and environment summaries.
 
 ---
 
-## 5. Consensus baseline
+## 4. Bridge gateways
 
-- `block_time_target`: 5s
-- `max_block_gas`: 20,000,000
+- L1 gateway contract address (Ethereum).
+- L2 gateway contract address (dCorps rollup).
+- Message queue and finalization settings (as provided by Orbit config).
 
----
-
-## 6. Baseline staking parameters
-
-- `bond_denom`: `udchub`
-- `unbonding_time`: 21 days
-- `max_validators`: 100
-- `min_self_delegation`: 1,000 DCHUB
+Addresses are published per environment and updated only via governance-approved change control.
 
 ---
 
-## 7. Governance parameters (baseline)
+## 5. Operator addresses
+
+- Sequencer address.
+- Batch poster address.
+
+Operator address changes must be documented in release notes and governance logs.
+
+---
+
+## 6. Governance parameters (baseline)
 
 - `voting_period`:
   - devnet: 2 days
@@ -75,24 +71,15 @@ Protected Change thresholds follow [docs/policy/POL-GOV.md](/policy/POL-GOV).
 
 ---
 
-## 8. Slashing parameters (baseline)
+## 7. Fee parameters (baseline)
 
-- `slash_double_sign`: 0.05
-- `slash_downtime`: 0.01
-- `signed_blocks_window`: 10,000 blocks
-- `min_signed_per_window`: 0.95
-
----
-
-## 9. Fee parameters (baseline)
-
-- `tx_min_gas_price`: 0.01 udchub
-- `entity_registration_fee`: 100 USDC (IBC `uusdc`)
-- `anchor_submit_fee`: 5 USDC (IBC `uusdc`)
+- `tx_min_gas_price`: 0.01 DCHUB
+- `entity_registration_fee`: 100 USDC (canonical USDC contract)
+- `anchor_submit_fee`: 5 USDC (canonical USDC contract)
 
 ---
 
-## 10. Change control
+## 8. Change control
 
 - Baseline values are subject to governance updates.
-- Any changes MUST be approved via on-chain governance (or encoded at genesis for launch) and reflected by updating this document.
+- Any changes MUST be approved via on-chain governance (or encoded at deployment for launch) and reflected by updating this document.

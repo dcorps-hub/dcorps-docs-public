@@ -6,32 +6,28 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
-> Scope: How recognized sub chains anchor commitments back to the Hub and how the Hub interprets them for recognition, security, and observability.
+> Scope: How entities anchor documents and evidence to the Hub and how the Hub validates and records anchors.
 
 ---
 
 ## 1. Introduction
 
-The dCorps Hub recognizes external sub chains that:
-
-- implement entity, governance, or financial logic beyond the Hub’s minimal core;
-- periodically anchor their state back to the Hub via succinct commitments;
-- follow clear security and recognition standards set by governance.
+The dCorps Hub allows entities to anchor documents and evidence on-chain to create verifiable references without storing full documents on-chain.
 
 This spec defines:
 
-- the structure of anchor commitments;
-- how and when anchors must be submitted;
-- how the Hub validates and records anchors;
-- how recognition tiers depend on anchoring behavior.
+- the structure of anchor records;
+- how anchors must be submitted;
+- how the Hub validates and records anchors; and
+- how corrections and superseding anchors are modeled.
 
 Anchoring enables:
 
-- independent chains to reuse the Hub as a **security and evidence root**;
-- explorers and auditors to correlate activity across Hub and sub chains;
-- consistent treatment of sub chains in governance decisions and risk frameworks.
+- durable references to bylaws, resolutions, invoices, grant agreements, and reports;
+- consistent audit trails for governance and accounting actions; and
+- reproducible provenance for indexers and explorers.
 
 ---
 
@@ -39,110 +35,60 @@ Anchoring enables:
 
 Each accepted anchor is a record in Hub state containing at least:
 
-- **Sub chain ID** – unique identifier for the recognized chain;
-- **Anchor height** – block height or epoch number on the sub chain;
-- **Commitment hash** – cryptographic commitment to the sub chain state or subset (e.g. Merkle root);
-- **Previous anchor reference** – pointer to the last accepted anchor for that sub chain;
+- **Anchor ID** – unique identifier for the anchor record;
+- **Entity ID** – the entity that owns the anchor;
+- **Anchor type** – document, resolution, invoice, grant, policy, report, or other cataloged types;
+- **Commitment hash** – cryptographic hash of the anchored document or evidence;
+- **Optional URI** – pointer to off-chain storage (IPFS, HTTPS, etc.);
+- **Reference ID** – optional link to a related on-chain object (invoice, grant, contract);
 - **Timestamp** – submission time from the Hub’s perspective;
-- **Metadata** – optional structured fields (e.g. version, anchor type, attested metrics).
+- **Submitter address** – on-chain address that submitted the anchor.
 
-Anchors MUST be immutable once accepted. Any correction or re-anchoring MUST be modeled as a new anchor with explicit relationships to previous ones.
-
-The exact structure of the commitment hash and metadata MAY vary by sub chain, but MUST be:
-
-- well-documented;
-- clearly versioned where formats can evolve;
-- sufficient to allow independent verification by indexers and auditors.
+Anchors MUST be immutable once accepted. Corrections MUST be modeled as new anchors that reference the prior anchor ID.
 
 ---
 
-## 3. Anchoring process and frequency
+## 3. Anchoring process
 
 ### 3.1 Submission
 
-Anchors are submitted via dedicated messages on the Hub that include:
+Anchors are submitted via dedicated messages or contract calls that include:
 
-- the sub chain identifier;
-- the commitment payload (height, hash, metadata);
-- proof of authorization (e.g. signatures from designated sub chain operators or validators).
+- the entity identifier;
+- the commitment hash and anchor type;
+- optional URI and reference IDs.
 
-Only entities authorized for a given sub chain MAY submit anchors for it. Authorization rules MUST be registered and maintained in the sub chain registry.
+Only authorized entity roles (e.g. secretary, admin, treasurer) MAY submit anchors for that entity. Authorization rules are defined in `SPEC-CORE.md` and `SPEC-DATA.md` role catalogs.
 
-### 3.2 Frequency and liveness
+### 3.2 Fees
 
-For each recognition tier, governance MUST define:
-
-- **minimum anchoring frequency** (e.g. at least once every N sub chain blocks or every T minutes);
-- **maximum allowed lag** between the sub chain’s anchor height and the Hub’s current height/time.
-
-Failure to meet liveness requirements MAY:
-
-- trigger automatic risk flags;
-- result in recognition tier downgrade;
-- eventually lead to recognition withdrawal if unaddressed.
-
-### 3.3 Failure and resynchronization
-
-If a sub chain experiences a reorg or rollback:
-
-- it MUST submit new anchors that reflect the corrected history;
-- it SHOULD provide metadata that allows auditors to detect and analyze the reorg;
-- governance MAY treat repeated severe reorgs as a risk factor.
-
-The Hub itself does not rewind; it records a sequence of anchors that may include corrected commitments, as long as they follow the rules in this spec.
+Anchor submissions MAY require a protocol-level fee as defined in `SPEC-PARAMS.md` and [docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS).
 
 ---
 
-## 4. Verification and failure handling
+## 4. Validation and failure handling
 
-### 4.1 Verification
+### 4.1 Validation
 
-Upon anchor submission, the Hub MUST perform basic validation including:
+Upon submission, the Hub MUST perform basic validation including:
 
 - structural checks (required fields present, sizes within limits);
-- authorization checks;
-- monotonicity checks (anchor height is greater than the last accepted height for that sub chain).
-
-Deeper verification (e.g. checking that the commitment matches the sub chain’s published state) MAY be delegated to:
-
-- off-chain monitors and indexers;
-- watchdog modules with read access to the sub chain;
-- third-party attestations.
-
-Verification approaches and guarantees SHOULD be documented for each recognized sub chain.
+- authorization checks (submitter has required role);
+- reference checks (if a reference ID is provided, it MUST exist and be accessible).
 
 ### 4.2 Failure modes
 
-If verification fails or suspicious patterns are detected (e.g. conflicting anchors, impossible heights), the Hub and governance MAY:
-
-- reject the anchor outright;
-- mark the sub chain with a higher risk tier while continuing to accept anchors;
-- initiate governance action to downgrade or remove recognition;
-- trigger slashing of recognition deposits if conditions are met.
-
-All anchor acceptance or rejection decisions MUST be logged with sufficient detail for forensics.
+If validation fails, the Hub MUST reject the anchor and emit a failure event. The Hub MUST NOT mutate prior anchors or silently overwrite anchor data.
 
 ---
 
-## 5. Recognition tiers and behavior
+## 5. Indexing and presentation
 
-Recognition tiers are labels attached to sub chains that:
+Indexers and explorers SHOULD surface:
 
-- communicate risk and maturity to users and integrators;
-- determine economic requirements such as deposits and fees;
-- control how strictly anchoring requirements are enforced.
+- anchor type and hash;
+- linked entity and reference IDs;
+- any superseding anchors; and
+- provenance labels for off-chain storage URIs.
 
-Example tiers include:
-
-- **Experimental** – early-stage chains with limited history; higher liveness tolerance, stricter warnings.
-- **Standard** – chains that meet full anchoring and security requirements.
-- **Restricted** – chains with known issues; still recognized but with clear warnings and possible limitations.
-- **Revoked** – chains that no longer meet minimum standards; anchors are no longer accepted.
-
-Governance MUST define:
-
-- criteria for moving between tiers;
-- the anchoring requirements for each tier;
-- any automatic or semi-automatic triggers for downgrades (e.g. extended liveness failures or proven misbehavior).
-
-Indexers and explorers SHOULD surface recognition tiers prominently when presenting sub chain data and cross-Hub views, so that users can make informed decisions.
+Anchors SHOULD be presented as evidence pointers, not as claims of legal validity or regulatory compliance.

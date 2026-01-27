@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Standard for protocol modules (jurisdiction adapter modules, sector frameworks, attestation modules, etc.) that extend the Hub without compromising its core invariants.
 
@@ -90,7 +90,7 @@ The Hub provides hooks for events such as:
 - role and wallet updates;
 - tagged accounting events;
 - governance proposal lifecycle events;
-- sub chain recognition changes and anchor acceptance.
+- anchor submissions and anchor acceptance events.
 
 Modules MAY subscribe to subsets of these events and MUST handle them deterministically. Failure to handle an event MUST fail the relevant transaction rather than leaving state inconsistent.
 
@@ -117,7 +117,7 @@ Capabilities MAY include:
 - **Read-only** – module can read specific parts of Hub state.
 - **Advisory** – module can emit recommendations or risk flags but cannot block actions.
 - **Enforcement** – module can veto or modify specific operations when attached.
-- **Anchoring** – module can verify and interpret sub chain anchors.
+- **Anchoring** – module can verify and interpret document anchors.
 
 Modules SHOULD default to the least privilege necessary. Governance SHOULD scrutinize requests for enforcement capabilities, especially when they affect many entities.
 

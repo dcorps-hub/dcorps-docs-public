@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/security/INCIDENT-RESPONSE.md](/security/INCIDENT-RESPONSE))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Process and roles for detecting, triaging, and responding to security incidents affecting the dCorps Hub, modules, and related infrastructure.
 
@@ -17,7 +17,7 @@
 Incidents may be detected via:
 
 - monitoring alerts from nodes, indexers, or infrastructure;
-- reports from users, validators, or researchers;
+- reports from users, operators, or researchers;
 - anomalies observed in on-chain data or logs.
 
 Upon detection:
@@ -34,7 +34,7 @@ Low-severity issues may be handled through normal development processes; high an
 
 Example severity levels:
 
-- critical – immediate risk to funds, consensus, or core data integrity;
+- critical – immediate risk to funds, rollup integrity, or core data integrity;
 - high – serious impact on security or availability but with some mitigating factors;
 - medium – limited scope or partial mitigations available;
 - low – minor issues or ones with negligible security impact.
@@ -53,7 +53,7 @@ Key roles may include:
 
 - incident coordinator – leads the response process, manages communication, and ensures documentation;
 - technical leads – investigate root cause, design and implement fixes or mitigations;
-- validator and operations liaisons – coordinate with validator sets and infrastructure operators;
+- operator and operations liaisons – coordinate with operator roles and infrastructure providers;
 - communications lead – manages internal and external communication, including public statements.
 
 Individuals may hold multiple roles in smaller teams, but responsibilities are clearly understood in advance.
@@ -65,15 +65,15 @@ Individuals may hold multiple roles in smaller teams, but responsibilities are c
 Depending on the incident, technical steps may include:
 
 - temporarily disabling or rate-limiting affected features (where possible);
-- deploying configuration changes (e.g. parameter updates, validator recommendations);
+- deploying configuration changes (e.g. parameter updates, operator recommendations);
 - preparing and deploying code fixes via emergency or expedited upgrades;
-- coordinating with module or sub chain operators if the issue originates there.
+- coordinating with module or application operators if the issue originates there.
 
 All changes are:
 
 - tested in appropriate environments where time permits;
 - logged and documented for later review;
-- communicated to validators and key ecosystem operators.
+- communicated to operators and key ecosystem providers.
 
 Operational runbook: [docs/devops/RUNBOOK-INCIDENTS.md](/devops/RUNBOOK-INCIDENTS).
 
@@ -84,7 +84,7 @@ Operational runbook: [docs/devops/RUNBOOK-INCIDENTS.md](/devops/RUNBOOK-INCIDENT
 Communication:
 
 - balances transparency with the need to avoid enabling exploitation before fixes are deployed;
-- provides timely updates to validators, partners, and the broader community;
+- provides timely updates to operators, partners, and the broader community;
 - is honest about impact, mitigations, and remaining uncertainty.
 
 After an incident is resolved:

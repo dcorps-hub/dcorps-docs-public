@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
 ---
 
@@ -70,19 +70,19 @@ This is designed to make “how the numbers were produced” verifiable.
 
 ---
 
-## 4. Module and sub chain awareness (optional but important)
+## 4. Module and bridge awareness (optional but important)
 
-If your application surfaces outputs from modules or sub chains:
+If your application surfaces outputs from modules or cross-chain flows:
 
-- treat them as explicitly labeled overlays on top of kernel state;
+- treat module outputs as explicitly labeled overlays on top of kernel state;
 - surface module IDs, versions, and status labels from the module registry;
-- surface sub chain recognition tiers and anchor status clearly (if applicable);
+- surface bridge provenance clearly when assets or actions originate from L1;
 - avoid presenting derived claims as kernel facts without provenance.
 
 Normative rules:
 
 - modules: [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
-- sub chain anchoring: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
+- anchoring and evidence: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
 
 ---
 
@@ -105,7 +105,6 @@ Risk disclosure baseline: [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE
 - Data and schemas: [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA)
 - Module standard: [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES)
 - Attestations standard (if used): [docs/spec/SPEC-ATTESTATIONS.md](/spec/SPEC-ATTESTATIONS)
-- Sub chain anchoring: [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR)
 - Parameters and economics model: [docs/spec/SPEC-PARAMS.md](/spec/SPEC-PARAMS)
 - Reference indexer behavior: [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER)
 - Conformance tests: [docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS)

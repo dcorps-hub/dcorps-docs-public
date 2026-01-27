@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-16
+**Last updated**: 2026-01-25
 
 ---
 
@@ -80,7 +80,7 @@ v1 is intentionally narrow: ship a stable Hub kernel that can host complete corp
 
 **In scope for v1**
 
-- Hub chain, DCHUB gas and staking, and basic on-chain protocol governance.
+- Hub rollup (Arbitrum Orbit, Rollup mode), DCHUB gas + protocol governance + protocol-level fees, and basic on-chain governance.
 - Entity registry and entity lifecycle status.
 - Standard on-chain entity containers:
   - Hub corporation (units, role-based governance, structured accounting primitives).
@@ -152,7 +152,7 @@ Optional adapters and modules (jurisdiction recognition, sector frameworks, atte
 dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
         |
         v
-DCHUB staking and consensus (security, gas, protocol governance)
+DCHUB gas + rollup settlement (sequencer + Ethereum)
 ```
 
 The Hub is intended to be the canonical source of truth for entity identity, authority, and standardized accounting events.
@@ -187,7 +187,7 @@ Nonprofits do not have equity and are not “owned” by units, but they can sti
 
 ### 7.3 Optional extensions
 
-The ecosystem may support optional, registered sub chains in the future. v1 does not require any sub chains for entities to operate.
+The ecosystem may support optional private execution zones or specialized application workflows in the future. v1 does not require any private execution zones for entities to operate.
 
 ---
 
@@ -195,8 +195,7 @@ The ecosystem may support optional, registered sub chains in the future. v1 does
 
 dCorps uses two primary assets with distinct roles:
 
-- **DCHUB**: gas, staking, and protocol governance; security root for the Hub and recognized sub chains.
-- **USDC**: baseline unit of account and primary operating currency for many entities and protocol service fees.
+- **DCHUB**: gas, protocol governance, and protocol-level fees in the Orbit rollup architecture.\n+- **USDC**: baseline unit of account and primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
 
 This describes protocol mechanics, not market outcomes.
 

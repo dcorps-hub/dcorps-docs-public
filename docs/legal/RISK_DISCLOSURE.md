@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 ---
 
@@ -28,7 +28,7 @@ Protocol upgrades and parameter changes may introduce unintended consequences. E
 
 ### 1.3 Economic design errors
 
-Fees, rewards, and parameter configurations may be incorrect or misaligned, potentially impacting chain security, validator participation, and usability.
+Fees, rewards, and parameter configurations may be incorrect or misaligned, potentially impacting chain security, operator participation, and usability.
 
 ---
 
@@ -44,15 +44,15 @@ Not all “hard limits” can be enforced purely by code. Some boundaries may re
 
 ---
 
-## 3. Validator and infrastructure risks
+## 3. Operator and infrastructure risks
 
-### 3.1 Validator downtime and chain instability
+### 3.1 Operator downtime and chain instability
 
-Validator outages, operational failures, or misconfigurations may lead to downtime, degraded performance, or chain instability.
+Operator outages, operational failures, or misconfigurations may lead to downtime, degraded performance, or chain instability.
 
-### 3.2 Slashing and operational loss
+### 3.2 Sequencer and batch poster risk
 
-Validators and delegators may be slashed for certain types of misbehavior or downtime. Slashing and unbonding dynamics may create additional operational and economic risks.
+Sequencer and batch poster disruptions can cause delays in transaction ordering or settlement. Operational errors can impact availability even when on-chain contracts remain intact.
 
 ---
 

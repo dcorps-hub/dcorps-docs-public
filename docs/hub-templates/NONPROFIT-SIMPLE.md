@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/NONPROFIT-SIMPLE.md](/hub-templates/NONPROFIT-SIMPLE))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the NONPROFIT-SIMPLE Hub nonprofit template.
 
@@ -37,7 +37,7 @@
 
 - Smaller NGOs or single-program operators.
 - Teams that need clear board governance and baseline transparency.
-- Digital-native nonprofits that receive donations/grants in USDC (on Noble, via IBC) and spend on-chain.
+- Digital-native nonprofits that receive donations/grants in USDC (bridged from Ethereum to the canonical USDC contract on dCorps) and spend on-chain.
 
 ---
 
@@ -103,7 +103,7 @@ This section describes the minimum structure the template expects. Exact message
   - `OPERATING_TREASURY` (recommended): overhead and shared operating spending
   - `RESERVES` (optional): buffers
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Allocation policy (minimum)**
   - A minimal category scheme aligned to the standard chart of accounts:
@@ -193,7 +193,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
 ### 2) Operate (repeat)
 
 - Receive donations/grants:
-  - donors send USDC (on Noble, via IBC) to `DONATION`; confirm on-chain.
+  - donors send USDC (bridged from Ethereum to the canonical USDC contract on dCorps) to `DONATION`; confirm on-chain.
   - optional: issue payment requests or recurring plans for structured giving (grants, sponsorships, memberships).
 - Record donation/grant inflow events:
   - tag with `category_code` + required fields + optional context tags,

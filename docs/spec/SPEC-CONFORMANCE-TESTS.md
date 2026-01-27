@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-CONFORMANCE-TESTS.md](/spec/SPEC-CONFORMANCE-TESTS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the minimum conformance test coverage and reporting format for implementations that claim compatibility with dCorps specifications (Hub implementations, protocol modules, indexers, explorers, and reporting tooling).
 
@@ -16,7 +16,7 @@ This spec should be read together with:
 - [docs/spec/SPEC-CORE.md](/spec/SPEC-CORE) (core state and message families),
 - [docs/spec/SPEC-DATA.md](/spec/SPEC-DATA) (schemas, tags, chart of accounts),
 - [docs/spec/SPEC-MODULES.md](/spec/SPEC-MODULES) (module standard),
-- [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR) (sub chain anchoring standard),
+- [docs/spec/SPEC-ANCHOR.md](/spec/SPEC-ANCHOR) (document anchoring standard),
 - [docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER) (reference indexer and explorer behavior).
 
 ---
@@ -69,7 +69,7 @@ A conforming Hub implementation MUST be tested for:
 - canonical wallet binding and resolution behavior;
 - role and authority updates (including rejection of unauthorized changes);
 - accounting event recording and required tag validation where applicable; and
-- governance-controlled registries (module registry and recognized sub chain registry) where present.
+- governance-controlled registries (module registry and anchor registry) where present.
 
 Tests MUST include both expected-success and expected-failure cases (for example, invalid authority or malformed payloads).
 
@@ -84,14 +84,13 @@ A conforming protocol module MUST be tested for:
 
 Modules that publish attestations SHOULD also test dispute/correction lifecycle behavior (see `SPEC-ATTESTATIONS.md` if applicable).
 
-### 3.4 Anchoring and recognition (required where implemented)
+### 3.4 Anchoring (required where implemented)
 
-Implementations that support recognized sub chains MUST be tested for:
+Implementations that support anchoring MUST be tested for:
 
-- acceptance criteria and monotonicity rules for anchors (`SPEC-ANCHOR.md`);
-- correct handling of invalid anchors and failure cases;
-- correct recording of recognition tiers / labels and their transitions; and
-- correct surfacing of those labels to downstream indexers and explorers.
+- acceptance criteria and anchor validation rules (`SPEC-ANCHOR.md`);
+- correct handling of invalid anchors and failure cases; and
+- correct surfacing of anchor records to downstream indexers and explorers.
 
 ### 3.5 Indexer and explorer behavior (required for reference tooling)
 
@@ -99,7 +98,7 @@ Indexers and explorers that claim compatibility MUST be tested for:
 
 - accurate ingestion and mapping of on-chain events into exported formats (`SPEC-INDEXER.md`);
 - correct entity discovery views, including status labeling for inactive entities;
-- correct module and sub chain registry presentation, including recognition tiers; and
+- correct module registry and anchor presentation; and
 - consistent derived reporting views where supported (cash-based and allocation views).
 
 Where token supply metrics are displayed, tooling SHOULD distinguish minted supply vs circulating supply and show vesting/unlock evidence when available (see the Whitepaper Long token terminology).
@@ -139,7 +138,7 @@ Results:
 - Schema conformance: PASS
 - Core protocol behavior: PASS
 - Module conformance: N/A
-- Anchoring and recognition: PASS
+- Anchoring: PASS
 - Indexer/explorer behavior: PASS
 
 Evidence:

@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/CORP-COMPLEX-PRIVATE.md](/hub-templates/CORP-COMPLEX-PRIVATE))  
-**Last updated**: 2026-01-17  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the CORP-COMPLEX-PRIVATE Hub corporation template.
 
@@ -120,7 +120,7 @@ This section describes the minimum structure the template expects. Exact message
   - `OPERATING_TREASURY` (required): primary operating spending (may use multiple, labeled)
   - `RESERVES` (recommended): buffers, restricted reserves, and strategic holdings
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Treasury policy (recommended baseline)**
   - At least three tiers:
@@ -222,7 +222,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
 
 ### 2) Operate (repeat)
 
-- Receive USDC (on Noble, via IBC) into canonical wallets to maximize inflow coverage.
+- Receive USDC (bridged from Ethereum to the canonical USDC contract on dCorps) into canonical wallets to maximize inflow coverage.
 - Use `MERCHANT` as the invoice/checkout payment address for revenue inflows.
 - (Optional) Issue an invoice or checkout payment request and anchor evidence:
   - denominate in USDC and pay to `MERCHANT`,

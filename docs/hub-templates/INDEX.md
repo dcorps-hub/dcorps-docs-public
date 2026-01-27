@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/INDEX.md](/hub-templates/INDEX))  
-**Last updated**: 2026-01-17  
+**Last updated**: 2026-01-25
 
 > Scope: Public reference for the Hub template catalog (corporation and nonprofit templates).
 
@@ -24,7 +24,7 @@ Templates are standardized governance and operating blueprints for Hub entities.
 - Create the entity on the Hub using that template code.
 - Bind canonical wallets and roles according to the template.
 - Create catalog items/services and on-chain invoices; use the canonical payment wallet type for customer or donor payments.
-- Use USDC (on Noble, via IBC) as the v0.1 operating currency and reporting unit of account (USDC-only in v0.1; additional assets may be approved later).
+- Use USDC (bridged from Ethereum to the canonical USDC contract on dCorps) as the v0.1 operating currency and reporting unit of account (USDC-only in v0.1; additional assets may be approved later).
 - Configure gas coverage for signers (DCHUB): keep signer balances funded, set up DCHUB fee grants, or use apps with sponsored transactions.
 - Route inflows/outflows through canonical wallets to maximize coverage.
 - Tag material inflows/outflows using the required tags (`category_code`, `counterparty_type`, `reference_id`, `reference_type` when applicable) plus template-specific tags from each guide.

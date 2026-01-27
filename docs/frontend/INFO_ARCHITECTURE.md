@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/INFO_ARCHITECTURE.md](/frontend/INFO_ARCHITECTURE))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Canonical information architecture across the public site, docs, and app surfaces.
 
@@ -29,7 +29,7 @@
 
 ## 3. App surfaces
 
-- **Explorer**: read-only views for entities, wallets, modules, and sub chains.
+- **Explorer**: read-only views for entities, wallets, modules, and anchors.
 - **Console**: wallet-connected admin surface for entity actions.
 - **Registry**: discovery and search for entities, apps, and modules.
 

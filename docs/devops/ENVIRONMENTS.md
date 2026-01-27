@@ -6,9 +6,9 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/ENVIRONMENTS.md](/devops/ENVIRONMENTS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
-> Scope: Define dev, staging, and prod environments for dCorps infrastructure.
+> Scope: Define dev, staging, and prod environments for dCorps rollup infrastructure.
 
 ---
 
@@ -39,11 +39,11 @@
 
 ## Reference topology (baseline)
 
-Baseline infrastructure is cloud-hosted and can be mirrored by validators.
+Baseline infrastructure is cloud-hosted and can be mirrored by independent operators.
 
-- Validators run behind sentry nodes.
-- Public RPC/gRPC/REST nodes are isolated behind load balancers.
-- Indexer and explorer are separated from validator infrastructure.
+- Sequencer and batch poster infrastructure is isolated from public RPC.
+- Public RPC/WS nodes are isolated behind load balancers.
+- Indexer and explorer are separated from operator infrastructure.
 - Snapshots and backups are stored in independent object storage.
 
 This baseline is provider-agnostic but defaults to AWS for reference deployments.
@@ -52,9 +52,9 @@ This baseline is provider-agnostic but defaults to AWS for reference deployments
 
 ## Environment readiness checklist
 
-- Chain ID, denom, and bech32 prefixes defined and documented ([docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS)).
-- Genesis process documented and repeatable.
-- RPC, gRPC, REST endpoints defined.
+- Chain ID and rollup config defined and documented ([docs/devops/NETWORK_PARAMS.md](/devops/NETWORK_PARAMS)).
+- Rollup deployment process documented and repeatable.
+- RPC and WS endpoints defined.
 - Faucet or funding workflow defined for dev and staging.
 - Indexer and explorer endpoints available.
 - Monitoring and alerting active.

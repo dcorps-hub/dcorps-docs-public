@@ -6,7 +6,7 @@
 **Release date**: January 3, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/hub-templates/NONPROFIT-BOARD.md](/hub-templates/NONPROFIT-BOARD))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
 > Scope: Defines the NONPROFIT-BOARD Hub nonprofit template.
 
@@ -109,7 +109,7 @@ This section describes the minimum structure the template expects. Exact message
   - `OPERATING_TREASURY` (recommended): shared overhead spending
   - `RESERVES` (optional): buffers and designated reserves (designated funds are formalized in `NONPROFIT-COMPLEX`)
 - **Operating currency (v0.1)**
-  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC on Noble, via IBC).
+  - Inflows/outflows and reporting are USDC-only in v0.1 (USDC bridged from Ethereum to the canonical USDC contract on dCorps).
   - Gas is paid in DCHUB by the signing wallet (direct DCHUB balance, fee grants, or sponsored transactions).
 - **Allocation policy (recommended baseline)**
   - Define:
@@ -206,7 +206,7 @@ This is the canonical action sequence used later to build a graph/canvas represe
 
 ### 2) Operate (repeat)
 
-- Receive donations/grants (USDC on Noble, via IBC) into `DONATION`; confirm on-chain.
+- Receive donations/grants (USDC bridged from Ethereum to the canonical USDC contract on dCorps) into `DONATION`; confirm on-chain.
 - Optional: issue payment requests or recurring plans for structured giving (grants, sponsorships, memberships).
 - Record inflow events:
   - tag with `category_code` + required fields + optional context tags,

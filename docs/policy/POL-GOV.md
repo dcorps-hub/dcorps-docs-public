@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-GOV.md](/policy/POL-GOV))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Governance structures and processes for the dCorps protocol and related artifacts. This charter describes how decisions are proposed, evaluated, and adopted at the protocol level.
 
@@ -30,7 +30,7 @@ Key principles:
 - **Safety over speed** – changes that affect security, token supply and emissions mechanics, or recognition move slowly and predictably.
 - **Neutrality** – the Hub does not favor specific jurisdictions, entities, or applications beyond transparent, policy-based distinctions.
 - **Transparency** – major decisions and their rationales are documented and discoverable.
-- **Subsidiarity** – where possible, decisions are pushed to entities, modules, and sub chains rather than centralized at the Hub.
+- **Subsidiarity** – where possible, decisions are pushed to entities, modules, and applications rather than centralized at the Hub.
 
 ---
 
@@ -39,7 +39,7 @@ Key principles:
 Governance involves both on-chain and off-chain actors:
 
 - **On-chain token governance**
-  - DCHUB stakers and delegators participate in on-chain voting on proposals affecting the protocol, parameters, and recognition.
+  - DCHUB holders (direct or delegated) participate in on-chain voting on proposals affecting the protocol, parameters, and recognition.
 - **dCorps Foundation (planned; not yet incorporated)**
   - Intended nonprofit steward that can propose changes, fund development, and act as an interface with regulators and partners, subject to this charter and `POL-FOUNDATION.md` once the foundation exists.
 - **Core development teams**
@@ -85,10 +85,10 @@ Core proposal categories include:
   - Modify values defined in `SPEC-PARAMS.md`.
 - **Module lifecycle proposals**
   - Register, upgrade, deprecate, or withdraw modules under `SPEC-MODULES.md`.
-- **Sub chain recognition proposals**
-  - Add, upgrade, downgrade, or remove sub chains under `SPEC-ANCHOR.md`.
+- **Registry and operator policy proposals**
+  - Update registry labels, module eligibility rules, operator role policies, or bridge gateway parameters.
 - **Software upgrade proposals**
-  - Enact protocol upgrades (state machine or consensus changes).
+  - Enact protocol upgrades (contract changes or rollup configuration updates).
 - **Treasury and budget proposals**
   - Allocate funds from community or protocol treasuries, per `POL-TREASURY.md`.
 - **Policy and documentation proposals**
@@ -117,7 +117,7 @@ All major proposals SHOULD include a durable public rationale in the proposal it
 
 ## 4. Voting and decision rules
 
-On-chain governance uses stake-weighted voting with standard options (e.g. Yes, No, No with veto, Abstain).
+On-chain governance uses token-weighted voting with standard options (e.g. Yes, No, No with veto, Abstain).
 
 Key rules (subject to `SPEC-PARAMS.md`):
 
@@ -127,7 +127,7 @@ Key rules (subject to `SPEC-PARAMS.md`):
 
 Governance should:
 
-- apply stricter thresholds and longer voting periods for high-impact proposals (e.g. slashing changes, recognition withdrawal);
+- apply stricter thresholds and longer voting periods for high-impact proposals (e.g. operator role changes, bridge parameter changes, recognition withdrawal);
 - use shorter periods for low-risk items (e.g. non-breaking documentation updates) where supported by parameters.
 
 Delegation mechanisms should make it easy for token holders to delegate voting power while retaining ultimate control.
@@ -139,7 +139,7 @@ Some proposal classes are designated as **Protected Changes** and are intended t
 Examples include:
 
 - re-enabling emergency powers after a sunset period;
-- material changes to shared security assumptions for recognized sub chains;
+- material changes to bridge gateway assumptions or operator role constraints;
 - changes to hard limits that protect non-custodial boundaries and censorship-resistance commitments.
 
 Baseline requirement for a Protected Change (see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG), section 13.3.5):
@@ -149,7 +149,7 @@ Baseline requirement for a Protected Change (see [docs/whitepaper/WHITEPAPER_LON
 
 In addition, Protected Changes are expected to include:
 
-- **Stake age requirement (anti-raid)**: only bonded stake older than a parameterized minimum age is counted toward quorum and voting power for Protected Changes.
+- **Voting-power age requirement (anti-raid)**: only DCHUB locked for a parameterized minimum age is counted toward quorum and voting power for Protected Changes.
 - **Execution timelock**: after a Protected Change passes, execution occurs only after a parameterized delay unless a narrowly defined emergency path applies.
 
 ---
@@ -160,14 +160,14 @@ In addition, Protected Changes are expected to include:
 
 Planned upgrades include changes to:
 
-- protocol code (state machine and consensus parameters);
+- protocol contracts and rollup configuration parameters;
 - core data structures and schemas;
 - major economic or recognition rules.
 
 For planned upgrades:
 
 - proposals include upgrade plans, testing summaries, and rollback strategies;
-- validators and node operators are given sufficient lead time to prepare;
+- operators and infrastructure providers are given sufficient lead time to prepare;
 - the foundation (once incorporated) coordinates communication and support; until then, coordination is founder-led and/or delegated to the relevant working group.
 
 ### 5.2 Emergency actions
@@ -175,8 +175,8 @@ For planned upgrades:
 In rare cases (e.g. severe vulnerabilities, catastrophic chain failures), faster action may be necessary. Emergency measures can include:
 
 - halting or rate-limiting certain message types;
-- temporarily raising fees or slashing parameters to mitigate attacks;
-- coordinated off-chain actions by validators.
+- temporarily raising fees or rate limits to mitigate attacks;
+- coordinated off-chain actions by operators.
 
 Emergency use is:
 

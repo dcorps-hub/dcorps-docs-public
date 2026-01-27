@@ -6,17 +6,17 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/spec/SPEC-INDEXER.md](/spec/SPEC-INDEXER))  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-01-25
 
-> Scope: Expected behavior of a reference indexer and explorer for the Hub, modules, and recognized sub chains. This is non-normative for the chain, but normative for reference tooling.
+> Scope: Expected behavior of a reference indexer and explorer for the Hub and modules. This is non-normative for the chain, but normative for reference tooling.
 
 ---
 
 ## 1. Introduction
 
-The Hub’s on-chain state is optimized for security and consensus, not for end-user querying or analytics. Reference indexers and explorers:
+The Hub’s on-chain state is optimized for security and settlement, not for end-user querying or analytics. Reference indexers and explorers:
 
-- ingest Hub and sub chain data;
+- ingest Hub chain data and contract events;
 - maintain denormalized views and derived tables;
 - expose APIs and UIs for entities, donors, regulators, and builders.
 
@@ -38,9 +38,9 @@ Implementers MAY extend this spec with additional features, but SHOULD maintain 
 
 Indexers MUST support ingesting at least:
 
-- Hub chain blocks, transactions, and events (via RPC, gRPC, or direct node integration);
+- Hub chain blocks, transactions, and events (via JSON-RPC and contract logs);
 - module-specific logs and events where available;
-- anchor records and metadata for recognized sub chains;
+- anchor records and metadata; and
 - optional off-chain feeds where needed for enrichment (e.g. token prices, unit conversions), clearly labeled as off-chain.
 
 Ingestion SHOULD:
@@ -58,7 +58,7 @@ Indexers SHOULD maintain structured representations of at least:
 1. **Entities**
    - basic metadata (ID, type, name, lifecycle status);
    - bound canonical wallets;
-   - attached modules and sub chain relationships.
+   - attached modules.
 2. **Roles and governance**
    - role bindings per entity;
    - governance proposals, votes, and outcomes;
@@ -71,9 +71,9 @@ Indexers SHOULD maintain structured representations of at least:
    - catalog items/services;
    - invoices and their status history;
    - recurring plans and next-run schedule.
-5. **Modules and sub chains**
+5. **Modules and anchors**
    - module registry entries with status and risk labels;
-   - sub chain registry, anchors, and recognition tiers.
+   - anchor records and metadata.
 
 Schema definitions SHOULD align with `SPEC-DATA.md` to the extent practical. Where denormalization is useful (e.g. precomputed reporting views), indexers MAY introduce derived tables that remain clearly documented.
 
@@ -87,7 +87,7 @@ Reference indexers SHOULD expose APIs that allow:
 - listing canonical wallets and recent flows with tags;
 - listing catalog items, invoices, and recurring plans by entity;
 - retrieving governance proposals, votes, and statuses;
-- listing modules and sub chains by type, risk label, or status;
+- listing modules and anchors by type, risk label, or status;
 - generating basic cash-based operating and allocation views for entities over any selected timeframe.
 
 APIs SHOULD:
@@ -102,7 +102,7 @@ APIs SHOULD:
 
 Indexers MUST:
 
-- handle chain reorgs (where applicable) by recomputing affected ranges;
+- handle reorgs where applicable by recomputing affected ranges;
 - provide monitoring metrics (e.g. ingestion lag, error rates, last processed height);
 - support alerting on significant discrepancies or ingestion failures.
 
@@ -130,7 +130,6 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | created_height | int | Block height |
 | metadata_json | json | Optional |
 | jurisdiction_code | string | Optional |
-| subchain_id | string | Optional |
 
 ### 6.2 Roles
 
@@ -138,7 +137,7 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | --- | --- | --- |
 | entity_id | string | FK |
 | role_type | string | `SPEC-DATA.md` |
-| address | string | Bech32 |
+| address | string | EVM address (0x...) |
 | powers | string[] | Optional |
 | bound_height | int | Height |
 | unbound_height | int | Nullable |
@@ -149,7 +148,7 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | --- | --- | --- |
 | entity_id | string | FK |
 | wallet_type | string | `SPEC-DATA.md` |
-| address | string | Bech32 |
+| address | string | EVM address (0x...) |
 | active | bool | Current binding |
 | metadata_json | json | Optional |
 
@@ -164,7 +163,7 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | from_wallet | string | Wallet type or address |
 | to_address | string | Counterparty |
 | amount | string | Amount |
-| denom | string | Denom |
+| denom | string | Token symbol |
 | direction | string | inflow/outflow |
 | category_code | string | `SPEC-DATA.md` |
 | tags_json | json | Optional |
@@ -197,31 +196,7 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | proposal_id | string | Optional |
 | metadata_json | json | Optional |
 
-### 6.7 Sub chains
-
-| Field | Type | Notes |
-| --- | --- | --- |
-| subchain_id | string | Unique |
-| chain_id | string | External chain ID |
-| status | string | Recognition status |
-| recognition_tier | string | Tier |
-| operators | string[] | Addresses or DIDs |
-| last_anchor_height | int | Nullable |
-| last_anchor_time | timestamp | Nullable |
-
-### 6.8 Sub chain anchors
-
-| Field | Type | Notes |
-| --- | --- | --- |
-| anchor_id | string | Unique |
-| subchain_id | string | FK |
-| anchor_height | int | Sub chain height |
-| commitment_hash | string | Root hash |
-| prev_anchor_id | string | Optional |
-| metadata_json | json | Optional |
-| timestamp | timestamp | Hub time |
-
-### 6.9 Catalog items
+### 6.7 Catalog items
 
 | Field | Type | Notes |
 | --- | --- | --- |
@@ -234,7 +209,7 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | created_at | timestamp | Hub time |
 | updated_at | timestamp | Hub time |
 
-### 6.10 Invoices
+### 6.8 Invoices
 
 | Field | Type | Notes |
 | --- | --- | --- |
@@ -250,7 +225,7 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | created_at | timestamp | Hub time |
 | updated_at | timestamp | Hub time |
 
-### 6.11 Recurring plans
+### 6.9 Recurring plans
 
 | Field | Type | Notes |
 | --- | --- | --- |
@@ -287,14 +262,13 @@ All endpoints return JSON with pagination via `limit` and `cursor` where applica
 - `GET /v1/events`
   - Query: `entity_id`, `wallet_type`, `category_code`, `from_height`, `to_height`, `period_start`, `period_end`
 
-### 7.3 Modules and sub chains
+### 7.3 Modules and anchors
 
 - `GET /v1/modules`
 - `GET /v1/modules/{module_id}`
 - `GET /v1/modules/{module_id}/attachments`
-- `GET /v1/subchains`
-- `GET /v1/subchains/{subchain_id}`
-- `GET /v1/subchains/{subchain_id}/anchors`
+- `GET /v1/anchors`
+- `GET /v1/anchors/{anchor_id}`
 
 ### 7.4 Reporting
 

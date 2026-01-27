@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/RELEASE_PROCESS.md](/devops/RELEASE_PROCESS))  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 > Scope: Define how changes move from dev to staging to prod, and what approvals and verification are required.
 
@@ -20,7 +20,7 @@ Classify each change before release:
 - **Website-only**: updates in `../dcorps-site`.
 - **Protocol specs or policies**: normative changes that affect interpretation.
 - **Chain implementation**: code changes that affect state, consensus, or APIs.
-- **Infrastructure**: node, indexer, explorer, or relayer changes.
+- **Infrastructure**: node, indexer, explorer, or bridge gateway changes.
 
 Each class has its own gate set. Chain and infrastructure changes require the highest level of review.
 
@@ -42,7 +42,7 @@ Staging validation:
 - Deploy release candidate.
 - Run integration tests and indexer ingestion checks.
 - Confirm explorer and API endpoints operate normally.
-- For chain changes, rehearse upgrades on staging with a planned height.
+- For chain changes, rehearse upgrades on staging with a planned window.
 
 Exit criteria:
 
@@ -60,7 +60,7 @@ Entry criteria:
 Production rollout:
 
 - Publish release artifacts and checksums.
-- Execute upgrade at planned height (for chain changes).
+- Execute upgrade during the planned window (for chain changes).
 - Monitor chain health, indexer health, and critical APIs.
 
 Exit criteria:
@@ -89,9 +89,9 @@ Exit criteria:
 
 ## Communication
 
-For changes that affect builders, validators, or entities:
+For changes that affect builders, operators, or entities:
 
-- Announce release windows and upgrade height in advance.
+- Announce release windows and upgrade timing in advance.
 - Provide clear operator instructions and expected impact.
 - Publish a post-release status update.
 

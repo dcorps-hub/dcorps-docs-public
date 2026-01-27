@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2025-12-24  
+**Last updated**: 2026-01-25
 
 ---
 
@@ -52,7 +52,7 @@ This is designed to produce verifiable, reusable entity records and operating vi
 
 v1 is intentionally narrow:
 
-- Hub chain with DCHUB staking, gas, and protocol governance.
+- Hub rollup (Arbitrum Orbit, Rollup mode) with DCHUB gas, protocol governance, and protocol-level fees.
 - Hub corporation and Hub nonprofit entity containers.
 - Canonical wallet types and tagged accounting events.
 - Reproducible cash-based operating views (corporations) and allocation views (nonprofits) over any selected timeframe.
@@ -66,8 +66,7 @@ Out of scope for v1 includes: bank integrations, custody, mandatory protocol-lev
 
 dCorps uses two primary assets with distinct roles:
 
-- **DCHUB**: gas, staking (economic security), and protocol governance; security root for the Hub and recognized sub chains.
-- **USDC**: baseline unit of account for examples and primary operating currency for many entities and protocol service fees.
+- **DCHUB**: gas, protocol governance, and protocol-level fees in the Orbit rollup architecture.\n+- **USDC**: baseline unit of account for examples and primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
 
 The token model separates:
 

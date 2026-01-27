@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-16
+**Last updated**: 2026-01-25
 
 ---
 
@@ -70,7 +70,7 @@ dCorps is designed for:
 - stablecoin-native founders and small teams that want clear ownership, approvals, and cash-based operating views without heavy reconciliation;
 - nonprofits and NGOs that want donation and allocation transparency with board-governed controls;
 - builders and service providers that want a shared entity and accounting standard to build interoperable tools;
-- validators and security contributors that want a clear, conservative base layer to secure.
+- rollup operators and security contributors that want a clear, conservative base layer to secure.
 
 dCorps is not designed for entities that want opaque structures, cosmetic governance, or minimal transparency.
 
@@ -107,7 +107,7 @@ Optional adapters and modules (jurisdiction recognition, sector frameworks, atte
 dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
         |
         v
-DCHUB staking and consensus (security, gas, protocol governance)
+DCHUB gas + rollup settlement (sequencer + Ethereum)
 ```
 
 ---
@@ -116,8 +116,7 @@ DCHUB staking and consensus (security, gas, protocol governance)
 
 dCorps uses two primary assets with distinct roles:
 
-- **USDC** is the baseline operating currency and the unit of account for examples and many protocol service fees (registration, renewals, premium names, optional module participation).
-- **DCHUB** is the Hub’s gas, staking, and protocol governance token, and the security root for the Hub and recognized sub chains.
+- **USDC** is the baseline operating currency and the unit of account for examples and many protocol service fees (registration, renewals, premium names, optional module participation). At launch it is bridged from Ethereum to a canonical USDC contract on dCorps.\n+- **DCHUB** is the Hub’s gas, protocol governance, and protocol-level fee token in the Orbit rollup architecture.
 - The architecture also supports multiple approved stablecoins and, where technically and legally feasible, CBDC-style instruments via the approved asset registry and optional jurisdiction adapters (some rails may require disclosed gateways or provider attestations); adoption is expected to depend on issuer/jurisdiction cooperation and to be pursued through adoption work coordinated by the foundation and ResCo (planned).
 
 This describes protocol mechanics, not market outcomes.

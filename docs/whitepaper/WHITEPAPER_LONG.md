@@ -11,9 +11,9 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
  [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-18
+**Last updated**: 2026-01-25
 
-**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar).
+**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar). 2026-01-25: Orbit rollup sanity fixes (fee model alignment, operator roles, canonical stablecoin address language).
 
 **Editing note (linear read)**: This copy consolidates repeated definitions and uses short reminders plus section pointers, so it reads cleanly from page 1 to the end.
 
@@ -6349,26 +6349,16 @@ This whitepaper will be complemented by living documents, including:
 
 These documents will reflect real world experience and will be updated through governance and legal processes.
 
-## Cosmos → Orbit Migration Notes
+## Orbit Rollup Architecture Notes
 
-This document was originally drafted around a Cosmos SDK + IBC architecture. It has been migrated to an Arbitrum Orbit rollup (Rollup mode) architecture.
+This document reflects the current Arbitrum Orbit rollup (Rollup mode) architecture.
 
-Major changed assumptions:
+Key assumptions:
 
-- dCorps Hub is an Arbitrum Orbit rollup (Rollup mode) settling to Ethereum, not a Cosmos SDK chain.
-- Sub-chains, recognition tiers, and Interchain Security are removed; entities operate on the Hub rollup with optional modules and private execution zones.
-- DCHUB is the native gas token on the Hub rollup and the protocol governance token; there is no PoS staking/slashing in Orbit v1 (staking is only a future L1 possibility).
+- dCorps Hub is an Arbitrum Orbit rollup settling to Ethereum.
+- Secondary chains are out of scope for v1; optional private execution zones may exist but are not required for entity operation.
+- DCHUB is the native gas token and the protocol governance token; Orbit v1 does not use staking-based security (staking is only a future L1 possibility).
 - Stablecoins (USDC at launch; USDT/DAI etc) are canonical bridged ERC-20 contracts on dCorps; UIs should show mainstream symbols (USDC/USDT/DAI), not chain-suffixed labels.
 - Payment UX assumes customers can pay invoices with USDC they already hold on Ethereum (paying ETH gas); entities absorb bridging/ops costs and then operate internally on dCorps stablecoin contracts.
 - Governance can de-recognize entities/modules in the official registry, but cannot erase contracts or prevent generic transfers; decentralization follows a staged chain-owner -> DAO plan with timelocks.
 - Native issuer integrations (for example Circle-native USDC) are a future possibility, not guaranteed.
-
-Terminology mapping:
-
-- Cosmos SDK modules -> EVM contracts / system contracts
-- CosmWasm -> EVM module contracts (Solidity/Vyper), often behind upgradeable proxies
-- IBC -> bridge gateways / cross-chain messaging
-- Tendermint/CometBFT + validator set -> sequencer + rollup settlement to Ethereum
-- Staking/slashing security -> timelocked governance + operator transparency (staking only in a future dCorps L1)
-- IBC denom traces / `uusdc` -> ERC-20 token contracts + asset registry identifiers
-- Interchain Security -> Ethereum-anchored rollup security (settlement + data availability)
