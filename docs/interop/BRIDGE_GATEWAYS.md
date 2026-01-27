@@ -22,7 +22,7 @@
 
 ## Bridge posture
 
-- The canonical Ethereum <-> dCorps bridge gateways are the primary interoperability surface for assets and messages.
+- The canonical Ethereum to/from dCorps bridge gateways are the primary interoperability surface for assets and messages.
 - The Hub does not make any single external bridge a dependency of kernel truth; core entity registry state remains correct even if a bridged asset fails.
 - Bridge interactions are asynchronous and subject to finality and challenge windows; interfaces should surface a first-class "pending bridge" state.
 

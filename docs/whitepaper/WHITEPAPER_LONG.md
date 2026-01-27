@@ -1468,7 +1468,7 @@ Data flows through the system in consistent patterns:
 
   * Once stablecoins are bridged to dCorps, internal treasury, payroll, grants, and intra-wallet movements happen entirely on dCorps using canonical stablecoin contracts (ERC-20) and typed workflow contracts where used.
   * Inbound payments can originate on Ethereum: customers pay invoices in USDC on Ethereum (paying their own ETH gas) to an invoice/router contract, and the entity later bridges and settles the funds into its dCorps wallets, absorbing bridging and operational costs as a merchant-fee model.
-* **Bridge gateways (Ethereum <-> dCorps)**
+* **Bridge gateways (Ethereum to/from dCorps)**
 
   * Canonical bridge gateways move assets and messages between Ethereum and the dCorps rollup.
   * Bridge interactions are asynchronous and subject to bridge finality and challenge windows; tooling should treat “pending bridge” state as a first-class status.
@@ -3580,7 +3580,7 @@ Design intentions include:
 - Clear risk criteria for approving, limiting, or retiring an asset, including:
   - Issuer and legal structure
   - Redemption, blacklisting, and freeze mechanics
-  - Availability on Ethereum and through the canonical Ethereum <-> dCorps bridge gateways
+  - Availability on Ethereum and through the canonical Ethereum to/from dCorps bridge gateways
   - Liquidity and market depth in relevant venues
   - Operational history and transparency of administrative control policies
 - Reporting that remains consistent across assets:
@@ -5510,7 +5510,7 @@ Adoption of advanced zero knowledge techniques will grow over time as tooling ma
 
 ### 15.6 Interoperability via Ethereum bridge gateways and selected bridges
 
-dCorps is an Orbit rollup that settles to Ethereum. Its primary interoperability surface is the canonical Ethereum <-> dCorps bridge gateways.
+dCorps is an Orbit rollup that settles to Ethereum. Its primary interoperability surface is the canonical Ethereum to/from dCorps bridge gateways.
 
 - Stablecoins and other ERC-20 assets are bridged from Ethereum into canonical ERC-20 contracts on dCorps.
 - Withdrawals back to Ethereum follow the rollup’s standard withdrawal path and timing.

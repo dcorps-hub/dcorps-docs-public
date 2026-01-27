@@ -14,7 +14,7 @@
 
 ## 1. Bridge gateway requirements
 
-- Maintain the canonical gateway contracts for Ethereum <-> dCorps.
+- Maintain the canonical gateway contracts for Ethereum to/from dCorps.
 - Publish the approved gateway addresses in environment documentation.
 - Run at least two independent monitoring stacks for deposits/withdrawals.
 - Ensure the canonical USDC contract mapping remains single-address and documented.
