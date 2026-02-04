@@ -2,11 +2,11 @@
 
 **Document type**: Engineering plan  
 **Doc ID**: ENG-CHAIN-LAYOUT  
-**Status**: Final v0.1  
+**Status**: Final v0.2  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/engineering/CHAIN_LAYOUT.md](/engineering/CHAIN_LAYOUT))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-02-04
 
 > Scope: Canonical repository layout and module boundaries for the Hub rollup implementation.
 
@@ -14,7 +14,7 @@
 
 ## 1. Chain repository
 
-- Repo name: `dcorps-chain`.
+- Repo name: `dcorps-hub-rollup`.
 - Execution environment: Arbitrum Orbit (Rollup mode) with EVM contracts.
 - Contract language: Solidity (with optional Vyper where justified).
 
@@ -23,7 +23,7 @@
 ## 2. Top-level layout (illustrative)
 
 ```text
-dcorps-chain/
+dcorps-hub-rollup/
   contracts/
     entity/
     accounting/
