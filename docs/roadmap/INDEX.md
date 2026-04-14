@@ -2,86 +2,64 @@
 
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-INDEX  
-**Status**: Final v0.1  
+**Status**: Draft v0.2  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/roadmap/INDEX.md](/roadmap/INDEX))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-11
 
-> Scope: Consolidated view of dCorps phases and roadmap sources.
+> Scope: consolidated view of the post-reset dCorps roadmap.
 
 ---
 
 ## Execution phases (source-of-truth roadmap)
 
-These phases follow the Whitepaper Long (section 16) with a pre-phase for website finalization. Phase 0 is pre-mainnet readiness. Phases 1 to 5 start at mainnet launch.
+The current sequence is app-first and proof-driven.
 
-**Phase 0A: Public website finalization (static)**
-- Finalize the static public website and align copy to public docs.
+**Phase 0: Live proof of concept**
+- Ship the narrow workflow end-to-end on a real local stack.
 
-**Phase 0: Pre-mainnet readiness**
-- Publish specs, code, and verifiable testnet artifacts.
-- Provide reproducible tooling and example entity package.
-- Progress from baseline → dev testnet → public testnet → mainnet rehearsal testnet (design intention): [docs/devops/ROLLUP_ENVIRONMENT.md](/devops/ROLLUP_ENVIRONMENT).
+**Phase 1: Shared devnet and internal hardening**
+- Run a stable shared environment for repeated demos and internal use.
 
-**Phase 1: Mainnet launch (Kernel v1)**
-- Launch stable Hub with core entity models and registries.
-- Provide reference explorer and indexer.
+**Phase 2: Partner testnet**
+- Validate the workflow with selected external design partners.
 
-**Phase 2: Operational completeness and standards hardening**
-- Conformance tests, stable APIs/SDKs, monitoring, and incident processes.
+**Phase 3: Genesis rehearsal**
+- Freeze deployment assumptions and rehearse launch.
 
-**Phase 3: Ecosystem bootstrapping and stablecoin rails**
-- Ethereum bridge gateway stablecoin connectivity, registry systems, and reference UIs.
+**Phase 4: Mainnet launch (Kernel v1)**
+- Launch the smallest credible public version of dCorps.
 
-**Phase 4: Adapter layer and institutional legibility**
-- Jurisdiction adapters, attestation modules, and institutional overlays.
+**Phase 5: Hardening and operator expansion**
+- Improve conformance, observability, and operator readiness.
 
-**Phase 5: Fully operational maturity**
-- Decentralized operations, multiple independent tooling stacks, and sustainable governance.
+**Phase 6: Ecosystem extensions**
+- Add invoices, modules, adapters, and broader integrations only after proof.
 
 See detailed goals and exit criteria in [docs/roadmap/PHASES.md](/roadmap/PHASES).
 
 ---
 
-## Public roadmap (website summary)
+## Public roadmap surfaces
 
-The website maintains a public summary in:
+The old static website roadmap surfaces are now historical context only.
 
-- `../dcorps-site/roadmap/dev-phases/index.html` (Phases 0A to 5)
-- `../dcorps-site/roadmap/adoption-tracks/index.html` (optional overlays, including Smart Jurisdiction adoption)
+The canonical public roadmap should live in:
 
----
-
-## Vision events (longer-term sequence)
-
-From `../dcorps-site/learn/vision/index.html`:
-
-1. First Hub corporation in production
-2. First Hub nonprofit in production
-3. Counterparty trust without jurisdiction integration
-4. Human bridge: delegated filing providers (Pilot Step 0)
-5. Jurisdiction modules mature (Pilot Step 1 → Step 2)
-6. Typed workflows and interoperable tooling
-7. Professional assurance becomes routine
-8. Serious Web3 operators adopt the Hub
-9. Networks coordinate on shared rails
-10. Public data and research layer
-11. Global soft standard and infrastructure status
-12. DCHUB economics
+- this docs suite; and
+- the canonical app surface in `dcorps-app`.
 
 ---
 
 ## Source of truth
 
-- Whitepaper Long roadmap: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 16)
-- Public roadmap pages: `../dcorps-site/roadmap/dev-phases/index.html` and `../dcorps-site/roadmap/adoption-tracks/index.html`
-- Vision path: `../dcorps-site/learn/vision/index.html`
-- Phase exit criteria: [docs/roadmap/PHASES.md](/roadmap/PHASES)
-- Internal planning artifacts (open questions, success metrics, backlogs): maintained privately.
+- Reset roadmap phases: [docs/roadmap/PHASES.md](/roadmap/PHASES)
+- Whitepaper reset draft: [docs/whitepaper/WHITEPAPER_RESET_DRAFT.md](/whitepaper/WHITEPAPER_RESET_DRAFT)
+- Internal implementation blueprint: `dcorps-hub-rollup/docs/RESET_BLUEPRINT_2026.md`
 
 ---
 
 ## Current status
 
-Phase 0A is in progress: static website finalization and alignment.
+Phase 0 is in progress: the project is being reset around a live chain, a live app, and a reproducible indexer instead of static website expansion.

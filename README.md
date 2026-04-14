@@ -2,7 +2,7 @@
 
 Public documentation and specifications for the dCorps Hub protocol, including whitepapers, protocol specifications, policies, security documents, and token documentation.
 
-> Status: Phase 0A (development) — public baseline documentation set (mainnet is not live; the foundation is not incorporated; DevCo is incorporated and active in the British Virgin Islands)
+> Status: Phase 0A (development) — public baseline documentation set (mainnet is not live; the foundation is not incorporated yet; the current intended structure is foundation-first pre-genesis in Abu Dhabi / ADGM, and the older BVI DevCo path is no longer the working plan)
 
 Docs center entry point: `docs/welcome/INDEX.md`
 Developer entry point (normative specs): `docs/spec/INDEX.md`

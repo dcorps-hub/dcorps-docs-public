@@ -1,74 +1,120 @@
 # Official App
 
-**Document type**: Frontend reference
-**Doc ID**: FE-OFFICIAL-APP
-**Status**: Draft v0.1
-**Release date**: December 21, 2025
-**Author**: Nicolas Turcotte, Founder
-**Source repo**: dcorps-docs-public ([docs/frontend/OFFICIAL_APP.md](/frontend/OFFICIAL_APP))
-**Last updated**: 2026-01-17
+**Document type**: Frontend reference  
+**Doc ID**: FE-OFFICIAL-APP  
+**Status**: Draft v0.2  
+**Release date**: December 21, 2025  
+**Author**: Nicolas Turcotte, Founder  
+**Source repo**: dcorps-docs-public ([docs/frontend/OFFICIAL_APP.md](/frontend/OFFICIAL_APP))  
+**Last updated**: 2026-04-11
 
-> Scope: Define the official dCorps App as the reference interface for Hub operations on testnet.
-
----
-
-## 1. Purpose and role
-
-The official app is the reference console for managing Hub entities on testnet. It is non-custodial and does not define protocol authority. It submits signed actions, displays chain state, and surfaces derived views so teams can operate consistently across templates and tooling.
+> Scope: define the official dCorps App as the canonical public surface for the current phase.
 
 ---
 
-## 2. Core capabilities
+## 1. Role
 
-The official app supports the full set of core module actions for corporations and nonprofits:
+The official app is the canonical public surface for dCorps.
 
-- Entity setup, template selection, and public profile metadata.
-- Entity naming, disclosure mode, and premium namespace management.
-- Cap table configuration for unit classes, pools, option grants, vesting schedules, and transfer approvals.
-- Role bindings for owners, boards, officers, and employee operators with approval thresholds.
-- Board and committee setup with resolutions, votes, and approval trails.
-- Venture rounds, investor consents, round terms, investor rosters, and pool updates tied to cap table actions.
-- Canonical wallet bindings for treasury, operations, payroll, merchant, donation, and reserve flows.
-- Governance actions for approvals, policy updates, and authority changes.
-- Meeting minutes, policy anchors, and agreement hashes for employment and option grants.
-- Invoicing, payment requests, and merchant checkout flows.
-- Payroll, salary schedules, contractor payouts, and reimbursements.
-- Donations, restricted funds, and grant distribution flows.
-- Product and service catalog items plus recurring plans (where supported).
-- Tagging and evidence anchors for operational classification and transparency.
-- Treasury moves, reserve segmentation, gas funding, registration or renewal service fees, premium namespaces, module participation fees, and fee tracking.
-- Service fee source wallet selection for registration, renewal, premium namespace, and module participation charges.
-- Premium namespace flows with availability checks, reservations, fee payments, renewals, and releases.
-- Standing status, renewal timelines, and renewal flows tied to governance-backed lifecycle changes.
-- Module attachment views and status surfaces for optional overlays.
-- Template upgrades and downgrades with lifecycle status visibility for entity standing.
+It is the place where the current phase should be understood first and where the public registry should be encountered first.
+
+In the current phase, the app absorbs:
+
+- public registry and explorer landing with search-first discovery;
+- entity dossier views;
+- product overview and environment posture;
+- entity workflow UI;
+- workspace, governance, and treasury shell entry points;
+- integrated reference routes for whitepaper, about, roadmap, and security;
+- testnet or design-partner access paths.
 
 ---
 
-## 3. Template coverage
+## 2. Current-phase scope
 
-The app supports every Hub template and shows the correct approval paths for each:
+The current live target is intentionally narrow.
 
-- Corporations: CORP-SOLO, CORP-PRIVATE-STD, CORP-VENTURE, CORP-COMPLEX-PRIVATE.
-- Nonprofits: NONPROFIT-SIMPLE, NONPROFIT-BOARD, NONPROFIT-COMPLEX.
+The official app must support the narrow workflow:
 
----
+- create an entity;
+- assign authority and roles;
+- bind canonical wallets;
+- record tagged accounting events;
+- anchor documents or evidence by hash;
+- render an entity page, activity timeline, and period totals.
 
-## 4. Views and verification
-
-The app is downstream from protocol state. It links to or embeds:
-
-- Registry state for identity, roles, and wallet bindings.
-- Explorer pages for public history and transaction verification.
-- Official indexer views for derived summaries and coverage signals.
-
-Independent indexers can reproduce the same derived views by following the shared schemas.
+If the app cannot do those things cleanly, it is not yet ready to be the proud public surface.
 
 ---
 
-## 5. Boundaries (testnet)
+## 3. What the app should communicate publicly
 
-- Non-custodial: user wallets control keys and signatures.
-- Testnet-scoped: resets and parameter shifts are expected.
-- No legal, compliance, or production readiness guarantees.
-- Protocol state and specs remain the sole source of correctness.
+The app should make these points obvious:
+
+- dCorps is early and focused;
+- the app is the registry landing, not a detached brochure;
+- the app behaves more like a serious explorer than a generic landing page;
+- the kernel is about entity identity, authority, wallets, tagged events, and evidence;
+- the current environment is pre-mainnet;
+- deeper specs and policy exist as integrated reference routes or linkouts from the same shell;
+- access may be gated depending on the current environment.
+
+---
+
+## 4. Current-phase required surfaces
+
+The app should provide equivalents for:
+
+- registry landing;
+- entity detail page;
+- explorer-style search by entity, wallet, or record identifier;
+- official app workflow entry;
+- workspace shell;
+- governance shell;
+- treasury shell;
+- entity page;
+- activity timeline;
+- period view;
+- reference pages for whitepaper, security, and roadmap;
+- roadmap or phase status;
+- legal and risk disclosures;
+- design-partner or testnet access request.
+
+These may be separate routes or a coherent single-app shell.
+
+---
+
+## 5. Boundaries
+
+The official app is:
+
+- non-custodial;
+- downstream from protocol truth;
+- allowed to present derived views from the official indexer.
+
+The official app is not:
+
+- the source of protocol correctness;
+- a substitute for public specs and policy docs;
+- a place to imply functionality that does not exist yet.
+
+---
+
+## 6. Deferred capabilities
+
+The following may land later, but should not define the public story now:
+
+- broad template coverage beyond the narrow workflow;
+- invoice and recurring-plan breadth;
+- full explorer specialization;
+- full registry specialization;
+- module marketplace flows;
+- expanded token and governance surfaces.
+
+The app should earn breadth after the narrow workflow is real.
+
+## 7. Visual direction
+
+The app should adopt a black-background, white-first, high-precision design language closer to a protocol terminal or institutional registry than a startup website.
+
+The current reference grammar is the live Next.js public site as inspected on April 11, 2026, adapted for a sovereign registry product rather than framework marketing.

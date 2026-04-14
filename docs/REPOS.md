@@ -2,60 +2,71 @@
 
 **Document type**: Repository index  
 **Doc ID**: REPOS-INDEX  
-**Status**: Final v0.2  
+**Status**: Draft v0.3  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/REPOS.md](/REPOS))  
-**Last updated**: 2026-02-04  
+**Last updated**: 2026-04-11  
 
-> Scope: Inventory of repositories that make up the dCorps ecosystem.
+> Scope: inventory of repositories that make up the dCorps ecosystem after the 2026 app-first reset.
 
 ---
 
 ## Active repositories
 
+- `dcorps-hub-rollup`  
+  - Purpose: canonical protocol repo for the Hub rollup. Contracts, deployments, local-devnet, environment bundles, and genesis tooling live here.  
+  - Status: active (early build).
+- `dcorps-indexer`  
+  - Purpose: canonical ingestion, storage, and derived-view API for entity, authority, accounting, and anchor data.  
+  - Status: active (early build).
+- `dcorps-app`  
+  - Purpose: canonical public surface. The app absorbs operator console, entity console, registry views, explorer basics, and testnet portal functions.  
+  - Status: active (early build).
 - `dcorps-docs-public` (this repo)  
-  - Purpose: whitepapers, specs, policies, and public docs.
+  - Purpose: public whitepaper, specs, policies, runbooks, and roadmap artifacts.  
+  - Status: active.
 - `dcorps-docs-private` (sibling repo)  
-  - Purpose: restricted and safety-sensitive documentation.  
+  - Purpose: restricted operations, legal, security, financing, and partner documentation.  
   - Path: `../dcorps-docs-private`
-- `dcorps-site` (sibling repo)  
-  - Purpose: public website source and content.  
-  - Path: `../dcorps-site`
-- `dcorps-site-v2` (sibling repo)  
-  - Purpose: neutral HTML parallel site (testnet portal + multilingual surfaces).  
-  - Path: `../dcorps-site-v2`
+  - Status: active.
+- `dcorps-devstack` (sibling repo)  
+  - Purpose: optional local integration harness for multi-repo development.  
+  - Path: `../dcorps-devstack`
+  - Status: active.
+- `dcorps-docs-center` (sibling repo)  
+  - Purpose: docs UI and publishing surface for public documentation.  
+  - Path: `../dcorps-docs-center`
+  - Status: active.
 
 ---
 
-## Planned repositories
+## Transition repositories
 
-- `dcorps-hub-rollup`  
-  - Purpose: Arbitrum Orbit rollup contracts and node stack for the Hub (EVM).  
-  - Status: planned.
-- `dcorps-indexer`  
-  - Purpose: official reference indexer and reporting APIs.  
-  - Status: planned (stub exists locally).
-- `dcorps-app`  
-  - Purpose: explorer and wallet-connected console.  
-  - Status: planned (stub exists locally).
+- `dcorps-site`  
+  - Purpose: legacy public website source.  
+  - Path: `../dcorps-site`
+  - Status: transition / retire.
+- `dcorps-site-v2`  
+  - Purpose: legacy static portal and multilingual website surface.  
+  - Path: `../dcorps-site-v2`
+  - Status: transition / retire after needed routes are absorbed into `dcorps-app`.
 
 ---
 
 ## Legacy / archived repositories
 
 - `dcorps-chain`  
-  - Purpose: legacy Cosmos-era prototype repository name.
-  - Status: archived.
+  - Purpose: legacy Cosmos-era prototype repository name.  
+  - Status: archived.  
   - Replacement: `dcorps-hub-rollup`.
 
 ---
 
-## Add new repositories here
+## Repo creation rule
 
-When additional repos are created (rollup implementation, official app, SDKs, explorer, etc.), list them here with:
+Do not create additional repos unless one of the following is true:
 
-- repo name
-- purpose
-- status (draft, active, archived)
-- primary docs or entry points
+- the codebase needs an independent release cadence;
+- the codebase needs a materially different operator or security boundary; or
+- the product has matured enough that the extra repo reduces, rather than adds, operational complexity.

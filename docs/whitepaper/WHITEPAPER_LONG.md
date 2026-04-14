@@ -5918,7 +5918,7 @@ These metrics are more relevant to protocol health than token price.
 
 ---
 
-## 17. Legal position, BVI to Switzerland or ADGM, and risk
+## 17. Legal position, foundation-first structure, and risk
 
 ### 17.1 Neutral infrastructure summary
 
@@ -5939,56 +5939,43 @@ Entities retain their own legal existence. dCorps is a shared technical substrat
 
 ---
 
-### 17.2 Development corporation in BVI
+### 17.2 Foundation-first pre-genesis structure
 
-Initially, core development and early integrations are expected to be handled by a **development corporation incorporated in the British Virgin Islands (BVI)** or a similar jurisdiction.
+The current intended path is **foundation-first**, not DevCo-first.
 
-This corporation:
+Under this path:
 
-- Builds and maintains the protocol code and reference implementations.
-- Provides integration and support services to early adopters.
-- Enters contracts with audit firms, infrastructure providers, and partners.
+- A **nonprofit foundation in Abu Dhabi / ADGM** is intended to exist before genesis.
+- Protocol and brand IP stewardship must sit under that foundation before genesis.
+- Mainnet remains gated on completing that foundation and IP posture.
 
-BVI is considered for pragmatic reasons:
+Early development may still be carried out by founders and by service providers. That does not make those providers the protocol steward.
 
-- It has experience with globally oriented technology and blockchain projects.
-- It can offer clearer and more predictable treatment for a development corporation whose revenues come from software and services related to a utility style token, compared to some larger jurisdictions.
-- It is relatively fast and cost effective to set up, which matters in the earliest phases of the project.
+Engineering providers are expected to be software and services firms, not:
 
-The development corporation is a software and services company, not:
+- Banks.
+- Exchanges, brokers, or asset managers.
+- Universal incorporation or NGO service providers for all dCorps entities.
 
-- A bank.
-- An exchange, broker, or asset manager.
-- A corporate or NGO service provider for all dCorps entities.
-
-Commercial relationships between the development corporation and entities will be governed by separate contracts.
+Commercial relationships between engineering providers and counterparties are governed by separate contracts and should not be confused with protocol governance or token posture.
 
 ---
 
-### 17.3 Foundation jurisdiction (Switzerland or ADGM)
+### 17.3 Foundation jurisdiction (Abu Dhabi / ADGM)
 
-Once dCorps reaches greater maturity, the intention is to:
-
-- Add a **nonprofit foundation** in a reputable jurisdiction. Two leading candidates are Switzerland and ADGM (Abu Dhabi Global Market).
-- Gradually shift stewardship of shared resources and protocol governance processes to that foundation.
-
-Switzerland is attractive because:
-
-- It has a long history of rule of law and predictable treatment of foundations.
-- It has practical experience with crypto and on-chain projects, including token foundations and nonprofit stewards.
-- It is easier for serious regulators, NGOs, and institutional partners to trust a Swiss based foundation than a purely offshore structure.
+The intended foundation jurisdiction is **Abu Dhabi / ADGM**.
 
 ADGM is attractive because:
 
 - It offers a modern foundation framework with remote-friendly setup and lower early overhead.
 - It is a credible international jurisdiction and can remain lean while governance and reporting standards mature.
+- It can support a foundation-centered structure without routing the project through an offshore development company first.
 
 Decision process and status:
 
 - The foundation is not incorporated yet.
-- ADGM is a leading candidate for an initial, lean setup; Switzerland remains a strong option for maximum institutional signaling.
-- The jurisdiction choice will be made before incorporation based on credibility, governance needs, operational overhead, and the ability to publish transparent reporting.
-- The final decision will be published in foundation filings and governance communications.
+- Abu Dhabi / ADGM is the current intended path.
+- The final executed structure will be published in foundation filings and governance communications once formalized.
 
 The foundation will:
 
@@ -5997,8 +5984,8 @@ The foundation will:
 - Support long term protocol development and maintenance.
 - Coordinate the design, implementation, and maintenance of protocol modules that connect dCorps to the real world, especially:
   - jurisdiction adapter modules.
-  - Sector and impact frameworks.
-  - Other non core features that interpret Hub state in terms of law, regulation, and societal standards.
+  - sector and impact frameworks.
+  - other non-core features that interpret Hub state in terms of law, regulation, and societal standards.
 - Operate and evolve the app and module registry.
 - Promote neutrality and resist capture by any single corporate or jurisdictional interest.
 - Actively work with jurisdictions and institutions to co-design and validate jurisdiction adapter modules, using the Hub as a shared base layer.
@@ -6011,67 +5998,66 @@ A core design principle is:
 
 The foundation is the natural home for this adaptive work. It sponsors research, consults with stakeholders, proposes modules through governance, and retires or replaces modules when they no longer fit current realities.
 
-This is a **good faith design intention**, not a fixed commitment to move or incorporate by a specific date. The exact timing and structure of this transition will depend on legal, regulatory, financial, and operational considerations. Mainnet is gated on transferring protocol and brand IP stewardship to the foundation once formed; until that transfer is complete, mainnet does not proceed. Details will be documented in public filings and governance proposals.
+This remains a **good faith design intention**, not a claim that incorporation has already occurred. The exact timing and execution depend on legal, regulatory, financial, and operational realities. Mainnet is gated on foundation and IP readiness; until that is complete, mainnet does not proceed.
 
 ------
 
-### 17.3A Relationship between development corporation and foundation
+### 17.3A Relationship between the foundation and engineering providers
 
-The development corporation and the foundation have complementary roles.
-
-The **development corporation**:
-
-- Is the primary engineering and product organization for dCorps.
-- Employs the core team that designs and implements the Hub, reference modules, and critical tooling.
-- Enters commercial contracts with entities and partners for integration and custom work.
-- Is expected to be one of the first Hub corporations on dCorps, using the same structures that other entities use.
+The foundation and engineering providers have complementary roles.
 
 The **dCorps foundation**:
 
 - Is the neutral steward for long term public goods:
-  - Parts of the Protocol Treasury and community allocations.
-  - Official jurisdiction adapter and sector modules.
-  - The app and module registry.
+  - parts of the Protocol Treasury and community allocations;
+  - official jurisdiction adapter and sector modules;
+  - the app and module registry.
 - Acts as a bridge to jurisdictions, regulators, NGOs, and other public stakeholders.
 
-The relationship between them is expected to be formalized through **framework agreements**, for example:
+Engineering providers:
 
-- The foundation can recognize the development corporation as an **authorized development provider** for core protocol work and ecosystem projects.
-- The foundation can fund the development corporation to deliver specified milestones, while keeping intellectual property and governance structures aligned with the protocol.
-- The foundation can also fund other teams for specific modules, tools, or research, to avoid single vendor risk and to foster a broader ecosystem.
+- Implement core protocol work, tooling, and integrations under contract.
+- May include a Wyoming LLC or other service-provider structures where appropriate.
+- Do not become the protocol steward by default merely by delivering engineering work.
 
-Replacing or significantly downgrading the development corporation as the primary provider of core protocol work is possible, but it should be:
+The relationship is expected to be formalized through service or framework agreements, for example:
+
+- The foundation can recognize a provider as an authorized development provider for defined scopes of work.
+- The foundation can fund a provider to deliver specified milestones while keeping IP and governance aligned with the protocol.
+- The foundation can fund multiple teams for modules, tools, or research to avoid single-vendor risk and to foster a broader ecosystem.
+
+Replacing or significantly downgrading a provider for core protocol work is possible, but it should be:
 
 - Governed by clear criteria and processes.
 - Subject to strong governance thresholds.
-- Paired with a credible alternative development arrangement.
+- Paired with a credible alternative delivery arrangement.
 
 This balance aims to:
 
-- Give the founding team enough stability to build a serious, multi year project.
-- Ensure that, in the long run, the protocol is not dependent on a single private company if that company stops performing or shifts priorities.
+- Give the founding team and early contributors enough stability to build a serious, multi-year project.
+- Ensure that, in the long run, the protocol is not dependent on a single private vendor if that vendor stops performing or shifts priorities.
 
 ------
 
-### 17.3B Development corporation business model and neutrality
+### 17.3B Engineering-provider business model and neutrality
 
-The development corporation is expected to operate as a normal software and services provider, not as a protocol gatekeeper.
+An engineering provider is expected to operate as a normal software and services provider, not as a protocol gatekeeper.
 
 Typical revenue sources may include:
 
 - Engineering services for entities and partners:
-  - Integrations, custom workflows, and deployment support
-  - Migration assistance for adopting dCorps as an operating layer
+  - integrations, custom workflows, and deployment support;
+  - migration assistance for adopting dCorps as an operating layer.
 - Maintenance and support contracts for infrastructure and tooling:
-  - Explorer and dashboard operations
-  - Enterprise grade APIs and monitoring services
+  - explorer and dashboard operations;
+  - enterprise-grade APIs and monitoring services.
 - Delivery of funded milestones:
-  - Foundation or Treasury funded work under transparent proposals and milestone reporting
-  - Work for jurisdictions or service providers building jurisdiction adapter modules, subject to clearly disclosed terms
+  - foundation or Treasury funded work under transparent proposals and milestone reporting;
+  - work for jurisdictions or service providers building jurisdiction adapter modules, subject to clearly disclosed terms.
 
 The protocol remains open to other development providers:
 
-- The foundation can fund multiple teams to reduce single vendor risk.
+- The foundation can fund multiple teams to reduce single-vendor risk.
 - Entities can commission work from any provider.
 - Governance can change funding priorities and provider arrangements through documented processes.
 
@@ -6094,18 +6080,17 @@ This dogfooding reinforces the seriousness of dCorps for nonprofits.
 
 ---
 
-### 17.5 Development corporation as first Hub corporation
+### 17.5 Engineering provider as early Hub corporation (optional)
 
-Similarly, the development corporation is expected to be:
+An engineering provider may become an early Hub corporation on dCorps, but that is optional rather than a required part of the legal structure.
 
-* One of the first Hub corporations on dCorps.
-* Using:
+If an engineering provider does use dCorps directly, it may use:
 
-  * Hub units for its internal cap table.
-  * Merchant and treasury wallets for operations.
-  * Governance modules for key decisions.
+* Hub units for its internal cap table.
+* Merchant and treasury wallets for operations.
+* Governance modules for key decisions.
 
-This aligns the incentives of the core team with the robustness of the infrastructure.
+That kind of dogfooding can strengthen the product, but it is not the same thing as protocol stewardship.
 
 ---
 

@@ -22,8 +22,11 @@
 - No automated tests. Do a quick manual pass: verify index links, headings, and cross-references, and ensure public docs do not link to private restricted docs.
 
 ## Commit & Pull Request Guidelines
-- Commit messages in history are short and descriptive, often lowercase (example: `add readme`); follow that simple style.
-- PRs should include a brief summary, list of key docs touched, and any policy impact (public vs restricted). Link relevant issues; add screenshots only when changing diagrams or rendered outputs.
+- Use structured commit headers: `type(scope): summary`.
+- Keep commits atomic and avoid vague subjects like `update`, `misc`, or `wip`.
+- Public-surface docs must not outrun the current product phase.
+- For material changes, note why, what changed, risk, and validation in the commit body.
+- Canonical version-control doctrine lives in `../dcorps-docs-private/docs/internal/ops/VERSION_CONTROL_PROTOCOL.md`.
 
 ## Security & Publication Policy
 - Documentation is public by default. Safety-sensitive operational content belongs in `dcorps-docs-private/docs/restricted/` and must not be linked from public docs.

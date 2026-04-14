@@ -6,17 +6,17 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/INFO_ARCHITECTURE.md](/frontend/INFO_ARCHITECTURE))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-12
 
-> Scope: Canonical information architecture across the public site, docs, and app surfaces.
+> Scope: Canonical information architecture across `dcorps.com`, the docs center, and the official app after the app-first reset.
 
 ---
 
-## 1. Public site (marketing and onboarding)
+## 1. Primary public entry on `dcorps.com`
 
-- Overview, vision, and protocol summaries.
-- Clear links to docs and specs.
-- Legal and risk disclosures accessible from footer.
+- `/` should land in the public registry inside the official app.
+- The canonical public surface is the app, not a separate brochure site.
+- Docs, whitepaper, legal pages, and foundation / token context should remain accessible from the same domain.
 
 ---
 
@@ -24,19 +24,39 @@
 
 - [docs/welcome/INDEX.md](/welcome/INDEX) is the docs center entry point and canonical map.
 - [docs/spec/INDEX.md](/spec/INDEX) is the developer entry point.
+- Whitepaper, policies, token docs, and security docs remain public and discoverable through docs.
 
 ---
 
 ## 3. App surfaces
 
-- **Explorer**: read-only views for entities, wallets, modules, and anchors.
-- **Console**: wallet-connected admin surface for entity actions.
-- **Registry**: discovery and search for entities, apps, and modules.
+- **Registry**: discovery and current-state search for entities.
+- **Explorer**: entity dossier, history, verification, anchors, and activity.
+- **Workspace**: wallet-connected admin surface for entity actions.
+- **Activity**: future global protocol activity stream, separate from the homepage.
 
 ---
 
-## 4. Navigation rules
+## 4. Required public routes or equivalents
 
-- Public site must link to docs and specs for detailed behavior.
+- `/`
+- `/entities/{entity_id}`
+- `/docs`
+- `/templates`
+- `/foundation`
+- `/token`
+- `/about`
+- `/status`
+- `/legal` and footer legal routes
+
+---
+
+## 5. Navigation rules
+
+- Primary navigation should stay compact and product-first.
+- Registry should remain the center of gravity.
+- Public docs and specs must remain one click away from the app shell.
+- Legal, risk, privacy, and policy pages should live in footer or secondary navigation, not be buried.
+- Tokenomics should stay contextual and truthful; it should not outrank the product surface.
 - App surfaces must link to relevant spec sections when presenting derived views.
 - Do not link to `dcorps-docs-private/docs/restricted/` from public surfaces.

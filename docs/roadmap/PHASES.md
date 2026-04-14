@@ -2,163 +2,157 @@
 
 **Document type**: Roadmap  
 **Doc ID**: ROADMAP-PHASES  
-**Status**: Final v0.1  
+**Status**: Draft v0.2  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/roadmap/PHASES.md](/roadmap/PHASES))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-11
 
-> Scope: Define phase goals and exit criteria based on the Whitepaper Long (section 16). Phases 1 to 5 start at mainnet launch. Phase 0 is the pre-mainnet readiness track.
+> Scope: define the post-reset build sequence. This roadmap replaces the "static site first" posture with an app-first, proof-driven sequence centered on a live chain, a live app, and a reproducible indexer.
 
 ---
 
-## Phase 0A - Public website finalization (static site)
+## Phase 0 - Live proof of concept
 
-Objective: finalize the public-facing static website before the protocol build sequence begins.
-
-Current status: Phase 0A (development).
+Objective: ship the first narrow workflow end-to-end on a real local stack.
 
 Key deliverables:
 
-- Website copy aligned to public docs and the Whitepaper Long.
-- Publish and update dates under page titles where required.
-- Roadmap page includes a high-level disclaimer.
-- Links to public docs and specs are verified.
-- Publish the localization plan and target language set for translating project surfaces (plan only; translations are not shipped yet): [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION).
+- local Orbit devnet;
+- minimal kernel contracts;
+- PostgreSQL-backed indexer;
+- canonical app surface for entity creation, roles, wallets, accounting events, and anchors;
+- deterministic reset flow and config bundle export.
+
+What is intentionally out of scope here:
+
+- separate explorer product;
+- separate registry product;
+- broad multilingual website work;
+- public token financing;
+- module marketplace breadth.
 
 Exit criteria:
 
-- Static site is ready to publish with verified doc links.
-- Website content and public docs remain aligned.
+- a developer can create an entity, assign authority, bind wallets, record events, anchor evidence, and see the result in the app;
+- the same flow works after a reset without manual data repair;
+- chain, indexer, and app versions are pinned and reproducible.
 
 ---
 
-## Phase 0 - Pre-mainnet readiness (public artifacts and testnet)
+## Phase 1 - Shared devnet and internal hardening
 
-Objective: publish verifiable artifacts and run a public testnet so readiness can be assessed without private access.
+Objective: turn the local proof into a stable shared environment for weekly demos and internal use.
 
 Key deliverables:
 
-- Hub chain source code and build instructions.
-- Protocol specs and module standards ([docs/spec/*](/spec)).
-- Network progression through testnet stages (design intention): baseline (local) → dev testnet (devnet) → public testnet → mainnet rehearsal testnet ([docs/devops/ROLLUP_ENVIRONMENT.md](/devops/ROLLUP_ENVIRONMENT)).
-- Public testnet with published chain ID, rollup contracts, and operator onboarding steps.
-- Reproducible tooling for nodes, indexers, and reporting views.
-- Public example entity package on testnet (corporation + nonprofit) with tagged events, anchors, and derived reports.
-- Audit scope and reports for core modules and reference tooling.
-- Bug bounty program with disclosure workflow.
-- Governance and operator charters plus Treasury policy ([docs/policy/*](/policy)).
-- Governance transition plan through foundation readiness ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
-- Begin translation of testnet-facing material (docs, onboarding, and notices) under the language set in [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION) (design intention).
-- Publish governance and stewardship posture (design intention): interim coordination, foundation readiness targets, and IP/brand stewardship disclosures.
+- hosted shared devnet;
+- backups, snapshots, logs, metrics, and alerts;
+- stable URLs for chain, app, and indexer;
+- seeded example entities and sample data;
+- operator notes and reset procedure.
 
 Exit criteria:
 
-- Third parties can reproduce entity views and reporting outputs from raw chain data.
-- At least one upgrade rehearsal is executed on testnet.
-- Security and governance artifacts are published and verifiable.
-- IP stewardship transfer to the foundation is completed and publicly disclosed before mainnet.
+- the internal team can run the full workflow repeatedly without rebuilding the environment by hand;
+- the system survives resets and version upgrades with documented steps;
+- the app is now the canonical public-facing product surface.
 
 ---
 
-## Phase 1 - Mainnet launch (Kernel v1)
+## Phase 2 - Partner testnet
 
-Objective: launch a stable Hub that can host complete Hub corporations and Hub nonprofits as the default entity containers.
+Objective: validate the workflow with a small number of real design partners before any public launch narrative.
 
 Key deliverables:
 
-- Genesis mainnet (TGE): published genesis package and checksums, coordinated operator launch, and runtime stability.
-- DCHUB gas and governance primitives (timelocked upgrades).
-- Entity registry with IDs, types, metadata, and lifecycle status.
-- Hub corporation module v1 and Hub nonprofit module v1.
-- Canonical wallets and tagged accounting event schemas.
-- Document anchoring and evidence timelines.
-- Reference explorer and indexer for entity discovery and event timelines.
-- Post-genesis stabilization (design intention): monitoring, incident response readiness, and the first governed upgrades and operational budgets.
-- Publish localized mainnet launch materials (website + docs) under [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION) (design intention).
+- gated partner testnet;
+- published config bundle and partner onboarding docs;
+- support process for selected users;
+- first reproducible period views from live testnet data;
+- first external feedback loop on role model, wallet model, and reporting semantics.
 
 Exit criteria:
 
-- Core modules audited and deployed with reproducible builds.
-- Upgrade process and on-chain governance path tested in controlled upgrades.
-- Real entities can register, operate, and produce reproducible reports using only the Hub.
+- at least 3 design partners complete the core workflow;
+- the indexer-derived views are reproducible from raw chain data;
+- product gaps are understood well enough to decide whether a genesis path is justified.
 
 ---
 
-## Phase 2 - Operational completeness and standards hardening
+## Phase 3 - Genesis rehearsal
 
-Objective: make the Hub reliable enough that external builders can treat it as infrastructure, not an experiment.
+Objective: rehearse mainnet before making a mainnet decision.
 
 Key deliverables:
 
-- Conformance test suite for entity modules, schemas, and indexing compatibility.
-- Stable APIs and SDKs for core operations.
-- Monitoring, alerting, and incident processes for operators and core services.
-- Bug bounty expansion and formalized threat models for the kernel.
-- UX primitives such as fee grants that allow stablecoin-sponsored coverage of DCHUB protocol fees while execution uses DCHUB.
+- frozen deployment manifests;
+- genesis construction and verification tooling;
+- multisig and timelock ownership model;
+- token and treasury configuration draft;
+- upgrade rehearsal;
+- incident and rollback runbooks.
 
 Exit criteria:
 
-- Independent builders can integrate against published schemas and pass conformance tests.
-- A first cohort of entities operates end to end on mainnet with real value flows.
+- full dry-run from genesis package to running network is repeatable;
+- at least one upgrade rehearsal succeeds;
+- token and governance configuration are based on real operational assumptions, not narrative placeholders.
 
 ---
 
-## Phase 3 - Ecosystem bootstrapping and stablecoin rails
+## Phase 4 - Mainnet launch (Kernel v1)
 
-Objective: make the Hub easy to use for real organizations and easy to integrate for service providers.
+Objective: launch the smallest credible public version of dCorps.
 
 Key deliverables:
 
-- Ethereum bridge gateway stablecoin connectivity and standard treasury patterns.
-- App and module registry with metadata, versioning, and security posture disclosures.
-- Reference templates for common entity setups.
-- Indexer redundancy and data availability patterns.
-- Reference governance UI and reporting UI to reduce integration friction.
+- mainnet chain;
+- audited or externally reviewed core contracts;
+- canonical app, indexer, and public docs;
+- entity registry, authority, wallets, accounting events, and anchors;
+- incident response and monitoring posture.
 
 Exit criteria:
 
-- Multiple independent applications and service providers operate in production.
-- Stablecoin operations work reliably across inflows, approvals, payouts, and reporting.
+- real entities can complete the narrow workflow on mainnet;
+- the operator team can maintain the network without ad hoc heroics;
+- the system is credible as infrastructure, not just as a demo.
 
 ---
 
-## Phase 4 - Adapter layer and institutional legibility
+## Phase 5 - Hardening and operator expansion
 
-Objective: enable optional external integration without making external systems a kernel dependency.
+Objective: make the system safe enough for external builders and eventual operator growth.
 
 Key deliverables:
 
-- Jurisdiction adapter framework (schemas, proofs, and reference workflows).
-- Institutional reporting modules derived from standardized events and anchors.
-- Attestation modules and selective disclosure patterns.
-- Nonprofit overlays such as donation receipt workflows and sponsorship frameworks.
+- conformance tests;
+- stable APIs and SDKs;
+- stronger observability and backup posture;
+- operator onboarding path;
+- more explicit governance and treasury controls.
 
 Exit criteria:
 
-- At least one high quality adapter demonstrates external recognition while leaving the kernel unchanged.
-- Entities can remain Hub-native or attach adapters without any mandatory graduation path.
+- external builders can integrate without private tribal knowledge;
+- the network can support broader usage without founder-only operations.
 
 ---
 
-## Phase 5 - Fully operational maturity
+## Phase 6 - Ecosystem extensions
 
-Objective: reach a state where the Hub is a long-lived, self-sustaining public utility.
+Objective: add breadth only after the kernel and the narrow workflow are proven.
 
-Key deliverables:
+Candidate deliverables:
 
-- Decentralized operator set and governance participation.
-- Multiple independent indexers and reference implementations.
-- Predictable upgrade cadence and mature incident processes.
-- Sustainable foundation processes for standards, audits, and ecosystem support.
+- invoices and recurring billing;
+- module registry;
+- registry and explorer specialization;
+- jurisdiction or attestation adapters;
+- broader stablecoin and treasury integrations.
 
 Exit criteria:
 
-- No single organization is required for the Hub to operate and evolve safely.
-- Entity creation and operation are routine with predictable costs and semantics.
-
----
-
-## Optional future phase - Advanced execution environments
-
-Specialized privacy execution and public instrument models are explored only if real adoption proves they are needed and kernel invariants remain intact.
+- new scope expands real usage rather than compensating for weak core demand;
+- additional surfaces do not compromise kernel simplicity.

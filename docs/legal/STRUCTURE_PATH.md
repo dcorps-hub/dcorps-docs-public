@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/STRUCTURE_PATH.md](/legal/STRUCTURE_PATH))  
-**Last updated**: 2026-01-18  
+**Last updated**: 2026-04-12  
 
 > Scope: Summary of the intended legal structure path described in the Whitepaper Long.
 
@@ -18,22 +18,22 @@ Status note: dCorps is in Phase 0A (development). Mainnet is not live and the fo
 
 Current posture (design intention):
 
-- **DevCo (active)**: **dCorps Development Ltd.** is the development company (jurisdiction: **British Virgin Islands (BVI)**; incorporated; active).
-- **ResCo (planned)**: **dCorps Research LLC** is the intended research organization (intended jurisdiction: **Wyoming (USA)**; incorporation pending).
-- Early work focuses on protocol engineering, reference tooling, and public documentation.
+- The working legal path is now **foundation-first**, not DevCo-first.
+- The target steward before genesis is a nonprofit foundation in **Abu Dhabi / ADGM**.
+- Early work remains founder-led and may be delivered through service providers.
+- A Wyoming LLC may be used as an engineering contractor, but that role is intended to remain a vendor / services role rather than protocol stewardship.
 - This structure is not intended to create a custody or financial intermediation role.
 
 ---
 
-## 2. Transition posture (maturity phase)
+## 2. Pre-genesis target posture
 
-- Establish a nonprofit foundation in Switzerland or ADGM (Abu Dhabi Global Market).
-- Switzerland offers strong institutional credibility and supervisory expectations; ADGM offers a lean, remote-friendly setup with lower early overhead.
-- The foundation is not incorporated yet; the jurisdiction choice will be made before incorporation and published with the foundation charter and governance updates.
-- Transfer stewardship of shared standards and public goods to the foundation.
-- Transfer protocol and brand IP to the foundation before mainnet; launch is gated on completion.
-- Retain protocol neutrality and reduce single-vendor dependence.
-  - This includes making any IP stewardship arrangement explicit (see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/legal/DEVCO_AGREEMENT.md](/legal/DEVCO_AGREEMENT), and [docs/legal/RESCO_AGREEMENT.md](/legal/RESCO_AGREEMENT)).
+- Establish a nonprofit foundation in **Abu Dhabi / ADGM** before genesis.
+- Put protocol and brand IP under the foundation before genesis; launch remains gated on that completion.
+- Use the foundation as the public-goods steward and off-chain coordinating entity from the start of genesis readiness, not only after mainnet.
+- Allow the foundation to contract engineering providers, including a Wyoming LLC where appropriate, under disclosed service agreements.
+- Keep protocol neutrality and reduce single-vendor dependence.
+- Do not treat a BVI DevCo as part of the current intended structure.
 
 ---
 
@@ -42,6 +42,7 @@ Current posture (design intention):
 - Public testnet artifacts and reproducible tooling published.
 - Governance processes operational with clear thresholds.
 - Ecosystem contributors beyond the founding team are active.
+- Foundation incorporation, charter, and IP stewardship documents finalized before genesis.
 
 ---
 
