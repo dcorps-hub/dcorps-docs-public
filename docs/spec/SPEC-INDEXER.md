@@ -123,9 +123,10 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | Field | Type | Notes |
 | --- | --- | --- |
 | entity_id | string | Stable ID |
+| public_code | string | Stable human-facing code such as `C-000001` or `N-000001` |
 | entity_type | string | `SPEC-DATA.md` |
 | display_name | string | Human-readable |
-| lifecycle_status | string | Active, suspended, dissolved |
+| lifecycle_status | string | Draft, active, suspended, dissolved |
 | created_at | timestamp | Hub time |
 | created_height | int | Block height |
 | metadata_json | json | Optional |

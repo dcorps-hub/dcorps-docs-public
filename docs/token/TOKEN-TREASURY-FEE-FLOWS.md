@@ -15,7 +15,7 @@
 ## 1. Fee types
 
 - **Gas fees (DCHUB)**: paid per transaction; distributed to operators by default, with an optional capped Treasury share if governance adopts it.
-- **Service fees (USDC or approved stablecoins)**: charged for protocol services such as entity registration, premium names, and module participation.
+- **Service fees (USDC or approved stablecoins)**: charged for protocol services such as entity activation, premium names, and module participation.
 
 ---
 
