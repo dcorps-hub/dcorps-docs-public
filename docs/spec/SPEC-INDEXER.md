@@ -123,7 +123,7 @@ Reference indexers SHOULD maintain at least the following tables or equivalent d
 | Field | Type | Notes |
 | --- | --- | --- |
 | entity_id | string | Stable ID |
-| public_code | string | Stable human-facing code such as `C-K58X1` or `N-K58X1` |
+| public_code | string | Stable human-facing code such as `C-100C1S` or `N-100C1S` |
 | entity_type | string | `SPEC-DATA.md` |
 | display_name | string | Human-readable |
 | lifecycle_status | string | Draft, active, suspended, dissolved |
