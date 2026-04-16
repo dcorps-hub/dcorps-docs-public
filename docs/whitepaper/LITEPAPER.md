@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-15
 
 ---
 
@@ -35,6 +35,21 @@ It provides a shared standard where organizations can be:
 - audited over time through deterministic on-chain state and anchored evidence.
 
 dCorps is infrastructure. It does not provide legal, tax, or regulatory guarantees. It does not provide custody. It does not operate as a bank, broker, exchange, or fundraising platform.
+
+### 1.1 Record model and trust boundary
+
+dCorps is meant to be a source of truth for entity operations, not a cosmetic reporting layer.
+
+The record model is append-only:
+
+- material records are not meant to be deleted;
+- corrections are recorded as new entries, not silent overwrites;
+- authority changes, approvals, wallet bindings, and evidence references remain in history; and
+- every serious action should be attributable to a wallet, authority path, timestamp, and supporting reason or evidence reference where applicable.
+
+Not every detail must be publicly visible in raw form. Selective disclosure is valid. But when data is not public, the system should still support authorized audit access for approved wallets under explicit disclosure rules.
+
+The trust boundary is also explicit: the chain guarantees integrity, ordering, and tamper resistance. It does not by itself prove that an off-chain statement was true when submitted. That assurance comes from provenance, approvals, evidence, attestations, and audit rights.
 
 ---
 

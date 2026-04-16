@@ -7,7 +7,7 @@
 **Release date**: April 11, 2026  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public  
-**Last updated**: 2026-04-11
+**Last updated**: 2026-04-15
 
 > This draft resets the dCorps narrative around what should actually be built first. It is not yet a normative specification and does not supersede protocol specs where those exist.
 
@@ -71,6 +71,13 @@ Its kernel records:
 - tagged treasury activity;
 - anchored evidence;
 - a transparent history of changes over time.
+
+The intended record rule is append-only:
+
+- material records should not be deleted;
+- corrections should be recorded as new entries;
+- authority, approvals, wallet changes, and evidence links should remain historically visible; and
+- public views and audit-authorized views should both be treated as first-class outputs of the system.
 
 Its first public product is not a generalized chain ecosystem.
 

@@ -7,7 +7,7 @@
 **Release date**: January 1, 2026  
 **Author**: Nicolas Turcotte, Founder  
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2026-01-16  
+**Last updated**: 2026-04-15  
 
 > Scope: Plain-language overview of what dCorps is, what v1 enables, and the boundaries (what it does not claim to do). This document is non-normative.
 
@@ -38,6 +38,21 @@ It lets an organization:
 - anchor key documents and evidence by hash.
 
 The goal is simple: make it possible for an outside party to verify **authority** and **money trails** from a shared public record, instead of relying on screenshots, private exports, or trust-me reporting.
+
+## The record rule
+
+dCorps is supposed to work like an entity ledger, not like a normal admin dashboard.
+
+The important rule is:
+
+- material records are not deleted;
+- mistakes are corrected by new entries;
+- history stays visible;
+- important actions should show who acted, when, under what authority, and with what supporting proof or reason.
+
+Not every detail has to be public to everyone. Some data may stay limited or audit-only. But if something is hidden from the public, approved audit wallets should still be able to review far more of the underlying record.
+
+The chain guarantees that records are hard to rewrite without it being obvious. It does not automatically prove that every off-chain claim was true when entered. That trust comes from the evidence, approvals, and audit trail attached to the record.
 
 ---
 

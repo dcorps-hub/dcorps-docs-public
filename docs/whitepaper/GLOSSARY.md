@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY))  
-**Last updated**: 2026-01-26
+**Last updated**: 2026-04-15
 
 ---
 
@@ -48,6 +48,15 @@ A designated on-chain address (or address set) associated with an entity for spe
 
 **Tagged accounting event**  
 An on-chain event or transaction output annotated with categories and tags per dCorps data standards, enabling reproducible reporting views.
+
+**Append-only record model**  
+The design rule that material entity records are not silently deleted or overwritten. Corrections are recorded as new entries linked to prior records, preserving full operational history.
+
+**Audit access**  
+Permissioned access for approved wallets to inspect non-public or deeper entity records for review, verification, or assurance purposes under explicit disclosure rules.
+
+**Source of truth**  
+The idea that dCorps should preserve the canonical operational record of what was asserted, approved, changed, and anchored over time, with durable history and provenance.
 
 **Category (chart of accounts)**  
 A standardized code used to tag inflows and outflows for comparability in reporting views. Entities may extend categories when extensions map to the minimal standard.

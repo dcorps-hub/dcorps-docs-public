@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/FAQ.md](/whitepaper/FAQ))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-15
 
 ---
 
@@ -105,6 +105,36 @@ A nonprofit allocation view is a reproducible cash-based time-window view derive
 ## What is evidence anchoring?
 
 Evidence anchoring is the practice of anchoring a document hash (for example, an invoice, receipt, agreement, minutes, or policy document) on-chain. Accounting events and governance actions can then reference that anchor so that third parties can verify that a document matches the anchored commitment.
+
+---
+
+## Can a dCorps entity delete records or hide past changes?
+
+Not for material records. dCorps is designed as an append-only entity ledger.
+
+The intended rule is:
+
+- important records are not silently deleted;
+- corrections are recorded as new entries linked to prior records; and
+- authority changes, approvals, wallet changes, and evidence references remain historically visible.
+
+Public visibility can vary by disclosure mode, privacy tooling, and application design. But history itself is not supposed to disappear.
+
+---
+
+## Does the chain guarantee that every claim is true?
+
+No. The chain guarantees integrity, ordering, tamper resistance, and a durable record of what was submitted and approved.
+
+It does not automatically prove that every off-chain statement was true when entered.
+
+That higher level of trust comes from:
+
+- who submitted the record;
+- what authority approved it;
+- what evidence was anchored;
+- whether third-party attestations exist; and
+- whether authorized auditors can inspect the deeper record.
 
 ---
 

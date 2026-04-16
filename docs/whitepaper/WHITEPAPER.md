@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-15
 
 > This is the condensed whitepaper. For the official long version, see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG).
 
@@ -110,6 +110,22 @@ dCorps keeps a strict boundary between a minimal kernel and optional modules:
 - **Adapters and modules (optional)**: jurisdiction recognition workflows, institutional reporting views, sector and impact frameworks, and attestations derived from kernel state.
 
 Entities must be able to operate without adapters. Adapters may publish derived interpretations, but they must not redefine kernel semantics or rewrite history.
+
+### 0.3 Record model and trust boundary
+
+dCorps is intended to function as an append-only entity operating ledger.
+
+For material records, the design rule is:
+
+- no silent deletion;
+- no history-erasing overwrite;
+- corrections are new records linked to prior records;
+- authority, approvals, wallet changes, and evidence references remain queryable over time; and
+- important actions should preserve provenance: who acted, when, under what authority, and with what supporting reason or anchor.
+
+Not all underlying detail must be public in raw form. Selective disclosure is valid where privacy, safety, or confidentiality require it. But when detail is not public, the system should still support authorized audit access for approved wallets under explicit disclosure rules.
+
+Important boundary: the chain guarantees integrity, ordering, authorship, and tamper resistance. It does not automatically guarantee that every off-chain claim was true when entered. Trust in those claims comes from provenance, approvals, anchored evidence, attestations, and audit access.
 
 ### 0.3 v1 scope (ships vs not in scope)
 

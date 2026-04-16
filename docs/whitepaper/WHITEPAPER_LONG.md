@@ -11,7 +11,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
  [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2026-01-25  
+**Last updated**: 2026-04-15  
 
 **Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar). 2026-01-25: Orbit rollup sanity fixes (fee model alignment, operator roles, canonical stablecoin address language).
 
@@ -149,6 +149,28 @@ It provides:
 - Advanced execution environments and public-market style instruments are future extensions and are explicitly not required for v1 adoption.
 
 dCorps is **infrastructure**, not a bank, broker, exchange, or custodial service. It does not provide legal, tax, or regulatory guarantees. It provides a programmable, auditable entity standard that others can rely on.
+
+### 0.1.1C Source of truth, history, and auditability
+
+dCorps is meant to be a source of truth for entity operations, not just a publication layer.
+
+The core record rule is append-only:
+
+- material records are not silently deleted;
+- corrections are recorded as new entries linked to the prior state;
+- authority changes, wallet changes, approvals, and supporting evidence remain historically visible; and
+- important actions should preserve provenance: who acted, when, under what authority, and with what supporting justification or anchor.
+
+This matters because a trustworthy entity standard cannot depend on private database edits or overwritten admin history. It must preserve a durable operational timeline.
+
+Not everything has to be publicly visible in raw form. Selective disclosure is valid where privacy, beneficiary safety, legal sensitivity, or operational confidentiality require it. But when data is not public, the model should still support authorized audit access for approved wallets under explicit disclosure rules, so the system can remain verifiable beyond the public surface.
+
+The trust boundary is also explicit:
+
+- the chain guarantees integrity, ordering, authorship, timestamps, and tamper resistance;
+- the chain does not automatically prove that every off-chain claim was true when entered.
+
+Truthfulness for off-chain claims comes from provenance, approvals, anchored evidence, attestations, and audit rights. dCorps guarantees a durable and verifiable record of what was asserted, approved, and changed over time.
 
 A nonprofit **dCorps foundation** is intended to steward public goods over time. Its mission focuses on keeping the Hub minimal and neutral, maintaining reference standards and conformance test suites, and supporting an open ecosystem of applications and modules.
 

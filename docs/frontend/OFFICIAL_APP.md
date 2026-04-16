@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/frontend/OFFICIAL_APP.md](/frontend/OFFICIAL_APP))  
-**Last updated**: 2026-04-11
+**Last updated**: 2026-04-15
 
 > Scope: define the official dCorps App as the canonical public surface for the current phase.
 
@@ -17,6 +17,14 @@
 The official app is the canonical public surface for dCorps.
 
 It is the place where the current phase should be understood first and where the public registry should be encountered first.
+
+The official app must also communicate the core dCorps record model clearly:
+
+- dCorps is append-only for material records;
+- history is a product feature, not an internal implementation detail;
+- corrections should appear as new records or revisions, not silent deletion;
+- public users should be able to verify what is public; and
+- approved audit wallets should be able to inspect deeper records when disclosure rules allow it.
 
 In the current phase, the app absorbs:
 

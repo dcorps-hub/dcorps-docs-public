@@ -7,7 +7,7 @@
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-15
 
 ---
 
@@ -38,6 +38,21 @@ The dCorps Hub is the kernel. It defines:
 - anchoring of key documents by hash.
 
 dCorps is infrastructure, not a bank, broker, exchange, or custodial service.
+
+## Record model and trust boundary
+
+dCorps is designed as an append-only entity operating ledger.
+
+That means:
+
+- material records should not be deleted;
+- corrections should be recorded as new entries linked to the prior state;
+- authority, approvals, wallet changes, and supporting evidence should remain historically visible; and
+- serious actions should carry enough provenance to explain who acted, when, under what authority, and with what supporting justification.
+
+Not everything must be public in raw form. But when detail is not public, the system should still support authorized audit access for approved wallets under explicit disclosure rules.
+
+Important boundary: the chain guarantees ordering, integrity, timestamps, authorship, and tamper resistance. It does not automatically prove that every off-chain claim was true when entered. That trust comes from provenance, approvals, evidence anchors, attestations, and audit access.
 
 ---
 
