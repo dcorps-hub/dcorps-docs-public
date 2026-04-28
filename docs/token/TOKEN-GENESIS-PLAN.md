@@ -6,9 +6,9 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-26
 
-> Scope: Initial supply, allocations, vesting, and launch mechanics for DCHUB at network genesis. This plan aligns with the token model in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 10).
+> Scope: Initial supply, allocations, vesting, and launch mechanics for DCHUB at public Genesis/TGE. This plan aligns with the token model in [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG) (section 10).
 
 ---
 
@@ -16,7 +16,7 @@
 
 The genesis plan defines:
 
-- the initial total supply of DCHUB at network launch (TGE);
+- the initial total supply of DCHUB at public Genesis/TGE;
 - how that supply is allocated across key stakeholder and protocol pools;
 - vesting, lockups, and release caps that constrain transferable supply;
 - operational steps required to construct and verify the genesis state.
@@ -150,13 +150,14 @@ Launch may be structured into phases such as:
 
 - private testnets – early validation of functionality and security;
 - public testnets – wider testing and integration by ecosystem participants;
-- genesis dry-run – full rehearsal of the planned mainnet genesis;
-- mainnet launch – activation of rollup configuration, initial operator set, and governance.
+- genesis dry-run – full rehearsal of the planned public DCHUB Genesis/TGE state;
+- mainnet beta – controlled production operation with DCHUB gas sponsored, supplied, or otherwise controlled through product and DevCo operating flows;
+- Genesis/TGE – public DCHUB activation, allocations, vesting, liquidity policy, and token-governed authority after the foundation or equivalent steward gate is ready and disclosed.
 
 Safeguards include:
 
 - explicit criteria for progressing from one phase to the next;
-- go/no-go checklists for mainnet launch (e.g. audits, tooling readiness);
+- go/no-go checklists for mainnet beta and Genesis/TGE (e.g. audits, tooling readiness, stewardship readiness);
 - contingency plans for delaying launch or rolling back to a prior phase if critical issues are discovered.
 
-The final mainnet launch decision is a coordinated action between on-chain governance, operators, and the foundation, with clear communication to all stakeholders.
+The mainnet beta decision is a controlled operational decision under disclosed DevCo controls. The final Genesis/TGE decision is a coordinated action between the foundation or equivalent steward path, operators, and governance processes as applicable, with clear communication to all stakeholders.

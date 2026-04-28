@@ -6,9 +6,9 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-26
 
-> Scope: A phased governance plan from founder-led pre-mainnet work through foundation readiness. This document describes design intention, not a commitment of timing or outcomes.
+> Scope: A phased governance plan from founder-led and DevCo-led bootstrap work through mainnet beta, foundation readiness, and public DCHUB governance. This document describes design intention, not a commitment of timing or outcomes.
 
 ---
 
@@ -17,6 +17,7 @@
 - dCorps is in Phase 0A (development). Mainnet is not live and on-chain governance is not active yet.
 - The foundation described in this document is not incorporated yet, and any future formation timing is not finalized.
 - DevCo is incorporated and active in the British Virgin Islands; ResCo is planned and not incorporated yet.
+- Mainnet beta and public DCHUB Genesis/TGE are separate gates. A controlled mainnet beta may happen before the foundation exists; public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, and live token-governed authority require the foundation or an equivalent steward path to be ready and disclosed.
 
 This document aims to make “who decides what” legible during pre-mainnet work, while explicitly separating design intention from executed legal arrangements.
 
@@ -48,9 +49,9 @@ Deliverables (governance-specific):
 
 ---
 
-## 3. Phase 0 (pre-mainnet readiness) — governance scaffolding
+## 3. Phase 0 (pre-mainnet and mainnet-beta readiness) — governance scaffolding
 
-Goal: make decision-making legible before mainnet so third parties can evaluate risk without private access.
+Goal: make decision-making legible before production use and before public token power so third parties can evaluate risk without private access.
 
 Governance scaffolding (design intention):
 
@@ -62,12 +63,45 @@ Governance scaffolding (design intention):
 Foundation readiness preparation:
 
 - Draft the foundation’s initial charter, reporting commitments, and ethics/conflict policies (see [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION)).
-- Incorporate the foundation **before mainnet** so stewardship, disclosures, and conflict policies exist from day one; mainnet is gated on formation and IP stewardship transfer.
+- Prepare the foundation path before mainnet beta, but do not make foundation incorporation a blocker for every controlled production step.
+- Incorporate the foundation, or publish an equivalent steward arrangement, before public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, or live token-governed protocol authority.
 - Define how the foundation can fund multiple providers over time to reduce single-vendor risk.
 
 ---
 
-## 4. Phase 1 (mainnet launch) — on-chain governance becomes primary
+## 4. Phase 1 (mainnet beta) — controlled production operation
+
+Goal: allow real product operation before public DCHUB markets or token-governed authority, without overstating decentralization.
+
+Governance posture (design intention):
+
+- DevCo may operate and coordinate early production infrastructure under published policies and disclosed controls.
+- DCHUB gas access may be supplied, sponsored, or otherwise controlled through the product and DevCo operating flows so businesses are not forced into a public DCHUB market before Genesis/TGE.
+- Public claims must stay narrow: production beta operation is not the same as public token governance, public token liquidity, or foundation stewardship.
+- Critical operational roles should be publicly disclosed, bounded, and migrated as the foundation and governance stack mature.
+
+If the foundation is not yet operational during mainnet beta:
+
+- Interim founder/DevCo coordination is acceptable for communications, release coordination, support, and external partnerships.
+- The project should not claim to be foundation-controlled or fully decentralized.
+- Any special operational roles should remain public, bounded, and designed for later migration.
+
+---
+
+## 5. Phase 2 (Genesis/TGE readiness) — foundation becomes operational before public DCHUB power
+
+Goal: shift public-goods stewardship and ecosystem programs into a neutral nonprofit entity before DCHUB becomes broadly distributed, liquid, treasury-active, or used for live protocol authority.
+
+Design intention:
+
+- The foundation becomes the default steward for public goods (standards, conformance tests, audit coordination, ecosystem programs) while remaining accountable to on-chain governance.
+- The foundation is expected to fund multiple independent providers over time, including but not limited to DevCo/ResCo, to reduce single-vendor risk.
+- The foundation’s role is stewardship and coordination, not legal authority and not a guarantee of outcomes.
+- Genesis/TGE should not proceed into public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, or live token-governed authority until the foundation or an equivalent steward path is executed and disclosed.
+
+---
+
+## 5A. Phase 3 (token-governed protocol) — on-chain governance becomes primary
 
 Goal: transition protocol change control to on-chain governance under `DCHUB` token-weighted voting, with conservative safety guardrails.
 
@@ -76,23 +110,7 @@ Governance posture (design intention):
 - **On-chain voting** is the canonical approval path for protocol upgrades, parameter changes, and module lifecycle decisions (see [docs/policy/POL-GOV.md](/policy/POL-GOV)).
 - **Protected Changes** use higher thresholds and safety mechanisms (voting-power age, timelocks) for high-impact actions.
 - **Transparency** is treated as a security control: proposals include durable rationale, risk notes, and references.
-
-If the foundation is not yet operational at launch:
-
-- Interim coordination is still possible (communications, release coordination, external partnerships), but it should not replace on-chain approval paths.
-- Any special operational roles should be publicly disclosed, time-bounded, and contestable through governance.
-
----
-
-## 5. Phase 2 (operational completeness) — foundation becomes operational (when ready)
-
-Goal: shift public-goods stewardship and ecosystem programs into a neutral nonprofit entity without changing kernel semantics or creating a protocol dependency.
-
-Design intention:
-
-- The foundation becomes the default steward for public goods (standards, conformance tests, audit coordination, ecosystem programs) while remaining accountable to on-chain governance.
-- The foundation is expected to fund multiple independent providers over time, including but not limited to DevCo/ResCo, to reduce single-vendor risk.
-- The foundation’s role is stewardship and coordination, not legal authority and not a guarantee of outcomes.
+- The foundation executes appropriate off-chain actions within legal constraints, but does not replace on-chain approval paths.
 
 ---
 
@@ -142,9 +160,9 @@ What should be explicit when it happens (illustrative, not exhaustive):
 - what DevCo’s ongoing role is (services provider under contract, not the steward by default);
 - how conflicts are managed and disclosed (related-party posture, recusal, reporting).
 
-Mainnet gate (no date promises):
+Public-token gate (no date promises):
 
-- Mainnet does not proceed until the IP stewardship transfer is complete and publicly disclosed.
+- Public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, and live token-governed authority should not proceed until the IP stewardship path is complete or publicly documented with clear interim controls.
 
 ---
 

@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/welcome/OVERVIEW.md](/welcome/OVERVIEW))  
-**Last updated**: 2026-01-26
+**Last updated**: 2026-04-26
 
 > Scope: Quick orientation to what dCorps is, who it serves, and how the system is organized.
 
@@ -18,7 +18,7 @@ dCorps is a project to build the dCorps Hub, a platform that runs on dCorps Chai
 
 The Hub is intentionally minimal. Jurisdiction rules, sector frameworks, and user interfaces live in modules and applications that sit on top of the Hub.
 
-Current status: Phase 0A (development). Mainnet is not live, on-chain governance is not active yet, and the foundation has not been incorporated.
+Current status: Phase 0A (development). Mainnet is not live, public DCHUB Genesis/TGE has not happened, on-chain governance is not active yet, the foundation has not been incorporated, and dCorps Development Ltd. is the active BVI DevCo.
 
 ---
 

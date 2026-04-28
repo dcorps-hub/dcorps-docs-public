@@ -6,13 +6,13 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public (internal index)  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-26
 
 > Scope: Canonical entry point for publicly releasable dCorps documentation across protocol, policy, security, token, and supporting technical materials.
 
 Internal planning and working documents (backlogs, internal roadmaps, and playbooks) are maintained in a private documentation repository.
 
-Current status: Phase 0A (development). Mainnet is not live, on-chain governance is not active yet, and the foundation is not incorporated.
+Current status: Phase 0A (development). Mainnet is not live, public DCHUB Genesis/TGE has not happened, on-chain governance is not active yet, the foundation is not incorporated, and dCorps Development Ltd. is the active BVI DevCo.
 
 ---
 
@@ -34,7 +34,7 @@ Current status: Phase 0A (development). Mainnet is not live, on-chain governance
 - People & Organization: [docs/people/INDEX.md](/people/INDEX)
 - Legal: [docs/legal/INDEX.md](/legal/INDEX)
 - Publication policy: [docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION)
-- Governance transition plan (pre-mainnet → foundation readiness): [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)
+- Governance transition plan (BVI bootstrap, mainnet beta, foundation gate, Genesis/TGE): [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)
 
 ---
 

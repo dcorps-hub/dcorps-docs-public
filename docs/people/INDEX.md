@@ -6,13 +6,13 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/people/INDEX.md](/people/INDEX))  
-**Last updated**: 2026-04-12  
+**Last updated**: 2026-04-26
 
 > Scope: Where to find information about the dCorps team, the roles needed, and the organizations around the project.
 
 ---
 
-Status note: dCorps is founder-led in Phase 0A (development). The foundation is planned and not incorporated yet; the current intended path is foundation-first pre-genesis in Abu Dhabi / ADGM, and older DevCo / ResCo drafts are no longer the working structure.
+Status note: dCorps is founder-led in Phase 0A (development). dCorps Development Ltd. is the active BVI DevCo. The foundation is planned and not incorporated yet; the current intended path is BVI DevCo bootstrap, controlled mainnet beta, then foundation readiness before public DCHUB distribution, liquidity, treasury activation, or token-governed authority.
 
 ---
 

@@ -6,11 +6,11 @@
 **Release date**: December 28, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/legal/RESCO_AGREEMENT.md](/legal/RESCO_AGREEMENT))  
-**Last updated**: 2026-04-12  
+**Last updated**: 2026-04-26
 
 > Scope: Historical summary of a superseded ResCo path.
 
-Status note: This is not an executed contract and does not constitute legal advice. It reflects an older structure draft that is no longer the current intended path. The working structure is foundation-first pre-genesis, with any Wyoming LLC role treated as engineering services rather than a standalone research-company narrative.
+Status note: This is not an executed contract and does not constitute legal advice. It reflects an older standalone ResCo draft that is not the current intended path. The working structure is BVI DevCo bootstrap, controlled mainnet beta, then foundation readiness before public DCHUB distribution, liquidity, treasury activation, or token-governed authority.
 
 ---
 

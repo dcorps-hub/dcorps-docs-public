@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/devops/ROLLUP_ENVIRONMENT.md](/devops/ROLLUP_ENVIRONMENT))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-04-26
 
 > Scope: Summarize what is required to stand up an Arbitrum Orbit (Rollup mode) environment for the dCorps Hub.
 
@@ -55,14 +55,15 @@ Network stages (design intention):
 - **Dev testnet (devnet)**: team-only rollup for early integration; resets allowed; operator ops are exercised by a small, trusted set.
 - **Public testnet**: published chain ID, configuration, and onboarding; open integrations; upgrades and governance workflows rehearsed in public.
 - **Mainnet rehearsal testnet**: final pre-launch dress rehearsal with mainnet-like procedures (release candidates, deployment packaging, and coordinated operator start), while still resettable.
-- **Genesis mainnet (TGE)**: mainnet launch and Token Generation Event; DCHUB supply becomes live at genesis and production operators begin posting batches.
+- **Mainnet beta**: production operation for real entities under disclosed controls, with DCHUB gas access sponsored, supplied, or otherwise controlled through the product and DevCo operating flows; no public DCHUB liquidity, public distribution, or live token-governed authority is claimed.
+- **Genesis / TGE**: Token Generation Event and public DCHUB activation; allocations become live under the Genesis plan after the foundation or equivalent steward gate is ready and disclosed.
 - **Post-genesis**: stabilization, monitoring, and the first governed upgrades and operational budgets.
 
 Environment classes (operational posture):
 
 - **Dev**: fast iteration, best-effort uptime, resets expected.
 - **Staging**: release candidates and upgrade rehearsals, configuration mirrors production, coordinated operator testing.
-- **Prod**: mainnet, strict change control, full monitoring and incident response.
+- **Prod**: mainnet beta or post-Genesis mainnet, strict change control, full monitoring and incident response, with public claims matched to the actual governance/token stage.
 
 Audits and security gates:
 

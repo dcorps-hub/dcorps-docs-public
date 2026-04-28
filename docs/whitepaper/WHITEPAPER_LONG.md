@@ -3790,7 +3790,7 @@ Exact numerical thresholds, voting-power age parameters, timelock durations, and
 
 ### 10.4 Vesting, lockups, and emissions
 
-In this whitepaper, the **Token Generation Event (TGE)** is the same event as **mainnet launch**, defined as the first production block of the dCorps Hub mainnet, when initial DCHUB allocations become live on-chain and DCHUB becomes usable for gas, protocol governance, and protocol-level fees where enabled. Staking applies only if a future dCorps L1 launches under separate policy.
+In this whitepaper, the **Token Generation Event (TGE)** is the public DCHUB Genesis event, when initial DCHUB allocations become live on-chain and DCHUB becomes usable for public protocol governance and protocol-level fees where enabled. TGE is separate from a possible controlled **mainnet beta**, where production infrastructure may operate with DCHUB gas access sponsored, supplied, or otherwise controlled through the product and DevCo operating flows before public DCHUB distribution or liquidity. Staking applies only if a future dCorps L1 launches under separate policy.
 
 In this whitepaper, “emissions” refers to **tokens entering circulation** from predefined allocations (for example the network incentives reserve), not the creation of supply beyond the fixed cap defined in section 10.3.
 
@@ -4329,9 +4329,9 @@ In the first one to two years, dCorps focuses brutally on a narrow wedge of real
 
   NGOs and nonprofit teams that want transparent donations and program spending, board based governance, and verifiable allocation ratios, again on the shared Hub without running their own chain.
 
-- **At least one jurisdiction attachment pilot (phased path, post mainnet)**
+- **At least one jurisdiction attachment pilot (phased path, post mainnet beta)**
 
-  Because direct jurisdiction integration and key custody by a jurisdiction typically takes time, dCorps targets a phased path that can start shortly after mainnet launch:
+  Because direct jurisdiction integration and key custody by a jurisdiction typically takes time, dCorps targets a phased path that can start after mainnet beta when the relevant legal and operational controls are ready:
 
   1. A **temporary delegated filing provider bridge** that allows real formations, renewals, and registry updates to be completed off-chain by local providers and reflected on-chain through standardized attestations and labels.
   2. A **disclosure, fee, and reporting module** that integrates with Hub entity state, collects fees in USDC, and produces machine readable oversight signals.
@@ -4625,7 +4625,7 @@ To support continuity and accountable delivery during the formative years, one s
 
 #### 13.2A.2 Duration, reaffirmation, and conversion
 
-- The reserved seat exists for three years after mainnet launch.
+- The reserved seat exists for three years after public DCHUB Genesis/TGE.
 - An annual reaffirmation vote is held each year during this period.
 - Failure to reaffirm converts the seat immediately into a standard rotating Council seat.
 - At the end of the three year period, the reserved seat automatically converts into a standard rotating Council seat.
@@ -4684,7 +4684,7 @@ A publicly disclosed multisig may hold narrowly scoped emergency and upgrade pow
 
 Phase 0 emergency powers expire at the earliest of:
 
-- 12 months after mainnet launch, or
+- 12 months after public DCHUB Genesis/TGE, or
 - The first successful upgrade executed purely through standard on-chain governance, or
 - A governance proposal that explicitly retires emergency powers sooner.
 
@@ -5173,7 +5173,7 @@ Jurisdiction recognition is controlled by the jurisdiction adapter’s keys and 
 - If an entity disputes a recognition decision, recourse is in that jurisdiction’s legal system and processes.
 - If a court or authority compels a correction, the jurisdiction or its delegated operator is the party that updates the module state.
 
-Because direct jurisdiction integration often takes time, dCorps is designed to support a clear transition phase after mainnet launch: a temporary bridge that can provide immediate operational capacity and evidence for jurisdictions, while preserving the end goal of full, direct jurisdiction integration.
+Because direct jurisdiction integration often takes time, dCorps is designed to support a clear transition phase after mainnet beta or Genesis/TGE, depending on the legal scope of the adapter: a temporary bridge that can provide immediate operational capacity and evidence for jurisdictions, while preserving the end goal of full, direct jurisdiction integration.
 
 ### 14.3.1 Adoption path (phased, recommended)
 
@@ -5181,11 +5181,11 @@ Jurisdiction adoption, if it happens, is expected to happen in phases. The optio
 
 The intent is to document a realistic, politically complex road and to keep interface labeling honest about what is and is not recognized.
 
-#### 14.3.1.1 Pilot Step 0 (temporary): Delegated filing provider bridge (post mainnet)
+#### 14.3.1.1 Pilot Step 0 (temporary): Delegated filing provider bridge (post mainnet beta)
 
 **Purpose**
 
-Pilot Step 0 is a temporary bridge between mainnet launch and direct jurisdiction integration. It exists to:
+Pilot Step 0 is a temporary bridge between mainnet beta and direct jurisdiction integration. It exists to:
 
 - Enable real formations, renewals, and registry updates now, even before a jurisdiction operated module is live.
 - Generate auditable lifecycle data and operational evidence that supports and accelerates jurisdiction adoption.
@@ -5795,9 +5795,9 @@ The roadmap is guided by a small set of principles. These are not marketing stat
 
 This rollout plan is structured around one idea: **ship a stable Hub kernel first, then make it operationally complete, then add optional adapters.**
 
-The phases below start at **mainnet launch** and continue through a definition of **fully operational** infrastructure.
+The phases below start at **mainnet beta**, keep **public DCHUB Genesis/TGE** separate, and continue through a definition of **fully operational** infrastructure.
 
-#### Phase 1: Mainnet launch (Kernel v1)
+#### Phase 1: Mainnet beta (Kernel v1)
 
 **Objective**: launch a stable Hub that can host complete Hub corporations and Hub nonprofits as the default entity containers.
 
@@ -5940,7 +5940,7 @@ These metrics are more relevant to protocol health than token price.
 
 ---
 
-## 17. Legal position, foundation-first structure, and risk
+## 17. Legal position, BVI bootstrap, foundation gate, and risk
 
 ### 17.1 Neutral infrastructure summary
 
@@ -5961,17 +5961,17 @@ Entities retain their own legal existence. dCorps is a shared technical substrat
 
 ---
 
-### 17.2 Foundation-first pre-genesis structure
+### 17.2 BVI DevCo bootstrap and foundation gate
 
-The current intended path is **foundation-first**, not DevCo-first.
+The current intended path is **BVI DevCo bootstrap, then foundation before public DCHUB power**.
 
 Under this path:
 
-- A **nonprofit foundation in Abu Dhabi / ADGM** is intended to exist before genesis.
-- Protocol and brand IP stewardship must sit under that foundation before genesis.
-- Mainnet remains gated on completing that foundation and IP posture.
-
-Early development may still be carried out by founders and by service providers. That does not make those providers the protocol steward.
+- **dCorps Development Ltd.** is incorporated and active in the **British Virgin Islands (BVI)**.
+- DevCo may build and operate early product surfaces, contract with providers, receive service/software revenue, and hold or administer early IP/brand assets until the foundation path is executed.
+- A controlled mainnet beta may operate before the foundation exists if public claims remain accurate, DCHUB gas access is sponsored/supplied or otherwise controlled through the product, and no public DCHUB liquidity or token-governed authority is presented as live.
+- A **nonprofit foundation**, with **Abu Dhabi / ADGM** as a leading candidate, is intended to exist before public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, or live token-governed authority.
+- Protocol and brand IP stewardship should move to the foundation through assignment, license, or another documented legal arrangement before public DCHUB power is activated.
 
 Engineering providers are expected to be software and services firms, not:
 
@@ -5985,18 +5985,18 @@ Commercial relationships between engineering providers and counterparties are go
 
 ### 17.3 Foundation jurisdiction (Abu Dhabi / ADGM)
 
-The intended foundation jurisdiction is **Abu Dhabi / ADGM**.
+The leading foundation jurisdiction is **Abu Dhabi / ADGM**.
 
 ADGM is attractive because:
 
 - It offers a modern foundation framework with remote-friendly setup and lower early overhead.
 - It is a credible international jurisdiction and can remain lean while governance and reporting standards mature.
-- It can support a foundation-centered structure without routing the project through an offshore development company first.
+- It can support a foundation-centered stewardship structure when dCorps is ready to activate public DCHUB distribution, treasury authority, and token governance.
 
 Decision process and status:
 
 - The foundation is not incorporated yet.
-- Abu Dhabi / ADGM is the current intended path.
+- Abu Dhabi / ADGM is the current leading candidate.
 - The final executed structure will be published in foundation filings and governance communications once formalized.
 
 The foundation will:
@@ -6020,7 +6020,7 @@ A core design principle is:
 
 The foundation is the natural home for this adaptive work. It sponsors research, consults with stakeholders, proposes modules through governance, and retires or replaces modules when they no longer fit current realities.
 
-This remains a **good faith design intention**, not a claim that incorporation has already occurred. The exact timing and execution depend on legal, regulatory, financial, and operational realities. Mainnet is gated on foundation and IP readiness; until that is complete, mainnet does not proceed.
+This remains a **good faith design intention**, not a claim that incorporation has already occurred. The exact timing and execution depend on legal, regulatory, financial, and operational realities. Mainnet beta may proceed before foundation formation under disclosed DevCo controls. Public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, and live token-governed authority remain gated on foundation or equivalent steward readiness.
 
 ------
 

@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION))  
-**Last updated**: 2026-01-18  
+**Last updated**: 2026-04-26
 
 > Scope: Governance, mission, and operating principles of the dCorps Foundation as a nonprofit steward of the protocol.
 
@@ -101,5 +101,8 @@ Where possible, the foundation:
 ## 6. Current status (Phase 0A)
 
 - The foundation is not incorporated yet, and timing is not finalized (see [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)).
-- Mainnet is gated on IP stewardship transferring to the foundation once formed; the transfer will be documented explicitly when executed.
+- dCorps Development Ltd. is the active BVI DevCo during bootstrap; it may build and operate early product surfaces while the foundation path is prepared.
+- A controlled mainnet beta may operate before the foundation exists if public claims stay narrow, DCHUB access is sponsored/supplied or otherwise controlled through the product, and no public DCHUB liquidity or token-governed authority is presented as live.
+- Public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, and live token-governed authority are gated on foundation readiness, or on an equivalent steward arrangement that is executed and publicly disclosed.
+- IP stewardship transfer or licensing will be documented explicitly when executed.
 - Any future incorporation details (jurisdiction, board, charter, conflict policies) will be published when finalized.
