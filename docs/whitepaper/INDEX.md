@@ -15,6 +15,7 @@
 ## Start here
 
 - Reset draft (current working direction): [docs/whitepaper/WHITEPAPER_RESET_DRAFT.md](/whitepaper/WHITEPAPER_RESET_DRAFT)
+- Claim scope matrix: [docs/whitepaper/CLAIM_SCOPE_MATRIX.md](/whitepaper/CLAIM_SCOPE_MATRIX)
 - Executive summary (1-2 pages): [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
 - Litepaper (short narrative + architecture): [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
 - Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
