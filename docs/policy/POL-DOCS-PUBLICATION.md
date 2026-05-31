@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION))  
-**Last updated**: 2026-01-25
+**Last updated**: 2026-05-30
 
 > Scope: Defines what is published by default, what must be restricted for safety, and how to keep public and restricted materials consistent.
 
@@ -73,3 +73,55 @@ Public website and public documentation exports MUST include everything under `d
 If a separate public mirror is used, exclude `dcorps-docs-private` from the mirror.
 
 If `dcorps-docs-private` is made public, review `dcorps-docs-private/docs/restricted/` before publishing and remove or redact any material that would create undue safety risk.
+
+---
+
+## 7. Whitepaper source-of-truth and artifact rule
+
+The canonical public whitepaper sources live only in `dcorps-docs-public/docs/whitepaper/`.
+
+- `docs/whitepaper/WHITEPAPER.md` is the canonical condensed Markdown whitepaper.
+- `docs/whitepaper/WHITEPAPER_LONG.md` is the canonical source for the long-version PDF.
+- Website, app, and static-site whitepaper copies are generated artifacts. They MUST NOT be edited as independent doctrine.
+
+Any change to a canonical whitepaper source MUST update the generated artifacts in the same change:
+
+- the static-site Markdown mirror at `dcorps-site/content/whitepaper/md/WHITEPAPER.md`;
+- the canonical PDF artifact under `docs/whitepaper/pdf/`;
+- every checked-in public PDF mirror used by `dcorps-site-v2` and `dcorps-app`;
+- the generated-source checksum files under `docs/whitepaper/pdf/`;
+- every public checksum sidecar published beside a public PDF mirror.
+
+The official PDF MUST include a visible integrity-confirmation page with the canonical source SHA-256 fingerprint and verification instructions. The exact PDF artifact SHA-256 MUST be published as a detached `.sha256` sidecar beside the PDF, because embedding the final PDF file hash inside the PDF would change the artifact and invalidate that same hash.
+
+The PDF table of contents MUST be generated from canonical Markdown headings, rendered as internal PDF links, and include printed page numbers for paper copies. Visual support elements used in the official PDF MUST be generated from reviewed, source-controlled components in the whitepaper export tool, not from manual PDF edits.
+
+Run the export command after every whitepaper source edit:
+
+```bash
+npm run whitepaper:export
+```
+
+For local editing sessions, a maintainer MAY run the watcher so the export happens automatically whenever a canonical whitepaper Markdown file changes:
+
+```bash
+npm run whitepaper:watch
+```
+
+Run the check command before treating a whitepaper change as complete:
+
+```bash
+npm run whitepaper:check
+```
+
+Local maintainers SHOULD install the tracked aggressive git hooks:
+
+```bash
+npm run hooks:install
+```
+
+The pre-commit hook MUST regenerate and check whitepaper artifacts when canonical whitepaper Markdown is staged. The pre-push hook MUST run the artifact check before publication. Hook failures MUST stop the commit or push.
+
+The check MUST fail when the canonical Markdown hash and generated artifact hash files disagree. This is intentional: a whitepaper Markdown update is incomplete until the PDF and public mirrors are regenerated.
+
+Whitepaper PDF generation is allowed to use local headless Chrome, Chromium, or a compatible installed browser plus Poppler tools (`pdfunite` and `pdftotext`) for cover/body merging and printed table-of-contents page-number resolution. If PDF generation cannot run locally, the change MUST be marked blocked rather than leaving stale public artifacts behind.

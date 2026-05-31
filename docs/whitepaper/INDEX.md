@@ -6,7 +6,7 @@
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/INDEX.md](/whitepaper/INDEX))  
-**Last updated**: 2026-04-11  
+**Last updated**: 2026-05-30
 
 > Scope: entry point for the whitepaper suite and the 2026 reset draft.
 
@@ -30,6 +30,7 @@
 - Litepaper: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
 - Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
 - Official whitepaper (long): [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
+- Long-version PDF artifact: `docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf`
 - Nonprofit note: [docs/whitepaper/NONPROFIT_NOTE.md](/whitepaper/NONPROFIT_NOTE)
 - FAQ: [docs/whitepaper/FAQ.md](/whitepaper/FAQ)
 - Glossary: [docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY)

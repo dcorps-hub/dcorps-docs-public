@@ -19,8 +19,11 @@
 - README.md
 - ORGANIZATOR.md
 - AGENTS.md
+- package.json
 - tools/
 - tools/docgen/
+- tools/whitepaper/
+- docs/whitepaper/pdf/
 - docs/REPOS.md
 - docs/agents/
 - docs/agents/INDEX.md
@@ -36,6 +39,7 @@
 - README.md
 - ORGANIZATOR.md
 - AGENTS.md
+- package.json
 - docs/
 - tools/
 
@@ -74,6 +78,12 @@
 - NONPROFIT_NOTE.md
 - FAQ.md
 - GLOSSARY.md
+- pdf/
+
+### docs/whitepaper/pdf/
+- dCorpsHub_Whitepaper.pdf
+- dCorpsHub_Whitepaper.pdf.sha256
+- dCorpsHub_Whitepaper.source.sha256
 
 ### docs/hub-templates/
 - INDEX.md
@@ -199,6 +209,11 @@
 
 ### tools/
 - docgen/
+- whitepaper/
 
 ### tools/docgen/
 - README.md
+
+### tools/whitepaper/
+- export-whitepaper.mjs
+- install-whitepaper-hook.mjs

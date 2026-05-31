@@ -1,12 +1,12 @@
 # Whitepaper (Condensed)
 
-**Document type**: Whitepaper (mid-length)  
-**Doc ID**: DCHUB-WP-PUBLIC-2025-12-21  
-**Version**: v1.3.1  
-**Status**: Final v1.3.1  
-**Release date**: December 21, 2025  
-**Author**: Nicolas Turcotte, Founder  
-[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
+**Document type**: Whitepaper (mid-length)
+**Doc ID**: DCHUB-WP-PUBLIC-2025-12-21
+**Version**: v1.3.1
+**Status**: Final v1.3.1
+**Release date**: December 21, 2025
+**Author**: Nicolas Turcotte, Founder
+[www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
 **Last updated**: 2026-04-15
 
 > This is the condensed whitepaper. For the official long version, see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG).

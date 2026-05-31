@@ -58,7 +58,12 @@ Marker syntax and behavior should be documented here alongside any implemented s
 
 Docgen scripts are not implemented in this repo yet. For now, docs are maintained manually under `docs/`.
 
-If/when docgen is implemented, document the exact commands and options here (including any scripts added under `tools/docgen/`), and describe the expected outputs under `docs/` and downstream exports.
+Current implemented generation tooling:
+
+- `npm run whitepaper:export` renders the long whitepaper Markdown to `docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf`, writes checksum files, syncs the static-site Markdown mirror, and copies the PDF into local site/app mirrors when those sibling repos exist. The renderer uses Chrome/Chromium plus Poppler tools.
+- `npm run whitepaper:check` fails when the canonical whitepaper sources and generated artifacts drift.
+- `npm run whitepaper:watch` auto-runs the export while editing either canonical whitepaper Markdown file.
+- `npm run hooks:install` installs tracked local git hooks from `.githooks/`. The pre-commit hook runs the export before checking artifacts when canonical whitepaper Markdown is staged; the pre-push hook runs the artifact check before push.
 
 Public outputs MUST exclude `dcorps-docs-private/docs/restricted/` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
 

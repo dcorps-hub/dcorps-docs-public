@@ -42,6 +42,10 @@ docs/
     WHITEPAPER.md
     WHITEPAPER_LONG.md
     WHITEPAPER_PLAIN_LANGUAGE.md
+    pdf/
+      dCorpsHub_Whitepaper.pdf
+      dCorpsHub_Whitepaper.pdf.sha256
+      dCorpsHub_Whitepaper.source.sha256
   investor/
     INDEX.md                 Investor materials index
     INVESTOR_BRIEF.md
@@ -121,6 +125,9 @@ docs/
 tools/
   docgen/
     README.md                  Doc generation notes
+  whitepaper/
+    export-whitepaper.mjs      Whitepaper Markdown/PDF export and drift check
+    install-whitepaper-hook.mjs Optional local pre-commit guard
 ```
 
 Canonical docs center ordering lives in `ORGANIZATOR.md`.
@@ -128,7 +135,48 @@ Canonical docs center ordering lives in `ORGANIZATOR.md`.
 
 ---
 
-## 3. GitHub visibility and publishing policy
+## 3. Whitepaper artifact rule
+
+Canonical whitepaper doctrine lives in `docs/whitepaper/`.
+
+- Edit `docs/whitepaper/WHITEPAPER.md` for the condensed Markdown whitepaper.
+- Edit `docs/whitepaper/WHITEPAPER_LONG.md` for the long whitepaper and public PDF source.
+- Do not hand-edit generated whitepaper mirrors in `dcorps-site`, `dcorps-site-v2`, or `dcorps-app`.
+
+After any whitepaper source change, run:
+
+```bash
+npm run whitepaper:export
+npm run whitepaper:check
+```
+
+The export command regenerates `docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf`, updates checksum files, syncs the static-site Markdown mirror, and copies the PDF into the public site/app targets when those sibling repos are present locally.
+
+The PDF exporter uses local Chrome/Chromium for rendering and Poppler tools to merge the unnumbered cover with the paginated official body and resolve printed table-of-contents page numbers.
+
+For local editing sessions, run the watcher before changing either canonical whitepaper Markdown file:
+
+```bash
+npm run whitepaper:watch
+```
+
+The watcher regenerates the PDF, checksum files, and local mirrors whenever `docs/whitepaper/WHITEPAPER.md` or `docs/whitepaper/WHITEPAPER_LONG.md` changes.
+
+To install the same check as a local pre-commit guard:
+
+```bash
+npm run hooks:install
+```
+
+This installs tracked hooks from `.githooks/` by setting `git config core.hooksPath .githooks`.
+
+- `pre-commit` regenerates whitepaper PDF/checksum artifacts when canonical whitepaper Markdown is staged, stages those generated docs-public artifacts, and runs `npm run whitepaper:check`.
+- `pre-push` runs `npm run whitepaper:check` before pushing.
+- Hook failures must stop the commit or push; do not bypass them with `--no-verify`.
+
+---
+
+## 4. GitHub visibility and publishing policy
 
 This repo is designed for **transparency by default**: most documents are intended to be safe for public reading and reuse.
 
