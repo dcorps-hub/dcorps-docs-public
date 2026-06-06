@@ -132,7 +132,7 @@ dCorps uses two primary assets with distinct roles:
 
 - **USDC** is the baseline operating currency, the day-one operating-money rail, and the current premium/service-fee rail where shown. At launch it is bridged from Ethereum to a canonical USDC contract on dCorps.
 - **DCHUB** is the Hub's gas token, protocol governance token, and explicit protocol-mechanics token where adopted.
-- The architecture also supports multiple approved stablecoins and, where technically and legally feasible, CBDC-style instruments via the approved asset registry and optional jurisdiction adapters (some rails may require disclosed gateways or provider attestations); adoption is expected to depend on issuer/jurisdiction cooperation and to be pursued through adoption work coordinated by the foundation and ResCo (planned).
+- The architecture also supports multiple approved stablecoins and, where technically and legally feasible, CBDC-style instruments via the approved asset registry and optional jurisdiction adapters (some rails may require disclosed gateways or provider attestations); adoption is expected to depend on issuer/jurisdiction cooperation and to be pursued through foundation-led ecosystem adoption work and ecosystem-funded research groups, if established.
 
 This describes protocol mechanics, not market outcomes.
 

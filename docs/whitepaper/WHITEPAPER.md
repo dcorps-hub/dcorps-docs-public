@@ -100,7 +100,7 @@ It provides a shared standard where organizations can be created, owned, governe
 
 In v1, an entity can register, set roles and authority/operational wallets, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
 
-Later phases are designed to support multiple approved stablecoins and, where technically and legally possible, CBDC-style instruments through the approved asset registry and optional jurisdiction adapter modules. This is expected to require issuer and jurisdiction cooperation and to be pursued through ecosystem adoption work coordinated by the foundation and ResCo (planned).
+Later phases are designed to support multiple approved stablecoins and, where technically and legally possible, CBDC-style instruments through the approved asset registry and optional jurisdiction adapter modules. This is expected to require issuer and jurisdiction cooperation and to be pursued through foundation-led ecosystem adoption work and ecosystem-funded research groups, if established.
 
 ### 0.2 Kernel and adapters
 
