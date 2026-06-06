@@ -24,7 +24,7 @@ During editing sessions, run:
 npm run whitepaper:watch
 ```
 
-The watcher regenerates the generated PDF, checksum files, and local mirrors whenever either canonical whitepaper Markdown file changes.
+The watcher regenerates the generated PDF, checksum files, and active local mirrors whenever either canonical whitepaper Markdown file changes.
 
 Install tracked local git hooks with:
 

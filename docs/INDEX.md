@@ -45,7 +45,7 @@ Current status: Phase 0A (development). Mainnet is not live, public DCHUB Genesi
 - Token and economics: [docs/token/*](/token)
 - Security posture: [docs/security/*](/security)
 - Whitepaper Long narrative and rationale: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
-- Website content sources: `../dcorps-site/content/*` (site repo)
+- Website/app publication surfaces: `../dcorps-site-v2` for legacy static routes and `../dcorps-app` for the canonical public surface.
 
 ---
 

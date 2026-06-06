@@ -32,6 +32,7 @@
 - Keep naming consistent with prefixes and uppercase file names (examples: `SPEC-CORE.md`, `POL-DOCS-PUBLICATION.md`).
 - Match the formatting of nearby sections and keep language concise and factual.
 - Do not hand-edit generated whitepaper mirrors in sibling repos. Update `docs/whitepaper/WHITEPAPER.md` or `docs/whitepaper/WHITEPAPER_LONG.md`, then run `npm run whitepaper:export`; during editing sessions, run `npm run whitepaper:watch` to regenerate automatically on save.
+- Do not update `../dcorps-site`; that repository is archived and excluded from the active whitepaper artifact stack.
 
 ## Testing Guidelines
 - Do a quick manual pass: verify index links, headings, and cross-references, and ensure public docs do not link to private restricted docs.

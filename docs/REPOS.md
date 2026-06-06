@@ -43,10 +43,6 @@
 
 ## Transition repositories
 
-- `dcorps-site`  
-  - Purpose: legacy public website source.  
-  - Path: `../dcorps-site`
-  - Status: transition / retire.
 - `dcorps-site-v2`  
   - Purpose: legacy static portal and multilingual website surface.  
   - Path: `../dcorps-site-v2`
@@ -60,6 +56,10 @@
   - Purpose: legacy Cosmos-era prototype repository name.  
   - Status: archived.  
   - Replacement: `dcorps-hub-rollup`.
+- `dcorps-site`  
+  - Purpose: archived legacy public website source.  
+  - Status: archived / read-only; do not use in the active publication stack.
+  - Replacement: `dcorps-site-v2` for legacy static routes and `dcorps-app` for the canonical public surface.
 
 ---
 

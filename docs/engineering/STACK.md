@@ -42,7 +42,7 @@
 
 ## 4. Frontend and UI surfaces
 
-- Static site: existing HTML/CSS/JS in `../dcorps-site`.
+- Static site: legacy static routes in `../dcorps-site-v2` while needed.
 - Explorer and app: React + TypeScript with Next.js.
 - Data fetching: React Query.
 - UI primitives: headless components + Tailwind CSS.

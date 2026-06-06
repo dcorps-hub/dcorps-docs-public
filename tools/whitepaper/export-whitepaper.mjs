@@ -31,10 +31,6 @@ const sourceHashFile = path.join(artifactDir, "dCorpsHub_Whitepaper.source.sha25
 const pdfHashFile = path.join(artifactDir, "dCorpsHub_Whitepaper.pdf.sha256");
 const brandLogo = path.join(workspaceRoot, "dcorps-site-v2/img/brand/dCorpsHub-text-logo-horizontal.png");
 
-const markdownMirrors = [
-  path.join(workspaceRoot, "dcorps-site/content/whitepaper/md/WHITEPAPER.md")
-];
-
 const pdfMirrors = [
   path.join(workspaceRoot, "dcorps-site-v2/learn/whitepaper/dCorpsHub_Whitepaper.pdf"),
   path.join(workspaceRoot, "dcorps-site-v2/dist/learn/whitepaper/dCorpsHub_Whitepaper.pdf"),
@@ -1881,12 +1877,6 @@ async function writeArtifacts() {
   const longSourceHash = sha256(longMarkdown);
   const lastUpdated = extractLastUpdated(longMarkdown);
 
-  for (const target of markdownMirrors) {
-    if (targetIsAvailable(target)) {
-      writeText(target, condensedMarkdown);
-    }
-  }
-
   await renderPdf(longMarkdown, canonicalPdf, longSourceHash, lastUpdated);
   actions.push(`rendered ${path.relative(repoRoot, canonicalPdf)}`);
 
@@ -1921,14 +1911,9 @@ async function writeArtifacts() {
 }
 
 function checkArtifacts() {
-  const condensedMarkdown = readText(condensedSource);
   const longMarkdown = readText(longSource);
   const longSourceHash = sha256(longMarkdown);
   const lastUpdated = extractLastUpdated(longMarkdown);
-
-  for (const target of markdownMirrors) {
-    compareText(target, condensedMarkdown, "whitepaper Markdown mirror");
-  }
 
   compareHashFile(sourceHashFile, longSourceHash, "whitepaper source hash");
 

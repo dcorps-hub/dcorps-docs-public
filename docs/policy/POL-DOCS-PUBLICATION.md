@@ -82,11 +82,10 @@ The canonical public whitepaper sources live only in `dcorps-docs-public/docs/wh
 
 - `docs/whitepaper/WHITEPAPER.md` is the canonical condensed Markdown whitepaper.
 - `docs/whitepaper/WHITEPAPER_LONG.md` is the canonical source for the long-version PDF.
-- Website, app, and static-site whitepaper copies are generated artifacts. They MUST NOT be edited as independent doctrine.
+- Website and app whitepaper copies are generated artifacts. They MUST NOT be edited as independent doctrine.
 
 Any change to a canonical whitepaper source MUST update the generated artifacts in the same change:
 
-- the static-site Markdown mirror at `dcorps-site/content/whitepaper/md/WHITEPAPER.md`;
 - the canonical PDF artifact under `docs/whitepaper/pdf/`;
 - every checked-in public PDF mirror used by `dcorps-site-v2` and `dcorps-app`;
 - the generated-source checksum files under `docs/whitepaper/pdf/`;
@@ -95,6 +94,8 @@ Any change to a canonical whitepaper source MUST update the generated artifacts 
 The official PDF MUST include a visible integrity-confirmation page with the canonical source SHA-256 fingerprint and verification instructions. The exact PDF artifact SHA-256 MUST be published as a detached `.sha256` sidecar beside the PDF, because embedding the final PDF file hash inside the PDF would change the artifact and invalidate that same hash.
 
 The PDF table of contents MUST be generated from canonical Markdown headings, rendered as internal PDF links, and include printed page numbers for paper copies. Visual support elements used in the official PDF MUST be generated from reviewed, source-controlled components in the whitepaper export tool, not from manual PDF edits.
+
+The archived `dcorps-site` repository is not part of the active whitepaper artifact stack and MUST NOT be updated by the exporter or publication workflow.
 
 Run the export command after every whitepaper source edit:
 

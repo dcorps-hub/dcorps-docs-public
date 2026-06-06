@@ -141,7 +141,8 @@ Canonical whitepaper doctrine lives in `docs/whitepaper/`.
 
 - Edit `docs/whitepaper/WHITEPAPER.md` for the condensed Markdown whitepaper.
 - Edit `docs/whitepaper/WHITEPAPER_LONG.md` for the long whitepaper and public PDF source.
-- Do not hand-edit generated whitepaper mirrors in `dcorps-site`, `dcorps-site-v2`, or `dcorps-app`.
+- Do not hand-edit generated whitepaper mirrors in `dcorps-site-v2` or `dcorps-app`.
+- Do not update `dcorps-site`; that repository is archived and outside the active whitepaper stack.
 
 After any whitepaper source change, run:
 
@@ -150,7 +151,7 @@ npm run whitepaper:export
 npm run whitepaper:check
 ```
 
-The export command regenerates `docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf`, updates checksum files, syncs the static-site Markdown mirror, and copies the PDF into the public site/app targets when those sibling repos are present locally.
+The export command regenerates `docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf`, updates checksum files, and copies the PDF into the active public site/app targets when those sibling repos are present locally.
 
 The PDF exporter uses local Chrome/Chromium for rendering and Poppler tools to merge the unnumbered cover with the paginated official body and resolve printed table-of-contents page numbers.
 
@@ -160,7 +161,7 @@ For local editing sessions, run the watcher before changing either canonical whi
 npm run whitepaper:watch
 ```
 
-The watcher regenerates the PDF, checksum files, and local mirrors whenever `docs/whitepaper/WHITEPAPER.md` or `docs/whitepaper/WHITEPAPER_LONG.md` changes.
+The watcher regenerates the PDF, checksum files, and active local mirrors whenever `docs/whitepaper/WHITEPAPER.md` or `docs/whitepaper/WHITEPAPER_LONG.md` changes.
 
 To install the same check as a local pre-commit guard:
 

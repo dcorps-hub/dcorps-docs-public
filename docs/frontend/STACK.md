@@ -14,9 +14,9 @@
 
 ## Current state (v0)
 
-- Static HTML/CSS/JS in `../dcorps-site`.
-- Content in markdown under `../dcorps-site/content`.
-- Routes mirror content folders in the site repo.
+- Canonical public app and explorer surface in `../dcorps-app`.
+- Legacy static routes in `../dcorps-site-v2` while needed.
+- Archived `../dcorps-site` is read-only and not part of the active frontend stack.
 
 ---
 

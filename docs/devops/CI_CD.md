@@ -26,13 +26,14 @@ Minimum checks before publishing:
 
 ---
 
-## Website pipeline (site repo)
+## Website and app pipeline
 
-This lives in `../dcorps-site` and is out of scope for this repo.
+The active public surfaces are `../dcorps-app` and, where legacy static routes are still needed, `../dcorps-site-v2`.
 
-- Build static pages from `../dcorps-site/content`.
+- Build and validate the active public surface in its owning repo.
 - Validate navigation and route coverage.
 - Publish staging preview before production.
+- Do not update `../dcorps-site`; it is archived/read-only and outside the active pipeline.
 
 ---
 

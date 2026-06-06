@@ -40,7 +40,7 @@ Design intention: translate user-facing material, not protocol semantics.
 
 In scope:
 
-- Website copy and navigation (`dcorps-site/`).
+- Website/app copy and navigation (`dcorps-site-v2/` and `dcorps-app/`).
 - Docs Center content in this repo (`docs/`), including whitepapers and policy documents.
 - Testnet and mainnet operational materials: release notes, operator onboarding guides, upgrade notices, and incident communications.
 - Reference tooling UI text (where applicable): explorer, registry, wallet guidance, and official app.

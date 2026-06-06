@@ -17,7 +17,7 @@
 Classify each change before release:
 
 - **Docs-only**: content updates in this repo.
-- **Website-only**: updates in `../dcorps-site`.
+- **Website-only**: updates in `../dcorps-site-v2` for legacy static routes or `../dcorps-app` for the canonical public surface.
 - **Protocol specs or policies**: normative changes that affect interpretation.
 - **Chain implementation**: code changes that affect state, consensus, or APIs.
 - **Infrastructure**: node, indexer, explorer, or bridge gateway changes.
