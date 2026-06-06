@@ -2,12 +2,12 @@
 
 **Document type**: Glossary  
 **Doc ID**: DCHUB-GLOSSARY-2025-12-21  
-**Version**: v1.3.1  
-**Status**: Final v1.3.1  
+**Version**: v1.4.0  
+**Status**: Current reset-aligned reference; not mainnet-ready  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY))  
-**Last updated**: 2026-04-15
+**Last updated**: 2026-06-06
 
 ---
 
@@ -38,10 +38,10 @@ A nonprofit/NGO entity operating on the Hub, with board governance, donation/pro
 Internal units of a Hub corporation that represent economic and voting rights inside that corporation. Scoped to that entity. Default base unit count is 10,000 (1 unit = 0.01 percent), expandable in multiples of 10,000; v0.1 templates recommend a practical maximum of 1,000,000 base units for interoperability and UI performance.
 
 **DCHUB**  
-The Hub’s native token used for gas, protocol governance, and protocol-level fees. Not equity in user entities or in the development corporation or foundation.
+The Hub's native token used for gas, protocol governance, and explicit protocol mechanics where adopted. Not equity in user entities or in the development corporation or foundation.
 
 **USDC**  
-The baseline unit of account for examples and the primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
+The baseline unit of account for examples, the day-one operating-money rail, and the current premium/service-fee rail where shown (canonical bridged USDC at launch).
 
 **Canonical wallet**  
 A designated on-chain address (or address set) associated with an entity for specific purposes (for example merchant, donation, program, operating treasury, reserves).

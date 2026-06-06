@@ -2,12 +2,12 @@
 
 **Document type**: FAQ  
 **Doc ID**: DCHUB-FAQ-2025-12-21  
-**Version**: v1.3.1  
-**Status**: Final v1.3.1  
+**Version**: v1.4.0  
+**Status**: Current reset-aligned reference; not mainnet-ready  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
 **Source repo**: dcorps-docs-public ([docs/whitepaper/FAQ.md](/whitepaper/FAQ))  
-**Last updated**: 2026-04-15
+**Last updated**: 2026-06-06
 
 ---
 
@@ -61,7 +61,7 @@ Both are complete on-chain entity containers, but they differ in governance and 
 
 ## What is DCHUB?
 
-DCHUB is the Hub’s native token used for gas, protocol governance, and protocol-level fees. It does not represent ownership in user entities, the development corporation, or the foundation.
+DCHUB is the Hub's native token used for gas, protocol governance, and explicit protocol mechanics where adopted. It does not represent ownership in user entities, the development corporation, or the foundation. USDC is the day-one operating-money rail and the current premium/service-fee rail where the product shows stablecoin pricing.
 
 See [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY).
 

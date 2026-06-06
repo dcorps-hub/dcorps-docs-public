@@ -5,15 +5,15 @@
 **Long Version**  
 
 **Document ID**: DCHUB-WP-2025-12-21  
-**Version**: v1.3.1  
+**Version**: v1.4.0  
 **Edition**: Long  
-**Status**: Final v1.3.1  
+**Status**: Current reset-aligned reference; not mainnet-ready  
 **Release date**: December 21, 2025  
 **Author**: Nicolas Turcotte, Founder  
  [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)  
-**Last updated**: 2026-04-15  
+**Last updated**: 2026-06-06  
 
-**Changelog**: v1.3.1 is a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar). 2026-01-25: Orbit rollup sanity fixes (fee model alignment, operator roles, canonical stablecoin address language).
+**Changelog**: v1.4.0 reconciles the long reference with the 2026 reset direction, claim-scope matrix, BVI DevCo bootstrap posture, and the current DCHUB / USDC fee split. v1.3.1 was a polish pass over v1.3 (section numbering consistency, capitalization, and minor grammar). 2026-01-25: Orbit rollup sanity fixes (fee model alignment, operator roles, canonical stablecoin address language).
 
 **Editing note (linear read)**: This copy consolidates repeated definitions and uses short reminders plus section pointers, so it reads cleanly from page 1 to the end.
 
@@ -99,7 +99,7 @@ Future extensions (not required for v1) include additional stablecoins, richer p
 
 **1. Register an entity (Hub corporation or Hub nonprofit)**
 
-1. Submit an entity registration transaction and pay the registration fee (USDC service fee plus gas in DCHUB or via fee grants).
+1. Submit an entity registration transaction and pay the required DCHUB gas or protocol-mechanic fees plus any explicit USDC premium or service fee shown for the selected path.
 2. Bind initial roles and wallets (board seats for nonprofits, governance roles for corporations).
 3. Anchor baseline governing documents and policies by hash.
 
@@ -152,22 +152,22 @@ dCorps is **infrastructure**, not a bank, broker, exchange, or custodial service
 
 ### 0.1.1C Source of truth, history, and auditability
 
-dCorps is meant to be a source of truth for entity operations, not just a publication layer.
+dCorps is meant to be a source of truth for entity operations, not merely a reporting facade.
 
-The core record rule is append-only:
+The record rule is append-only:
 
 - material records are not silently deleted;
-- corrections are recorded as new entries linked to the prior state;
-- authority changes, wallet changes, approvals, and supporting evidence remain historically visible; and
-- important actions should preserve provenance: who acted, when, under what authority, and with what supporting justification or anchor.
+- corrections are recorded as new entries linked to prior state;
+- authority changes, wallet changes, approvals, and evidence references remain historically visible; and
+- important actions preserve provenance: who acted, when, under what authority, and with what supporting justification or anchor.
 
 This matters because a trustworthy entity standard cannot depend on private database edits or overwritten admin history. It must preserve a durable operational timeline.
 
-Not everything has to be publicly visible in raw form. Selective disclosure is valid where privacy, beneficiary safety, legal sensitivity, or operational confidentiality require it. But when data is not public, the model should still support authorized audit access for approved wallets under explicit disclosure rules, so the system can remain verifiable beyond the public surface.
+Not everything must be public in raw form. Selective disclosure is valid where privacy, safety, legal sensitivity, or operational confidentiality require it. But when data is not public, the model should still support authorized audit access for approved wallets under explicit disclosure rules, so the system can remain verifiable beyond the public surface.
 
-The trust boundary is also explicit:
+The trust boundary is explicit:
 
-- the chain guarantees integrity, ordering, authorship, timestamps, and tamper resistance;
+- the chain guarantees integrity, ordering, timestamps, authorship, and tamper resistance;
 - the chain does not automatically prove that every off-chain claim was true when entered.
 
 Truthfulness for off-chain claims comes from provenance, approvals, anchored evidence, attestations, and audit rights. dCorps guarantees a durable and verifiable record of what was asserted, approved, and changed over time.
@@ -250,12 +250,12 @@ This map describes protocol mechanics, not equity, profit participation, or any 
 In the dCorps Hub design:
 
 - **Execution** is priced in DCHUB (gas). Interfaces may sponsor or abstract gas for end users, but the underlying execution market settles in DCHUB.
-- **Protocol-level actions** may charge DCHUB fees or require DCHUB deposits (for example entity registration and renewals, premium namespaces, and selected module registry actions) to align long-lived protocol usage with the Hub token.
+- **Protocol-level actions** settle execution and protocol mechanics in DCHUB where required, while selected premium, annual active-entity, or service rails may separately charge approved stablecoins such as USDC where the product intentionally routes revenue through a stablecoin path.
 - **Operating flows** (invoices, payroll, grants, vendor payments) use stablecoins through canonical stablecoin contracts on dCorps (initially bridged from Ethereum).
 
 | Actor | What they typically pay | What they receive and why they participate | Primary settlement asset |
 | --- | --- | --- | --- |
-| Entities and users | DCHUB gas (often sponsored by apps), DCHUB protocol fees (registration, renewals, premium names, module registry actions), stablecoins for operating flows | predictable execution, registry listing and discovery, optional module services, and a verifiable record of authority and flows | Gas and protocol fees: DCHUB; operating flows: stablecoins |
+| Entities and users | DCHUB gas (often sponsored by apps), DCHUB protocol mechanics where applicable, USDC premium or service fees where explicitly shown, stablecoins for operating flows | predictable execution, registry listing and discovery, optional module services, and a verifiable record of authority and flows | Execution / protocol mechanics: DCHUB; premium, service, and operating flows: stablecoins |
 | Rollup operators (sequencer and batch poster) | infrastructure and operational costs, including Ethereum L1 costs for posting rollup data | earn a governed share of gas fees and any explicitly governed operator funding; provide ordering and data availability for the rollup | DCHUB (fees on dCorps) + ETH (L1 posting costs) |
 | Protocol Treasury | spends under on-chain policy (grants, audits, security operations, and limited liquidity support where permitted) | receives a defined share of protocol fees and, if adopted by governance, a capped share of gas fees for public goods and security operations | DCHUB (protocol fees); stablecoins for program disbursements |
 | dCorps foundation | funds ecosystem work and public goods under foundation policy | receives a defined share of protocol fees once established; may administer defined ecosystem programs under strict reporting | DCHUB (protocol fees); stablecoins for program disbursements |
@@ -288,7 +288,7 @@ dCorps is a long-term multi layer vision. Mainnet v1 is intentionally narrow: sh
   - Tagged accounting events
   - Reproducible cash-based operating views (derived from tagged events)
 - Reference tooling and standards:
-  - Explorer and indexer
+  - Official explorer and official reference indexer
   - Entity schemas and APIs
   - Conformance test suite for applications and modules (minimum compatibility signals)
 
@@ -378,7 +378,7 @@ The Hub is designed to be the canonical operational ledger for on-chain entity a
 
 dCorps is not a legal wrapper service and does not replace legal responsibility. Legal status, filings, and enforcement remain off-chain and are achieved through optional integrations such as jurisdiction adapter modules plus matching legal processes and documents. The protocol can help express and automate reporting logic and fee obligations, but it does not guarantee compliance, and it does not replace legal, tax, or accounting advice.
 
-dCorps is designed for organizations that operate entirely inside the on-chain economy. The strongest transparency and automation guarantees come from routing operations through canonical on-chain wallets and standardized workflows. Entities may still anchor hashes of off-chain documents (contracts, invoices, policy texts, audits, and similar artifacts) when they want additional evidence or dispute clarity, but the protocol does not assume or require any bank rails, fiat ledgers, or state registries as inputs.
+dCorps is designed for organizations that operate entirely inside the on-chain economy. The strongest transparency and automation guarantees come from routing operations through canonical on-chain wallets and standardized workflows. Entities may still anchor hashes of off-chain documents (contracts, invoices, policy texts, audits, and similar artifacts) when they want additional evidence or dispute clarity, but the protocol does not support bank or fiat rails as inputs.
 
 ------
 
@@ -562,7 +562,7 @@ Because dCorps needs a stable, neutral home for entity IDs, governance evidence 
 
 **Can entities lie with tags and reporting?**
 
-Amounts, timestamps, and transfers for on-chain funds are verifiable. Category codes are interpretations and can be misused. dCorps mitigates this by encouraging typed workflows that emit deterministic categories, evidence anchoring for material transactions, counterparty receipts, and optional third-party attestations and reconciliation signals (see section 9.5A and section 9.5B).
+Amounts, timestamps, and transfers for on-chain funds are verifiable. Category tags are interpretations and can be misused. dCorps mitigates this by encouraging typed workflows that emit deterministic categories, evidence anchoring for material transactions, counterparty receipts, and optional third-party attestations and reconciliation signals (see section 9.5A and section 9.5B).
 
 **Is dCorps a bank, broker, exchange, or fundraising platform?**
 
@@ -2020,7 +2020,7 @@ Although users pay L2 gas in DCHUB, the rollup incurs Ethereum costs (data posti
 
 dCorps expects these costs to be covered through a mix of:
 
-- Protocol service fees denominated in DCHUB (quoted in USDC-equivalent terms for UX or covered via fee grants).
+- DCHUB-denominated gas and protocol-mechanic fees where applicable, with premium or service rails quoted and collected in approved stablecoins such as USDC when the product intentionally prices them that way.
 - Application and merchant-fee models where entities absorb bridging and operational costs to keep payment UX mainstream.
 - Governance-managed budgets for core infrastructure, audits, and monitoring.
 
@@ -3088,9 +3088,11 @@ dCorps addresses this risk by design and by recommended operating practices:
 
 ### 9.2 Income and invoicing
 
-Entities can:
+Income and invoicing are app/module-layer operating flows. The kernel supports canonical wallets, tagged income events, and evidence anchors; full invoice issuance, receivables aging, and recurring-plan execution are staged capabilities where implemented and reviewed.
 
-* Issue invoices or payment requests denominated in USDC.
+Entities can record or attach:
+
+* Invoices or payment requests denominated in USDC where an app/module supports that workflow.
 * Receive payments directly into their merchant or donation wallets.
 * Tag income with:
 
@@ -3098,7 +3100,7 @@ Entities can:
   * Counterparty type (customer, donor, grant maker, affiliate, jurisdiction, other).
   * References to contracts or agreements anchored on-chain.
 
-This enables:
+Where integrations exist, this enables:
 
 * Automated aging and receivables tracking where integrations exist.
 * Simple views of revenue by type and counterparty over time.
@@ -3109,9 +3111,11 @@ Entities that commit to routing all material income and payouts through dCorps w
 
 ### 9.3 Payroll, compensation, and vesting
 
-Corporations can:
+Payroll and compensation execution are app/module-layer operating flows. The kernel supports canonical wallets, authority records, tagged payout events, and evidence anchors; payroll scheduling and batch execution are staged capabilities where implemented and reviewed.
 
-* Run payroll in USDC:
+Corporations can record or attach:
+
+* Payroll in USDC:
 
   * Scheduled payments from merchant or treasury wallets.
   * Batch operations for many employees at once.
@@ -3671,14 +3675,14 @@ dCorps uses two main assets with distinct roles.
 - Primary operating currencies for entities using dCorps.
 - Represented as canonical bridged ERC-20 contracts on dCorps, initially backed by Ethereum-originated assets via bridge gateways.
 - Used for invoices and revenue, salaries and contractor payments, vendor payments, grants, donations, and other operating flows.
-- Used by applications or adapter services for optional service fees where they choose to price in stablecoins; protocol-level fees remain DCHUB-denominated.
+- Used by applications or adapter services for optional service fees and premium rails where the product chooses to price them in stablecoins such as USDC.
 - Native issuer integrations (for example Circle-native USDC mechanisms) are a future possibility, not guaranteed.
 
 In high-level economic terms:
 
 - More entities and more protocol modules increase utilization of the Hub.
 - Higher utilization can increase demand for blockspace and can affect the DCHUB gas market and rollup operating budgets, but market outcomes are uncertain and parameter dependent.
-- Protocol fees collected in DCHUB can fund operations and ecosystem public goods; optional adapter and service fees in stablecoins can support program operations without relying solely on DCHUB distribution.
+- Protocol fees collected in DCHUB can fund operations and ecosystem public goods; optional adapter, premium, and service fees in stablecoins can support program operations without relying solely on DCHUB distribution.
 
 These relationships describe protocol mechanics, not promises about price, liquidity, or any market outcome.
 
@@ -3947,29 +3951,38 @@ Raising these caps is designated as a Protected Change under the governance fram
 
 ---
 
-### 10.5 Protocol fees (DCHUB-denominated)
+### 10.5 Protocol and service fee rails
 
-In addition to gas, the protocol supports protocol-level fees for specific services. These protocol fees are denominated in DCHUB; interfaces may quote USDC-equivalent estimates or sponsor fees via grants.
+In addition to gas, the protocol and official applications may support fees or deposits for specific actions. The current design keeps the split explicit:
 
-**Core protocol fees (DCHUB)**
+- DCHUB is used for gas and protocol mechanics where governance defines a DCHUB fee or deposit.
+- USDC may be used for premium, annual active-entity, namespace, module-participation, or other service revenue rails where the product intentionally prices them in a stablecoin.
 
-Core protocol actions may charge DCHUB fees (or require DCHUB deposits), such as:
+**Core protocol mechanics (DCHUB where applicable)**
 
-- Entity registration and registry listing renewal (including name lease renewal where applicable).
-- Premium names and namespaces.
-- App and module registry listing, upgrades, and renewals (where used).
+Core protocol actions may charge DCHUB gas, fees, or deposits, such as:
 
-**Optional service fees (stablecoins, off-protocol)**
+- transaction execution and anti-spam pricing;
+- governance or module-registry deposits where adopted;
+- protocol-level registry mechanics where governance explicitly defines DCHUB-denominated requirements.
 
-Applications or adapter operators may charge separate service fees in stablecoins for off-chain operations (for example jurisdiction filings, attestations, or monitoring), but these are not protocol-level fees and are handled outside protocol consensus.
+**Premium and service rails (USDC where explicitly shown)**
 
-DCHUB protocol fees are routed according to predefined rules, for example:
+Official product or adapter paths may charge USDC for:
+
+- entity activation or annual active-entity standing;
+- premium names and namespaces;
+- app and module participation fees where the product chooses a stablecoin rail;
+- off-chain or app-layer services such as jurisdiction filings, attestations, monitoring, support, or hosted product features.
+
+Fee routing is defined by the relevant policy, product contract, or governance process. Examples include:
 
 - A share to the **Protocol Treasury**.
 - A share to the **dCorps foundation** once established.
 - A share to participating jurisdictions where jurisdiction adapter modules are used.
+- Service revenue to DevCo or another provider where a product or services agreement explicitly routes it there during bootstrap.
 
-Protocol fees help fund operations and grants without relying only on emissions or discretionary Treasury drawdowns.
+These fees help fund operations and grants without relying only on emissions or discretionary Treasury drawdowns. They do not create equity, profit participation, redemption rights, or investment returns.
 
 ------
 
@@ -4091,18 +4104,19 @@ These are targets and bounded ranges, not guarantees.
 **Protocol service fees (v1 initial ranges)**
 
 Protocol service fees are separate from gas and are designed to fund public goods, security operations, indexing, and ecosystem development without relying only on emissions.
-For budgeting and comparability, ranges below are expressed in USDC-equivalent terms; protocol service fees are DCHUB-denominated and may be covered by fee grants or app sponsorship for stablecoin UX (see section 10.5).
+For budgeting and comparability, ranges below are expressed in USDC terms. DCHUB remains the gas and protocol-mechanics asset, while the current product direction prices premium and service rails in USDC where shown (see section 10.5).
 
-- Entity registration fee (one time, USDC equivalent):
-  - Hub corporation: 50 to 250 USDC equivalent
-  - Hub nonprofit: 0 to 100 USDC equivalent (with optional waivers per policy)
-- Registry listing renewal (annual, per entity, USDC equivalent):
-  - Hub corporation: 25 to 150 USDC equivalent
-  - Hub nonprofit: 0 to 50 USDC equivalent (with optional waivers per policy)
+- Current template-linked annual active-entity fee schedule:
+  - Hub corporations: CORP-SOLO 25 USDC/year; CORP-PRIVATE-STD 99 USDC/year; CORP-VENTURE 500 USDC/year; CORP-COMPLEX-PRIVATE 2,000 USDC/year.
+  - Hub nonprofits: NONPROFIT-SIMPLE 15 USDC/year; NONPROFIT-BOARD 49 USDC/year; NONPROFIT-COMPLEX 250 USDC/year.
+- Lifecycle rule:
+  - draft entities pay no annual active-entity fee until activation;
+  - template changes reset the annual term without refund under the current product policy;
+  - production enforcement remains subject to the published parameter set and implementation status.
 - Premium names and namespaces (where used):
-  - Initial lease and renewal ranges are expected to be set to price scarce namespaces and reduce squatting, with values set by governance in DCHUB and expressed as USDC-equivalent bands for UX.
+  - Initial lease and renewal ranges are expected to be set to price scarce namespaces and reduce squatting, with values shown in USDC where the product uses a stablecoin service rail.
 - App and module registry listing fees (where used):
-  - Annual listing and renewal fees are set by governance in DCHUB with risk tiering (for example higher for custody related apps, issuance apps, and critical infrastructure modules), and expressed in USDC-equivalent bands for UX.
+  - Annual listing and renewal fees may use risk tiering (for example higher for custody-related apps, issuance apps, and critical infrastructure modules), with the settlement rail defined by the applicable product, adapter, or governance policy.
 
 **Governance change constraints (v1)**
 
@@ -5663,16 +5677,15 @@ Response patterns:
 
 ### 16.1 Current state
 
-At the time of this master whitepaper revision (v1.3, December 21, 2025):
+At the time of this long-reference revision (v1.4.0, June 6, 2026):
 
-- Architecture and core designs are specified at a conceptual level.
-- Prototype implementations of:
-  - The entity registry.
-  - Hub corporation and nonprofit modules.
-  - Wallet and accounting primitives exist in internal or limited test environments.
+- dCorps remains in development and mainnet is not live.
+- The current build is app-first and proof-driven, focused on a narrow local workflow before public launch claims expand.
+- Local implementations exist for the Hub rollup path, entity registry, roles, wallets, anchors, identity, lifecycle gates, and initial app/indexer surfaces, but they are not yet a public mainnet product.
 - No production mainnet exists yet.
 - No public token sale or listing has occurred.
 - No foundation has been incorporated yet.
+- The public DCHUB Genesis/TGE, public liquidity, protocol treasury/community allocation activation, and live token-governed authority remain gated on foundation or equivalent steward readiness.
 
 All details are subject to change based on engineering work, testing, legal analysis, and community feedback.
 
@@ -5834,7 +5847,7 @@ The phases below start at **mainnet beta**, keep **public DCHUB Genesis/TGE** se
 - Stable APIs and SDKs for common operations (entity creation, role changes, approvals, reporting queries).
 - Monitoring, alerting, and incident processes for rollup operators and core services.
 - Security hardening: bug bounty, audit extensions, and formalized threat models for the kernel.
-- Fee grants and UX primitives so entities can cover DCHUB protocol fees via stablecoin sponsorship while the chain still prices execution in DCHUB.
+- Fee grants and UX primitives so entities can cover DCHUB gas or protocol mechanics through product sponsorship while USDC service rails remain explicit where used.
 
 **Exit criteria**:
 
@@ -5973,31 +5986,34 @@ Under this path:
 - A **nonprofit foundation**, with **Abu Dhabi / ADGM** as a leading candidate, is intended to exist before public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, or live token-governed authority.
 - Protocol and brand IP stewardship should move to the foundation through assignment, license, or another documented legal arrangement before public DCHUB power is activated.
 
-Engineering providers are expected to be software and services firms, not:
+DevCo is a software and services company, not:
 
-- Banks.
-- Exchanges, brokers, or asset managers.
-- Universal incorporation or NGO service providers for all dCorps entities.
+- A bank.
+- An exchange, broker, or asset manager.
+- A corporate or NGO service provider for all dCorps entities.
 
-Commercial relationships between engineering providers and counterparties are governed by separate contracts and should not be confused with protocol governance or token posture.
+Commercial relationships between DevCo and entities are governed by separate contracts and should not be confused with protocol governance or token posture.
 
 ---
 
-### 17.3 Foundation jurisdiction (Abu Dhabi / ADGM)
+### 17.3 Foundation jurisdiction (ADGM leading; later options open)
 
-The leading foundation jurisdiction is **Abu Dhabi / ADGM**.
+Once dCorps reaches the public-token gate, the intention is to add a **nonprofit foundation** or equivalent steward arrangement before public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, or live token-governed authority.
 
 ADGM is attractive because:
 
 - It offers a modern foundation framework with remote-friendly setup and lower early overhead.
 - It is a credible international jurisdiction and can remain lean while governance and reporting standards mature.
-- It can support a foundation-centered stewardship structure when dCorps is ready to activate public DCHUB distribution, treasury authority, and token governance.
+- It can support a credible foundation-centered stewardship structure without forcing an expensive foundation build before product proof.
+
+Other jurisdictions may remain available for later review if the project reaches a level of need, institutional signaling, and budget that justifies them. Any final choice must be disclosed through foundation filings and governance communications.
 
 Decision process and status:
 
 - The foundation is not incorporated yet.
-- Abu Dhabi / ADGM is the current leading candidate.
-- The final executed structure will be published in foundation filings and governance communications once formalized.
+- ADGM is the current leading candidate for an initial, lean setup.
+- The jurisdiction choice will be made before incorporation based on credibility, governance needs, operational overhead, and the ability to publish transparent reporting.
+- The final decision will be published in foundation filings and governance communications.
 
 The foundation will:
 
@@ -6020,13 +6036,20 @@ A core design principle is:
 
 The foundation is the natural home for this adaptive work. It sponsors research, consults with stakeholders, proposes modules through governance, and retires or replaces modules when they no longer fit current realities.
 
-This remains a **good faith design intention**, not a claim that incorporation has already occurred. The exact timing and execution depend on legal, regulatory, financial, and operational realities. Mainnet beta may proceed before foundation formation under disclosed DevCo controls. Public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, and live token-governed authority remain gated on foundation or equivalent steward readiness.
+This remains a **good faith design intention**, not a fixed commitment to incorporate by a specific date and not a claim that incorporation has already occurred. Mainnet beta may proceed before foundation formation under disclosed DevCo controls. Public DCHUB distribution, public liquidity, protocol treasury/community allocation activation, and live token-governed authority remain gated on foundation or equivalent steward readiness. Details will be documented in public filings and governance proposals.
 
 ------
 
-### 17.3A Relationship between the foundation and engineering providers
+### 17.3A Relationship between DevCo and the foundation
 
-The foundation and engineering providers have complementary roles.
+DevCo and the foundation have complementary roles.
+
+The **development corporation**:
+
+- Is the primary engineering and product organization for dCorps during bootstrap.
+- Employs or contracts the core contributors that design and implement the Hub, reference modules, and critical tooling.
+- Enters commercial contracts with entities and partners for integration, product, support, and custom work.
+- Is expected to become one of the early Hub corporations on dCorps, using the same structures that other entities use.
 
 The **dCorps foundation**:
 
@@ -6036,34 +6059,28 @@ The **dCorps foundation**:
   - the app and module registry.
 - Acts as a bridge to jurisdictions, regulators, NGOs, and other public stakeholders.
 
-Engineering providers:
-
-- Implement core protocol work, tooling, and integrations under contract.
-- May include a Wyoming LLC or other service-provider structures where appropriate.
-- Do not become the protocol steward by default merely by delivering engineering work.
-
 The relationship is expected to be formalized through service or framework agreements, for example:
 
-- The foundation can recognize a provider as an authorized development provider for defined scopes of work.
-- The foundation can fund a provider to deliver specified milestones while keeping IP and governance aligned with the protocol.
+- The foundation can recognize DevCo as an authorized development provider for defined scopes of work.
+- The foundation can fund DevCo to deliver specified milestones while keeping IP and governance aligned with the protocol.
 - The foundation can fund multiple teams for modules, tools, or research to avoid single-vendor risk and to foster a broader ecosystem.
 
-Replacing or significantly downgrading a provider for core protocol work is possible, but it should be:
+Replacing or significantly downgrading DevCo as the primary provider of core protocol work is possible, but it should be:
 
 - Governed by clear criteria and processes.
 - Subject to strong governance thresholds.
-- Paired with a credible alternative delivery arrangement.
+- Paired with a credible alternative development arrangement.
 
 This balance aims to:
 
-- Give the founding team and early contributors enough stability to build a serious, multi-year project.
-- Ensure that, in the long run, the protocol is not dependent on a single private vendor if that vendor stops performing or shifts priorities.
+- Give the founding team enough stability to build a serious, multi-year project.
+- Ensure that, in the long run, the protocol is not dependent on a single private company if that company stops performing or shifts priorities.
 
 ------
 
-### 17.3B Engineering-provider business model and neutrality
+### 17.3B Development corporation business model and neutrality
 
-An engineering provider is expected to operate as a normal software and services provider, not as a protocol gatekeeper.
+The development corporation is expected to operate as a normal software and services provider, not as a protocol gatekeeper.
 
 Typical revenue sources may include:
 
@@ -6102,17 +6119,17 @@ This dogfooding reinforces the seriousness of dCorps for nonprofits.
 
 ---
 
-### 17.5 Engineering provider as early Hub corporation (optional)
+### 17.5 Development corporation as early Hub corporation
 
-An engineering provider may become an early Hub corporation on dCorps, but that is optional rather than a required part of the legal structure.
+DevCo is expected to become one of the early Hub corporations on dCorps.
 
-If an engineering provider does use dCorps directly, it may use:
+It may use:
 
 * Hub units for its internal cap table.
 * Merchant and treasury wallets for operations.
 * Governance modules for key decisions.
 
-That kind of dogfooding can strengthen the product, but it is not the same thing as protocol stewardship.
+That kind of direct use can strengthen the product and align the core team with the robustness of the infrastructure, but it is not the same thing as protocol stewardship.
 
 ---
 

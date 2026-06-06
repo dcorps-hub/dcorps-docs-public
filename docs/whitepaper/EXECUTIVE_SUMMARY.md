@@ -2,12 +2,12 @@
 
 **Document type**: Executive summary
 **Doc ID**: DCHUB-EXEC-2025-12-21
-**Version**: v1.3.1
-**Status**: Final v1.3.1
+**Version**: v1.4.0
+**Status**: Current reset-aligned reference; not mainnet-ready
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-04-15
+**Last updated**: 2026-06-06
 
 ---
 
@@ -33,8 +33,7 @@ The dCorps Hub is the kernel. It defines:
 
 - canonical entity identity and discovery;
 - ownership and authority (roles, approvals, and governance actions);
-- wallet structure (authority approvals and operational payments) and standardized accounting events;
-- commerce primitives (catalog items/services, invoices, recurring plans); and
+- wallet structure (authority approvals and operational payments) and standardized accounting events; and
 - anchoring of key documents by hash.
 
 dCorps is infrastructure, not a bank, broker, exchange, or custodial service.
@@ -58,7 +57,7 @@ Important boundary: the chain guarantees ordering, integrity, timestamps, author
 
 ## v1 in one sentence
 
-In v1, an entity can register, bind roles and authority/operational wallets, issue invoices or recurring plans, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
+In v1, an entity can register, bind roles and authority/operational wallets, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
 
 ---
 
@@ -67,10 +66,10 @@ In v1, an entity can register, bind roles and authority/operational wallets, iss
 The first workflow is intentionally narrow:
 
 1. Register an entity, set authority and canonical operational wallets, and anchor baseline governing documents by hash.
-2. Issue invoices or recurring plans tied to canonical payment wallets and route inflows/outflows through those wallets with tagged accounting events.
+2. Route inflows and outflows through canonical payment wallets with tagged accounting events and optional evidence anchors.
 3. Use explorers/indexers (and optional dApps) to derive reproducible cash-based operating and allocation views over any selected timeframe directly from tagged ledger events, with clear coverage metrics.
 
-Nonprofits may accept direct donations to the donation wallet without invoices; payment requests and recurring plans are optional for structured giving, with optional donation receipt anchors.
+Nonprofits may accept direct donations to the donation wallet without invoices. Payment requests, recurring plans, and donation receipts are later app/module surfaces where implemented, with optional anchors for confirmation.
 
 Measurable outcome:
 
@@ -95,7 +94,7 @@ dCorps is not designed for entities that want opaque structures, cosmetic govern
 
 dCorps keeps a strict boundary between a minimal kernel and optional modules:
 
-- **Kernel (required)**: identity, roles and authority, governance actions, wallet structure, commerce primitives, accounting events, and document anchoring.
+- **Kernel (required)**: identity, roles and authority, governance actions, wallet structure, accounting events, and document anchoring.
 - **Adapters and modules (optional)**: jurisdiction recognition workflows, institutional reporting views, sector frameworks, attestations, and derived signals.
 
 Entities must be able to operate without adapters. Adapters may publish derived interpretations, but they must not redefine kernel semantics or rewrite history.
@@ -119,7 +118,7 @@ External applications (UIs, payroll, donation portals, dashboards)
 Optional adapters and modules (jurisdiction recognition, sector frameworks, attestations)
         |
         v
-dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
+dCorps Hub kernel (entity registry, roles, governance, wallets, accounting events, anchoring)
         |
         v
 DCHUB gas + rollup settlement (sequencer + Ethereum)
@@ -131,7 +130,8 @@ DCHUB gas + rollup settlement (sequencer + Ethereum)
 
 dCorps uses two primary assets with distinct roles:
 
-- **USDC** is the baseline operating currency and the unit of account for examples and many protocol service fees (registration, renewals, premium names, optional module participation). At launch it is bridged from Ethereum to a canonical USDC contract on dCorps.\n+- **DCHUB** is the Hub’s gas, protocol governance, and protocol-level fee token in the Orbit rollup architecture.
+- **USDC** is the baseline operating currency, the day-one operating-money rail, and the current premium/service-fee rail where shown. At launch it is bridged from Ethereum to a canonical USDC contract on dCorps.
+- **DCHUB** is the Hub's gas token, protocol governance token, and explicit protocol-mechanics token where adopted.
 - The architecture also supports multiple approved stablecoins and, where technically and legally feasible, CBDC-style instruments via the approved asset registry and optional jurisdiction adapters (some rails may require disclosed gateways or provider attestations); adoption is expected to depend on issuer/jurisdiction cooperation and to be pursued through adoption work coordinated by the foundation and ResCo (planned).
 
 This describes protocol mechanics, not market outcomes.

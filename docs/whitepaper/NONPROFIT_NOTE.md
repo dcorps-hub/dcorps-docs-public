@@ -2,12 +2,12 @@
 
 **Document type**: Nonprofit note
 **Doc ID**: DCHUB-NONPROFIT-NOTE-2025-12-21
-**Version**: v1.3.1
-**Status**: Final v1.3.1
+**Version**: v1.4.0
+**Status**: Current reset-aligned reference; not mainnet-ready
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-01-25
+**Last updated**: 2026-06-06
 
 ---
 

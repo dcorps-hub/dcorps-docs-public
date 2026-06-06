@@ -2,12 +2,12 @@
 
 **Document type**: Litepaper
 **Doc ID**: DCHUB-LITEPAPER-2025-12-21
-**Version**: v1.3.1
-**Status**: Final v1.3.1
+**Version**: v1.4.0
+**Status**: Current reset-aligned reference; not mainnet-ready
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-04-15
+**Last updated**: 2026-06-06
 
 ---
 
@@ -80,7 +80,7 @@ The kernel provides:
 
 - canonical entity identity and discovery;
 - ownership and authority (roles, approvals, governance actions);
-- wallet structure (authority approvals and operational payments), commerce primitives, and standardized accounting events;
+- wallet structure (authority approvals and operational payments) and standardized accounting events;
 - document anchoring for governing documents, resolutions, and evidence.
 
 Everything that varies by jurisdiction, institution, or sector is optional and sits above the kernel as protocol modules.
@@ -95,7 +95,7 @@ v1 is intentionally narrow: ship a stable Hub kernel that can host complete corp
 
 **In scope for v1**
 
-- Hub rollup (Arbitrum Orbit, Rollup mode), DCHUB gas + protocol governance + protocol-level fees, and basic on-chain governance.
+- Hub rollup (Arbitrum Orbit, Rollup mode), DCHUB gas and protocol mechanics, USDC service rails where shown, and basic on-chain governance.
 - Entity registry and entity lifecycle status.
 - Standard on-chain entity containers:
   - Hub corporation (units, role-based governance, structured accounting primitives).
@@ -138,8 +138,8 @@ Every entity also has a lifecycle status in the registry so counterparties can s
 
 ### 5.2 Operate day to day in stablecoins
 
-1. Issue invoices or recurring plans tied to canonical payment wallets.
-   - Nonprofits can accept direct donations to the donation wallet without invoices; payment requests are optional for structured giving.
+1. Route inflows and outflows through canonical payment wallets with tagged accounting events.
+   - Nonprofits can accept direct donations to the donation wallet without invoices; payment requests and recurring plans are later app/module surfaces where implemented.
 2. Receive inflows to canonical wallets.
 3. Execute payouts from canonical wallets using tagged accounting events.
 4. Anchor evidence for material items where appropriate.
@@ -164,7 +164,7 @@ External applications (UIs, payroll, donation portals, dashboards)
 Optional adapters and modules (jurisdiction recognition, sector frameworks, attestations)
         |
         v
-dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
+dCorps Hub kernel (entity registry, roles, governance, wallets, accounting events, anchoring)
         |
         v
 DCHUB gas + rollup settlement (sequencer + Ethereum)
@@ -210,7 +210,8 @@ The ecosystem may support optional private execution zones or specialized applic
 
 dCorps uses two primary assets with distinct roles:
 
-- **DCHUB**: gas, protocol governance, and protocol-level fees in the Orbit rollup architecture.\n+- **USDC**: baseline unit of account and primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
+- **DCHUB**: gas, protocol governance, and explicit protocol mechanics where adopted.
+- **USDC**: baseline unit of account, day-one operating-money rail, and current premium/service-fee rail where shown.
 
 This describes protocol mechanics, not market outcomes.
 

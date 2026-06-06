@@ -2,12 +2,12 @@
 
 **Document type**: Whitepaper (mid-length)
 **Doc ID**: DCHUB-WP-PUBLIC-2025-12-21
-**Version**: v1.3.1
-**Status**: Final v1.3.1
+**Version**: v1.4.0
+**Status**: Current reset-aligned reference; not mainnet-ready
 **Release date**: December 21, 2025
 **Author**: Nicolas Turcotte, Founder
 [www.dcorps.com](http://www.dcorps.com/) · [dev@dcorps.com](mailto:dev@dcorps.com)
-**Last updated**: 2026-04-15
+**Last updated**: 2026-06-06
 
 > This is the condensed whitepaper. For the official long version, see [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG).
 
@@ -94,11 +94,11 @@ If there is a conflict between this whitepaper and a normative specification, th
 
 dCorps is a digitally native base layer for **corporations** and **nonprofit organizations**.
 
-It provides a shared standard where organizations can be created, owned, governed, and operated on-chain. The dCorps Hub is the kernel: it defines canonical identity, ownership and authority, governance actions, wallet structure, commerce primitives, standardized accounting events, document anchoring, and an auditable history.
+It provides a shared standard where organizations can be created, owned, governed, and operated on-chain. The dCorps Hub is the kernel: it defines canonical identity, ownership and authority, governance actions, wallet structure, standardized accounting events, document anchoring, and an auditable history.
 
 **v1 in one sentence**
 
-In v1, an entity can register, set roles and authority/operational wallets, issue invoices or recurring plans, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
+In v1, an entity can register, set roles and authority/operational wallets, run stablecoin operations through tagged accounting events, and view reproducible cash-based operating and allocation summaries over any selected timeframe, with optional evidence anchoring.
 
 Later phases are designed to support multiple approved stablecoins and, where technically and legally possible, CBDC-style instruments through the approved asset registry and optional jurisdiction adapter modules. This is expected to require issuer and jurisdiction cooperation and to be pursued through ecosystem adoption work coordinated by the foundation and ResCo (planned).
 
@@ -106,7 +106,7 @@ Later phases are designed to support multiple approved stablecoins and, where te
 
 dCorps keeps a strict boundary between a minimal kernel and optional modules:
 
-- **Kernel (required)**: entity registry, roles and authority, governance actions, wallet structure, commerce primitives, accounting events, and document anchoring.
+- **Kernel (required)**: entity registry, roles and authority, governance actions, wallet structure, accounting events, and document anchoring.
 - **Adapters and modules (optional)**: jurisdiction recognition workflows, institutional reporting views, sector and impact frameworks, and attestations derived from kernel state.
 
 Entities must be able to operate without adapters. Adapters may publish derived interpretations, but they must not redefine kernel semantics or rewrite history.
@@ -131,10 +131,9 @@ Important boundary: the chain guarantees integrity, ordering, authorship, and ta
 
 **In scope for v1**
 
-- Hub rollup (Arbitrum Orbit, Rollup mode), DCHUB gas + protocol governance + protocol-level fees, and basic on-chain governance.
+- Hub rollup (Arbitrum Orbit, Rollup mode), DCHUB gas and protocol mechanics, USDC service rails where shown, and basic on-chain governance.
 - Hub corporation and Hub nonprofit entity containers.
 - Authority and canonical operational wallets.
-- Commerce primitives (catalog items/services, invoices, recurring plans).
 - Tagged accounting events.
 - Explorer/indexer-derived cash-based operating views (corporations) and allocation views (nonprofits) over any selected timeframe.
 - Document anchoring and reference standards for explorers and indexers.
@@ -144,6 +143,7 @@ Important boundary: the chain guarantees integrity, ordering, authorship, and ta
 - any requirement to attach a jurisdiction adapter, legal wrapper, or compliance process;
 - operating or providing any bank or fiat rail integrations (not supported at any layer), or custody of fiat;
 - any guarantee of listing, liquidity, or public-market infrastructure;
+- invoice, recurring-plan, checkout, billing, merchant, and payroll execution unless separately implemented and reviewed;
 - mandatory protocol-level KYC/KYB/AML (these live in applications, service providers, and optional modules);
 - default full privacy execution (privacy is an optional evolution).
 
@@ -203,7 +203,7 @@ External applications (UIs, markets, payroll, donation portals, dashboards)
 Optional adapters and modules (jurisdiction recognition, sector frameworks, attestations)
         |
         v
-dCorps Hub kernel (entity registry, roles, governance, wallets, commerce primitives, accounting events, anchoring)
+dCorps Hub kernel (entity registry, roles, governance, wallets, accounting events, anchoring)
         |
         v
 DCHUB gas + rollup settlement (sequencer + Ethereum)
@@ -241,7 +241,7 @@ Core characteristics:
 - allocation rules and category-level transparency;
 - reproducible allocation views derived from tagged accounting events over any selected timeframe.
 
-Donations may arrive directly to the donation wallet without invoices. Invoices or recurring plans are optional for grants, sponsorships, memberships, or pledged giving, with optional donation receipts anchored for confirmation.
+Donations may arrive directly to the donation wallet without invoices. Payment requests, recurring plans, and donation receipts are later app/module surfaces where implemented; evidence can still be anchored for confirmation.
 
 Nonprofits are expected to meet a minimum transparency floor meaningful for donors, while allowing selective disclosure patterns as needed for beneficiary safety.
 
@@ -262,7 +262,7 @@ v1 does not require any private execution zones for entities to operate.
 Entities operate through canonical wallet types (for example merchant, donation, program, treasury). Flows through these wallets can be recorded with tagged accounting events.
 
 Authority wallets sign governance actions and approvals, while operational wallets receive and send USDC.
-The kernel also supports on-chain catalog items/services, invoices (payment requests), and recurring plans tied to canonical payment wallets.
+Later app and module layers can support catalog items/services, invoices, payment requests, and recurring plans tied to canonical payment wallets. Those execution flows are not treated as first-proof scope unless separately implemented and reviewed.
 
 Tags are explicit. The Hub does not attempt to infer them. Typed workflows can produce deterministic tags, while external applications may also submit tags under the entity’s authority.
 
@@ -294,14 +294,15 @@ Views should surface integrity signals, such as uncategorized flows, provenance 
 
 dCorps separates protocol participation and entity-level ownership:
 
-- **DCHUB**: Hub gas, protocol governance, and protocol-level fees; does not represent ownership in user entities.
+- **DCHUB**: Hub gas, protocol governance, and explicit protocol mechanics where adopted; does not represent ownership in user entities.
 - **Hub units**: internal ownership and voting rights within a Hub corporation; scoped to that entity.
 - **dShares (optional future extension)**: equity-style tokens issued by entities under applicable legal regimes, potentially via Hub modules or approved external rails.
 - **Nonprofit governance**: board and allocation rules, not equity; no token represents ownership of a nonprofit.
 
 ### 6.2 DCHUB and USDC roles
 
-- **DCHUB** prices execution (gas) and supports protocol governance and protocol-level fees.\n+- **USDC** is the baseline unit of account for examples and the primary operating currency for many entities and protocol service fees (canonical bridged USDC at launch).
+- **DCHUB** prices execution (gas), supports protocol governance, and may be used for explicit protocol mechanics or deposits.
+- **USDC** is the baseline unit of account for examples, the day-one operating-money rail, and the current premium/service-fee rail where shown.
 
 This describes protocol mechanics, not promises about price, liquidity, or market outcomes.
 
