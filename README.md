@@ -195,3 +195,18 @@ If repository visibility changes:
 
 - If `dcorps-docs-private` is ever made public, review `dcorps-docs-private/docs/restricted/` first and remove or redact anything that creates undue safety risk.
 - Use the policy as the source of truth: `docs/policy/POL-DOCS-PUBLICATION.md`.
+
+## Local Development
+
+Local development is container-first. Do not install project dependencies on the
+host machine. Dependencies are installed in the dev image and mounted through a
+named Docker volume.
+
+```bash
+docker compose up --build workspace
+docker compose run --rm workspace npm run whitepaper:check
+docker compose down
+```
+
+Stop the container when the task is complete unless the owner asks to keep it
+running.

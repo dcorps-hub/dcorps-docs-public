@@ -1,0 +1,21 @@
+name: dcorps-docs-public
+
+services:
+  workspace:
+    container_name: dcorps-docs-public-local
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - dcorps_docs_public_node_modules:/workspace/node_modules
+    environment:
+      APP_ENV: ${APP_ENV:-local}
+      HOST: 0.0.0.0
+      PORT: ""
+      NEXT_TELEMETRY_DISABLED: "1"
+    command: sh -lc "npm run whitepaper:check"
+
+volumes:
+  dcorps_docs_public_node_modules:
