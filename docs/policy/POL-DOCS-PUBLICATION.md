@@ -15,7 +15,7 @@ canonical manuscript in the private governance repository:
 
 Its SHA-256 digest is:
 
-`4fb20e600c16d71744bc333e66dde18a6a26e88639f9ac61944126758a46ccae`
+`1e0312939cb2c7721ca2335dbde314505275ee335b52b083f3f76ea32722aa3f`
 
 ### Founder Manifesto V1.0
 

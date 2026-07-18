@@ -5,7 +5,7 @@
 - **Authority date:** 2026-07-15
 - **Pre-release correction authority:** 2026-07-17
 - **Public distribution copy:** `DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md`
-- **SHA-256:** `4fb20e600c16d71744bc333e66dde18a6a26e88639f9ac61944126758a46ccae`
+- **SHA-256:** `1e0312939cb2c7721ca2335dbde314505275ee335b52b083f3f76ea32722aa3f`
 - **Website route:** `/whitepaper/`
 
 The public distribution copy is byte-identical to the official canonical
