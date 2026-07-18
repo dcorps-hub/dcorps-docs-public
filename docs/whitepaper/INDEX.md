@@ -1,58 +1,10 @@
-# Whitepaper Index
+# dCorps Blockchain Whitepaper
 
-**Document type**: Whitepaper index  
-**Doc ID**: WHITEPAPER-INDEX  
-**Status**: Draft v0.2  
-**Release date**: December 21, 2025  
-**Author**: Nicolas Turcotte, Founder  
-**Source repo**: dcorps-docs-public ([docs/whitepaper/INDEX.md](/whitepaper/INDEX))  
-**Last updated**: 2026-05-30
+The official public distribution copy of dCorps Blockchain Whitepaper V1.0 is:
 
-> Scope: entry point for the whitepaper suite and the 2026 reset draft.
+- [Whitepaper V1.0](./DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md)
+- [SHA-256 checksum](./DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.sha256)
+- [Publication record](./PUBLICATION_RECORD_V1_0_2026-07-15.md)
 
----
-
-## Start here
-
-- Reset draft (current working direction): [docs/whitepaper/WHITEPAPER_RESET_DRAFT.md](/whitepaper/WHITEPAPER_RESET_DRAFT)
-- Claim scope matrix: [docs/whitepaper/CLAIM_SCOPE_MATRIX.md](/whitepaper/CLAIM_SCOPE_MATRIX)
-- Executive summary (1-2 pages): [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
-- Litepaper (short narrative + architecture): [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
-- Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
-
----
-
-## Full suite
-
-- Whitepaper reset draft: [docs/whitepaper/WHITEPAPER_RESET_DRAFT.md](/whitepaper/WHITEPAPER_RESET_DRAFT)
-- Executive summary: [docs/whitepaper/EXECUTIVE_SUMMARY.md](/whitepaper/EXECUTIVE_SUMMARY)
-- Whitepaper (plain language): [docs/whitepaper/WHITEPAPER_PLAIN_LANGUAGE.md](/whitepaper/WHITEPAPER_PLAIN_LANGUAGE)
-- Litepaper: [docs/whitepaper/LITEPAPER.md](/whitepaper/LITEPAPER)
-- Condensed whitepaper (mid-length): [docs/whitepaper/WHITEPAPER.md](/whitepaper/WHITEPAPER)
-- Official whitepaper (long): [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
-- Long-version PDF artifact: `docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf`
-- Nonprofit note: [docs/whitepaper/NONPROFIT_NOTE.md](/whitepaper/NONPROFIT_NOTE)
-- FAQ: [docs/whitepaper/FAQ.md](/whitepaper/FAQ)
-- Glossary: [docs/whitepaper/GLOSSARY.md](/whitepaper/GLOSSARY)
-
----
-
-## Related materials
-
-- Technical overview: [docs/engineering/TECHNICAL_OVERVIEW.md](/engineering/TECHNICAL_OVERVIEW)
-- Integration guide: [docs/engineering/INTEGRATION_GUIDE.md](/engineering/INTEGRATION_GUIDE)
-- Risk disclosure: [docs/legal/RISK_DISCLOSURE.md](/legal/RISK_DISCLOSURE)
-- Disclaimers: [docs/legal/DISCLAIMERS.md](/legal/DISCLAIMERS)
-
----
-
-## Status note
-
-The 2025 whitepaper suite remains available as historical context.
-
-The reset draft is the current working direction for narrowing scope around:
-
-- a thin organization kernel;
-- a live app-first product surface;
-- proof before token expansion; and
-- a devnet to partner-testnet to genesis sequence.
+This corrected V1.0 copy is authorized for local and protected noindex DEV
+review. It has not been published to production.

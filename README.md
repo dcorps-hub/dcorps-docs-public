@@ -1,212 +1,30 @@
 # dcorps-docs-public
 
-Public documentation and specifications for the dCorps Hub protocol, including whitepapers, protocol specifications, policies, security documents, and token documentation.
+This repository contains the exact public distribution copies of the official
+dCorps Blockchain Whitepaper V1.0 and Founder Manifesto V1.0 authorized for
+local and protected noindex DEV website review.
 
-> Status: Phase 0A (development) — public baseline documentation set (mainnet is not live; the foundation is not incorporated yet; the current intended structure is foundation-first pre-genesis in Abu Dhabi / ADGM, and the older BVI DevCo path is no longer the working plan)
+## Reset boundary
 
-Docs center entry point: `docs/welcome/INDEX.md`
-Developer entry point (normative specs): `docs/spec/INDEX.md`
+- The Whitepaper copy under `docs/whitepaper/` is authoritative only because it
+  is byte-identical to the canonical private manuscript and matches its adopted
+  digest.
+- The Founder Manifesto copy under `docs/manifesto/` is authoritative only
+  because it is byte-identical to the exact owner source and matches its
+  adopted digest.
+- No separate product definition, legal document, or other public
+  documentation category is authorized here yet.
+- Do not reconstruct removed material from Git history, deleted files,
+  generated artifacts, sibling repositories, transcripts, frozen websites,
+  implementation inference, or agent memory.
+- Official V1.0 and later explicit owner decisions are the only permitted
+  sources for future public adaptation.
 
----
+The current public documentation entry point is `docs/INDEX.md`.
 
-## 1. Purpose
+## Local validation
 
-This repo exists to:
-
-- Hold the whitepaper suite for the dCorps Hub.
-- Hold **normative specs** for protocol behavior, parameters, modules, and data.
-- Hold **governance, treasury, token, and security policies**.
-- Publish documentation **public by default**, with safety-sensitive exceptions and internal planning stored in the private documentation repo `dcorps-docs-private` (policy: `docs/policy/POL-DOCS-PUBLICATION.md`).
-
-Anything that defines how the protocol works, how entities behave, or how we describe dCorps externally should live here first, then be surfaced outward through controlled exports (manual for now; see `tools/docgen/README.md`).
-
----
-
-## 2. Repository structure
-
-High-level layout:
-
-```text
-docs/
-  REPOS.md                   Repository map (internal)
-  welcome/
-    INDEX.md                 Docs center welcome and reader paths
-    OVERVIEW.md              dCorps overview
-  whitepaper/
-    INDEX.md                 Whitepaper suite index
-    EXECUTIVE_SUMMARY.md
-    FAQ.md
-    GLOSSARY.md
-    LITEPAPER.md
-    NONPROFIT_NOTE.md
-    WHITEPAPER.md
-    WHITEPAPER_LONG.md
-    WHITEPAPER_PLAIN_LANGUAGE.md
-    pdf/
-      dCorpsHub_Whitepaper.pdf
-      dCorpsHub_Whitepaper.pdf.sha256
-      dCorpsHub_Whitepaper.source.sha256
-  investor/
-    INDEX.md                 Investor materials index
-    INVESTOR_BRIEF.md
-    TOKENOMICS_SUMMARY.md
-  spec/
-    INDEX.md                 Spec index (normative)
-    SPEC-CORE.md             Protocol Specification
-    SPEC-CORE_PUBLIC.md      Core spec overview
-    SPEC-PARAMS.md           Protocol Parameters and Economics
-    SPEC-MODULES.md          Module Protocol Standard
-    SPEC-ATTESTATIONS.md     Attestation Module Standard
-    SPEC-ANCHOR.md           Sub chain Anchoring Standard
-    SPEC-INDEXER.md          Reference Indexer Specification
-    SPEC-CONFORMANCE-TESTS.md Compatibility and Conformance Tests
-    SPEC-DATA.md             Data Standards, schemas, chart of accounts, tags
-  policy/
-    POL-GOV.md               Governance Charter
-    POL-GOV-TRANSITION.md    Governance transition plan (founder-led → foundation readiness)
-    POL-TREASURY.md          Treasury Policy
-    POL-REGISTRY-MODULES.md  Registry and Module Policy
-    POL-OPERATORS.md         Operator Charter
-    POL-FOUNDATION.md        Foundation Policy (planned)
-    POL-LOCALIZATION.md      Localization and translations policy
-    POL-DOCS-PUBLICATION.md  Documentation Publication Policy
-  token/
-    TOKEN-POLICY.md
-    TOKEN-GENESIS-PLAN.md
-    TOKEN-EMISSIONS-NOTES.md
-  security/
-    SECURITY-POLICY.md
-    THREAT-MODEL.md
-    AUDIT-PLAN.md
-    BUG-BOUNTY.md
-    INCIDENT-RESPONSE.md
-  engineering/
-    INDEX.md                 Engineering entry point
-    TECHNICAL_OVERVIEW.md    Technical overview
-    INTEGRATION_GUIDE.md     Integration guide
-    ORBIT_BASE.md            Base protocol notes (Orbit rollup, token, stablecoins)
-    PROTOCOL_INTERFACES.md   Interface surface map
-  devops/
-    INDEX.md                 DevOps entry point
-    ENVIRONMENTS.md          Dev, staging, and prod definitions
-    ROLLUP_ENVIRONMENT.md    Rollup environment setup notes
-    CI_CD.md                 CI/CD and release flow
-    RELEASE_PROCESS.md       Release and environment promotion process
-    OBSERVABILITY.md         Metrics, logs, and alerts
-    SECURITY.md              DevOps security posture
-    RUNBOOKS.md              Runbook index
-  interop/
-    INDEX.md                 Interop entry point
-    BRIDGE_GATEWAYS.md       Bridge gateway and interop notes
-  roadmap/
-    INDEX.md                 Roadmap and phases
-    PHASES.md                Phase goals and exit criteria
-  frontend/
-    INDEX.md                 Frontend entry point
-    STACK.md                 Current and future stack notes
-    ACCESSIBILITY.md         Accessibility guidelines
-    EXPLORER_REQUIREMENTS.md Explorer requirements
-    INFO_ARCHITECTURE.md     Information architecture
-    SIGNING_FLOWS.md         Signing flows
-  people/
-    INDEX.md                 People & Organization index
-    TEAM.md                  Team roster
-    ORGANIZATIONS.md         DevCo/ResCo/Foundation overview
-    ROLES.md                 Roles needed (capability map)
-    ADVISOR_ROLES.md         Advisor role map
-    OPEN_ROLES.md            Open roles (coverage needed; hiring may be paused)
-  legal/
-    INDEX.md                 Legal and compliance index
-    STRUCTURE_PATH.md
-    DEVCO_AGREEMENT.md
-    RESCO_AGREEMENT.md
-    DISCLAIMERS.md
-    RISK_DISCLOSURE.md
-tools/
-  docgen/
-    README.md                  Doc generation notes
-  whitepaper/
-    export-whitepaper.mjs      Whitepaper Markdown/PDF export and drift check
-    install-whitepaper-hook.mjs Optional local pre-commit guard
-```
-
-Canonical docs center ordering lives in `ORGANIZATOR.md`.
-- Update `ORGANIZATOR.md` whenever any file or folder is created or updated.
-
----
-
-## 3. Whitepaper artifact rule
-
-Canonical whitepaper doctrine lives in `docs/whitepaper/`.
-
-- Edit `docs/whitepaper/WHITEPAPER.md` for the condensed Markdown whitepaper.
-- Edit `docs/whitepaper/WHITEPAPER_LONG.md` for the long whitepaper and public PDF source.
-- Do not hand-edit generated whitepaper mirrors in `dcorps-site-v2` or `dcorps-app`.
-- Do not update `dcorps-site`; that repository is archived and outside the active whitepaper stack.
-
-After any whitepaper source change, run:
-
-```bash
-npm run whitepaper:export
-npm run whitepaper:check
-```
-
-The export command regenerates `docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf`, updates checksum files, and copies the PDF into the active public site/app targets when those sibling repos are present locally.
-
-The PDF exporter uses local Chrome/Chromium for rendering and Poppler tools to merge the unnumbered cover with the paginated official body and resolve printed table-of-contents page numbers.
-
-For local editing sessions, run the watcher before changing either canonical whitepaper Markdown file:
-
-```bash
-npm run whitepaper:watch
-```
-
-The watcher regenerates the PDF, checksum files, and active local mirrors whenever `docs/whitepaper/WHITEPAPER.md` or `docs/whitepaper/WHITEPAPER_LONG.md` changes.
-
-To install the same check as a local pre-commit guard:
-
-```bash
-npm run hooks:install
-```
-
-This installs tracked hooks from `.githooks/` by setting `git config core.hooksPath .githooks`.
-
-- `pre-commit` regenerates whitepaper PDF/checksum artifacts when canonical whitepaper Markdown is staged, stages those generated docs-public artifacts, and runs `npm run whitepaper:check`.
-- `pre-push` runs `npm run whitepaper:check` before pushing.
-- Hook failures must stop the commit or push; do not bypass them with `--no-verify`.
-
----
-
-## 4. GitHub visibility and publishing policy
-
-This repo is designed for **transparency by default**: most documents are intended to be safe for public reading and reuse.
-
-What must be private (or excluded from public distribution):
-
-- Any document that would materially increase attack success if published (detailed operational runbooks, attacker-enabling exploit paths, internal infrastructure specifics, embargoed security findings).
-- Any secrets (private keys, mnemonics, credentials, `.env` contents). Do not store live secrets in Git.
-
-How we organize this:
-
-- Public-by-default docs live throughout `docs/` (including `docs/spec/`, `docs/policy/`, `docs/security/`, and `docs/token/`).
-- Safety-sensitive and internal-only material belongs in the private documentation repo `dcorps-docs-private` and must be excluded from public website/exports.
-
-If repository visibility changes:
-
-- If `dcorps-docs-private` is ever made public, review `dcorps-docs-private/docs/restricted/` first and remove or redact anything that creates undue safety risk.
-- Use the policy as the source of truth: `docs/policy/POL-DOCS-PUBLICATION.md`.
-
-## Local Development
-
-Local development is container-first. Do not install project dependencies on the
-host machine. Dependencies are installed in the dev image and mounted through a
-named Docker volume.
-
-```bash
-docker compose up --build workspace
-docker compose run --rm workspace npm run whitepaper:check
-docker compose down
-```
-
-Stop the container when the task is complete unless the owner asks to keep it
-running.
+Use the container-first repository workflow and run `git diff --check`. The
+current owner instruction authorizes the governed artifacts to be committed
+and pushed to the authorized protected noindex DEV branch. Production
+publication remains separately controlled.

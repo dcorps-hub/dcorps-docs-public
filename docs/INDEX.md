@@ -1,69 +1,20 @@
-# Documentation
+# dCorps public documentation
 
-**Document type**: Master index  
-**Doc ID**: DOCS-INDEX  
-**Status**: Final v0.1  
-**Release date**: December 21, 2025  
-**Author**: Nicolas Turcotte, Founder  
-**Source repo**: dcorps-docs-public (internal index)  
-**Last updated**: 2026-04-26
+**Status**: Official Whitepaper and Founder Manifesto V1.0 authorized for local and protected noindex DEV review
+**Last updated**: 2026-07-17
 
-> Scope: Canonical entry point for publicly releasable dCorps documentation across protocol, policy, security, token, and supporting technical materials.
+The official dCorps Blockchain Whitepaper V1.0 and Founder Manifesto V1.0 are
+available as exact public distribution copies for the local website review
+surface:
 
-Internal planning and working documents (backlogs, internal roadmaps, and playbooks) are maintained in a private documentation repository.
+- [Whitepaper index](./whitepaper/INDEX.md)
+- [Founder Manifesto index](./manifesto/INDEX.md)
+- [Publication policy](./policy/POL-DOCS-PUBLICATION.md)
 
-Current status: Phase 0A (development). Mainnet is not live, public DCHUB Genesis/TGE has not happened, on-chain governance is not active yet, the foundation is not incorporated, and dCorps Development Ltd. is the active BVI DevCo.
+No other substantive public-documentation category has been authorized.
+Prior content remains outside the authority chain and must not be restored from
+history, deleted files, frozen websites, transcripts, or implementation state.
 
----
-
-## Quick entry points
-
-- Docs center welcome: [docs/welcome/INDEX.md](/welcome/INDEX)
-- dCorps overview: [docs/welcome/OVERVIEW.md](/welcome/OVERVIEW)
-- Whitepaper Long: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
-- Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
-- Hub templates: [docs/hub-templates/INDEX.md](/hub-templates/INDEX)
-- Adoption guides: [docs/adoption/INDEX.md](/adoption/INDEX)
-- Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
-- Normative specs: [docs/spec/INDEX.md](/spec/INDEX)
-- Technical build notes: [docs/engineering/INDEX.md](/engineering/INDEX)
-- Interop and bridge gateways: [docs/interop/INDEX.md](/interop/INDEX)
-- DevOps: [docs/devops/INDEX.md](/devops/INDEX)
-- Roadmap and phases: [docs/roadmap/INDEX.md](/roadmap/INDEX)
-- Frontend: [docs/frontend/INDEX.md](/frontend/INDEX)
-- People & Organization: [docs/people/INDEX.md](/people/INDEX)
-- Legal: [docs/legal/INDEX.md](/legal/INDEX)
-- Publication policy: [docs/policy/POL-DOCS-PUBLICATION.md](/policy/POL-DOCS-PUBLICATION)
-- Governance transition plan (BVI bootstrap, mainnet beta, foundation gate, Genesis/TGE): [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION)
-
----
-
-## Canonical sources and precedence
-
-- Protocol behavior: [docs/spec/*](/spec)
-- Policy and governance: [docs/policy/*](/policy)
-- Token and economics: [docs/token/*](/token)
-- Security posture: [docs/security/*](/security)
-- Whitepaper Long narrative and rationale: [docs/whitepaper/WHITEPAPER_LONG.md](/whitepaper/WHITEPAPER_LONG)
-- Website/app publication surfaces: `../dcorps-site-v2` for legacy static routes and `../dcorps-app` for the canonical public surface.
-
----
-
-## Document categories
-
-- Specs and conformance: [docs/spec/INDEX.md](/spec/INDEX)
-- Whitepaper suite: [docs/whitepaper/INDEX.md](/whitepaper/INDEX)
-- Hub templates: [docs/hub-templates/INDEX.md](/hub-templates/INDEX)
-- Adoption guides: [docs/adoption/INDEX.md](/adoption/INDEX)
-- Investor materials: [docs/investor/INDEX.md](/investor/INDEX)
-- Policy and governance: [docs/policy/POL-GOV.md](/policy/POL-GOV), [docs/policy/POL-GOV-TRANSITION.md](/policy/POL-GOV-TRANSITION), [docs/policy/POL-FOUNDATION.md](/policy/POL-FOUNDATION), [docs/policy/POL-OPERATORS.md](/policy/POL-OPERATORS)
-- Localization and translations: [docs/policy/POL-LOCALIZATION.md](/policy/POL-LOCALIZATION)
-- Token: [docs/token/TOKEN-POLICY.md](/token/TOKEN-POLICY), [docs/token/TOKEN-GENESIS-PLAN.md](/token/TOKEN-GENESIS-PLAN), [docs/token/TOKEN-VESTING-SCHEDULES.md](/token/TOKEN-VESTING-SCHEDULES), [docs/token/TOKEN-TREASURY-FEE-FLOWS.md](/token/TOKEN-TREASURY-FEE-FLOWS)
-- Security: [docs/security/SECURITY-POLICY.md](/security/SECURITY-POLICY), [docs/security/THREAT-MODEL.md](/security/THREAT-MODEL)
-- Engineering: [docs/engineering/INDEX.md](/engineering/INDEX)
-- Interop and bridge gateways: [docs/interop/INDEX.md](/interop/INDEX)
-- DevOps: [docs/devops/INDEX.md](/devops/INDEX)
-- Roadmap: [docs/roadmap/INDEX.md](/roadmap/INDEX)
-- Frontend: [docs/frontend/INDEX.md](/frontend/INDEX)
-- People & Organization: [docs/people/INDEX.md](/people/INDEX)
-- Legal: [docs/legal/INDEX.md](/legal/INDEX)
+The current authorization permits the governed artifacts to be committed and
+pushed to the authorized protected noindex DEV path. It does not authorize
+production publication.
