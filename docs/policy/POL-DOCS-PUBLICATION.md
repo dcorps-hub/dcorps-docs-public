@@ -1,7 +1,7 @@
 # Public Documentation Publication Policy
 
 **Status**: Adopted for local and protected noindex DEV Whitepaper and Founder Manifesto review
-**Authority dates**: 2026-07-15, 2026-07-16, and 2026-07-17
+**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, and 2026-07-19
 **Authority**: Nicolas Turcotte, Protocol Founder
 
 ## Controlling sources
@@ -15,7 +15,7 @@ canonical manuscript in the private governance repository:
 
 Its SHA-256 digest is:
 
-`1e0312939cb2c7721ca2335dbde314505275ee335b52b083f3f76ea32722aa3f`
+`793ac1e55135f5850a76346554d8c4f610a78637000b3391699bef1d29c58ad8`
 
 ### Founder Manifesto V1.0
 
@@ -30,9 +30,9 @@ Its SHA-256 digest is:
 
 Prior Whitepapers, Manifestos, deleted files, Git history, frozen website
 prose, transcripts, generated artifacts, implementation code, and agent memory
-cannot supplement or reinterpret either controlling source. The authentic
-signature image may be reused only because the owner explicitly requested the
-same signature presentation; it does not supply document meaning.
+cannot supplement or reinterpret either controlling source. The owner withdrew
+the Manifesto signature image on 2026-07-19. Public presentation uses the
+Founder's name and title aligned at the right and must not restore the image.
 
 ## Authorized publication scope
 
@@ -60,8 +60,8 @@ authorizes:
 - formatting the 29 paragraphs as accessible HTML in their exact order within
   the preserved Manifesto layout; and
 - presentation metadata outside the hashed prose: the page title, author name,
-  current Protocol Founder role, and the authentic signature rendered in
-  white.
+  and current Protocol Founder role, aligned at the right without a signature
+  image.
 
 The website must not rewrite, correct, summarize, reorder, or append a
 disclaimer to the Manifesto prose.
@@ -79,9 +79,11 @@ disclaimer to the Manifesto prose.
   match the adopted Manifesto digest exactly.
 - A website build must fail if either vendored source differs from its adopted
   digest.
-- The owner explicitly authorized the corrected Whitepaper before any V1.0
-  public release. It therefore remains V1.0 with a new digest while the exact
-  original owner intake remains immutable in the private governance repository.
+- The owner explicitly authorized the corrected Whitepaper, including the
+  2026-07-19 dCorps Entity and future Smart Jurisdiction correction, before any
+  V1.0 public release. It therefore remains V1.0 with a new digest while the
+  exact original owner intake remains immutable in the private governance
+  repository.
 - After public release, a substantive Whitepaper or Manifesto change requires
   explicit owner adoption, a new version or amendment, a new digest, and
   updated publication records.
