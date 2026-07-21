@@ -1,7 +1,7 @@
 # Public Documentation Publication Policy
 
 **Status**: Adopted for local and protected noindex DEV Whitepaper and Founder Manifesto review
-**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, and 2026-07-20
+**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, and 2026-07-21
 **Authority**: Nicolas Turcotte, Protocol Founder
 
 ## Controlling sources
@@ -15,7 +15,7 @@ canonical manuscript in the private governance repository:
 
 Its SHA-256 digest is:
 
-`9701af1b3f0b1924b3b741c32d25c5228fb00202f8ca317b3b7a405cf54a13ca`
+`3bacecf11e30cc00882e97604bccc35a516e3ab7486d71bb9e6edf5d6a1914c7`
 
 ### Founder Manifesto V1.0
 
@@ -82,9 +82,10 @@ disclaimer to the Manifesto prose.
 - The owner explicitly authorized the corrected Whitepaper, including the
   2026-07-19 dCorps Entity and future Smart Jurisdiction correction and the
   2026-07-20 full-bridge stablecoin settlement and sovereign-treasury
-  correction, before any V1.0 public release. It therefore remains V1.0 with a
-  new digest while the exact original owner intake remains immutable in the
-  private governance repository.
+  correction, and the 2026-07-21 DCHUB Rollup-distribution and sovereign-L1
+  continuity clarification, before any V1.0 public release. It therefore
+  remains V1.0 with a new digest while the exact original owner intake remains
+  immutable in the private governance repository.
 - After public release, a substantive Whitepaper or Manifesto change requires
   explicit owner adoption, a new version or amendment, a new digest, and
   updated publication records.

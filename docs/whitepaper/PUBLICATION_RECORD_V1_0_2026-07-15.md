@@ -7,8 +7,9 @@
 - **Entity and Smart Jurisdiction correction authority:** 2026-07-19
 - **Corporation 3.0 correction authority:** 2026-07-19
 - **Stablecoin settlement and sovereign-treasury correction authority:** 2026-07-20
+- **DCHUB Rollup distribution and sovereign-L1 continuity clarification authority:** 2026-07-21
 - **Public distribution copy:** `DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md`
-- **SHA-256:** `9701af1b3f0b1924b3b741c32d25c5228fb00202f8ca317b3b7a405cf54a13ca`
+- **SHA-256:** `3bacecf11e30cc00882e97604bccc35a516e3ab7486d71bb9e6edf5d6a1914c7`
 - **Website route:** `/whitepaper/`
 
 The public distribution copy is byte-identical to the official canonical
@@ -26,11 +27,16 @@ representation, three stablecoin balance classes, corporation-controlled
 sovereign external reserves, and an Ethereum-enforced continuity requirement.
 It treats possible later Circle-issued native USDC as an independently approved
 future objective rather than a present or guaranteed capability. These
-corrections do not present a Smart Jurisdiction, bridge, stablecoin deployment,
-Circle agreement, provider integration, legal effect, performance result, or
-decentralization milestone as current. The original owner intakes remain
-preserved in the private governance repository; the corrected canonical
-manuscript and this distribution copy use the digest above.
+corrections also clarify that DevCo-operated MAINNET-BETA uses real DCHUB as
+gas without a public sale, broad distribution, public-liquidity program, or
+binding governance; any later Rollup distribution is conditional and
+Foundation-managed; and sovereign-L1 balances remain the same economic DCHUB
+through reconciled succession without duplicate supply. They do not present a
+Smart Jurisdiction, bridge, stablecoin deployment, Circle agreement, provider
+integration, legal effect, performance result, token event, or decentralization
+milestone as current. The original owner intakes remain preserved in the
+private governance repository; the corrected canonical manuscript and this
+distribution copy use the digest above.
 
 This record authorizes local and protected noindex DEV review. It does not
 authorize production publication, a public token distribution, or changes to
