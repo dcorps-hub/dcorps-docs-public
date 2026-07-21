@@ -105,7 +105,7 @@ The Entity exists on dCorps because the blockchain created it. A country, applic
 7. What the chain proves, what counts as evidence, and what stays private
 8. Treasury and payments
 9. Why dCorps uses its own blockchain
-10. DCORPS: paying for the chain and later governing shared operations
+10. DCORPS tokenomics: paying for the chain and later governing shared operations
 11. Who controls what
 12. Protecting the chain, corporations, and history
 13. Adoption strategy and roadmap
@@ -989,7 +989,7 @@ Application replacement covers writes as well as reads. A conforming replacement
 
 ---
 
-## 10. DCORPS: paying for the chain and later governing shared operations
+## 10. DCORPS tokenomics: paying for the chain and later governing shared operations
 
 ### 10.1 Why DCORPS exists
 
