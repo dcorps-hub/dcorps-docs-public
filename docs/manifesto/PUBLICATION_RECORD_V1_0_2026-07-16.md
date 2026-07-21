@@ -2,22 +2,26 @@
 
 - **Status:** Authorized for local and protected noindex DEV website review
 - **Authority:** Nicolas Turcotte, Protocol Founder
-- **Authority date:** 2026-07-16
-- **Controlling private source:** `docs/master/source/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
+- **Initial source authority date:** 2026-07-16
+- **Revised composition and local publication authority:** 2026-07-21
+- **Signature withdrawal authority:** 2026-07-19
+- **Controlling private source:** `docs/master/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
 - **Public distribution copy:** `DCORPS_FOUNDER_MANIFESTO_V1_0.md`
-- **SHA-256:** `0437b602fef558d5b50d0177ebd254fd36519b7206bd0f8a50b411e7b63c1382`
-- **Paragraphs:** 29
+- **SHA-256:** `90b8d4aeab81a89319ca43267e34e21fc15e176a3fd8b4c9259de3006eef94fe`
+- **Paragraphs:** 34
 - **Website route:** `/manifesto/`
 
-The public distribution copy is byte-identical to the exact owner source. The
+The public distribution copy is byte-identical to the canonical revised
+manuscript. The
 website may format those paragraphs as HTML in their exact order and may add
-the page title, author identity, current Protocol Founder role, and authentic
-signature as presentation metadata outside the hashed prose.
+the page title, author identity, and current Protocol Founder role as
+presentation metadata outside the hashed prose. The name and title are aligned
+at the right; the withdrawn signature image is not published.
 
 The Founder Manifesto states the Founder's mission. The official Blockchain
 Whitepaper V1.0 controls protocol behavior, launch scope, deployment status,
 architecture, and technical qualifications.
 
-This record authorizes the governed artifacts to be committed and pushed to
-the authorized protected noindex DEV path. Production publication and changes
-to the production `dcorps.com` surface require separate owner authority.
+This record permits the local publication milestone and its local checkpoint
+commit. It does not authorize a push, protected DEV deployment, production
+publication, provider action, or change to `dcorps.com`.

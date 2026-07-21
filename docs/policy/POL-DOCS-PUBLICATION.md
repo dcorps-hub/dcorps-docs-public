@@ -15,22 +15,25 @@ canonical manuscript in the private governance repository:
 
 Its SHA-256 digest is:
 
-`7606ccc013a6771eb03ae8339984ee4129145fdf6d851cf63a0512273b32851a`
+`80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`
 
 ### Founder Manifesto V1.0
 
-The sole controlling source for the dCorps Founder Manifesto V1.0 is the exact
-owner-provided source preserved in the private governance repository:
+The sole controlling source for the dCorps Founder Manifesto V1.0 is the
+normalized canonical manuscript adopted on 2026-07-21 in the private
+governance repository:
 
-`docs/master/source/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
+`docs/master/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
 
 Its SHA-256 digest is:
 
-`0437b602fef558d5b50d0177ebd254fd36519b7206bd0f8a50b411e7b63c1382`
+`90b8d4aeab81a89319ca43267e34e21fc15e176a3fd8b4c9259de3006eef94fe`
 
-Prior Whitepapers, Manifestos, deleted files, Git history, frozen website
-prose, transcripts, generated artifacts, implementation code, and agent memory
-cannot supplement or reinterpret either controlling source. The owner withdrew
+The immutable initial Founder source and every exact revision direction remain
+preserved in the private governance repository as provenance. Prior
+Whitepapers, Manifestos, deleted files, Git history, frozen website prose,
+transcripts, generated artifacts, implementation code, and agent memory cannot
+supplement or reinterpret either controlling manuscript. The owner withdrew
 the Manifesto signature image on 2026-07-19. Public presentation uses the
 Founder's name and title aligned at the right and must not restore the image.
 
@@ -52,13 +55,13 @@ words, order, headings, lists, tables, links, quotations, code blocks, notices,
 qualifications, and full Section 10 heading. The reader contents navigation may
 use `DCORPS tokenomics` as the compact label for the full heading.
 
-The owner separately authorized the complete Founder Manifesto V1.0 to replace
-the placeholder copy in the existing local `/manifesto/` page. This
+The owner separately authorized the canonical revised Founder Manifesto V1.0
+to replace the prior copy in the existing local `/manifesto/` page. This
 authorizes:
 
 - one byte-exact public distribution copy in `docs/manifesto/`;
 - one byte-exact vendored website build input;
-- formatting the 29 paragraphs as accessible HTML in their exact order within
+- formatting the 34 paragraphs as accessible HTML in their exact order within
   the preserved Manifesto layout; and
 - presentation metadata outside the hashed prose: the page title, author name,
   and current Protocol Founder role, aligned at the right without a signature
@@ -94,9 +97,14 @@ disclaimer to the Manifesto prose.
   compact reader label `DCORPS tokenomics`. It changes no economics, supply,
   allocation, release, burn, distribution, governance, Rollup, sovereign-L1,
   or implementation term.
-- The immediately preceding V1-0038 Whitepaper digest was
-  `9bb6fbfa5d575bcea868a603d62f89595ad7e353bf7d87852df6ce6b0368a84b`.
-  The current V1-0039 digest is the controlling digest stated above.
+- The owner separately authorized V1-0040 before public release. It commits the
+  core dCorps Native App to free use without an application-access fee while
+  keeping network transaction fees and optional managed-service charges
+  separate. It also adopts the revised 34-paragraph Founder Manifesto for local
+  publication.
+- The immediately preceding V1-0039 Whitepaper digest was
+  `7606ccc013a6771eb03ae8339984ee4129145fdf6d851cf63a0512273b32851a`.
+  The current V1-0040 digest is the controlling digest stated above.
 - After public release, a substantive Whitepaper or Manifesto change requires
   explicit owner adoption, a new version or amendment, a new digest, and
   updated publication records.
