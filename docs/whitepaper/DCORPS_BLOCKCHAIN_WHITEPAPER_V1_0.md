@@ -11,7 +11,7 @@
 - **Author:** Nicolas Turcotte, Protocol Founder
 - **Bootstrap sponsor and operator:** dCorps Development Ltd. (BVI)
 
-This document is the official project-design baseline for the dCorps blockchain. It presents the purpose, architecture, protocol model, native asset, governance path, security assumptions, and adoption strategy. Unless deployment evidence is expressly cited, present-tense descriptions state the **target design**, not a claim that a feature is already deployed, audited, operational, decentralized, or legally effective. It is not an offer to sell DCHUB, does not authorize a public distribution, and is not legal, tax, accounting, investment, or regulatory advice. Production addresses, deployed software versions, audits, legal instruments, operating providers, sale or distribution terms, and live network parameters belong in separately published disclosures.
+This document is the official project-design baseline for the dCorps blockchain. It presents the purpose, architecture, protocol model, native asset, governance path, security assumptions, and adoption strategy. Unless deployment evidence is expressly cited, present-tense descriptions state the **target design**, not a claim that a feature is already deployed, audited, operational, decentralized, or legally effective. It is not an offer to sell DCORPS, does not authorize a public distribution, and is not legal, tax, accounting, investment, or regulatory advice. Production addresses, deployed software versions, audits, legal instruments, operating providers, sale or distribution terms, and live network parameters belong in separately published disclosures.
 
 ---
 
@@ -43,11 +43,11 @@ The design requires alteration of accepted history to be detectable under the di
 
 Every dCorps Entity uses one universal, modular digital-corporation model. There is no template, legal-form, or protocol-type selection. An Entity can begin with one owner or several owners, simple rules or layered governance, and only the roles and accounts it needs. Creation choices establish its initial state; later authorized workflows can change ownership, share classes, decision rules, directors, officers, delegations, accounts, financing, disclosure, and other operating capacity without changing its permanent identity or abandoning its history.
 
-DCHUB is the fixed-supply protocol-native gas asset. Stablecoins and other commerce assets remain externally governed assets. The launch target uses one canonical bridged-USDC representation designed from deployment to conform to Circle's Bridged USDC Standard. Full-bridge settlement is the normal dCorps financial-execution path, while long-term reserves may settle to corporation-controlled external policy accounts. Possible later Circle-issued native USDC on dCorps requires Circle's independent approval and implementation; it is not current or guaranteed and does not displace DCHUB. Future DID modules may identify account controllers. Smart Jurisdiction is a formal long-term protocol objective through which a participating jurisdiction may later attach an optional legal-recognition framework to an existing dCorps Entity or to a legally defined representation of it. It is not a current feature. Neither identity nor recognition creates the native Entity, owns its shares, or becomes its source of truth.
+DCORPS is the fixed-supply protocol-native gas asset. Stablecoins and other commerce assets remain externally governed assets. The launch target uses one canonical bridged-USDC representation designed from deployment to conform to Circle's Bridged USDC Standard. Full-bridge settlement is the normal dCorps financial-execution path, while long-term reserves may settle to corporation-controlled external policy accounts. Possible later Circle-issued native USDC on dCorps requires Circle's independent approval and implementation; it is not current or guaranteed and does not displace DCORPS. Future DID modules may identify account controllers. Smart Jurisdiction is a formal long-term protocol objective through which a participating jurisdiction may later attach an optional legal-recognition framework to an existing dCorps Entity or to a legally defined representation of it. It is not a current feature. Neither identity nor recognition creates the native Entity, owns its shares, or becomes its source of truth.
 
 During MAINNET-BETA, while the network remains in the dCorps Development management era, dCorps Development Ltd. intends to research, identify, and engage jurisdictions that may wish to become participating Smart Jurisdictions. Candidate identification or discussion does not establish participation, make a Smart Jurisdiction capability available, or confer legal recognition on any dCorps Entity. Those results require a jurisdiction-specific legal framework or agreement, reviewed technical and operating specifications, implementation, and activation evidence.
 
-The launch implementation is an EVM-compatible Arbitrum Rollup settling directly to Ethereum. The Rollup allows dCorps to become operational before an independent consensus network is technically and economically sustainable, but it is bootstrap architecture rather than the final destination. The chain is dCorps, applications are replaceable, user corporations control themselves, and protocol operations progress from DevCo bootstrap to independent Foundation stewardship and later public DCHUB governance. After Foundation Handover, the Foundation has a continuing mandate to preserve the operating network and lead the readiness-gated development of a sovereign dCorps Layer 1. DevCo remains involved through a disclosed long-term development and operations agreement, while Nicolas Turcotte's protected strategic role preserves the mission against speculative capture without becoming permanent technical control over the sovereign network.
+The launch implementation is an EVM-compatible Arbitrum Rollup settling directly to Ethereum. The Rollup allows dCorps to become operational before an independent consensus network is technically and economically sustainable, but it is bootstrap architecture rather than the final destination. The chain is dCorps, applications are replaceable, user corporations control themselves, and protocol operations progress from DevCo bootstrap to independent Foundation stewardship and later public DCORPS governance. After Foundation Handover, the Foundation has a continuing mandate to preserve the operating network and lead the readiness-gated development of a sovereign dCorps Layer 1. DevCo remains involved through a disclosed long-term development and operations agreement, while Nicolas Turcotte's protected strategic role preserves the mission against speculative capture without becoming permanent technical control over the sovereign network.
 
 ---
 
@@ -77,10 +77,10 @@ The Entity exists on dCorps because the blockchain created it. A country, applic
 | EntityID | The Entity's permanent identifier within the applicable dCorps continuity model |
 | Entity state | The Entity's current recorded ownership, rules, roles, accounts, and history |
 | Corporation rules | The versioned protocol rules shared by every dCorps corporation; a corporation's structure comes from its recorded state, not from a template or type |
-| Native dCorps share | A protocol-native unit of ownership and control inside one dCorps corporation; it is not automatically a statutory share under external law and is not equity in DevCo, the Foundation, or DCHUB |
+| Native dCorps share | A protocol-native unit of ownership and control inside one dCorps corporation; it is not automatically a statutory share under external law and is not equity in DevCo, the Foundation, or DCORPS |
 | Evidence anchor or commitment | A cryptographic fingerprint of information; it proves the fingerprint was recorded, not that every claim is true |
 | Governance | The rules and process used to propose and approve decisions |
-| DCHUB | The protocol-native gas asset used to pay dCorps transaction fees and, later, govern shared chain operations |
+| DCORPS | The protocol-native gas asset used to pay dCorps transaction fees and, later, govern shared chain operations |
 | Foundation | The independent institution that later stewards the shared dCorps network and leads the sovereign-L1 mission; it is not a kind of corporation created by dCorps |
 | Bridge | The system that represents an external asset, such as a stablecoin, on dCorps |
 | Full-bridge settlement | The normal path in which a supported stablecoin payment becomes canonical bridged USDC on dCorps before the Entity's authorized financial workflow executes |
@@ -105,7 +105,7 @@ The Entity exists on dCorps because the blockchain created it. A country, applic
 7. What the chain proves, what counts as evidence, and what stays private
 8. Treasury and payments
 9. Why dCorps uses its own blockchain
-10. DCHUB: paying for the chain and later governing shared operations
+10. DCORPS: paying for the chain and later governing shared operations
 11. Who controls what
 12. Protecting the chain, corporations, and history
 13. Adoption strategy and roadmap
@@ -113,7 +113,7 @@ The Entity exists on dCorps because the blockchain created it. A country, applic
 15. How dCorps differs from other systems
 16. Conclusion
 
-Sections 1 through 8 explain the product and the dCorps Entity model. Sections 9 through 12 explain the blockchain, DCHUB, control, and security. Sections 13 through 16 explain launch, risks, and differentiation. Exact software algorithms and legal instruments are deliberately outside this whitepaper.
+Sections 1 through 8 explain the product and the dCorps Entity model. Sections 9 through 12 explain the blockchain, DCORPS, control, and security. Sections 13 through 16 explain launch, risks, and differentiation. Exact software algorithms and legal instruments are deliberately outside this whitepaper.
 
 ---
 
@@ -130,8 +130,8 @@ The chain—not the official application—is dCorps. Applications, wallets, exp
 Control is divided into three understandable parts:
 
 1. **Each corporation controls itself:** its owners and authorized participants control its shares, rules, roles, accounts, and assets.
-2. **Shared chain operations are governed separately:** DevCo operates the Rollup first, the Foundation later, and eligible DCHUB holders may eventually govern listed operational matters. After handover, the Foundation is also responsible for carrying the network toward its sovereign Layer 1 mission.
-3. **The project keeps a protected direction during development and transition:** Nicolas Turcotte is the permanent historical Protocol Founder and initial Strategic Steward for dCorps identity, mission, core doctrine, DCHUB purpose, roadmap, and overall direction. This protection prevents speculative token governance from removing the Founder or redirecting the project while he builds it and helps the Foundation continue the mission. It does not provide unilateral control over a corporation, its assets, chain treasury spending, personnel, consensus, validation, or routine technical operations, and it is not infinite personal technical control over the final sovereign network.
+2. **Shared chain operations are governed separately:** DevCo operates the Rollup first, the Foundation later, and eligible DCORPS holders may eventually govern listed operational matters. After handover, the Foundation is also responsible for carrying the network toward its sovereign Layer 1 mission.
+3. **The project keeps a protected direction during development and transition:** Nicolas Turcotte is the permanent historical Protocol Founder and initial Strategic Steward for dCorps identity, mission, core doctrine, DCORPS purpose, roadmap, and overall direction. This protection prevents speculative token governance from removing the Founder or redirecting the project while he builds it and helps the Foundation continue the mission. It does not provide unilateral control over a corporation, its assets, chain treasury spending, personnel, consensus, validation, or routine technical operations, and it is not infinite personal technical control over the final sovereign network.
 
 During the Rollup phase, this is not described as complete decentralization. The purpose is to protect the mission during development, decentralize shared operations over time, keep every dCorps corporation under its own control, and ultimately establish a sovereign network that no Founder, DevCo, Foundation, parent chain, provider, or administrative controller can unilaterally shut down.
 
@@ -144,9 +144,9 @@ During the Rollup phase, this is not described as complete decentralization. The
 | Bootstrap execution | EVM-compatible Arbitrum Rollup |
 | Bootstrap settlement and parent data availability | Ethereum |
 | Launch validation | Permissioned BoLD with disclosed validators |
-| Native gas | DCHUB |
+| Native gas | DCORPS |
 | Commerce assets | One canonical bridged-USDC launch representation designed to conform to Circle's Bridged USDC Standard; possible later Circle-issued native USDC requires Circle's independent approval and implementation; both remain external assets under disclosed issuer, bridge, liquidity, and control assumptions |
-| Maximum DCHUB issuance | 1,000,000,000 |
+| Maximum DCORPS issuance | 1,000,000,000 |
 | Entity model | One universal modular dCorps Entity model whose digital-corporation structure is shaped by recorded state and authorized workflows, not templates, legal forms, or protocol types |
 | Workflow requirements | Supported workflows define common authorization, transition, event, evidence, privacy, failure, and reconstruction requirements across every interface |
 | Access surfaces | Official web and mobile applications, managed REST API, SDKs, direct RPC, published contract ABIs, wallets, explorers, and conforming third-party systems |
@@ -163,12 +163,12 @@ During the Rollup phase, this is not described as complete decentralization. The
 | Bootstrap operator | dCorps Development Ltd. (BVI) |
 | MAINNET-BETA trust boundary | dCorps Development manages the network and controls disclosed Arbitrum chain-upgrade authority; mitigations reduce but do not eliminate that power during beta |
 | MAINNET-BETA operating objective | Demonstrate security, real Entity use, adoption, provider integration, and commercial viability under bounded DevCo management before institutional handover |
-| MAINNET-BETA DCHUB posture | Real DCHUB is used as native gas through capped, purpose-bound beta provisioning; DevCo conducts no public sale, broad public or community distribution, public-liquidity program, or binding DCHUB governance |
+| MAINNET-BETA DCORPS posture | Real DCORPS is used as native gas through capped, purpose-bound beta provisioning; DevCo conducts no public sale, broad public or community distribution, public-liquidity program, or binding DCORPS governance |
 | MAINNET-BETA Smart Jurisdiction objective | Identify and engage potential future participating jurisdictions without presenting the framework as active or any candidate as participating |
 | Institutional transition | Same-Rollup Foundation Handover only after every applicable Section 11.2 gate is satisfied, the Foundation's governing instruments impose the sovereign-L1 mission, and the continuing DevCo agreement is effective |
 | Long-term network mission | A sovereign dCorps Layer 1, launched only after separately reviewed technical, security, economic, and continuity readiness |
 | Public distribution | Separate, conditional, post-Handover Foundation activation, including up to 7% public sale and 3% community distribution; it may occur on the operating Rollup when justified and permitted or remain deferred while other resources suffice |
-| Public governance | Later delegated, linear DCHUB voting for listed operational surfaces |
+| Public governance | Later delegated, linear DCORPS voting for listed operational surfaces |
 | Strategic direction | Nicolas Turcotte as permanent historical Founder and initial Strategic Steward, with protected anti-capture authority during development and transition, a required continuity and transition framework, and no permanent technical control |
 | Decentralization claim | DevCo-operated bootstrap, progressive operational decentralization, corporation autonomy, and a mandatory sovereign-L1 destination |
 
@@ -281,7 +281,7 @@ The website, the Hub, wallets, and corporate-management applications are interfa
 
 This allows applications to compete without splitting the corporation into separate records. A company can leave the official application and use another interface without creating a new corporation.
 
-The official web and mobile applications, managed REST API, SDKs, direct RPC access, published contract ABIs, wallets, explorers, and conforming third-party systems are interfaces to the same protocol. Every canonical corporation operation exposed through an official application must be executable through the documented REST API and SDK and by an independently built client using direct RPC and the published ABIs. Each interface applies the same active corporation rules, account authorization, required signatures, canonical state transitions, evidence semantics, and DCHUB transaction-fee requirements. An API credential controls access to a managed service. Transaction submission requires DCHUB gas paid by the user or a disclosed sponsor. Neither mechanism grants authority inside a corporation. No official application, API operator, or integration receives a private protocol capability or privileged state-transition path.
+The official web and mobile applications, managed REST API, SDKs, direct RPC access, published contract ABIs, wallets, explorers, and conforming third-party systems are interfaces to the same protocol. Every canonical corporation operation exposed through an official application must be executable through the documented REST API and SDK and by an independently built client using direct RPC and the published ABIs. Each interface applies the same active corporation rules, account authorization, required signatures, canonical state transitions, evidence semantics, and DCORPS transaction-fee requirements. An API credential controls access to a managed service. Transaction submission requires DCORPS gas paid by the user or a disclosed sponsor. Neither mechanism grants authority inside a corporation. No official application, API operator, or integration receives a private protocol capability or privileged state-transition path.
 
 Capability parity applies to canonical protocol operations and reconstructible canonical state. Hosted indexing, queries, notifications, orchestration, batching, encrypted storage, reports, transaction-sponsorship administration, support, and service levels are provider services. Providers may package and charge for those services. A managed-service restriction cannot restrict documented SDK, direct RPC, published-ABI, or independently built conforming access to the protocol.
 
@@ -345,11 +345,11 @@ Mistakes remain correctable without erasing accountability. The original accepte
 
 ### 3.4 Trust must be visible, and shared operations decentralize over time
 
-The dCorps chain still depends on sequencers, validators, bridges, upgrades, price feeds, archives, providers, and governance. Those dependencies must be published in terms users can understand. The network begins as a Rollup under accountable DevCo operation, transitions to an independent Foundation on the same Rollup, and can later activate public DCHUB operational governance after measurable readiness conditions are met. Foundation Handover also begins the Foundation's mandatory responsibility to preserve that operating network while leading dCorps toward a sovereign Layer 1. Handover cannot occur until that responsibility is imposed by the Foundation's governing instruments. The operating controllers and eventually the network architecture can change while every corporation's identity and history continue under an explicitly adopted continuity design.
+The dCorps chain still depends on sequencers, validators, bridges, upgrades, price feeds, archives, providers, and governance. Those dependencies must be published in terms users can understand. The network begins as a Rollup under accountable DevCo operation, transitions to an independent Foundation on the same Rollup, and can later activate public DCORPS operational governance after measurable readiness conditions are met. Foundation Handover also begins the Foundation's mandatory responsibility to preserve that operating network while leading dCorps toward a sovereign Layer 1. Handover cannot occur until that responsibility is imposed by the Foundation's governing instruments. The operating controllers and eventually the network architecture can change while every corporation's identity and history continue under an explicitly adopted continuity design.
 
 ### 3.5 Founder direction and operational control remain separate
 
-The Protocol Founder protects the mission, doctrine, identity, DCHUB purpose, roadmap, and overall strategic direction of dCorps while building the project and helping the Foundation continue that mission. Normal protocol operations become institutionally and publicly governable, and user corporations remain under their own control. The strategic role protects against speculative takeover; it is not a treasury key, consensus key, validator key, infrastructure key, shutdown power, or hidden power over user corporations. Its continuation and eventual transition are governed separately from the permanent historical attribution of Nicolas Turcotte as Protocol Founder.
+The Protocol Founder protects the mission, doctrine, identity, DCORPS purpose, roadmap, and overall strategic direction of dCorps while building the project and helping the Foundation continue that mission. Normal protocol operations become institutionally and publicly governable, and user corporations remain under their own control. The strategic role protects against speculative takeover; it is not a treasury key, consensus key, validator key, infrastructure key, shutdown power, or hidden power over user corporations. Its continuation and eventual transition are governed separately from the permanent historical attribution of Nicolas Turcotte as Protocol Founder.
 
 ---
 
@@ -361,7 +361,7 @@ The initial dCorps Ethereum Rollup receives one permanent network identifier whe
 
 The identifier is then stored in the Rollup's initial state. Contract upgrades within that network do not change its identifier. They must point back to the original deployment and publish a verifiable link between old and new contracts. The Protocol Specification contains the exact hashing and encoding method.
 
-The network identifier, continuing dCorps project identity, and each Entity's `EntityID` are different things. The required long-term sovereign dCorps Layer 1 will be a new network deployment with a new network identifier; the Rollup cannot simply be renamed or treated as though it became an L1 in place. This whitepaper establishes the mission rather than a premature transition mechanism. Before L1 launch, a separately reviewed continuity design must preserve exact DCHUB economic supply, holder positions, Entity identity, authorized Entity state, replay protection, and permanent linkage to the final Ethereum-confirmed Rollup state. The new network cannot silently present itself as the original Rollup deployment.
+The network identifier, continuing dCorps project identity, and each Entity's `EntityID` are different things. The required long-term sovereign dCorps Layer 1 will be a new network deployment with a new network identifier; the Rollup cannot simply be renamed or treated as though it became an L1 in place. This whitepaper establishes the mission rather than a premature transition mechanism. Before L1 launch, a separately reviewed continuity design must preserve exact DCORPS economic supply, holder positions, Entity identity, authorized Entity state, replay protection, and permanent linkage to the final Ethereum-confirmed Rollup state. The new network cannot silently present itself as the original Rollup deployment.
 
 ### 4.2 One permanent identity for each dCorps Entity
 
@@ -433,7 +433,7 @@ dCorps keeps four questions separate: Who owns the shares? Who may approve this 
 
 A native share is owned by the blockchain account shown in the official dCorps share ledger. Each share class can have its own rights for voting, information, payments, conversion, transfer, or closure of the corporation.
 
-A **native dCorps share** is a protocol-native unit of ownership and control inside one dCorps corporation. It is not automatically a statutory share created under an external jurisdiction and is not equity in dCorps, DevCo, the Foundation, or DCHUB. External recognition may attach later without becoming the source of native ownership.
+A **native dCorps share** is a protocol-native unit of ownership and control inside one dCorps corporation. It is not automatically a statutory share created under an external jurisdiction and is not equity in dCorps, DevCo, the Foundation, or DCORPS. External recognition may attach later without becoming the source of native ownership.
 
 This is ownership inside dCorps. A certificate, DID, application database, spreadsheet, Smart Jurisdiction, or government registry is not required to make the share exist. Future identity and legal services may describe or recognize the share, but they do not become the dCorps share ledger.
 
@@ -591,7 +591,7 @@ Recovery is an owner choice, not a protocol master power. An owner may select an
 
 A compromised key can authorize a malicious action if the account and corporation rules provide no protection. Native transfer delays, smart-account recovery, corporation-approved freezes, and challenge rules may prevent or reverse current effect only when the owner accepted those protections before the incident and the predetermined on-chain transition authorizes the result. They do not erase the original transaction, and no external paper record directly rewrites the ledger. If a malicious transfer reaches final native effect under the configured rules, the canonical owner changes; the protocol does not pretend otherwise.
 
-Native shares are not DCHUB. They grant rights only inside their corporation and never create dCorps protocol-governance power.
+Native shares are not DCORPS. They grant rights only inside their corporation and never create dCorps protocol-governance power.
 
 ### 6.5 Future optional DID identity
 
@@ -756,7 +756,7 @@ Future privacy tools may prove a specific fact without revealing all underlying 
 
 dCorps is designed to give a newly created digital corporation stablecoin-centered financial operating capacity without making dCorps the permanent vault for every corporation's capital. The Entity can designate merchant, operating, payroll, reserve, capital, and treasury accounts; authorize payment and allocation workflows; execute supported stablecoin operations; and preserve the relationship among corporate authority, asset execution, balance location, and evidence.
 
-Stablecoins are not protocol-native dCorps assets. DCHUB is the protocol-native gas asset. The launch target uses one canonical bridged-USDC representation designed from deployment to conform to Circle's Bridged USDC Standard. The representation remains subject to the USDC issuer, its backing, the primary bridge, Ethereum, the dCorps Rollup, token contracts, administrative authority, finality, liquidity, withdrawal, and escape assumptions. Exact contracts, operators, supported ingress networks, routes, limits, and production status belong in separately reviewed disclosures.
+Stablecoins are not protocol-native dCorps assets. DCORPS is the protocol-native gas asset. The launch target uses one canonical bridged-USDC representation designed from deployment to conform to Circle's Bridged USDC Standard. The representation remains subject to the USDC issuer, its backing, the primary bridge, Ethereum, the dCorps Rollup, token contracts, administrative authority, finality, liquidity, withdrawal, and escape assumptions. Exact contracts, operators, supported ingress networks, routes, limits, and production status belong in separately reviewed disclosures.
 
 Possible later Circle-issued native USDC on dCorps is a strategic objective, not a current feature or guarantee. It requires Circle's independent approval, agreement, due diligence, technical participation, issuance, redemption, administration, compliance, liquidity, and migration decisions. dCorps does not issue USDC. A separately proposed dCorps-issued stablecoin would be a different asset and is not adopted by V1.0.
 
@@ -866,11 +866,11 @@ A database can store company records, and digital signatures can prove who signe
 | Corporate software service | Easy workflow and low technical burden | The provider controls the database and can become a permanent dependency | Low |
 | Signed private files | Proves signatures and allows private sharing | Does not provide one shared, continuously ordered corporation history | Low to medium |
 | dCorps contracts on an existing Ethereum L2 | Shared dCorps rules and application independence without operating a new chain | The host chain controls gas, upgrades, congestion, sequencing, and other chain policies | Medium |
-| A dedicated dCorps Rollup | Adds native DCHUB gas and dCorps control of chain fees, upgrades, validators, sequencing, blockspace, and archival policy | Adds bridge, operator, security, cost, liquidity, and maintenance risks | High |
+| A dedicated dCorps Rollup | Adds native DCORPS gas and dCorps control of chain fees, upgrades, validators, sequencing, blockspace, and archival policy | Adds bridge, operator, security, cost, liquidity, and maintenance risks | High |
 
 Many dCorps features could work as smart contracts on an existing chain. A dedicated dCorps chain is justified only if the added control and independence are worth the cost and risk:
 
-- DCHUB must function as native gas rather than only an application token;
+- DCORPS must function as native gas rather than only an application token;
 - dCorps must govern chain-level fees, upgrades, validator posture, sequencer and batch-poster appointments, bridge administration, and archival policy;
 - dedicated blockspace and corporation-state operating guarantees must materially improve reliability or product design;
 - one chain-level migration and authority model must be preferable to dependence on a host L2's fee asset, governance, congestion, upgrade choices, and product priorities; and
@@ -879,11 +879,11 @@ Many dCorps features could work as smart contracts on an existing chain. A dedic
 Before Rollup launch, an independently reviewable comparison must evaluate the dedicated Rollup against the canonical-contract alternative using at least:
 
 - projected deployment, Ethereum settlement, sequencing, validation, bridge, archive, RPC, security, staffing, and governance costs;
-- ETH working-capital requirements and DCHUB pricer and liquidity stress;
+- ETH working-capital requirements and DCORPS pricer and liquidity stress;
 - host-L2 gas, congestion, governance, upgrade, censorship, and dependency risks;
 - the security impact of introducing a new bridge, operator set, upgrade surface, gas asset, and validator policy;
 - expected corporation demand, transaction volume, revenue, runway, and break-even conditions; and
-- the measurable value of native DCHUB gas, dedicated blockspace, and dCorps-controlled chain authorities.
+- the measurable value of native DCORPS gas, dedicated blockspace, and dCorps-controlled chain authorities.
 
 The comparison, assumptions, sensitivity ranges, reviewers, and decision must be published before Rollup launch. If the dedicated Rollup does not demonstrate sufficient economic viability and security, launch must wait while the design is improved. Any decision to abandon the dedicated-chain model would require a different whitepaper and a new project architecture; it cannot be presented as this V1.0 design. Independent review can stop launch, but it cannot silently redefine dCorps.
 
@@ -905,7 +905,7 @@ flowchart LR
 
 Transactions execute in the child environment. Compressed transaction data is posted to Ethereum. State assertions are resolved through the deployed Rollup and dispute system. Ethereum settlement does not eliminate child-chain assumptions: the sequencer, batch poster, validators, chain owners, Upgrade Executors, bridge, pricer, archives, governance, and implementation remain material trust and failure surfaces.
 
-The production configuration must be published in a versioned Network Disclosure containing exact contract addresses, software releases and implementation hashes, challenge and force-inclusion parameters, validator posture, sequencing policy, gas-token and pricer contracts, bridge and upgrade roles, cost and fee routing, the canonical DCHUB supply and burn mechanism used for that deployment, archive configuration, and current operators. A whitepaper describes the design; the disclosure identifies the deployed facts.
+The production configuration must be published in a versioned Network Disclosure containing exact contract addresses, software releases and implementation hashes, challenge and force-inclusion parameters, validator posture, sequencing policy, gas-token and pricer contracts, bridge and upgrade roles, cost and fee routing, the canonical DCORPS supply and burn mechanism used for that deployment, archive configuration, and current operators. A whitepaper describes the design; the disclosure identifies the deployed facts.
 
 ### 9.3 Ethereum settlement and the remaining dCorps responsibilities
 
@@ -919,7 +919,7 @@ Interfaces must distinguish received, sequenced, posted to Ethereum, challenge-p
 
 The target launch uses BoLD with permissioned validation. Current [Arbitrum BoLD guidance](https://docs.arbitrum.io/launch-arbitrum-chain/chain-config/validation/bold) recommends that Arbitrum chains adopt BoLD's dispute-system improvements while keeping validation permissioned because permissionless configurations create bond, challenge, resource-exhaustion, liveness, and infrastructure risks that must be calibrated for each chain.
 
-At launch, the validator allowlist remains enabled. The Network Disclosure identifies the validators, their independence, rotation and monitoring arrangements, challenge funding, and incident procedures. The exact Nitro node and contract versions require independent review. DCHUB is not the BoLD bonding asset in this configuration, so launch security is described as permissioned Rollup validation rather than permissionless, token-secured consensus.
+At launch, the validator allowlist remains enabled. The Network Disclosure identifies the validators, their independence, rotation and monitoring arrangements, challenge funding, and incident procedures. The exact Nitro node and contract versions require independent review. DCORPS is not the BoLD bonding asset in this configuration, so launch security is described as permissioned Rollup validation rather than permissionless, token-secured consensus.
 
 Permissionless validation is a possible later milestone for the Rollup, not a launch assumption. It requires an independently reviewed bond model, liquid and price-appropriate bonding asset, adversarial tests, challenge infrastructure, monitoring, defense resources, and a governed upgrade based on then-current Arbitrum guidance. The sovereign dCorps Layer 1 has a different requirement: its final operating design must support independent, permissionless participation and must not depend on a DevCo, Foundation, Founder, or provider allowlist for continued consensus.
 
@@ -927,9 +927,9 @@ Permissionless validation is a possible later milestone for the Rollup, not a la
 
 The sequencer provides fast transaction ordering and soft confirmations. A soft sequencer confirmation is not sufficient authorization for an irreversible external payment, asset transfer, filing, or other execution. The corporation's execution policy must require the disclosed Ethereum-posting, challenge, confirmation, or finality state appropriate to the consequence and must expose reorg, invalidation, and challenge assumptions.
 
-If the sequencer is unavailable or censoring, a user with the required child-chain DCHUB and parent-chain ETH can submit through the configured Ethereum Delayed Inbox and invoke force inclusion after the disclosed delay. Force inclusion therefore reduces sequencer dependence but does not remove gas-asset, Ethereum-access, bridge, contract, or configuration dependencies.
+If the sequencer is unavailable or censoring, a user with the required child-chain DCORPS and parent-chain ETH can submit through the configured Ethereum Delayed Inbox and invoke force inclusion after the disclosed delay. Force inclusion therefore reduces sequencer dependence but does not remove gas-asset, Ethereum-access, bridge, contract, or configuration dependencies.
 
-During MAINNET-BETA, public DCHUB distribution is disabled. Before a corporation is admitted, its designated transaction accounts receive or escrow a disclosed minimum beta gas balance sized against a stressed transaction bundle, including corporation recovery and delayed-inbox use; the corporation is shown how to monitor and replenish that balance. Any DCHUB transferred for this purpose comes from the fixed 500,000-DCHUB gas-onboarding sub-cap inside the community allocation, reduces that sub-cap and all later applicable release ceilings one-for-one, remains purpose-bound and governance-ineligible, and is publicly reconciled. Limited beta gas provisioning is not a public token-distribution event. Beta users may also use disclosed sponsored-transaction services, but sponsorship is not treated as operator-independent censorship resistance. A participant that holds enough DCHUB for child execution and enough ETH for parent submission can use the Delayed Inbox without DevCo transmitting the transaction. A participant that depends on DevCo to obtain DCHUB, ETH, a signature, or message construction does not have that independent path.
+During MAINNET-BETA, public DCORPS distribution is disabled. Before a corporation is admitted, its designated transaction accounts receive or escrow a disclosed minimum beta gas balance sized against a stressed transaction bundle, including corporation recovery and delayed-inbox use; the corporation is shown how to monitor and replenish that balance. Any DCORPS transferred for this purpose comes from the fixed 500,000-DCORPS gas-onboarding sub-cap inside the community allocation, reduces that sub-cap and all later applicable release ceilings one-for-one, remains purpose-bound and governance-ineligible, and is publicly reconciled. Limited beta gas provisioning is not a public token-distribution event. Beta users may also use disclosed sponsored-transaction services, but sponsorship is not treated as operator-independent censorship resistance. A participant that holds enough DCORPS for child execution and enough ETH for parent submission can use the Delayed Inbox without DevCo transmitting the transaction. A participant that depends on DevCo to obtain DCORPS, ETH, a signature, or message construction does not have that independent path.
 
 Accordingly, MAINNET-BETA makes only a qualified claim: already provisioned and technically capable participants can exercise the configured escape path. dCorps does not claim open, universal, operator-independent censorship resistance until public gas access, independent tooling, and successful non-DevCo force-inclusion tests exist.
 
@@ -969,13 +969,13 @@ That application-level protection is not absolute during MAINNET-BETA. DevCo con
 
 Before production reliance, dCorps must provide a corporation-specific Ethereum continuity path. A corporation acting under its own rules must be able to prove and register its last finalized dCorps state, prevent duplicate use of the same export, and select or accept a destination without cooperation from the sequencer, DevCo, Foundation, or official application. The same continuity design must permit withdrawal or recovery of the corporation's canonical bridged-USDC balance under the last valid asset and account state without creating a competing representation or duplicate claim. The Ethereum continuity mechanism cannot be controlled by the same unrestricted authority against which it protects and cannot require a privileged dCorps signer.
 
-After Governance Activation on the Rollup, eligible DCHUB operational governance can control the listed network authorities. A decision begins in the dCorps governance contract, waits through its safety delay, travels through the official dCorps-to-Ethereum message bridge, waits through the Ethereum safety delay, and then reaches the contract authorized to perform the parent-chain action.
+After Governance Activation on the Rollup, eligible DCORPS operational governance can control the listed network authorities. A decision begins in the dCorps governance contract, waits through its safety delay, travels through the official dCorps-to-Ethereum message bridge, waits through the Ethereum safety delay, and then reaches the contract authorized to perform the parent-chain action.
 
 Every cross-layer action binds the chain identity, proposal, target, value, payload, nonce, expiry, scope, and applicable authorization. Replay, payload mismatch, cancellation, and expiry are checked before execution. The detailed message format and legal implementation belong in the Protocol Specification and Governance Charter, not in this whitepaper.
 
 The Rollup-phase target is to revoke or provably constrain every generic DevCo and Foundation upgrade power so that reviewed protocol evolution remains possible without any administrator gaining unilateral authority over finalized corporation ownership. That hardening is required even though the Rollup is not the final architecture.
 
-The long-term mission is a sovereign dCorps Layer 1 that no Ethereum or Arbitrum dependency, Founder, DevCo, Foundation, provider, or administrative controller can unilaterally stop or rewrite. Foundation Handover is prohibited until the Foundation's governing instruments make development of that network a mandatory institutional responsibility. Launch remains readiness-gated: the Foundation must not call a network sovereign until its consensus, validator participation, security, economics, DCHUB continuity, corporation continuity, historical reconstruction, and operating independence have passed separately published review. Readiness can delay launch; it cannot convert the sovereign-L1 mission back into an optional architecture.
+The long-term mission is a sovereign dCorps Layer 1 that no Ethereum or Arbitrum dependency, Founder, DevCo, Foundation, provider, or administrative controller can unilaterally stop or rewrite. Foundation Handover is prohibited until the Foundation's governing instruments make development of that network a mandatory institutional responsibility. Launch remains readiness-gated: the Foundation must not call a network sovereign until its consensus, validator participation, security, economics, DCORPS continuity, corporation continuity, historical reconstruction, and operating independence have passed separately published review. Readiness can delay launch; it cannot convert the sovereign-L1 mission back into an optional architecture.
 
 ### 9.8 The corporation survives an application failure
 
@@ -989,11 +989,11 @@ Application replacement covers writes as well as reads. A conforming replacement
 
 ---
 
-## 10. DCHUB: paying for the chain and later governing shared operations
+## 10. DCORPS: paying for the chain and later governing shared operations
 
-### 10.1 Why DCHUB exists
+### 10.1 Why DCORPS exists
 
-dCorps needs a credible transition from privately operated infrastructure to public operational participation. DCHUB serves first as the native gas asset used to price execution, reimburse network operation, and fund a controlled usage-linked protocol burn after verified costs and obligations are covered. Later, after public distribution and the required electorate, security, and readiness conditions exist, eligible DCHUB can also govern defined areas of shared protocol operation.
+dCorps needs a credible transition from privately operated infrastructure to public operational participation. DCORPS serves first as the native gas asset used to price execution, reimburse network operation, and fund a controlled usage-linked protocol burn after verified costs and obligations are covered. Later, after public distribution and the required electorate, security, and readiness conditions exist, eligible DCORPS can also govern defined areas of shared protocol operation.
 
 The alternatives are legitimate but serve a different architecture.
 
@@ -1003,33 +1003,33 @@ The alternatives are legitimate but serve a different architecture.
 | ETH gas plus separate governance token | Separates gas volatility from voting | Creates two assets and disconnects governance from ordinary network use |
 | Stablecoin gas with institutional governance | Predictable nominal fees | Adds issuer, freeze, censorship, reserve, and depeg dependencies while governance remains institutional |
 | Stablecoin gas plus governance token | Stable fees and public voting | Retains issuer dependence and two-token complexity |
-| DCHUB gas and DCHUB governance | One asset connects network use, public distribution, and eventual operational control | Creates volatility, liquidity, pricer, concentration, regulatory, and bootstrap risks |
+| DCORPS gas and DCORPS governance | One asset connects network use, public distribution, and eventual operational control | Creates volatility, liquidity, pricer, concentration, regulatory, and bootstrap risks |
 
-DCHUB is selected because dCorps intends to make its shared operational infrastructure publicly governable—not because every Rollup needs a token.
+DCORPS is selected because dCorps intends to make its shared operational infrastructure publicly governable—not because every Rollup needs a token.
 
-If independent review concludes that a custom DCHUB gas asset is unsafe or unjustified, dCorps should not launch under this architecture. It should publish a successor design rather than quietly substituting ETH, a stablecoin, or another governance model while retaining the same claims.
+If independent review concludes that a custom DCORPS gas asset is unsafe or unjustified, dCorps should not launch under this architecture. It should publish a successor design rather than quietly substituting ETH, a stablecoin, or another governance model while retaining the same claims.
 
-### 10.2 DCHUB, corporation shares, and operating assets remain separate
+### 10.2 DCORPS, corporation shares, and operating assets remain separate
 
-DCHUB belongs to the shared dCorps network, while native corporation shares belong to one specific user corporation. Holding DCHUB therefore creates no ownership, dividend, redemption, or asset claim against a user corporation, DevCo, the Foundation, or the Protocol Treasury. It also leaves each corporation's internal governance under that corporation's own share and decision rules.
+DCORPS belongs to the shared dCorps network, while native corporation shares belong to one specific user corporation. Holding DCORPS therefore creates no ownership, dividend, redemption, or asset claim against a user corporation, DevCo, the Foundation, or the Protocol Treasury. It also leaves each corporation's internal governance under that corporation's own share and decision rules.
 
-At launch, DCHUB pays gas but does not secure BoLD consensus or make validation permissionless. Its later governance authority applies only to the disclosed operational surfaces of the dCorps network. User assets remain under user-corporation control, and the protected strategic identity of dCorps remains under the stewardship model described in Section 11. Corporation shares, DCHUB, and operating assets such as bridged stablecoins are three separate forms of value with three separate authority systems.
+At launch, DCORPS pays gas but does not secure BoLD consensus or make validation permissionless. Its later governance authority applies only to the disclosed operational surfaces of the dCorps network. User assets remain under user-corporation control, and the protected strategic identity of dCorps remains under the stewardship model described in Section 11. Corporation shares, DCORPS, and operating assets such as bridged stablecoins are three separate forms of value with three separate authority systems.
 
 ### 10.3 Fixed supply
 
-The maximum number of DCHUB that can ever be issued is **1,000,000,000**.
+The maximum number of DCORPS that can ever be issued is **1,000,000,000**.
 
-At Rollup launch, DCHUB is introduced on the dCorps Arbitrum Rollup and used there as the native gas asset. DCHUB must continue as the same economic asset when the sovereign L1 launches. Native balances or contracts created for the L1 are a technical successor representation of those same economic units, not an independent mint or a second DCHUB supply. V1.0 does not decide whether the word **Genesis** applies to the Rollup activation or to the later sovereign-L1 launch, and it does not prematurely select the final issuance, custody, bridge, lock, burn, or transition mechanism.
+At Rollup launch, DCORPS is introduced on the dCorps Arbitrum Rollup and used there as the native gas asset. DCORPS must continue as the same economic asset when the sovereign L1 launches. Native balances or contracts created for the L1 are a technical successor representation of those same economic units, not an independent mint or a second DCORPS supply. V1.0 does not decide whether the word **Genesis** applies to the Rollup activation or to the later sovereign-L1 launch, and it does not prematurely select the final issuance, custody, bridge, lock, burn, or transition mechanism.
 
-Before DCHUB is activated on the Rollup, the independently reviewed Token Specification and Network Disclosure must identify the canonical contracts and supply ledger used during that phase, every mint or activation authority, all custody and bridge relationships, and the controls that enforce the fixed cap. Before the sovereign L1 launches, the Foundation must publish and independently validate a continuity design that carries the same DCHUB economic supply onto the L1 without creating a second asset or duplicate claim. It must preserve every holder position, the Founder's 15 percent allocation, all other allocations, vesting and release conditions, cumulative burns, custody restrictions, and governance status.
+Before DCORPS is activated on the Rollup, the independently reviewed Token Specification and Network Disclosure must identify the canonical contracts and supply ledger used during that phase, every mint or activation authority, all custody and bridge relationships, and the controls that enforce the fixed cap. Before the sovereign L1 launches, the Foundation must publish and independently validate a continuity design that carries the same DCORPS economic supply onto the L1 without creating a second asset or duplicate claim. It must preserve every holder position, the Founder's 15 percent allocation, all other allocations, vesting and release conditions, cumulative burns, custody restrictions, and governance status.
 
 Supply reports keep three facts separate:
 
-1. **Historical issuance** is every unit of canonical economic DCHUB ever activated under the authorized supply design. It can never exceed one billion.
+1. **Historical issuance** is every unit of canonical economic DCORPS ever activated under the authorized supply design. It can never exceed one billion.
 2. **Outstanding supply** is historical issuance minus tokens that were permanently and verifiably burned.
-3. **Location** shows where each part of outstanding DCHUB is canonically held or represented without counting the same economic unit twice.
+3. **Location** shows where each part of outstanding DCORPS is canonically held or represented without counting the same economic unit twice.
 
-Any canonical contract, escrow, bridged representation, or successor-network representation of the same DCHUB unit is one economic quantity, not additive supply. A reversible lock, inaccessible wallet, lost key, governance promise, or unretired representation is not a burn. The exact Rollup and L1 mechanisms remain technical decisions for the separately reviewed specifications, but their combined simultaneously spendable supply can never exceed the remaining fixed cap.
+Any canonical contract, escrow, bridged representation, or successor-network representation of the same DCORPS unit is one economic quantity, not additive supply. A reversible lock, inaccessible wallet, lost key, governance promise, or unretired representation is not a burn. The exact Rollup and L1 mechanisms remain technical decisions for the separately reviewed specifications, but their combined simultaneously spendable supply can never exceed the remaining fixed cap.
 
 ### 10.4 What the supply words mean
 
@@ -1037,23 +1037,23 @@ The following terms describe different states and must not be used interchangeab
 
 | Term | Meaning in this whitepaper |
 | --- | --- |
-| **Issued supply** | Cumulative canonical economic DCHUB activated under the authorized supply design. It can never exceed 1,000,000,000. A bridged or verified successor-network representation of the same units is not new economic issuance. |
+| **Issued supply** | Cumulative canonical economic DCORPS activated under the authorized supply design. It can never exceed 1,000,000,000. A bridged or verified successor-network representation of the same units is not new economic issuance. |
 | **Outstanding supply** | Issued supply minus cumulative, cryptographically verified irreversible burns. Locks, lost keys, bridge escrow, and promises not to use tokens are not burns. |
-| **Allocated supply** | Outstanding DCHUB assigned to a disclosed allocation category or sub-budget. Allocation does not mean vested, released, circulating, or governance-eligible. |
-| **Vested supply** | The portion of a time-based Founder, contributor, or private-reserve grant whose contractual time condition has been satisfied. Vested DCHUB may remain locked and non-circulating. |
-| **Released supply** | DCHUB permitted to leave its vesting or purpose-bound release contract for the authorized recipient or use. Bridge movement without a change in economic custody is not a release. |
-| **Circulating supply** | Outstanding DCHUB that is transferable and held outside unvested, purpose-bound, and protocol-controlled custody, counting every bridged or successor-network representation of one economic unit only once. Circulation does not by itself create voting rights. |
-| **Purpose-bound supply** | DCHUB reserved for a stated program, budget, or use and subject to its allocation purpose, release ceiling, disclosure, and conflict rules. |
-| **Protocol-controlled supply** | DCHUB whose disposition remains controlled by a DevCo, Foundation, treasury, timelock, vesting, program, or liquidity mandate rather than by an unrestricted recipient. |
-| **Governance-eligible supply** | Released DCHUB that satisfies the applicable custody, holding-age, grant-quarantine, delegation, conflict, one-layer-voting, and snapshot rules and is not otherwise excluded. |
+| **Allocated supply** | Outstanding DCORPS assigned to a disclosed allocation category or sub-budget. Allocation does not mean vested, released, circulating, or governance-eligible. |
+| **Vested supply** | The portion of a time-based Founder, contributor, or private-reserve grant whose contractual time condition has been satisfied. Vested DCORPS may remain locked and non-circulating. |
+| **Released supply** | DCORPS permitted to leave its vesting or purpose-bound release contract for the authorized recipient or use. Bridge movement without a change in economic custody is not a release. |
+| **Circulating supply** | Outstanding DCORPS that is transferable and held outside unvested, purpose-bound, and protocol-controlled custody, counting every bridged or successor-network representation of one economic unit only once. Circulation does not by itself create voting rights. |
+| **Purpose-bound supply** | DCORPS reserved for a stated program, budget, or use and subject to its allocation purpose, release ceiling, disclosure, and conflict rules. |
+| **Protocol-controlled supply** | DCORPS whose disposition remains controlled by a DevCo, Foundation, treasury, timelock, vesting, program, or liquidity mandate rather than by an unrestricted recipient. |
+| **Governance-eligible supply** | Released DCORPS that satisfies the applicable custody, holding-age, grant-quarantine, delegation, conflict, one-layer-voting, and snapshot rules and is not otherwise excluded. |
 | **Vault-locked supply** | Candidate governance units locked in the child-chain Governance Vault for the required period. Vault locking is necessary but not sufficient for governance eligibility. |
-| **Effective voting supply** | Total governance-eligible DCHUB self-delegated or delegated at a proposal snapshot after all exclusions are applied and duplicate cross-network or custodial representations are removed. One eligible DCHUB contributes one vote. This is the denominator used for protocol quorums and affirmative-support floors. |
+| **Effective voting supply** | Total governance-eligible DCORPS self-delegated or delegated at a proposal snapshot after all exclusions are applied and duplicate cross-network or custodial representations are removed. One eligible DCORPS contributes one vote. This is the denominator used for protocol quorums and affirmative-support floors. |
 
 Every published supply report identifies the controlling deployment and snapshot, reconciles every canonical contract, custody location, bridge, and external representation relevant at that time, and prevents the same economic unit from being counted twice. Categories such as allocated, vested, and Vault-locked are attributes, not necessarily disjoint buckets; a reconciliation must therefore avoid adding overlapping quantities as though they were separate supplies.
 
 ### 10.5 Allocation
 
-| Allocation | Share | DCHUB | Purpose |
+| Allocation | Share | DCORPS | Purpose |
 | --- | ---: | ---: | --- |
 | Founder | 15% | 150,000,000 | Long-term Founder alignment under extended vesting |
 | Core contributors | 8% | 80,000,000 | Protocol, product, security, and operating contributors |
@@ -1065,15 +1065,15 @@ Every published supply report identifies the controlling deployment and snapshot
 | Operational liquidity | 3% | 30,000,000 | Bounded gas and protocol usability after Distribution Activation |
 | **Total** | **100%** | **1,000,000,000** | |
 
-Every percentage in this allocation table is measured against the one-billion-DCHUB maximum supply. Later canonical burns reduce outstanding supply but do not change the original number of DCHUB assigned to an allocation.
+Every percentage in this allocation table is measured against the one-billion-DCORPS maximum supply. Later canonical burns reduce outstanding supply but do not change the original number of DCORPS assigned to an allocation.
 
-The 37 percent ecosystem allocation contains a 7 percent public-sale allocation and a 3 percent community-distribution allocation. They are carved from the existing 37 percent and do not reduce or dilute the Founder's 15 percent allocation. The dedicated sovereign-L1 tooling budget inside the ecosystem allocation, the Foundation allocation, and recurring protocol revenue fund Rollup continuity and sovereign-L1 development first. After Foundation Handover, the Foundation may defer public distribution while those and other disclosed lawful resources remain sufficient. If those resources are insufficient, and the required legal, security, economic, and market-integrity reviews permit distribution, the Foundation must activate and manage the already allocated public sale under separately published terms, custody, permitted-use, reporting, eligibility, jurisdiction, pricing, claim, liquidity, risk, and market-integrity disclosures. Net sale proceeds remain purpose-bound to Rollup continuity and the mandatory sovereign-L1 program until the independently published mission budget is funded; DCHUB governance cannot redirect them. If a lawful sale is temporarily unavailable, the Foundation must preserve the Rollup and the L1 mandate while securing another disclosed lawful funding path. This whitepaper establishes the funding duty but is not an offer or sale document and does not itself activate a distribution. Unsold or unclaimed DCHUB remains locked, non-circulating, and non-voting under its original allocation. The private infrastructure reserve is conditional; unused reserve also remains locked, non-circulating, and non-voting.
+The 37 percent ecosystem allocation contains a 7 percent public-sale allocation and a 3 percent community-distribution allocation. They are carved from the existing 37 percent and do not reduce or dilute the Founder's 15 percent allocation. The dedicated sovereign-L1 tooling budget inside the ecosystem allocation, the Foundation allocation, and recurring protocol revenue fund Rollup continuity and sovereign-L1 development first. After Foundation Handover, the Foundation may defer public distribution while those and other disclosed lawful resources remain sufficient. If those resources are insufficient, and the required legal, security, economic, and market-integrity reviews permit distribution, the Foundation must activate and manage the already allocated public sale under separately published terms, custody, permitted-use, reporting, eligibility, jurisdiction, pricing, claim, liquidity, risk, and market-integrity disclosures. Net sale proceeds remain purpose-bound to Rollup continuity and the mandatory sovereign-L1 program until the independently published mission budget is funded; DCORPS governance cannot redirect them. If a lawful sale is temporarily unavailable, the Foundation must preserve the Rollup and the L1 mandate while securing another disclosed lawful funding path. This whitepaper establishes the funding duty but is not an offer or sale document and does not itself activate a distribution. Unsold or unclaimed DCORPS remains locked, non-circulating, and non-voting under its original allocation. The private infrastructure reserve is conditional; unused reserve also remains locked, non-circulating, and non-voting.
 
 ### 10.6 How the ecosystem budget is divided
 
 The 37 percent ecosystem allocation is itself bounded:
 
-| Program | Share of total supply | DCHUB |
+| Program | Share of total supply | DCORPS |
 | --- | ---: | ---: |
 | Security, audits, monitoring, and incident tooling | 7% | 70,000,000 |
 | Core protocol and sovereign-L1 tooling and developer grants | 10% | 100,000,000 |
@@ -1083,11 +1083,11 @@ The 37 percent ecosystem allocation is itself bounded:
 | Community, user, and builder distribution | 3% | 30,000,000 |
 | **Total** | **37%** | **370,000,000** |
 
-The public-sale allocation supports broad, transparent public access and, when required, finances the Foundation's continuing network and sovereign-L1 mandate. The community allocation supports actual users, builders, contributors, and bounded gas onboarding. It includes a fixed sub-cap of 500,000 DCHUB, or 0.05 percent of total supply, for gas-onboarding credits. Exact selection, anti-abuse, sale, claim, use-of-proceeds, custody, and distribution mechanics require separate disclosure before activation. Public-sale and broad community distributions are not recipient-specific grants and do not inherit a grant quarantine unless the published distribution terms expressly impose one; they still must satisfy the normal 90-day holding and Governance Vault rules before voting.
+The public-sale allocation supports broad, transparent public access and, when required, finances the Foundation's continuing network and sovereign-L1 mandate. The community allocation supports actual users, builders, contributors, and bounded gas onboarding. It includes a fixed sub-cap of 500,000 DCORPS, or 0.05 percent of total supply, for gas-onboarding credits. Exact selection, anti-abuse, sale, claim, use-of-proceeds, custody, and distribution mechanics require separate disclosure before activation. Public-sale and broad community distributions are not recipient-specific grants and do not inherit a grant quarantine unless the published distribution terms expressly impose one; they still must satisfy the normal 90-day holding and Governance Vault rules before voting.
 
 The remaining program budgets are ceilings, not promises to spend. Each program release requires a disclosed purpose, recipient, conflicts, milestones, outcome evidence, and remaining budget.
 
-Any pre-Distribution MAINNET-BETA gas provisioning is charged against the 500,000-DCHUB gas-onboarding sub-cap within the community allocation when transferred, remains purpose-bound and governance-ineligible, and reduces the later community release and first-public-release ceilings by the same amount. It never creates an additional beta allocation.
+Any pre-Distribution MAINNET-BETA gas provisioning is charged against the 500,000-DCORPS gas-onboarding sub-cap within the community allocation when transferred, remains purpose-bound and governance-ineligible, and reduces the later community release and first-public-release ceilings by the same amount. It never creates an additional beta allocation.
 
 ### 10.7 When allocations unlock
 
@@ -1101,13 +1101,13 @@ The vesting rules can be read directly from this table:
 
 The deployed vesting contracts must implement these rules exactly. Rounding, start-date treatment, and test examples belong in the audited token specification rather than this public explanation.
 
-Unvested DCHUB is non-transferable and non-voting. Delegation, wrapping, lending, pledging, address splitting, or side arrangements cannot accelerate eligibility.
+Unvested DCORPS is non-transferable and non-voting. Delegation, wrapping, lending, pledging, address splitting, or side arrangements cannot accelerate eligibility.
 
 ### 10.8 Maximum release schedule
 
 The network-operations allocation has the following maximum annual schedule beginning at Distribution Activation:
 
-| Year | Maximum DCHUB release |
+| Year | Maximum DCORPS release |
 | ---: | ---: |
 | 1 | 40,000,000 |
 | 2 | 35,000,000 |
@@ -1131,7 +1131,7 @@ These maxima may be lowered, deferred, canceled, or left unused only when doing 
 
 ### 10.9 The first public release
 
-During the first 90 days after Distribution Activation, aggregate release from purpose-bound custody is capped at 105,000,000 DCHUB:
+During the first 90 days after Distribution Activation, aggregate release from purpose-bound custody is capped at 105,000,000 DCORPS:
 
 | Source | Maximum | Purpose |
 | --- | ---: | --- |
@@ -1142,7 +1142,7 @@ During the first 90 days after Distribution Activation, aggregate release from p
 
 No more than 100,000,000 can initially leave protocol-controlled custody through the public-sale and community allocations. The 5,000,000 liquidity inventory remains non-circulating and governance-ineligible while protocol-controlled. Distribution does not itself create voting power; each holder must separately satisfy the holding, lock, delegation, eligibility, and snapshot rules.
 
-Any beta gas credits already distributed are subtracted from the community allocation, its 500,000-DCHUB gas-onboarding sub-cap, and the 105,000,000 first-90-day ceiling. They are not counted twice.
+Any beta gas credits already distributed are subtracted from the community allocation, its 500,000-DCORPS gas-onboarding sub-cap, and the 105,000,000 first-90-day ceiling. They are not counted twice.
 
 ### 10.10 Maximum amounts available over time
 
@@ -1161,15 +1161,15 @@ The following is a maximum cumulative vesting-and-release boundary, not a foreca
 
 Actual circulation should be lower whenever grants occur later, programs do not use their ceilings, allocations remain locked, or liquidity remains protocol-controlled.
 
-### 10.11 How DCHUB works as gas during the Rollup phase
+### 10.11 How DCORPS works as gas during the Rollup phase
 
-DCHUB is used as the dCorps Rollup's native gas asset. Its exact Rollup-phase token contracts, parent-chain relationship, custody, and bridge mechanics are not selected by this whitepaper; they belong in the independently reviewed Token Specification and Network Disclosure adopted before activation. Any design that uses Arbitrum custom-gas-token infrastructure must satisfy the applicable [Arbitrum custom-gas-token requirements](https://docs.arbitrum.io/launch-arbitrum-chain/chain-config/costs/custom-gas-token-rollup), disclose every associated authority and dependency, and preserve the fixed economic supply.
+DCORPS is used as the dCorps Rollup's native gas asset. Its exact Rollup-phase token contracts, parent-chain relationship, custody, and bridge mechanics are not selected by this whitepaper; they belong in the independently reviewed Token Specification and Network Disclosure adopted before activation. Any design that uses Arbitrum custom-gas-token infrastructure must satisfy the applicable [Arbitrum custom-gas-token requirements](https://docs.arbitrum.io/launch-arbitrum-chain/chain-config/costs/custom-gas-token-rollup), disclose every associated authority and dependency, and preserve the fixed economic supply.
 
-The sovereign L1 must continue using DCHUB as the same economic asset. The Foundation-led continuity design must carry forward the exact outstanding supply, holder positions, allocations, vesting and release conditions, governance status, custody restrictions, and cumulative burns while retiring or reconciling every prior representation so that no unit can be claimed twice. V1.0 establishes that continuity requirement without choosing the future mechanism.
+The sovereign L1 must continue using DCORPS as the same economic asset. The Foundation-led continuity design must carry forward the exact outstanding supply, holder positions, allocations, vesting and release conditions, governance status, custody restrictions, and cumulative burns while retiring or reconciling every prior representation so that no unit can be claimed twice. V1.0 establishes that continuity requirement without choosing the future mechanism.
 
 The protocol burn is implemented through transparent network-fee routing. It is not an ERC-20 transfer tax, callback, rebase, or token-transfer hook.
 
-The batch poster pays Ethereum costs in ETH while users pay child-chain gas in DCHUB. A parent-chain fee-token pricer supplies the exchange rate used to reimburse posting costs. A stale or manipulated pricer can underpay the operator or overcharge users, so production requires:
+The batch poster pays Ethereum costs in ETH while users pay child-chain gas in DCORPS. A parent-chain fee-token pricer supplies the exchange rate used to reimburse posting costs. A stale or manipulated pricer can underpay the operator or overcharge users, so production requires:
 
 - a reviewed pricing method;
 - update and staleness bounds;
@@ -1189,11 +1189,11 @@ Every transaction fee is separated into three disclosed components:
 
 1. **Parent-cost reimbursement** funds the verified Ethereum settlement and data-availability cost and maintains the ETH working capital required by the batch poster.
 2. **Operations, security, and protocol development** compensates the sequencer and other required infrastructure, monitoring, archive, security, stewardship, disclosed DevCo development and operations agreement, and sovereign-L1 work, together with other applicable contractual obligations.
-3. **Protocol burn** permanently removes a controlled DCHUB fee component only after the first two components and all applicable obligations are funded.
+3. **Protocol burn** permanently removes a controlled DCORPS fee component only after the first two components and all applicable obligations are funded.
 
-A valid burn must irreversibly reduce canonical outstanding DCHUB across the controlling supply design and reconcile every representation of the burned units. Sending DCHUB to an inaccessible wallet, locking it, or destroying only one representation while leaving another claim outstanding is not a burn. The protocol burn never draws from Founder, contributor, public-distribution, treasury, Foundation, liquidity, user-corporation, or other allocated balances; it applies only to the designated fee component actually paid for network use. The Rollup and later L1 burn mechanisms belong in their respective independently reviewed technical specifications.
+A valid burn must irreversibly reduce canonical outstanding DCORPS across the controlling supply design and reconcile every representation of the burned units. Sending DCORPS to an inaccessible wallet, locking it, or destroying only one representation while leaving another claim outstanding is not a burn. The protocol burn never draws from Founder, contributor, public-distribution, treasury, Foundation, liquidity, user-corporation, or other allocated balances; it applies only to the designated fee component actually paid for network use. The Rollup and later L1 burn mechanisms belong in their respective independently reviewed technical specifications.
 
-The exact burn rate, bounds, circuit breakers, Rollup supply and representation mechanism, and accounting treatment require economic stress testing and independent technical review before activation. Cost coverage and network continuity take priority. A safety rule may reduce or suspend the burn when the disclosed cost and reserve conditions are not met. After Governance Activation, eligible DCHUB governance may adjust the rate only within the adopted bounds and cannot convert the mechanism into a promise of price support, yield, buyback, dividend, or appreciation.
+The exact burn rate, bounds, circuit breakers, Rollup supply and representation mechanism, and accounting treatment require economic stress testing and independent technical review before activation. Cost coverage and network continuity take priority. A safety rule may reduce or suspend the burn when the disclosed cost and reserve conditions are not met. After Governance Activation, eligible DCORPS governance may adjust the rate only within the adopted bounds and cannot convert the mechanism into a promise of price support, yield, buyback, dividend, or appreciation.
 
 Under the [Arbitrum Expansion Program Terms](https://docs.arbitrum.foundation/aep/ArbitrumExpansionProgramTerms.pdf) published in June 2025, the Protocol Revenue Share is 10 percent of Protocol Net Revenue, with Protocol Net Revenue defined as the positive difference between covered gross operation revenue and defined Settlement Costs. The executed agreement in force for the deployed chain—not this summary—controls the actual definition, percentage, deductions, reporting, valuation, and payment.
 
@@ -1218,18 +1218,18 @@ Before Rollup launch, and again before Distribution Activation, dCorps publishes
 
 - Ethereum calldata or blob, settlement, challenge, and cross-layer execution costs;
 - ETH working capital for batch posting, force inclusion support, bridge operations, and incident response;
-- DCHUB liquidity depth, gas-acquisition access, pricer methodology, staleness, manipulation, volatility, and depeg-like stress scenarios;
+- DCORPS liquidity depth, gas-acquisition access, pricer methodology, staleness, manipulation, volatility, and depeg-like stress scenarios;
 - sequencer, validator, RPC, indexer, monitoring, security, audit, archive, staffing, insurance, and Foundation costs;
 - applicable AEP revenue share and other contractual or licensing obligations;
 - protocol-burn rate, Rollup supply and representation execution, future sovereign-L1 supply continuity, cost-coverage priority, outstanding-supply effects, and suspension cases;
 - public-sale proceeds, custody, permitted use, unsold-token treatment, community-claim participation, concentration, and liquidity stress;
 - non-token cash runway, restricted-token runway, reserve exhaustion dates, and contingency funding;
 - expected corporation count, transaction demand, fee revenue, pricing assumptions, and sensitivity ranges; and
-- operating and cash break-even conditions, including the usage and DCHUB/ETH price relationships required to reach them.
+- operating and cash break-even conditions, including the usage and DCORPS/ETH price relationships required to reach them.
 
-The disclosure distinguishes recurring revenue from token-reserve drawdown and does not treat unsold, locked, or purpose-bound DCHUB as cash. Assumptions, data sources, responsible preparers, review status, and material changes are published. Failure to demonstrate adequate runway or a credible path to sustainable operation prevents the relevant launch or distribution phase.
+The disclosure distinguishes recurring revenue from token-reserve drawdown and does not treat unsold, locked, or purpose-bound DCORPS as cash. Assumptions, data sources, responsible preparers, review status, and material changes are published. Failure to demonstrate adequate runway or a credible path to sustainable operation prevents the relevant launch or distribution phase.
 
-DCHUB introduces substantial risk. Price volatility can make gas costs unstable, weak liquidity can impair access, and pricer failure can misallocate parent-chain costs. Early distributions can concentrate governance or attract speculation before genuine protocol use exists, while reserve releases can create market pressure. Regulatory treatment can vary across jurisdictions, and recurring protocol revenue may remain below operating cost for an extended period.
+DCORPS introduces substantial risk. Price volatility can make gas costs unstable, weak liquidity can impair access, and pricer failure can misallocate parent-chain costs. Early distributions can concentrate governance or attract speculation before genuine protocol use exists, while reserve releases can create market pressure. Regulatory treatment can vary across jurisdictions, and recurring protocol revenue may remain below operating cost for an extended period.
 
 The response is not to promise price support. It is to constrain release, disclose custody and conflicts, separate circulation from governance eligibility, stress-test the operating and burn models, and delay public governance until a broad electorate and functioning network exist. Dedicated allocations and recurring protocol revenue fund continuity and sovereign-L1 development first. If those resources remain insufficient after Foundation Handover and the required reviews permit distribution, the Foundation must use the separately authorized public-sale process and its purpose-bound proceeds for that mandatory mission. If a lawful sale is temporarily unavailable, the Foundation must preserve the Rollup and mandate while securing another disclosed lawful funding path. Increased use can increase the amount burned, but no burn guarantees demand, liquidity, market value, or exchange support.
 
@@ -1243,11 +1243,11 @@ dCorps deliberately separates authority that many blockchain projects leave ambi
 
 | Layer | What it controls | What it does not control |
 | --- | --- | --- |
-| Corporation governance | One corporation's native shares, roles, policies, proposals, accounts, evidence, and actions | The dCorps chain, another corporation, DCHUB, or protocol treasury |
+| Corporation governance | One corporation's native shares, roles, policies, proposals, accounts, evidence, and actions | The dCorps chain, another corporation, DCORPS, or protocol treasury |
 | Protocol operations | Shared contracts, corporation-rule versions, modules, fees, infrastructure, upgrades, treasury programs, and emergency controls | User-corporation assets or protected strategic direction |
-| Strategic stewardship | dCorps identity, mission, core doctrine, DCHUB purpose, canonical roadmap, positioning, sovereign-L1 destination, and overall direction while the Strategic Steward serves | Treasury spending, providers, personnel, consensus, validation, ordinary upgrades, daily chain operation, or corporation actions |
+| Strategic stewardship | dCorps identity, mission, core doctrine, DCORPS purpose, canonical roadmap, positioning, sovereign-L1 destination, and overall direction while the Strategic Steward serves | Treasury spending, providers, personnel, consensus, validation, ordinary upgrades, daily chain operation, or corporation actions |
 
-The separation is intentional. Owning DCHUB does not create authority inside a corporation. Owning shares in a dCorps corporation does not create protocol governance power. Strategic stewardship does not create an operational key.
+The separation is intentional. Owning DCORPS does not create authority inside a corporation. Owning shares in a dCorps corporation does not create protocol governance power. Strategic stewardship does not create an operational key.
 
 ### 11.2 How shared chain control changes over time
 
@@ -1265,11 +1265,11 @@ Each transition is evidence-gated. The stages are not marketing labels.
 
 **Rollup Launch**
 
-The dCorps Rollup, DCHUB gas functionality, disclosed supply controls, allocation custody, initial contracts, and technical configuration are activated. Public distribution and token voting remain disabled. This stage does not decide whether dCorps will use the word **Genesis** for the Rollup or reserve it for the sovereign L1.
+The dCorps Rollup, DCORPS gas functionality, disclosed supply controls, allocation custody, initial contracts, and technical configuration are activated. Public distribution and token voting remain disabled. This stage does not decide whether dCorps will use the word **Genesis** for the Rollup or reserve it for the sovereign L1.
 
 **MAINNET-BETA**
 
-dCorps Development Ltd. operates the continuing production chain under disclosed bootstrap controls. This period is the **dCorps Development management era**. MAINNET-BETA is not described as production-ready until the complete universal dCorps Entity model is implemented and the applicable readiness tests pass. Entities can then begin using the full model, but dCorps does not claim public token governance or operational decentralization. DCHUB functions technically as real native gas. Limited beta gas provisioning comes only from the fixed gas-onboarding-credit sub-cap, remains purpose-bound and governance-ineligible, and is reconciled against later release ceilings; provisioned users with sufficient DCHUB and ETH can test the operator-independent Delayed Inbox path, while sponsored users remain dependent on the sponsor. Throughout DevCo-operated MAINNET-BETA, there is no public DCHUB sale, broad public or community distribution, public-liquidity program, or binding DCHUB governance.
+dCorps Development Ltd. operates the continuing production chain under disclosed bootstrap controls. This period is the **dCorps Development management era**. MAINNET-BETA is not described as production-ready until the complete universal dCorps Entity model is implemented and the applicable readiness tests pass. Entities can then begin using the full model, but dCorps does not claim public token governance or operational decentralization. DCORPS functions technically as real native gas. Limited beta gas provisioning comes only from the fixed gas-onboarding-credit sub-cap, remains purpose-bound and governance-ineligible, and is reconciled against later release ceilings; provisioned users with sufficient DCORPS and ETH can test the operator-independent Delayed Inbox path, while sponsored users remain dependent on the sponsor. Throughout DevCo-operated MAINNET-BETA, there is no public DCORPS sale, broad public or community distribution, public-liquidity program, or binding DCORPS governance.
 
 MAINNET-BETA is also the period for demonstrated adoption and commercial validation. DevCo may offer and charge for disclosed official applications, managed API capacity, indexing, automation, integrations, onboarding, and support while developing recurring protocol use and economic sustainability. Those provider services remain separate from protocol authority and protocol revenue under Section 10.12. They provide no managed-service exclusivity, custody by implication, corporation authority, or privileged state-transition path, and they do not by themselves establish a named-provider integration or endorsement.
 
@@ -1283,31 +1283,31 @@ Corporation identifiers and history continue unchanged. The handover is a contro
 
 **Conditional Distribution Activation**
 
-Only the Foundation may activate the public sale of up to 7 percent of maximum supply, community distribution of up to 3 percent, bounded operational liquidity, and non-binding DCHUB signaling. Activation can occur on the continuing Rollup only after Foundation Handover, separate legal, security, economic, and market-integrity review, and publication of the controlling distribution disclosures. The Foundation may defer activation while purpose-bound allocations, recurring protocol revenue, and other disclosed lawful resources are sufficient. If they are insufficient and distribution is permitted, the public-sale fallback applies. Distribution does not activate binding token governance and does not change the Founder's 15 percent allocation.
+Only the Foundation may activate the public sale of up to 7 percent of maximum supply, community distribution of up to 3 percent, bounded operational liquidity, and non-binding DCORPS signaling. Activation can occur on the continuing Rollup only after Foundation Handover, separate legal, security, economic, and market-integrity review, and publication of the controlling distribution disclosures. The Foundation may defer activation while purpose-bound allocations, recurring protocol revenue, and other disclosed lawful resources are sufficient. If they are insufficient and distribution is permitted, the public-sale fallback applies. Distribution does not activate binding token governance and does not change the Founder's 15 percent allocation.
 
 **Governance Activation**
 
-At least 180 days after Distribution Activation, and only after the electorate and network-readiness gates are satisfied, eligible DCHUB can become binding operational governance for the listed dCorps-administered authorities.
+At least 180 days after Distribution Activation, and only after the electorate and network-readiness gates are satisfied, eligible DCORPS can become binding operational governance for the listed dCorps-administered authorities.
 
 **Sovereign Layer 1 mission**
 
-After Foundation Handover, sovereign-L1 work continues as a mandatory program alongside Rollup operation and any later distribution or public operational governance. Distribution Activation and Governance Activation are not prerequisites to L1 readiness or launch. The Foundation leads and finances the work, and DevCo continues in the defined development and operations role guaranteed by the disclosed effective agreement. No fixed calendar date overrides readiness. The Foundation must launch the sovereign network when the separately reviewed consensus, security, validator, economic, DCHUB-continuity, corporation-continuity, history, and operational-independence requirements are satisfied; it cannot abandon the destination merely because the Rollup remains functional. The L1 must use the same economic DCHUB: any L1-native balances or contracts are reconciled successors, every prior representation is retired, locked as backing, or otherwise reconciled, and no second asset, independent second supply, or duplicate claim can be created.
+After Foundation Handover, sovereign-L1 work continues as a mandatory program alongside Rollup operation and any later distribution or public operational governance. Distribution Activation and Governance Activation are not prerequisites to L1 readiness or launch. The Foundation leads and finances the work, and DevCo continues in the defined development and operations role guaranteed by the disclosed effective agreement. No fixed calendar date overrides readiness. The Foundation must launch the sovereign network when the separately reviewed consensus, security, validator, economic, DCORPS-continuity, corporation-continuity, history, and operational-independence requirements are satisfied; it cannot abandon the destination merely because the Rollup remains functional. The L1 must use the same economic DCORPS: any L1-native balances or contracts are reconciled successors, every prior representation is retired, locked as backing, or otherwise reconciled, and no second asset, independent second supply, or duplicate claim can be created.
 
 ### 11.3 The Founder protects the purpose and direction
 
 Nicolas Turcotte is the creator and permanent historical Protocol Founder of dCorps and the initial Strategic Steward.
 
-The Strategic Domain covers the dCorps name, project identity, mission, and central thesis: dCorps defines Corporation 3.0 around dCorps Entities and their shares existing natively on-chain; `Digital Corporation` remains the branded product category; owner accounts control native shares cryptographically; and external services, identity, and legal recognition can attach later without becoming the source of native truth. It also protects the separation among ownership, governance, operations, and asset execution; application replaceability; Entity autonomy; non-custody; evidence boundaries; DCHUB's purpose; the one universal modular Entity model; later DID and Smart Jurisdiction integrations; the mandatory sovereign-L1 destination; the canonical roadmap and positioning; and the conditions under which a migration, rebrand, fork, or successor may claim dCorps continuity.
+The Strategic Domain covers the dCorps name, project identity, mission, and central thesis: dCorps defines Corporation 3.0 around dCorps Entities and their shares existing natively on-chain; `Digital Corporation` remains the branded product category; owner accounts control native shares cryptographically; and external services, identity, and legal recognition can attach later without becoming the source of native truth. It also protects the separation among ownership, governance, operations, and asset execution; application replaceability; Entity autonomy; non-custody; evidence boundaries; DCORPS's purpose; the one universal modular Entity model; later DID and Smart Jurisdiction integrations; the mandatory sovereign-L1 destination; the canonical roadmap and positioning; and the conditions under which a migration, rebrand, fork, or successor may claim dCorps continuity.
 
-The protected role continues through DevCo bootstrap, Foundation Handover, public token distribution, and initial public governance so that token accumulation or a speculative voting majority cannot remove Nicolas Turcotte from the project or redirect dCorps while he is building it and helping the Foundation continue the mission. Neither the Foundation nor DCHUB governance may remove, bypass, or override the active Strategic Steward merely through a token vote.
+The protected role continues through DevCo bootstrap, Foundation Handover, public token distribution, and initial public governance so that token accumulation or a speculative voting majority cannot remove Nicolas Turcotte from the project or redirect dCorps while he is building it and helping the Foundation continue the mission. Neither the Foundation nor DCORPS governance may remove, bypass, or override the active Strategic Steward merely through a token vote.
 
 Strategic stewardship is not infinite personal control. Nicolas Turcotte remains the permanent historical Protocol Founder, but the active Strategic Steward role can transition or end through his voluntary decision or through a separately adopted continuity and cessation process. That process must be adopted before Governance Activation and must address authentication, recovery, temporary incapacity, death or permanent incapacity, and a legitimate transition of active stewardship. It does not require a fixed exit date or prematurely end the Founder's active role. A successor can become Strategic Steward but never becomes the historical Protocol Founder.
 
-Foundation Handover transfers operational stewardship to the Foundation. Distribution Activation transfers no operational authority; it enables only the separately reviewed distribution and non-binding signaling described in Section 11.2. Governance Activation later transfers only the listed operational powers to eligible DCHUB governance. None of those stages automatically transfers or ends active Strategic Stewardship. Conversely, active Strategic Stewardship cannot delay an operational transfer whose published gates are satisfied by exercising an undisclosed key, and it cannot remain a technical dependency for chain continuity. Historical Founder attribution, active strategic stewardship, and shared operational control are separate facts with separate transition processes.
+Foundation Handover transfers operational stewardship to the Foundation. Distribution Activation transfers no operational authority; it enables only the separately reviewed distribution and non-binding signaling described in Section 11.2. Governance Activation later transfers only the listed operational powers to eligible DCORPS governance. None of those stages automatically transfers or ends active Strategic Stewardship. Conversely, active Strategic Stewardship cannot delay an operational transfer whose published gates are satisfied by exercising an undisclosed key, and it cannot remain a technical dependency for chain continuity. Historical Founder attribution, active strategic stewardship, and shared operational control are separate facts with separate transition processes.
 
 The role is powerful but bounded. While active, it provides final direction over what dCorps is and where it is going, while leaving execution to the proper operational process. It provides no automatic key for user assets, user-corporation votes, the Protocol Treasury, token releases, personnel, providers, the sequencer, bridge, consensus, validators, pricer, Upgrade Executor, emergency controls, shutdown, or routine software changes. Those actions continue to require the authority assigned to them. The sovereign L1 must remain technically capable of continuing without a Founder credential.
 
-A strategic direction does not execute itself. If implementation needs code, budget, a corporation-rule change, an upgrade, a provider action, or another operational authority, the Foundation or DCHUB governance selects lawful and secure implementation means through the applicable operational process.
+A strategic direction does not execute itself. If implementation needs code, budget, a corporation-rule change, an upgrade, a provider action, or another operational authority, the Foundation or DCORPS governance selects lawful and secure implementation means through the applicable operational process.
 
 This structure is transparent about its trade-off. During the protected stewardship period, it protects mission continuity and Founder involvement but creates dependency on one person's judgment, availability, and transition planning. Participants who require token holders to have immediate final authority over project identity should not describe dCorps as meeting that model. The trade-off does not alter the separate technical mission: the final sovereign blockchain cannot depend on that personal authority for consensus or continued operation.
 
@@ -1319,20 +1319,20 @@ The Foundation exists to operate and preserve the Rollup within the strategic di
 
 Foundation Handover is also prohibited until a disclosed long-term DevCo development and operations agreement is executed and effective. The agreement guarantees a defined continuing role for DevCo so that technical continuity and Founder involvement are preserved. It cannot give DevCo unilateral chain authority, user-corporation authority, exclusive protocol access, or a credential on which the final sovereign network depends. It may define DevCo's role in an official branded hosted application or managed developer service only while independent protocol interfaces and Foundation continuity rights remain available. Its scope, term, compensation, performance obligations, service or brand rights, security requirements, conflicts, audit and data-portability requirements, step-in rights, and termination conditions belong in the executed agreement rather than this whitepaper.
 
-To perform its role, the Foundation needs an independent board majority, its own accounts and signers, direct contractual and infrastructure access, capable advisers and operators, and adequate financial capacity. The dedicated sovereign-L1 tooling budget, Foundation allocation, and recurring protocol revenue fund Rollup continuity and sovereign-L1 development first. If those resources are insufficient and the required reviews permit distribution, the Foundation must activate and manage the separately disclosed public sale from the existing 7 percent allocation; the sale does not dilute or reduce the Founder's 15 percent allocation. Purpose-bound mission resources and sale proceeds cannot be redirected or starved by DCHUB governance. If a lawful sale is temporarily unavailable, the Foundation must preserve the Rollup and the mandate while securing another disclosed lawful funding path.
+To perform its role, the Foundation needs an independent board majority, its own accounts and signers, direct contractual and infrastructure access, capable advisers and operators, and adequate financial capacity. The dedicated sovereign-L1 tooling budget, Foundation allocation, and recurring protocol revenue fund Rollup continuity and sovereign-L1 development first. If those resources are insufficient and the required reviews permit distribution, the Foundation must activate and manage the separately disclosed public sale from the existing 7 percent allocation; the sale does not dilute or reduce the Founder's 15 percent allocation. Purpose-bound mission resources and sale proceeds cannot be redirected or starved by DCORPS governance. If a lawful sale is temporarily unavailable, the Foundation must preserve the Rollup and the mandate while securing another disclosed lawful funding path.
 
 Before Handover, a disclosed institutional continuity arrangement must also provide for Rollup service and the sovereign-L1 mission if the Foundation refuses to perform, is captured, becomes insolvent, or ceases to operate. Any successor institutional steward must be seated through that disclosed process without giving the Founder, DevCo, Foundation, or another party a unilateral chain key. The Foundation must hold the rights needed to maintain the protocol, documentation, repositories, and marks, prove that it can operate without depending on DevCo credentials even while DevCo remains contracted, and demonstrate archive recovery. Its conflicts, procurement, compensation, security, use-of-proceeds, and records policies must be public.
 
-The Foundation is not described as strategically sovereign over dCorps while the Strategic Steward role remains active. It is operationally independent and capable within the established strategic boundaries, and it cannot abandon or redefine the sovereign-L1 mission. While V1.0 controls, neither the Founder, Foundation, nor DCHUB governance can waive that destination. A different destination would require an explicit successor whitepaper and continuity design, not a silent exception within V1.0.
+The Foundation is not described as strategically sovereign over dCorps while the Strategic Steward role remains active. It is operationally independent and capable within the established strategic boundaries, and it cannot abandon or redefine the sovereign-L1 mission. While V1.0 controls, neither the Founder, Foundation, nor DCORPS governance can waive that destination. A different destination would require an explicit successor whitepaper and continuity design, not a silent exception within V1.0.
 
-### 11.5 Public DCHUB governance of shared operations
+### 11.5 Public DCORPS governance of shared operations
 
-Binding token governance activates only when a meaningful public electorate exists. The vault, delegation, snapshot, threshold, and cross-layer execution rules in this section govern shared operations during the Rollup phase. They do not predetermine the sovereign L1's consensus or operational-governance design, which requires separate review while preserving the fixed DCHUB supply, protected mission, Founder boundary, and corporation autonomy. Minimum activation conditions include:
+Binding token governance activates only when a meaningful public electorate exists. The vault, delegation, snapshot, threshold, and cross-layer execution rules in this section govern shared operations during the Rollup phase. They do not predetermine the sovereign L1's consensus or operational-governance design, which requires separate review while preserving the fixed DCORPS supply, protected mission, Founder boundary, and corporation autonomy. Minimum activation conditions include:
 
 | Gate | Minimum condition |
 | --- | --- |
 | Distribution history | 180 days since Distribution Activation |
-| Public active voting power | 50,000,000 DCHUB deposited in the Governance Vault, continuously held for 90 days, and validly self-delegated or delegated outside unvested, purpose-bound, grant-conditioned, protocol-controlled, and otherwise excluded custody |
+| Public active voting power | 50,000,000 DCORPS deposited in the Governance Vault, continuously held for 90 days, and validly self-delegated or delegated outside unvested, purpose-bound, grant-conditioned, protocol-controlled, and otherwise excluded custody |
 | Breadth | At least 1,000 eligible child-chain addresses; this is a distribution signal, not a count of people |
 | Insider limit | Founder, DevCo, Foundation directors, members of disclosed protocol emergency bodies, and their disclosed affiliates collectively below 20% of effective power |
 | Operating history | 90 days of reproducible bridge, supply, delegation, eligibility, and snapshot reconciliation |
@@ -1342,20 +1342,20 @@ Binding token governance activates only when a meaningful public electorate exis
 
 Addresses are not people. Address breadth and disclosed-insider reporting cannot prove that undisclosed coordination is absent. These are minimum transparency and distribution defenses, not a claim of one-person-one-vote or perfect decentralization.
 
-The required 50,000,000 DCHUB does not exist merely because tokens have been allocated or released. It can become public active voting power only after Distribution Activation as independently controlled participants acquire DCHUB through the public sale, community distribution, bounded public liquidity, or disclosed services, integrations, adoption, security, and ecosystem work. A recipient-specific program or grant release is governance-ineligible for twelve months after the recipient obtains control unless a stricter rule applies. Broad public-sale and community-distribution recipients instead follow their published distribution terms and the normal 90-day holding, Governance Vault, and self-delegation or delegation requirements. Unvested, purpose-bound, protocol-controlled, undelegated, and otherwise excluded balances do not count.
+The required 50,000,000 DCORPS does not exist merely because tokens have been allocated or released. It can become public active voting power only after Distribution Activation as independently controlled participants acquire DCORPS through the public sale, community distribution, bounded public liquidity, or disclosed services, integrations, adoption, security, and ecosystem work. A recipient-specific program or grant release is governance-ineligible for twelve months after the recipient obtains control unless a stricter rule applies. Broad public-sale and community-distribution recipients instead follow their published distribution terms and the normal 90-day holding, Governance Vault, and self-delegation or delegation requirements. Unvested, purpose-bound, protocol-controlled, undelegated, and otherwise excluded balances do not count.
 
-The first-90-day public release can supply enough candidate DCHUB to meet the numerical floor, but it cannot satisfy the required self-delegation or delegation, 90-day continuous holding, 180-day distribution history, reconciliation, rehearsal, security, validator, or continuing-condition gates by itself. Governance Activation is therefore never automatic at release.
+The first-90-day public release can supply enough candidate DCORPS to meet the numerical floor, but it cannot satisfy the required self-delegation or delegation, 90-day continuous holding, 180-day distribution history, reconciliation, rehearsal, security, validator, or continuing-condition gates by itself. Governance Activation is therefore never automatic at release.
 
-Candidate governance units must be on the child chain and locked in the Governance Vault for at least 90 continuous days before the proposal snapshot. Locking does not cure ineligibility. Only validly self-delegated or delegated locked DCHUB counts toward the 50,000,000 activation gate and effective voting supply. Undelegated DCHUB cannot vote or enter the denominator at that snapshot. One eligible DCHUB contributes one vote. A holder may self-delegate or delegate voting power to a public representative without transferring custody, may revoke that delegation, and may directly override the delegate for the holder's own position under the published snapshot rules.
+Candidate governance units must be on the child chain and locked in the Governance Vault for at least 90 continuous days before the proposal snapshot. Locking does not cure ineligibility. Only validly self-delegated or delegated locked DCORPS counts toward the 50,000,000 activation gate and effective voting supply. Undelegated DCORPS cannot vote or enter the denominator at that snapshot. One eligible DCORPS contributes one vote. A holder may self-delegate or delegate voting power to a public representative without transferring custody, may revoke that delegation, and may directly override the delegate for the holder's own position under the published snapshot rules.
 
 For every proposal, the protocol calculates voting power in four steps:
 
 1. Remove tokens that are unvested, purpose-bound, too new, protocol-controlled, otherwise excluded, or not locked in the Governance Vault for the required time.
-2. Reconcile every cross-network representation, custody position, lending position, and wrapper so one economic DCHUB position cannot vote more than once.
+2. Reconcile every cross-network representation, custody position, lending position, and wrapper so one economic DCORPS position cannot vote more than once.
 3. Apply each valid self-delegation or delegation once at the published snapshot.
 4. Publish the eligibility ledger, delegation state, effective voting total, disclosed-insider share, and proposal snapshot before voting.
 
-The protocol does not identify ordinary voters, impose KYC for voting, assess subjective control groups, or impose per-wallet caps. Splitting 100 eligible DCHUB across many addresses does not create more than 100 votes. Hidden coordination and acquired concentration remain possible and must be disclosed as governance risks rather than presented as solved identity problems. Exact calculations and audited examples belong in the Governance Specification and deployed contracts.
+The protocol does not identify ordinary voters, impose KYC for voting, assess subjective control groups, or impose per-wallet caps. Splitting 100 eligible DCORPS across many addresses does not create more than 100 votes. Hidden coordination and acquired concentration remain possible and must be disclosed as governance risks rather than presented as solved identity problems. Exact calculations and audited examples belong in the Governance Specification and deployed contracts.
 
 Every proposal uses the same published snapshot and these counting rules:
 
@@ -1381,7 +1381,7 @@ The activation gates are continuing operating conditions. At every proposal-crea
 
 ### 11.6 Emergency powers and their limits
 
-Emergency power exists to contain a severe vulnerability or preserve chain integrity. It is capability-limited, logged, publicly attributable, and automatically expiring. The active emergency contracts cannot mint DCHUB, alter finalized corporation ownership, transfer user-corporation assets, redirect unrelated treasury value, execute an unrestricted upgrade, or become a permanent governance bypass. During MAINNET-BETA, the separately disclosed generic Arbitrum chain-owner authority remains capable of replacing underlying rules; this limitation is not presented as eliminating that stronger beta risk. The sovereign L1 cannot retain a permanent emergency authority able to stop or rewrite the network unilaterally.
+Emergency power exists to contain a severe vulnerability or preserve chain integrity. It is capability-limited, logged, publicly attributable, and automatically expiring. The active emergency contracts cannot mint DCORPS, alter finalized corporation ownership, transfer user-corporation assets, redirect unrelated treasury value, execute an unrestricted upgrade, or become a permanent governance bypass. During MAINNET-BETA, the separately disclosed generic Arbitrum chain-owner authority remains capable of replacing underlying rules; this limitation is not presented as eliminating that stronger beta risk. The sovereign L1 cannot retain a permanent emergency authority able to stop or rewrite the network unilaterally.
 
 The precise roles, timers, appointment procedures, recovery mechanisms, and cross-layer message formats belong in the Governance Charter, Protocol Specification, Network Disclosure, and audited contracts.
 
@@ -1391,7 +1391,7 @@ The precise roles, timers, appointment procedures, recovery mechanisms, and cros
 
 ### 12.1 What must remain safe
 
-dCorps aims to preserve the integrity, availability, and explainability of corporation state when keys, applications, providers, operators, contracts, archives, or governance fail. Protection begins with permanent corporation identifiers, current ownership and authority, and the meaning of historical events. It extends to DCHUB supply and bridge reconciliation, chain ownership and upgrade paths, governance snapshots and execution payloads, protected-record commitments, evidence manifests, and the archives needed to reconstruct them. The system must also preserve the separation among Founder strategy, shared protocol operations, and each corporation's internal authority.
+dCorps aims to preserve the integrity, availability, and explainability of corporation state when keys, applications, providers, operators, contracts, archives, or governance fail. Protection begins with permanent corporation identifiers, current ownership and authority, and the meaning of historical events. It extends to DCORPS supply and bridge reconciliation, chain ownership and upgrade paths, governance snapshots and execution payloads, protected-record commitments, evidence manifests, and the archives needed to reconstruct them. The system must also preserve the separation among Founder strategy, shared protocol operations, and each corporation's internal authority.
 
 ### 12.2 Main threats and defenses
 
@@ -1453,7 +1453,7 @@ Lost keys, compromised accounts, malicious transfers, provider failures, and inc
 dCorps should not claim stronger properties than its deployed configuration demonstrates. It must not claim:
 
 - permissionless validation while validators remain allowlisted;
-- token-secured consensus when DCHUB is not the bond asset;
+- token-secured consensus when DCORPS is not the bond asset;
 - permanent availability without independently tested archives;
 - non-custody if an operator retains an undisclosed asset key;
 - treasury survivability if external reserves require live dCorps authorization or an undisclosed dCorps signer;
@@ -1528,9 +1528,9 @@ Any comparison with a conventional formation system must identify the jurisdicti
 
 **Phase 1 — Audited MAINNET-BETA**
 
-- deploy the dCorps Rollup and activate DCHUB as its native gas asset under the reviewed Token Specification and Network Disclosure;
+- deploy the dCorps Rollup and activate DCORPS as its native gas asset under the reviewed Token Specification and Network Disclosure;
 - publish the Network Disclosure and contract source;
-- enable real DCHUB as technical gas through capped, purpose-bound, governance-ineligible beta provisioning, without a DevCo public sale, broad public or community distribution, public-liquidity program, or binding DCHUB governance;
+- enable real DCORPS as technical gas through capped, purpose-bound, governance-ineligible beta provisioning, without a DevCo public sale, broad public or community distribution, public-liquidity program, or binding DCORPS governance;
 - enable only the reviewed canonical bridged-USDC representation after its backing, bridge and token contracts, issuer controls, upgrade authorities, finality, liquidity, caps, monitoring, incident, withdrawal, and Ethereum escape paths are disclosed and independently tested;
 - impose and monitor per-transaction, per-Entity, per-route, and aggregate exposure limits; activate only reviewed Entity cap and sweep workflows; and disclose funds in transit, capped dCorps operating liquidity, and sovereign external reserves separately;
 - onboard a limited, geographically diverse set of native dCorps corporations spanning one-owner, multi-owner, simple-governance, and layered-governance states; the beta limit is a security-control measure, not a restriction of the intended market;
@@ -1584,8 +1584,8 @@ The mandatory sovereign-L1 program begins at Foundation Handover in Phase 2 and 
 - continue operating and hardening the Rollup until the sovereign network is ready;
 - fund and commission the sovereign-L1 program through its dedicated allocations, recurring protocol revenue, and, if required and permitted, purpose-bound Foundation-managed public-sale proceeds under separate disclosure;
 - maintain DevCo in the defined continuing role guaranteed by the effective development and operations agreement without granting it unilateral chain authority;
-- complete and independently review the consensus, validator, security, economic, DCHUB-continuity, corporation-continuity, history, and operating-independence design;
-- carry every DCHUB holder position, allocation, condition, governance status, custody restriction, and cumulative burn into a reconciled successor representation while retiring, locking as backing, or otherwise reconciling every prior representation; do not create a second asset, independent second supply, or duplicate claim;
+- complete and independently review the consensus, validator, security, economic, DCORPS-continuity, corporation-continuity, history, and operating-independence design;
+- carry every DCORPS holder position, allocation, condition, governance status, custody restriction, and cumulative burn into a reconciled successor representation while retiring, locking as backing, or otherwise reconciling every prior representation; do not create a second asset, independent second supply, or duplicate claim;
 - demonstrate that no Founder, DevCo, Foundation, provider, parent chain, or administrative controller can unilaterally stop or rewrite the sovereign network; and
 - launch the sovereign dCorps Layer 1 when the adopted readiness evidence is complete.
 
@@ -1619,7 +1619,7 @@ Before public claims are made, dCorps must demonstrate:
 - application and managed-API replacement from finalized chain data, published operation formats, and exported protected-record manifests;
 - successful external-account mismatch detection;
 - supply, bridge, delegation, and voting reconciliation;
-- cost-first transaction-fee routing and irreversible canonical DCHUB burn reconciliation across every active representation, including suspension and failure cases;
+- cost-first transaction-fee routing and irreversible canonical DCORPS burn reconciliation across every active representation, including suspension and failure cases;
 - sequencer censorship and force-inclusion recovery;
 - corporation-authorized Ethereum continuity without DevCo, Foundation, sequencer, or official-application cooperation;
 - validator rotation and dispute monitoring;
@@ -1664,7 +1664,7 @@ The Foundation can also refuse to perform, be captured, become insolvent, or cea
 
 ### 14.7 Public governance can be captured
 
-Token governance can be captured through concentrated ownership, borrowed voting power, delegation, undisclosed coordination, or voter apathy. One eligible DCHUB equals one vote; address breadth does not prove a matching number of independent people. Eligibility exclusions, disclosed-insider limits, quorums, affirmative floors, delays, and a narrow operational domain reduce but do not eliminate capture risk.
+Token governance can be captured through concentrated ownership, borrowed voting power, delegation, undisclosed coordination, or voter apathy. One eligible DCORPS equals one vote; address breadth does not prove a matching number of independent people. Eligibility exclusions, disclosed-insider limits, quorums, affirmative floors, delays, and a narrow operational domain reduce but do not eliminate capture risk.
 
 ### 14.8 Founder protection creates concentration and transition risk
 
@@ -1678,9 +1678,9 @@ Public commitments and activity can reveal sensitive metadata even when content 
 
 Registries, courts, banks, custodians, stablecoin issuers, exchanges, on/off-ramps, lenders, DeFi protocols, oracles, professional reviewers, and any future DID providers or Smart Jurisdictions remain external. Their decisions can conflict with dCorps state. Public interfaces allow independent integration but do not establish a partnership, compel service, or make an external conclusion canonical. The protocol preserves native ownership while exposing the mismatch, but that does not force an external institution to recognize the native result. Laws, legal personality, liability, tax treatment, reporting duties, recognition effects, and exit requirements vary by jurisdiction and can change. A candidate jurisdiction may never become participating, and a participating framework may later be suspended, replaced, or terminated according to its controlling requirements.
 
-### 14.11 DCHUB prices and network costs can move sharply
+### 14.11 DCORPS prices and network costs can move sharply
 
-DCHUB may be volatile, illiquid, concentrated, or subject to uncertain regulatory treatment. Gas pricing and Ethereum posting costs can diverge. Public distribution, liquidity arrangements, and scheduled unlocks can create selling pressure. A burn rate that exceeds sustainable fee economics can underfund operations, while low network use can make the burn economically insignificant. Token reserves can be exhausted before recurring protocol revenue is sufficient, and neither use nor burning guarantees market value or exchange support.
+DCORPS may be volatile, illiquid, concentrated, or subject to uncertain regulatory treatment. Gas pricing and Ethereum posting costs can diverge. Public distribution, liquidity arrangements, and scheduled unlocks can create selling pressure. A burn rate that exceeds sustainable fee economics can underfund operations, while low network use can make the burn economically insignificant. Token reserves can be exhausted before recurring protocol revenue is sufficient, and neither use nor burning guarantees market value or exchange support.
 
 ### 14.12 The standard may fail to gain adoption
 
@@ -1701,12 +1701,12 @@ dCorps combines established concepts rather than claiming to have invented digit
 | DAO frameworks | Membership, proposals, voting, treasury coordination | Adds one continuously configurable dCorps Entity model, separates share ownership from other powers, connects decisions to execution evidence, and states the boundaries with outside systems |
 | Attestation systems | Attributable claims under schemas | Places attestations inside ordered corporation state without turning them into consensus truth |
 | Document timestamping | Proof that bytes or a digest existed | Binds commitments to corporation authority, manifests, actions, disclosure, and supersession |
-| General-purpose Ethereum L2s | Neutral execution, composability, mature infrastructure, and the ability to host canonical dCorps contracts | A dedicated Rollup adds native DCHUB gas and dCorps-controlled chain policy only if the pre-launch comparison justifies that added burden |
+| General-purpose Ethereum L2s | Neutral execution, composability, mature infrastructure, and the ability to host canonical dCorps contracts | A dedicated Rollup adds native DCORPS gas and dCorps-controlled chain policy only if the pre-launch comparison justifies that added burden |
 | Government and professional registries | Legal status and authoritative conclusions in their scope | A future Smart Jurisdiction framework can attach their recognition to an existing dCorps Entity without making them the source of its native existence or ownership |
 | GLEIF vLEI and DIDs | Verifiable identity and corporate credentials | Treats identity as a future optional controller or eligibility layer—not a base-release dependency—while blockchain accounts remain the native share owners |
 | Payment, custody, on/off-ramp, lending, and DeFi systems | Specialized financial access, execution, liquidity, credit, or custody | Lets independent systems use public dCorps interfaces without becoming the Entity, receiving a privileged dCorps path, or turning independently executed external activity into Entity-authorized action or protocol endorsement |
 
-DCHUB is also distinct from common chain assets:
+DCORPS is also distinct from common chain assets:
 
 - unlike SOL, it does not secure Layer-1 consensus during the Rollup launch; any later consensus role belongs to the separately reviewed sovereign-L1 design;
 - unlike ATOM, it is not initially a staking asset for an interchain hub;
@@ -1725,7 +1725,7 @@ The deeper problem is unequal access. A person's birthplace should not determine
 
 dCorps defines Corporation 3.0 by assembling that transition into one protocol-native corporate system. A person creates a dCorps Entity directly on a dedicated blockchain. Canonical dCorps state creates the Entity; its accepted record evidences and reconstructs its protocol existence, ownership, authority, and change under the disclosed trust model. dCorps presents that Entity as a native digital corporation: the Entity, its issued shares, and its ownership state exist natively, while the brand and category terms do not by themselves claim legal personality, limited liability, statutory incorporation, tax status, or state recognition.
 
-From that foundation, ownership connects to decision rules, operational roles, exact instructions, supported stablecoin commerce, evidence, disclosure, and correction. Full-bridge settlement brings supported payments into one canonical bridged-USDC representation before the Entity's authorized dCorps-local financial workflow executes. Funds in transit, capped dCorps operating liquidity, and sovereign external reserves remain visibly separate. Possible later Circle-issued native USDC requires Circle's independent approval and implementation. Stablecoins remain external commerce assets while DCHUB remains protocol-native gas. Registries, banks, payment companies, custodians, exchanges, on/off-ramps, lenders, DeFi systems, and professional services may independently serve the Entity through public interfaces, while its `EntityID`, share ledger, and native history continue independently.
+From that foundation, ownership connects to decision rules, operational roles, exact instructions, supported stablecoin commerce, evidence, disclosure, and correction. Full-bridge settlement brings supported payments into one canonical bridged-USDC representation before the Entity's authorized dCorps-local financial workflow executes. Funds in transit, capped dCorps operating liquidity, and sovereign external reserves remain visibly separate. Possible later Circle-issued native USDC requires Circle's independent approval and implementation. Stablecoins remain external commerce assets while DCORPS remains protocol-native gas. Registries, banks, payment companies, custodians, exchanges, on/off-ramps, lenders, DeFi systems, and professional services may independently serve the Entity through public interfaces, while its `EntityID`, share ledger, and native history continue independently.
 
 Smart Jurisdiction remains a formal long-term objective. During the dCorps Development management era of MAINNET-BETA, dCorps intends to identify and engage jurisdictions that may wish to participate. Actual participation requires a legally effective framework that states the recognition conferred, identity and eligibility process, taxes and fees, continuing duties, remedies, status authority, technical implementation, and activation evidence. Recognition remains future, optional, and jurisdiction-specific. If a framework is attached, replaced, or detached, the underlying Entity and its complete native history remain continuous, while legal continuity and entry, continuing, and exit effects follow the applicable laws and agreements.
 
@@ -1735,7 +1735,7 @@ The official web and mobile applications provide the organized experience, but t
 
 The same principle applies to operations. One logical Entity treasury may span purpose-specific accounts and networks. The corporation chooses its accounts, operating-liquidity cap, sweep rules, custody model, signers, thresholds, recovery, and continuity policies. It may directly control account keys or select a separately governed external provider under disclosed custody, execution, recovery, and exit rules. dCorps connects decisions to payments and evidence without becoming a mandatory signer or discretionary custodian. Sovereign external reserves remain independently controllable if dCorps is unavailable, while funds retained on dCorps require an Ethereum-enforced withdrawal or escape path. The corporation decides which information is public, which records remain encrypted, and which private materials are opened to selected accounts or roles such as an auditor, investor, lender, director, or adviser.
 
-DCHUB supplies native gas on the Rollup and can later govern defined shared operations after measurable distribution and readiness conditions are met. DevCo bootstraps the Rollup, develops adoption, and may commercialize disclosed applications and managed services without privileged protocol authority. The Foundation is formed before launch for continuity and later assumes operational stewardship on the same network only after every applicable Section 11.2 Handover gate is satisfied. It preserves DevCo's defined continuing role through the effective agreement and becomes responsible for the mandatory sovereign-L1 program. Dedicated allocations and recurring protocol revenue fund the mission first; if they are insufficient and the required reviews permit distribution, the Foundation must manage the separately disclosed public sale from the existing allocation without reducing the Founder's 15 percent. DCHUB continues as the same economic asset on the sovereign L1 under a future independently reviewed continuity design. Public DCHUB governance can follow when the electorate and security model are ready.
+DCORPS supplies native gas on the Rollup and can later govern defined shared operations after measurable distribution and readiness conditions are met. DevCo bootstraps the Rollup, develops adoption, and may commercialize disclosed applications and managed services without privileged protocol authority. The Foundation is formed before launch for continuity and later assumes operational stewardship on the same network only after every applicable Section 11.2 Handover gate is satisfied. It preserves DevCo's defined continuing role through the effective agreement and becomes responsible for the mandatory sovereign-L1 program. Dedicated allocations and recurring protocol revenue fund the mission first; if they are insufficient and the required reviews permit distribution, the Foundation must manage the separately disclosed public sale from the existing allocation without reducing the Founder's 15 percent. DCORPS continues as the same economic asset on the sovereign L1 under a future independently reviewed continuity design. Public DCORPS governance can follow when the electorate and security model are ready.
 
 The Rollup is how dCorps becomes operational; it is not the final destination. The long-term mission is a sovereign dCorps Layer 1 that can continue without dependence on Ethereum, Arbitrum, a Founder, DevCo, the Foundation, a provider, or an administrative controller able to stop or rewrite it unilaterally. Founder protection preserves the project purpose and Nicolas Turcotte's involvement against speculative capture while he builds dCorps and helps the Foundation continue it. Permanent historical Founder attribution is separate from the active Strategic Steward role; that role requires an adopted continuity and transition process and is distinct from consensus, operational handover, and permanent technical control.
 
@@ -1761,28 +1761,28 @@ If dCorps achieves that standard, a founder in a small village and a founder in 
 12. Native economic ownership, governance capacity, operational authority, and asset-execution authority remain distinct.
 13. Corporation governance cannot become protocol governance merely because both use the same chain.
 14. Protocol governance cannot govern a user corporation or move user-corporation assets.
-15. DCHUB and native corporation shares are separate assets with separate authority domains.
+15. DCORPS and native corporation shares are separate assets with separate authority domains.
 16. Application state cannot override canonical chain state.
 17. Indexer output is derived and reproducible, not consensus.
 18. External observations identify their verification method and trust assumptions.
 19. A commitment proves a digest relationship, not truth or completeness.
 20. Corrections and native recovery transitions preserve the historical record they affect.
 21. A corporation-rule or module upgrade cannot silently reinterpret earlier accepted records.
-22. Combined canonical economic DCHUB issuance across the Rollup, bridges, and sovereign L1 never exceeds 1,000,000,000.
-23. Multiple contracts, custody locations, bridges, or network representations of one DCHUB position are never double-counted.
-24. Unvested, purpose-bound, protocol-controlled liquidity, and otherwise excluded DCHUB cannot vote.
+22. Combined canonical economic DCORPS issuance across the Rollup, bridges, and sovereign L1 never exceeds 1,000,000,000.
+23. Multiple contracts, custody locations, bridges, or network representations of one DCORPS position are never double-counted.
+24. Unvested, purpose-bound, protocol-controlled liquidity, and otherwise excluded DCORPS cannot vote.
 25. Governance Activation remains separate from public token distribution.
-26. DCHUB operational governance cannot claim permissionless validation or token-secured consensus unless the deployed system actually provides it.
+26. DCORPS operational governance cannot claim permissionless validation or token-secured consensus unless the deployed system actually provides it.
 27. The Strategic Steward cannot use strategic authority as an operational execution key.
-28. While V1.0 controls, no Founder, Foundation, or DCHUB vote can abandon the sovereign-L1 destination; protected strategic consent guides implementation and continuity but cannot silently waive this invariant.
+28. While V1.0 controls, no Founder, Foundation, or DCORPS vote can abandon the sovereign-L1 destination; protected strategic consent guides implementation and continuity but cannot silently waive this invariant.
 29. A chain or interface cannot claim durable reconstruction unless independent replay succeeds beyond transient data availability.
 30. Security, economic, ownership, and decentralization claims must match the disclosed deployed configuration.
-31. DCHUB is the protocol-native gas asset; canonical bridged USDC and any possible later Circle-issued native USDC remain externally governed commerce assets. dCorps does not issue USDC, and neither representation is protocol-native to dCorps.
+31. DCORPS is the protocol-native gas asset; canonical bridged USDC and any possible later Circle-issued native USDC remain externally governed commerce assets. dCorps does not issue USDC, and neither representation is protocol-native to dCorps.
 32. Permission to read a protected record does not create share ownership, voting power, a corporate role, or authority over a corporation account.
 33. Recording a document fingerprint or disclosure rule on-chain does not publish the protected document's private contents.
-34. One governance-eligible DCHUB contributes one vote at the published snapshot, counted once through self-delegation or revocable delegation after exclusions.
+34. One governance-eligible DCORPS contributes one vote at the published snapshot, counted once through self-delegation or revocable delegation after exclusions.
 35. Transaction-fee routing funds verified settlement, operations, security, and applicable contractual obligations before burning the separately designated protocol fee component.
-36. A DCHUB burn reduces outstanding supply only when the controlling supply system irreversibly destroys the economic units and every representation is reconciled.
+36. A DCORPS burn reduces outstanding supply only when the controlling supply system irreversibly destroys the economic units and every representation is reconciled.
 37. No DevCo, Foundation, protocol-governance, application, or corporation-wide master key can recover every native-share owner account.
 38. During MAINNET-BETA, application-level ownership protections do not eliminate the separately disclosed generic Arbitrum chain-owner authority.
 39. The 7 percent public-sale and 3 percent community-distribution reserves come from the existing 37 percent ecosystem allocation and do not change the Founder's 15 percent allocation.
@@ -1810,9 +1810,9 @@ If dCorps achieves that standard, a founder in a small village and a founder in 
 61. Sovereign external reserves remain independently usable under the external account's local signer, threshold, limit, recovery, and continuity rules when dCorps is unavailable.
 62. Canonical bridged-USDC value retained on dCorps requires a tested Ethereum-enforced withdrawal or escape path without sequencer, DevCo, Foundation, official-application, or privileged dCorps-signature cooperation.
 63. Possible later Circle-issued native USDC on dCorps requires Circle's independent approval, agreement, and implementation; conformity with Circle's Bridged USDC Standard preserves an option and does not create a promise or current capability.
-64. Throughout DevCo-operated MAINNET-BETA, real DCHUB may be used as native gas only through capped, purpose-bound beta provisioning; DevCo conducts no public DCHUB sale, broad public or community distribution, public-liquidity program, or binding DCHUB governance.
-65. Public DCHUB distribution is a separate, conditional, post-Handover Foundation action. It may occur on the operating Rollup only after its reviews and disclosures pass, may remain deferred while other lawful resources suffice, and is not a prerequisite to sovereign-L1 launch.
-66. Native L1 balances or contracts represent the reconciled technical succession of the same economic DCHUB units; they cannot create a second DCHUB asset, independent second supply, or duplicate claim.
+64. Throughout DevCo-operated MAINNET-BETA, real DCORPS may be used as native gas only through capped, purpose-bound beta provisioning; DevCo conducts no public DCORPS sale, broad public or community distribution, public-liquidity program, or binding DCORPS governance.
+65. Public DCORPS distribution is a separate, conditional, post-Handover Foundation action. It may occur on the operating Rollup only after its reviews and disclosures pass, may remain deferred while other lawful resources suffice, and is not a prerequisite to sovereign-L1 launch.
+66. Native L1 balances or contracts represent the reconciled technical succession of the same economic DCORPS units; they cannot create a second DCORPS asset, independent second supply, or duplicate claim.
 
 ---
 
@@ -1861,13 +1861,13 @@ This is not an enterprise-only registry, compliance portal, professional-service
 
 Smart Jurisdiction is part of that long-term doctrine as an optional recognition framework, not a condition of native completeness. During MAINNET-BETA, dCorps Development may identify and engage potential participating jurisdictions. Participation and legal effect arise only through a later jurisdiction-specific framework that confers stated effects and discloses identity and eligibility requirements, taxes and fees, continuing duties, remedies, status authority, implementation, and activation evidence. The dCorps Entity remains continuous before, during, and after any recognition relationship, while cross-jurisdiction legal continuity and obligations remain subject to applicable law.
 
-The mission also applies to dCorps itself. Private development networks develop and test the design and produce evidence toward it. The Arbitrum Rollup provides the DevCo-managed MAINNET-BETA path to adoption, commercial validation, provider-service and protocol revenue, and limited beta participation using real DCHUB gas through capped, purpose-bound provisioning, without a DevCo public sale, broad public or community distribution, public-liquidity program, or binding public governance. It is not the final destination. The Foundation is formed before launch for continuity, but operational handover occurs only after every applicable Section 11.2 Handover gate is satisfied. After handover, the Foundation must preserve the operating Rollup, retain DevCo in the defined continuing role guaranteed by the disclosed effective agreement, and carry the project toward a sovereign dCorps Layer 1. Only the Foundation may activate a reviewed public distribution on the operating Rollup; it may defer that activation while other lawful resources suffice, and distribution is not a prerequisite to sovereign-L1 launch. DCHUB is used on the Rollup and continues as the same economic asset on that L1, while the exact continuity mechanism remains a later technical decision and cannot create a second asset, independent second supply, or duplicate claim. Founder protection prevents speculative capture of that mission during development and transition; historical Founder attribution, active Strategic Stewardship, operational authority, and sovereign-network independence remain separate, and no personal role becomes permanent technical control over the sovereign blockchain.
+The mission also applies to dCorps itself. Private development networks develop and test the design and produce evidence toward it. The Arbitrum Rollup provides the DevCo-managed MAINNET-BETA path to adoption, commercial validation, provider-service and protocol revenue, and limited beta participation using real DCORPS gas through capped, purpose-bound provisioning, without a DevCo public sale, broad public or community distribution, public-liquidity program, or binding public governance. It is not the final destination. The Foundation is formed before launch for continuity, but operational handover occurs only after every applicable Section 11.2 Handover gate is satisfied. After handover, the Foundation must preserve the operating Rollup, retain DevCo in the defined continuing role guaranteed by the disclosed effective agreement, and carry the project toward a sovereign dCorps Layer 1. Only the Foundation may activate a reviewed public distribution on the operating Rollup; it may defer that activation while other lawful resources suffice, and distribution is not a prerequisite to sovereign-L1 launch. DCORPS is used on the Rollup and continues as the same economic asset on that L1, while the exact continuity mechanism remains a later technical decision and cannot create a second asset, independent second supply, or duplicate claim. Founder protection prevents speculative capture of that mission during development and transition; historical Founder attribution, active Strategic Stewardship, operational authority, and sovereign-network independence remain separate, and no personal role becomes permanent technical control over the sovereign blockchain.
 
 ---
 
 ## Document status
 
-V1.0 defines the dCorps target design: Corporation 3.0 as the dCorps-defined category; a `dCorps Entity` as the permanent protocol object and `Digital Corporation` as its branded product presentation; canonical-state existence and bounded cryptographic evidence; universal formation under one continuously configurable model; blockchain-account ownership of native shares; structure shaped through authorized workflows rather than templates, legal forms, or protocol types; complete official web and mobile management applications; capability-equivalent documented REST API, SDK, direct-RPC, and published-ABI access; independently integrable and commercially packageable services without privileged protocol authority; full-bridge stablecoin settlement through one canonical bridged-USDC launch representation while DCHUB remains protocol-native gas; three balance classes, Entity-selected exposure caps, sovereign external reserves, independent external policy-account control, and Ethereum-enforced bridged-asset escape; possible later Circle-issued native USDC only after Circle's independent approval and implementation; future optional identity and Smart Jurisdiction recognition under a legally effective participation floor; Entity continuity across recognition changes; corporate financial interoperability and future bounded DeFi integration; measured rather than assumed formation-time, cost, and evidence claims; cost-first fee burn; real DCHUB gas with capped purpose-bound provisioning and no DevCo public token event during MAINNET-BETA; pre-launch Foundation formation with adoption- and readiness-gated operational handover; conditional Foundation-managed Rollup distribution that may be deferred while other resources suffice; Foundation-led sovereign-L1 development as a mandatory parallel mission using the same economic DCHUB; contractually guaranteed DevCo continuity; Founder anti-capture stewardship with a governed transition; progressive operational decentralization; delegated linear operational governance; and Entity self-control.
+V1.0 defines the dCorps target design: Corporation 3.0 as the dCorps-defined category; a `dCorps Entity` as the permanent protocol object and `Digital Corporation` as its branded product presentation; canonical-state existence and bounded cryptographic evidence; universal formation under one continuously configurable model; blockchain-account ownership of native shares; structure shaped through authorized workflows rather than templates, legal forms, or protocol types; complete official web and mobile management applications; capability-equivalent documented REST API, SDK, direct-RPC, and published-ABI access; independently integrable and commercially packageable services without privileged protocol authority; full-bridge stablecoin settlement through one canonical bridged-USDC launch representation while DCORPS remains protocol-native gas; three balance classes, Entity-selected exposure caps, sovereign external reserves, independent external policy-account control, and Ethereum-enforced bridged-asset escape; possible later Circle-issued native USDC only after Circle's independent approval and implementation; future optional identity and Smart Jurisdiction recognition under a legally effective participation floor; Entity continuity across recognition changes; corporate financial interoperability and future bounded DeFi integration; measured rather than assumed formation-time, cost, and evidence claims; cost-first fee burn; real DCORPS gas with capped purpose-bound provisioning and no DevCo public token event during MAINNET-BETA; pre-launch Foundation formation with adoption- and readiness-gated operational handover; conditional Foundation-managed Rollup distribution that may be deferred while other resources suffice; Foundation-led sovereign-L1 development as a mandatory parallel mission using the same economic DCORPS; contractually guaranteed DevCo continuity; Founder anti-capture stewardship with a governed transition; progressive operational decentralization; delegated linear operational governance; and Entity self-control.
 
 This whitepaper intentionally does not reproduce exact algorithms, encodings, archival procedures, recovery state machines, legal instruments, appointment procedures, succession procedures, notice workflows, or contract-enforcement clauses. Those mechanisms belong in the Protocol Specification, Network Disclosure, Governance Charter, economics documentation, security documentation, and separately executed legal instruments.
 

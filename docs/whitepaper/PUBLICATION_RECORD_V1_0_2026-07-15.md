@@ -7,9 +7,9 @@
 - **Entity and Smart Jurisdiction correction authority:** 2026-07-19
 - **Corporation 3.0 correction authority:** 2026-07-19
 - **Stablecoin settlement and sovereign-treasury correction authority:** 2026-07-20
-- **DCHUB Rollup distribution and sovereign-L1 continuity clarification authority:** 2026-07-21
+- **Native-asset naming, Rollup distribution, and sovereign-L1 continuity clarification authority:** 2026-07-21
 - **Public distribution copy:** `DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md`
-- **SHA-256:** `3bacecf11e30cc00882e97604bccc35a516e3ab7486d71bb9e6edf5d6a1914c7`
+- **SHA-256:** `9bb6fbfa5d575bcea868a603d62f89595ad7e353bf7d87852df6ce6b0368a84b`
 - **Website route:** `/whitepaper/`
 
 The public distribution copy is byte-identical to the official canonical
@@ -26,13 +26,15 @@ full-bridge settlement through one canonical bridged-USDC launch
 representation, three stablecoin balance classes, corporation-controlled
 sovereign external reserves, and an Ethereum-enforced continuity requirement.
 It treats possible later Circle-issued native USDC as an independently approved
-future objective rather than a present or guaranteed capability. These
-corrections also clarify that DevCo-operated MAINNET-BETA uses real DCHUB as
-gas without a public sale, broad distribution, public-liquidity program, or
-binding governance; any later Rollup distribution is conditional and
-Foundation-managed; and sovereign-L1 balances remain the same economic DCHUB
-through reconciled succession without duplicate supply. They do not present a
-Smart Jurisdiction, bridge, stablecoin deployment, Circle agreement, provider
+future objective rather than a present or guaranteed capability. The
+2026-07-21 correction adopts DCORPS as the permanent name and ticker of the
+protocol-native gas asset. It also clarifies that DevCo-operated MAINNET-BETA
+uses real DCORPS as gas without a public sale, broad distribution,
+public-liquidity program, or binding governance; any later Rollup distribution
+is conditional and Foundation-managed; and sovereign-L1 balances remain the
+same economic DCORPS through reconciled succession without duplicate supply.
+These corrections do not present a Smart Jurisdiction, bridge, stablecoin
+deployment, Circle agreement, provider
 integration, legal effect, performance result, token event, or decentralization
 milestone as current. The original owner intakes remain preserved in the
 private governance repository; the corrected canonical manuscript and this
