@@ -7,7 +7,7 @@
 - **Document type:** Blockchain whitepaper
 - **Version:** 1.0
 - **Status:** Official project baseline
-- **Date:** 2026-07-19
+- **Date:** 2026-07-20
 - **Author:** Nicolas Turcotte, Protocol Founder
 - **Bootstrap sponsor and operator:** dCorps Development Ltd. (BVI)
 
@@ -29,11 +29,11 @@ dCorps presents this native organization as a **digital corporation**. `Digital 
 
 dCorps defines this model as **Corporation 3.0**: a protocol-native organization whose identity, ownership, authority, governance, designated accounts, recorded operations, and reconstructible accepted history exist as canonical blockchain state, while applications, service providers, controller-identity systems, external asset execution, and legal-recognition frameworks remain replaceable or attachable under their own rules. Corporation 3.0 is a dCorps-defined project and product category. It is not an established legal classification, an automatic claim of state recognition, or a claim that dCorps invented every component it assembles.
 
-The creator receives a complete business-management structure rather than an empty registry entry. The Entity begins with a stable identity, shares owned by blockchain accounts, decision rules, proposals, approvals, directors, officers, operators, and delegated roles. It can designate merchant, operating, payroll, reserve, capital, and treasury accounts; prepare bridged-stablecoin and other programmable-asset payments; and connect documents or external events to on-chain evidence.
+The creator receives a complete business-management structure rather than an empty registry entry. The Entity begins with a stable identity, shares owned by blockchain accounts, decision rules, proposals, approvals, directors, officers, operators, and delegated roles. It can designate merchant, operating, payroll, reserve, capital, and treasury accounts across supported networks; execute authorized payment, split, and sweep workflows through canonical bridged USDC; and connect documents or external events to on-chain evidence while retaining sovereign control of long-term external reserves.
 
 The corporation also controls how its information is disclosed. It can make selected records public, keep sensitive material private, or open particular information to named blockchain accounts and roles such as an auditor or investor. Every accepted action, change, dispute, and correction contributes to an append-oriented history that can be reconstructed independently of the original application when the disclosed chain and archival requirements are satisfied.
 
-dCorps presents this structure through complete official web and mobile management applications. A founder should be able to create the corporation and then manage ownership, partners, governance, roles, treasury accounts, bridged-stablecoin payments, evidence, disclosure, and reporting from one coherent workspace. The applications make the blockchain usable; the chain keeps the authoritative record. Every canonical corporation operation available through an official application must also be available through documented programmatic and direct-chain interfaces under the same corporation authorization and protocol rules.
+dCorps presents this structure through complete official web and mobile management applications. A founder should be able to create the corporation and then manage ownership, partners, governance, roles, logical treasury accounts, canonical bridged-USDC settlement, sovereign external reserves, evidence, disclosure, and reporting from one coherent workspace. The applications make the blockchain usable; the chain keeps the authoritative record. Every canonical corporation operation available through an official application must also be available through documented programmatic and direct-chain interfaces under the same corporation authorization and protocol rules.
 
 A corporation can be created by one person or jointly by several partners. The founders assign share units to their blockchain accounts and choose rules for voting, share transfers, protected decisions, roles, and treasury approvals. Smart contracts apply those rules before accepting a change. This gives the partners cryptographic protection against unilateral action: one partner cannot simply take another partner's shares, rewrite the agreed rules, or approve a protected transaction without the required account signatures and approvals.
 
@@ -43,7 +43,7 @@ The design requires alteration of accepted history to be detectable under the di
 
 Every dCorps Entity uses one universal, modular digital-corporation model. There is no template, legal-form, or protocol-type selection. An Entity can begin with one owner or several owners, simple rules or layered governance, and only the roles and accounts it needs. Creation choices establish its initial state; later authorized workflows can change ownership, share classes, decision rules, directors, officers, delegations, accounts, financing, disclosure, and other operating capacity without changing its permanent identity or abandoning its history.
 
-DCHUB is the fixed-supply protocol-native gas asset. Stablecoins and other commerce assets remain externally governed assets. At launch, a supported stablecoin is represented through a disclosed bridge; a future independent issuer may also issue a supported stablecoin directly on dCorps. An issuer-direct deployment removes the bridge representation for that deployment, but it does not make the asset protocol-native to dCorps or displace DCHUB. Future DID modules may identify account controllers. Smart Jurisdiction is a formal long-term protocol objective through which a participating jurisdiction may later attach an optional legal-recognition framework to an existing dCorps Entity or to a legally defined representation of it. It is not a current feature. Neither identity nor recognition creates the native Entity, owns its shares, or becomes its source of truth.
+DCHUB is the fixed-supply protocol-native gas asset. Stablecoins and other commerce assets remain externally governed assets. The launch target uses one canonical bridged-USDC representation designed from deployment to conform to Circle's Bridged USDC Standard. Full-bridge settlement is the normal dCorps financial-execution path, while long-term reserves may settle to corporation-controlled external policy accounts. Possible later Circle-issued native USDC on dCorps requires Circle's independent approval and implementation; it is not current or guaranteed and does not displace DCHUB. Future DID modules may identify account controllers. Smart Jurisdiction is a formal long-term protocol objective through which a participating jurisdiction may later attach an optional legal-recognition framework to an existing dCorps Entity or to a legally defined representation of it. It is not a current feature. Neither identity nor recognition creates the native Entity, owns its shares, or becomes its source of truth.
 
 During MAINNET-BETA, while the network remains in the dCorps Development management era, dCorps Development Ltd. intends to research, identify, and engage jurisdictions that may wish to become participating Smart Jurisdictions. Candidate identification or discussion does not establish participation, make a Smart Jurisdiction capability available, or confer legal recognition on any dCorps Entity. Those results require a jurisdiction-specific legal framework or agreement, reviewed technical and operating specifications, implementation, and activation evidence.
 
@@ -57,7 +57,7 @@ The launch implementation is an EVM-compatible Arbitrum Rollup settling directly
 2. Issue its share units to the partners' blockchain accounts and choose the rules that protect them.
 3. Use those accounts to prove ownership and approve decisions.
 4. Set directors, officers, roles, rules, and business accounts.
-5. Receive and make payments with supported bridged stablecoins and, if later introduced, stablecoins issued directly on dCorps by independent issuers.
+5. Receive supported stablecoin payments through full-bridge settlement, execute authorized splits and payments through canonical bridged USDC, and move long-term reserves to corporation-controlled external policy accounts.
 6. Choose what is public, keep sensitive records private, or open selected information to specific blockchain accounts and roles such as an auditor or investor.
 7. Build an append-oriented history whose alteration is detectable under the disclosed network trust model.
 8. Add optional identity or external legal recognition later where available, after Entity authorization and the applicable external requirements are satisfied.
@@ -83,7 +83,11 @@ The Entity exists on dCorps because the blockchain created it. A country, applic
 | DCHUB | The protocol-native gas asset used to pay dCorps transaction fees and, later, govern shared chain operations |
 | Foundation | The independent institution that later stewards the shared dCorps network and leads the sovereign-L1 mission; it is not a kind of corporation created by dCorps |
 | Bridge | The system that represents an external asset, such as a stablecoin, on dCorps |
-| Directly issued stablecoin | A stablecoin issued on dCorps by an independent issuer rather than represented through a bridge; it remains externally governed and is not a protocol-native dCorps asset |
+| Full-bridge settlement | The normal path in which a supported stablecoin payment becomes canonical bridged USDC on dCorps before the Entity's authorized financial workflow executes |
+| Canonical bridged USDC | The one launch-target USDC representation used for normal dCorps execution, subject to disclosed Circle, backing, bridge, Ethereum, Rollup, contract, and exit assumptions |
+| Capped dCorps operating liquidity | Working capital intentionally retained on dCorps within the Entity's authorized exposure policy and stricter protocol safety limits |
+| Sovereign external reserves | Long-term or purpose-specific treasury value held in corporation-controlled external policy accounts that remain independently usable if dCorps is unavailable |
+| Circle-issued native USDC | A possible future USDC asset issued by Circle on dCorps only after Circle's independent approval and implementation; it is not a current or guaranteed capability |
 | Smart Jurisdiction | An optional future framework through which a participating jurisdiction may recognize an existing dCorps Entity or a legally defined representation of it under jurisdiction-specific requirements |
 | Rollup | A blockchain that executes its own transactions while publishing data and results to Ethereum |
 | Final | A record that has reached the disclosed point at which users may rely on it |
@@ -141,7 +145,7 @@ During the Rollup phase, this is not described as complete decentralization. The
 | Bootstrap settlement and parent data availability | Ethereum |
 | Launch validation | Permissioned BoLD with disclosed validators |
 | Native gas | DCHUB |
-| Commerce assets | Reviewed bridged stablecoins at launch and possible future stablecoins issued directly on dCorps by independent issuers; all remain external assets under disclosed issuer, bridge, liquidity, and control assumptions |
+| Commerce assets | One canonical bridged-USDC launch representation designed to conform to Circle's Bridged USDC Standard; possible later Circle-issued native USDC requires Circle's independent approval and implementation; both remain external assets under disclosed issuer, bridge, liquidity, and control assumptions |
 | Maximum DCHUB issuance | 1,000,000,000 |
 | Entity model | One universal modular dCorps Entity model whose digital-corporation structure is shaped by recorded state and authorized workflows, not templates, legal forms, or protocol types |
 | Workflow requirements | Supported workflows define common authorization, transition, event, evidence, privacy, failure, and reconstruction requirements across every interface |
@@ -153,7 +157,7 @@ During the Rollup phase, this is not described as complete decentralization. The
 | Identity binding | Not part of base Entity creation; future optional DID or controller-attestation modules, with a documented identity and eligibility process required for any activated Smart Jurisdiction framework |
 | External legal status | Optional future Smart Jurisdiction recognition, separate from native existence and ownership and unavailable until a jurisdiction confers stated legal effects and the legal, identity, tax and fee, technical, operating, and activation requirements are met |
 | Supported native object | dCorps Entities under one universal digital-corporation model |
-| Corporation assets | Held through Entity-designated self-custody or a separately governed provider; dCorps itself does not take custody, and the custody and signing model must be disclosed |
+| Corporation assets | Classified as funds in transit, capped dCorps operating liquidity, or sovereign external reserves across Entity-designated accounts; dCorps, DevCo, a future Foundation, and the official application are not mandatory treasury signers, and the custody, signing, recovery, continuity, network, and risk model must be disclosed |
 | Privacy model | Public authority state with minimized data and protected source records |
 | Historical reconstruction | Ethereum blobs, independent complete archives, permanent Ethereum commitments, and tested replay |
 | Bootstrap operator | dCorps Development Ltd. (BVI) |
@@ -290,7 +294,7 @@ The ownership area shows the share classes, issued units, owner accounts, percen
 
 The governance and people areas organize proposals, votes, written approvals, directors, officers, operators, delegations, conflicts, and decision thresholds. Instead of treating a policy as a document nobody can enforce consistently, the application translates supported policies into clear workflows backed by smart-contract rules. It shows who can propose an action, who must approve it, when a decision becomes effective, and what happened afterward.
 
-The financial area brings together the corporation's merchant, operating, payroll, reserve, capital, and treasury accounts. It can prepare payment requests, collect the required corporate approvals, send an authorized instruction to the designated asset account or provider for separate execution, and reconcile the observed bridged-stablecoin or other asset movement with the original decision. An Entity may use its own accounts and signing devices or a separately governed custody or payment provider; in either case the management stack records the custody model and connects the instruction and observed result to the company's authority and evidence history.
+The financial area brings together the corporation's merchant, operating, payroll, reserve, capital, and treasury accounts as one logical Entity treasury across supported networks. It can prepare payment requests, collect the required corporate approvals, execute supported dCorps-local splits through canonical bridged USDC, apply the Entity's operating-liquidity cap, prepare authorized sweeps to external policy accounts, and reconcile each final result with the original decision. An Entity may use its own accounts and signing devices or a separately governed custody or payment provider; in either case the management stack records the network, asset, balance class, custody and signer model, continuity path, and relationship between instruction, execution, and evidence.
 
 The records and reporting areas connect document fingerprints, invoices, agreements, outside observations, corporate actions, and corrections to the relevant event. Disclosure controls let the corporation publish selected information or open protected records to specific accounts and roles such as an auditor, investor, lender, director, or adviser. Dashboards and exports can then present a current view of the corporation while preserving the ability to inspect how that view was produced.
 
@@ -329,6 +333,8 @@ Ownership is only one kind of power. The right to own shares, vote on a proposal
 ### 3.2 The Entity outlives any application
 
 The official dCorps application is designed to provide the complete management experience, but the dCorps Entity cannot depend on that application for its existence. Its ownership, roles, rules, accounts, and accepted history remain readable from the blockchain through another application, explorer, node, or indexer. This makes the application replaceable while preserving the digital corporation that users created through it.
+
+The same independence applies to sovereign external reserves. An external policy account must remain usable under the corporation's own signer, threshold, limit, recovery, and continuity rules if the official application, DevCo, sequencer, or dCorps network is unavailable. dCorps may normally prepare and record the exact Entity authorization, but dCorps, DevCo, a future Foundation, and the official application cannot be mandatory asset signers or unrestricted treasury modules. Funds intentionally retained as dCorps operating liquidity require an Ethereum-enforced withdrawal or escape path without privileged dCorps participation.
 
 ### 3.3 Evidence, correction, and privacy remain connected
 
@@ -474,7 +480,7 @@ Where a corporation has expressly adopted it, root authority is a limited recove
 
 Asset-signing power is the ability to sign or submit a transaction from the account holding the asset. It follows that account's keys, smart-contract rules, or provider rules.
 
-Asset-signing power may belong to a basic blockchain account, a multisignature or other smart account, a custodian, a bank, a payment provider, or another independently governed execution system. dCorps connects the corporation's instruction to the observed result while the selected account system retains execution control.
+Asset-signing power may belong to a basic blockchain account, a multisignature or other smart account, a custodian, a bank, a payment provider, or another independently governed execution system. A dCorps-local policy account may execute a previously authorized automatic split, cap, or sweep rule. An external policy account independently enforces its own signer, threshold, limit, recovery, and continuity rules. dCorps connects the corporation's instruction to the execution and observed result while the selected account system retains control. dCorps, DevCo, a future Foundation, and the official application cannot be mandatory signers or unrestricted execution modules for corporation assets.
 
 ### 5.5 Company approval and asset signing are different
 
@@ -519,7 +525,7 @@ sequenceDiagram
     D->>D: Reconcile, dispute, correct, or supersede
 ```
 
-The external account can remain fully independent. The chain preserves how the corporate decision relates to the external result.
+The external account remains independently executable under its own policy, including during dCorps unavailability. The chain preserves how the corporate decision relates to the external result. If the account cannot enforce the intended corporation rule, dCorps can record a mismatch but cannot claim that the rule controlled the external asset.
 
 ---
 
@@ -747,69 +753,104 @@ Future privacy tools may prove a specific fact without revealing all underlying 
 
 ## 8. Treasury and payments
 
-dCorps is designed to give a newly created digital corporation stablecoin-centered financial operating capacity, initially through reviewed bridges. The corporation can designate its own merchant, operating, payroll, reserve, capital, and treasury accounts; govern payment instructions; receive funds directly; and preserve the relationship between authority, payment, and evidence. The corporation can hold, receive, and pay supported stablecoins through open blockchain rails without first obtaining a conventional bank account.
+dCorps is designed to give a newly created digital corporation stablecoin-centered financial operating capacity without making dCorps the permanent vault for every corporation's capital. The Entity can designate merchant, operating, payroll, reserve, capital, and treasury accounts; authorize payment and allocation workflows; execute supported stablecoin operations; and preserve the relationship among corporate authority, asset execution, balance location, and evidence.
 
-Stablecoins are not protocol-native dCorps assets. DCHUB is the protocol-native gas asset; supported stablecoins remain external commerce assets under their issuers' rules and controls. At launch, each supported stablecoin is represented on dCorps through disclosed bridge infrastructure. Every supported representation must identify its origin network, canonical token, bridge path, child-chain token, finality assumptions, upgrade authority, issuer controls, and failure or exit path.
+Stablecoins are not protocol-native dCorps assets. DCHUB is the protocol-native gas asset. The launch target uses one canonical bridged-USDC representation designed from deployment to conform to Circle's Bridged USDC Standard. The representation remains subject to the USDC issuer, its backing, the primary bridge, Ethereum, the dCorps Rollup, token contracts, administrative authority, finality, liquidity, withdrawal, and escape assumptions. Exact contracts, operators, supported ingress networks, routes, limits, and production status belong in separately reviewed disclosures.
 
-An independent stablecoin issuer may later deploy its asset directly on dCorps under a separately reviewed integration. Direct issuance can remove the bridge and wrapped-representation dependency for that deployment, but it does not make the asset protocol-native to dCorps, transfer issuer responsibility to dCorps, or create a dCorps-issued stablecoin. The integration must disclose issuance and redemption controls, reserve and administrative assumptions, contract authority, supported access and exit paths, compliance responsibilities, and failure conditions.
+Possible later Circle-issued native USDC on dCorps is a strategic objective, not a current feature or guarantee. It requires Circle's independent approval, agreement, due diligence, technical participation, issuance, redemption, administration, compliance, liquidity, and migration decisions. dCorps does not issue USDC. A separately proposed dCorps-issued stablecoin would be a different asset and is not adopted by V1.0.
 
-dCorps itself is non-custodial. It structures and evidences the corporation's financial authority but does not hold its funds, guarantee an asset, or become a bank. An Entity may choose direct self-custody or a separately governed custodian, bank, payment provider, or other execution system. Stablecoin contracts, issuers, bridges, networks, wallets, custody providers, and liquidity remain disclosed dependencies selected by the corporation.
+### 8.1 Full-bridge settlement is the normal execution path
 
-In the direct self-custody path, the supported stablecoin balance remains in a blockchain treasury account controlled by the corporation. The corporation may control that account using a hardware signing device such as Trezor or Ledger through compatible wallet software, a software wallet such as MetaMask, or a smart or multisignature account with several authorized signers. The stablecoins exist on the blockchain; they are not physically stored inside the hardware device or wallet application. Those tools protect or use the keys that control the account. In a provider-controlled path, the provider's custody, account-control, withdrawal, recovery, and exit rules must be disclosed separately and cannot be presented as corporation-held private keys.
+Full-bridge settlement means that a supported stablecoin payment using the normal dCorps financial-execution path becomes canonical bridged USDC on dCorps before the Entity's authorized split, payment, sweep, or other financial workflow executes.
 
-The dCorps protocol requires no custody of the corporation's private keys, and a conforming management application must not collect them or become the discretionary custodian or signer merely by providing the dCorps interface. A separately contracted custody or payment provider remains an external execution system under its own disclosed authority and obligations. dCorps records which account or provider reference the corporation designated, which internal approvals apply, and whether an observed payment matches an approved instruction. In the direct self-custody path, spending requires the account's corporation-controlled signing rules. Any provider, bridge-administrator, or stablecoin-issuer power is a separate disclosed trust assumption, not dCorps protocol custody.
+The normal sequence is:
 
-Native share ownership, corporation approval, and treasury signing are separate authority paths. Losing a share-owner key does not by itself move or destroy the stablecoins held by a separately controlled treasury account, although it can block a required corporation approval. If the same lost key is also a required treasury signer, the funds can become inaccessible. The reference product therefore separates these roles by default and explains any deliberate reuse of one account across them.
+1. the payer selects a supported route and receives the exact network, asset, contract, amount, destination, reference, deadline, and finality terms;
+2. the disclosed ingress mechanism transfers the value toward dCorps;
+3. canonical bridged USDC becomes final on dCorps;
+4. the Entity's current rules authorize and execute the dCorps-local instruction;
+5. resulting value remains as capped operating liquidity or enters an authorized withdrawal or sweep toward a corporation-controlled external account; and
+6. dCorps records the authorization, execution, finality, resulting balance location, and later reconciliation evidence.
 
-A bridge may lock source-network stablecoins in a bridge contract while a corresponding balance is represented on dCorps. That creates a separate bridge-contract, operator, upgrade, and stablecoin-issuer risk that must be disclosed. It does not give the dCorps application, DevCo, or Foundation possession of the corporation's account keys or ordinary authority to spend the corporation's represented balance.
+Only the dCorps-local split or transfer can be atomic. Cross-chain ingress, withdrawal, and sweep operations are asynchronous. They may remain pending, fail, require a refund, or complete at different times. A conforming interface must not present a cross-chain request as paid or settled merely because a local instruction exists.
 
-### 8.1 The corporation chooses its custody and execution model
+Full bridge is the normal dCorps execution path, not the sole business-continuity path and not a requirement that long-term reserves remain on dCorps. During an outage, an Entity may use independently authorized external accounts and reconcile the resulting evidence later.
 
-The corporation accesses its assets through compatible wallet software, hardware signing devices, smart accounts, or a separately selected provider. It chooses the custody model, accounts or provider references, signers, thresholds, recovery arrangements, and exit requirements appropriate to its own risk. For a directly controlled blockchain account, it can change wallet applications without moving the assets or asking dCorps to release them. For a provider-controlled account or position, portability and withdrawal depend on the provider's disclosed system and obligations.
+### 8.2 Three balance classes limit dCorps exposure
 
-The management application can prepare a transaction or instruction, collect the required corporation approvals, submit an already authorized payload where supported, and observe the result. The signing account or external provider still decides whether execution occurs under its own authority. The corporation must retain an independent execution, recovery, or provider-exit path so loss of the official application does not by itself trap its funds.
+Every supported stablecoin balance is classified as one of:
 
-### 8.2 Labeling business accounts clearly
+1. **Funds in transit:** value crossing an ingress, withdrawal, sweep, or continuity path before finality and reconciliation complete.
+2. **Capped dCorps operating liquidity:** working capital intentionally retained on dCorps for authorized operations within the Entity's exposure policy.
+3. **Sovereign external reserves:** value settled to corporation-controlled accounts on external networks for reserves, long-term treasury, or another approved purpose.
 
-An account record carries enough context to prevent a bare address from being misunderstood. It identifies the corporation, the account's business purpose, the network or provider, the address or provider reference, the account type and custody model, supported assets, the corporation's approval policy, the execution configuration, the period during which the designation applies, and any later correction or replacement.
+The Entity selects its dCorps operating-liquidity cap through an authorized policy. Protocol, bridge, route, network, and aggregate safety limits may be stricter. A conforming implementation supports approved automatic sweeps above the applicable cap and records pending, final, failed, refundable, refunded, and reconciled states.
 
-The same hexadecimal address can exist on several EVM networks while controlling different balances and contracts. Network and asset identity must therefore be explicit.
+Full bridge therefore does not eliminate dCorps or bridge exposure. Funds in transit and retained dCorps operating liquidity remain inside those failure domains. Sovereign external reserves already settled outside dCorps are outside the dCorps execution and bridge failure domain but retain their own issuer, network, account, custody, smart-contract, and operational risks.
 
-Standard purposes can include merchant, operating, payroll, tax reserve, capital, long-term reserve, and treasury accounts. The purpose is a shared semantic label, not proof of legal ownership or accounting treatment.
+### 8.3 One logical treasury can span several accounts and networks
 
-### 8.3 Receiving a payment
+One dCorps Entity treasury may include purpose-specific accounts on dCorps and on independent networks. An income account, operations account, savings account, tax account, reserve account, capital account, and distribution account may use different networks, signers, thresholds, and custody arrangements while remaining part of the same logical Entity treasury.
 
-A receiving workflow begins with an authorized payment request that identifies the corporation, network, asset, destination, amount, reference, deadline, custody model, and any supporting evidence. The payer transfers to the Entity-designated account or provider destination. dCorps then observes the external transaction or provider result through the disclosed verification method and compares the network, token, source, destination, amount, reference, and finality or status with the request. The resulting record can distinguish a complete match from a partial payment, overpayment, duplicate, wrong asset, wrong network, refund, dispute, or later correction.
+An account record identifies the Entity, purpose, network or provider, exact asset and contract, address or provider reference, custody model, signer set, threshold, limits, recovery and continuity rules, effective period, current verification method, and any correction or replacement. A bare address is insufficient. The same hexadecimal address can exist on several EVM networks while controlling different balances and contracts.
 
-The protocol exposes uncertainty rather than labeling an ambiguous transfer paid.
+Network distribution can limit concentration in one network or bridge, but it does not automatically reduce total risk. It adds network, account, issuer, bridge, monitoring, reconciliation, and operational complexity. Common issuer or custody dependencies may remain correlated across networks.
 
-### 8.4 Making a payment
+### 8.4 The corporation controls signing and custody
 
-An outgoing workflow begins with an exact proposed instruction. The management stack identifies the applicable corporation policy and the recorded ownership and role state used for approval. Every approval is tied to the source account, network, asset, recipient, amount, purpose, call effect, deadline, and supporting evidence. After the required corporate approvals exist, the external asset account still authorizes execution through its own signing rules. dCorps observes the result and reconciles it with the instruction so the record shows whether the approved and executed transactions actually match.
+dCorps structures, executes where applicable, and evidences the corporation's financial authority, but it does not collect private keys, become a bank, or take discretionary custody merely by providing the protocol or official application. The corporation controls its direct accounts through its own keys, hardware devices, wallet software, smart accounts, or multisignature policies, or separately selects a provider-custody model under disclosed withdrawal, recovery, and exit terms.
 
-Every asset signer should be able to inspect the source, network, asset, amount, destination, call effect, nonce, and linked corporation instruction before signing.
+Native share ownership, Entity approval, and asset-account signing are separate authority paths. For an action presented as Entity-authorized:
 
-### 8.5 Worked example: a reserve payment
+1. the dCorps Entity approves an exact financial instruction under its recorded rules;
+2. the asset account independently validates and signs or executes under its own policy; and
+3. dCorps records or observes the result and reconciles it through a disclosed method.
 
-Consider a corporation with two share classes, three directors, and one treasurer. Its policy requires two non-conflicted directors to approve a payment above 100,000 units and unanimous approval above 1,000,000 units. Its treasury is controlled separately by a smart account requiring signatures from two of three authorized signers.
+An external policy account must enforce critical signer thresholds, limits, recovery rules, and continuity rules on its controlling network. A five-of-seven treasury must remain five-of-seven without relying on a live dCorps service to supply the missing control. dCorps, dCorps Development, a future Foundation, and the official application must not hold a mandatory signing key, act as discretionary custodian, or possess an unrestricted execution module that bypasses the account policy.
+
+If an external account cannot enforce the intended Entity rule, dCorps may record an unauthorized, mismatched, disputed, or unresolved result. It cannot claim that the Entity rule controlled the external asset.
+
+### 8.5 Treasury control survives dCorps unavailability
+
+Sovereign external reserves must remain independently controllable if the official application, dCorps Development, the sequencer, or the dCorps network is unavailable. The corporation's authorized participants must be able to use independent interfaces or direct network interaction under the external account's own policy.
+
+Any dCorps-linked restriction on an external account requires a separately exercisable continuity policy with a high threshold, deliberate delay, and clear evidence. Live authorization from dCorps must never be required to recover or control sovereign external reserves.
+
+Funds retained on dCorps have a different continuity boundary. They require an Ethereum-enforced withdrawal or escape mechanism that can be exercised without the sequencer, dCorps Development, a future Foundation, or the official application. One disclosed primary canonical bridge provides the normal path. A separate continuity path must not create a competing representation, duplicate claim, or unrestricted second minting surface. It cannot recover value already lost through a compromised bridge or issuer event.
+
+### 8.6 Receiving and splitting a payment
+
+A receiving workflow begins with an authorized payment request identifying the Entity, source route, canonical destination asset, amount, reference, deadline, allocation policy, finality terms, and supporting evidence. The payer transfers through the disclosed route. dCorps waits for the canonical bridged-USDC value to become final before executing the Entity's approved allocation.
+
+For example, an Entity may authorize a rule that allocates each received payment among operating, savings, reserve, tax, and owner-distribution accounts. The dCorps-local split executes under that rule after ingress finality. Each resulting portion remains classified as capped dCorps operating liquidity or enters its separately tracked withdrawal or sweep. A cross-chain sweep is not final merely because the local portion was allocated.
+
+The resulting record distinguishes a complete match from a partial payment, overpayment, duplicate, wrong asset, wrong network, failed ingress, failed sweep, refund, dispute, or later correction. The protocol exposes uncertainty rather than labeling an ambiguous transfer paid.
+
+### 8.7 Making a payment
+
+An outgoing workflow begins with an exact proposed instruction. Every approval binds the source account, network, asset, recipient, amount, purpose, call effect, deadline, nonce, and supporting evidence. After the required Entity approvals exist, the applicable dCorps account, external policy account, or provider separately validates execution under its own rules. dCorps records or observes the result and reconciles it with the instruction.
+
+Every asset signer must be able to inspect the source, network, asset, amount, destination, call effect, nonce, and linked Entity instruction before signing.
+
+### 8.8 Worked example: a reserve payment
+
+Consider a corporation with two share classes, three directors, and one treasurer. Its policy requires two non-conflicted directors to approve a payment above 100,000 units and unanimous approval above 1,000,000 units. Its sovereign external reserve account independently requires signatures from two of three corporation-controlled signers.
 
 The treasurer proposes a 250,000-unit stablecoin payment to a vendor. The action binds the exact stablecoin contract, source account, recipient, amount, network, purpose, invoice commitment, call data, nonce, and expiry.
 
-At the record block, one director has a disclosed conflict with the vendor and is excluded. The remaining two eligible directors approve. dCorps records the policy version, board snapshot, conflict state, approvals, result, and exact authorized effect.
+At the record block, one director has a disclosed conflict with the vendor and is excluded. The remaining two eligible directors approve. dCorps records the policy version, board snapshot, conflict state, approvals, result, and exact authorized effect. The external policy account then validates its own two-of-three signing rule and executes. dCorps observes and reconciles the transaction.
 
-The smart account then executes. An observation record identifies the transaction, block, token, source, destination, amount, finality, and verification method. The invoice later disclosed to an auditor matches the prior commitment.
+The evidence supports a precise statement: the observed transaction matches an instruction authorized under the recorded dCorps rules and separately executed under the disclosed external account policy.
 
-The evidence supports a precise statement: the observed transaction matches an instruction authorized under the recorded dCorps rules and the disclosed invoice matches its commitment.
+It does not prove that the vendor performed, the price was fair, the directors satisfied all duties, the stablecoin or bridge is risk-free, or the accounting treatment is correct. Those conclusions remain external.
 
-It does not prove that the vendor performed, the price was fair, the directors satisfied all duties, the stablecoin is risk-free, or the accounting treatment is correct. Those conclusions remain external.
+### 8.9 Future Circle-issued native USDC and financial interoperability
 
-### 8.6 Future corporate financial interoperability
+The canonical bridged-USDC launch representation should conform from deployment to Circle's Bridged USDC Standard so a future transition can remain technically possible. Any later Circle-issued native USDC requires Circle's independent approval and the exact ownership, upgrade, issuance, redemption, backing, liquidity, compliance, operational, and migration terms applicable at that time. Native issuance can remove the canonical bridge backing dependency after a completed transition. It does not remove Circle issuer, reserve, administrative, liquidity, compliance, freeze, redemption, or dCorps network risk. A later sovereign dCorps Layer 1 migration requires a separate asset-continuity and Circle decision.
 
-Corporation 3.0 requires open financial access rather than dependence on one preferred provider. Independent wallets, exchanges, bridges, stablecoin issuers, on/off-ramp operators, payment companies, custodians, treasury systems, lenders, liquidity systems, and DeFi protocols may read public interfaces or submit canonical operations through documented dCorps interfaces on their own initiative. Public compatibility does not require dCorps permission and does not imply a partnership, endorsement, guaranteed availability, or privileged protocol authority. dCorps-supported schemas, status claims, reference integrations, or broader credit, liquidity, and DeFi capabilities remain future work subject to the applicable Phase 6 review and testing.
+Corporation 3.0 requires open financial access rather than dependence on one preferred provider. Independent wallets, exchanges, bridges, stablecoin issuers, on/off-ramp operators, payment companies, custodians, treasury systems, lenders, liquidity systems, and DeFi protocols may use documented public interfaces on their own initiative. Compatibility does not imply partnership, endorsement, guaranteed availability, custody by dCorps, or privileged protocol authority.
 
-Each provider remains responsible for its own licensing, customer and beneficial-owner verification, custody, reserves, solvency, security, privacy, pricing, liquidity, underwriting, collateral, liquidation, oracle, compliance, and legal obligations. A provider may impose its own eligibility conditions or decline service. Integration does not make the provider a source of Entity existence, ownership, or corporate authority.
-
-Every financial instruction presented as authorized by the Entity remains subject to the Entity's recorded approval rules and the separate signing or execution policy of the asset account or provider. No integration receives a privileged dCorps state-transition path that bypasses Entity rules. An independently governed external account or provider may nevertheless execute under its own authority without matching Entity approval; dCorps must record that result as unauthorized, mismatched, disputed, or otherwise unresolved rather than call it Entity-authorized. dCorps can evidence the instruction, authority, signatures, observed result, and later correction under disclosed methods; it does not thereby prove provider solvency, asset safety, transaction lawfulness, commercial performance, investment quality, or external legal effect. Broader dCorps-supported credit, liquidity, and DeFi integrations are future expansion objectives, not current V1.0 capabilities.
+Each provider remains responsible for its own licensing, identity and beneficial-owner verification, custody, reserves, solvency, security, privacy, pricing, liquidity, underwriting, collateral, liquidation, oracle, compliance, and legal obligations. dCorps can evidence the instruction, authority, signatures, local execution, observed external result, and later correction under disclosed methods; it does not thereby prove provider solvency, asset safety, transaction lawfulness, commercial performance, investment quality, or external legal effect. Broader dCorps-supported credit, liquidity, and DeFi integrations remain future expansion objectives subject to the applicable Phase 6 review and testing.
 
 ---
 
@@ -925,7 +966,7 @@ The corporation identity and ownership kernel is designed as a minimal, non-prox
 
 That application-level protection is not absolute during MAINNET-BETA. DevCo controls disclosed Arbitrum chain-owner and Upgrade Executor authority and could technically replace the underlying Rollup rules if that authority were compromised or abused. Multisignature control, hardware protection, public executable payloads, long timelocks, capability-limited emergency contracts, independent review, and continuous monitoring reduce this risk but do not eliminate it.
 
-Before production reliance, dCorps must provide a corporation-specific Ethereum continuity path. A corporation acting under its own rules must be able to prove and register its last finalized dCorps state, prevent duplicate use of the same export, and select or accept a destination without cooperation from the sequencer, DevCo, Foundation, or official application. The Ethereum continuity mechanism cannot be controlled by the same unrestricted authority against which it protects.
+Before production reliance, dCorps must provide a corporation-specific Ethereum continuity path. A corporation acting under its own rules must be able to prove and register its last finalized dCorps state, prevent duplicate use of the same export, and select or accept a destination without cooperation from the sequencer, DevCo, Foundation, or official application. The same continuity design must permit withdrawal or recovery of the corporation's canonical bridged-USDC balance under the last valid asset and account state without creating a competing representation or duplicate claim. The Ethereum continuity mechanism cannot be controlled by the same unrestricted authority against which it protects and cannot require a privileged dCorps signer.
 
 After Governance Activation on the Rollup, eligible DCHUB operational governance can control the listed network authorities. A decision begins in the dCorps governance contract, waits through its safety delay, travels through the official dCorps-to-Ethereum message bridge, waits through the Ethereum safety delay, and then reaches the contract authorized to perform the parent-chain action.
 
@@ -1361,7 +1402,10 @@ dCorps aims to preserve the integrity, availability, and explainability of corpo
 | Batch-poster failure | Missing parent-chain data | Monitoring, replacement, treasury funding, and recovery procedures |
 | Validator or dispute failure | Invalid assertion or liveness loss | Permissioned independent validators, BoLD monitoring, challenge resources, and tested rotation |
 | Chain-owner compromise | Malicious upgrade or parameter change | Immutable corporation kernel, timelocks, separated roles, public payloads, capability-limited controls, Ethereum continuity path during the Rollup phase, and eventual elimination of unilateral generic authority in the sovereign L1 |
-| Bridge or supply defect | Inflation, locked value, or accounting mismatch | Cross-network and custody reconciliation, invariant monitoring, caps, and independent audits |
+| Canonical bridge or bridged-USDC defect | Inflation, competing or duplicate claims, lost backing, locked value, or accounting mismatch | One canonical representation, disclosed backing, no-double-claim reconciliation, independently controlled and timelocked administration, formal review, caps, monitoring, pause, withdrawal, Ethereum escape, and multiple independent audits |
+| Excess dCorps liquidity concentration | A dCorps or bridge incident exposes more corporation capital than intended | Entity operating-liquidity caps, stricter protocol and aggregate limits, authorized sweeps, balance-class disclosure, and continuous exposure monitoring |
+| Failed ingress, split, sweep, or withdrawal | Partial settlement, stranded funds, incorrect allocation, or misleading paid status | Explicit asynchronous states, local-execution boundaries, idempotent instructions, refund and reconciliation procedures, and no completion claim before applicable finality |
+| External policy-account failure | External reserves become inaccessible or execute outside intended Entity rules | Locally enforced signer thresholds, limits, recovery and continuity rules, independent interfaces, direct-network access, and mismatch evidence |
 | Pricer failure | User overpayment or operator loss | Staleness limits, bounds, circuit breakers, monitoring, and governed replacement |
 | Application, managed API, or indexer failure | Unavailable or misleading interface | Published schemas and ABIs, independently usable SDK and direct RPC, reproducible indexers, exports, and replacement applications or providers |
 | Archive loss | Inability to reconstruct history | Three or more independent archives, content-addressed manifests, permanent Ethereum commitments, public mirrors, and replay tests |
@@ -1411,6 +1455,9 @@ dCorps should not claim stronger properties than its deployed configuration demo
 - token-secured consensus when DCHUB is not the bond asset;
 - permanent availability without independently tested archives;
 - non-custody if an operator retains an undisclosed asset key;
+- treasury survivability if external reserves require live dCorps authorization or an undisclosed dCorps signer;
+- bridge continuity without a tested Ethereum-enforced withdrawal or escape path and no-double-claim accounting;
+- limited dCorps exposure without tested operating-liquidity caps, sweeps, and exact balance-location disclosure;
 - native cryptographic ownership if a private application or any future DID issuer or legal adapter can silently rewrite the share ledger;
 - decentralized governance before the public-electorate gates are met; or
 - application independence without reproducible reconstruction by another implementation; or
@@ -1470,7 +1517,10 @@ Any comparison with a conventional formation system must identify the jurisdicti
 - implement reference contracts, official web and mobile applications, managed REST API, SDKs, indexer, corporation resolver, and evidence exporter;
 - derive common authorization, transition, event, evidence, privacy, failure, and reconstruction requirements from the supported corporation workflow catalogue;
 - build cross-interface conformance fixtures and threat model;
-- specify and test private development networks, stablecoin bridge paths, and external asset workflows;
+- specify one canonical bridged-USDC representation designed to conform from deployment to Circle's Bridged USDC Standard, including backing, contracts, mint and burn authority, primary bridge, upgrades, limits, monitoring, incident response, withdrawal, and no-double-claim accounting;
+- specify and test full-bridge ingress, dCorps-local execution and allocation, the three balance classes, Entity operating-liquidity caps, authorized sweeps, external policy accounts, asynchronous failure and refund states, reconciliation, and exact balance-location disclosure;
+- specify and test an Ethereum-enforced bridged-USDC withdrawal or escape path that does not require the sequencer, DevCo, Foundation, or official application and does not create a competing representation or duplicate claim;
+- test external policy-account signer, threshold, limit, recovery, and continuity enforcement, including corporation control during complete dCorps and official-application unavailability;
 - publish the Corporation 3.0 formation-time, cost, and evidence benchmark specification and establish reproducible baseline fixtures without presenting the target as achieved;
 - publish the dedicated-Rollup versus existing-L2 contract-system comparison and pass the economic and security decision gate; and
 - form the Foundation for pre-launch continuity arrangements without transferring bootstrap chain operation from DevCo.
@@ -1480,7 +1530,8 @@ Any comparison with a conventional formation system must identify the jurisdicti
 - deploy the dCorps Rollup and activate DCHUB as its native gas asset under the reviewed Token Specification and Network Disclosure;
 - publish the Network Disclosure and contract source;
 - enable DCHUB as technical gas without public distribution;
-- enable only reviewed bridged-stablecoin representations whose origin tokens, bridge contracts, issuer controls, upgrade authorities, finality, and exit paths are disclosed;
+- enable only the reviewed canonical bridged-USDC representation after its backing, bridge and token contracts, issuer controls, upgrade authorities, finality, liquidity, caps, monitoring, incident, withdrawal, and Ethereum escape paths are disclosed and independently tested;
+- impose and monitor per-transaction, per-Entity, per-route, and aggregate exposure limits; activate only reviewed Entity cap and sweep workflows; and disclose funds in transit, capped dCorps operating liquidity, and sovereign external reserves separately;
 - onboard a limited, geographically diverse set of native dCorps corporations spanning one-owner, multi-owner, simple-governance, and layered-governance states; the beta limit is a security-control measure, not a restriction of the intended market;
 - validate adoption and commercial demand through real retained Entity use and disclosed official-application, managed-API, indexing, automation, integration, and support services without converting provider access into protocol authority or managed-service exclusivity;
 - research, identify, and engage jurisdictions that may wish to become future participating Smart Jurisdictions, without presenting any candidate as participating or exposing an active recognition flow before the required legal framework or agreement, specifications, reviews, implementation, operating responsibility, and activation evidence exist;
@@ -1489,7 +1540,7 @@ Any comparison with a conventional formation system must identify the jurisdicti
 - establish independent archives and replay tests;
 - permanently commit archive manifests and confirmed state checkpoints to Ethereum;
 - deploy disclosed multisignature, timelock, and capability-limited emergency controls;
-- demonstrate the corporation-specific Ethereum continuity path without DevCo, Foundation, sequencer, or official-application cooperation;
+- demonstrate the corporation-specific Ethereum continuity path, including canonical bridged-USDC withdrawal or recovery, without DevCo, Foundation, sequencer, or official-application cooperation and without creating duplicate claims;
 - execute every supported canonical operation through the official web and mobile applications, REST API, SDK, and an independently authored direct-RPC and published-ABI client with the same authorization and resulting state; and
 - validate application, managed-API, indexer, and provider replacement and exit.
 
@@ -1538,7 +1589,7 @@ The mandatory sovereign-L1 program begins at Foundation Handover in Phase 2 and 
 
 - introduce optional DID and controller-attestation modules only after native ownership is independently reconstructible;
 - introduce the reviewed Smart Jurisdiction framework, catalog, and adapter flow only after the required jurisdictional framework or agreement and identity, evidence, privacy, security, technical, operating, disclosure, and activation requirements are satisfied; Phase 1 candidate engagement does not satisfy this gate;
-- support a stablecoin issued directly on dCorps by an independent issuer only after issuer authority, issuance and redemption, reserve and administrative assumptions, contract security, liquidity, compliance, privacy, custody, access, and exit requirements are independently reviewed and disclosed;
+- pursue possible Circle-issued native USDC on dCorps only through Circle's independent approval, agreement, due diligence, and implementation, and only after issuance and redemption, reserve and administrative authority, contract transition, backing reconciliation, liquidity, compliance, privacy, custody, access, and exit requirements are independently reviewed and disclosed; the objective is not a promise by Circle and does not authorize a dCorps-issued USDC asset;
 - expand corporate financial interoperability with independent payment, custody, treasury, lending, liquidity, and DeFi systems only after the authority, asset-signing, oracle, collateral, liquidation, smart-contract, provider, privacy, security, compliance, and failure boundaries are specified and tested;
 - consider legacy-company mapping only as optional interoperability after the native formation model is proven; it is not a launch dependency or primary adoption objective;
 - support independent applications and professional evidence providers;
@@ -1557,7 +1608,9 @@ Before public claims are made, dCorps must demonstrate:
 - exact reconstruction of native share issuance, account owners, class rights, transfers, and ownership percentages under identified denominators;
 - wallet-application replacement without moving shares and smart-account key rotation without changing the owning account;
 - rejection of unauthorized share transfers and successful execution of every supported native recovery path without an external-ledger override;
-- successful deposit, governed use, withdrawal or redemption, reconciliation, and failure handling for every supported bridged-stablecoin representation and any stablecoin issued directly by an independent issuer;
+- successful full-bridge ingress, canonical bridged-USDC finality, Entity-authorized local split or payment, operating-liquidity cap enforcement, automatic sweep, external-account finality, withdrawal, refund, reconciliation, and failure handling without double counting or an unsupported paid state;
+- successful operation of corporation-controlled external policy accounts under their local signer, threshold, limit, recovery, and continuity rules during complete dCorps and official-application unavailability;
+- successful Ethereum-enforced withdrawal or recovery of canonical bridged USDC without DevCo, Foundation, sequencer, official-application, or privileged dCorps-signature cooperation and without a competing representation or duplicate claim;
 - successful execution of every supported canonical operation through official web and mobile applications, the documented REST API and SDK, and an independently authored direct-RPC and published-ABI client with identical authorization and resulting state;
 - application and managed-API replacement from finalized chain data, published operation formats, and exported protected-record manifests;
 - successful external-account mismatch detection;
@@ -1597,7 +1650,7 @@ Keys can be stolen, coerced, shared, or lost. Because native shares are account-
 
 ### 14.5 Software, bridge, and Rollup failures
 
-Kernel contracts, corporation rules, modules, bridges, directly issued stablecoins, Nitro components, pricers, governance, and upgrade paths can contain defects. External financial and DeFi integrations add issuer, custody, reserve, solvency, oracle, liquidity, collateral, liquidation, smart-contract, privacy, and regulatory risks. Compatibility with dCorps does not constitute a guarantee or endorsement. Ethereum congestion and changes to external dependencies can affect cost and liveness. During MAINNET-BETA, DevCo's disclosed generic Arbitrum chain-owner authority could technically replace underlying rules; the immutable corporation kernel and operational safeguards reduce but do not eliminate that risk. A later sovereign L1 introduces a different consensus and validator security model that must be proven before launch.
+Kernel contracts, corporation rules, modules, the canonical bridge, canonical bridged USDC, Ethereum escape, Nitro components, pricers, governance, and upgrade paths can contain defects. A canonical-bridge compromise can create lost backing, duplicate claims, invalid minting, frozen withdrawals, or insolvency. Failed ingress, splits, sweeps, and withdrawals can strand or misallocate value. Funds in transit and capped dCorps operating liquidity remain exposed to dCorps, Rollup, bridge, contract, issuer, and Ethereum failure domains. Sovereign external reserves already settled outside dCorps remain outside that dCorps execution and bridge failure domain but retain their own issuer, network, account, custody, smart-contract, and operational risks. External financial and DeFi integrations add reserve, solvency, oracle, liquidity, collateral, liquidation, privacy, and regulatory risks. Compatibility with dCorps does not constitute a guarantee or endorsement. Ethereum congestion and changes to external dependencies can affect cost and liveness. During MAINNET-BETA, DevCo's disclosed generic Arbitrum chain-owner authority could technically replace underlying rules; the immutable corporation kernel and operational safeguards reduce but do not eliminate that risk. A later sovereign L1 introduces a different consensus and validator security model and requires a separate stablecoin, bridge, and treasury-continuity decision before launch.
 
 ### 14.6 Operators and archives can fail
 
@@ -1668,7 +1721,7 @@ The deeper problem is unequal access. A person's birthplace should not determine
 
 dCorps defines Corporation 3.0 by assembling that transition into one protocol-native corporate system. A person creates a dCorps Entity directly on a dedicated blockchain. Canonical dCorps state creates the Entity; its accepted record evidences and reconstructs its protocol existence, ownership, authority, and change under the disclosed trust model. dCorps presents that Entity as a native digital corporation: the Entity, its issued shares, and its ownership state exist natively, while the brand and category terms do not by themselves claim legal personality, limited liability, statutory incorporation, tax status, or state recognition.
 
-From that foundation, ownership connects to decision rules, operational roles, exact instructions, supported stablecoin commerce, evidence, disclosure, and correction. Stablecoins may be bridged and, after later review, issued directly on dCorps by independent issuers; either way they remain external commerce assets while DCHUB remains protocol-native gas. Registries, banks, payment companies, custodians, exchanges, on/off-ramps, lenders, DeFi systems, and professional services may independently serve the Entity through public interfaces, while its `EntityID`, share ledger, and native history continue independently.
+From that foundation, ownership connects to decision rules, operational roles, exact instructions, supported stablecoin commerce, evidence, disclosure, and correction. Full-bridge settlement brings supported payments into one canonical bridged-USDC representation before the Entity's authorized dCorps-local financial workflow executes. Funds in transit, capped dCorps operating liquidity, and sovereign external reserves remain visibly separate. Possible later Circle-issued native USDC requires Circle's independent approval and implementation. Stablecoins remain external commerce assets while DCHUB remains protocol-native gas. Registries, banks, payment companies, custodians, exchanges, on/off-ramps, lenders, DeFi systems, and professional services may independently serve the Entity through public interfaces, while its `EntityID`, share ledger, and native history continue independently.
 
 Smart Jurisdiction remains a formal long-term objective. During the dCorps Development management era of MAINNET-BETA, dCorps intends to identify and engage jurisdictions that may wish to participate. Actual participation requires a legally effective framework that states the recognition conferred, identity and eligibility process, taxes and fees, continuing duties, remedies, status authority, technical implementation, and activation evidence. Recognition remains future, optional, and jurisdiction-specific. If a framework is attached, replaced, or detached, the underlying Entity and its complete native history remain continuous, while legal continuity and entry, continuing, and exit effects follow the applicable laws and agreements.
 
@@ -1676,7 +1729,7 @@ The complete management stack makes this model practical. A founder opens an ERP
 
 The official web and mobile applications provide the organized experience, but the chain remains dCorps. The same canonical operations must be available through the documented REST API and SDK and through independently built direct-RPC and published-ABI clients under the same Entity authorization and protocol rules. Another conforming application can reproduce and change the same ownership, authority, decisions, accounts, and history through those published rules. Managed providers may charge for hosting, capacity, automation, support, and service levels; those commercial services cannot create a privileged protocol path. Under the universal corporation rules, the official share ledger identifies the owner accounts, and control follows each account's cryptographic policy. Future identity modules may describe account controllers, and a future participating Smart Jurisdiction may attach external recognition, while native shares remain under the Entity's on-chain ownership rules.
 
-The same principle applies to operations. The corporation chooses its treasury accounts and custody model. It may directly control account keys or select a separately governed external provider under disclosed custody, execution, recovery, and exit rules. dCorps connects decisions to payments and evidence without itself taking custody. The corporation decides which information is public, which records remain encrypted, and which private materials are opened to selected accounts or roles such as an auditor, investor, lender, director, or adviser.
+The same principle applies to operations. One logical Entity treasury may span purpose-specific accounts and networks. The corporation chooses its accounts, operating-liquidity cap, sweep rules, custody model, signers, thresholds, recovery, and continuity policies. It may directly control account keys or select a separately governed external provider under disclosed custody, execution, recovery, and exit rules. dCorps connects decisions to payments and evidence without becoming a mandatory signer or discretionary custodian. Sovereign external reserves remain independently controllable if dCorps is unavailable, while funds retained on dCorps require an Ethereum-enforced withdrawal or escape path. The corporation decides which information is public, which records remain encrypted, and which private materials are opened to selected accounts or roles such as an auditor, investor, lender, director, or adviser.
 
 DCHUB supplies native gas on the Rollup and can later govern defined shared operations after measurable distribution and readiness conditions are met. DevCo bootstraps the Rollup, develops adoption, and may commercialize disclosed applications and managed services without privileged protocol authority. The Foundation is formed before launch for continuity and later assumes operational stewardship on the same network only after every applicable Section 11.2 Handover gate is satisfied. It preserves DevCo's defined continuing role through the effective agreement and becomes responsible for the mandatory sovereign-L1 program. Dedicated allocations and recurring protocol revenue fund the mission first; if they are insufficient and the required reviews permit distribution, the Foundation must manage the separately disclosed public sale from the existing allocation without reducing the Founder's 15 percent. DCHUB continues as the same economic asset on the sovereign L1 under a future independently reviewed continuity design. Public DCHUB governance can follow when the electorate and security model are ready.
 
@@ -1720,7 +1773,7 @@ If dCorps achieves that standard, a founder in a small village and a founder in 
 28. While V1.0 controls, no Founder, Foundation, or DCHUB vote can abandon the sovereign-L1 destination; protected strategic consent guides implementation and continuity but cannot silently waive this invariant.
 29. A chain or interface cannot claim durable reconstruction unless independent replay succeeds beyond transient data availability.
 30. Security, economic, ownership, and decentralization claims must match the disclosed deployed configuration.
-31. DCHUB is the protocol-native gas asset; stablecoins and other commerce assets remain externally governed whether represented through a disclosed bridge or issued directly on dCorps by an independent issuer. Use `directly issued` or `issuer-direct on dCorps`; do not call such a stablecoin `native` without the full issuer-specific qualifier, and never call it protocol-native to dCorps.
+31. DCHUB is the protocol-native gas asset; canonical bridged USDC and any possible later Circle-issued native USDC remain externally governed commerce assets. dCorps does not issue USDC, and neither representation is protocol-native to dCorps.
 32. Permission to read a protected record does not create share ownership, voting power, a corporate role, or authority over a corporation account.
 33. Recording a document fingerprint or disclosure rule on-chain does not publish the protected document's private contents.
 34. One governance-eligible DCHUB contributes one vote at the published snapshot, counted once through self-delegation or revocable delegation after exclusions.
@@ -1746,6 +1799,13 @@ If dCorps achieves that standard, a founder in a small village and a founder in 
 54. Raw Entity registrations, subsidized or circular transactions, token activity, or announced integrations cannot trigger Foundation Handover; every applicable Section 11.2 Handover gate must be satisfied under a disclosed method.
 55. An external payment, custody, on/off-ramp, lending, liquidity, stablecoin, or DeFi integration receives no privileged dCorps state-transition path, does not become dCorps custody by implication, and creates no protocol endorsement, guarantee, or partnership. Independently executed external activity must be recorded as unauthorized or mismatched when it does not satisfy Entity approval and the applicable asset-account or provider execution path.
 56. Formation-speed, API-latency, inclusion, finality, cost, evidence-quality, adoption, and incumbent-system comparison claims require a reproducible method, stated environment and prerequisites, all material fees, and evidence for the exact claimed dimension; a target is not a deployed fact.
+57. Normal supported stablecoin financial execution uses one canonical bridged-USDC representation on dCorps; a continuity path cannot create a competing representation, duplicate claim, or unrestricted second minting surface.
+58. Every supported stablecoin balance is classified as funds in transit, capped dCorps operating liquidity, or sovereign external reserves, and an interface identifies the current network, asset, contract, custody, signer, finality, and risk state.
+59. The Entity selects its dCorps operating-liquidity cap under an authorized policy subject to stricter protocol limits, and a conforming implementation supports authorized sweeps above that cap.
+60. dCorps, DevCo, a future Foundation, and the official application are not mandatory signers, discretionary custodians, or unrestricted execution modules for corporation treasury assets.
+61. Sovereign external reserves remain independently usable under the external account's local signer, threshold, limit, recovery, and continuity rules when dCorps is unavailable.
+62. Canonical bridged-USDC value retained on dCorps requires a tested Ethereum-enforced withdrawal or escape path without sequencer, DevCo, Foundation, official-application, or privileged dCorps-signature cooperation.
+63. Possible later Circle-issued native USDC on dCorps requires Circle's independent approval, agreement, and implementation; conformity with Circle's Bridged USDC Standard preserves an option and does not create a promise or current capability.
 
 ---
 
@@ -1780,11 +1840,15 @@ These references describe external technologies and standards on which the targe
 - [Open Cap Table Coalition](https://www.opencaptablecoalition.com/)
 - [GLEIF verifiable LEI](https://www.gleif.org/en/vlei/introducing-the-verifiable-lei-vlei)
 
+### Stablecoin representation and continuity
+
+- [Circle Bridged USDC Standard](https://www.circle.com/bridged-usdc)
+
 ---
 
 ## Appendix C. Project doctrine
 
-The [dCorps Founder Manifesto](https://dcorps.com/manifesto/) states the broader motivation this protocol design serves: anyone, anywhere should be able to form an entity that can operate with credibility, continuity, and real financial rails. V1.0 implements that motivation as **Corporation 3.0**, the dCorps-defined category for one universal protocol-native Entity model presented under the project's digital-corporation brand. It makes cryptographic formation—not geolocated registration—the starting point; canonical state the source of Entity existence; the resulting record evidence of that existence and its authorized change; one modular model broadly usable from one owner to layered governance; stablecoin-centered operations first-class; applications and services replaceable; and identity and external legal recognition optional later attachments rather than entry gates.
+The [dCorps Founder Manifesto](https://dcorps.com/manifesto/) states the broader motivation this protocol design serves: anyone, anywhere should be able to form an entity that can operate with credibility, continuity, and real financial rails. V1.0 implements that motivation as **Corporation 3.0**, the dCorps-defined category for one universal protocol-native Entity model presented under the project's digital-corporation brand. It makes cryptographic formation—not geolocated registration—the starting point; canonical state the source of Entity existence; the resulting record evidence of that existence and its authorized change; one modular model broadly usable from one owner to layered governance; full-bridge stablecoin execution first-class without requiring permanent dCorps treasury custody; applications and services replaceable; and identity and external legal recognition optional later attachments rather than entry gates.
 
 This is not an enterprise-only registry, compliance portal, professional-services product, or migration project for incumbent corporations. Its success is measured by whether anyone can create a dCorps Entity natively, control it cryptographically, operate it as a digital corporation, transact through supported stablecoins and programmable accounts, build disclosed canonical history that can be inspected independently under its privacy rules, and grow from one owner and simple rules to highly layered ownership and governance without changing templates or leaving dCorps. Rapid and low-cost formation is a measured product objective, not a substitute for disclosed benchmarks, finality, fees, or external legal requirements.
 
@@ -1796,7 +1860,7 @@ The mission also applies to dCorps itself. Private development networks develop 
 
 ## Document status
 
-V1.0 defines the dCorps target design: Corporation 3.0 as the dCorps-defined category; a `dCorps Entity` as the permanent protocol object and `Digital Corporation` as its branded product presentation; canonical-state existence and bounded cryptographic evidence; universal formation under one continuously configurable model; blockchain-account ownership of native shares; structure shaped through authorized workflows rather than templates, legal forms, or protocol types; complete official web and mobile management applications; capability-equivalent documented REST API, SDK, direct-RPC, and published-ABI access; independently integrable and commercially packageable services without privileged protocol authority; bridged and possible future issuer-direct stablecoin operations while DCHUB remains protocol-native gas; future optional identity and Smart Jurisdiction recognition under a legally effective participation floor; Entity continuity across recognition changes; corporate financial interoperability and future bounded DeFi integration; measured rather than assumed formation-time, cost, and evidence claims; cost-first fee burn; DevCo-operated MAINNET-BETA adoption and commercial validation; pre-launch Foundation formation with adoption- and readiness-gated operational handover; Foundation-led sovereign-L1 development as a mandatory mission; contractually guaranteed DevCo continuity; Founder anti-capture stewardship with a governed transition; progressive operational decentralization; delegated linear operational governance; and Entity self-control.
+V1.0 defines the dCorps target design: Corporation 3.0 as the dCorps-defined category; a `dCorps Entity` as the permanent protocol object and `Digital Corporation` as its branded product presentation; canonical-state existence and bounded cryptographic evidence; universal formation under one continuously configurable model; blockchain-account ownership of native shares; structure shaped through authorized workflows rather than templates, legal forms, or protocol types; complete official web and mobile management applications; capability-equivalent documented REST API, SDK, direct-RPC, and published-ABI access; independently integrable and commercially packageable services without privileged protocol authority; full-bridge stablecoin settlement through one canonical bridged-USDC launch representation while DCHUB remains protocol-native gas; three balance classes, Entity-selected exposure caps, sovereign external reserves, independent external policy-account control, and Ethereum-enforced bridged-asset escape; possible later Circle-issued native USDC only after Circle's independent approval and implementation; future optional identity and Smart Jurisdiction recognition under a legally effective participation floor; Entity continuity across recognition changes; corporate financial interoperability and future bounded DeFi integration; measured rather than assumed formation-time, cost, and evidence claims; cost-first fee burn; DevCo-operated MAINNET-BETA adoption and commercial validation; pre-launch Foundation formation with adoption- and readiness-gated operational handover; Foundation-led sovereign-L1 development as a mandatory mission; contractually guaranteed DevCo continuity; Founder anti-capture stewardship with a governed transition; progressive operational decentralization; delegated linear operational governance; and Entity self-control.
 
 This whitepaper intentionally does not reproduce exact algorithms, encodings, archival procedures, recovery state machines, legal instruments, appointment procedures, succession procedures, notice workflows, or contract-enforcement clauses. Those mechanisms belong in the Protocol Specification, Network Disclosure, Governance Charter, economics documentation, security documentation, and separately executed legal instruments.
 
