@@ -1,5 +1,14 @@
 # dCorps public documentation instructions
 
+## Global execution governance
+
+This repository is governed by the canonical DEV execution policy at
+`/Users/njgturk/Projects/DEV/INFRA/platform-infra/docs/governance/dev-execution-governance.md`.
+Read it before substantial work. Local instructions may add or strengthen
+controls, but they may not weaken security, authorization, source authority,
+data integrity, quality, or mandatory evidence. If the canonical policy is
+unavailable, stop substantial execution and report the missing authority.
+
 Read `/Users/njgturk/Projects/DEV/AGENTS.md` and `../AGENTS.md` first.
 
 ## Current state
