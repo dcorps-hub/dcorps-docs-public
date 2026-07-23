@@ -4,15 +4,19 @@
 - **Authority:** Nicolas Turcotte, Protocol Founder
 - **Initial source authority date:** 2026-07-16
 - **Revised composition and local publication authority:** 2026-07-21
+- **Universality amendment and local synchronization authority:** 2026-07-22
 - **Signature withdrawal authority:** 2026-07-19
 - **Controlling private source:** `docs/master/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
 - **Public distribution copy:** `DCORPS_FOUNDER_MANIFESTO_V1_0.md`
-- **SHA-256:** `90b8d4aeab81a89319ca43267e34e21fc15e176a3fd8b4c9259de3006eef94fe`
-- **Paragraphs:** 34
+- **SHA-256:** `cffdbb16e7d5c9390dd6cec90eed9213a399d6611f72a3bca55a94642a0a8810`
+- **Immediately preceding SHA-256:** `90b8d4aeab81a89319ca43267e34e21fc15e176a3fd8b4c9259de3006eef94fe`
+- **Paragraphs:** 35
 - **Website route:** `/manifesto/`
 
 The public distribution copy is byte-identical to the canonical revised
-manuscript. The
+manuscript. The 2026-07-22 amendment adds the exact owner-adopted universality
+paragraph after the continuity paragraph and before `This freedom must be
+practical.` The
 website may format those paragraphs as HTML in their exact order and may add
 the page title, author identity, and current Protocol Founder role as
 presentation metadata outside the hashed prose. The name and title are aligned

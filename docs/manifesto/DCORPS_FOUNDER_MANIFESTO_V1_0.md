@@ -28,6 +28,8 @@ Corporation 3.0 is a native Digital Corporation whose existence and continuity c
 
 A corporation should not need to start again whenever it changes providers, adopts a new structure, enters another market, or finds a jurisdiction better suited to its purpose.
 
+The same foundation should serve one person working alone, a professional partnership, a distributed venture, or a large corporation with layered ownership and governance. It should also remain open to emerging organizational models built through programmable governance. Each Entity should begin with only the structure it needs.
+
 This freedom must be practical. Creating a serious organization should be fast and affordable. Complexity should be carried by the system instead of imposed on the entrepreneur.
 
 The core dCorps Native App will be free to use. Network fees and optional managed services remain separate.

@@ -10,8 +10,9 @@
 - **Native-asset naming, Rollup distribution, and sovereign-L1 continuity clarification authority:** 2026-07-21
 - **Section 10 tokenomics title and reader-label clarification authority:** 2026-07-21
 - **Free core Native App correction authority:** 2026-07-21
+- **Guided Formation, Workflow Specification, universal-model, and conformance correction authority:** 2026-07-22
 - **Public distribution copy:** `DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md`
-- **SHA-256:** `80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`
+- **SHA-256:** `9df00e2f74179add7970132d248d104d592f8ca9a3797a5aee8a10dc6bdaee68`
 - **Website route:** `/whitepaper/`
 
 The public distribution copy is byte-identical to the official canonical
@@ -37,12 +38,20 @@ is conditional and Foundation-managed; and sovereign-L1 balances remain the
 same economic DCORPS through reconciled succession without duplicate supply.
 The later V1-0040 correction commits the core dCorps Native App to free use
 without an application-access fee while retaining separate network transaction
-fees and optional paid managed services. These corrections do not present a Smart Jurisdiction, bridge, stablecoin
+fees and optional paid managed services. V1-0041 clarifies that universal
+canonical state and corporation rules define the Entity, the accepted
+non-exhaustive Workflow Library is a design foundation, individually adopted
+Workflow Specifications are normative, and conforming applications may provide
+Guided Formation through editable non-authoritative templates or configuration
+manifests. It preserves the V1 native ownership kernel, treats beneficial
+ownership as external, adopts phase-qualified conformance, and expands the
+stated organizational coverage without creating permanent protocol-level
+Entity types. These corrections do not present a Smart Jurisdiction, bridge, stablecoin
 deployment, Circle agreement, provider integration, legal effect, performance
 result, token event, or decentralization milestone as current.
 
-The immediately preceding V1-0039 Whitepaper digest was
-`7606ccc013a6771eb03ae8339984ee4129145fdf6d851cf63a0512273b32851a`.
+The immediately preceding V1-0040 Whitepaper digest was
+`80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`.
 V1-0039 changed only the Section 10 table-of-contents line and H2 title to
 `DCORPS tokenomics: paying for the chain and later governing shared operations`
 and authorizes `DCORPS tokenomics` as the compact reader label. It changes no

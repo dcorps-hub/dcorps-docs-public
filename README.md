@@ -10,8 +10,8 @@ local and protected noindex DEV website review.
   is byte-identical to the canonical private manuscript and matches its adopted
   digest.
 - The Founder Manifesto copy under `docs/manifesto/` is authoritative only
-  because it is byte-identical to the exact owner source and matches its
-  adopted digest.
+  because it is byte-identical to the canonical private manuscript and matches
+  its adopted digest.
 - No separate product definition, legal document, or other public
   documentation category is authorized here yet.
 - Do not reconstruct removed material from Git history, deleted files,

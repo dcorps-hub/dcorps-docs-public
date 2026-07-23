@@ -1,7 +1,7 @@
 # Public Documentation Publication Policy
 
 **Status**: Adopted for local and protected noindex DEV Whitepaper and Founder Manifesto review
-**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, and 2026-07-21
+**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, 2026-07-21, and 2026-07-22
 **Authority**: Nicolas Turcotte, Protocol Founder
 
 ## Controlling sources
@@ -15,7 +15,7 @@ canonical manuscript in the private governance repository:
 
 Its SHA-256 digest is:
 
-`80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`
+`9df00e2f74179add7970132d248d104d592f8ca9a3797a5aee8a10dc6bdaee68`
 
 ### Founder Manifesto V1.0
 
@@ -27,7 +27,7 @@ governance repository:
 
 Its SHA-256 digest is:
 
-`90b8d4aeab81a89319ca43267e34e21fc15e176a3fd8b4c9259de3006eef94fe`
+`cffdbb16e7d5c9390dd6cec90eed9213a399d6611f72a3bca55a94642a0a8810`
 
 The immutable initial Founder source and every exact revision direction remain
 preserved in the private governance repository as provenance. Prior
@@ -61,7 +61,7 @@ authorizes:
 
 - one byte-exact public distribution copy in `docs/manifesto/`;
 - one byte-exact vendored website build input;
-- formatting the 34 paragraphs as accessible HTML in their exact order within
+- formatting the 35 paragraphs as accessible HTML in their exact order within
   the preserved Manifesto layout; and
 - presentation metadata outside the hashed prose: the page title, author name,
   and current Protocol Founder role, aligned at the right without a signature
@@ -102,9 +102,16 @@ disclaimer to the Manifesto prose.
   keeping network transaction fees and optional managed-service charges
   separate. It also adopts the revised 34-paragraph Founder Manifesto for local
   publication.
-- The immediately preceding V1-0039 Whitepaper digest was
-  `7606ccc013a6771eb03ae8339984ee4129145fdf6d851cf63a0512273b32851a`.
-  The current V1-0040 digest is the controlling digest stated above.
+- The owner separately authorized V1-0041 before public release. It adopts
+  Guided Formation, clarifies the non-authoritative template boundary,
+  separates the non-exhaustive Workflow Library from normative adopted Workflow
+  Specifications, preserves the V1 native ownership kernel and external
+  beneficial-ownership boundary, adopts phase-qualified universal-model
+  conformance, and adds one exact universality paragraph to the Manifesto. The
+  amended Manifesto contains 35 paragraphs.
+- The immediately preceding V1-0040 Whitepaper digest was
+  `80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`.
+  The current V1-0041 digest is the controlling digest stated above.
 - After public release, a substantive Whitepaper or Manifesto change requires
   explicit owner adoption, a new version or amendment, a new digest, and
   updated publication records.
