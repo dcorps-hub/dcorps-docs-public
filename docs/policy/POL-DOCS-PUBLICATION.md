@@ -20,14 +20,14 @@ Its SHA-256 digest is:
 ### Founder Manifesto V1.0
 
 The sole controlling source for the dCorps Founder Manifesto V1.0 is the
-normalized canonical manuscript adopted on 2026-07-21 in the private
-governance repository:
+normalized canonical manuscript adopted on 2026-07-21 and fully revised under
+V1-0085 on 2026-07-26 in the private governance repository:
 
 `docs/master/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
 
 Its SHA-256 digest is:
 
-`cdd016059ea5654b0c19c5bdd2d220305ecd6400d596cc3505ac6a69c6588f38`
+`225afb89746090ab9c5499f647d13727445b596e5500815339a8fceae2683441`
 
 The immutable initial Founder source and every exact revision direction remain
 preserved in the private governance repository as provenance. Prior
@@ -61,21 +61,35 @@ authorizes:
 
 - one byte-exact public distribution copy in `docs/manifesto/`;
 - one byte-exact vendored website build input;
-- formatting the 37 paragraphs as accessible HTML in their exact order within
+- formatting the 47 paragraphs as accessible HTML in their exact order within
   the preserved Manifesto layout; and
 - presentation metadata outside the hashed prose: the page title, author name,
   approved Founder portrait, and current Protocol Founder role, without a
   signature image.
 
 The website must not rewrite, correct, summarize, reorder, or append a
-disclaimer to the Manifesto prose.
+disclaimer to the Manifesto prose. The formal page identity remains
+`The dCorps Founder Manifesto`, while canonical paragraph 1 is the display
+opening.
 
-The owner further authorizes canonical Manifesto paragraphs 7 through 12 to
-appear exactly once as an attributed quotation on `/what-is-dcorps/`. The
-website must select that contiguous excerpt from the parsed, hash-verified
-Manifesto source. It must not maintain a second independently editable prose
-copy. Automatic keyword emphasis is prohibited in both the complete Manifesto
-and the quotation unless a later owner decision adopts an exact emphasis map.
+The owner further authorizes the named
+`native-existence-and-legal-boundary` block to appear exactly once as an
+attributed quotation on `/what-is-dcorps/`. For human audit, that block is
+current canonical paragraphs 7 through 17 inclusive. Its unique exact start
+anchor is the complete paragraph `Citizenship gives a person a legal
+relationship with a state. It can shape rights, duties, and identity, but it
+does not create the person.` Its unique exact end anchor is the complete
+paragraph `A dCorps Entity can nevertheless be created, owned, governed, and
+operated at the protocol level before receiving external legal recognition.`
+The website must select the contiguous block from the parsed, hash-verified
+Manifesto through those exact anchors rather than fixed paragraph indexes. It
+must not maintain a second independently editable prose copy.
+
+The public distribution copy and vendored Markdown must contain no
+presentation-emphasis markup. The website may apply only the exact semantic
+emphasis map adopted under V1-0085, including the complete purple credibility
+statement in canonical paragraph 19. Automatic keyword matching remains
+prohibited in the complete Manifesto and the source-derived quotation.
 
 ## Integrity requirements
 
@@ -116,12 +130,19 @@ and the quotation unless a later owner decision adopts an exact emphasis map.
   beneficial-ownership boundary, adopts phase-qualified universal-model
   conformance, and adds one exact universality paragraph to the Manifesto. The
   resulting 35-paragraph composition remains historical integrity evidence.
-- The owner separately authorized V1-0084 before public release. It adopts the
-  citizenship and protocol-native corporation thesis, produces the current
-  37-paragraph Manifesto, authorizes canonical paragraphs 7 through 12 once as
-  the source-derived `What is dCorps` quotation, and rejects automatic keyword
-  bolding in both presentations while preserving the external-legal-effect
+- The owner separately authorized V1-0084 before public release. It adopted the
+  citizenship and protocol-native corporation thesis, produced the historical
+  37-paragraph Manifesto, authorized historical canonical paragraphs 7 through
+  12 once as the source-derived `What is dCorps` quotation, and rejected
+  automatic keyword bolding while preserving the external-legal-effect
   boundary.
+- The owner separately authorized V1-0085 before public release. It supersedes
+  the V1-0084 Manifesto composition and quotation selection with the current
+  47-paragraph, 1,254-word full revision, the formal title plus paragraph-1
+  display-opening treatment, the anchor-selected
+  `native-existence-and-legal-boundary` block at current paragraphs 7 through
+  17, and the exact website-only semantic emphasis map. The public and vendored
+  Markdown remain byte exact and unmarked.
 - The immediately preceding V1-0040 Whitepaper digest was
   `80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`.
   The current V1-0041 digest is the controlling digest stated above.

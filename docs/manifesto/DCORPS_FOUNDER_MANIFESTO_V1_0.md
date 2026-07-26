@@ -1,72 +1,92 @@
-The ability to form an organization and be taken seriously should not depend on where you were born.
+The ability to create, operate, and build credibility for an organization should not depend on where you were born.
 
-Talent, ambition, and determination exist everywhere. Access to credible corporate infrastructure does not.
+Talent, ambition, and determination exist everywhere. Equal access to credible corporate infrastructure does not.
 
-A founder in a privileged country inherits registries, banking, payment systems, advisers, and international recognition. Another founder with the same ability may face greater expense, longer delays, fewer financial options, and immediate doubt.
+Founders in well-served countries can rely on credible registries, banking, payment systems, advisers, and international recognition. Equally capable founders elsewhere may face higher costs, delays, fewer options, and doubt before their work is examined.
 
-I have seen reputable organizations limited by the infrastructure surrounding them. A respected school in Ecuador should not appear less credible because Western Union is one of the few payment methods available to it.
+I have seen reputable organizations limited by their surrounding infrastructure. A respected school in Ecuador should not appear less credible because Western Union is one of its few practical ways to receive international payments.
 
-The problem is not the school. The problem is a system that confuses access with legitimacy.
+The problem is not the school. The problem is a system that mistakes access for legitimacy.
 
 I refuse to accept that geography should determine who can build, operate, and participate in the global economy.
 
-A human being is born and, in most cases, automatically receives citizenship. People commonly identify themselves through it: “I am Canadian” or “I am Mexican.” But citizenship is legal infrastructure attached to a human life. It is not the source of that life.
+Citizenship gives a person a legal relationship with a state. It can shape rights, duties, and identity, but it does not create the person.
 
-A human comes to life through biology and experiences life through consciousness. Human life is possible because Earth provides its physical and biological infrastructure, and every person carries a biological identity expressed through DNA.
+A corporation formed or recognized under existing law is different. It exists as a legal person because a jurisdiction gives it that status.
 
-A corporation is different. In the traditional model, it is born only within a jurisdiction and under its laws. A country, state, province, or territory recognizes it as a legal person. Without a jurisdiction to create it, the corporation does not exist.
+I believe a native digital organization should be able to begin before receiving external legal recognition.
 
-I believe a corporation should exist natively before receiving legal recognition. At its foundation, an organization begins when people agree on ownership, authority, responsibility, and purpose. Its identity grows through its decisions, actions, relationships, and history. Those foundations can exist cryptographically.
+An organization begins when one or more people define its purpose, ownership, authority, and responsibility. Its identity develops through decisions, actions, relationships, and history. Those foundations can be governed cryptographically.
 
-That is why dCorps was created. On dCorps, an accepted creation record brings a native Digital Corporation to life directly on the blockchain. It begins with a unique identity, formal ownership recorded and secured by cryptography, and a history it cannot escape. Its existence begins as canonical state that its owners and others can independently verify, not as a claim stored in someone else’s private database.
+That is why I created dCorps.
 
-Jurisdictional recognition is then secondary to that native existence. It serves a role similar to citizenship: legal infrastructure attached to an existing life, not the source of that life. A dCorps corporation can therefore exist and operate natively without first being created or recognized by a jurisdiction. That native existence does not, by itself, create statutory legal personality, limited liability, tax status, or recognition by a state, and it does not remove any legal obligation that applies to its participants or activities.
+dCorps is being built to let anyone create and operate a protocol-native Digital Corporation directly on a dedicated blockchain.
 
-Evidence does not replace judgment or make every statement true. It makes actions attributable, history accountable, and change visible.
+A registry can record a name. A cap table can list owners. A wallet can hold funds. A multisignature account can approve a payment. None alone creates one continuous system connecting identity, ownership, authority, decisions, treasury actions, evidence, and change. dCorps connects them through canonical Entity state and history.
 
-Verification should not require universal disclosure. Each Entity should decide what becomes public, what remains private, and what is opened to specific accounts or roles. What it chooses to disclose should remain independently verifiable against its canonical state and recorded commitments.
+On dCorps, a properly authorized creation action accepted into canonical state creates a dCorps Entity with a permanent identity, account-owned native shares, initial rules, roles, account designations, and an append-oriented history.
 
-I call this Corporation 3.0.
+Canonical state creates the Entity; the accepted record evidences creation and change. The Entity exists as protocol state, not a provider claim. Its disclosed state can be reconstructed under published trust and archival assumptions. Corrections change what is current without silently erasing what came before.
 
-Corporation 3.0 is a native Digital Corporation whose existence and continuity come first. Applications can serve it. Identity can be verified. Services can connect to it. Jurisdictions can recognize it. None of these relationships should erase the Entity or become the only source of its existence.
+dCorps presents the protocol-native Entity as a Digital Corporation. That name does not confer statutory incorporation, legal personality, limited liability, tax status, or state recognition, and removes no applicable legal obligation.
 
-A corporation should not need to start again whenever it changes providers, adopts a new structure, enters another market, or finds a jurisdiction better suited to its purpose.
+A dCorps Entity can nevertheless be created, owned, governed, and operated at the protocol level before receiving external legal recognition.
 
-The same foundation should serve one person working alone, a professional partnership, a distributed venture, or a large corporation with layered ownership and governance. It should also remain open to emerging organizational models built through programmable governance. Each Entity should begin with only the structure it needs.
+Evidence does not replace judgment. Within its published trust model, dCorps makes native state independently verifiable and shows whether accepted actions satisfied recorded authority. It cannot make external claims true. It makes actions attributable, authority testable, commitments verifiable, and change visible.
 
-This freedom must be practical. Creating a serious organization should be fast and affordable. Complexity should be carried by the system instead of imposed on the entrepreneur.
+dCorps will not make an organization credible by declaration. It will make the evidence from which credibility can be judged independently inspectable.
 
-The core dCorps Native App will be free to use. Network fees and optional managed services remain separate.
+Verification should not require universal disclosure. Beyond required public state and minimized metadata, each Entity decides what it publishes, keeps encrypted off-chain, or opens selectively. Disclosed material should be verifiable against canonical state or a recorded commitment.
 
-A newly created Digital Corporation should also be ready to operate financially.
+I call this model Corporation 3.0.
 
-It should be able to receive supported stablecoin payments, manage its treasury, allocate income, execute approved payments, preserve reserves, and maintain an auditable history of the financial actions recorded through dCorps from the beginning.
+Corporation 3.0 is dCorps’s category for a protocol-native Digital Corporation whose identity, native ownership, authority, governance, account designations, and accepted history exist as canonical state.
 
-Stablecoin-native financial management is not a secondary connection to Corporation 3.0. It is part of making a global Digital Corporation immediately useful.
+Applications can serve it. Providers can connect to it. Identity systems may attest to account controllers. Jurisdictions may recognize it. None should become the source of protocol-native existence or ownership, erase the Entity, or replace its history.
 
-The corporation must retain control of its capital. dCorps should organize authority, apply the corporation’s rules, and preserve evidence without becoming the discretionary owner of its treasury.
+A dCorps Entity should retain its native identity and accepted history when it changes applications or providers, evolves its structure, enters another market, or enters or leaves an external recognition framework.
 
-Where legal recognition serves the corporation, a future participating Smart Jurisdiction may attach its legal framework to the existing dCorps Entity and apply its own rights, obligations, fees, and taxation.
+The same foundation should serve a solo owner, partnership, distributed venture, or large corporation with layered governance. It should support emerging programmable models. Each Entity should begin with only what it needs and grow through authorized changes.
 
-That recognition should strengthen the Entity without rewriting its origin or destroying the history it has already built.
+This freedom must be practical. Creating a serious organization should be rapid and affordable, and dCorps should measure that claim. The system should carry complexity instead of imposing it on the entrepreneur.
 
-The chain must remain greater than any application or provider. Interfaces may change. Services may disappear. Jurisdictional relationships may begin and end. The Entity must continue.
+The core dCorps Native App will be available without an application-access fee. Network fees and optional managed services will remain separate.
 
-dCorps itself will begin under my direction and under the management of dCorps Development. This is deliberate.
+Creation alone is not enough. A Digital Corporation should be ready to operate financially from the beginning: receive supported stablecoins, apply authorized rules, separate operating liquidity from sovereign external reserves, and preserve a reconstructible record of financial instructions and results.
 
-A network intended to support serious corporations requires coherent leadership while it is designed, secured, tested, adopted, and made economically sustainable.
+Stablecoin-centered financial management is not an accessory to Corporation 3.0. It is part of making a global Digital Corporation immediately useful.
 
-I accept responsibility for bringing dCorps through that phase. I will protect its purpose, build real adoption, and prevent its direction from being lost before the project is strong enough to continue through independent institutions.
+Corporate approval and asset execution are distinct, and dCorps must keep both visible.
 
-The Foundation will carry that mission forward. Its responsibility will be to preserve the operating network, expand participation, advance decentralization, and build the sovereign dCorps Layer 1.
+The Entity authorizes and records its treasury arrangements: accounts, signers, thresholds, custody, recovery, and continuity. Each account or provider enforces its own policy. dCorps coordinates authority and evidence without becoming a mandatory signer or discretionary custodian.
 
-The long-term network must be capable of continuing beyond every person and organization involved in creating it. That independence is how dCorps completes its mission and becomes durable infrastructure for humanity.
+Where external recognition serves the Entity, it may use an activated Smart Jurisdiction framework. A participating jurisdiction may recognize the Entity or a legal representation, confer specified effects, and impose identity, eligibility, filing, fee, tax, and continuing obligations.
+
+That relationship should add legal effects without rewriting native origin or history. Native continuity does not guarantee continuity of the same legal person across jurisdictions; applicable law governs that question.
+
+The chain, not any application or provider, must remain the authoritative source of native dCorps state. Interfaces may change. Services may disappear. Legal-recognition relationships may begin and end. The Entity must continue.
+
+The same principle must guide the network supporting it.
+
+During MAINNET-BETA, dCorps Development will operate the production Rollup. I am dCorps’s permanent historical Protocol Founder and will serve as initial Strategic Steward. Operational authority, historical attribution, and bounded strategic authority are distinct. This concentration is deliberate and disclosed.
+
+User Entities govern themselves. dCorps Development operates under disclosed bootstrap controls. My strategic role protects dCorps’s mission, doctrine, roadmap, and direction without becoming authority over a user Entity, its assets, or routine operations.
+
+A network intended to support serious corporations requires coherent and accountable leadership while it is designed, secured, tested, adopted, and made economically sustainable.
+
+I accept responsibility for guiding that phase, protecting the purpose, and building adoption. Foundation Handover, eligible DCORPS governance of listed shared operations, and any transition of active Strategic Stewardship remain separate processes with disclosed conditions.
+
+After the applicable gates and separate authorization, the independent dCorps Foundation will assume operational stewardship. It must preserve the network, advance decentralization, and lead and finance sovereign dCorps Layer 1 development under published readiness conditions. dCorps Development will retain a disclosed role without becoming a unilateral dependency.
+
+The final sovereign network must continue beyond every person and organization involved in creating it, including me. No Founder, company, Foundation, provider, parent chain, or administrator should be able to stop or rewrite it unilaterally.
+
+That independence is how dCorps becomes durable infrastructure rather than another provider its users must trust forever.
 
 To entrepreneurs everywhere: your birthplace does not define the value of your ideas, the seriousness of your work, or the scale of what you should be able to build.
 
-I invite you to adopt dCorps, help shape Corporation 3.0, and become part of the generation that establishes a new way for corporations to exist and operate.
+I invite you to test this model, challenge its assumptions, help build dCorps, and shape Corporation 3.0.
 
-Together, we can make corporate creation accessible, financial operation global, ownership cryptographic, history verifiable, and credible organization available to anyone.
+Together, we can make corporate creation accessible, financial operation global, native share ownership cryptographically secured, and recorded history independently reconstructible. We can make the infrastructure for building credibility available to anyone, anywhere.
 
 That is the future I am building.
 

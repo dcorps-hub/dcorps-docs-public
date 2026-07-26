@@ -15,11 +15,12 @@ Read `/Users/njgturk/Projects/DEV/AGENTS.md` and `../AGENTS.md` first.
 
 - The byte-exact official Whitepaper V1.0 distribution copy is authorized under
   `docs/whitepaper/` for local and protected noindex DEV website review.
-- The byte-exact canonical 37-paragraph Founder Manifesto V1.0 distribution
-  copy amended on 2026-07-26 is authorized under `docs/manifesto/` for local
-  and protected noindex DEV website review. Canonical paragraphs 7 through 12
-  may also appear once as the attributed, source-derived quotation on
-  `/what-is-dcorps/`.
+- The byte-exact canonical 47-paragraph, 1,254-word Founder Manifesto V1.0
+  distribution copy revised on 2026-07-26 is authorized under
+  `docs/manifesto/` for local and protected noindex DEV website review.
+  Canonical paragraphs 7 through 17 form the named
+  `native-existence-and-legal-boundary` block and may also appear once as the
+  attributed, source-derived quotation on `/what-is-dcorps/`.
 - `docs/policy/POL-DOCS-PUBLICATION.md` controls that publication path.
 - Official V1.0 and later explicit owner decisions are the sole permitted
   sources for future substantive documentation.
@@ -34,13 +35,15 @@ code, transcripts, prior branches, or agent memory.
 
 - Preserve the exact owner source through the workspace intake process before
   analyzing, normalizing, or adapting it.
-- Do not alter the canonical Manifesto's 37 paragraphs, maintain the
-  `What is dCorps` quotation as separate prose, inject automatic keyword
-  emphasis into either presentation, or import an old role, disclaimer, or
-  prose from the frozen website. The signature image was withdrawn on
-  2026-07-19 and must not be restored unless the owner gives a new explicit
-  direction. Keep approved Founder presentation metadata outside the hashed
-  prose.
+- Do not alter the canonical Manifesto's 47 paragraphs, maintain a separate
+  prose copy of the `What is dCorps` quotation, add presentation markup to the
+  public Markdown, inject automatic keyword emphasis into either presentation,
+  or import an old role, disclaimer, or prose from the frozen website. The
+  website may apply only the separately adopted exact semantic emphasis map,
+  including the complete purple credibility statement. The signature image was
+  withdrawn on 2026-07-19 and must not be restored unless the owner gives a new
+  explicit direction. Keep the formal page title, approved Founder presentation
+  metadata, and every visual treatment outside the hashed prose.
 - Never add secrets, credentials, private legal data, or restricted operational
   material.
 - Use the container-first workflow and run `git diff --check` after edits.
