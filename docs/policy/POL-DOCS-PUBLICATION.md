@@ -1,7 +1,7 @@
 # Public Documentation Publication Policy
 
 **Status**: Adopted for local and protected noindex DEV Whitepaper and Founder Manifesto review
-**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, 2026-07-21, and 2026-07-22
+**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, 2026-07-21, 2026-07-22, and 2026-07-26
 **Authority**: Nicolas Turcotte, Protocol Founder
 
 ## Controlling sources
@@ -27,15 +27,15 @@ governance repository:
 
 Its SHA-256 digest is:
 
-`cffdbb16e7d5c9390dd6cec90eed9213a399d6611f72a3bca55a94642a0a8810`
+`cdd016059ea5654b0c19c5bdd2d220305ecd6400d596cc3505ac6a69c6588f38`
 
 The immutable initial Founder source and every exact revision direction remain
 preserved in the private governance repository as provenance. Prior
 Whitepapers, Manifestos, deleted files, Git history, frozen website prose,
 transcripts, generated artifacts, implementation code, and agent memory cannot
 supplement or reinterpret either controlling manuscript. The owner withdrew
-the Manifesto signature image on 2026-07-19. Public presentation uses the
-Founder's name and title aligned at the right and must not restore the image.
+the Manifesto signature image on 2026-07-19. Approved Founder presentation
+metadata remains outside the hashed prose and must not restore the image.
 
 ## Authorized publication scope
 
@@ -61,14 +61,21 @@ authorizes:
 
 - one byte-exact public distribution copy in `docs/manifesto/`;
 - one byte-exact vendored website build input;
-- formatting the 35 paragraphs as accessible HTML in their exact order within
+- formatting the 37 paragraphs as accessible HTML in their exact order within
   the preserved Manifesto layout; and
 - presentation metadata outside the hashed prose: the page title, author name,
-  and current Protocol Founder role, aligned at the right without a signature
-  image.
+  approved Founder portrait, and current Protocol Founder role, without a
+  signature image.
 
 The website must not rewrite, correct, summarize, reorder, or append a
 disclaimer to the Manifesto prose.
+
+The owner further authorizes canonical Manifesto paragraphs 7 through 12 to
+appear exactly once as an attributed quotation on `/what-is-dcorps/`. The
+website must select that contiguous excerpt from the parsed, hash-verified
+Manifesto source. It must not maintain a second independently editable prose
+copy. Automatic keyword emphasis is prohibited in both the complete Manifesto
+and the quotation unless a later owner decision adopts an exact emphasis map.
 
 ## Integrity requirements
 
@@ -108,7 +115,13 @@ disclaimer to the Manifesto prose.
   Specifications, preserves the V1 native ownership kernel and external
   beneficial-ownership boundary, adopts phase-qualified universal-model
   conformance, and adds one exact universality paragraph to the Manifesto. The
-  amended Manifesto contains 35 paragraphs.
+  resulting 35-paragraph composition remains historical integrity evidence.
+- The owner separately authorized V1-0084 before public release. It adopts the
+  citizenship and protocol-native corporation thesis, produces the current
+  37-paragraph Manifesto, authorizes canonical paragraphs 7 through 12 once as
+  the source-derived `What is dCorps` quotation, and rejects automatic keyword
+  bolding in both presentations while preserving the external-legal-effect
+  boundary.
 - The immediately preceding V1-0040 Whitepaper digest was
   `80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`.
   The current V1-0041 digest is the controlling digest stated above.

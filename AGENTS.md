@@ -15,9 +15,11 @@ Read `/Users/njgturk/Projects/DEV/AGENTS.md` and `../AGENTS.md` first.
 
 - The byte-exact official Whitepaper V1.0 distribution copy is authorized under
   `docs/whitepaper/` for local and protected noindex DEV website review.
-- The byte-exact canonical 35-paragraph Founder Manifesto V1.0 distribution
-  copy amended on 2026-07-22 is authorized under `docs/manifesto/` for local
-  and protected noindex DEV website review.
+- The byte-exact canonical 37-paragraph Founder Manifesto V1.0 distribution
+  copy amended on 2026-07-26 is authorized under `docs/manifesto/` for local
+  and protected noindex DEV website review. Canonical paragraphs 7 through 12
+  may also appear once as the attributed, source-derived quotation on
+  `/what-is-dcorps/`.
 - `docs/policy/POL-DOCS-PUBLICATION.md` controls that publication path.
 - Official V1.0 and later explicit owner decisions are the sole permitted
   sources for future substantive documentation.
@@ -32,10 +34,13 @@ code, transcripts, prior branches, or agent memory.
 
 - Preserve the exact owner source through the workspace intake process before
   analyzing, normalizing, or adapting it.
-- Do not alter the canonical Manifesto's 35 paragraphs or import an old role,
-  disclaimer, or prose from the frozen website. The signature image was withdrawn on
+- Do not alter the canonical Manifesto's 37 paragraphs, maintain the
+  `What is dCorps` quotation as separate prose, inject automatic keyword
+  emphasis into either presentation, or import an old role, disclaimer, or
+  prose from the frozen website. The signature image was withdrawn on
   2026-07-19 and must not be restored unless the owner gives a new explicit
-  direction. Use only the right-aligned Founder name and title in presentation.
+  direction. Keep approved Founder presentation metadata outside the hashed
+  prose.
 - Never add secrets, credentials, private legal data, or restricted operational
   material.
 - Use the container-first workflow and run `git diff --check` after edits.

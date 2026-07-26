@@ -10,13 +10,17 @@ The problem is not the school. The problem is a system that confuses access with
 
 I refuse to accept that geography should determine who can build, operate, and participate in the global economy.
 
-At its foundation, an organization begins when people agree on ownership, authority, responsibility, and purpose. Its identity grows through its decisions, actions, relationships, and history.
+A human being is born and, in most cases, automatically receives citizenship. People commonly identify themselves through it: “I am Canadian” or “I am Mexican.” But citizenship is legal infrastructure attached to a human life. It is not the source of that life.
 
-These foundations can exist cryptographically.
+A human comes to life through biology and experiences life through consciousness. Human life is possible because Earth provides its physical and biological infrastructure, and every person carries a biological identity expressed through DNA.
 
-On dCorps, an accepted creation record creates a native dCorps Entity. That record begins its identity, ownership, authority, and history directly on the blockchain.
+A corporation is different. In the traditional model, it is born only within a jurisdiction and under its laws. A country, state, province, or territory recognizes it as a legal person. Without a jurisdiction to create it, the corporation does not exist.
 
-Its existence does not begin as a claim stored in someone else’s private database. It begins as canonical state that its owners and others can independently verify.
+I believe a corporation should exist natively before receiving legal recognition. At its foundation, an organization begins when people agree on ownership, authority, responsibility, and purpose. Its identity grows through its decisions, actions, relationships, and history. Those foundations can exist cryptographically.
+
+That is why dCorps was created. On dCorps, an accepted creation record brings a native Digital Corporation to life directly on the blockchain. It begins with a unique identity, formal ownership recorded and secured by cryptography, and a history it cannot escape. Its existence begins as canonical state that its owners and others can independently verify, not as a claim stored in someone else’s private database.
+
+Jurisdictional recognition is then secondary to that native existence. It serves a role similar to citizenship: legal infrastructure attached to an existing life, not the source of that life. A dCorps corporation can therefore exist and operate natively without first being created or recognized by a jurisdiction. That native existence does not, by itself, create statutory legal personality, limited liability, tax status, or recognition by a state, and it does not remove any legal obligation that applies to its participants or activities.
 
 Evidence does not replace judgment or make every statement true. It makes actions attributable, history accountable, and change visible.
 
@@ -42,7 +46,7 @@ Stablecoin-native financial management is not a secondary connection to Corporat
 
 The corporation must retain control of its capital. dCorps should organize authority, apply the corporation’s rules, and preserve evidence without becoming the discretionary owner of its treasury.
 
-Legal recognition may be added where it serves the corporation. In the future, a participating Smart Jurisdiction may welcome an existing dCorps Entity into its legal framework and apply its own rights, obligations, fees, and taxation.
+Where legal recognition serves the corporation, a future participating Smart Jurisdiction may attach its legal framework to the existing dCorps Entity and apply its own rights, obligations, fees, and taxation.
 
 That recognition should strengthen the Entity without rewriting its origin or destroying the history it has already built.
 
