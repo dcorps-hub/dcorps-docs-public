@@ -24,7 +24,6 @@ The current public documentation entry point is `docs/INDEX.md`.
 
 ## Local validation
 
-Use the container-first repository workflow and run `git diff --check`. The
-current owner instruction authorizes the governed artifacts to be committed
-and pushed to the authorized protected noindex DEV branch. Production
-publication remains separately controlled.
+Use the container-first repository workflow and run `git diff --check`. No
+current instruction authorizes a commit, push, DEV deployment, or PROD
+publication. Each delivery action requires a new explicit owner instruction.

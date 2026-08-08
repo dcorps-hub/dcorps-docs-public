@@ -6,7 +6,7 @@ The official public distribution copy of the dCorps Founder Manifesto V1.0 is:
 - [SHA-256 checksum](./DCORPS_FOUNDER_MANIFESTO_V1_0.sha256)
 - [Publication record](./PUBLICATION_RECORD_V1_0_2026-07-16.md)
 
-The 47-paragraph, 1,254-word copy is byte-identical to the canonical revised
+The 38-paragraph, 1,063-word copy is byte-identical to the canonical revised
 manuscript. Its formal page identity remains `The dCorps Founder Manifesto`,
 while canonical paragraph 1 is the display opening. Canonical paragraphs 7
 through 17 form the named `native-existence-and-legal-boundary` block and are

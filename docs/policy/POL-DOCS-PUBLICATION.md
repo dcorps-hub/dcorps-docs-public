@@ -1,7 +1,7 @@
 # Public Documentation Publication Policy
 
-**Status**: Adopted for local and protected noindex DEV Whitepaper and Founder Manifesto review
-**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, 2026-07-21, 2026-07-22, and 2026-07-26
+**Status**: Adopted for local and protected noindex DEV review of the unpublished Whitepaper V1.0 and Founder Manifesto V1.0
+**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, 2026-07-21, 2026-07-22, 2026-07-26, 2026-07-30, 2026-08-01, 2026-08-06, and 2026-08-07
 **Authority**: Nicolas Turcotte, Protocol Founder
 
 ## Controlling sources
@@ -15,19 +15,20 @@ canonical manuscript in the private governance repository:
 
 Its SHA-256 digest is:
 
-`9df00e2f74179add7970132d248d104d592f8ca9a3797a5aee8a10dc6bdaee68`
+`ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`
 
 ### Founder Manifesto V1.0
 
 The sole controlling source for the dCorps Founder Manifesto V1.0 is the
-normalized canonical manuscript adopted on 2026-07-21 and fully revised under
-V1-0085 on 2026-07-26 in the private governance repository:
+normalized canonical manuscript adopted on 2026-07-21, fully revised under
+V1-0085 on 2026-07-26, and subject to the restrained compression adopted under
+V1-0092 on 2026-07-30 in the private governance repository:
 
 `docs/master/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
 
 Its SHA-256 digest is:
 
-`225afb89746090ab9c5499f647d13727445b596e5500815339a8fceae2683441`
+`ba01e55df48b3c6b27c119b2d32a633ea24b942a223e3e2209ed5b58c50c7eb3`
 
 The immutable initial Founder source and every exact revision direction remain
 preserved in the private governance repository as provenance. Prior
@@ -61,7 +62,7 @@ authorizes:
 
 - one byte-exact public distribution copy in `docs/manifesto/`;
 - one byte-exact vendored website build input;
-- formatting the 47 paragraphs as accessible HTML in their exact order within
+- formatting the 38 paragraphs as accessible HTML in their exact order within
   the preserved Manifesto layout; and
 - presentation metadata outside the hashed prose: the page title, author name,
   approved Founder portrait, and current Protocol Founder role, without a
@@ -87,8 +88,9 @@ must not maintain a second independently editable prose copy.
 
 The public distribution copy and vendored Markdown must contain no
 presentation-emphasis markup. The website may apply only the exact semantic
-emphasis map adopted under V1-0085, including the complete purple credibility
-statement in canonical paragraph 19. Automatic keyword matching remains
+emphasis map adopted under V1-0085 and retained with reindexed paragraph
+metadata under V1-0092, including the complete purple credibility statement in
+canonical paragraph 19. Automatic keyword matching remains
 prohibited in the complete Manifesto and the source-derived quotation.
 
 ## Integrity requirements
@@ -137,18 +139,112 @@ prohibited in the complete Manifesto and the source-derived quotation.
   automatic keyword bolding while preserving the external-legal-effect
   boundary.
 - The owner separately authorized V1-0085 before public release. It supersedes
-  the V1-0084 Manifesto composition and quotation selection with the current
+  the V1-0084 Manifesto composition and quotation selection with the historical
   47-paragraph, 1,254-word full revision, the formal title plus paragraph-1
   display-opening treatment, the anchor-selected
   `native-existence-and-legal-boundary` block at current paragraphs 7 through
   17, and the exact website-only semantic emphasis map. The public and vendored
   Markdown remain byte exact and unmarked.
-- The immediately preceding V1-0040 Whitepaper digest was
+- The owner separately authorized V1-0092 before public release. It adopts the
+  current 38-paragraph, 1,063-word restrained revision at SHA-256
+  `ba01e55df48b3c6b27c119b2d32a633ea24b942a223e3e2209ed5b58c50c7eb3`,
+  preserves the first 20 and final five paragraphs verbatim, retains the
+  unchanged paragraphs 7 through 17 semantic block and paragraph 19
+  credibility statement, and reindexes only later presentation-map entries.
+- The owner authorized the 2026-08-01 Whitepaper amendment before production
+  publication. It adopted the revised 10 percent development-group token and 1
+  percent independent-reserve structure, their vesting and release schedules,
+  the prospective 25 percent Founder-affiliated economic-exposure disclosure,
+  the strict below-20-percent effective-voting-power test, independent
+  related-party controls, and then-current corporate-group, Cayman Foundation,
+  SaleCo, Founder, Strategic Steward, DevCo, board, Supervisor, and continuity
+  terms. The token terms remain current. `V1-0156` later narrowed the
+  corporate-group, SaleCo, DevCo, and leadership terms as stated below.
+- The owner authorized `V1-0156` on 2026-08-07 as an in-place correction of
+  the current unpublished V1.0. Internal `V1-xxxx` identifiers are decision
+  and review codes, not published Whitepaper version numbers. The correction
+  makes the official dCorps Project Entity the first valid non-system
+  production Entity, preserves one permanent identifier and native history
+  through real operations and later legal recognition, and requires that same
+  existing Entity to be the first live Smart Jurisdiction submission and
+  attachment with equal conformance, canonical evidence, and a privacy-safe
+  case study before any production-ready claim, subject only to a disclosed
+  legal-prohibition exception.
+- `V1-0156` makes Founder-controlled DevCo the mandatory fully accountable core
+  developer, final technical integrator, technical release authority, and
+  maintainer for the Rollup, sovereign Layer 1, protocol infrastructure,
+  Commercial Developer Platform, and Native App. The Foundation retains
+  independent stewardship, funding, authorization, oversight, assurance,
+  legal, and continuity duties and must maintain a genuine competitive path
+  for bounded external innovation work. No fixed core-development budget
+  percentage or `diversity allowance` applies. DevCo retains integration,
+  release, and continuing maintenance responsibility for accepted work.
+- `V1-0156` also requires dCorps Ltd. to remain controlled by Nicolas
+  Turcotte, requires the later Singapore DevCo to remain controlled by dCorps
+  Ltd., keeps SaleCo legally separate, preserves permanent Founder attribution
+  and protected long-term strategic leadership subject only to the stated
+  narrow cessation process, and preserves the separation from user-Entity,
+  user-asset, Foundation-transfer, credential, consensus, and shutdown powers.
+  It preserves V1.0 because no production publication or public reliance
+  occurred before the correction.
+- The V1-0040 Whitepaper digest was
   `80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`.
-  The current V1-0041 digest is the controlling digest stated above.
-- After public release, a substantive Whitepaper or Manifesto change requires
+  The immediately preceding private canonical and synchronized V1.0 digest
+  `beafa4f313188b06c0197736a87938c88658d2ea69006a83af26baa323a69753`,
+  earlier synchronized V1.0 digests
+  `5157a342ab56aadde710fdddade15f66aece92d6229634737199ccd9fb7a067d`
+  and
+  `9df00e2f74179add7970132d248d104d592f8ca9a3797a5aee8a10dc6bdaee68`,
+  and the earlier private canonical digest
+  `6604d8c9383d839e44ab8ff046a1abe6ae0586983daa42b9f54196a815b113f4`
+  remain historical. The current controlling digest is stated
+  above.
+- After production publication or final owner freezing, a substantive
+  Whitepaper or Manifesto change requires
   explicit owner adoption, a new version or amendment, a new digest, and
   updated publication records.
+
+## Project-state publication synchronization
+
+Owner decision `V1-0155`, backed by exact owner-source SHA-256
+`790f75bb8cb42218dee22d37de0fa865175d7aaf6deacd7b35e7fdb8d50fb42e`,
+establishes a mandatory publication gate whenever verified or current project
+state materially advances, regresses, or otherwise changes.
+
+`V1-0156` clarifies that an explicitly authorized correction to the current
+unpublished V1.0 may receive the `updated` disposition and a synchronized new
+digest. For `V1-0156`, the Whitepaper disposition is `updated` at
+`ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`;
+this is not a production publication.
+
+- The affected workstream must produce one evidence-backed impact record that
+  reviews the Project Roadmap, FAQ, website Whitepaper, and every other public
+  route that may contain the changed state claim.
+- Each of the three mandatory surfaces must receive exactly one disposition:
+  `updated`, `reviewed, no change required`, or
+  `new adopted version required`. A no-change disposition must state why the
+  existing text remains accurate.
+- Affected Project Roadmap and FAQ claims must be updated in the same
+  controlled workstream as the verified state change. Current, target, future,
+  availability, provider, assurance, legal-effect, token, and stage-gate
+  statements must remain mutually consistent.
+- Whitepaper review is mandatory. While V1.0 remains unpublished, the owner may
+  explicitly authorize a substantive correction in place as V1.0 with a new
+  digest. The exact original intake and every later direction remain preserved,
+  and website copy must not change independently of the canonical manuscript.
+  After production publication, substantive change requires explicit owner
+  adoption of a new version.
+- Every owner-authorized unpublished V1.0 correction, and every newly adopted
+  published-version successor, must synchronize its exact private canonical
+  source, public distribution copy, website vendored source, generated
+  presentation, checksum and digest controls, publication record, and
+  validation evidence.
+- Missing dispositions, unresolved contradictions, or stale current-state copy
+  block publication closeout, commit, push, deployment, and public
+  current-state communication for the affected workstream.
+
+This gate records and publishes verified reality. It does not itself advance a
+project stage, satisfy a readiness gate, or authorize release.
 
 ## Claim and release boundary
 

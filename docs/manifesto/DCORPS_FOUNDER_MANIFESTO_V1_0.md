@@ -40,47 +40,29 @@ Verification should not require universal disclosure. Beyond required public sta
 
 I call this model Corporation 3.0.
 
-Corporation 3.0 is dCorps’s category for a protocol-native Digital Corporation whose identity, native ownership, authority, governance, account designations, and accepted history exist as canonical state.
+Corporation 3.0 is dCorps’s category for a protocol-native Digital Corporation whose identity, native ownership, authority, governance, and accepted history exist as canonical state. Applications, providers, identity systems, and jurisdictions may serve or recognize it, but none becomes the source of protocol-native existence or ownership or replaces its history.
 
-Applications can serve it. Providers can connect to it. Identity systems may attest to account controllers. Jurisdictions may recognize it. None should become the source of protocol-native existence or ownership, erase the Entity, or replace its history.
+The same foundation should serve a solo owner, partnership, venture, large corporation, or programmable model. Each Entity should begin with only what it needs and grow through authorized changes.
 
-A dCorps Entity should retain its native identity and accepted history when it changes applications or providers, evolves its structure, enters another market, or enters or leaves an external recognition framework.
-
-The same foundation should serve a solo owner, partnership, distributed venture, or large corporation with layered governance. It should support emerging programmable models. Each Entity should begin with only what it needs and grow through authorized changes.
-
-This freedom must be practical. Creating a serious organization should be rapid and affordable, and dCorps should measure that claim. The system should carry complexity instead of imposing it on the entrepreneur.
+This freedom must be practical. Creation should be rapid and affordable, and dCorps should measure that claim. The system should carry complexity instead of imposing it on the entrepreneur.
 
 The core dCorps Native App will be available without an application-access fee. Network fees and optional managed services will remain separate.
 
 Creation alone is not enough. A Digital Corporation should be ready to operate financially from the beginning: receive supported stablecoins, apply authorized rules, separate operating liquidity from sovereign external reserves, and preserve a reconstructible record of financial instructions and results.
 
-Stablecoin-centered financial management is not an accessory to Corporation 3.0. It is part of making a global Digital Corporation immediately useful.
+Corporate approval and asset execution are distinct. The Entity authorizes its accounts, signers, thresholds, custody, recovery, and continuity while each account or provider enforces its own policy. dCorps coordinates authority and evidence without becoming a mandatory signer or discretionary custodian.
 
-Corporate approval and asset execution are distinct, and dCorps must keep both visible.
+Where external recognition serves the Entity, it may use an activated Smart Jurisdiction framework. A participating jurisdiction may confer specified legal effects and obligations without rewriting native origin or history. Applicable law governs legal-person continuity.
 
-The Entity authorizes and records its treasury arrangements: accounts, signers, thresholds, custody, recovery, and continuity. Each account or provider enforces its own policy. dCorps coordinates authority and evidence without becoming a mandatory signer or discretionary custodian.
+The chain, not any application or provider, remains the source of native dCorps state. Interfaces, services, and recognition relationships may change or disappear. The Entity must continue.
 
-Where external recognition serves the Entity, it may use an activated Smart Jurisdiction framework. A participating jurisdiction may recognize the Entity or a legal representation, confer specified effects, and impose identity, eligibility, filing, fee, tax, and continuing obligations.
+The same principle guides the network. During MAINNET-BETA, dCorps Development will operate the production Rollup, and I will serve as initial Strategic Steward while remaining permanent historical Protocol Founder. Operational and strategic authority remain distinct. This concentration is deliberate and disclosed.
 
-That relationship should add legal effects without rewriting native origin or history. Native continuity does not guarantee continuity of the same legal person across jurisdictions; applicable law governs that question.
+User Entities govern themselves. My role protects dCorps’s mission and direction without creating authority over their Entities, assets, or operations. I accept responsibility for accountable leadership while the network is built, secured, tested, and adopted.
 
-The chain, not any application or provider, must remain the authoritative source of native dCorps state. Interfaces may change. Services may disappear. Legal-recognition relationships may begin and end. The Entity must continue.
+After the applicable gates and separate authorization, the independent dCorps Foundation will assume operational stewardship, preserve the network, and lead and finance sovereign dCorps Layer 1 development. Foundation Handover, eligible DCORPS governance of listed shared operations, and active Strategic Stewardship remain separate. dCorps Development retains a disclosed role without becoming a unilateral dependency.
 
-The same principle must guide the network supporting it.
-
-During MAINNET-BETA, dCorps Development will operate the production Rollup. I am dCorps’s permanent historical Protocol Founder and will serve as initial Strategic Steward. Operational authority, historical attribution, and bounded strategic authority are distinct. This concentration is deliberate and disclosed.
-
-User Entities govern themselves. dCorps Development operates under disclosed bootstrap controls. My strategic role protects dCorps’s mission, doctrine, roadmap, and direction without becoming authority over a user Entity, its assets, or routine operations.
-
-A network intended to support serious corporations requires coherent and accountable leadership while it is designed, secured, tested, adopted, and made economically sustainable.
-
-I accept responsibility for guiding that phase, protecting the purpose, and building adoption. Foundation Handover, eligible DCORPS governance of listed shared operations, and any transition of active Strategic Stewardship remain separate processes with disclosed conditions.
-
-After the applicable gates and separate authorization, the independent dCorps Foundation will assume operational stewardship. It must preserve the network, advance decentralization, and lead and finance sovereign dCorps Layer 1 development under published readiness conditions. dCorps Development will retain a disclosed role without becoming a unilateral dependency.
-
-The final sovereign network must continue beyond every person and organization involved in creating it, including me. No Founder, company, Foundation, provider, parent chain, or administrator should be able to stop or rewrite it unilaterally.
-
-That independence is how dCorps becomes durable infrastructure rather than another provider its users must trust forever.
+The sovereign network must continue beyond its creators, including me. No Founder, company, Foundation, provider, parent chain, or administrator should be able to stop or rewrite it unilaterally. That independence makes dCorps durable infrastructure rather than another provider users must trust forever.
 
 To entrepreneurs everywhere: your birthplace does not define the value of your ideas, the seriousness of your work, or the scale of what you should be able to build.
 

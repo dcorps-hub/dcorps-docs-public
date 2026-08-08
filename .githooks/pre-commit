@@ -4,16 +4,4 @@ set -Eeuo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-echo "[dcorps-docs] Running aggressive pre-commit checks."
-
-changed_whitepaper="$(git diff --cached --name-only -- docs/whitepaper/WHITEPAPER.md docs/whitepaper/WHITEPAPER_LONG.md)"
-if [ -n "$changed_whitepaper" ]; then
-  echo "[dcorps-docs] Canonical whitepaper Markdown changed; regenerating PDF artifacts."
-  npm run whitepaper:export
-  git add \
-    docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf \
-    docs/whitepaper/pdf/dCorpsHub_Whitepaper.pdf.sha256 \
-    docs/whitepaper/pdf/dCorpsHub_Whitepaper.source.sha256
-fi
-
-npm run whitepaper:check
+git diff --cached --check

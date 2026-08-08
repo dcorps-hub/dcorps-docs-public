@@ -1,6 +1,6 @@
 # dCorps Blockchain Whitepaper V1.0 Publication Record
 
-- **Status:** Corrected V1.0 authorized for local and protected noindex DEV review
+- **Status:** `V1-0156`-corrected unpublished V1.0 authorized for local and protected noindex DEV review
 - **Authority:** Nicolas Turcotte, Protocol Founder
 - **Authority date:** 2026-07-15
 - **Pre-release correction authority:** 2026-07-17
@@ -11,15 +11,21 @@
 - **Section 10 tokenomics title and reader-label clarification authority:** 2026-07-21
 - **Free core Native App correction authority:** 2026-07-21
 - **Guided Formation, Workflow Specification, universal-model, and conformance correction authority:** 2026-07-22
+- **Tokenomics, corporate-group, Cayman Foundation, SaleCo, related-party, and Founder-protection amendment authority:** 2026-08-01
+- **BVI entity-name and open-functional-role correction authority:** 2026-08-01
+- **First Project Entity, DevCo core mandate, Founder leadership, and unpublished-status correction authority (`V1-0156`):** 2026-08-07
+- **`V1-0156` Whitepaper disposition:** `updated` in place as unpublished V1.0; no production publication
 - **Public distribution copy:** `DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md`
-- **SHA-256:** `9df00e2f74179add7970132d248d104d592f8ca9a3797a5aee8a10dc6bdaee68`
+- **SHA-256:** `ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`
 - **Website route:** `/whitepaper/`
 
 The public distribution copy is byte-identical to the official canonical
 manuscript. The website may render it as HTML without changing its substantive
 content. The unchanged Markdown and checksum are the integrity artifacts.
 
-The owner authorized the in-place V1.0 corrections before any public release.
+The owner authorized the in-place V1.0 corrections before any production
+publication. V1.0 remains unpublished; internal `V1-xxxx` identifiers are
+decision and review codes, not successive published Whitepaper versions.
 The 2026-07-19 corrections define `dCorps Entity`, preserve the Digital
 Corporation brand, restore Smart Jurisdiction as a formal future objective, and
 adopt Corporation 3.0 as the dCorps-defined category with controlled existence,
@@ -50,7 +56,52 @@ Entity types. These corrections do not present a Smart Jurisdiction, bridge, sta
 deployment, Circle agreement, provider integration, legal effect, performance
 result, token event, or decentralization milestone as current.
 
-The immediately preceding V1-0040 Whitepaper digest was
+The owner authorized the 2026-08-01 in-place V1.0 amendment before production
+publication. It replaced the former combined reserve allocation with a 10
+percent development-group token allocation prospectively allocated to the
+intended Founder-controlled `dCorps Ltd.` and a separate 1 percent conditional
+independent infrastructure reserve. It adopted the associated vesting and
+cumulative-release schedules, disclosed the prospective 25 percent aggregated
+Founder-affiliated economic exposure, and preserved the strict below-20-percent
+limit exclusively for effective DCORPS voting power. Those token terms remain
+unchanged by `V1-0156`.
+
+The owner authorized the `V1-0156` in-place correction on 2026-08-07 while
+V1.0 remained unpublished. It makes the official dCorps Project Entity the
+first valid non-system production Entity, targets EntityID 1 or its equivalent,
+requires real protocol-native operations and one continuing history through
+Foundation Handover, and requires that same existing Entity to be submitted
+first for live Smart Jurisdiction attachment when a framework is legally and
+operationally ready. The attachment preserves its permanent identifier,
+ownership, and prior native history; attaches legal effects prospectively;
+requires the same admission and conformance treatment without an undisclosed
+exemption; records the effective date canonically; and requires a privacy-safe
+before, during, and after case study before a production-ready claim, subject
+only to a disclosed legal-prohibition exception.
+
+`V1-0156` also makes Founder-controlled DevCo the mandatory fully accountable
+core developer, final technical integrator, technical release authority, and
+maintainer for the Rollup, sovereign Layer 1, protocol infrastructure,
+Commercial Developer Platform, and Native App. The Foundation retains its
+independent stewardship, funding, authorization, oversight, assurance, legal,
+and continuity responsibilities and maintains a genuine competitive path for
+bounded external innovation work. No fixed core-development budget percentage
+or `diversity allowance` applies; accepted external work remains subject to
+DevCo integration, release, and continuing maintenance. The correction also
+requires dCorps Ltd. to remain controlled by Nicolas Turcotte, requires the
+later Singapore DevCo to remain controlled by dCorps Ltd., keeps any SaleCo
+legally separate, preserves permanent Founder attribution and protected
+long-term strategic leadership with narrow independent cause procedures, and
+preserves the absence of unilateral Founder control over user Entities, user
+assets, Foundation transfers, network credentials, consensus, or shutdown.
+
+These corrections do not claim that an intended legal entity has been formed,
+that a Rollup, Project Entity, EntityID, Smart Jurisdiction, recognition flow,
+bridge, provider integration, or sovereign L1 is current, that any distribution
+has occurred, or that a sale platform, jurisdiction, regulator, auditor, or
+provider has approved the target structure.
+
+The V1-0040 Whitepaper digest was
 `80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`.
 V1-0039 changed only the Section 10 table-of-contents line and H2 title to
 `DCORPS tokenomics: paying for the chain and later governing shared operations`
@@ -60,6 +111,19 @@ Rollup, sovereign-L1, or implementation term. The original owner intakes remain
 preserved in the private governance repository; the corrected canonical
 manuscript and this distribution copy use the current digest above.
 
-This record authorizes local noindex review and a local checkpoint commit. It
-does not authorize a push, protected DEV deployment, production publication,
-public token distribution, provider action, or change to `dcorps.com`.
+The immediately preceding synchronized public and private canonical V1.0
+digest was
+`beafa4f313188b06c0197736a87938c88658d2ea69006a83af26baa323a69753`.
+The earlier synchronized digest
+`5157a342ab56aadde710fdddade15f66aece92d6229634737199ccd9fb7a067d`,
+earlier synchronized public digest
+`9df00e2f74179add7970132d248d104d592f8ca9a3797a5aee8a10dc6bdaee68`,
+and earlier private canonical digest
+`6604d8c9383d839e44ab8ff046a1abe6ae0586983daa42b9f54196a815b113f4`
+remain historical provenance. The controlling V1.0 digest is the SHA-256 stated
+in this record.
+
+This record authorizes local and protected noindex review only. It does not
+authorize a commit, push, DEV deployment, production publication, public token
+distribution, provider action, or change to the production `dcorps.com`
+surface.

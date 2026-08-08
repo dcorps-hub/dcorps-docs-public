@@ -2,11 +2,5 @@
   "name": "dcorps-docs-public",
   "private": true,
   "type": "module",
-  "scripts": {
-    "whitepaper:export": "node tools/whitepaper/export-whitepaper.mjs",
-    "whitepaper:check": "node tools/whitepaper/export-whitepaper.mjs --check",
-    "whitepaper:watch": "node tools/whitepaper/watch-whitepaper.mjs",
-    "hooks:install": "node tools/whitepaper/install-whitepaper-hook.mjs",
-    "whitepaper:install-hook": "node tools/whitepaper/install-whitepaper-hook.mjs"
-  }
+  "scripts": {}
 }

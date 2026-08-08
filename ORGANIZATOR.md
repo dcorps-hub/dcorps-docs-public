@@ -1,219 +1,24 @@
-# Documentation Organizator
+# Documentation order
 
-## Purpose
-- Define the canonical folder and file order used by the public docs center.
-- Keep navigation and exports consistent with `docs/welcome/INDEX.md`.
+The official dCorps Blockchain Whitepaper V1.0 and Founder Manifesto V1.0 are
+the only substantive public documents currently authorized. Their publication
+scope is limited to the local noindex website review surface.
 
-## Update rule
-- Update this file whenever any file or folder is created, renamed, removed, or updated in scope or title.
-- If the docs center order changes, update the lists below in the same commit.
+Current order:
 
-## Ordering protocol
-- The lists below are authoritative; order is top-to-bottom.
-- Use `INDEX.md` as the first entry in any folder that contains one.
-- Place overviews and summaries before detailed specs, runbooks, or appendices.
-- Keep references to public docs only; do not include private or restricted paths.
-- Docs center exports use the canonical order minus the non-publish list.
+1. `docs/INDEX.md`
+2. `docs/policy/POL-DOCS-PUBLICATION.md`
+3. `docs/whitepaper/INDEX.md`
+4. `docs/whitepaper/DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md`
+5. `docs/whitepaper/DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.sha256`
+6. `docs/whitepaper/PUBLICATION_RECORD_V1_0_2026-07-15.md`
+7. `docs/manifesto/INDEX.md`
+8. `docs/manifesto/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
+9. `docs/manifesto/DCORPS_FOUNDER_MANIFESTO_V1_0.sha256`
+10. `docs/manifesto/PUBLICATION_RECORD_V1_0_2026-07-16.md`
+11. `docs/welcome/INDEX.md`
 
-## Non-publish list (docs center)
-- README.md
-- ORGANIZATOR.md
-- AGENTS.md
-- package.json
-- tools/
-- tools/docgen/
-- tools/whitepaper/
-- docs/whitepaper/pdf/
-- docs/REPOS.md
-- docs/agents/
-- docs/agents/INDEX.md
-- docs/master/
-- docs/ops/
-- docs/ops/INDEX.md
-- docs/website/
-- docs/website/INDEX.md
-
-## Canonical order
-
-### Repository root
-- README.md
-- ORGANIZATOR.md
-- AGENTS.md
-- package.json
-- docs/
-- tools/
-
-### docs/
-- welcome/
-- REPOS.md
-- whitepaper/
-- hub-templates/
-- spec/
-- policy/
-- token/
-- security/
-- engineering/
-- interop/
-- devops/
-- ops/
-- roadmap/
-- frontend/
-- website/
-- people/
-- investor/
-- legal/
-- agents/
-
-### docs/welcome/
-- INDEX.md
-- OVERVIEW.md
-
-### docs/whitepaper/
-- INDEX.md
-- EXECUTIVE_SUMMARY.md
-- WHITEPAPER_LONG.md
-- WHITEPAPER.md
-- WHITEPAPER_PLAIN_LANGUAGE.md
-- LITEPAPER.md
-- NONPROFIT_NOTE.md
-- FAQ.md
-- GLOSSARY.md
-- pdf/
-
-### docs/whitepaper/pdf/
-- dCorpsHub_Whitepaper.pdf
-- dCorpsHub_Whitepaper.pdf.sha256
-- dCorpsHub_Whitepaper.source.sha256
-
-### docs/hub-templates/
-- INDEX.md
-- CORP-SOLO.md
-- CORP-PRIVATE-STD.md
-- CORP-VENTURE.md
-- CORP-COMPLEX-PRIVATE.md
-- NONPROFIT-SIMPLE.md
-- NONPROFIT-BOARD.md
-- NONPROFIT-COMPLEX.md
-
-### docs/spec/
-- INDEX.md
-- SPEC-CORE_PUBLIC.md
-- SPEC-CORE.md
-- SPEC-PARAMS.md
-- SPEC-MODULES.md
-- SPEC-ATTESTATIONS.md
-- SPEC-ANCHOR.md
-- SPEC-INDEXER.md
-- SPEC-DATA.md
-- SPEC-CONFORMANCE-TESTS.md
-
-### docs/policy/
-- POL-FOUNDATION.md
-- POL-GOV.md
-- POL-GOV-TRANSITION.md
-- POL-LOCALIZATION.md
-- POL-OPERATORS.md
-- POL-TREASURY.md
-- POL-REGISTRY-MODULES.md
-- POL-DOCS-PUBLICATION.md
-
-### docs/token/
-- TOKEN-POLICY.md
-- TOKEN-GENESIS-PLAN.md
-- TOKEN-EMISSIONS-NOTES.md
-- TOKEN-TREASURY-FEE-FLOWS.md
-- TOKEN-VESTING-SCHEDULES.md
-
-### docs/security/
-- SECURITY-POLICY.md
-- THREAT-MODEL.md
-- AUDIT-PLAN.md
-- BUG-BOUNTY.md
-- INCIDENT-RESPONSE.md
-
-### docs/engineering/
-- INDEX.md
-- TECHNICAL_OVERVIEW.md
-- STACK.md
-- ORBIT_BASE.md
-- CHAIN_LAYOUT.md
-- PROTOCOL_INTERFACES.md
-- API_SURFACES.md
-- INTEGRATION_GUIDE.md
-
-### docs/interop/
-- INDEX.md
-- BRIDGE_GATEWAYS.md
-
-### docs/devops/
-- INDEX.md
-- ENVIRONMENTS.md
-- ROLLUP_ENVIRONMENT.md
-- NETWORK_PARAMS.md
-- SECURITY.md
-- OBSERVABILITY.md
-- CI_CD.md
-- RELEASE_PROCESS.md
-- BACKUP_STRATEGY.md
-- RUNBOOKS.md
-- RUNBOOK-OPERATORS.md
-- RUNBOOK-GENESIS.md
-- RUNBOOK-UPGRADES.md
-- RUNBOOK-BRIDGE.md
-- BRIDGE_OPERATIONS.md
-- RUNBOOK-INDEXER.md
-- RUNBOOK-BACKUP.md
-- RUNBOOK-INCIDENTS.md
-
-### docs/ops/
-- INDEX.md
-
-### docs/roadmap/
-- INDEX.md
-- PHASES.md
-
-### docs/frontend/
-- INDEX.md
-- INFO_ARCHITECTURE.md
-- STACK.md
-- EXPLORER_REQUIREMENTS.md
-- SIGNING_FLOWS.md
-- ACCESSIBILITY.md
-
-### docs/website/
-- INDEX.md
-
-### docs/people/
-- INDEX.md
-- TEAM.md
-- ORGANIZATIONS.md
-- ROLES.md
-- ADVISOR_ROLES.md
-- OPEN_ROLES.md
-
-### docs/investor/
-- INDEX.md
-- INVESTOR_BRIEF.md
-- TOKENOMICS_SUMMARY.md
-
-### docs/legal/
-- INDEX.md
-- STRUCTURE_PATH.md
-- DEVCO_AGREEMENT.md
-- RESCO_AGREEMENT.md
-- RISK_DISCLOSURE.md
-- DISCLAIMERS.md
-
-### docs/agents/
-- INDEX.md
-
-### tools/
-- docgen/
-- whitepaper/
-
-### tools/docgen/
-- README.md
-
-### tools/whitepaper/
-- export-whitepaper.mjs
-- install-whitepaper-hook.mjs
+Do not add other product, technical, governance, economic, legal, roadmap, or
+public narrative documentation without separate owner authorization. This
+order does not authorize a commit, push, DEV deployment, or production
+publication.

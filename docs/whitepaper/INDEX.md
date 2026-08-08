@@ -6,5 +6,16 @@ The official public distribution copy of dCorps Blockchain Whitepaper V1.0 is:
 - [SHA-256 checksum](./DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.sha256)
 - [Publication record](./PUBLICATION_RECORD_V1_0_2026-07-15.md)
 
-This corrected V1.0 copy is authorized for local and protected noindex DEV
-review. It has not been published to production.
+This `V1-0156`-corrected V1.0 copy is authorized for local and protected
+noindex DEV review. V1.0 remains unpublished and has not been published to
+production.
+
+The `V1-0156` Whitepaper disposition is `updated` in place as unpublished
+V1.0; it is not a production publication.
+
+The current controlling V1.0 SHA-256 digest is
+`ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`.
+The immediately preceding synchronized digest was
+`beafa4f313188b06c0197736a87938c88658d2ea69006a83af26baa323a69753`.
+It and earlier V1.0 digests remain historical provenance and are not current
+distribution copies.

@@ -15,7 +15,7 @@ services:
       HOST: 0.0.0.0
       PORT: ""
       NEXT_TELEMETRY_DISABLED: "1"
-    command: sh -lc "npm run whitepaper:check"
+    command: sh -lc "git diff --check"
 
 volumes:
   dcorps_docs_public_node_modules:
