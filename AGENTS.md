@@ -14,12 +14,12 @@ Read `/Users/njgturk/Projects/DEV/AGENTS.md` and `../AGENTS.md` first.
 ## Current state
 
 - The byte-exact official unpublished Whitepaper V1.0 distribution copy,
-  corrected under `V1-0156` at SHA-256
-  `ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`,
+  corrected under `V1-0206` at SHA-256
+  `5bea52b9d75d8ed0a75e9e805cbaa06cc3a9cfac46dce68c9254c56a79dceb4a`,
   is authorized under `docs/whitepaper/` for local and protected noindex DEV
   website review. It has not been published to production.
-- The byte-exact canonical 38-paragraph, 1,063-word Founder Manifesto V1.0
-  distribution copy revised on 2026-07-30 is authorized under
+- The byte-exact canonical 38-paragraph, 1,091-word Founder Manifesto V1.0
+  distribution copy corrected on 2026-08-12 is authorized under
   `docs/manifesto/` for local and protected noindex DEV website review.
   Canonical paragraphs 7 through 17 form the named
   `native-existence-and-legal-boundary` block and may also appear once as the

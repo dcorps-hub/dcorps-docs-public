@@ -1,7 +1,7 @@
 # Public Documentation Publication Policy
 
 **Status**: Adopted for local and protected noindex DEV review of the unpublished Whitepaper V1.0 and Founder Manifesto V1.0
-**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, 2026-07-21, 2026-07-22, 2026-07-26, 2026-07-30, 2026-08-01, 2026-08-06, and 2026-08-07
+**Authority dates**: 2026-07-15, 2026-07-16, 2026-07-17, 2026-07-19, 2026-07-20, 2026-07-21, 2026-07-22, 2026-07-26, 2026-07-30, 2026-08-01, 2026-08-06, 2026-08-07, and 2026-08-12
 **Authority**: Nicolas Turcotte, Protocol Founder
 
 ## Controlling sources
@@ -15,20 +15,21 @@ canonical manuscript in the private governance repository:
 
 Its SHA-256 digest is:
 
-`ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`
+`5bea52b9d75d8ed0a75e9e805cbaa06cc3a9cfac46dce68c9254c56a79dceb4a`
 
 ### Founder Manifesto V1.0
 
 The sole controlling source for the dCorps Founder Manifesto V1.0 is the
 normalized canonical manuscript adopted on 2026-07-21, fully revised under
 V1-0085 on 2026-07-26, and subject to the restrained compression adopted under
-V1-0092 on 2026-07-30 in the private governance repository:
+V1-0092 on 2026-07-30 and the owner-authorized V1-0206 privacy correction on
+2026-08-12 in the private governance repository:
 
 `docs/master/DCORPS_FOUNDER_MANIFESTO_V1_0.md`
 
 Its SHA-256 digest is:
 
-`ba01e55df48b3c6b27c119b2d32a633ea24b942a223e3e2209ed5b58c50c7eb3`
+`1735d625d62c35f918e1622bfe00fed82953ef7ec9be7bcc35266315f1dda855`
 
 The immutable initial Founder source and every exact revision direction remain
 preserved in the private governance repository as provenance. Prior
@@ -145,12 +146,17 @@ prohibited in the complete Manifesto and the source-derived quotation.
   `native-existence-and-legal-boundary` block at current paragraphs 7 through
   17, and the exact website-only semantic emphasis map. The public and vendored
   Markdown remain byte exact and unmarked.
-- The owner separately authorized V1-0092 before public release. It adopts the
-  current 38-paragraph, 1,063-word restrained revision at SHA-256
+- The owner separately authorized V1-0092 before public release. It historically
+  adopted the 38-paragraph, 1,063-word restrained revision at SHA-256
   `ba01e55df48b3c6b27c119b2d32a633ea24b942a223e3e2209ed5b58c50c7eb3`,
   preserves the first 20 and final five paragraphs verbatim, retains the
   unchanged paragraphs 7 through 17 semantic block and paragraph 19
   credibility statement, and reindexes only later presentation-map entries.
+- The owner separately authorized V1-0206 before public release. It corrects
+  the privacy paragraph in place while retaining 38 blocks, producing the
+  current 1,091-word V1.0 at SHA-256
+  `1735d625d62c35f918e1622bfe00fed82953ef7ec9be7bcc35266315f1dda855`.
+  The V1-0092 digest remains the immediately preceding historical version.
 - The owner authorized the 2026-08-01 Whitepaper amendment before production
   publication. It adopted the revised 10 percent development-group token and 1
   percent independent-reserve structure, their vesting and release schedules,
@@ -215,6 +221,10 @@ state materially advances, regresses, or otherwise changes.
 unpublished V1.0 may receive the `updated` disposition and a synchronized new
 digest. For `V1-0156`, the Whitepaper disposition is `updated` at
 `ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`;
+this is retained as the immediately preceding historical digest. Later
+decision `V1-0206` explicitly authorizes another in-place correction while
+V1.0 remains unpublished. Its Whitepaper disposition is `updated` at
+`5bea52b9d75d8ed0a75e9e805cbaa06cc3a9cfac46dce68c9254c56a79dceb4a`;
 this is not a production publication.
 
 - The affected workstream must produce one evidence-backed impact record that

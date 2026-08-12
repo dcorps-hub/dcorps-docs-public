@@ -1,6 +1,6 @@
 # dCorps Blockchain Whitepaper V1.0 Publication Record
 
-- **Status:** `V1-0156`-corrected unpublished V1.0 authorized for local and protected noindex DEV review
+- **Status:** `V1-0206`-corrected unpublished V1.0 authorized for local and protected noindex DEV review
 - **Authority:** Nicolas Turcotte, Protocol Founder
 - **Authority date:** 2026-07-15
 - **Pre-release correction authority:** 2026-07-17
@@ -14,9 +14,12 @@
 - **Tokenomics, corporate-group, Cayman Foundation, SaleCo, related-party, and Founder-protection amendment authority:** 2026-08-01
 - **BVI entity-name and open-functional-role correction authority:** 2026-08-01
 - **First Project Entity, DevCo core mandate, Founder leadership, and unpublished-status correction authority (`V1-0156`):** 2026-08-07
-- **`V1-0156` Whitepaper disposition:** `updated` in place as unpublished V1.0; no production publication
+- **Entity privacy posture and scoped-access correction authority (`V1-0206`):** 2026-08-12
+- **`V1-0206` exact owner-source SHA-256:** `10f8a4d7cb13ceca375e74f433a4dde70ae4fb35c9926afdbad2a4eb8d2b842b`
+- **`V1-0206` frozen normalized-decision SHA-256:** `c5c6a1ae567dd479f5e85622279050667913ed9734064825eee2117986a2683c`
+- **`V1-0206` Whitepaper disposition:** `updated` in place as unpublished V1.0; no production publication
 - **Public distribution copy:** `DCORPS_BLOCKCHAIN_WHITEPAPER_V1_0.md`
-- **SHA-256:** `ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`
+- **SHA-256:** `5bea52b9d75d8ed0a75e9e805cbaa06cc3a9cfac46dce68c9254c56a79dceb4a`
 - **Website route:** `/whitepaper/`
 
 The public distribution copy is byte-identical to the official canonical
@@ -101,6 +104,17 @@ bridge, provider integration, or sovereign L1 is current, that any distribution
 has occurred, or that a sale platform, jurisdiction, regulator, auditor, or
 provider has approved the target structure.
 
+The owner authorized the `V1-0206` in-place correction on 2026-08-12 while
+V1.0 remained unpublished. It establishes an editable Entity-wide default
+privacy posture with category, record, field, and scoped-recipient rules;
+preserves roles, auditor and verifier access, and purpose- or time-bounded
+grants as a separate layer; and retains native encrypted on-chain protected
+state. It also defines the mandatory public minimum, limits maximum
+transparency to eligible corporate activity, keeps secrets and unlawful data
+out of public disclosure, and permits AI assistance without conferring
+authority or removing the manual path. This correction creates no current
+protocol, encryption, Agentic AI, or deployment claim.
+
 The V1-0040 Whitepaper digest was
 `80b437c462baa2359929becae7f371e66f969040b2ab91dd7d37bec8f6f4e302`.
 V1-0039 changed only the Section 10 table-of-contents line and H2 title to
@@ -113,8 +127,10 @@ manuscript and this distribution copy use the current digest above.
 
 The immediately preceding synchronized public and private canonical V1.0
 digest was
-`beafa4f313188b06c0197736a87938c88658d2ea69006a83af26baa323a69753`.
+`ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`.
 The earlier synchronized digest
+`beafa4f313188b06c0197736a87938c88658d2ea69006a83af26baa323a69753`,
+the still earlier synchronized digest
 `5157a342ab56aadde710fdddade15f66aece92d6229634737199ccd9fb7a067d`,
 earlier synchronized public digest
 `9df00e2f74179add7970132d248d104d592f8ca9a3797a5aee8a10dc6bdaee68`,

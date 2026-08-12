@@ -1,7 +1,7 @@
 # dCorps public documentation
 
 **Status**: Official Whitepaper and Founder Manifesto V1.0 authorized for local and protected noindex DEV review
-**Last updated**: 2026-08-07
+**Last updated**: 2026-08-12
 
 The official dCorps Blockchain Whitepaper V1.0 and Founder Manifesto V1.0 are
 available as exact public distribution copies for the local website review
@@ -11,9 +11,9 @@ surface:
 - [Founder Manifesto index](./manifesto/INDEX.md)
 - [Publication policy](./policy/POL-DOCS-PUBLICATION.md)
 
-The current Whitepaper copy is the owner-authorized `V1-0156` correction to
+The current Whitepaper copy is the owner-authorized `V1-0206` correction to
 the unpublished V1.0 at SHA-256
-`ec837b3cb56d90e7e0210ef5a640aa8624cde35352dda4391134ce25e2746002`.
+`5bea52b9d75d8ed0a75e9e805cbaa06cc3a9cfac46dce68c9254c56a79dceb4a`.
 It remains limited to local and protected noindex DEV review and has not been
 published to production.
 

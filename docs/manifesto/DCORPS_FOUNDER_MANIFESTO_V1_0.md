@@ -36,7 +36,7 @@ Evidence does not replace judgment. Within its published trust model, dCorps mak
 
 dCorps will not make an organization credible by declaration. It will make the evidence from which credibility can be judged independently inspectable.
 
-Verification should not require universal disclosure. Beyond required public state and minimized metadata, each Entity decides what it publishes, keeps encrypted off-chain, or opens selectively. Disclosed material should be verifiable against canonical state or a recorded commitment.
+Verification should not require universal disclosure. Each Entity chooses an editable default privacy posture, from maximum privacy to maximum transparency, and may apply granular category, record, field, account, role, audit, purpose, and time rules. Protected native state remains encrypted on-chain, while required public state, authorized disclosures, and unavoidable metadata or commitments remain readable. Disclosed material should be verifiable against canonical state or a recorded commitment.
 
 I call this model Corporation 3.0.
 
